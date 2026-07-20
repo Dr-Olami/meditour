@@ -1,0 +1,93 @@
+---
+import '@fontsource/noto-sans/400.css';
+import '@fontsource/noto-sans/500.css';
+import '@fontsource/noto-sans/700.css';
+import '@fontsource/noto-sans-bengali/400.css';
+import '@fontsource/noto-sans-bengali/700.css';
+import '../styles/main.css';
+import { medicalBusiness } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description?: string;
+  locale?: string;
+  image?: string;
+  type?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, locale = 'en', image, type = 'website', jsonLd } = Astro.props;
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+const siteName = locale === 'bn' ? 'খান মেডিট্যুর' : 'Khan Meditour';
+const defaultImage = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop';
+const ogImage = image && (image.startsWith('http') ? image : `${siteUrl}${image}`);
+
+function alternateHref(targetLocale: string): string {
+  const path = Astro.url.pathname;
+  const withoutPrefix = path.replace(/^\/(en|bn)\//, '/');
+  if (targetLocale === 'en') {
+    return new URL(withoutPrefix, siteUrl).toString();
+  }
+  const bnPath = withoutPrefix === '/' ? '/bn/' : `/bn${withoutPrefix}`;
+  return new URL(bnPath, siteUrl).toString();
+}
+
+const fallbackSchema = medicalBusiness({
+  name: siteName,
+  url: siteUrl,
+  description,
+});
+const schemaPayloads = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [fallbackSchema];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Display font: General Sans (Fontshare) — closest free match to the reference headline face -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700,800&display=swap"
+    />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={alternateHref('en')} />
+    <link rel="alternate" hreflang="bn" href={alternateHref('bn')} />
+    <link rel="alternate" hreflang="x-default" href={alternateHref('en')} />
+    <meta name="description" content={description || 'Khan Meditour'} />
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || 'Khan Meditour'} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage || defaultImage} />
+    <meta property="og:locale" content={locale === 'bn' ? 'bn_BD' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || 'Khan Meditour'} />
+    <meta name="twitter:image" content={ogImage || defaultImage} />
+
+    {schemaPayloads.map((payload) => (
+      <script type="application/ld+json" set:html={JSON.stringify(payload)} />
+    ))}
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    <main id="main-content">
+      <slot />
+    </main>
+    <script>
+      import { initPageAnimations } from '../design-system/motion/astro';
+      initPageAnimations();
+    </script>
+  </body>
+</html>

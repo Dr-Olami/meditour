@@ -1,0 +1,56 @@
+{
+  "$ref": "#/definitions/testimonials",
+  "definitions": {
+    "testimonials": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "bn"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image": {
+          "type": "string"
+        },
+        "video": {
+          "type": "string"
+        },
+        "videoDuration": {
+          "type": "string"
+        },
+        "brandLabel": {
+          "type": "string"
+        },
+        "relatedTreatmentSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "locale",
+        "name",
+        "quote"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

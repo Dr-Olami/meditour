@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { HospitalsPage } from '../components/HospitalsPage';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getHospitals, entrySlug } from '../lib/content';
+
+const t = getTranslations('en');
+
+const navLinks = getNavLinks('en');
+
+const hospitalEntries = await getHospitals('en');
+const hospitals = hospitalEntries.map((entry) => ({
+  slug: entrySlug(entry),
+  name: entry.data.name,
+  city: entry.data.city,
+  country: entry.data.country,
+  image: entry.data.image,
+  accreditations: entry.data.accreditations,
+}));
+---
+
+<Layout
+  title={`${t.hospitals.title} — ${t.site.name}`}
+  description={t.hospitals.subtitle}
+  locale="en"
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '/#contact' }}
+    client:load
+  />
+
+  <HospitalsPage
+    title={t.hospitals.title}
+    subtitle={t.hospitals.subtitle}
+    hospitals={hospitals}
+    viewLabel={t.hospitals.viewHospital}
+    locale="en"
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('en')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

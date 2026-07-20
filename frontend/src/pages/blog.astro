@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { BlogFilterList } from '../design-system/components/organisms/BlogFilterList';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getBlogPosts, getTreatments, entrySlug } from '../lib/content';
+import { formatDate } from '../lib/date';
+
+const t = getTranslations('en');
+const [posts, treatments] = await Promise.all([getBlogPosts('en'), getTreatments('en')]);
+
+const treatmentMap = new Map(treatments.map((entry) => [entrySlug(entry), entry.data.name]));
+
+const postSummaries = posts.map((entry) => ({
+  slug: entrySlug(entry),
+  title: entry.data.title,
+  excerpt: entry.data.excerpt,
+  coverImage: entry.data.coverImage,
+  date: formatDate(entry.data.publishedAt, 'en'),
+  tags: entry.data.tags || [],
+  relatedNames: (entry.data.relatedTreatmentSlugs || [])
+    .map((slug) => treatmentMap.get(slug))
+    .filter(Boolean) as string[],
+}));
+
+const allTags = Array.from(new Set(postSummaries.flatMap((p) => p.tags)));
+
+const title = `Blog — ${t.site.name}`;
+const description = `Insights, cost guides and patient stories from ${t.site.name} for international patients considering medical treatment in India.`;
+---
+
+<Layout title={title} description={description} locale="en">
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks('en')}
+    cta={{ label: t.nav.cta, href: '/#contact' }}
+    client:load
+  />
+
+  <main class="container py-24 md:py-28">
+    <header class="mb-12 max-w-2xl">
+      <h1 class="font-display text-4xl font-bold text-ink md:text-5xl">{t.blog.title}</h1>
+      <p class="mt-4 text-lg text-ink/60">{t.blog.subtitle}</p>
+    </header>
+
+    <BlogFilterList
+      posts={postSummaries}
+      tags={allTags}
+      locale="en"
+      readMoreLabel={t.blog.readMore}
+      allLabel={t.blog.filterAll}
+      client:load
+    />
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('en')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

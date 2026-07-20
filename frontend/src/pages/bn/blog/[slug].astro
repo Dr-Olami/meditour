@@ -1,0 +1,108 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { Navbar } from '../../../design-system/components/organisms/Navbar';
+import { Footer } from '../../../design-system/components/organisms/Footer';
+import BlogPostLayout from '../../../design-system/components/organisms/BlogPostLayout.astro';
+import { getTranslations } from '../../../lib/i18n';
+import { getNavLinks } from '../../../lib/navigation';
+import { getFooterLegalLinks } from '../../../lib/footer';
+import { getBlogPosts, getTreatments, entrySlug } from '../../../lib/content';
+import { formatDate } from '../../../lib/date';
+import { blogPosting, breadcrumbs } from '../../../lib/schema';
+import { getTreatmentInquiryLink, getInquiryLink } from '../../../lib/whatsapp';
+
+export async function getStaticPaths() {
+  const [posts, treatments] = await Promise.all([getBlogPosts('bn'), getTreatments('bn')]);
+  const treatmentMap = new Map(treatments.map((entry) => [entrySlug(entry), entry.data]));
+
+  return posts.map((entry) => {
+    const related = (entry.data.relatedTreatmentSlugs || [])
+      .map((slug) => treatmentMap.get(slug))
+      .filter(Boolean)
+      .map((t) => ({ name: t!.name, href: `/bn/treatments/${entrySlug(treatments.find((e) => e.data.name === t!.name)!)}` }));
+
+    return {
+      params: { slug: entrySlug(entry) },
+      props: { post: entry, related },
+    };
+  });
+}
+
+const t = getTranslations('bn');
+const { post, related } = Astro.props;
+const { Content } = await post.render();
+
+const publishedAt = formatDate(post.data.publishedAt, 'bn');
+const updatedAt = post.data.updatedAt ? formatDate(post.data.updatedAt, 'bn') : undefined;
+
+const ctaHref = related.length > 0
+  ? getTreatmentInquiryLink(related[0].name)
+  : getInquiryLink();
+
+const title = `${post.data.title} | ${t.site.name}`;
+const description = post.data.excerpt;
+const image = post.data.coverImage;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
+const siteUrl = Astro.url.origin;
+const jsonLd = [
+  blogPosting({
+    headline: post.data.title,
+    url: pageUrl,
+    description: post.data.excerpt,
+    image: post.data.coverImage,
+    publishedAt: post.data.publishedAt,
+    updatedAt: post.data.updatedAt,
+    author: post.data.author,
+    siteName: t.site.name,
+    siteUrl,
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: new URL('/bn/', Astro.url.origin).toString() },
+    { name: t.blog.title, url: new URL('/bn/blog', Astro.url.origin).toString() },
+    { name: post.data.title, url: pageUrl },
+  ]),
+];
+---
+
+<Layout title={title} description={description} locale="bn" image={image} type="article" jsonLd={jsonLd}>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks('bn')}
+    cta={{ label: t.nav.cta, href: '/bn/#contact' }}
+    client:load
+  />
+
+  <main class="bg-cream-50">
+    <BlogPostLayout
+      title={post.data.title}
+      coverImage={post.data.coverImage}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      author={post.data.author}
+      tags={post.data.tags}
+      relatedTreatments={related}
+      ctaHref={ctaHref}
+      ctaLabel={t.blog.ctaLabel}
+      backHref="/bn/blog"
+      backLabel={t.blog.backToBlog}
+      byLabel={t.blog.by}
+      updatedLabel={t.blog.updatedOn}
+      relatedTreatmentsTitle={t.blog.relatedTreatments}
+      ctaBoxTitle={t.blog.ctaBoxTitle}
+      ctaBoxText={t.blog.ctaBoxText}
+    >
+      <Content />
+    </BlogPostLayout>
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('bn')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

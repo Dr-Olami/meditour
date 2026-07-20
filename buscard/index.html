@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Tours and Medical Solution — Business Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+            padding: 20px;
+        }
+
+        /* ===== Card Container ===== */
+        .business-card {
+            width: 1050px;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to bottom, #003366 0%, #003366 35%, #ffffff 55%, #ffffff 100%);
+        }
+
+        /* Transparent background toggle */
+        .business-card.transparent {
+            background: linear-gradient(to bottom, rgba(0,51,102,0.92) 0%, rgba(0,51,102,0.92) 35%, rgba(255,255,255,0.95) 55%, rgba(255,255,255,0.95) 100%);
+        }
+
+        /* ===== Top Section ===== */
+        .top-section {
+            position: relative;
+            height: 180px;
+            padding: 12px 30px 0 30px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 3;
+        }
+
+        .logo-globe {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+        }
+
+        .airplane-skyline {
+            width: 130px;
+            height: 70px;
+            flex-shrink: 0;
+            position: relative;
+            right: 0;
+            top: 5px;
+        }
+
+        .brand-center {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .brand-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 42px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            line-height: 1;
+        }
+
+        .gold-ribbon {
+            margin-top: 6px;
+            background: linear-gradient(135deg, #CFAE60 0%, #FFD700 50%, #CFAE60 100%);
+            padding: 4px 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .gold-ribbon span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #003366;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== Curved Divider ===== */
+        .curved-divider {
+            position: absolute;
+            top: 170px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ===== Middle Section ===== */
+        .middle-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 30px 10px 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-column {
+            flex: 1;
+            max-width: 380px;
+        }
+
+        .service-column.left {
+            padding-right: 20px;
+        }
+
+        .service-column.right {
+            padding-left: 20px;
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #003366;
+        }
+
+        .column-header svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .column-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            color: #003366;
+            letter-spacing: 0.3px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #333;
+            padding: 3px 0;
+        }
+
+        .service-list li svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Center Contact Band ===== */
+        .contact-band {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 6px 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 26px;
+            color: #FFD700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-divider {
+            width: 1px;
+            height: 24px;
+            background: #ccc;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-info svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-info .phone {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            color: #003366;
+        }
+
+        .contact-address {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-address svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .contact-address span {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 11px;
+            color: #555;
+        }
+
+        /* ===== Bottom Section ===== */
+        .bottom-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .payment-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 6px 30px;
+            background: #f5f5f5;
+        }
+
+        .payment-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .payment-item svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .payment-item .label {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 10px;
+            color: #444;
+        }
+
+        .bkash-badge {
+            background: #e2136e;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .nagad-badge {
+            background: linear-gradient(135deg, #ec1c24, #f7941d);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-bar {
+            background: #003366;
+            text-align: center;
+            padding: 7px 0;
+        }
+
+        .footer-bar span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Controls ===== */
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .controls button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 8px 20px;
+            border: 2px solid #003366;
+            border-radius: 6px;
+            background: #fff;
+            color: #003366;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .controls button:hover {
+            background: #003366;
+            color: #fff;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .controls {
+                display: none;
+            }
+            .business-card {
+                box-shadow: none;
+                border-radius: 0;
+                width: 3.5in;
+                height: 2in;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="business-card" id="card">
+
+        <!-- ===== TOP SECTION ===== -->
+        <div class="top-section">
+            <!-- Globe with Red Cross -->
+            <div class="logo-group">
+                <svg class="logo-globe" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Globe -->
+                    <circle cx="32" cy="32" r="28" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+                    <ellipse cx="32" cy="32" rx="12" ry="28" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                    <line x1="4" y1="32" x2="60" y2="32" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="10" y1="18" x2="54" y2="18" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+                    <line x1="10" y1="46" x2="54" y2="46" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+                    <!-- Red Cross overlay -->
+                    <rect x="26" y="20" width="12" height="24" rx="2" fill="#FF0000" stroke="#ffffff" stroke-width="1.5"/>
+                    <rect x="20" y="26" width="24" height="12" rx="2" fill="#FF0000" stroke="#ffffff" stroke-width="1.5"/>
+                </svg>
+            </div>
+
+            <!-- Center Brand -->
+            <div class="brand-center">
+                <div class="brand-name">Khan</div>
+                <div class="gold-ribbon">
+                    <span>Tours and Medical Solution</span>
+                </div>
+            </div>
+
+            <!-- Airplane + Skyline -->
+            <svg class="airplane-skyline" viewBox="0 0 130 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Skyline buildings -->
+                <rect x="0" y="45" width="12" height="25" fill="#ffffff" opacity="0.5"/>
+                <rect x="14" y="38" width="14" height="32" fill="#ffffff" opacity="0.5"/>
+                <rect x="30" y="30" width="12" height="40" fill="#ffffff" opacity="0.5"/>
+                <rect x="44" y="42" width="10" height="28" fill="#ffffff" opacity="0.5"/>
+                <rect x="56" y="35" width="14" height="35" fill="#ffffff" opacity="0.5"/>
+                <rect x="72" y="40" width="12" height="30" fill="#ffffff" opacity="0.5"/>
+                <rect x="86" y="33" width="13" height="37" fill="#ffffff" opacity="0.5"/>
+                <rect x="101" y="44" width="11" height="26" fill="#ffffff" opacity="0.5"/>
+                <rect x="114" y="38" width="12" height="32" fill="#ffffff" opacity="0.5"/>
+                <!-- Windows on buildings -->
+                <rect x="3" y="49" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="7" y="49" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="3" y="55" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="7" y="55" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="33" y="35" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="37" y="35" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="33" y="41" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="37" y="41" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="89" y="38" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="93" y="38" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="89" y="44" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <rect x="93" y="44" width="2" height="2" fill="#FFD700" opacity="0.6"/>
+                <!-- Airplane -->
+                <path d="M20 15 L100 8 L106 10 L100 13 L70 16 L60 22 L55 21 L58 15 L40 16 L35 20 L31 19 L34 14 Z" fill="#FFD700" stroke="#ffffff" stroke-width="0.8"/>
+                <!-- Contrail -->
+                <path d="M100 9 Q115 7 125 5" stroke="#ffffff" stroke-width="1" opacity="0.4" fill="none" stroke-dasharray="3,2"/>
+            </svg>
+        </div>
+
+        <!-- ===== Curved Yellow Divider ===== -->
+        <svg class="curved-divider" viewBox="0 0 1050 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 10 Q525 0 1050 10" stroke="#FFD700" stroke-width="3" fill="none"/>
+            <path d="M0 14 Q525 4 1050 14" stroke="#FFD700" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+
+        <!-- ===== MIDDLE SECTION ===== -->
+        <div class="middle-section">
+
+            <!-- Left Column: Medical Services -->
+            <div class="service-column left">
+                <div class="column-header">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="9" y="3" width="6" height="18" rx="1" fill="#FF0000"/>
+                        <rect x="3" y="9" width="18" height="6" rx="1" fill="#FF0000"/>
+                    </svg>
+                    <h3>Medical Services</h3>
+                </div>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3v6a4 4 0 0 0 8 0V3"/>
+                            <path d="M6 3h2M12 3h2"/>
+                            <path d="M10 13v4a4 4 0 0 0 4 4h2"/>
+                            <circle cx="18" cy="19" r="2"/>
+                        </svg>
+                        Hospital Appointment
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17h2l1-7h4l1 7h2"/>
+                            <rect x="7" y="9" width="4" height="3" fill="#FF0000" stroke="none"/>
+                            <circle cx="6" cy="19" r="2"/>
+                            <circle cx="14" cy="19" r="2"/>
+                            <path d="M17 12l3-2v4h-3"/>
+                        </svg>
+                        Medical Transport
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12h4l2-5 4 10 2-5h6"/>
+                            <path d="M3 12v3a2 2 0 0 0 2 2h2"/>
+                        </svg>
+                        Healthcare Assistance
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Travel Services -->
+            <div class="service-column right">
+                <div class="column-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                    <h3>Travel Services</h3>
+                </div>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                        </svg>
+                        Air &amp; Bus Ticket
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l7-4 7 4v14"/>
+                            <path d="M9 21v-6h6v6"/>
+                            <line x1="9" y1="9" x2="9" y2="9.01"/>
+                            <line x1="15" y1="9" x2="15" y2="9.01"/>
+                        </svg>
+                        Hotel Booking
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2v20"/>
+                            <path d="M12 8c-3-3-7-1-7 3 0 3 4 5 7 2"/>
+                            <path d="M12 6c3-3 7-1 7 3 0 3-4 5-7 2"/>
+                            <path d="M12 14c-3-3-7-1-7 3 0 3 4 5 7 2"/>
+                            <path d="M12 12c3-3 7-1 7 3 0 3-4 5-7 2"/>
+                        </svg>
+                        Tour Package
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 17h14l-2-7H7l-2 7z"/>
+                            <circle cx="7.5" cy="17.5" r="2"/>
+                            <circle cx="16.5" cy="17.5" r="2"/>
+                            <path d="M9 10V7h6v3"/>
+                        </svg>
+                        Airport Pickup &amp; Drop
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== Contact Band ===== -->
+        <div class="contact-band">
+            <span class="contact-name">Masum Khan</span>
+            <div class="contact-divider"></div>
+            <div class="contact-info">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.3z" fill="#25D366"/>
+                    <path d="M17.5 14.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z" fill="#ffffff"/>
+                </svg>
+                <span class="phone">+8801611892986</span>
+            </div>
+            <div class="contact-divider"></div>
+            <div class="contact-address">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>123/B, Dhaka, Bangladesh</span>
+            </div>
+        </div>
+
+        <!-- ===== BOTTOM SECTION ===== -->
+        <div class="bottom-section">
+            <div class="payment-row">
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21h18"/>
+                        <path d="M3 10h18v7H3z"/>
+                        <path d="M3 10l3-6h12l3 6"/>
+                        <line x1="7" y1="13" x2="7" y2="14"/>
+                        <line x1="11" y1="13" x2="11" y2="14"/>
+                        <line x1="15" y1="13" x2="15" y2="14"/>
+                    </svg>
+                    <span class="label">Bank Transfer</span>
+                </div>
+                <div class="payment-item">
+                    <span class="bkash-badge">bKash</span>
+                </div>
+                <div class="payment-item">
+                    <span class="nagad-badge">Nagad</span>
+                </div>
+            </div>
+            <div class="footer-bar">
+                <span>Money Transfer Done Here</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== Controls ===== -->
+    <div class="controls">
+        <button onclick="toggleTransparent()">Toggle Transparent BG</button>
+        <button onclick="window.print()">Print / Export PDF</button>
+    </div>
+
+    <script>
+        function toggleTransparent() {
+            document.getElementById('card').classList.toggle('transparent');
+        }
+    </script>
+
+</body>
+</html>

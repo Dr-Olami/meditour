@@ -1,0 +1,142 @@
+/*
+ * Global styles: typography, links, skip-to-content, helpers.
+ */
+
+@layer base {
+  body {
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--leading-tight);
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  h2 {
+    font-size: var(--text-3xl);
+  }
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  h4 {
+    font-size: var(--text-xl);
+  }
+  h5 {
+    font-size: var(--text-lg);
+  }
+  h6 {
+    font-size: var(--text-base);
+  }
+
+  p {
+    color: var(--color-text-secondary);
+  }
+
+  a {
+    color: var(--color-text-link);
+    text-underline-offset: 0.15em;
+    transition: color var(--duration-fast) var(--ease-out-expo);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--color-text-link-hover);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  small {
+    font-size: var(--text-sm);
+  }
+}
+
+@layer components {
+  .container {
+    width: min(100% - var(--space-8), var(--site-max-width));
+    margin-inline: auto;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .stack > * {
+    margin-block: 0;
+  }
+
+  .stack > * + * {
+    margin-block-start: var(--stack-gap, var(--space-4));
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--cluster-gap, var(--space-4));
+  }
+
+  .grid-auto {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--grid-min, 16rem), 100%), 1fr)
+    );
+    gap: var(--grid-gap, var(--space-6));
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-y {
+    padding-block: var(--section-y, var(--space-16));
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .skip-to-content {
+    position: absolute;
+    z-index: var(--z-skip-link);
+    top: var(--space-4);
+    left: var(--space-4);
+    transform: translateY(-200%);
+    transition: transform var(--duration-base) var(--ease-out-expo);
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .font-bengali {
+    font-family: var(--font-bengali);
+  }
+}

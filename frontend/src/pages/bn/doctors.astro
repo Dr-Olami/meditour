@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { DoctorsPage } from '../../components/DoctorsPage';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getDoctors, getHospitals, resolveHospital, entrySlug } from '../../lib/content';
+import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
+
+const t = getTranslations('bn');
+
+const navLinks = getNavLinks('bn');
+
+const [doctorEntries, hospitalEntries] = await Promise.all([
+  getDoctors('bn'),
+  getHospitals('bn'),
+]);
+
+const doctors: Doctor[] = doctorEntries.map((entry) => {
+  const hospital = resolveHospital(entry.data.hospitalId, hospitalEntries);
+  return {
+    name: entry.data.name,
+    specialty: entry.data.specialty,
+    qualification: entry.data.qualification,
+    experienceYears: entry.data.experienceYears,
+    avatar: entry.data.avatar,
+    href: `/bn/doctors/${entrySlug(entry)}`,
+    hospitalName: hospital?.name,
+    hospitalHref: hospital?.href,
+  };
+});
+---
+
+<Layout
+  title={`${t.doctors.title} — ${t.site.name}`}
+  description={t.doctors.subtitle}
+  locale="bn"
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '/bn/#contact' }}
+    client:load
+  />
+
+  <DoctorsPage
+    title={t.doctors.title}
+    subtitle={t.doctors.subtitle}
+    filterAll={t.doctors.filterAll}
+    bookCta={t.doctors.bookCta}
+    doctors={doctors}
+    client:load
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('bn')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

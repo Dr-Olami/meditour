@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { TreatmentsPage } from '../components/TreatmentsPage';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getTreatments, entrySlug } from '../lib/content';
+
+const t = getTranslations('en');
+
+const navLinks = getNavLinks('en');
+
+const treatmentEntries = await getTreatments('en');
+const treatments = treatmentEntries.map((entry) => ({
+  name: entry.data.name,
+  description: entry.data.description,
+  fromPrice: entry.data.fromPrice,
+  category: entry.data.category,
+  tags: entry.data.category ? [entry.data.category] : undefined,
+  href: `/treatments/${entrySlug(entry)}`,
+}));
+---
+
+<Layout
+  title={`${t.treatments.title} — ${t.site.name}`}
+  description={t.site.description}
+  locale="en"
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '/#contact' }}
+    client:load
+  />
+
+  <TreatmentsPage
+    title={t.treatments.title}
+    subtitle={t.site.description}
+    filterAll={t.doctors.filterAll}
+    fromLabel={t.treatments.detail.fromPrice.replace('{{price}}', '').trim() || 'From'}
+    treatments={treatments}
+    client:load
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('en')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

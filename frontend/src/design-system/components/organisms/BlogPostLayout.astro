@@ -1,0 +1,120 @@
+---
+import { Icon } from '../atoms/Icon';
+
+export interface Props {
+  title: string;
+  coverImage?: string;
+  publishedAt: string;
+  updatedAt?: string;
+  author: string;
+  tags?: string[];
+  relatedTreatments?: { name: string; href: string }[];
+  ctaHref: string;
+  ctaLabel: string;
+  backHref: string;
+  backLabel: string;
+  byLabel?: string;
+  updatedLabel?: string;
+  relatedTreatmentsTitle?: string;
+  ctaBoxTitle?: string;
+  ctaBoxText?: string;
+  class?: string;
+}
+
+const {
+  title,
+  coverImage,
+  publishedAt,
+  updatedAt,
+  author,
+  tags,
+  relatedTreatments = [],
+  ctaHref,
+  ctaLabel,
+  backHref,
+  backLabel,
+  byLabel = 'By',
+  updatedLabel = 'Updated on',
+  relatedTreatmentsTitle = 'Related treatments',
+  ctaBoxTitle = 'Need help with treatment?',
+  ctaBoxText = 'Get a free cost estimate and personalised hospital recommendations.',
+  class: className,
+} = Astro.props;
+---
+
+<article class:list={['container py-24 md:py-28', className]}>
+  <a href={backHref} class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/60 hover:text-ink">
+    <Icon name="arrow-left" size={16} />
+    {backLabel}
+  </a>
+
+  <header class="mb-8 max-w-3xl">
+    {tags && tags.length > 0 && (
+      <div class="mb-4 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span class="rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink/70">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+    <h1 class="font-display text-3xl font-bold leading-tight text-ink md:text-5xl">{title}</h1>
+    <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink/60">
+      <span>{byLabel} <span class="font-medium text-ink">{author}</span></span>
+      <time datetime={publishedAt}>{publishedAt}</time>
+      {updatedAt && (
+        <span>{updatedLabel} <time datetime={updatedAt}>{updatedAt}</time></span>
+      )}
+    </div>
+  </header>
+
+  {coverImage && (
+    <div class="mb-12 overflow-hidden rounded-card border border-cream-300">
+      <img
+        src={coverImage}
+        alt={title}
+        class="aspect-[16/9] w-full object-cover"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  )}
+
+  <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
+    <div class="prose prose-ink max-w-none">
+      <slot />
+    </div>
+
+    <aside class="space-y-8">
+      {relatedTreatments.length > 0 && (
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <h2 class="mb-4 font-display text-lg font-semibold text-ink">{relatedTreatmentsTitle}</h2>
+          <ul class="space-y-3">
+            {relatedTreatments.map((treatment) => (
+              <li>
+                <a
+                  href={treatment.href}
+                  class="flex items-center gap-2 text-sm font-medium text-violet-700 hover:underline"
+                >
+                  <Icon name="arrow-right" size={14} />
+                  {treatment.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <h2 class="mb-2 font-display text-lg font-semibold text-ink">{ctaBoxTitle}</h2>
+        <p class="mb-4 text-sm text-ink/60">{ctaBoxText}</p>
+        <a
+          href={ctaHref}
+          class="inline-flex w-full items-center justify-center rounded-card bg-ink px-5 py-3 text-sm font-semibold text-white shadow-md hover:text-white"
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </aside>
+  </div>
+</article>

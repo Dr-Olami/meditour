@@ -1,0 +1,134 @@
+{
+  "site": {
+    "name": "Khan Meditour",
+    "tagline": "World-class medical care in India, made simple for international patients.",
+    "description": "Khan Meditour connects international patients with trusted hospitals and specialists in India."
+  },
+  "nav": {
+    "home": "Home",
+    "treatments": "Treatments",
+    "doctors": "Doctors",
+    "hospitals": "Hospitals",
+    "howItWorks": "How it works",
+    "testimonials": "Stories",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Blog",
+    "cta": "Free consultation"
+  },
+  "hero": {
+    "title": "Your health journey, supported every step of the way",
+    "subtitle": "From hospital selection to travel and aftercare, Khan Meditour simplifies medical travel to India.",
+    "primaryCta": "Start your journey",
+    "secondaryCta": "Chat on WhatsApp"
+  },
+  "serviceCards": {
+    "top": {
+      "title": "Honest Second Opinion",
+      "subtitle": "Not sure about surgery? Meet our doctors who listen more. Prescribe less."
+    },
+    "bottom": [
+      {
+        "title": "Birth",
+        "subtitle": "Compassionate maternity care from consultation to delivery."
+      },
+      {
+        "title": "Surgery",
+        "subtitle": "Expert surgical opinions and advanced procedures in India."
+      }
+    ],
+    "explore": "Explore More",
+    "contact": "Contact Us"
+  },
+  "steps": {
+    "title": "How it works",
+    "items": [
+      { "title": "Share Your Medical Reports", "description": "Patient sends diagnosis, test results, scans, or doctor's notes via WhatsApp or email. No reports yet? We help figure out what's needed.", "duration": "~5 minutes" },
+      { "title": "Receive Expert Medical Opinion", "description": "Medical team reviews the case, connects patient with a specialist for consultation (video call or written report). Free, no obligation.", "duration": "24–48 hours" },
+      { "title": "Get Treatment Plan & Cost Breakdown", "description": "Personalised plan: hospital, doctor/surgeon, procedure dates, full cost estimate, no hidden charges.", "duration": "3–5 days" },
+      { "title": "Travel — We Handle Everything", "description": "Visa assistance, flight guidance, hotel booking, airport pickup, hospital admission. Coordinator with patient in-person + WhatsApp.", "duration": "Prepared in advance" },
+      { "title": "Treatment, Recovery & Follow-Up", "description": "Treatment at matched hospital; post-return video-call follow-up with coordinator + doctor.", "duration": "Ongoing" }
+    ]
+  },
+  "treatments": {
+    "title": "Popular treatments",
+    "viewAll": "View all treatments",
+    "detail": {
+      "description": "About this treatment",
+      "procedures": "Procedures included",
+      "relatedDoctors": "Specialists for this treatment",
+      "inquiryCta": "Request a free consultation",
+      "fromPrice": "From {{price}}"
+    }
+  },
+  "stats": {
+    "title": "Why patients trust us",
+    "patients": "International patients",
+    "hospitals": "Partner hospitals",
+    "success": "Successful procedures",
+    "support": "24/7 support"
+  },
+  "testimonials": {
+    "title": "Patient stories"
+  },
+  "faq": {
+    "title": "Frequently asked questions"
+  },
+  "cta": {
+    "title": "Ready to take the next step?",
+    "subtitle": "Send us a message and we will reply within 24 hours.",
+    "formTitle": "Request a free consultation"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "terms": "Terms & Conditions",
+    "policies": "Policies",
+    "concierge": "Concierge & Emergencies",
+    "conciergePrefix": "For",
+    "conciergeSuffix": "contact",
+    "address": "Address line 1\nCity, Country"
+  },
+  "doctors": {
+    "title": "Our Specialists",
+    "subtitle": "Board-certified doctors across all major disciplines — each partnered and verified by Khan Meditour.",
+    "filterAll": "All specialties",
+    "bookCta": "Request appointment",
+    "detail": {
+      "title": "Doctor profile",
+      "experienceLabel": "Experience",
+      "years": "{{years}} years",
+      "languagesLabel": "Languages",
+      "atHospital": "Practices at",
+      "bookCta": "Request appointment",
+      "whatsappCta": "Chat on WhatsApp"
+    }
+  },
+  "hospitals": {
+    "title": "Our Partner Hospitals",
+    "subtitle": "Leading hospitals in India accredited for international patient care.",
+    "viewHospital": "View hospital",
+    "location": "Location",
+    "amenities": "Amenities",
+    "accreditation": "Accreditation",
+    "doctorsAtHospital": "Doctors at this hospital"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Your medical journey to India in 5 simple steps.",
+    "cta": "Start your journey"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Cost guides, treatment spotlights and patient stories to help you plan your medical journey to India.",
+    "readMore": "Read more",
+    "filterAll": "All",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated on",
+    "by": "By",
+    "relatedTreatments": "Related treatments",
+    "ctaBoxTitle": "Need help with treatment?",
+    "ctaBoxText": "Get a free cost estimate and personalised hospital recommendations.",
+    "ctaLabel": "Get a free cost estimate",
+    "backToBlog": "Back to blog"
+  }
+}

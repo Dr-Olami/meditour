@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HomePage from '../../components/HomePage.astro';
+import { getTranslations } from '../../lib/i18n';
+import {
+  getTreatments,
+  getDoctors,
+  getHospitals,
+  getTestimonials,
+  resolveHospital,
+  entrySlug,
+} from '../../lib/content';
+import { medicalBusiness } from '../../lib/schema';
+import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
+import type { Hospital } from '../../design-system/components/organisms/HospitalCard';
+
+const t = getTranslations('bn');
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
+
+const [treatmentEntries, doctorEntries, hospitalEntries, testimonialEntries] = await Promise.all([
+  getTreatments('bn'),
+  getDoctors('bn'),
+  getHospitals('bn'),
+  getTestimonials('bn'),
+]);
+
+const treatments = treatmentEntries.map((entry) => ({
+  name: entry.data.name,
+  description: entry.data.description,
+  fromPrice: entry.data.fromPrice,
+  category: entry.data.category,
+  tags: entry.data.category ? [entry.data.category] : undefined,
+  href: `/bn/treatments/${entrySlug(entry)}`,
+}));
+
+const featuredDoctors: Doctor[] = doctorEntries.slice(0, 4).map((entry) => {
+  const hospital = resolveHospital(entry.data.hospitalId, hospitalEntries);
+  return {
+    name: entry.data.name,
+    specialty: entry.data.specialty,
+    qualification: entry.data.qualification,
+    experienceYears: entry.data.experienceYears,
+    avatar: entry.data.avatar,
+    href: `/bn/doctors/${entrySlug(entry)}`,
+    hospitalName: hospital?.name,
+    hospitalHref: hospital?.href,
+  };
+});
+
+const featuredHospitals: Hospital[] = hospitalEntries.slice(0, 3).map((entry) => ({
+  slug: entrySlug(entry),
+  name: entry.data.name,
+  city: entry.data.city,
+  country: entry.data.country,
+  image: entry.data.image,
+  accreditations: entry.data.accreditations,
+}));
+
+const testimonials = testimonialEntries.map((entry) => entry.data);
+
+const categories = Array.from(new Set(treatmentEntries.map((entry) => entry.data.category).filter(Boolean)));
+
+const jsonLd = medicalBusiness({
+  name: t.site.name,
+  url: siteUrl,
+  whatsapp: whatsappNumber,
+  email: contactEmail,
+  specialties: categories.length ? categories : undefined,
+});
+---
+
+<Layout title={`${t.site.name} — ${t.site.tagline}`} description={t.site.description} locale="bn" jsonLd={jsonLd}>
+  <HomePage
+    locale="bn"
+    treatments={treatments}
+    featuredDoctors={featuredDoctors}
+    featuredHospitals={featuredHospitals}
+    testimonials={testimonials}
+  />
+</Layout>

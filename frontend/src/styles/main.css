@@ -1,0 +1,39 @@
+/*
+ * Khan Meditour — Main CSS entry point.
+ *
+ * CSS spec: @import must precede all other at-rules.
+ * Tailwind @layer directives inside the partials are merged by Tailwind
+ * after it processes the @tailwind directives below.
+ *
+ *   1. Design tokens   → ../design-system/tokens/tokens.css  (CSS custom properties)
+ *   2. Base reset      → ../design-system/styles/base.css    (@layer base)
+ *   3. Global / helpers → ../design-system/styles/global.css  (@layer base/components)
+ *   4. @tailwind directives
+ */
+
+@import '../design-system/tokens/tokens.css';
+@import '../design-system/styles/base.css';
+@import '../design-system/styles/global.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+.astro
+node_modules
+dist
+.vscode
+*.log
+.env
+.env.local
+.eslintcache
+.playwright-report
+coverage

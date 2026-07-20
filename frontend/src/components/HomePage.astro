@@ -1,0 +1,308 @@
+---
+import { getTranslations, type Locale } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { StepTimeline } from '../design-system/components/organisms/StepTimeline';
+import { TreatmentCard } from '../design-system/components/organisms/TreatmentCard';
+import { DoctorCard } from '../design-system/components/organisms/DoctorCard';
+import { HospitalCard } from '../design-system/components/organisms/HospitalCard';
+import { TestimonialCarousel } from '../design-system/components/organisms/TestimonialCarousel';
+import { FAQAccordion } from '../design-system/components/organisms/FAQAccordion';
+import { HeroSection } from '../design-system/components/organisms/HeroSection';
+import { StatementSection } from '../design-system/components/organisms/StatementSection';
+import { FloatingConsultCTA } from '../design-system/components/organisms/FloatingConsultCTA';
+import { StatCounter } from '../design-system/components/organisms/StatCounter';
+import { LeadForm } from '../design-system/components/organisms/LeadForm';
+import { CostEstimator } from '../design-system/components/organisms/CostEstimator';
+import { WhatsAppCTA } from '../design-system/components/organisms/WhatsAppCTA';
+import { LanguageSwitcher } from '../design-system/components/organisms/LanguageSwitcher';
+import { ServiceCardsSection } from '../design-system/components/organisms/ServiceCardsSection';
+import { Icon } from '../design-system/components/atoms/Icon';
+import { Link } from '../design-system/components/atoms/Link';
+import { parsePrice } from '../lib/pricing';
+import { getInquiryLink, getEstimateInquiryLink } from '../lib/whatsapp';
+import { ACCOMMODATIONS } from '../content/accommodations';
+import { LEAD_SOURCE } from '../lib/crm';
+import type { Doctor } from '../design-system/components/organisms/DoctorCard';
+import type { Hospital } from '../design-system/components/organisms/HospitalCard';
+import type { TestimonialItem } from '../design-system/components/molecules/TestimonialCard';
+
+interface HomeTreatment {
+  name: string;
+  description: string;
+  fromPrice?: string;
+  category?: string;
+  tags?: string[];
+  href: string;
+}
+
+interface Props {
+  locale: Locale;
+  treatments: HomeTreatment[];
+  featuredDoctors: Doctor[];
+  featuredHospitals: Hospital[];
+  testimonials: TestimonialItem[];
+}
+
+const { locale, treatments, featuredDoctors, featuredHospitals, testimonials } = Astro.props;
+const t = getTranslations(locale);
+const prefix = locale === 'bn' ? '/bn' : '';
+
+const navLinks = getNavLinks(locale);
+
+const faq = [
+  {
+    question: locale === 'bn'
+      ? 'আমি কীভাবে খান মেডিট্যুর দিয়ে চিকিৎসা যাত্রা শুরু করব?'
+      : 'How do I start my medical journey with Khan Meditour?',
+    answer: locale === 'bn'
+      ? 'পরামর্শ ফর্ম পূরণ করুন অথবা WhatsApp-এ আমাদের বার্তা পাঠান। আমরা আপনার কেস রিভিউ করে ২৪ ঘন্টার মধ্যে সেরা হাসপাতাল ও ডাক্তার সুপারিশ করি।'
+      : 'Fill out the consultation form or message us on WhatsApp. We review your case and recommend the best hospital and doctor within 24 hours.',
+  },
+  {
+    question: locale === 'bn'
+      ? 'আমার মেডিকেল ডেটা গোপনীয় রাখা হয়?'
+      : 'Is my medical data kept private?',
+    answer: locale === 'bn'
+      ? 'হ্যাঁ। আমরা কঠোর ডেটা প্রোটেকশন অনুসরণ করি এবং কেবল আপনার অনুমোদিত হাসপাতাল ও বিশেষজ্ঞদের সাথে রিপোর্ট শেয়ার করি।'
+      : 'Yes. We follow strict data protection practices and only share reports with the hospitals and specialists you approve.',
+  },
+  {
+    question: locale === 'bn'
+      ? 'ভিসা ও থাকার ব্যবস্থায় আপনারা সাহায্য করেন?'
+      : 'Can you help with visas and accommodation?',
+    answer: locale === 'bn'
+      ? 'অবশ্যই। আমাদের প্যাকেজে ভিসা আমন্ত্রণ পত্র, এয়ারপোর্ট পিকআপ, হোটেল অপশন এবং স্থানীয় অনুবাদক অন্তর্ভুক্ত।'
+      : 'Absolutely. Our packages include visa invitation letters, airport pickup, hotel options and a local interpreter.',
+  },
+];
+
+const stats = [
+  { value: '3,500+', label: t.stats.patients },
+  { value: '25+', label: t.stats.hospitals },
+  { value: '98%', label: t.stats.success },
+  { value: '24/7', label: t.stats.support },
+];
+
+const treatmentOptions = treatments.map((tx) => ({ value: tx.name, label: tx.name }));
+const treatmentFromLabel = locale === 'bn' ? 'থেকে' : 'From';
+
+const estimatorTreatmentOptions = treatments.map((tx) => ({
+  value: tx.name,
+  label: tx.name,
+  cost: parsePrice(tx.fromPrice),
+}));
+const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
+  value: a.value,
+  label: a.label,
+  cost: a.cost,
+}));
+
+const whatsappInquiryHref = getInquiryLink();
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
+---
+
+<Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '#contact' }} client:load />
+
+<!-- Hero -->
+<HeroSection
+  headline={t.hero.title}
+  subheadline={t.hero.subtitle}
+  eyebrow={t.site.name}
+  primaryCta={{ label: t.hero.primaryCta, href: '#contact' }}
+  data-anim="fade-in-up"
+/>
+
+<!-- Service cards -->
+<ServiceCardsSection
+  exploreLabel={t.serviceCards.explore}
+  contactLabel={t.serviceCards.contact}
+  topCard={{
+    title: t.serviceCards.top.title,
+    subtitle: t.serviceCards.top.subtitle,
+    image: 'https://images.unsplash.com/photo-1622253692010-333f4e9789aa?w=1200&auto=format&fit=crop',
+    exploreHref: `${prefix}/treatments`,
+    contactHref: '#contact',
+  }}
+  bottomCards={[
+    {
+      title: t.serviceCards.bottom[0].title,
+      subtitle: t.serviceCards.bottom[0].subtitle,
+      image: 'https://images.unsplash.com/photo-1550831161-6699607fce0e?w=800&auto=format&fit=crop',
+      exploreHref: `${prefix}/treatments/fertility-treatment`,
+      contactHref: '#contact',
+    },
+    {
+      title: t.serviceCards.bottom[1].title,
+      subtitle: t.serviceCards.bottom[1].subtitle,
+      image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=800&auto=format&fit=crop',
+      exploreHref: `${prefix}/treatments/orthopedics-surgery`,
+      contactHref: '#contact',
+    },
+  ]}
+/>
+
+<!-- Stats bar -->
+<section id="stats" class="bg-cream-200 py-14" data-anim="scroll-reveal">
+  <div class="container">
+    <h2 class="mb-10 text-center font-display text-2xl font-bold text-ink" data-anim="fade-in-up">{t.stats.title}</h2>
+    <StatCounter stats={stats} />
+  </div>
+</section>
+
+<!-- Statement -->
+<StatementSection
+  statement={locale === 'bn'
+    ? 'রোগীর যাত্রাটি কেবল চিকিৎসা নয় — এটি বিশ্বাস, যত্ন এবং সংযোগ।'
+    : 'A patient\'s journey is not just medical — it is trust, care, and connection.'}
+  caption={locale === 'bn' ? 'আমাদের দর্শন' : 'Our philosophy'}
+/>
+
+<!-- How it works -->
+<section id="steps" class="bg-cream-100 py-20" data-anim="scroll-reveal">
+  <div class="container">
+    <h2 class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">{t.steps.title}</h2>
+    <StepTimeline steps={t.steps.items} />
+  </div>
+</section>
+
+<!-- Treatments -->
+<section id="treatments" class="bg-cream-200 py-20" data-anim="scroll-reveal">
+  <div class="container">
+    <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
+      <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.treatments.title}</h2>
+      <Link href={`${prefix}/treatments`} class="text-sm font-medium text-ink/60 hover:text-ink">{t.treatments.viewAll}</Link>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
+      {treatments.slice(0, 3).map((treatment) => (
+        <TreatmentCard treatment={treatment} fromLabel={treatmentFromLabel} data-anim="card-hover" />
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Doctors teaser -->
+{featuredDoctors.length > 0 && (
+  <section class="bg-cream-100 py-20" data-anim="scroll-reveal">
+    <div class="container">
+      <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
+        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{locale === 'bn' ? 'আমাদের বিশেষজ্ঞরা' : 'Meet our specialists'}</h2>
+        <Link href={`${prefix}/doctors`} class="text-sm font-medium text-ink/60 hover:text-ink">{locale === 'bn' ? 'সব বিশেষজ্ঞ দেখুন' : 'View all doctors'}</Link>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-anim="stagger-cards">
+        {featuredDoctors.map((doctor) => (
+          <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Hospitals teaser -->
+{featuredHospitals.length > 0 && (
+  <section class="bg-cream-200 py-20" data-anim="scroll-reveal">
+    <div class="container">
+      <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
+        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{locale === 'bn' ? 'আমাদের অংশীদার হাসপাতাল' : 'Our partner hospitals'}</h2>
+        <Link href={`${prefix}/hospitals`} class="text-sm font-medium text-ink/60 hover:text-ink">{locale === 'bn' ? 'সব হাসপাতাল দেখুন' : 'View all hospitals'}</Link>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
+        {featuredHospitals.map((hospital) => (
+          <HospitalCard key={hospital.slug} hospital={hospital} viewLabel={t.hospitals.viewHospital} locale={locale} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Testimonials -->
+<section id="testimonials" class="bg-cream-100 py-20" data-anim="scroll-reveal">
+  <TestimonialCarousel
+    title={t.testimonials.title}
+    items={testimonials}
+    client:load
+  />
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-cream-200 py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">{t.faq.title}</h2>
+    <FAQAccordion items={faq} />
+  </div>
+</section>
+
+<!-- Cost estimator -->
+<section class="bg-cream-100 py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <h2 class="mb-6 text-center font-display text-3xl font-bold text-ink" data-anim="fade-in-up">
+      {locale === 'bn' ? 'আপনার ভ্রমণের ব্যয় অনুমান করুন' : 'Estimate your trip cost'}
+    </h2>
+    <CostEstimator
+      client:load
+      treatments={estimatorTreatmentOptions}
+      accommodations={estimatorAccommodationOptions}
+      getQuoteHref={(treatmentLabel, total) => getEstimateInquiryLink(treatmentLabel, total)}
+    />
+  </div>
+</section>
+
+<!-- Floating consult CTA -->
+<section class="bg-cream-100 py-20" data-anim="scroll-reveal">
+  <div class="container" data-anim="fade-in-up">
+    <FloatingConsultCTA
+      headline={t.cta.title}
+      subtext={t.cta.subtitle}
+      primaryCta={{ label: t.nav.cta, href: '#contact' }}
+      secondaryCta={{ label: locale === 'bn' ? 'হোয়াটসঅ্যাপ' : 'WhatsApp', href: whatsappInquiryHref }}
+    />
+  </div>
+</section>
+
+<!-- Contact form -->
+<section id="contact" class="bg-cream-200 py-20" data-anim="scroll-reveal">
+  <div class="container grid gap-12 lg:grid-cols-2">
+    <div data-anim="fade-in-up">
+      <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
+      <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+      <div class="mt-8 space-y-3 text-ink/60">
+        <p class="flex items-center gap-3">
+          <Icon name="phone" size={20} />
+          <Link href={`tel:${whatsappNumber}`}>{whatsappNumber}</Link>
+        </p>
+        <p class="flex items-center gap-3">
+          <Icon name="mail" size={20} />
+          <Link href={`mailto:${contactEmail}`}>{contactEmail}</Link>
+        </p>
+        <p class="flex items-center gap-3">
+          <Icon name="whatsapp" size={20} />
+          <WhatsAppCTA number={whatsappNumber} client:load>{locale === 'bn' ? 'হোয়াটসঅ্যাপ করুন' : 'WhatsApp us'}</WhatsAppCTA>
+        </p>
+      </div>
+    </div>
+    <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+      <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
+      <LeadForm treatments={treatmentOptions} source={LEAD_SOURCE.GENERAL_CONTACT} client:load />
+    </div>
+  </div>
+</section>
+
+<Footer
+  brand={t.site.name}
+  legalLinks={getFooterLegalLinks(locale)}
+  conciergeLabel={t.footer.concierge}
+  conciergePrefix={t.footer.conciergePrefix}
+  conciergeSuffix={t.footer.conciergeSuffix}
+  copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+  address={t.footer.address}
+/>
+
+<WhatsAppCTA number={whatsappNumber} variant="floating" client:load />
+
+<div class="fixed bottom-6 left-6 z-fixed">
+  <LanguageSwitcher currentLocale={locale} currentPath={Astro.url.pathname} client:load />
+</div>
