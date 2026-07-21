@@ -114,12 +114,15 @@
 - [x] Removed duplicated inline GSAP script from `HomePage.astro`; wired `data-anim` attributes across sections.
 - [x] Lint, tests, and build pass (`npm run lint`, `npm test`, `npm run build`).
 
-## Vercel Deployment Setup — IN PROGRESS
+## Vercel Deployment Setup — COMPLETE
 
 - [x] Installed `@astrojs/vercel@7` and switched `astro.config.mjs` to `output: 'hybrid'` with `@astrojs/vercel/serverless` adapter.
 - [x] Marked `src/pages/api/lead.ts` as `prerender = false` so the lead API route runs server-side.
 - [x] Replaced `@astrojs/sitemap` integration with the existing `scripts/generate-sitemap.mjs` via a `postbuild` npm hook (avoids adapter/sitemap conflict).
-- [x] Added `vercel.json` (framework: astro, Node 18 runtime, sitemap rewrite) and `.vercelignore`.
+- [x] Added `vercel.json` (framework: astro, sitemap rewrite) and `.vercelignore`.
 - [x] Added `.github/workflows/deploy.yml` for automated Vercel deployments (requires `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` secrets).
-- [ ] Run `vercel login` and `vercel` from `frontend/` to authenticate and deploy manually, or import the repo in the Vercel dashboard.
+- [x] Created `scripts/patch-vercel-runtime.mjs` to patch `nodejs18.x` → `nodejs20.x` in postbuild (Vercel CLI 56.x rejects nodejs18.x).
+- [x] Fixed `scripts/generate-sitemap.mjs` to detect both local `dist/` and Vercel `.vercel/output/static/` output directories.
+- [x] Authenticated with Vercel CLI and deployed to production: https://meditour-zeta.vercel.app
 - [ ] Add environment variables in Vercel project settings: `CRM_API_URL`, `CRM_API_KEY`, `PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_CONTACT_EMAIL`.
+- [ ] Connect GitHub repo for auto-deploy on push.

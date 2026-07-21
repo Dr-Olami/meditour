@@ -1,0 +1,12 @@
+.vercel
+node_modules
+dist
+dist-clean
+build.log
+test-output.log
+.env
+.env.local
+*.log
+.astro
+coverage
+.playwright-report

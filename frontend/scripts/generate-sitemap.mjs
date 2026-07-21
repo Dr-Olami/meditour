@@ -1,27 +1,39 @@
-import { readdir, stat, writeFile, mkdir } from 'node:fs/promises';
+import { readdir, stat, writeFile, mkdir, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { join, relative, dirname } from 'node:path';
 
 const SITE_URL = 'https://khanmeditour.com';
-const DIST_DIR = fileURLToPath(new URL('../dist', import.meta.url));
-const SITEMAP_PATH = fileURLToPath(new URL('../dist/sitemap-0.xml', import.meta.url));
-const INDEX_PATH = fileURLToPath(new URL('../dist/sitemap-index.xml', import.meta.url));
+
+const LOCAL_DIST = fileURLToPath(new URL('../dist', import.meta.url));
+const VERCEL_STATIC = fileURLToPath(new URL('../.vercel/output/static', import.meta.url));
+
+async function findOutputDir() {
+  for (const dir of [LOCAL_DIST, VERCEL_STATIC]) {
+    try {
+      await access(dir);
+      return dir;
+    } catch {
+      continue;
+    }
+  }
+  return LOCAL_DIST;
+}
 
 const EXCLUDED_SEGMENTS = new Set(['_astro', 'chunks', 'pages', 'api']);
 
 /**
- * Recursively collect URL paths for every index.html inside the dist folder.
+ * Recursively collect URL paths for every index.html inside the output folder.
  */
-async function collectIndexHtml(dir) {
+async function collectIndexHtml(dir, rootDir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const urls = [];
   for (const entry of entries) {
     if (entry.isDirectory()) {
       if (EXCLUDED_SEGMENTS.has(entry.name)) continue;
-      const subUrls = await collectIndexHtml(join(dir, entry.name));
+      const subUrls = await collectIndexHtml(join(dir, entry.name), rootDir);
       urls.push(...subUrls);
     } else if (entry.isFile() && entry.name === 'index.html') {
-      const rel = relative(String(DIST_DIR), join(dir, entry.name)).replace(/\\/g, '/');
+      const rel = relative(String(rootDir), join(dir, entry.name)).replace(/\\/g, '/');
       const path = rel.replace(/index\.html$/, '').replace(/\/$/, '');
       urls.push(path === '' ? '' : `/${path}`);
     }
@@ -33,7 +45,11 @@ async function collectIndexHtml(dir) {
  * Generate a sitemap file from the collected routes.
  */
 async function main() {
-  let paths = await collectIndexHtml(String(DIST_DIR));
+  const outputDir = await findOutputDir();
+  const sitemapPath = join(outputDir, 'sitemap-0.xml');
+  const indexPath = join(outputDir, 'sitemap-index.xml');
+
+  let paths = await collectIndexHtml(String(outputDir), String(outputDir));
   paths = paths.sort();
   paths = paths.filter((p, i, arr) => arr.indexOf(p) === i);
 
@@ -46,13 +62,13 @@ async function main() {
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries}\n</urlset>\n`;
 
-  await mkdir(String(DIST_DIR), { recursive: true });
-  await writeFile(String(SITEMAP_PATH), sitemap);
+  await mkdir(String(outputDir), { recursive: true });
+  await writeFile(String(sitemapPath), sitemap);
 
   const index = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap>\n    <loc>${SITE_URL}/sitemap-0.xml</loc>\n  </sitemap>\n</sitemapindex>\n`;
-  await writeFile(String(INDEX_PATH), index);
+  await writeFile(String(indexPath), index);
 
-  console.log(`Generated sitemap with ${paths.length} URLs:`);
+  console.log(`Generated sitemap with ${paths.length} URLs in ${outputDir}:`);
   paths.forEach((p) => console.log(`  ${p || '/'}`));
 }
 
