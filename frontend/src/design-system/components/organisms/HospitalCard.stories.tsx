@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { HospitalCard } from './HospitalCard';
 
 const SAMPLE_HOSPITAL = {
-  slug: 'apollo-hospital-delhi',
-  name: 'Apollo Hospital, New Delhi',
-  city: 'New Delhi',
+  slug: 'apollo-hospitals-bannerghatta',
+  name: 'Apollo Hospitals, Bannerghatta Road, Bangalore',
+  city: 'Bangalore',
   country: 'India',
   image: 'https://images.unsplash.com/photo-1587351021759-3e566b9af923?w=800&auto=format&fit=crop',
   accreditations: ['JCI Accredited', 'NABH'],
@@ -39,7 +39,7 @@ export const WithoutImage: Story = {
 export const Grid: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-6">
-      {[SAMPLE_HOSPITAL, { ...SAMPLE_HOSPITAL, slug: 'fortis-escorts', name: 'Fortis Escorts Heart Institute' }, { ...SAMPLE_HOSPITAL, slug: 'max-saket', name: 'Max Super Speciality Hospital, Saket' }].map((hospital) => (
+      {[SAMPLE_HOSPITAL, { ...SAMPLE_HOSPITAL, slug: 'fortis-hospital-bannerghatta', name: 'Fortis Hospital, Bannerghatta Road, Bangalore' }, { ...SAMPLE_HOSPITAL, slug: 'sparsh-hospital-hennur', name: 'SPARSH Hospital, Hennur, Bangalore' }].map((hospital) => (
         <HospitalCard key={hospital.slug} hospital={hospital} viewLabel="View hospital" locale="en" />
       ))}
     </div>

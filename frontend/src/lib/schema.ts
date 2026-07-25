@@ -63,6 +63,12 @@ interface HospitalInput {
   city: string;
   country: string;
   accreditations?: string[];
+  address?: string;
+  phone?: string;
+  email?: string;
+  website?: string;
+  establishedYear?: number;
+  specialities?: string[];
 }
 
 /**
@@ -76,10 +82,16 @@ export function hospital(data: HospitalInput): WithContext<Record<string, unknow
     ...(data.image ? { image: data.image } : {}),
     address: {
       '@type': 'PostalAddress',
+      ...(data.address ? { streetAddress: data.address } : {}),
       addressLocality: data.city,
       addressCountry: data.country,
     },
+    ...(data.phone ? { telephone: data.phone } : {}),
+    ...(data.email ? { email: data.email } : {}),
+    ...(data.website ? { sameAs: [data.website] } : {}),
+    ...(data.establishedYear ? { foundingDate: String(data.establishedYear) } : {}),
     ...(data.accreditations?.length ? { accreditation: data.accreditations } : {}),
+    ...(data.specialities?.length ? { medicalSpecialty: data.specialities } : {}),
   });
 }
 

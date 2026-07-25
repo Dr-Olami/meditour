@@ -116,6 +116,19 @@ export function resolveRelatedDoctors(
 }
 
 /**
+ * Resolve related hospitals for a treatment from their slugs.
+ */
+export function resolveRelatedHospitals(
+  slugs: string[] | undefined,
+  hospitals: HospitalEntry[]
+): HospitalEntry[] {
+  if (!slugs) return [];
+  return slugs
+    .map((slug) => hospitals.find((h) => entrySlug(h) === slug))
+    .filter((h): h is HospitalEntry => h !== undefined);
+}
+
+/**
  * Return all testimonials for a given locale.
  */
 export async function getTestimonials(locale: string): Promise<TestimonialEntry[]> {

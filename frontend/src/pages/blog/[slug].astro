@@ -86,6 +86,11 @@ const jsonLd = [
       ctaLabel={t.blog.ctaLabel}
       backHref="/blog"
       backLabel={t.blog.backToBlog}
+      breadcrumbItems={[
+        { label: t.nav.home, href: '/' },
+        { label: t.blog.title, href: '/blog' },
+        { label: post.data.title },
+      ]}
       byLabel={t.blog.by}
       updatedLabel={t.blog.updatedOn}
       relatedTreatmentsTitle={t.blog.relatedTreatments}

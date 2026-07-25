@@ -1,0 +1,37 @@
+---
+import { Icon } from '../atoms/Icon';
+
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+export interface Props {
+  items: BreadcrumbItem[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class:list={['flex flex-wrap items-center gap-2 text-sm', className]}>
+  {items.map((item, index) => {
+    const isLast = index === items.length - 1;
+    return (
+      <span class="flex items-center gap-2">
+        {index > 0 && (
+          <Icon name="chevron-right" size={14} className="text-ink/40" />
+        )}
+        {item.href && !isLast ? (
+          <a href={item.href} class="font-medium text-ink/60 transition-colors hover:text-ink">
+            {item.label}
+          </a>
+        ) : (
+          <span class="font-medium text-ink" aria-current="page">
+            {item.label}
+          </span>
+        )}
+      </span>
+    );
+  })}
+</nav>

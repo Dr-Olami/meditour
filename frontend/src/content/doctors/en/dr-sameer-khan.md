@@ -1,13 +1,13 @@
 ---
 locale: en
-name: Dr. Sameer Khan
+name: Dr. Srinivas Kunku
 specialty: Ear Nose Throat
-hospitalId: max-super-speciality-saket
-qualification: MBBS, MS (ENT), Fellowship in Endoscopic Sinus Surgery
+hospitalId: sparsh-hospital-hennur
+qualification: MBBS, MS (ENT)
 experienceYears: 15
-bio: Dr. Sameer Khan is an ENT surgeon specialising in functional endoscopic sinus surgery, sleep apnoea treatment, cochlear implants and thyroid surgery. He is known for clear communication and thorough pre-operative counselling for overseas patients.
+bio: Dr. Srinivas Kunku is a Senior Consultant ENT Surgeon at SPARSH Hospital, Hennur Road, Bangalore with over 15 years of clinical excellence. He specialises in endoscopic skull base surgery, reconstructive middle ear surgery, cochlear implants, functional endoscopic sinus surgery (FESS), ear micro surgery, microscopic voice surgery, nasal septum surgery, thyroid surgery and vocal cord surgery. He is known for precise surgical skills and compassionate patient interaction.
 languages:
   - English
   - Hindi
-  - Urdu
+  - Kannada
 ---

@@ -27,25 +27,48 @@ describe('schema.org helpers', () => {
       name: 'Dr. Rajesh Sharma',
       specialty: 'Cardiology',
       url: 'https://example.com/doctors/dr-rajesh-sharma',
-      hospitalName: 'Apollo Hospital, New Delhi',
+      hospitalName: 'Apollo Hospitals, Bannerghatta Road, Bangalore',
     });
     expect(json['@type']).toBe('Physician');
     expect((json.worksFor as Record<string, unknown>)['@type']).toBe('Hospital');
-    expect((json.worksFor as Record<string, unknown>).name).toBe('Apollo Hospital, New Delhi');
+    expect((json.worksFor as Record<string, unknown>).name).toBe('Apollo Hospitals, Bannerghatta Road, Bangalore');
   });
 
   it('hospital includes address and accreditations', () => {
     const json = hospital({
-      name: 'Apollo Hospital, New Delhi',
+      name: 'Apollo Hospitals, Bannerghatta Road, Bangalore',
       url: 'https://example.com/hospitals/apollo',
       description: 'A leading hospital.',
-      city: 'New Delhi',
+      city: 'Bangalore',
       country: 'India',
       accreditations: ['JCI'],
     });
     expect(json['@type']).toBe('Hospital');
-    expect((json.address as Record<string, string>).addressLocality).toBe('New Delhi');
+    expect((json.address as Record<string, string>).addressLocality).toBe('Bangalore');
     expect(json.accreditation).toEqual(['JCI']);
+  });
+
+  it('hospital includes extended SEO fields when provided', () => {
+    const json = hospital({
+      name: 'Apollo Hospitals, Bannerghatta Road, Bangalore',
+      url: 'https://example.com/hospitals/apollo',
+      description: 'A leading hospital.',
+      city: 'Bangalore',
+      country: 'India',
+      accreditations: ['JCI', 'NABH'],
+      address: '154/11, Bannerghatta Road, Bangalore - 560076',
+      phone: '+91-80-2630 4050',
+      email: 'info@apollohospitals.com',
+      website: 'https://www.apollohospitals.com',
+      establishedYear: 2007,
+      specialities: ['Cardiac Sciences', 'Oncology'],
+    });
+    expect((json.address as Record<string, string>).streetAddress).toBe('154/11, Bannerghatta Road, Bangalore - 560076');
+    expect(json.telephone).toBe('+91-80-2630 4050');
+    expect(json.email).toBe('info@apollohospitals.com');
+    expect(json.sameAs).toEqual(['https://www.apollohospitals.com']);
+    expect(json.foundingDate).toBe('2007');
+    expect(json.medicalSpecialty).toEqual(['Cardiac Sciences', 'Oncology']);
   });
 
   it('medicalProcedure captures procedure type', () => {

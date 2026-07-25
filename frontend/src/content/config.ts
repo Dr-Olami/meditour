@@ -31,6 +31,13 @@ const hospitals = defineCollection({
     image: z.string().optional(),
     gallery: z.array(z.string()).optional(),
     amenities: z.array(z.string()).optional(),
+    establishedYear: z.number().int().positive().optional(),
+    bedCount: z.number().int().positive().optional(),
+    specialities: z.array(z.string()).optional(),
+    address: z.string().optional(),
+    phone: z.string().optional(),
+    email: z.string().optional(),
+    website: z.string().optional(),
   }),
 });
 
@@ -44,6 +51,10 @@ const treatments = defineCollection({
     fromPrice: z.string().optional(),
     procedures: z.array(z.string()).optional(),
     relatedDoctorSlugs: z.array(z.string()).optional(),
+    relatedHospitalSlugs: z.array(z.string()).optional(),
+    duration: z.string().optional(),
+    hospitalStay: z.string().optional(),
+    recoveryTime: z.string().optional(),
     image: z.string().optional(),
   }),
 });

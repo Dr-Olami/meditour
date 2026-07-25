@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 import { Button } from '../atoms/Button';
-import { gsap } from 'gsap';
 
 export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
   brand: string;
@@ -18,30 +17,12 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
   ({ className, brand, links, cta, ...props }, ref) => {
     const [open, setOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
-    const headerRef = React.useRef<HTMLElement>(null);
-    const lastScrollY = React.useRef(0);
-    const prefersReducedMotion = React.useRef(false);
 
     React.useEffect(() => {
       const onScroll = () => {
-        const currentY = window.scrollY;
-        setScrolled(currentY > 24);
-
-        if (prefersReducedMotion.current || !headerRef.current) return;
-
-        const delta = currentY - lastScrollY.current;
-        if (currentY < 80) {
-          gsap.to(headerRef.current, { y: 0, duration: 0.3, ease: 'power2.out' });
-        } else if (delta > 8) {
-          gsap.to(headerRef.current, { y: -100, duration: 0.3, ease: 'power2.out' });
-        } else if (delta < -8) {
-          gsap.to(headerRef.current, { y: 0, duration: 0.3, ease: 'power2.out' });
-        }
-        lastScrollY.current = currentY;
+        setScrolled(window.scrollY > 24);
       };
 
-      const mql = window.matchMedia('(prefers-reduced-motion: no-preference)');
-      prefersReducedMotion.current = !mql.matches;
       window.addEventListener('scroll', onScroll, { passive: true });
       return () => window.removeEventListener('scroll', onScroll);
     }, []);
@@ -49,14 +30,7 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     return (
       <header
         className={cn('fixed top-0 left-0 right-0 z-fixed flex justify-center px-4 pt-3 transition-[padding] duration-fast ease-out-expo', className)}
-        ref={(node) => {
-          headerRef.current = node;
-          if (typeof ref === 'function') {
-            ref(node);
-          } else if (ref) {
-            (ref as React.MutableRefObject<HTMLElement | null>).current = node;
-          }
-        }}
+        ref={ref}
         {...props}
       >
         <nav

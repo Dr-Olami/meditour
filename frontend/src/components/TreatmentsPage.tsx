@@ -13,7 +13,7 @@ export interface TreatmentsPageProps {
 /**
  * Client-interactive treatments listing page with category FilterChips.
  */
-export function TreatmentsPage({ title, subtitle, filterAll, treatments, fromLabel }: TreatmentsPageProps) {
+export function TreatmentsPage({ title, subtitle, filterAll, treatments }: TreatmentsPageProps) {
   const categories = React.useMemo(() => {
     const unique = Array.from(
       new Set(
@@ -50,7 +50,7 @@ export function TreatmentsPage({ title, subtitle, filterAll, treatments, fromLab
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((treatment) => (
-          <TreatmentCard key={treatment.name} treatment={treatment} fromLabel={fromLabel} />
+          <TreatmentCard key={treatment.name} treatment={treatment} />
         ))}
       </div>
     </div>

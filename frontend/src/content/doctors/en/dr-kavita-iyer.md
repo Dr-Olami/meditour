@@ -1,13 +1,13 @@
 ---
 locale: en
-name: Dr. Kavita Iyer
+name: Dr. Shalini Shetty
 specialty: Ophthalmology
-hospitalId: apollo-hospital-delhi
-qualification: MBBS, MS (Ophthalmology), Fellowship in Cornea & Refractive Surgery
-experienceYears: 13
-bio: Dr. Kavita Iyer is an ophthalmologist specialising in cataract surgery, LASIK, corneal transplants and medical retina. She has helped numerous international patients restore vision through advanced, cost-effective eye care.
+hospitalId: apollo-hospitals-bannerghatta
+qualification: MBBS, MS (Ophthalmology), FRCS (UK)
+experienceYears: 17
+bio: Dr. Shalini Shetty is a highly experienced Ophthalmologist at Apollo Hospitals, Bannerghatta Road, Bangalore with 17 years of dedicated service in eye care. She specialises in age-related macular degeneration treatment, corneal ulcer treatment and comprehensive ophthalmic care. Her patient-centred approach and expertise in advanced eye care have helped numerous international patients restore vision through cost-effective treatment.
 languages:
   - English
   - Hindi
-  - Tamil
+  - Kannada
 ---

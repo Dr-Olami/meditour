@@ -4,16 +4,14 @@ import { Navbar } from '../../design-system/components/organisms/Navbar';
 import { Footer } from '../../design-system/components/organisms/Footer';
 import { DoctorCard } from '../../design-system/components/organisms/DoctorCard';
 import { LeadForm } from '../../design-system/components/organisms/LeadForm';
-import { CostEstimator } from '../../design-system/components/organisms/CostEstimator';
 import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
-import { getTreatments, getDoctors, getHospitals, resolveRelatedDoctors, resolveHospital, entrySlug } from '../../lib/content';
+import { getTreatments, getDoctors, getHospitals, resolveRelatedDoctors, resolveHospital, resolveRelatedHospitals, entrySlug } from '../../lib/content';
 import { medicalProcedure, breadcrumbs } from '../../lib/schema';
-import { parsePrice } from '../../lib/pricing';
-import { getTreatmentInquiryLink, getEstimateInquiryLink } from '../../lib/whatsapp';
-import { ACCOMMODATIONS } from '../../content/accommodations';
+import { getTreatmentInquiryLink } from '../../lib/whatsapp';
 import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
 import { LEAD_SOURCE } from '../../lib/crm';
 
@@ -38,15 +36,22 @@ export async function getStaticPaths() {
         hospitalHref: hospital?.href,
       };
     });
+    const relatedHospitals = resolveRelatedHospitals(entry.data.relatedHospitalSlugs, hospitals).map((h) => ({
+      name: h.data.name,
+      city: h.data.city,
+      image: h.data.image,
+      href: `/hospitals/${entrySlug(h)}`,
+    }));
     return {
       params: { slug: entrySlug(entry) },
-      props: { treatment: entry.data, related },
+      props: { treatment: entry.data, related, relatedHospitals, entry },
     };
   });
 }
 
 const t = getTranslations('en');
-const { treatment, related } = Astro.props;
+const { treatment, related, relatedHospitals, entry } = Astro.props;
+const { Content } = await entry.render();
 
 const navLinks = getNavLinks('en');
 
@@ -76,50 +81,41 @@ const treatmentOptions = allTreatments.map((entry) => ({
   value: entry.data.name,
   label: entry.data.name,
 }));
-const estimatorTreatmentOptions = allTreatments.map((entry) => ({
-  value: entry.data.name,
-  label: entry.data.name,
-  cost: parsePrice(entry.data.fromPrice),
-}));
-const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
-  value: a.value,
-  label: a.label,
-  cost: a.cost,
-}));
 ---
 
 <Layout title={title} description={description} locale="en" image={treatment.image} jsonLd={jsonLd}>
   <Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '/#contact' }} client:load />
 
   <main class="container py-24 md:py-28">
-    <a href="/treatments" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/60 hover:text-ink">
-      <Icon name="arrow-left" size={16} />
-      Back to treatments
-    </a>
+    <Breadcrumb
+      items={[
+        { label: t.nav.home, href: '/' },
+        { label: t.treatments.title, href: '/treatments' },
+        { label: treatment.name },
+      ]}
+      class="mb-6"
+      data-anim="fade-in-up"
+    />
 
     <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
       <div>
-        {treatment.category && (
-          <span class="mb-3 inline-block rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
-            {treatment.category}
-          </span>
-        )}
-        <h1 class="font-display text-4xl font-bold text-ink md:text-5xl">{treatment.name}</h1>
-        {treatment.fromPrice && (
-          <p class="mt-3 text-lg font-medium text-ink">
-            {t.treatments.detail.fromPrice.replace('{{price}}', treatment.fromPrice)}
-          </p>
-        )}
-
-        <div class="prose prose-ink mt-8 max-w-none">
+        <div data-anim="stagger-children">
+          {treatment.category && (
+            <span class="mb-3 inline-block rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
+              {treatment.category}
+            </span>
+          )}
+          <h1 class="font-display text-4xl font-bold text-ink md:text-5xl" data-anim="headline-reveal">{treatment.name}</h1>
+        </div>
+        <div class="prose prose-ink mt-8 max-w-none" data-anim="fade-in-up">
           <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.treatments.detail.description}</h2>
           <p class="text-ink/70 leading-relaxed">{treatment.description}</p>
         </div>
 
         {treatment.procedures && treatment.procedures.length > 0 && (
-          <div class="mt-10">
+          <div class="mt-12" data-anim="fade-in-up">
             <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.procedures}</h2>
-            <ul class="grid gap-3 sm:grid-cols-2">
+            <ul class="grid gap-3 sm:grid-cols-2" data-anim="stagger-cards">
               {treatment.procedures.map((procedure) => (
                 <li class="flex items-start gap-3 rounded-card border border-cream-300 bg-cream-100 p-4 text-sm text-ink/80">
                   <span class="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-violet-600" aria-hidden="true" />
@@ -130,12 +126,36 @@ const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
           </div>
         )}
 
-        <div class="mt-10 flex flex-wrap gap-4">
+        <div class="prose prose-ink mt-12 max-w-none" data-anim="scroll-reveal">
+          <Content />
+        </div>
+
+        {relatedHospitals.length > 0 && (
+          <div class="mt-12" data-anim="fade-in-up">
+            <h2 class="mb-4 font-display text-xl font-semibold text-ink">Treating Hospitals</h2>
+            <div class="grid gap-4 sm:grid-cols-2" data-anim="stagger-cards">
+              {relatedHospitals.map((h) => (
+                <a href={h.href} class="flex items-center gap-4 rounded-card border border-cream-300 bg-cream-100 p-4 transition-colors hover:border-cream-300/80 hover:bg-cream-200">
+                  {h.image && (
+                    <img src={h.image} alt={h.name} class="h-12 w-12 rounded-card object-cover" />
+                  )}
+                  <div>
+                    <p class="text-sm font-semibold text-ink">{h.name}</p>
+                    <p class="text-xs text-ink/50">{h.city}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="mt-12 flex flex-wrap gap-4" data-anim="fade-in-up">
           <a
             href={treatmentWhatsAppHref}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center gap-2 rounded-card bg-ink px-6 py-3 text-sm font-semibold text-white shadow-md hover:text-white"
+            data-anim="press-button"
           >
             <Icon name="whatsapp" size={18} />
             {t.treatments.detail.inquiryCta}
@@ -143,11 +163,41 @@ const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
         </div>
       </div>
 
-      <aside>
+      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <h2 class="mb-4 font-display text-lg font-semibold text-ink">Treatment Info</h2>
+          <dl class="space-y-3 text-sm" data-anim="stagger-children">
+            {treatment.category && (
+              <div class="flex justify-between gap-4">
+                <dt class="text-ink/50">Category</dt>
+                <dd class="font-medium text-ink/80">{treatment.category}</dd>
+              </div>
+            )}
+            {treatment.duration && (
+              <div class="flex justify-between gap-4">
+                <dt class="text-ink/50">Duration</dt>
+                <dd class="font-medium text-ink/80">{treatment.duration}</dd>
+              </div>
+            )}
+            {treatment.hospitalStay && (
+              <div class="flex justify-between gap-4">
+                <dt class="text-ink/50">Hospital Stay</dt>
+                <dd class="font-medium text-ink/80">{treatment.hospitalStay}</dd>
+              </div>
+            )}
+            {treatment.recoveryTime && (
+              <div class="flex justify-between gap-4">
+                <dt class="text-ink/50">Recovery Time</dt>
+                <dd class="font-medium text-ink/80">{treatment.recoveryTime}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
         {related.length > 0 && (
-          <div>
+          <div data-anim="fade-in-up">
             <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.relatedDoctors}</h2>
-            <div class="grid gap-4">
+            <div class="grid gap-4" data-anim="stagger-cards">
               {related.map((doctor: Doctor) => (
                 <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} />
               ))}
@@ -158,19 +208,7 @@ const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
     </div>
   </main>
 
-  <section class="bg-cream-100 py-20">
-    <div class="container max-w-4xl">
-      <h2 class="mb-6 text-center font-display text-3xl font-bold text-ink">Estimate your trip cost</h2>
-      <CostEstimator
-        client:load
-        treatments={estimatorTreatmentOptions}
-        accommodations={estimatorAccommodationOptions}
-        getQuoteHref={(treatmentLabel, total) => getEstimateInquiryLink(treatmentLabel, total)}
-      />
-    </div>
-  </section>
-
-  <section id="contact" class="bg-cream-200 py-20">
+  <section id="contact" class="bg-cream-200 py-20" data-anim="stagger-children">
     <div class="container grid gap-12 lg:grid-cols-2">
       <div>
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>

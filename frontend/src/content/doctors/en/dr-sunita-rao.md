@@ -1,13 +1,13 @@
 ---
 locale: en
-name: Dr. Sunita Rao
+name: Dr. Arpi Sagar Lodha
 specialty: Infertility Treatment
-hospitalId: max-super-speciality-saket
-qualification: MBBS, MD (Obstetrics & Gynaecology), Fellowship in Reproductive Medicine
-experienceYears: 14
-bio: Dr. Sunita Rao is a fertility specialist focused on IVF, ICSI, egg freezing and recurrent implantation failure. Her patient-centred approach and transparent pricing have made her a trusted choice for couples travelling to India for fertility care.
+hospitalId: sparsh-hospital-hennur
+qualification: MBBS, MS (Obstetrics & Gynaecology), Fellowship in Laparoscopy (Kiel University, Germany), Fellowship in Infertility
+experienceYears: 10
+bio: Dr. Arpi Sagar Lodha is a Consultant in Obstetrics and Gynaecology at SPARSH Hospital, Hennur Road, Bangalore with over 10 years of clinical experience. She specialises in infertility evaluation and treatment, laparoscopic and minimal access gynaecological surgeries, and reproductive health. Her areas of interest include natural birthing, high-risk pregnancies and the full spectrum of gynaecological care. She is known for her compassionate, patient-first approach.
 languages:
   - English
   - Hindi
-  - Telugu
+  - Kannada
 ---

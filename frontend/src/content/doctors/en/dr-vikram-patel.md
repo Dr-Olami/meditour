@@ -1,13 +1,13 @@
 ---
 locale: en
-name: Dr. Vikram Patel
+name: Dr. Deshpande Vasudevarao Rajakumar
 specialty: Neuro and Spine Surgery
-hospitalId: medanta-medicity-gurgaon
+hospitalId: fortis-hospital-bannerghatta
 qualification: MBBS, MS (General Surgery), MCh (Neurosurgery)
 experienceYears: 20
-bio: Dr. Vikram Patel is a neuro and spine surgeon skilled in brain tumour surgery, minimally invasive spine surgery and stroke interventions. He coordinates with Medanta's international desk to ensure seamless care for overseas patients.
+bio: Dr. Deshpande Vasudevarao Rajakumar is the Director of Neuro Surgery at Fortis Hospital, BG Road, Bangalore. He is a highly experienced neurosurgeon specialising in brain tumour surgery, minimally invasive spine surgery and complex neurosurgical procedures. He works closely with Fortis Hospital's international patient desk to ensure seamless care for overseas patients.
 languages:
   - English
   - Hindi
-  - Gujarati
+  - Kannada
 ---

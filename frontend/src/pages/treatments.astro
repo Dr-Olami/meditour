@@ -39,7 +39,6 @@ const treatments = treatmentEntries.map((entry) => ({
     title={t.treatments.title}
     subtitle={t.site.description}
     filterAll={t.doctors.filterAll}
-    fromLabel={t.treatments.detail.fromPrice.replace('{{price}}', '').trim() || 'From'}
     treatments={treatments}
     client:load
   />

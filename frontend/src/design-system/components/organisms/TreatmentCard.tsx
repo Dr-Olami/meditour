@@ -22,7 +22,7 @@ export interface TreatmentCardProps
  * Treatment / service card.
  */
 const TreatmentCard = React.forwardRef<HTMLDivElement, TreatmentCardProps>(
-  ({ className, treatment, fromLabel = 'From', ...props }, ref) => {
+  ({ className, treatment, ...props }, ref) => {
     return (
       <article
         className={cn(
@@ -42,11 +42,6 @@ const TreatmentCard = React.forwardRef<HTMLDivElement, TreatmentCardProps>(
         </div>
         <h3 className="text-xl font-semibold">{treatment.name}</h3>
         <p className="mb-4 flex-1 text-text-secondary">{treatment.description}</p>
-        {treatment.fromPrice && (
-          <p className="text-sm font-medium text-ink">
-            {fromLabel} {treatment.fromPrice}
-          </p>
-        )}
         {treatment.href ? (
           <Link href={treatment.href} className="mt-4 inline-block">
             Learn more

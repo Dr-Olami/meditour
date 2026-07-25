@@ -15,15 +15,12 @@ import { StatementSection } from '../design-system/components/organisms/Statemen
 import { FloatingConsultCTA } from '../design-system/components/organisms/FloatingConsultCTA';
 import { StatCounter } from '../design-system/components/organisms/StatCounter';
 import { LeadForm } from '../design-system/components/organisms/LeadForm';
-import { CostEstimator } from '../design-system/components/organisms/CostEstimator';
 import { WhatsAppCTA } from '../design-system/components/organisms/WhatsAppCTA';
 import { LanguageSwitcher } from '../design-system/components/organisms/LanguageSwitcher';
 import { ServiceCardsSection } from '../design-system/components/organisms/ServiceCardsSection';
 import { Icon } from '../design-system/components/atoms/Icon';
 import { Link } from '../design-system/components/atoms/Link';
-import { parsePrice } from '../lib/pricing';
-import { getInquiryLink, getEstimateInquiryLink } from '../lib/whatsapp';
-import { ACCOMMODATIONS } from '../content/accommodations';
+import { getInquiryLink } from '../lib/whatsapp';
 import { LEAD_SOURCE } from '../lib/crm';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../design-system/components/organisms/HospitalCard';
@@ -87,18 +84,6 @@ const stats = [
 ];
 
 const treatmentOptions = treatments.map((tx) => ({ value: tx.name, label: tx.name }));
-const treatmentFromLabel = locale === 'bn' ? 'থেকে' : 'From';
-
-const estimatorTreatmentOptions = treatments.map((tx) => ({
-  value: tx.name,
-  label: tx.name,
-  cost: parsePrice(tx.fromPrice),
-}));
-const estimatorAccommodationOptions = ACCOMMODATIONS.map((a) => ({
-  value: a.value,
-  label: a.label,
-  cost: a.cost,
-}));
 
 const whatsappInquiryHref = getInquiryLink();
 
@@ -179,7 +164,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
       {treatments.slice(0, 3).map((treatment) => (
-        <TreatmentCard treatment={treatment} fromLabel={treatmentFromLabel} data-anim="card-hover" />
+        <TreatmentCard treatment={treatment} data-anim="card-hover" />
       ))}
     </div>
   </div>
@@ -233,21 +218,6 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   <div class="container max-w-3xl">
     <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">{t.faq.title}</h2>
     <FAQAccordion items={faq} />
-  </div>
-</section>
-
-<!-- Cost estimator -->
-<section class="bg-cream-100 py-20" data-anim="scroll-reveal">
-  <div class="container max-w-4xl">
-    <h2 class="mb-6 text-center font-display text-3xl font-bold text-ink" data-anim="fade-in-up">
-      {locale === 'bn' ? 'আপনার ভ্রমণের ব্যয় অনুমান করুন' : 'Estimate your trip cost'}
-    </h2>
-    <CostEstimator
-      client:load
-      treatments={estimatorTreatmentOptions}
-      accommodations={estimatorAccommodationOptions}
-      getQuoteHref={(treatmentLabel, total) => getEstimateInquiryLink(treatmentLabel, total)}
-    />
   </div>
 </section>
 

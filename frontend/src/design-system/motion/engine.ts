@@ -88,7 +88,7 @@ function runScrollReveal(scope: HTMLElement): gsap.core.Tween[] {
 
 function runStaggerChildren(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
-  scope.querySelectorAll<HTMLElement>('[data-animagger-children"]').forEach((container) => {
+  scope.querySelectorAll<HTMLElement>('[data-anim~="stagger-children"]').forEach((container) => {
     const children = Array.from(container.children).filter(
       (child) => !(child as HTMLElement).hasAttribute('data-anim-exclude')
     ) as HTMLElement[];

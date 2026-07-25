@@ -1,13 +1,13 @@
 ---
 locale: en
-name: Dr. Ananya Sen
+name: Dr. Sreedhara V
 specialty: Bariatric (Weight Loss)
-hospitalId: apollo-hospital-delhi
-qualification: MBBS, MS (General Surgery), Fellowship in Bariatric Surgery
-experienceYears: 12
-bio: Dr. Ananya Sen is a bariatric and metabolic surgeon specialising in gastric bypass, sleeve gastrectomy and revisional bariatric procedures. She combines surgical expertise with long-term dietary and lifestyle support for international patients.
+hospitalId: apollo-hospitals-bannerghatta
+qualification: MBBS, MS, DNB, MCh (GI Surgery), Fellowship in Robotic Surgery
+experienceYears: 20
+bio: Dr. Sreedhara V is the Director of Minimal Access and Robotic Surgery at Apollo Hospitals, Bannerghatta Road, Bengaluru. He is one of India's leading robotic and laparoscopic surgical gastroenterologists with over 530 robotic procedures performed. His expertise includes upper GI and bariatric surgery, having performed more than 500 bariatric surgeries. He combines surgical precision with long-term dietary and lifestyle support for international patients.
 languages:
   - English
   - Hindi
-  - Bengali
+  - Kannada
 ---
