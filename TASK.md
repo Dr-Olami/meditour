@@ -126,3 +126,25 @@
 - [x] Authenticated with Vercel CLI and deployed to production: https://meditour-zeta.vercel.app
 - [ ] Add environment variables in Vercel project settings: `CRM_API_URL`, `CRM_API_KEY`, `PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_CONTACT_EMAIL`.
 - [ ] Connect GitHub repo for auto-deploy on push.
+
+## Breadcrumb UI + Scroll Animations on Detail Pages — COMPLETE (2026-07-25)
+
+- [x] Created `Breadcrumb.astro` component (accessible `nav[aria-label="Breadcrumb"]`, chevron separators, `aria-current="page"` on last item).
+- [x] Replaced "back link" on all detail pages with visible `Breadcrumb` UI:
+  - `src/pages/treatments/[slug].astro` (EN)
+  - `src/pages/bn/treatments/[slug].astro` (BN)
+  - `src/pages/hospitals/[slug].astro` (EN)
+  - `src/pages/bn/hospitals/[slug].astro` (BN)
+  - `src/pages/doctors/[slug].astro` (EN)
+  - `src/pages/bn/doctors/[slug].astro` (BN)
+  - `src/design-system/components/organisms/BlogPostLayout.astro` (EN + BN blog via `breadcrumbItems` prop)
+- [x] Fixed import syntax: changed `import { Breadcrumb }` → `import Breadcrumb` (Astro components are default exports) across all 7 files.
+- [x] Fixed corrupted `stagger-children` selector in `engine.ts` line 91 (`[data-animagger-children"]` → `[data-anim~="stagger-children"]`).
+- [x] Added `data-anim` attributes to all detail pages for scroll-triggered reveal animations:
+  - `data-anim="fade-in-up"` — breadcrumbs, description sections, CTAs, sidebars, related sections
+  - `data-anim="headline-reveal"` — all `<h1>` headings (word-split stagger)
+  - `data-anim="stagger-children"` — header areas, `<dl>` info lists, CTA sections (children stagger in sequence)
+  - `data-anim="stagger-cards"` — procedure lists, hospital/doctor card grids, gallery images
+  - `data-anim="scroll-reveal"` — markdown content sections, cover images
+  - `data-anim="press-button"` — all CTA buttons (WhatsApp, book appointment, inquiry)
+- [x] Fixed hospital page layout bug: `data-anim="stagger-children"` wrapper was replacing the left column `<div>`, pushing About/Specialities/Content/Amenities sections outside the grid. Added nested wrapper `<div data-anim="stagger-children">` inside the original left column `<div>` on both EN and BN hospital pages.
