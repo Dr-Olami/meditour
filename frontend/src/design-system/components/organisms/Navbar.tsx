@@ -18,6 +18,9 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     const [open, setOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
 
+    // Reason: derive initials from brand for mobile logo transition
+    const initials = brand.split(' ').map((w) => w[0]).join('');
+
     React.useEffect(() => {
       const onScroll = () => {
         setScrolled(window.scrollY > 24);
@@ -40,9 +43,36 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           )}
           aria-label="Main"
         >
-          {/* Brand */}
-          <a href="/" className="text-base font-display font-bold tracking-tight text-ink no-underline">
-            {brand}
+          {/* Brand — animates to initials on mobile when scrolled */}
+          <a
+            href="/"
+            className="relative flex items-center text-base font-display font-bold tracking-tight text-ink no-underline md:text-base"
+            aria-label={brand}
+          >
+            {/* Full text — visible on desktop always, animates out on mobile scroll */}
+            <span
+              className={cn(
+                'transition-all duration-500 ease-out-expo md:opacity-100 md:max-w-none md:translate-x-0',
+                scrolled
+                  ? 'max-w-0 opacity-0 translate-x-1 md:max-w-none md:opacity-100 md:translate-x-0'
+                  : 'max-w-[12rem] opacity-100 translate-x-0'
+              )}
+              style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
+            >
+              {brand}
+            </span>
+            {/* Initials — hidden on desktop, animates in on mobile scroll */}
+            <span
+              className={cn(
+                'absolute left-0 transition-all duration-500 ease-out-expo md:hidden',
+                scrolled
+                  ? 'opacity-100 scale-100 translate-x-0'
+                  : 'opacity-0 scale-75 -translate-x-1'
+              )}
+              style={{ transitionDelay: scrolled ? '150ms' : '0ms' }}
+            >
+              <span className="text-lg font-extrabold">{initials}</span>
+            </span>
           </a>
 
           {/* Desktop links — centered */}
