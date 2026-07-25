@@ -92,8 +92,19 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           {/* CTA / Login */}
           <div className="flex items-center gap-3">
             {cta && (
-              <Button asChild size="sm" variant="outline" className="rounded-pill">
-                <a href={cta.href}>{cta.label}</a>
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className={cn(
+                  'rounded-pill transition-all duration-500 ease-out-expo md:opacity-100 md:max-w-none md:translate-x-0',
+                  scrolled
+                    ? 'max-w-[10rem] opacity-100 translate-x-0'
+                    : 'max-w-0 opacity-0 translate-x-2 md:max-w-none md:opacity-100 md:translate-x-0'
+                )}
+                style={{ overflow: 'hidden', transitionDelay: scrolled ? '200ms' : '0ms' }}
+              >
+                <a href={cta.href} className="whitespace-nowrap">{cta.label}</a>
               </Button>
             )}
             {/* Mobile hamburger */}
@@ -119,13 +130,13 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
 
         {/* Mobile dropdown */}
         {open && (
-          <div className="absolute top-full left-4 right-4 mt-2 rounded-2xl bg-cream-200/95 backdrop-blur-md shadow-lg md:hidden">
+          <div className="absolute top-full left-4 right-4 mt-2 rounded-2xl bg-white shadow-lg md:hidden">
             <ul className="flex flex-col gap-1 p-4">
-              {links.map((link) => (
-                <li key={link.href}>
+              {links.map((link, index) => (
+                <li key={link.href} className={index > 0 ? 'border-t border-cream-200 pt-1' : ''}>
                   <a
                     href={link.href}
-                    className="block rounded-xl px-4 py-3 text-sm text-ink no-underline transition-colors hover:bg-cream-300"
+                    className="block rounded-xl px-4 py-3.5 text-base font-medium text-ink no-underline transition-colors hover:bg-cream-200"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
