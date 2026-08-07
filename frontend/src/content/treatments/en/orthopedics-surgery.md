@@ -4,6 +4,7 @@ name: Orthopedics Surgery
 category: Orthopaedics
 description: Knee and hip replacements, spine surgery, arthroscopy, sports injury repair and rehabilitation at centres of excellence.
 fromPrice: '$2,500'
+toPrice: '$8,000'
 procedures:
   - Total knee replacement
   - Total hip replacement
@@ -12,17 +13,29 @@ procedures:
   - Arthroscopy
 relatedDoctorSlugs:
   - dr-arun-kumar
+  - dr-sunil-g-kini
+  - dr-samarth-arya
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
 duration: '1-3 hours'
 hospitalStay: '2-5 days'
 recoveryTime: '2-12 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Is robotic-assisted joint replacement available in Bangalore?"
+    answer: "Yes, robotic-assisted joint replacement is available at our partner hospitals using systems that provide 3D planning and haptic-guided precision for implant positioning. This technology enhances accuracy beyond what is achievable with conventional or computer-navigated techniques, leading to better alignment and potentially longer implant life."
+  - question: "How soon can I walk after hip replacement surgery?"
+    answer: "Most patients are encouraged to stand and walk with assistance within 24 hours of hip replacement surgery. With the anterior (muscle-sparing) approach, full weight-bearing is often permitted immediately. Independent walking typically resumes within 1-2 weeks, with full recovery in 4-8 weeks depending on the surgical approach and individual rehabilitation progress."
+  - question: "What is the success rate of knee replacement surgery?"
+    answer: "Total knee replacement at our partner hospitals has a success rate of over 95% with significant pain relief and functional improvement. Implant longevity is typically 15-20 years with proper care. Computer-navigated and robotic-assisted techniques improve alignment accuracy, which contributes to better long-term outcomes."
 ---
 
 ## Overview
+
+> **Summary:** Orthopaedic surgery in Bangalore offers knee and hip replacements, ACL reconstruction, spine surgery and arthroscopy at JCI-accredited hospitals with computer-navigated and robotic-assisted technology. Costs range from $2,500 to $8,000 — 60-80% less than in Western countries — with comprehensive rehabilitation programmes and surgery typically scheduled within 1-2 weeks.
 
 Orthopaedic surgery at our partner hospitals in Bangalore covers the full range of musculoskeletal care — from joint replacements and sports medicine to complex spine surgery and trauma management. Our network includes **SPARSH Hospital**, a specialist orthopaedic and trauma care facility known for its excellence in joint replacement and arthroscopy.
 
@@ -74,6 +87,16 @@ Minimally invasive keyhole surgery for joint problems — shoulder rotator cuff 
 - **3D-printed patient-specific implants** for complex joint reconstruction
 - **Comprehensive rehabilitation** centres with advanced physiotherapy equipment
 - **Bone density scanning** (DEXA) for osteoporosis assessment
+
+## Cost Comparison
+
+| Country | Approximate Cost (Orthopaedic Surgery) |
+|---------|----------------------------------------|
+| India (Bangalore) | $2,500 – $8,000 |
+| USA | $30,000 – $60,000 |
+| UK | £20,000 – £40,000 |
+| Singapore | $18,000 – $35,000 |
+| Thailand | $12,000 – $25,000 |
 
 ## Why Choose Bangalore for Orthopaedic Care?
 

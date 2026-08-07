@@ -37,6 +37,12 @@ interface PhysicianInput {
   image?: string;
   hospitalName: string;
   hospitalUrl?: string;
+  knowsAbout?: string[];
+  alumniOf?: string;
+  award?: string[];
+  qualification?: string;
+  yearsExperience?: number;
+  languages?: string[];
 }
 
 /**
@@ -52,6 +58,12 @@ export function physician(data: PhysicianInput): WithContext<Record<string, unkn
       name: data.hospitalName,
       ...(data.hospitalUrl ? { url: data.hospitalUrl } : {}),
     }),
+    ...(data.knowsAbout?.length ? { knowsAbout: data.knowsAbout } : {}),
+    ...(data.alumniOf ? { alumniOf: data.alumniOf } : {}),
+    ...(data.award?.length ? { award: data.award } : {}),
+    ...(data.qualification ? { qualification: data.qualification } : {}),
+    ...(data.yearsExperience !== undefined ? { hasCredential: `Years of experience: ${data.yearsExperience}` } : {}),
+    ...(data.languages?.length ? { knowsLanguage: data.languages } : {}),
   });
 }
 
@@ -167,5 +179,76 @@ export function breadcrumbs(items: BreadcrumbItem[]): WithContext<Record<string,
       name: item.name,
       item: item.url,
     })),
+  });
+}
+
+interface FAQInput {
+  entries: { question: string; answer: string }[];
+}
+
+/**
+ * Build a FAQPage JSON-LD object for pages with FAQ content.
+ */
+export function faqPage(data: FAQInput): WithContext<Record<string, unknown>> {
+  return thing('FAQPage', {
+    mainEntity: data.entries.map((entry) => ({
+      '@type': 'Question',
+      name: entry.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: entry.answer,
+      },
+    })),
+  });
+}
+
+interface MedicalConditionInput {
+  name: string;
+  description?: string;
+  possibleTreatment?: string;
+}
+
+/**
+ * Build a MedicalCondition JSON-LD object for treatment pages.
+ */
+export function medicalCondition(data: MedicalConditionInput): WithContext<Record<string, unknown>> {
+  return thing('MedicalCondition', {
+    name: data.name,
+    ...(data.description ? { description: data.description } : {}),
+    ...(data.possibleTreatment ? { possibleTreatment: data.possibleTreatment } : {}),
+  });
+}
+
+interface MedicalWebPageInput {
+  name: string;
+  url: string;
+  description: string;
+  image?: string;
+  dateModified?: string;
+  about?: Record<string, unknown>;
+  mainEntity?: Record<string, unknown>;
+  audience?: string;
+  inLanguage?: string;
+  specialty?: string;
+}
+
+/**
+ * Build a MedicalWebPage JSON-LD object for treatment detail pages.
+ *
+ * Wraps the page-level medical content so AI/geo engines can identify the
+ * page as a medical resource with structured metadata.
+ */
+export function medicalWebPage(data: MedicalWebPageInput): WithContext<Record<string, unknown>> {
+  return thing('MedicalWebPage', {
+    name: data.name,
+    url: data.url,
+    description: data.description,
+    ...(data.image ? { image: data.image } : {}),
+    ...(data.dateModified ? { dateModified: data.dateModified } : {}),
+    ...(data.about ? { about: data.about } : {}),
+    ...(data.mainEntity ? { mainEntity: data.mainEntity } : {}),
+    ...(data.audience ? { audience: { '@type': 'MedicalAudience', name: data.audience } } : {}),
+    ...(data.inLanguage ? { inLanguage: data.inLanguage } : {}),
+    ...(data.specialty ? { medicalSpecialty: data.specialty } : {}),
   });
 }

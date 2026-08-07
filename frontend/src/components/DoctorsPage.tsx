@@ -7,6 +7,7 @@ export interface DoctorsPageProps {
   subtitle: string;
   filterAll: string;
   bookCta: string;
+  whatsappCta?: string;
   doctors: Doctor[];
 }
 
@@ -14,7 +15,7 @@ export interface DoctorsPageProps {
  * Client-interactive Doctors listing page with specialty FilterChips.
  * Rendered as a React island (client:load) so filtering works without JS SSR.
  */
-export function DoctorsPage({ title, subtitle, filterAll, bookCta, doctors }: DoctorsPageProps) {
+export function DoctorsPage({ title, subtitle, filterAll, bookCta, whatsappCta, doctors }: DoctorsPageProps) {
   const specialties = React.useMemo(() => {
     const unique = Array.from(new Set(doctors.map((d) => d.specialty)));
     return [filterAll, ...unique];
@@ -45,10 +46,10 @@ export function DoctorsPage({ title, subtitle, filterAll, bookCta, doctors }: Do
         className="mb-10"
       />
 
-      {/* Doctor grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Doctor grid — horizontal cards need more width, so max 2 per row */}
+      <div className="grid gap-6 lg:grid-cols-2">
         {filtered.map((doctor) => (
-          <DoctorCard key={doctor.name} doctor={doctor} bookLabel={bookCta} />
+          <DoctorCard key={doctor.name} doctor={doctor} bookLabel={bookCta} whatsappLabel={whatsappCta} />
         ))}
       </div>
     </div>

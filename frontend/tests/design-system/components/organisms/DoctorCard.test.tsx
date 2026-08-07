@@ -10,6 +10,7 @@ const DOCTOR = {
   qualification: 'MBBS, MD',
   experienceYears: 22,
   href: '/doctors/dr-rajesh-sharma',
+  whatsappHref: 'https://wa.me/8801611892986?text=Hi',
 };
 
 describe('DoctorCard', () => {
@@ -20,10 +21,13 @@ describe('DoctorCard', () => {
     expect(screen.getByText(DOCTOR.qualification)).toBeInTheDocument();
   });
 
-  it('renders a link to the doctor detail page on the whole card', () => {
+  it('links the portrait and name to the doctor detail page', () => {
     render(<DoctorCard doctor={DOCTOR} />);
-    const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', DOCTOR.href);
+    const links = screen
+      .getAllByRole('link')
+      .filter((l) => l.getAttribute('href') === DOCTOR.href);
+    // portrait link, name link, and Book Now CTA all point to the profile
+    expect(links.length).toBeGreaterThanOrEqual(3);
   });
 
   it('renders experience years fallback when no experience string is provided', () => {
@@ -40,5 +44,25 @@ describe('DoctorCard', () => {
   it('renders initials fallback when no avatar is provided', () => {
     render(<DoctorCard doctor={DOCTOR} />);
     expect(screen.getByText('D')).toBeInTheDocument();
+  });
+
+  it('renders the portrait image with object-top cropping when avatar is provided', () => {
+    render(<DoctorCard doctor={{ ...DOCTOR, avatar: '/images/doctors/dr-rajesh-sharma.webp' }} />);
+    const img = screen.getByRole('img', { name: DOCTOR.name });
+    expect(img).toHaveAttribute('src', '/images/doctors/dr-rajesh-sharma.webp');
+    expect(img.className).toContain('object-top');
+  });
+
+  it('renders a WhatsApp CTA when whatsappHref is provided', () => {
+    render(<DoctorCard doctor={DOCTOR} whatsappLabel="WhatsApp" />);
+    const whatsapp = screen.getByRole('link', { name: /whatsapp/i });
+    expect(whatsapp).toHaveAttribute('href', DOCTOR.whatsappHref);
+    expect(whatsapp).toHaveAttribute('target', '_blank');
+  });
+
+  it('omits the WhatsApp CTA when whatsappHref is missing', () => {
+    const { whatsappHref, ...doctor } = DOCTOR;
+    render(<DoctorCard doctor={doctor} />);
+    expect(screen.queryByRole('link', { name: /whatsapp/i })).not.toBeInTheDocument();
   });
 });

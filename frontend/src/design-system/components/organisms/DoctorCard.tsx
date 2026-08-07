@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
+import { Icon } from '../atoms/Icon';
 
 export interface Doctor {
   name: string;
@@ -11,103 +12,134 @@ export interface Doctor {
   experienceYears?: number;
   avatar?: string;
   href?: string;
+  whatsappHref?: string;
 }
 
-export interface DoctorCardProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface DoctorCardProps extends React.HTMLAttributes<HTMLElement> {
   doctor: Doctor;
   bookLabel?: string;
+  whatsappLabel?: string;
 }
 
 /**
- * Doctor profile card with avatar, specialty badge, and a consultation CTA.
- * The entire card is a link so the whole surface is clickable.
+ * Doctor profile card in a horizontal split layout: a full-height portrait
+ * panel on the left, and name, specialty, qualification, hospital and
+ * experience on the right, with "Book Now" + WhatsApp CTAs at the bottom.
+ * Stacks vertically (photo on top) on small screens.
  */
-const DoctorCard = React.forwardRef<HTMLAnchorElement, DoctorCardProps>(
-  ({ className, doctor, bookLabel = 'Request appointment', ...props }, ref) => {
+const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
+  (
+    { className, doctor, bookLabel = 'Request appointment', whatsappLabel = 'WhatsApp', ...props },
+    ref
+  ) => {
+    const profileHref = doctor.href ?? '#contact';
     return (
-      <a
-        href={doctor.href ?? '#contact'}
+      <article
         className={cn(
-          'group flex flex-col rounded-card border border-cream-300 bg-cream-100 p-5 shadow-base transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500',
+          'group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-cream-100 shadow-base transition-shadow hover:shadow-lg sm:flex-row',
           className
         )}
         ref={ref}
         data-anim="tilt-card"
         {...props}
       >
-        {/* Avatar */}
-        <div className="mb-4 flex items-center gap-4">
+        {/* Portrait panel — object-top keeps faces from being cropped */}
+        <a
+          href={profileHref}
+          aria-label={doctor.name}
+          className="relative block h-52 w-full shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 sm:h-auto sm:w-2/5"
+        >
           {doctor.avatar ? (
             <img
               src={doctor.avatar}
               alt={doctor.name}
-              className="h-16 w-16 rounded-full object-cover"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-top"
             />
           ) : (
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-ink text-xl font-bold text-cream-100">
+            <div className="flex h-full w-full items-center justify-center bg-ink font-display text-4xl font-bold text-cream-100">
               {doctor.name.charAt(0)}
             </div>
           )}
-          <div>
-            <h3 className="font-display text-lg font-bold leading-tight text-ink">
+        </a>
+
+        {/* Details */}
+        <div className="flex flex-1 flex-col p-5">
+          <span className="inline-block self-start rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
+            {doctor.specialty}
+          </span>
+
+          <h3 className="mt-3 font-display text-lg font-bold leading-tight text-ink">
+            <a
+              href={profileHref}
+              className="transition-colors hover:text-violet-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+            >
               {doctor.name}
-            </h3>
-            {doctor.qualification && (
-              <p className="text-xs text-ink/50">{doctor.qualification}</p>
+            </a>
+          </h3>
+
+          {doctor.qualification && (
+            <p className="mt-1 line-clamp-2 text-xs text-ink/50">{doctor.qualification}</p>
+          )}
+
+          <div className="mt-3 space-y-1.5">
+            {doctor.hospitalName && (
+              <p className="flex items-start gap-1.5 text-sm text-ink/60">
+                <Icon name="map-pin" size={14} className="mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{doctor.hospitalName}</span>
+              </p>
+            )}
+            {doctor.experience && (
+              <p className="flex items-start gap-1.5 text-sm text-ink/50">
+                {/* Clock icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                <span>{doctor.experience}</span>
+              </p>
+            )}
+            {!doctor.experience && doctor.experienceYears !== undefined && (
+              <p className="flex items-start gap-1.5 text-sm text-ink/50">
+                {/* Clock icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                <span>{doctor.experienceYears} years experience</span>
+              </p>
+            )}
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-auto flex items-stretch gap-2 pt-4">
+            <a
+              href={profileHref}
+              className="flex flex-1 items-center justify-between rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 py-2 pl-4 pr-2 text-sm font-semibold text-white no-underline shadow-md transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+            >
+              <span>{bookLabel}</span>
+              {/* Circular arrow badge */}
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+            {doctor.whatsappHref && (
+              <a
+                href={doctor.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${whatsappLabel} — ${doctor.name}`}
+                className="flex items-center justify-center gap-1.5 rounded-card border border-ink/20 px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+              >
+                <Icon name="whatsapp" size={16} aria-hidden="true" />
+                <span className="hidden xl:inline">{whatsappLabel}</span>
+              </a>
             )}
           </div>
         </div>
-
-        {/* Specialty badge */}
-        <span className="inline-block self-start rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
-          {doctor.specialty}
-        </span>
-
-        {/* Meta */}
-        <div className="mt-3 space-y-1">
-          {doctor.hospitalName && (
-            <p className="text-sm text-ink/60">
-              {doctor.hospitalHref ? (
-                <span className="inline-flex items-center gap-1">
-                  {doctor.hospitalName}
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </span>
-              ) : (
-                doctor.hospitalName
-              )}
-            </p>
-          )}
-          {doctor.experience && (
-            <p className="text-sm text-ink/50">{doctor.experience}</p>
-          )}
-          {!doctor.experience && doctor.experienceYears !== undefined && (
-            <p className="text-sm text-ink/50">{doctor.experienceYears} years experience</p>
-          )}
-        </div>
-
-        {/* CTA — gradient "Book Now" + circular arrow badge */}
-        <span className="mt-5 inline-flex w-full items-center justify-between rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 pl-5 pr-2 py-2 text-sm font-semibold text-white no-underline shadow-md transition-opacity group-hover:opacity-90">
-          <span>{bookLabel}</span>
-          {/* Circular arrow badge */}
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </span>
-        </span>
-      </a>
+      </article>
     );
   }
 );

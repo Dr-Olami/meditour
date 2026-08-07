@@ -4,6 +4,7 @@ name: Neuro and Spine Surgery
 category: Neurosurgery
 description: Brain tumour surgery, spine fixation, minimally invasive spine procedures, stroke interventions and comprehensive neuro-rehabilitation.
 fromPrice: '$4,000'
+toPrice: '$12,000'
 procedures:
   - Brain tumour surgery
   - Spinal fusion
@@ -12,6 +13,7 @@ procedures:
   - Neuro-rehabilitation
 relatedDoctorSlugs:
   - dr-vikram-patel
+  - dr-s-vidyadhara
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -20,9 +22,18 @@ duration: '2-8 hours'
 hospitalStay: '3-10 days'
 recoveryTime: '2-12 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Is minimally invasive spine surgery available in Bangalore?"
+    answer: "Yes, our partner hospitals in Bangalore offer minimally invasive spine surgery (MISS) including microdiscectomy, endoscopic spine surgery, and percutaneous pedicle screw fixation. These techniques result in smaller incisions, less muscle damage, reduced blood loss, and faster recovery compared to traditional open spine surgery."
+  - question: "What is the success rate of brain tumour surgery?"
+    answer: "Brain tumour surgery success rates at our partner hospitals are comparable to international standards, with gross total resection achieved in over 85% of accessible tumours. Outcomes depend on tumour type, location, and patient health. The use of neuronavigation, intra-operative MRI, and 5-ALA fluorescence guidance maximises safe resection."
+  - question: "Is deep brain stimulation (DBS) available for Parkinson's disease?"
+    answer: "Yes, deep brain stimulation (DBS) is available for Parkinson's disease, essential tremor, and dystonia. The procedure involves implanting electrodes in specific brain nuclei with an externally programmable pulse generator. Our partner hospitals have dedicated movement disorder specialists and neurosurgical teams experienced in DBS implantation."
 ---
 
 ## Overview
+
+> **Summary:** Neuro and spine surgery in Bangalore covers brain tumour resection, spinal fusion, disc replacement, stroke thrombectomy and deep brain stimulation at JCI-accredited hospitals equipped with neuronavigation, intra-operative MRI and neurophysiological monitoring. Costs range from $4,000 to $12,000 — 60-80% less than in Western countries — with experienced sub-specialty teams and comprehensive neuro-rehabilitation programmes.
 
 Neuro and spine surgery at our partner hospitals in Bangalore encompasses advanced surgical treatment for brain tumours, spinal disorders, stroke and neurovascular conditions. The neurosurgery teams include specialists in **neuro-oncology**, **spine surgery**, **neurovascular surgery** and **functional neurosurgery**.
 
@@ -71,6 +82,16 @@ Implantation of electrodes in specific brain nuclei for movement disorders — P
 - **3 Tesla MRI** with functional MRI and tractography for brain mapping
 - **Dedicated neuro-ICU** with continuous ICP and brain tissue oxygen monitoring
 - **Stereotactic radiosurgery** (CyberKnife/Gamma Knife) for non-invasive tumour treatment
+
+## Cost Comparison
+
+| Country | Approximate Cost (Neuro & Spine Surgery) |
+|---------|------------------------------------------|
+| India (Bangalore) | $4,000 – $12,000 |
+| USA | $50,000 – $150,000 |
+| UK | £30,000 – £90,000 |
+| Singapore | $30,000 – $80,000 |
+| Thailand | $20,000 – $50,000 |
 
 ## Why Choose Bangalore for Neurosurgery?
 

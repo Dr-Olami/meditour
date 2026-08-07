@@ -4,6 +4,7 @@ name: Bariatric (Weight Loss)
 category: Surgery
 description: Safe, evidence-based weight-loss surgery including gastric bypass, sleeve gastrectomy and revisional procedures, supported by long-term dietary care.
 fromPrice: '$4,500'
+toPrice: '$9,000'
 procedures:
   - Gastric bypass
   - Sleeve gastrectomy
@@ -12,6 +13,7 @@ procedures:
   - Nutritional counselling
 relatedDoctorSlugs:
   - dr-ananya-sen
+  - dr-sumit-talwar
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -20,9 +22,18 @@ duration: '1-3 hours'
 hospitalStay: '2-4 days'
 recoveryTime: '2-4 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Am I eligible for bariatric surgery?"
+    answer: "You may be eligible for bariatric surgery if your BMI is 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension, or sleep apnoea, or if your BMI is 40 or higher without comorbidities. Eligibility is determined through a comprehensive evaluation including medical history, nutritional assessment, and psychological screening by the bariatric team."
+  - question: "Will I need to take supplements after gastric bypass?"
+    answer: "Yes, lifelong vitamin and mineral supplementation is required after gastric bypass surgery due to reduced nutrient absorption. This typically includes multivitamins, calcium, iron, vitamin B12, and vitamin D. The bariatric team provides personalised supplementation protocols and monitors nutrient levels through regular blood tests."
+  - question: "Is revisional bariatric surgery available?"
+    answer: "Yes, revisional bariatric surgery is available for patients who have experienced inadequate weight loss, weight regain, or complications from a previous bariatric procedure. Options include band-to-sleeve conversion, sleeve-to-bypass conversion, and revision of dilated gastric pouches. These procedures require specialised expertise and careful pre-operative evaluation."
 ---
 
 ## Overview
+
+> **Summary:** Bariatric surgery in Bangalore offers safe, evidence-based weight-loss procedures including gastric bypass, sleeve gastrectomy and revisional surgery, performed laparoscopically by multidisciplinary teams at JCI-accredited hospitals. Costs range from $4,500 to $9,000 — 60-80% savings compared to Western countries — with comprehensive long-term dietary, nutritional and psychological support programmes.
 
 Bariatric surgery at our partner hospitals in Bangalore offers safe, evidence-based weight-loss procedures for patients with severe obesity and related metabolic conditions. The bariatric teams include **laparoscopic surgeons**, **bariatric physicians**, **dietitians** and **psychologists** working together to ensure long-term success.
 
@@ -68,6 +79,16 @@ Correction or conversion of previous bariatric procedures that have failed or ca
 - **Dedicated bariatric surgery suites** with specialised equipment
 - **Comprehensive metabolic monitoring** pre and post-surgery
 - **Dietary analysis software** for personalised nutrition plans
+
+## Cost Comparison
+
+| Country | Approximate Cost (Bariatric Surgery) |
+|---------|--------------------------------------|
+| India (Bangalore) | $4,500 – $9,000 |
+| USA | $15,000 – $30,000 |
+| UK | £10,000 – £20,000 |
+| Singapore | $12,000 – $22,000 |
+| Thailand | $8,000 – $15,000 |
 
 ## Why Choose Bangalore for Bariatric Surgery?
 

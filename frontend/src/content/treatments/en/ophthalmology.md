@@ -4,6 +4,7 @@ name: Ophthalmology
 category: Eye
 description: Cataract, LASIK, corneal transplant, glaucoma and retina care with high-end diagnostics and same-day procedure options.
 fromPrice: '$800'
+toPrice: '$4,000'
 procedures:
   - Cataract surgery with premium IOL
   - LASIK / SMILE
@@ -20,9 +21,18 @@ duration: '15 min - 2 hours'
 hospitalStay: 'Day-care'
 recoveryTime: '1-4 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Is bladeless cataract surgery available?"
+    answer: "Yes, femtosecond laser-assisted cataract surgery (FLACS) is available at our partner hospitals. This bladeless technique uses a laser to perform key steps of the procedure including corneal incisions, capsulotomy, and lens fragmentation, resulting in greater precision, reduced ultrasound energy, and faster visual recovery compared to conventional phacoemulsification."
+  - question: "What types of premium intraocular lenses (IOLs) are available?"
+    answer: "Our partner hospitals offer a full range of premium IOLs including multifocal IOLs for clear vision at all distances, toric IOLs for astigmatism correction, extended depth of focus (EDOF) IOLs for seamless intermediate vision, and monofocal IOLs. The choice of IOL is personalised based on your visual needs, lifestyle, and eye anatomy."
+  - question: "Is LASIK suitable for all refractive errors?"
+    answer: "LASIK is suitable for most refractive errors including myopia, hyperopia, and astigmatism, but not for everyone. Suitability depends on corneal thickness, refractive stability, and eye health. For patients with thin corneas, alternatives such as PRK, TransPRK, or ICL (implantable collamer lens) are available. A comprehensive pre-operative evaluation determines the best option."
 ---
 
 ## Overview
+
+> **Summary:** Ophthalmology care in Bangalore offers cataract surgery with premium IOLs, LASIK/SMILE, corneal transplant, glaucoma surgery and retina laser treatment at JCI-accredited hospitals with femtosecond laser platforms and advanced diagnostic suites. Costs range from $800 to $4,000 — 60-80% savings compared to Western countries — with same-day procedures and comprehensive post-operative care.
 
 Ophthalmology care at our partner hospitals in Bangalore covers the full range of eye care — from routine vision correction to complex retinal surgery and corneal transplantation. The ophthalmology teams include **cataract surgeons**, **cornea specialists**, **retina specialists**, **glaucoma experts** and **paediatric ophthalmologists**.
 
@@ -89,6 +99,16 @@ Laser vision correction for refractive errors:
 - **Biometry with IOLMaster** for precise lens power calculation
 - **Microperimetry** for macular function assessment
 - **Dedicated eye surgery suites** with laminar airflow
+
+## Cost Comparison
+
+| Country | Approximate Cost (Eye Surgery) |
+|---------|--------------------------------|
+| India (Bangalore) | $800 – $4,000 |
+| USA | $5,000 – $15,000 |
+| UK | £3,000 – £10,000 |
+| Singapore | $4,000 – $10,000 |
+| Thailand | $2,500 – $7,000 |
 
 ## Why Choose Bangalore for Eye Care?
 

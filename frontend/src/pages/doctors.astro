@@ -7,6 +7,7 @@ import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getDoctors, getHospitals, resolveHospital, entrySlug } from '../lib/content';
+import { getDoctorInquiryLink } from '../lib/whatsapp';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 
 const t = getTranslations('en');
@@ -29,6 +30,7 @@ const doctors: Doctor[] = doctorEntries.map((entry) => {
     href: `/doctors/${entrySlug(entry)}`,
     hospitalName: hospital?.name,
     hospitalHref: hospital?.href,
+    whatsappHref: getDoctorInquiryLink(entry.data.name) || undefined,
   };
 });
 ---
@@ -50,6 +52,7 @@ const doctors: Doctor[] = doctorEntries.map((entry) => {
     subtitle={t.doctors.subtitle}
     filterAll={t.doctors.filterAll}
     bookCta={t.doctors.bookCta}
+    whatsappCta={t.doctors.detail.whatsappCta}
     doctors={doctors}
     client:load
   />

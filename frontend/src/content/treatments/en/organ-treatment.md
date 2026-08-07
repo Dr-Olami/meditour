@@ -4,6 +4,7 @@ name: Organ Treatment
 category: Transplant
 description: Advanced liver, kidney, heart and lung transplant programmes with dedicated international patient coordinators, donor work-up support and post-transplant care.
 fromPrice: '$20,000'
+toPrice: '$40,000'
 procedures:
   - Liver transplant evaluation
   - Kidney transplant
@@ -12,6 +13,9 @@ procedures:
   - Post-transplant follow-up
 relatedDoctorSlugs:
   - dr-vikram-patel
+  - dr-vishwanath-s
+  - dr-jayanth-reddy
+  - dr-mohammed-fahad-khan
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -20,9 +24,18 @@ duration: '4-12 hours'
 hospitalStay: '2-4 weeks'
 recoveryTime: '3-6 months'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "What is the waiting time for a liver transplant in Bangalore?"
+    answer: "For living-donor liver transplants, the typical waiting time is 4-8 weeks from initial evaluation to surgery, depending on donor work-up completion and transplant committee approval. Deceased-donor transplants depend on organ availability through the national transplant registry. International patients are prioritised with dedicated transplant coordinators to expedite the process."
+  - question: "Can a living donor donate a kidney?"
+    answer: "Yes, living-donor kidney transplant is the most common transplant performed at our partner hospitals. The donor undergoes comprehensive medical evaluation including blood group compatibility, tissue typing, cross-match testing, and psychological assessment. Laparoscopic donor nephrectomy ensures faster donor recovery, typically with hospital discharge in 3-4 days."
+  - question: "What is the success rate of kidney transplants?"
+    answer: "Kidney transplant success rates at our partner hospitals exceed 95% for living-donor transplants at one year, with graft survival of over 90% at five years. Success depends on donor-recipient compatibility, immunosuppression management, and post-transplant care. The programmes include ABO-incompatible transplants and paired kidney exchange options."
 ---
 
 ## Overview
+
+> **Summary:** Organ transplant programmes in Bangalore offer liver, kidney, heart and lung transplants at JCI-accredited hospitals with dedicated transplant ICUs, advanced organ preservation systems and experienced surgical teams. Costs range from $20,000 to $40,000 — 60-80% savings compared to Western countries — with comprehensive international patient coordinators and strict adherence to transplant regulations and ethics.
 
 Organ transplant programmes at our partner hospitals in Bangalore are among the most comprehensive in India, offering **liver**, **kidney**, **heart** and **lung** transplants. The transplant teams include surgeons, hepatologists, nephrologists, cardiologists, transplant coordinators and dedicated nursing staff with extensive experience in both living-donor and deceased-donor transplants.
 
@@ -79,6 +92,16 @@ Single and bilateral lung transplants for end-stage lung disease including COPD,
 - **Therapeutic drug monitoring** for immunosuppression levels
 - **3 Tesla MRI** and **128-slice CT** for pre and post-transplant imaging
 - **Dedicated transplant coordinators** for international patients
+
+## Cost Comparison
+
+| Country | Approximate Cost (Organ Transplant) |
+|---------|--------------------------------------|
+| India (Bangalore) | $20,000 – $40,000 |
+| USA | $200,000 – $500,000 |
+| UK | £150,000 – £300,000 |
+| Singapore | $120,000 – $250,000 |
+| Turkey | $80,000 – $150,000 |
 
 ## Why Choose Bangalore for Organ Transplant?
 

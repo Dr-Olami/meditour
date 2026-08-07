@@ -9,7 +9,10 @@ import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
 import { getHospitals, getDoctors, resolveHospital, getDoctorsAtHospital, entrySlug } from '../../../lib/content';
-import { hospital as hospitalSchema, breadcrumbs } from '../../../lib/schema';
+import { hospital as hospitalSchema, breadcrumbs, faqPage } from '../../../lib/schema';
+import { getDoctorInquiryLink } from '../../../lib/whatsapp';
+import { generateHospitalFaqs, mergeFaqs } from '../../../lib/faq-generator';
+import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
 import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
 
 export async function getStaticPaths() {
@@ -27,6 +30,7 @@ export async function getStaticPaths() {
         href: `/bn/doctors/${entrySlug(d)}`,
         hospitalName: hospital?.name,
         hospitalHref: hospital?.href,
+        whatsappHref: getDoctorInquiryLink(d.data.name) || undefined,
       };
     });
     return {
@@ -68,6 +72,12 @@ const jsonLd = [
     { name: hospital.name, url: pageUrl },
   ]),
 ];
+
+const autoFaqs = generateHospitalFaqs(hospital, 'bn');
+const faqs = hospital.faqs ? mergeFaqs(autoFaqs, hospital.faqs) : autoFaqs;
+if (faqs.length > 0) {
+  jsonLd.push(faqPage({ entries: faqs }));
+}
 ---
 
 <Layout title={title} description={description} locale="bn" image={hospital.image} jsonLd={jsonLd}>
@@ -210,11 +220,18 @@ const jsonLd = [
     {doctors.length > 0 && (
       <section class="mt-16" data-anim="fade-in-up">
         <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.doctorsAtHospital}</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
+        <div class="grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
           {doctors.map((doctor: Doctor) => (
-            <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} />
+            <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
           ))}
         </div>
+      </section>
+    )}
+
+    {faqs.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.faqTitle}</h2>
+        <FAQAccordion items={faqs} client:visible />
       </section>
     )}
   </main>

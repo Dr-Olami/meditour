@@ -4,6 +4,7 @@ name: Ear Nose Throat
 category: ENT
 description: Advanced ENT care including endoscopic sinus surgery, cochlear implants, thyroid surgery and sleep apnoea management.
 fromPrice: '$1,200'
+toPrice: '$5,000'
 procedures:
   - Functional endoscopic sinus surgery (FESS)
   - Cochlear implant
@@ -20,9 +21,18 @@ duration: '1-4 hours'
 hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Is cochlear implant available for children?"
+    answer: "Yes, cochlear implantation is available for children with severe-to-profound sensorineural hearing loss. The programme includes paediatric evaluation, surgery with intra-operative neural response telemetry, and post-activation audiology and speech therapy. Early implantation (typically between 1-3 years of age) provides the best outcomes for speech and language development."
+  - question: "What is the recovery time after endoscopic sinus surgery?"
+    answer: "Recovery from functional endoscopic sinus surgery (FESS) typically takes 1-2 weeks. Nasal packing is removed within 1-2 days, and most patients return to work within a week. Complete healing of sinus mucosa takes 4-6 weeks. Saline nasal irrigation and regular follow-up endoscopic cleaning are part of the post-operative care protocol."
+  - question: "Is sleep apnoea surgery available?"
+    answer: "Yes, surgical options for obstructive sleep apnoea are available including UPPP (uvulopalatopharyngoplasty), septoplasty with turbinate reduction, maxillomandibular advancement, and hypoglossal nerve stimulation. The appropriate procedure is determined after a comprehensive sleep study (polysomnography) and upper airway evaluation by the ENT surgeon."
 ---
 
 ## Overview
+
+> **Summary:** ENT care in Bangalore offers endoscopic sinus surgery, cochlear implants, tonsillectomy, thyroid surgery and sleep apnoea surgery at JCI-accredited hospitals with high-definition endoscopic systems and dedicated audiology labs. Costs range from $1,200 to $5,000 — 60-80% savings compared to Western countries — with sub-specialty trained ENT surgeons and comprehensive post-treatment care.
 
 ENT (Ear, Nose and Throat) care at our partner hospitals in Bangalore covers the full spectrum of otolaryngology — from paediatric ENT and hearing restoration to advanced head & neck surgery and skull base surgery. The ENT teams include **otologists**, **rhinologists**, **head & neck surgeons** and **laryngologists** with sub-specialty expertise.
 
@@ -77,6 +87,16 @@ Surgical removal of tonsils and adenoids for recurrent infections or obstructive
 - **Intra-operative nerve monitoring** for thyroid and parotid surgery
 - **Dedicated audiology lab** with audiometry, tympanometry and OAE testing
 - **Voice analysis software** for laryngology assessment
+
+## Cost Comparison
+
+| Country | Approximate Cost (ENT Procedures) |
+|---------|-----------------------------------|
+| India (Bangalore) | $1,200 – $5,000 |
+| USA | $10,000 – $30,000 |
+| UK | £7,000 – £20,000 |
+| Singapore | $7,000 – $18,000 |
+| Thailand | $4,000 – $10,000 |
 
 ## Why Choose Bangalore for ENT Care?
 

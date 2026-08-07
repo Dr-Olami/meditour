@@ -99,7 +99,7 @@ export function getDoctorsAtHospital(
   hospitalId: string,
   doctors: DoctorEntry[]
 ): DoctorEntry[] {
-  return doctors.filter((d) => entrySlug(d) === hospitalId).sort(byName);
+  return doctors.filter((d) => d.data.hospitalId === hospitalId).sort(byName);
 }
 
 /**

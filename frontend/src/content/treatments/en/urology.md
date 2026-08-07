@@ -4,6 +4,7 @@ name: Urology
 category: Urology
 description: Comprehensive urological care including kidney stone management, prostate surgery, robotic uro-oncology and male infertility.
 fromPrice: '$1,800'
+toPrice: '$6,000'
 procedures:
   - RIRS / PCNL for kidney stones
   - Laser prostate surgery
@@ -12,6 +13,7 @@ procedures:
   - Male infertility work-up
 relatedDoctorSlugs:
   - dr-ravi-menon
+  - dr-deepak-dubey
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -20,9 +22,18 @@ duration: '1-4 hours'
 hospitalStay: '1-5 days'
 recoveryTime: '1-4 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Is robotic surgery available for prostate cancer?"
+    answer: "Yes, robotic-assisted radical prostatectomy is available using the da Vinci surgical system. Benefits include precision nerve-sparing for continence and potency preservation, minimal blood loss, smaller incisions, faster continence recovery, and shorter hospital stay compared to traditional open surgery. Hospital stay is typically 2-3 days."
+  - question: "What is the recovery time after kidney stone surgery?"
+    answer: "Recovery depends on the procedure. RIRS (flexible ureteroscopy with laser) is a day-care or overnight procedure with recovery in 1-2 days. PCNL (keyhole removal of large stones) requires 2-3 days hospital stay with recovery in 1 week. ESWL (shock wave lithotripsy) is an outpatient procedure with same-day return to normal activities."
+  - question: "Can kidney stones be treated without surgery?"
+    answer: "Yes, small kidney stones (under 5mm) can often pass naturally with increased fluid intake and pain management. ESWL (extracorporeal shock wave lithotripsy) is a non-invasive option that uses shock waves to fragment stones without any incision or anaesthesia. For larger stones, minimally invasive options like RIRS or PCNL are recommended."
 ---
 
 ## Overview
+
+> **Summary:** Urology care in Bangalore covers kidney stone management, laser prostate surgery, robotic radical prostatectomy, bladder tumour surgery and male infertility work-up at JCI-accredited hospitals with da Vinci robotic systems and dedicated endourology suites. Costs range from $1,800 to $6,000 — 60-80% savings compared to Western countries — with sub-specialty trained urologists and short waiting times.
 
 Urology care at our partner hospitals in Bangalore covers the full spectrum of urological conditions — from kidney stone management and prostate surgery to robotic uro-oncology and male infertility. The urology teams include **urologists**, **uro-oncologists**, **andrologists** and **paediatric urologists** with sub-specialty expertise.
 
@@ -81,6 +92,16 @@ Robot-assisted surgical removal of the prostate for localised prostate cancer. B
 - **Urodynamic testing** lab for incontinence evaluation
 - **Dedicated endourology suites** with integrated imaging
 - **Microsurgery operating suite** for infertility procedures
+
+## Cost Comparison
+
+| Country | Approximate Cost (Urology Procedures) |
+|---------|--------------------------------------|
+| India (Bangalore) | $1,800 – $6,000 |
+| USA | $15,000 – $40,000 |
+| UK | £10,000 – £25,000 |
+| Singapore | $10,000 – $25,000 |
+| Thailand | $6,000 – $15,000 |
 
 ## Why Choose Bangalore for Urology Care?
 

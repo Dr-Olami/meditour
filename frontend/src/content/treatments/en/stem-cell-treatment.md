@@ -4,6 +4,7 @@ name: Stem Cell Treatment
 category: Regenerative
 description: Evidence-based regenerative medicine for orthopaedic, neurological and autoimmune conditions, delivered by accredited cell-therapy units.
 fromPrice: '$5,000'
+toPrice: '$15,000'
 procedures:
   - Bone marrow-derived stem cell therapy
   - Adipose-derived stem cell therapy
@@ -19,9 +20,18 @@ duration: '2-6 hours per session'
 hospitalStay: '1-3 days'
 recoveryTime: '2-12 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "Are stem cell treatments safe and regulated?"
+    answer: "Stem cell treatments at our partner hospitals are performed in GMP-certified cell processing laboratories with stringent quality control. The programmes follow international guidelines and regulatory compliance. Autologous stem cells (from the patient's own body) are used to minimise rejection risk. All treatments include comprehensive safety monitoring and long-term follow-up."
+  - question: "What conditions can be treated with stem cell therapy?"
+    answer: "Stem cell therapy is used for osteoarthritis, spinal cord injury, multiple sclerosis, cerebral palsy, diabetic foot ulcers, and sports injuries. Some applications including autism and Parkinson's disease are investigational and offered under clinical trial protocols. Eligibility is determined through consultation with the regenerative medicine team."
+  - question: "How many stem cell therapy sessions will I need?"
+    answer: "The number of sessions depends on the condition being treated, its severity, and individual patient response. Some orthopaedic conditions may require only 1-2 sessions, while neurological conditions may need multiple sessions spaced over several months. The treatment protocol is personalised during consultation and adjusted based on progress monitoring."
 ---
 
 ## Overview
+
+> **Summary:** Stem cell treatment in Bangalore offers evidence-based regenerative medicine for orthopaedic, neurological and autoimmune conditions at JCI-accredited hospitals with GMP-certified cell processing laboratories. Costs range from $5,000 to $15,000 — 50-70% savings compared to Western countries — with autologous stem cells, image-guided delivery and comprehensive rehabilitation programmes.
 
 Stem cell treatment at our partner hospitals in Bangalore offers evidence-based regenerative medicine for orthopaedic, neurological and autoimmune conditions. The cell therapy units are **accredited** and follow stringent quality protocols for cell harvesting, processing and administration.
 
@@ -74,6 +84,16 @@ Use of mesenchymal stem cells for their immunomodulatory properties in autoimmun
 - **Image-guided delivery** for precise stem cell administration
 - **Cryopreservation facilities** for cell storage
 - **Comprehensive safety monitoring** with real-time cell viability assessment
+
+## Cost Comparison
+
+| Country | Approximate Cost (Stem Cell Treatment) |
+|---------|----------------------------------------|
+| India (Bangalore) | $5,000 – $15,000 |
+| USA | $20,000 – $50,000 |
+| UK | £15,000 – £35,000 |
+| Singapore | $15,000 – $30,000 |
+| Thailand | $10,000 – $20,000 |
 
 ## Why Choose Bangalore for Stem Cell Treatment?
 

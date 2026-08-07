@@ -43,6 +43,13 @@ address: 154/11, Bannerghatta Road, Opp. IIM, Panduranga Nagar, Bangalore - 5600
 phone: +91-80-2630 4050
 email: info@apollohospitals.com
 website: https://www.apollohospitals.com
+faqs:
+  - question: "Is Apollo Hospitals Bannerghatta accredited by international bodies?"
+    answer: "Yes, Apollo Hospitals Bannerghatta Road is accredited by the Joint Commission International (JCI) — the global gold standard for healthcare quality — and the National Accreditation Board for Hospitals & Healthcare Providers (NABH). These accreditations ensure adherence to the highest international protocols in patient safety, clinical excellence and infection control."
+  - question: "Does Apollo Hospitals Bannerghatta have an international patient desk?"
+    answer: "Yes, Apollo Hospitals Bannerghatta has a dedicated international patient desk with Arabic, Russian and Bengali coordinators. Services include visa assistance, airport pickup, interpreter services, foreign currency exchange, international cuisine, SIM card assistance, post-operative follow-up and medical records transfer."
+  - question: "What organ transplants are performed at Apollo Hospitals Bannerghatta?"
+    answer: "Apollo Hospitals Bannerghatta performs kidney, liver and corneal transplants through its dedicated organ transplant programme. The hospital also offers robotic surgery across multiple specialities including urology, oncology and gynaecology, and has a comprehensive bariatric surgery programme."
 ---
 
 ## Overview

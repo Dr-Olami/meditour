@@ -11,6 +11,7 @@ import {
   entrySlug,
 } from '../lib/content';
 import { medicalBusiness } from '../lib/schema';
+import { getDoctorInquiryLink } from '../lib/whatsapp';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../design-system/components/organisms/HospitalCard';
 
@@ -46,6 +47,7 @@ const featuredDoctors: Doctor[] = doctorEntries.slice(0, 4).map((entry) => {
     href: `/doctors/${entrySlug(entry)}`,
     hospitalName: hospital?.name,
     hospitalHref: hospital?.href,
+    whatsappHref: getDoctorInquiryLink(entry.data.name) || undefined,
   };
 });
 

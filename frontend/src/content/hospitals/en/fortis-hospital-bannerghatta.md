@@ -43,6 +43,13 @@ specialities:
 address: 154/9, Bannerghatta Road, Opposite IIM, Bangalore - 560076
 phone: +91-80-6621 4444
 website: https://www.fortishealthcare.com
+faqs:
+  - question: "Is Fortis Hospital Bannerghatta the first JCI-accredited hospital in Karnataka?"
+    answer: "Yes, Fortis Hospital Bannerghatta Road was the first JCI-accredited hospital in Karnataka. It also holds NABH and NABL accreditations. Additionally, it is the only Indian hospital featured among the world's top five destinations for medical tourism by the Medical Travel Quality Alliance (MTQUA), serving patients from over 175 countries."
+  - question: "What specialities is Fortis Hospital Bannerghatta known for?"
+    answer: "Fortis Hospital Bannerghatta is renowned for cardiac sciences, neurology and neurosurgery, oncology, orthopaedics and joint replacement, gastroenterology and hepatobiliary sciences, organ transplant (including liver transplant), urology, nephrology, bariatric and metabolic surgery, haematology and BMT, and obstetrics and gynaecology."
+  - question: "Does Fortis Hospital Bannerghatta offer international patient services?"
+    answer: "Yes, Fortis Hospital Bannerghatta has a dedicated international patient services team offering multilingual coordinators, visa and travel assistance, airport pickup, foreign currency exchange, international cuisine, a 24/7 pharmacy, blood bank and ambulance service. The hospital serves patients from over 175 countries."
 ---
 
 ## Overview

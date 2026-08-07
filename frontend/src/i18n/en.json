@@ -58,7 +58,8 @@
       "procedures": "Procedures included",
       "relatedDoctors": "Specialists for this treatment",
       "inquiryCta": "Request a free consultation",
-      "fromPrice": "From {{price}}"
+      "fromPrice": "From {{price}}",
+      "faqTitle": "Frequently Asked Questions"
     }
   },
   "stats": {
@@ -72,7 +73,61 @@
     "title": "Patient stories"
   },
   "faq": {
-    "title": "Frequently asked questions"
+    "title": "Frequently asked questions",
+    "templates": {
+      "treatment": {
+        "costQ": "What is the cost of {{treatment}} in Bangalore?",
+        "costA": "The cost of {{treatment}} in Bangalore ranges from {{fromPrice}} to {{toPrice}} depending on the complexity of the procedure, choice of hospital, and surgeon's experience. This is typically 60-80% lower than equivalent procedures in the USA or UK.",
+        "costAFromOnly": "The estimated cost for {{treatment}} starts from {{fromPrice}}. This may vary based on the complexity of the procedure, choice of hospital, and surgeon's experience. This is typically 60-80% lower than equivalent procedures in the USA or UK.",
+        "hospitalStayQ": "How long is the hospital stay for {{treatment}}?",
+        "hospitalStayA": "The typical hospital stay is {{stay}}. This may vary depending on the specific procedure and patient condition.",
+        "recoveryTimeQ": "What is the recovery time for {{treatment}}?",
+        "recoveryTimeA": "The expected recovery time is {{recovery}}. Full recovery may vary based on individual health factors and adherence to post-treatment care instructions.",
+        "durationQ": "How long does the {{treatment}} procedure take?",
+        "durationA": "The procedure typically takes {{duration}}. The exact duration depends on the complexity of the case and the specific technique used.",
+        "proceduresQ": "What procedures are included in {{treatment}}?",
+        "proceduresA": "{{treatment}} includes the following procedures: {{procedures}}.",
+        "doctorsQ": "Which doctors perform {{treatment}} at your partner hospitals?",
+        "doctorsA": "Our partner specialists for {{treatment}} include {{doctors}}. You can view their full profiles on our doctors page.",
+        "hospitalsQ": "Which hospitals offer {{treatment}} in Bangalore?",
+        "hospitalsA": "{{treatment}} is available at {{hospitals}}. All are accredited multi-speciality hospitals with dedicated international patient services.",
+        "accreditationQ": "Are the hospitals JCI-accredited?",
+        "accreditationA": "Yes, our partner hospitals hold JCI and NABH accreditations, ensuring they meet international healthcare quality standards.",
+        "bookingQ": "How can I book {{treatment}} through Khan Meditour?",
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. Share your medical reports, and we will provide a free consultation, treatment plan, and cost estimate within 24-48 hours."
+      },
+      "doctor": {
+        "specialtyQ": "What conditions does Dr. {{name}} treat?",
+        "specialtyA": "Dr. {{name}} specialises in {{specialty}} and treats a wide range of conditions within this field.",
+        "experienceQ": "How many years of experience does Dr. {{name}} have?",
+        "experienceA": "Dr. {{name}} has {{years}} years of clinical experience in {{specialty}}.",
+        "qualificationQ": "What are Dr. {{name}}'s qualifications?",
+        "qualificationA": "Dr. {{name}} holds the qualification of {{qualification}}.",
+        "hospitalQ": "What hospital is Dr. {{name}} affiliated with?",
+        "hospitalA": "Dr. {{name}} practices at {{hospital}}.",
+        "languagesQ": "What languages does Dr. {{name}} speak?",
+        "languagesA": "Dr. {{name}} speaks {{languages}}.",
+        "bookingQ": "How can I book a consultation with Dr. {{name}}?",
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. We will arrange a consultation with Dr. {{name}} at your preferred hospital."
+      },
+      "hospital": {
+        "accreditationQ": "What accreditations does {{hospital}} have?",
+        "accreditationA": "{{hospital}} holds the following accreditations: {{accreditations}}.",
+        "specialitiesQ": "What treatments are available at {{hospital}}?",
+        "specialitiesA": "{{hospital}} offers specialist care in: {{specialities}}.",
+        "locationQ": "Where is {{hospital}} located?",
+        "locationA": "{{hospital}} is located in {{city}}, {{country}}.",
+        "bedsQ": "How many beds does {{hospital}} have?",
+        "bedsA": "{{hospital}} has {{beds}} beds.",
+        "establishedQ": "When was {{hospital}} established?",
+        "establishedA": "{{hospital}} was established in {{year}}.",
+        "internationalQ": "Does {{hospital}} have international patient services?",
+        "internationalYesA": "Yes, {{hospital}} has a dedicated international patient desk offering visa assistance, airport pickup, interpreter services, and other support for international patients.",
+        "internationalNoA": "Yes, {{hospital}} welcomes international patients. Contact us via WhatsApp at +8801611892986 for assistance with your visit.",
+        "bookingQ": "How can I book an appointment at {{hospital}} through Khan Meditour?",
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. We will coordinate your appointment and treatment at {{hospital}}."
+      }
+    }
   },
   "cta": {
     "title": "Ready to take the next step?",
@@ -100,7 +155,8 @@
       "languagesLabel": "Languages",
       "atHospital": "Practices at",
       "bookCta": "Request appointment",
-      "whatsappCta": "Chat on WhatsApp"
+      "whatsappCta": "Chat on WhatsApp",
+      "faqTitle": "Frequently Asked Questions"
     }
   },
   "hospitals": {
@@ -110,7 +166,8 @@
     "location": "Location",
     "amenities": "Amenities",
     "accreditation": "Accreditation",
-    "doctorsAtHospital": "Doctors at this hospital"
+    "doctorsAtHospital": "Doctors at this hospital",
+    "faqTitle": "Frequently Asked Questions"
   },
   "howItWorks": {
     "title": "How it works",

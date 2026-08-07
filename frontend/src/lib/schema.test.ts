@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { medicalBusiness, physician, hospital, medicalProcedure, blogPosting, breadcrumbs } from './schema';
+import { medicalBusiness, physician, hospital, medicalProcedure, blogPosting, breadcrumbs, medicalWebPage } from './schema';
 
 describe('schema.org helpers', () => {
   it('medicalBusiness omits address for a facilitator', () => {
@@ -97,6 +97,37 @@ describe('schema.org helpers', () => {
     expect((json.author as Record<string, string>).name).toBe('Khan Meditour Team');
     expect(json.datePublished).toBe(published.toISOString());
     expect(json).not.toHaveProperty('dateModified');
+  });
+
+  it('medicalWebPage includes about, audience and language', () => {
+    const json = medicalWebPage({
+      name: 'Cardiology',
+      url: 'https://example.com/treatments/cardiology',
+      description: 'Heart care.',
+      inLanguage: 'en',
+      specialty: 'Heart',
+      about: { '@type': 'MedicalProcedure', name: 'Cardiology' },
+      audience: 'Patients seeking treatment',
+    });
+    expect(json['@type']).toBe('MedicalWebPage');
+    expect(json.inLanguage).toBe('en');
+    expect(json.medicalSpecialty).toBe('Heart');
+    expect((json.about as Record<string, unknown>).name).toBe('Cardiology');
+    expect((json.audience as Record<string, unknown>)['@type']).toBe('MedicalAudience');
+  });
+
+  it('medicalWebPage omits optional fields when not provided', () => {
+    const json = medicalWebPage({
+      name: 'Cardiology',
+      url: 'https://example.com/treatments/cardiology',
+      description: 'Heart care.',
+    });
+    expect(json).not.toHaveProperty('image');
+    expect(json).not.toHaveProperty('dateModified');
+    expect(json).not.toHaveProperty('about');
+    expect(json).not.toHaveProperty('audience');
+    expect(json).not.toHaveProperty('inLanguage');
+    expect(json).not.toHaveProperty('medicalSpecialty');
   });
 
   it('breadcrumbs builds a list with positions', () => {

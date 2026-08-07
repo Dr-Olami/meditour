@@ -4,6 +4,7 @@ name: Cardiology
 category: Heart
 description: Comprehensive cardiac care from angiograms and angioplasty to bypass surgery, valve replacement and heart failure management at JCI-accredited hospitals.
 fromPrice: '$1,500'
+toPrice: '$7,000'
 procedures:
   - Coronary angiogram
   - Angioplasty with stent
@@ -20,9 +21,18 @@ duration: '1-4 hours'
 hospitalStay: '2-7 days'
 recoveryTime: '2-6 weeks'
 image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+faqs:
+  - question: "What is the success rate of cardiac surgery at your partner hospitals?"
+    answer: "Our partner hospitals, including Narayana Institute of Cardiac Sciences, perform over 15,000 cardiac surgeries annually with success rates exceeding 98% for routine procedures like CABG and angioplasty. Outcomes are benchmarked against international standards and continuously audited for quality."
+  - question: "Is minimally invasive heart surgery available?"
+    answer: "Yes, minimally invasive cardiac surgery is available including minimally invasive CABG, minimally invasive valve surgery, and transcatheter aortic valve replacement (TAVR). These approaches use smaller incisions, result in less post-operative pain, shorter hospital stays, and faster recovery compared to traditional open-heart surgery."
+  - question: "Can I get a same-day angiogram and angioplasty?"
+    answer: "Yes, in many cases a diagnostic coronary angiogram and angioplasty (PCI) can be performed in the same session if a treatable blockage is identified. This is determined by the cardiologist based on angiogram findings, patient condition, and clinical guidelines. The procedure is performed in advanced cath labs with IVUS and FFR guidance."
 ---
 
 ## Overview
+
+> **Summary:** Cardiology care in Bangalore offers the full spectrum of heart treatments — from angiograms and angioplasty to bypass surgery and valve replacement — at JCI-accredited hospitals with success rates exceeding 98%. Costs range from $1,500 to $7,000, representing 60-80% savings compared to Western countries, with treatment typically scheduled within days of arrival.
 
 Cardiology at our partner hospitals in Bangalore encompasses the full spectrum of heart care — from preventive cardiology and diagnostic catheterisation to complex interventional procedures and cardiac surgery. Our network includes **Narayana Institute of Cardiac Sciences**, one of the world's largest dedicated cardiac care facilities, performing over 15,000 cardiac surgeries annually.
 
@@ -69,6 +79,16 @@ Device implantation for arrhythmia management — pacemakers for slow heart rate
 - **Electrophysiology lab** with 3D mapping for complex ablation procedures
 - **Dedicated CCU** with continuous haemodynamic monitoring
 - **ECMO** (extracorporeal membrane oxygenation) for critical cardiac support
+
+## Cost Comparison
+
+| Country | Approximate Cost (Cardiac Procedures) |
+|---------|--------------------------------------|
+| India (Bangalore) | $1,500 – $7,000 |
+| USA | $25,000 – $60,000 |
+| UK | £15,000 – £40,000 |
+| Singapore | $18,000 – $45,000 |
+| Thailand | $12,000 – $30,000 |
 
 ## Why Choose Bangalore for Cardiac Care?
 

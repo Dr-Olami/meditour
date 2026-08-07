@@ -9,8 +9,10 @@ import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
 import { getTreatments, getDoctors, getHospitals, resolveRelatedDoctors, resolveHospital, resolveRelatedHospitals, entrySlug } from '../../../lib/content';
-import { medicalProcedure, breadcrumbs } from '../../../lib/schema';
-import { getTreatmentInquiryLink } from '../../../lib/whatsapp';
+import { medicalProcedure, breadcrumbs, faqPage, medicalWebPage } from '../../../lib/schema';
+import { getTreatmentInquiryLink, getDoctorInquiryLink } from '../../../lib/whatsapp';
+import { generateTreatmentFaqs, mergeFaqs } from '../../../lib/faq-generator';
+import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
 import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
 
 export async function getStaticPaths() {
@@ -32,6 +34,7 @@ export async function getStaticPaths() {
         href: `/bn/doctors/${entrySlug(d)}`,
         hospitalName: hospital?.name,
         hospitalHref: hospital?.href,
+        whatsappHref: getDoctorInquiryLink(d.data.name) || undefined,
       };
     });
     const relatedHospitals = resolveRelatedHospitals(entry.data.relatedHospitalSlugs, hospitals).map((h) => ({
@@ -57,13 +60,25 @@ const title = `${treatment.name} — ${t.treatments.title} | ${t.site.name}`;
 const description = treatment.description;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
+const procedureSchema = medicalProcedure({
+  name: treatment.name,
+  url: pageUrl,
+  description: treatment.description,
+  image: treatment.image,
+  procedureType: treatment.category,
+});
+
 const jsonLd = [
-  medicalProcedure({
+  procedureSchema,
+  medicalWebPage({
     name: treatment.name,
     url: pageUrl,
     description: treatment.description,
     image: treatment.image,
-    procedureType: treatment.category,
+    inLanguage: 'bn',
+    specialty: treatment.category,
+    about: procedureSchema,
+    audience: 'বাংলাদেশ থেকে বেঙ্গালুরুতে চিকিৎসা নিতে আগ্রহী রোগী',
   }),
   breadcrumbs([
     { name: t.nav.home, url: new URL('/bn', Astro.url.origin).toString() },
@@ -73,6 +88,14 @@ const jsonLd = [
 ];
 
 const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name);
+
+const relatedDoctorNames = related.map((d) => d.name);
+const relatedHospitalNames = relatedHospitals.map((h) => h.name);
+const autoFaqs = generateTreatmentFaqs(treatment, relatedDoctorNames, relatedHospitalNames, 'bn');
+const faqs = treatment.faqs ? mergeFaqs(autoFaqs, treatment.faqs) : autoFaqs;
+if (faqs.length > 0) {
+  jsonLd.push(faqPage({ entries: faqs }));
+}
 ---
 
 <Layout title={title} description={description} locale="bn" image={treatment.image} jsonLd={jsonLd}>
@@ -191,13 +214,20 @@ const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name);
             <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.relatedDoctors}</h2>
             <div class="grid gap-4" data-anim="stagger-cards">
               {related.map((doctor: Doctor) => (
-                <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} />
+                <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
               ))}
             </div>
           </div>
         )}
       </aside>
     </div>
+
+    {faqs.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.faqTitle}</h2>
+        <FAQAccordion items={faqs} client:visible />
+      </section>
+    )}
   </main>
 
   <Footer

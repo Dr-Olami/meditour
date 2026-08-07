@@ -38,6 +38,13 @@ address: 258/A, Hosur Road, Bommasandra Industrial Area, Anekal Taluk, Bangalore
 phone: +91-80-6926 6140
 email: info.nics@narayanahealth.org
 website: https://www.narayanahealth.org
+faqs:
+  - question: "Is Narayana Institute of Cardiac Sciences one of the largest cardiac care facilities in the world?"
+    answer: "Yes, Narayana Institute of Cardiac Sciences at Bommasandra is one of the world's largest cardiac care facilities, with 606 beds. It performs thousands of heart surgeries annually and is JCI accredited and NABH accredited. The hospital specialises in complex bypass, valve replacements, paediatric cardiac surgery and heart transplants."
+  - question: "Does Narayana Institute of Cardiac Sciences perform heart transplants?"
+    answer: "Yes, Narayana Institute of Cardiac Sciences has a dedicated heart and lung transplant programme. The hospital also specialises in adult and paediatric cardiothoracic surgery, electrophysiology, cardiac anaesthesia, critical care and cardiac rehabilitation. It has a dedicated international patient programme with multilingual coordinators."
+  - question: "What international patient services does Narayana Institute offer?"
+    answer: "Narayana Institute of Cardiac Sciences offers a dedicated international patient lounge, multilingual coordinators, visa assistance, airport pickup, 24/7 pharmacy, telemedicine facilities, yoga therapy and counselling, blood bank and ambulance services. The hospital is located at Bommasandra Industrial Area on Hosur Road, Bangalore."
 ---
 
 ## Overview

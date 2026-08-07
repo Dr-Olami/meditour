@@ -41,6 +41,13 @@ specialities:
 address: HBR Layout, Hennur Road, Bangalore - 560043
 phone: +91-80-4613 7700
 website: https://www.sparshhospital.com
+faqs:
+  - question: "What is SPARSH Hospital Hennur known for?"
+    answer: "SPARSH Hospital Hennur is a 300-bed quaternary care multi-speciality centre excelling in orthopaedics and joint replacement, cardiac sciences, oncology, neurosciences, trauma care, ENT, obstetrics and general medicine. Inaugurated in 2025, it is the newest addition to the SPARSH Group of Hospitals, one of Karnataka's most respected healthcare networks."
+  - question: "Is SPARSH Hospital Hennur accredited?"
+    answer: "Yes, SPARSH Hospital Hennur is NABH accredited. The hospital is equipped with cutting-edge technology, a highly experienced clinical team and a patient-first approach. It offers comprehensive services including 24/7 emergency and trauma services, dialysis, blood bank, physiotherapy and rehab centre."
+  - question: "Does SPARSH Hospital Hennur offer international patient services?"
+    answer: "Yes, SPARSH Hospital Hennur has an international patient desk offering visa and travel assistance, airport pickup, international cuisine, pharmacy services and 24/7 ambulance services. The hospital is located at HBR Layout on Hennur Road, Bangalore, and also offers bone marrow transplant and bariatric surgery programmes."
 ---
 
 ## Overview

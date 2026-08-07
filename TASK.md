@@ -38,6 +38,22 @@
 - [x] `FilterChips` scroll arrows for mobile overflow (ResizeObserver + smooth scroll)
 - [x] `DoctorCard` gradient "Book Now" button + circular arrow badge
 
+## Doctor Trust Cards Redesign (2026-08-07) — COMPLETE
+
+- [x] Doctor photos structured as `public/images/doctors/<slug>.webp` (flat, filename = markdown slug); 13 Manipal doctor photos added
+- [x] `avatar:` frontmatter wired into 26 doctor markdown files (13 en + 13 bn)
+- [x] `DoctorCard` redesigned to horizontal split: full-height portrait left (`object-cover object-top`), specialty/name/qualification/hospital/experience right, "Book Now" gradient + WhatsApp outline CTAs
+- [x] Card is no longer one full-surface link (invalid nesting with dual CTAs): portrait, name and Book Now link to profile; WhatsApp opens wa.me in new tab
+- [x] `Doctor.whatsappHref` added; all 8 page mappings (doctors, index, hospitals/[slug], treatments/[slug] × en/bn) pass `getDoctorInquiryLink(name)`; `whatsappLabel` localized via `t.doctors.detail.whatsappCta`
+- [x] Grids rebalanced for wider cards: listing + hospital pages `lg:grid-cols-2`, home featured `lg:grid-cols-2`
+- [x] Doctor detail hero (en + bn): 96px circle → `aspect-[4/5]` portrait (w-36/md:w-44, rounded-card, shadow) with matching initials fallback
+- [x] Stories + 8 unit tests updated; full build green
+
+### Discovered During Work
+
+- 8 doctors still lack photos (ananya-sen, arun-kumar, kavita-iyer, priya-nair, rajesh-sharma, sameer-khan, sunita-rao, vikram-patel) — they render the initials fallback panel. **TODO:** add `/images/doctors/<slug>.webp` + `avatar:` frontmatter when photos are available.
+- Optional idea (not implemented): auto-resolve `/images/doctors/<slug>.webp` in `lib/content.ts` when frontmatter `avatar` is absent.
+
 ## Discovered During Work
 
 - ~~**CSS single-source-of-truth debt:**~~ **RESOLVED** — `main.css` now uses `@import` for the three partials (`tokens.css`, `base.css`, `global.css`) via `postcss-import`. Inline duplication removed. Imports placed before `@tailwind` directives (CSS spec requirement).
@@ -148,3 +164,44 @@
   - `data-anim="scroll-reveal"` — markdown content sections, cover images
   - `data-anim="press-button"` — all CTA buttons (WhatsApp, book appointment, inquiry)
 - [x] Fixed hospital page layout bug: `data-anim="stagger-children"` wrapper was replacing the left column `<div>`, pushing About/Specialities/Content/Amenities sections outside the grid. Added nested wrapper `<div data-anim="stagger-children">` inside the original left column `<div>` on both EN and BN hospital pages.
+
+## SEO/AEO/GEO — Hybrid FAQ System Phase 1: Schema & Infrastructure (2026-08-02)
+
+- [x] Step 1.1: Added optional `faqs` field to `doctors`, `hospitals`, `treatments` Zod schemas in `src/content/config.ts` for manual overrides. Added `toPrice` field to `treatments` schema.
+- [x] Step 1.2: Added `faqPage()` JSON-LD schema helper in `src/lib/schema.ts` — builds `FAQPage` with `Question`/`Answer` entities.
+- [x] Step 1.3: Enriched `Physician` schema in `src/lib/schema.ts` with GEO fields: `knowsAbout`, `alumniOf`, `award`, `qualification`, `yearsExperience` (as `hasCredential`), `languages` (as `knowsLanguage`).
+- [x] Step 1.4: Added `medicalCondition()` schema helper in `src/lib/schema.ts` — builds `MedicalCondition` with `name`, `description`, `possibleTreatment`.
+- [x] Step 1.5: Created `src/lib/faq-generator.ts` with `FAQItem` interface, `mergeFaqs()` function, and `generateTreatmentFaqs()`, `generateDoctorFaqs()`, `generateHospitalFaqs()` functions. Added bilingual FAQ template strings to `src/i18n/en.json` and `src/i18n/bn.json` with `faq.templates` namespace and `faqTitle` keys.
+- [x] Step 1.6: Added realistic `toPrice` values to all 24 treatment content files (12 EN + 12 BN) based on Bangalore medical tourism price ranges.
+- [x] Step 1.7: Verified `FAQAccordion` component readiness — accepts `items: { question: string; answer: string }[]`, already in use on homepage, compatible with `faq-generator.ts` output.
+- [x] Build verification: `npm run build` passes with exit code 0, all 68 pages generated successfully with no schema validation errors.
+
+## SEO/AEO/GEO — Hybrid FAQ System Phase 2: Page Template Integration (2026-08-02)
+
+- [x] Step 2.1: EN treatment detail page (`treatments/[slug].astro`) — imports `FAQAccordion`, `faqPage`, `generateTreatmentFaqs`, `mergeFaqs`; generates FAQs from treatment data + related doctor/hospital names; merges with manual `faqs` if present; renders `FAQAccordion` with `client:visible`; injects `faqPage` JSON-LD into `jsonLd` array.
+- [x] Step 2.2: BN treatment detail page (`bn/treatments/[slug].astro`) — same as EN, using `'bn'` locale for Bengali FAQ templates.
+- [x] Step 2.3: EN doctor detail page (`doctors/[slug].astro`) — imports `FAQAccordion`, `faqPage`, `generateDoctorFaqs`, `mergeFaqs`; enriches `physician()` schema with `qualification`, `yearsExperience`, `languages`; generates FAQs from doctor data + hospital name; renders `FAQAccordion`; injects `faqPage` JSON-LD.
+- [x] Step 2.4: BN doctor detail page (`bn/doctors/[slug].astro`) — added full JSON-LD (physician + breadcrumbs + faqPage) that was previously missing entirely; enriched `physician()` with GEO fields; renders `FAQAccordion`.
+- [x] Step 2.5: EN hospital detail page (`hospitals/[slug].astro`) — imports `FAQAccordion`, `faqPage`, `generateHospitalFaqs`, `mergeFaqs`; generates FAQs from hospital data; renders `FAQAccordion`; injects `faqPage` JSON-LD.
+- [x] Step 2.6: BN hospital detail page (`bn/hospitals/[slug].astro`) — same as EN, using `'bn'` locale for Bengali FAQ templates.
+- [x] Build verification: `npm run build` passes with exit code 0, all 68 pages generated successfully.
+
+## SEO/AEO/GEO — Hybrid FAQ System Phase 3: Manual FAQ Overrides (2026-08-03)
+
+- [x] Step 3.1: Added 3 manual FAQs to all 12 EN treatment files + all 12 BN treatment files (24 files total). FAQs are entity-specific, covering topics like eligibility criteria, procedure-specific technology, recovery timelines, and cost factors that cannot be auto-generated from frontmatter.
+- [x] Step 3.2: Added 2 manual FAQs to 8 selected doctor profiles (EN + BN = 16 files). Doctors chosen based on content richness: Dr. Ajit Kumar Roy (neurology), Dr. S Vidyadhara (spine surgery), Dr. Deepak Dubey (uro-oncology), Dr. Shabber Zaveri (surgical oncology), Dr. Sunil G Kini (orthopaedics), Dr. Vishwanath S (nephrology), Dr. Amit Rauthan (medical oncology), Dr. Sumit Talwar (bariatric surgery). FAQs cover specialty expertise, surgical techniques, languages, and unique qualifications.
+- [x] Step 3.3: Added 3 manual FAQs to all 5 EN hospital files + all 5 BN hospital files (10 files total). FAQs cover accreditation status, international patient services, speciality strengths, and transplant programmes.
+- [x] Step 3.4: Build verification — `npm run build` passes with exit code 0, all pages generated successfully with no schema validation errors. Sitemap generated with 72 URLs.
+
+## SEO/AEO/GEO — Phase 4: GEO Enhancements (2026-08-02)
+
+- [x] Step 4.1: Added summary/TL;DR blocks to all 12 EN + 12 BN treatment files (24 files). Concise 2-3 sentence summaries after the `## Overview` / `## পরিচিতি` heading for AI engine extraction.
+- [x] Step 4.2: Added cost comparison tables to all 12 EN + 12 BN treatment files (24 files). Tables compare Bangalore costs with USA, UK, Singapore, Thailand, and Turkey where applicable.
+- [x] Step 4.3: Added `medicalWebPage()` schema helper in `src/lib/schema.ts` with `name`, `url`, `description`, `image`, `dateModified`, `about`, `mainEntity`, `audience` (as `MedicalAudience`), `inLanguage`, and `specialty` fields. Injected on both EN and BN treatment detail pages with `about` referencing the `MedicalProcedure` schema. Added 2 unit tests (expected use + optional field omission) — all 10 schema tests pass.
+- [x] Step 4.4: Updated `scripts/generate-sitemap.mjs` to collect file `mtime` via `stat()` and emit `<lastmod>YYYY-MM-DD</lastmod>` in each `<url>` entry. Fixed `sort()` and `filter()` to work with object entries instead of plain strings.
+
+## SEO/AEO/GEO — Phase 5: Testing & Verification (2026-08-02)
+
+- [x] Step 5.1: Full test suite passes — 14 test files, 74 tests, 0 failures. Includes `medicalWebPage()` tests, `faqPage()` tests, `medicalCondition()` tests, enriched `physician()` tests, `generateTreatmentFaqs()` / `generateDoctorFaqs()` / `generateHospitalFaqs()` tests, and `mergeFaqs()` tests.
+- [x] Step 5.2: Build verification — `npm run build` passes with exit code 0. 88 pages generated (72 → 88, BN doctors expanded to 17). `MedicalWebPage` JSON-LD confirmed in both EN and BN treatment detail pages. `FAQPage` JSON-LD confirmed in treatment, doctor, and hospital detail pages. Sitemap generated with 88 URLs and `<lastmod>` dates.
+- [x] Step 5.3: SEO validation — sitemap `<lastmod>` confirmed present. JSON-LD structured data verified in built HTML for all entity types. (Lighthouse audit and Google Rich Results Test are manual steps for the user to run against the deployed site.)

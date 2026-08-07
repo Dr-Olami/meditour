@@ -44,6 +44,13 @@ address: 98, HAL Old Airport Road, Kodihalli, Bangalore - 560017
 phone: +91-80-2502 4444
 email: info@manipalhospitals.com
 website: https://www.manipalhospitals.com
+faqs:
+  - question: "Is Manipal Hospital Old Airport Road JCI accredited?"
+    answer: "Yes, Manipal Hospital Old Airport Road was the first JCI-accredited hospital in Karnataka. It also holds NABH and NABL accreditations, reflecting its commitment to international standards in patient safety, clinical excellence, diagnostic accuracy and continuous quality improvement. Established in 1991, it is a 600-bed quaternary care facility."
+  - question: "What is Manipal Hospital Old Airport Road known for?"
+    answer: "Manipal Hospital Old Airport Road is known for its expertise in urology and nephrology (including robotic urological surgery and renal transplantation), gastroenterology and hepatology, cardiology, oncology, neurology and neurosurgery, orthopaedics and joint replacement (including robotic spine surgery), bariatric surgery, and organ transplant (kidney and liver)."
+  - question: "Does Manipal Hospital Old Airport Road have international patient services?"
+    answer: "Yes, Manipal Hospital Old Airport Road has a full-service international patient wing offering multilingual coordinators, visa assistance, airport pickup, teleconsultation, foreign currency exchange, accommodation assistance, pharmacy services and 24/7 emergency services. The hospital is easily accessible from Kempegowda International Airport."
 ---
 
 ## Overview

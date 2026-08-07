@@ -33,9 +33,11 @@ async function collectIndexHtml(dir, rootDir) {
       const subUrls = await collectIndexHtml(join(dir, entry.name), rootDir);
       urls.push(...subUrls);
     } else if (entry.isFile() && entry.name === 'index.html') {
-      const rel = relative(String(rootDir), join(dir, entry.name)).replace(/\\/g, '/');
+      const fullPath = join(dir, entry.name);
+      const rel = relative(String(rootDir), fullPath).replace(/\\/g, '/');
       const path = rel.replace(/index\.html$/, '').replace(/\/$/, '');
-      urls.push(path === '' ? '' : `/${path}`);
+      const fileStat = await stat(fullPath);
+      urls.push({ path: path === '' ? '' : `/${path}`, lastmod: fileStat.mtime });
     }
   }
   return urls;
@@ -50,13 +52,14 @@ async function main() {
   const indexPath = join(outputDir, 'sitemap-index.xml');
 
   let paths = await collectIndexHtml(String(outputDir), String(outputDir));
-  paths = paths.sort();
-  paths = paths.filter((p, i, arr) => arr.indexOf(p) === i);
+  paths.sort((a, b) => a.path.localeCompare(b.path));
+  paths = paths.filter((p, i, arr) => arr.findIndex((q) => q.path === p.path) === i);
 
   const urlEntries = paths
-    .map((path) => {
-      const loc = `${SITE_URL}${path || '/'}`;
-      return `  <url>\n    <loc>${loc}</loc>\n  </url>`;
+    .map((entry) => {
+      const loc = `${SITE_URL}${entry.path || '/'}`;
+      const lastmod = entry.lastmod.toISOString().split('T')[0];
+      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
     })
     .join('\n');
 
@@ -69,7 +72,7 @@ async function main() {
   await writeFile(String(indexPath), index);
 
   console.log(`Generated sitemap with ${paths.length} URLs in ${outputDir}:`);
-  paths.forEach((p) => console.log(`  ${p || '/'}`));
+  paths.forEach((p) => console.log(`  ${p.path || '/'}`));
 }
 
 main().catch((err) => {

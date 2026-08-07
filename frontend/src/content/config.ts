@@ -16,6 +16,12 @@ const doctors = defineCollection({
     avatar: z.string().optional(),
     bio: z.string().min(1),
     languages: z.array(z.string()).optional(),
+    faqs: z.array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      })
+    ).optional(),
   }),
 });
 
@@ -38,6 +44,12 @@ const hospitals = defineCollection({
     phone: z.string().optional(),
     email: z.string().optional(),
     website: z.string().optional(),
+    faqs: z.array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      })
+    ).optional(),
   }),
 });
 
@@ -49,6 +61,7 @@ const treatments = defineCollection({
     category: z.string().optional(),
     description: z.string().min(1),
     fromPrice: z.string().optional(),
+    toPrice: z.string().optional(),
     procedures: z.array(z.string()).optional(),
     relatedDoctorSlugs: z.array(z.string()).optional(),
     relatedHospitalSlugs: z.array(z.string()).optional(),
@@ -56,6 +69,12 @@ const treatments = defineCollection({
     hospitalStay: z.string().optional(),
     recoveryTime: z.string().optional(),
     image: z.string().optional(),
+    faqs: z.array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      })
+    ).optional(),
   }),
 });
 
