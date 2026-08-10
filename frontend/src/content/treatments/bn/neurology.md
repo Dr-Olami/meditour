@@ -18,10 +18,12 @@ procedures:
   - ভার্টিগো ও ব্যালেন্স অ্যাসেসমেন্ট
 relatedDoctorSlugs:
   - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
 relatedHospitalSlugs:
   - manipal-hospital-old-airport-road
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '১-৪ ঘন্টা'
 hospitalStay: '১-৭ দিন'
 recoveryTime: 'অবস্থা অনুযায়ী ভিন্ন'

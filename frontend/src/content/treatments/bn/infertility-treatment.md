@@ -11,8 +11,6 @@ procedures:
   - এমব্রিও ফ্রিজিং
   - দাতা প্রোগ্রাম
   - ফার্টিলিটি কাউন্সেলিং
-relatedDoctorSlugs:
-  - dr-sunita-rao
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

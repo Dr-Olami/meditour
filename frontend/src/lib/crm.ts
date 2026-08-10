@@ -4,6 +4,7 @@ export const LEAD_SOURCE = {
   COST_ESTIMATOR: 'cost-estimator',
   DOCTOR_PAGE: 'doctor-page',
   TREATMENT_PAGE: 'treatment-page',
+  HOSPITAL_PAGE: 'hospital-page',
   GENERAL_CONTACT: 'general-contact',
   WEBSITE: 'website',
 } as const;

@@ -18,10 +18,12 @@ procedures:
   - Vertigo and balance assessment
 relatedDoctorSlugs:
   - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
 relatedHospitalSlugs:
   - manipal-hospital-old-airport-road
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '1-4 hours'
 hospitalStay: '1-7 days'
 recoveryTime: 'Varies by condition'

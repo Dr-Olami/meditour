@@ -9,9 +9,12 @@ export interface BreadcrumbItem {
 export interface Props {
   items: BreadcrumbItem[];
   class?: string;
+  /** 'light' (default) for cream backgrounds, 'dark' for ink/dark hero bands. */
+  tone?: 'light' | 'dark';
 }
 
-const { items, class: className } = Astro.props;
+const { items, class: className, tone = 'light' } = Astro.props;
+const isDark = tone === 'dark';
 ---
 
 <nav aria-label="Breadcrumb" class:list={['flex flex-wrap items-center gap-2 text-sm', className]}>
@@ -20,14 +23,20 @@ const { items, class: className } = Astro.props;
     return (
       <span class="flex items-center gap-2">
         {index > 0 && (
-          <Icon name="chevron-right" size={14} className="text-ink/40" />
+          <Icon name="chevron-right" size={14} className={isDark ? 'text-cream-100/40' : 'text-ink/40'} />
         )}
         {item.href && !isLast ? (
-          <a href={item.href} class="font-medium text-ink/60 transition-colors hover:text-ink">
+          <a
+            href={item.href}
+            class:list={[
+              'font-medium transition-colors',
+              isDark ? 'text-cream-100/60 hover:text-cream-100' : 'text-ink/60 hover:text-ink',
+            ]}
+          >
             {item.label}
           </a>
         ) : (
-          <span class="font-medium text-ink" aria-current="page">
+          <span class:list={['font-medium', isDark ? 'text-cream-100' : 'text-ink']} aria-current="page">
             {item.label}
           </span>
         )}

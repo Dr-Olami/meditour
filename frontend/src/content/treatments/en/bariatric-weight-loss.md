@@ -12,7 +12,6 @@ procedures:
   - Revisional bariatric surgery
   - Nutritional counselling
 relatedDoctorSlugs:
-  - dr-ananya-sen
   - dr-sumit-talwar
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta

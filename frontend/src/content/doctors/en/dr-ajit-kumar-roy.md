@@ -13,6 +13,13 @@ languages:
   - Hindi
   - Kannada
   - Telugu
+expertise:
+  - Neuro Sciences
+  - Stroke
+  - Epilepsy
+  - Movement Disorders
+  - Demyelinating Disease
+pullQuote: "After four decades in neurology, I have learned that the most important diagnosis is not the disease — it is the person sitting in front of you."
 faqs:
   - question: "What neurological conditions does Dr. Ajit Kumar Roy specialise in?"
     answer: "Dr. Ajit Kumar Roy specialises in stroke management, epilepsy (including epilepsy surgery and vagus nerve stimulation), movement disorders such as Parkinson's disease and dystonia, demyelinating diseases including multiple sclerosis, nerve and muscle disorders, sleep disorders, fibromyalgia, vertigo, migraine, and dementia. With over 45 years of experience, he is one of the most senior neurologists in Bangalore."
@@ -27,14 +34,6 @@ Dr. Ajit Kumar Roy is a Consultant for Neurology at the Manipal Hospitals, Old A
 Throughout his career, Dr. Ajit Kumar Roy has made sizeable contributions to the scientific community through his talks and publications. He has authored numerous research papers, case reviews, and review articles, which have been published in esteemed medical journals including the Journal of the Association of Physicians of India (JAPI), Neurology India, and the Indian Journal of Aerospace Medicine. These publications cover a wide range of topics, including torsion dystonia, acute disseminated encephalomyelitis, stroke prognosis, and epilepsy management. Dr. Roy's expertise extends beyond his clinical practice. He has been appointed as an adviser to the Union Public Service Commission and the Government of India, reflecting his involvement in shaping healthcare policies and standards. His dedication and contributions have been recognised internationally, as he received the Health Professional of the Year award from the International Biographical Centre in Cambridge, England.
 
 As a consultant in neurology, Dr. Ajit Kumar Roy provides specialised care to patients suffering from diverse neurological conditions. His areas of specialisation include neurosciences, stroke, epilepsy, movement disorders, and demyelinating diseases. In addition to his clinical work, Dr. Roy is multilingual and fluent in English, Bengali, Hindi, Kannada, and Telugu. This linguistic ability enables him to effectively communicate with patients from diverse backgrounds, ensuring that they receive personalised care and support. Some of the services provided by him include vagus nerve stimulation (epilepsy), epilepsy surgery, nerve and muscle disorder treatment, neurological problems/sleep disorder treatment, fibromyalgia treatment, multiple sclerosis treatment, epilepsy treatment, vertigo treatment, migraine treatment, Parkinson's disease treatment, and dementia treatment.
-
-## Field of Expertise
-
-- Neuro Sciences
-- Stroke
-- Epilepsy
-- Movement Disorders
-- Demyelinating Disease
 
 ## Fellowships & Memberships
 

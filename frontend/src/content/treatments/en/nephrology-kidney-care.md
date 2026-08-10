@@ -16,10 +16,12 @@ procedures:
 relatedDoctorSlugs:
   - dr-mohammed-fahad-khan
   - dr-vishwanath-s
+  - dr-akhila-vasanth-hassan
 relatedHospitalSlugs:
   - manipal-hospital-old-airport-road
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - narayana-institute-cardiac-sciences
 duration: 'Varies by condition'
 hospitalStay: '1-7 days (non-transplant) | 2-4 weeks (transplant)'
 recoveryTime: '2-12 weeks'

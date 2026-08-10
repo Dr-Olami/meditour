@@ -12,14 +12,15 @@ procedures:
   - জীবিত দাতার যাচাই
   - ট্রান্সপ্লান্ট-পরবর্তী ফলো-আপ
 relatedDoctorSlugs:
-  - dr-vikram-patel
   - dr-vishwanath-s
   - dr-jayanth-reddy
   - dr-mohammed-fahad-khan
+  - dr-ravishankar-shetty-k
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '৪-১২ ঘন্টা'
 hospitalStay: '২-৪ সপ্তাহ'
 recoveryTime: '৩-৬ মাস'

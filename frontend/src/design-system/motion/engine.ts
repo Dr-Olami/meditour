@@ -10,6 +10,8 @@ import {
   staggerCards,
   headlineReveal,
   pressButton,
+  maskReveal,
+  imageScaleIn,
 } from './presets';
 
 if (typeof window !== 'undefined') {
@@ -143,7 +145,7 @@ function runCounterUp(scope: HTMLElement): gsap.core.Tween[] {
         obj,
         { value: 0 },
         {
-          value,
+          value: target,
           duration: counterUp.to.duration,
           ease: counterUp.to.ease,
           snap: { value: 1 },
@@ -200,6 +202,40 @@ function runHeadlineReveal(scope: HTMLElement): gsap.core.Tween[] {
         headlineReveal.from,
         {
           ...headlineReveal.to,
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        }
+      )
+    );
+  });
+  return tweens;
+}
+
+function runMaskReveal(scope: HTMLElement): gsap.core.Tween[] {
+  const tweens: gsap.core.Tween[] = [];
+  scope.querySelectorAll<HTMLElement>('[data-anim~="mask-reveal"]').forEach((el) => {
+    tweens.push(
+      gsap.fromTo(
+        el,
+        maskReveal.from,
+        {
+          ...maskReveal.to,
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        }
+      )
+    );
+  });
+  return tweens;
+}
+
+function runImageScaleIn(scope: HTMLElement): gsap.core.Tween[] {
+  const tweens: gsap.core.Tween[] = [];
+  scope.querySelectorAll<HTMLElement>('[data-anim~="image-scale-in"]').forEach((el) => {
+    tweens.push(
+      gsap.fromTo(
+        el,
+        imageScaleIn.from,
+        {
+          ...imageScaleIn.to,
           scrollTrigger: { trigger: el, start: 'top 85%', once: true },
         }
       )
@@ -360,6 +396,8 @@ export function initAnimations(scope: HTMLElement | Document = document): Animat
       ...runHeroParallax(root),
       ...runTimelineDraw(root),
       ...runHeadlineReveal(root),
+      ...runMaskReveal(root),
+      ...runImageScaleIn(root),
     ];
     eventCleanups = [
       ...runCardHover(root),

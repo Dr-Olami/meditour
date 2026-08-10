@@ -11,8 +11,6 @@ procedures:
   - Embryo freezing
   - Donor programme
   - Fertility counselling
-relatedDoctorSlugs:
-  - dr-sunita-rao
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

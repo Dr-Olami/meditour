@@ -3,17 +3,24 @@ import Layout from '../../../layouts/Layout.astro';
 import { Navbar } from '../../../design-system/components/organisms/Navbar';
 import { Footer } from '../../../design-system/components/organisms/Footer';
 import { DoctorCard } from '../../../design-system/components/organisms/DoctorCard';
+import { LeadForm } from '../../../design-system/components/organisms/LeadForm';
+import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
 import { Icon } from '../../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import { MarqueeStrip } from '../../../design-system/components/molecules/MarqueeStrip';
+import { StatBand } from '../../../design-system/components/molecules/StatBand';
+import { ChipCloud } from '../../../design-system/components/molecules/ChipCloud';
+import type { StatItem } from '../../../design-system/components/molecules/StatBand';
+import { resolvePublicImage } from '../../../lib/images';
 import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
 import { getHospitals, getDoctors, resolveHospital, getDoctorsAtHospital, entrySlug } from '../../../lib/content';
 import { hospital as hospitalSchema, breadcrumbs, faqPage } from '../../../lib/schema';
-import { getDoctorInquiryLink } from '../../../lib/whatsapp';
+import { getDoctorInquiryLink, getHospitalInquiryLink } from '../../../lib/whatsapp';
 import { generateHospitalFaqs, mergeFaqs } from '../../../lib/faq-generator';
-import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
 import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
+import { LEAD_SOURCE } from '../../../lib/crm';
 
 export async function getStaticPaths() {
   const [hospitals, doctors] = await Promise.all([getHospitals('bn'), getDoctors('bn')]);
@@ -43,6 +50,11 @@ export async function getStaticPaths() {
 const t = getTranslations('bn');
 const { hospital, doctors, entry } = Astro.props;
 const { Content } = await entry.render();
+
+const hospitalWhatsAppHref = getHospitalInquiryLink(hospital.name);
+
+// Shared CTA backdrop — same file as the en page; falls back to ink + glow.
+const ctaImage = resolvePublicImage('images/patterns/hospital-page-cta', ['jpg']);
 
 const navLinks = getNavLinks('bn');
 
@@ -78,94 +90,161 @@ const faqs = hospital.faqs ? mergeFaqs(autoFaqs, hospital.faqs) : autoFaqs;
 if (faqs.length > 0) {
   jsonLd.push(faqPage({ entries: faqs }));
 }
+
+// ── Editorial data shaping ────────────────────────────────────────────
+const stats: StatItem[] = [
+  ...(hospital.bedCount ? [{ value: hospital.bedCount, label: t.hospitals.bedsLabel }] : []),
+  ...(hospital.establishedYear ? [{ value: hospital.establishedYear, label: t.hospitals.establishedLabel }] : []),
+  ...(hospital.specialities ? [{ value: hospital.specialities.length, label: t.hospitals.specialitiesCountLabel }] : []),
+];
 ---
 
 <Layout title={title} description={description} locale="bn" image={hospital.image} jsonLd={jsonLd}>
   <Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '/bn/#contact' }} client:load />
 
-  <main class="container py-24 md:py-28">
-    <Breadcrumb
-      items={[
-        { label: t.nav.home, href: '/bn' },
-        { label: t.hospitals.title, href: '/bn/hospitals' },
-        { label: hospital.name },
-      ]}
-      class="mb-6"
-      data-anim="fade-in-up"
-    />
+  <main>
 
-    <div class="grid gap-10 lg:grid-cols-[1fr_22rem]">
-      <div>
-        <div data-anim="stagger-children">
-        {hospital.image && (
-          <div class="mb-8 overflow-hidden rounded-card border border-cream-300">
-            <img src={hospital.image} alt={hospital.name} class="h-64 w-full object-cover md:h-80" />
-          </div>
-        )}
+  {/* ── FULL-BLEED HERO IMAGE with bg-ink/60 gradient overlay ────────── */}
+  <section class="relative overflow-hidden bg-ink text-cream-100">
+    {hospital.image && (
+      <img
+        src={hospital.image}
+        alt={hospital.name}
+        class="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+        data-anim="mask-reveal"
+      />
+    )}
+    {/* Gradient scrim — darker at top (breadcrumb zone) and bottom (title
+        zone), lighter in the middle so the photo still reads. Flat overlays
+        leave breadcrumbs unreadable on bright images. */}
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/40 to-ink/70" aria-hidden="true" />
+    <div class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
 
-        <div class="mb-6 flex flex-wrap items-center gap-3">
-          <h1 class="font-display text-3xl font-bold text-ink md:text-5xl" data-anim="headline-reveal">{hospital.name}</h1>
-        </div>
+    <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+      <Breadcrumb
+        items={[
+          { label: t.nav.home, href: '/bn' },
+          { label: t.hospitals.title, href: '/bn/hospitals' },
+          { label: hospital.name },
+        ]}
+        tone="dark"
+        class="mb-10"
+        data-anim="fade-in-up"
+      />
 
-        <p class="mb-8 flex items-center gap-2 text-ink/60">
+      <div data-anim="stagger-children">
+        <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl" data-anim="headline-reveal">
+          {hospital.name}
+        </h1>
+        <p class="mt-4 flex items-center gap-2 text-lg text-cream-100/70">
           <Icon name="map-pin" size={18} />
           {hospital.city}, {hospital.country}
         </p>
-      </div>
 
-        <div class="prose prose-ink max-w-none" data-anim="fade-in-up">
-          <h2 class="mb-3 font-display text-xl font-semibold text-ink">হাসপাতাল সম্পর্কে</h2>
+        {hospital.accreditations && hospital.accreditations.length > 0 && (
+          <div class="mt-6 flex flex-wrap gap-2" data-anim="fade-in-up">
+            {hospital.accreditations.map((badge) => (
+              <span class="rounded-full border border-cream-100/20 bg-cream-100/10 px-4 py-1.5 text-xs font-semibold text-cream-100 backdrop-blur-sm">
+                {badge}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+            {t.doctors.detail.bookCta}
+          </a>
+          {hospitalWhatsAppHref && (
+            <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
+              <Icon name="whatsapp" size={18} />
+              {t.doctors.detail.whatsappCta}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── DARK STATBAND — beds / established / speciality count ─────────── */}
+  {stats.length > 0 && (
+    <section class="bg-ink py-12 text-cream-100" data-anim="fade-in-up">
+      <div class="container">
+        <StatBand stats={stats} tone="dark" />
+      </div>
+    </section>
+  )}
+
+  <section class="container py-16 md:py-20">
+    {/* ── BODY + STICKY RAIL ──────────────────────────────────────────── */}
+    <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
+      <div>
+        {/* About */}
+        <div class="prose prose-ink prose-editorial max-w-none" data-anim="fade-in-up">
+          <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.hospitals.about}</h2>
           <p class="text-ink/70 leading-relaxed">{hospital.description}</p>
         </div>
 
+        {/* Specialities → ChipCloud */}
         {hospital.specialities && hospital.specialities.length > 0 && (
           <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-xl font-semibold text-ink">বিশেষত্ব</h2>
-            <div class="flex flex-wrap gap-2" data-anim="stagger-children">
-              {hospital.specialities.map((speciality) => (
-                <span class="rounded-full bg-cream-200 px-3 py-1 text-xs font-medium text-ink/70">
-                  {speciality}
-                </span>
-              ))}
-            </div>
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.specialities}</h2>
+            <ChipCloud items={hospital.specialities} tone="light" />
           </div>
         )}
 
-        <div class="prose prose-ink mt-12 max-w-none" data-anim="scroll-reveal">
+        {/* Prose body */}
+        <div class="prose prose-ink prose-editorial mt-12 max-w-none" data-anim="scroll-reveal">
           <Content />
         </div>
 
+        {/* Amenities → ChipCloud */}
         {hospital.amenities && hospital.amenities.length > 0 && (
           <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.hospitals.amenities}</h2>
-            <ul class="grid gap-3 sm:grid-cols-2" data-anim="stagger-cards">
-              {hospital.amenities.map((amenity) => (
-                <li class="flex items-center gap-3 rounded-card border border-cream-300 bg-cream-100 p-4 text-sm text-ink/80">
-                  <span class="h-2 w-2 shrink-0 rounded-full bg-violet-600" aria-hidden="true" />
-                  {amenity}
-                </li>
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.amenities}</h2>
+            <ChipCloud items={hospital.amenities} tone="light" />
+          </div>
+        )}
+
+        {/* Gallery → MarqueeStrip horizontal scroll */}
+        {hospital.gallery && hospital.gallery.length > 0 && (
+          <div class="mt-12" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.gallery}</h2>
+            <MarqueeStrip>
+              {hospital.gallery.map((image, i) => (
+                <div class="shrink-0 snap-start">
+                  <img src={image} alt={`${hospital.name} gallery ${i + 1}`} class="h-48 w-72 rounded-card object-cover md:h-56" loading="lazy" />
+                </div>
               ))}
-            </ul>
+            </MarqueeStrip>
           </div>
         )}
       </div>
 
-      <aside class="space-y-10 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
+      {/* Sticky rail — contact info + booking */}
+      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
         <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <h2 class="mb-4 font-display text-lg font-semibold text-ink">হাসপাতাল তথ্য</h2>
+          <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.doctors.detail.bookCta}</h2>
+          <p class="text-sm text-ink/60">{t.hospitals.consultSummary}</p>
+          <div class="mt-5 flex flex-col gap-3">
+            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+              {t.doctors.detail.bookCta}
+            </a>
+            {hospitalWhatsAppHref && (
+              <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
+                <Icon name="whatsapp" size={18} />
+                {t.doctors.detail.whatsappCta}
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Contact details */}
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <h2 class="mb-4 font-display text-lg font-semibold text-ink">যোগাযোগ</h2>
           <dl class="space-y-3 text-sm" data-anim="stagger-children">
-            {hospital.establishedYear && (
-              <div class="flex justify-between gap-4">
-                <dt class="text-ink/50">প্রতিষ্ঠিত</dt>
-                <dd class="font-medium text-ink/80">{hospital.establishedYear}</dd>
-              </div>
-            )}
-            {hospital.bedCount && (
-              <div class="flex justify-between gap-4">
-                <dt class="text-ink/50">শয্যা</dt>
-                <dd class="font-medium text-ink/80">{hospital.bedCount}</dd>
-              </div>
-            )}
             {hospital.address && (
               <div class="flex flex-col gap-1">
                 <dt class="text-ink/50">ঠিকানা</dt>
@@ -186,37 +265,10 @@ if (faqs.length > 0) {
             )}
           </dl>
         </div>
-
-        {hospital.accreditations && hospital.accreditations.length > 0 && (
-          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.hospitals.accreditation}</h2>
-            <div class="flex flex-wrap gap-2" data-anim="stagger-children">
-              {hospital.accreditations.map((badge) => (
-                <span key={badge} class="rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {hospital.gallery && hospital.gallery.length > 0 && (
-          <div data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-lg font-semibold text-ink">গ্যালারি</h2>
-            <div class="grid grid-cols-2 gap-3" data-anim="stagger-cards">
-              {hospital.gallery.map((image) => (
-                <img
-                  src={image}
-                  alt={`${hospital.name} gallery`}
-                  class="aspect-video rounded-card object-cover"
-                />
-              ))}
-            </div>
-          </div>
-        )}
       </aside>
     </div>
 
+    {/* ── DOCTORS AT HOSPITAL ─────────────────────────────────────────── */}
     {doctors.length > 0 && (
       <section class="mt-16" data-anim="fade-in-up">
         <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.doctorsAtHospital}</h2>
@@ -228,13 +280,64 @@ if (faqs.length > 0) {
       </section>
     )}
 
+    {/* ── FAQ ───────────────────────────────────────────────────────── */}
     {faqs.length > 0 && (
       <section class="mt-16" data-anim="fade-in-up">
         <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.faqTitle}</h2>
         <FAQAccordion items={faqs} client:visible />
       </section>
     )}
+  </section>
+
+  {/* ── MID-PAGE CTA — dark band ────────────────────────────────────
+      IMAGE SLOT: same as en — /images/patterns/hospital-page-cta.jpg
+      (1920×800, <150KB) under a bg-ink/70 overlay. See the en template
+      (src/pages/hospitals/[slug].astro) for the full generation prompt.
+      Auto-detected at build time. */}
+  <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
+    {ctaImage && (
+      <>
+        <img src={ctaImage} alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover" aria-hidden="true" loading="lazy" />
+        <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
+      </>
+    )}
+    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
+    <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">{t.hospitals.consultCta.replace('{{name}}', hospital.name)}</h2>
+        <p class="mt-2 max-w-xl text-cream-100/60">{t.hospitals.consultSummary}</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+          {t.doctors.detail.bookCta}
+        </a>
+        {hospitalWhatsAppHref && (
+          <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
+            <Icon name="whatsapp" size={18} />
+            {t.doctors.detail.whatsappCta}
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
   </main>
+
+  {/* ── CONTACT / LEAD FORM ─────────────────────────────────────────── */}
+  <section id="contact" class="bg-cream-200 py-20" data-anim="stagger-children">
+    <div class="container grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
+        <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+      </div>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8">
+        <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
+        <LeadForm
+          client:load
+          source={LEAD_SOURCE.HOSPITAL_PAGE}
+        />
+      </div>
+    </div>
+  </section>
 
   <Footer
     brand={t.site.name}

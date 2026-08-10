@@ -38,7 +38,11 @@
       }
     ],
     "explore": "Explore More",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "bottomWide": {
+      "title": "Cancer Care",
+      "subtitle": "Advanced oncology treatment with compassionate, multidisciplinary care from diagnosis to recovery."
+    }
   },
   "steps": {
     "title": "How it works",
@@ -59,8 +63,35 @@
       "relatedDoctors": "Specialists for this treatment",
       "inquiryCta": "Request a free consultation",
       "fromPrice": "From {{price}}",
-      "faqTitle": "Frequently Asked Questions"
+      "faqTitle": "Frequently Asked Questions",
+      "durationLabel": "Duration",
+      "stayLabel": "Hospital stay",
+      "recoveryLabel": "Recovery",
+      "priceLabel": "From",
+      "specialistsHeading": "Meet your specialists",
+      "specialistsSummary": "Consult directly with the surgeons and clinicians who will oversee your care — no intermediaries, no waiting rooms.",
+      "journeyHeading": "Your patient journey",
+      "journeyStep1Title": "Enquiry & assessment",
+      "journeyStep1Desc": "Share your reports; our care team reviews your case and recommends the right specialist within 24 hours.",
+      "journeyStep2Title": "Travel & admission",
+      "journeyStep2Desc": "We handle visa assistance, airport pickup, and hospital admission — you arrive ready for treatment.",
+      "journeyStep3Title": "Treatment & recovery",
+      "journeyStep3Desc": "Your procedure is performed at a JCI-accredited hospital, followed by monitored recovery and discharge planning.",
+      "journeyStep4Title": "Follow-up & home",
+      "journeyStep4Desc": "Telemedicine reviews, discharge summary, and continued support once you return home.",
+      "consultCta": "Talk to a care advisor about {{name}}",
+      "consultSummary": "Free consultation, transparent pricing, visa assistance — your treatment plan in 24 hours.",
+      "treatingHospitals": "Treating hospitals"
     }
+  },
+  "doctorShowcase": {
+    "headlineLine1": "Consult doctors across",
+    "headlineLine2": "15+ specialisations.",
+    "subheadLine1a": "Highly experienced.",
+    "subheadLine1b": "Full time doctors.",
+    "subheadLine2": "Only focused on your care.",
+    "bookNow": "Book Now",
+    "callConcierge": "Call Concierge"
   },
   "stats": {
     "title": "Why patients trust us",
@@ -156,7 +187,10 @@
       "atHospital": "Practices at",
       "bookCta": "Request appointment",
       "whatsappCta": "Chat on WhatsApp",
-      "faqTitle": "Frequently Asked Questions"
+      "faqTitle": "Frequently Asked Questions",
+      "expertiseLabel": "Areas of expertise",
+      "consultCta": "Consult {{name}}",
+      "consultSummary": "Book a consultation through Khan Meditour — we handle appointments, travel and logistics."
     }
   },
   "hospitals": {
@@ -167,7 +201,15 @@
     "amenities": "Amenities",
     "accreditation": "Accreditation",
     "doctorsAtHospital": "Doctors at this hospital",
-    "faqTitle": "Frequently Asked Questions"
+    "faqTitle": "Frequently Asked Questions",
+    "about": "About the hospital",
+    "gallery": "Gallery",
+    "specialities": "Specialities",
+    "bedsLabel": "Beds",
+    "establishedLabel": "Established",
+    "specialitiesCountLabel": "Specialities",
+    "consultCta": "Plan your treatment at {{name}}",
+    "consultSummary": "Free consultation, transparent pricing, visa assistance — your treatment plan in 24 hours."
   },
   "howItWorks": {
     "title": "How it works",

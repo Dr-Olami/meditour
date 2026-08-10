@@ -11,8 +11,6 @@ procedures:
   - Corneal transplant
   - Glaucoma surgery
   - Retina laser treatment
-relatedDoctorSlugs:
-  - dr-kavita-iyer
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

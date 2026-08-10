@@ -109,7 +109,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   topCard={{
     title: t.serviceCards.top.title,
     subtitle: t.serviceCards.top.subtitle,
-    image: 'https://images.unsplash.com/photo-1622253692010-333f4e9789aa?w=1200&auto=format&fit=crop',
+    image: '/images/treatments/cardiology.jpg',
     exploreHref: `${prefix}/treatments`,
     contactHref: '#contact',
   }}
@@ -117,19 +117,74 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     {
       title: t.serviceCards.bottom[0].title,
       subtitle: t.serviceCards.bottom[0].subtitle,
-      image: 'https://images.unsplash.com/photo-1550831161-6699607fce0e?w=800&auto=format&fit=crop',
+      image: '/images/treatments/infertility-treatment.jpg',
       exploreHref: `${prefix}/treatments/fertility-treatment`,
       contactHref: '#contact',
     },
     {
       title: t.serviceCards.bottom[1].title,
       subtitle: t.serviceCards.bottom[1].subtitle,
-      image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=800&auto=format&fit=crop',
-      exploreHref: `${prefix}/treatments/orthopedics-surgery`,
+      image: '/images/treatments/organ-treatment.jpg',
+      exploreHref: `${prefix}/treatments/organ-treatment`,
       contactHref: '#contact',
     },
   ]}
+  bottomWideCard={{
+    title: t.serviceCards.bottomWide.title,
+    subtitle: t.serviceCards.bottomWide.subtitle,
+    image: '/images/treatments/cancer-treatment.jpg',
+    exploreHref: `${prefix}/treatments/cancer-treatment`,
+    contactHref: '#contact',
+  }}
 />
+
+<!-- Doctor showcase — headline + wide imagery -->
+<section class="bg-cream-100 pt-8 pb-20" data-anim="scroll-reveal">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
+    {/* Centered headline — two lines, second line emphasized */}
+    <div class="text-center" data-anim="stagger-children">
+      <h2 class="font-display text-3xl font-bold leading-none tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-6xl" data-anim="fade-in-up">
+        <span class="block whitespace-nowrap">{t.doctorShowcase.headlineLine1}</span>
+        <span class="block whitespace-nowrap text-ink">
+          {t.doctorShowcase.headlineLine2}
+        </span>
+      </h2>
+      <p class="mt-6 text-base font-medium text-ink sm:mt-8 sm:text-xl md:mt-8 md:text-2xl" data-anim="fade-in-up">
+        <span class="block sm:inline">{t.doctorShowcase.subheadLine1a}</span>
+        <span class="block sm:inline">{t.doctorShowcase.subheadLine1b}</span>
+        <span class="block">{t.doctorShowcase.subheadLine2}</span>
+      </p>
+    </div>
+
+    {/* Wide imagery card with bento CTA buttons */}
+    <div class="mt-12 overflow-hidden rounded-card shadow-base" data-anim="fade-in-up">
+      <div class="relative h-[400px] md:h-[560px] lg:h-[640px]">
+        <img
+          src="/images/patterns/doctor-page-cta.jpg"
+          alt={t.doctorShowcase.headlineLine1 + ' ' + t.doctorShowcase.headlineLine2}
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+        {/* Bento CTA buttons — high contrast over imagery */}
+        <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-4 p-6 md:p-10">
+          <a
+            href="#contact"
+            class="inline-flex h-12 items-center justify-center rounded-pill bg-ink px-7 text-sm font-semibold text-cream-100 transition-opacity hover:opacity-90 md:text-base"
+          >
+            {t.doctorShowcase.bookNow}
+          </a>
+          <a
+            href={`tel:${whatsappNumber}`}
+            class="inline-flex h-12 items-center justify-center rounded-pill bg-cream-100 px-7 text-sm font-semibold text-ink transition-opacity hover:opacity-90 md:text-base"
+          >
+            {t.doctorShowcase.callConcierge}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Stats bar -->
 <section id="stats" class="bg-cream-200 py-14" data-anim="scroll-reveal">
@@ -271,8 +326,40 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   address={t.footer.address}
 />
 
-<WhatsAppCTA number={whatsappNumber} variant="floating" client:load />
+<WhatsAppCTA number={whatsappNumber} variant="floating" client:load data-floating-cta />
 
-<div class="fixed bottom-6 left-6 z-fixed">
+<div class="fixed bottom-6 left-6 z-fixed" data-floating-cta>
   <LanguageSwitcher currentLocale={locale} currentPath={Astro.url.pathname} client:load />
 </div>
+
+<script>
+  // Stick floating CTAs above the footer when it enters the viewport.
+  // Instead of switching to absolute positioning, we keep position:fixed
+  // and dynamically increase the `bottom` offset so the buttons ride
+  // just above the footer's top edge as it scrolls into view.
+  const footer = document.querySelector('footer');
+  const floaters = document.querySelectorAll<HTMLElement>('[data-floating-cta]');
+
+  function updateFloaters() {
+    if (!footer || floaters.length === 0) return;
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (footerTop < windowHeight) {
+      // Footer has entered the viewport — push floaters up to sit above it
+      const overlap = windowHeight - footerTop;
+      floaters.forEach((el) => {
+        el.style.bottom = `${overlap + 24}px`;
+      });
+    } else {
+      // Footer not in view — reset to default fixed position
+      floaters.forEach((el) => {
+        el.style.bottom = '';
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateFloaters, { passive: true });
+  window.addEventListener('resize', updateFloaters);
+  updateFloaters();
+</script>

@@ -12,11 +12,12 @@ procedures:
   - Thyroid surgery
   - Sleep apnoea surgery
 relatedDoctorSlugs:
-  - dr-sameer-khan
+  - dr-srinivas-kunku
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '1-4 hours'
 hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'

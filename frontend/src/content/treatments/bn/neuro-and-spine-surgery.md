@@ -12,12 +12,13 @@ procedures:
   - স্ট্রোক থ্রোম্বেক্টমি
   - নিউরো-রিহ্যাবিলিটেশন
 relatedDoctorSlugs:
-  - dr-vikram-patel
   - dr-s-vidyadhara
+  - dr-murali-mohan
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '২-৮ ঘন্টা'
 hospitalStay: '৩-১০ দিন'
 recoveryTime: '২-১২ সপ্তাহ'

@@ -12,9 +12,9 @@ procedures:
   - Spine decompression
   - Arthroscopy
 relatedDoctorSlugs:
-  - dr-arun-kumar
   - dr-sunil-g-kini
   - dr-samarth-arya
+  - dr-sharan-shivaraj-patil
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta

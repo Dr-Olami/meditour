@@ -1,4 +1,4 @@
-import { l as leadSchema } from '../../chunks/crm_DiyeKSRM.mjs';
+import { l as leadSchema } from '../../chunks/crm_DHBROmrP.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const prerender = false;

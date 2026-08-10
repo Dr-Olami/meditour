@@ -13,6 +13,17 @@ languages:
   - Hindi
   - Urdu
   - French
+expertise:
+  - Glomerular Disease
+  - "Kidney Transplantation (Evaluation, Post-Transplant Management, Transplant Immunology)"
+  - "Dialysis (Haemodialysis, Peritoneal Dialysis, CRRT)"
+  - Acute and Chronic Kidney Disease
+  - Kidney Stone Disease
+  - Diabetic Kidney Disease
+  - Electrolyte Disorders
+  - Resistant Hypertension
+  - Vascular Access Procedures
+pullQuote: "Kidney disease silently steals quality of life long before it threatens life itself. My mission is to intervene early enough to change that trajectory."
 faqs:
   - question: "What conditions does Dr. Mohammed Fahad Khan treat?"
     answer: "Dr. Mohammed Fahad Khan specialises in the diagnosis and management of acute kidney injury, chronic kidney disease, glomerular diseases, diabetic kidney disease, kidney stone disease, electrolyte disorders, resistant hypertension, dialysis care, vascular access procedures, and kidney transplantation. He has particular expertise in kidney transplant evaluation, post-transplant management, transplant immunology, recurrent and de novo glomerular diseases after transplantation, and advanced dialysis modalities including continuous renal replacement therapy (CRRT)."
@@ -35,18 +46,6 @@ At Manipal Hospital Old Airport Road, Dr. Mohammed Fahad Khan manages a broad sp
 Alongside his clinical work, Dr. Khan has made remarkable contributions to nephrology research and academics. He has authored and co-authored around 40 publications in leading national and international peer-reviewed journals covering transplant nephrology, glomerular diseases, chronic kidney disease, dialysis, renal pathology, and rare kidney disorders. He is a regular faculty speaker at national conferences and has received numerous academic honours, including the Torrent Young Scholar Award, Best Paper Awards, Best Orator Award, multiple national nephrology quiz championships, and several research accolades. He is an active member of the Indian Society of Nephrology, Indian Society of Organ Transplantation, European Renal Association, and the National Academy of Medical Sciences (MNAMS).
 
 Fluent in English, Kannada, Hindi, Urdu, and French, Dr. Mohammed Fahad Khan believes in empowering patients through clear communication and personalised treatment planning. His exceptional academic credentials, specialised transplant expertise, and commitment to advancing kidney care have made him one of the best nephrology doctors in Bangalore for comprehensive nephrology and transplant services.
-
-## Field of Expertise
-
-- Glomerular Disease
-- Kidney Transplantation (Evaluation, Post-Transplant Management, Transplant Immunology)
-- Dialysis (Haemodialysis, Peritoneal Dialysis, CRRT)
-- Acute and Chronic Kidney Disease
-- Kidney Stone Disease
-- Diabetic Kidney Disease
-- Electrolyte Disorders
-- Resistant Hypertension
-- Vascular Access Procedures
 
 ## Fellowships & Memberships
 

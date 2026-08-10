@@ -12,12 +12,13 @@ procedures:
   - Stroke thrombectomy
   - Neuro-rehabilitation
 relatedDoctorSlugs:
-  - dr-vikram-patel
   - dr-s-vidyadhara
+  - dr-murali-mohan
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '2-8 hours'
 hospitalStay: '3-10 days'
 recoveryTime: '2-12 weeks'

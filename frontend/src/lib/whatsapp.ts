@@ -63,6 +63,21 @@ export function getTreatmentInquiryLink(treatmentName: string): string {
 }
 
 /**
+ * Build a WhatsApp inquiry link mentioning a specific hospital.
+ *
+ * @param hospitalName - Name of the hospital.
+ * @returns WhatsApp deep link or empty string if no number configured.
+ */
+export function getHospitalInquiryLink(hospitalName: string): string {
+  const number = getWhatsAppNumber();
+  if (!number) return '';
+  return buildWhatsAppLink(
+    number,
+    `Hi Khan Meditour, I would like to know more about treatment at ${hospitalName}.`
+  );
+}
+
+/**
  * Build a WhatsApp inquiry link after receiving a cost estimate.
  *
  * @param treatmentName - Name of the treatment.

@@ -12,14 +12,20 @@ procedures:
   - ইমিউনোথেরাপি
   - PET-CT স্টেজিং
 relatedDoctorSlugs:
-  - dr-priya-nair
   - dr-shabber-zaveri
   - dr-amit-rauthan
   - dr-k-hemanth-kumar
+  - dr-vidya-bhushan
+  - dr-sunil-udgire
+  - dr-mahesh-rajashekaraiah
+  - dr-chandrakala-s
+  - dr-g-girish
+  - dr-kanmani-govindrao-telkar
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
   - manipal-hospital-old-airport-road
+  - sparsh-hospital-hennur
 duration: 'স্টেজ অনুযায়ী ভিন্ন'
 hospitalStay: '১-১৪ দিন'
 recoveryTime: '২-১২ সপ্তাহ'

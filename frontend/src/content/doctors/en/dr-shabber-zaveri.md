@@ -12,6 +12,16 @@ languages:
   - Hindi
   - Kannada
   - Gujarati
+expertise:
+  - General Surgical Oncology
+  - Oncoplastic Breast Surgery
+  - Head and Neck Oncology
+  - "HIPEC & PIPAC"
+  - Sarcoma Specialist
+  - Lung and Mediastinal Tumour Resections
+  - Gastrointestinal Malignancy
+  - Gynaec Oncology
+pullQuote: "Cancer surgery is not just about removing the tumour. It is about leaving behind a body that can still heal, and a spirit that can still hope."
 faqs:
   - question: "What is Dr. Shabber Zaveri's expertise in HIPEC surgery?"
     answer: "Dr. Shabber Zaveri pioneered the HIPEC (Hyperthermic Intraperitoneal Chemotherapy) programme at Manipal Hospital Bengaluru in 2013. He holds a fellowship in Cytoreductive Surgery & HIPEC from the European Institute of Surgery, Hamburg, Germany, and PIPAC from St. Elizabeth Hospital, Germany. He is one of the few surgeons in India offering this advanced treatment for peritoneal surface malignancies."
@@ -30,17 +40,6 @@ Dr. Shabber Zaveri has contributed significantly to the field of oncology. He wa
 Dr. Shabber Zaveri completed his MBBS from Bangalore Medical College and Research Institute, MS in General Surgery from B J Medical College Ahmedabad, and M.Ch in Surgical Oncology from The Gujarat Cancer and Research Institute. Notably, he has secured fellowships in Robotic Surgery at Hackensack Medical Center, New Jersey; Thoracic Surgery from Fachkrankenhaus, Dresden, Germany; Breast Surgical Oncology at the Memorial Sloan Kettering Cancer Centre, New York; Cytoreductive Surgery and HIPEC from the European Institute of Surgery, Hamburg, Germany and PIPAC from St. Elizabeth Hospital, Germany.
 
 In addition to his fellowships, Dr. Shabber Zaveri maintains active memberships in several esteemed medical associations. These include the Association of Surgeons of India, IASO Indian Association of Oncology, European Society of Surgical Oncology, European Society of Medical Oncology, and the American Society of Clinical Oncology, among many others. Notably, Dr. Zaveri delivered the Professor Ramdoss Oration on Radioguided Surgery in Oncology in September 2009 during the Society of Nuclear Medicine in India's Annual Conference. With a career marked by dedication, innovation, and a commitment to excellence, Dr. Shabber Zaveri is known to be one of the best surgical oncologists in Bangalore and India.
-
-## Field of Expertise
-
-- General Surgical Oncology
-- Oncoplastic Breast Surgery
-- Head and Neck Oncology
-- HIPEC & PIPAC
-- Sarcoma Specialist
-- Lung and Mediastinal Tumour Resections
-- Gastrointestinal Malignancy
-- Gynaec Oncology
 
 ## Education & Training
 

@@ -12,6 +12,13 @@ languages:
   - Kannada
   - Hindi
   - Telugu
+expertise:
+  - Robotic Joint Replacement
+  - "Primary, Complex and Revision Hip and Knee Replacement"
+  - Sports Orthopaedics and Arthroscopy
+  - Complex Trauma
+  - General Orthopaedics
+pullQuote: "A joint replacement is not the end of an active life — it is the beginning of a pain-free one. My goal is not just to replace a joint, but to restore a person's independence."
 faqs:
   - question: "What conditions does Dr. Samarth Arya treat?"
     answer: "Dr. Samarth Arya specialises in robotic joint replacement, primary, complex and revision hip and knee replacement, sports orthopaedics and arthroscopy, complex trauma, and general orthopaedics. He is one of India's few Cambridge-certified surgeons in robotic hip and knee replacement and has performed over 1,000 robotic joint replacement surgeries using the MAKO Stryker robotic system."
@@ -30,14 +37,6 @@ Dr. Samarth Arya is a renowned medical specialist who is currently practising as
 Dr. Samarth Arya is a highly motivated and compassionate orthopaedic surgeon with extensive exposure and proficiency in performing manual and robotic joint replacement, primary, complex and revision hip and knee arthroplasty, arthroscopic procedures of the knee, complex trauma, and general upper and lower limb orthopaedic procedures. His expertise extends to sports orthopaedics and arthroscopy, along with every aspect of general orthopaedics. Dr. Arya has a vision of excelling in hip and knee arthroplasty, robotic surgery and sports orthopaedics, which motivates him to practise in the area extensively. He is one of India's few Cambridge-certified surgeons in robotic hip and knee replacement and has successfully performed over 1,000 robotic joint replacement surgeries using the MAKO Stryker robotic system. He is also among the few MAKO Robotic Joint Replacement trainers and proctors in India. Technology-forward yet firmly evidence-anchored, Dr. Arya does not adopt innovation for its own sake. Instead, he believes robotic technology enhances surgical precision, accuracy, and consistency while the surgeon's expertise remains the cornerstone of successful outcomes.
 
 He is among the most respected robotic knee replacement surgeons in Bangalore. With a passion for academic excellence and improving the medical industry, Dr. Samarth Arya has participated in a plethora of research work, poster presentations, and podium presentations both internationally and nationally. He is multilingual and fluent in English, Kannada, Hindi, and Telugu, allowing him to communicate easily with patients from diverse backgrounds. His dedication to the medical field is evident in his membership in prestigious medical organizations, including General Medical Council, Indian Medical Association, Indian Orthopaedic Association, Indian Arthroscopic Society, Karnataka Orthopaedic Association and Bangalore Orthopaedics Society. Such an astounding career path has made Dr. Samarth Arya a highly respected Orthopaedician in Bangalore.
-
-## Field of Expertise
-
-- Robotic Joint Replacement
-- Primary, Complex and Revision Hip and Knee Replacement
-- Sports Orthopaedics and Arthroscopy
-- Complex Trauma
-- General Orthopaedics
 
 ## Fellowships & Memberships
 

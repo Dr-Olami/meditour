@@ -12,7 +12,6 @@ procedures:
   - রিভিশনাল বেরিয়াট্রিক সার্জারি
   - পুষ্টি পরামর্শ
 relatedDoctorSlugs:
-  - dr-ananya-sen
   - dr-sumit-talwar
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta

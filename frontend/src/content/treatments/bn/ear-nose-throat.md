@@ -12,11 +12,12 @@ procedures:
   - থাইরয়েড সার্জারি
   - স্লিপ অ্যাপনিয়া সার্জারি
 relatedDoctorSlugs:
-  - dr-sameer-khan
+  - dr-srinivas-kunku
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '১-৪ ঘন্টা'
 hospitalStay: '০-৩ দিন'
 recoveryTime: '১-৪ সপ্তাহ'

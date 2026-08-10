@@ -3,16 +3,20 @@ import Layout from '../../../layouts/Layout.astro';
 import { Navbar } from '../../../design-system/components/organisms/Navbar';
 import { Footer } from '../../../design-system/components/organisms/Footer';
 import { HospitalCard } from '../../../design-system/components/organisms/HospitalCard';
+import { LeadForm } from '../../../design-system/components/organisms/LeadForm';
 import { Icon } from '../../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import { ChipCloud } from '../../../design-system/components/molecules/ChipCloud';
+import { PullQuote } from '../../../design-system/components/molecules/PullQuote';
 import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
-import { getDoctors, getHospitals, resolveHospital, entrySlug } from '../../../lib/content';
+import { getDoctors, getHospitals, getTreatments, resolveHospital, entrySlug } from '../../../lib/content';
 import { physician, breadcrumbs, faqPage } from '../../../lib/schema';
+import { getDoctorInquiryLink } from '../../../lib/whatsapp';
 import { generateDoctorFaqs, mergeFaqs } from '../../../lib/faq-generator';
 import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
-import { buildWhatsAppLink } from '../../../lib/whatsapp';
+import { LEAD_SOURCE } from '../../../lib/crm';
 
 export async function getStaticPaths() {
   const [doctors, hospitals] = await Promise.all([getDoctors('bn'), getHospitals('bn')]);
@@ -35,11 +39,13 @@ const { Content } = await entry.render();
 
 const navLinks = getNavLinks('bn');
 
-const number = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
-const whatsappHref = buildWhatsAppLink(
-  number,
-  `Hi Khan Meditour, I would like to book an appointment with ${doctor.name}.`
-);
+const whatsappHref = getDoctorInquiryLink(doctor.name);
+
+const allTreatments = await getTreatments('bn');
+const treatmentOptions = allTreatments.map((entry) => ({
+  value: entry.data.name,
+  label: entry.data.name,
+}));
 
 const title = `${doctor.name} — ${doctor.specialty} | ${t.site.name}`;
 const description = `${doctor.name} is a ${doctor.specialty} specialist with ${doctor.experienceYears} years of experience. Book a consultation through Khan Meditour.`;
@@ -74,67 +80,186 @@ if (faqs.length > 0) {
 <Layout title={title} description={description} locale="bn" image={doctor.avatar} jsonLd={jsonLd}>
   <Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '/bn/#contact' }} client:load />
 
-  <main class="container py-24 md:py-28">
-    <Breadcrumb
-      items={[
-        { label: t.nav.home, href: '/bn' },
-        { label: t.doctors.title, href: '/bn/doctors' },
-        { label: doctor.name },
-      ]}
-      class="mb-6"
-      data-anim="fade-in-up"
+  {/* ── HERO — dark editorial band ────────────────────────────────────
+      Mirrors the en doctor page: large 4:5 portrait, gradient specialty
+      pill, oversized display name, stat row, dual CTAs, qualification
+      chips, expertise chip cloud. */}
+  <main>
+  <section class="relative overflow-hidden bg-ink text-cream-100">
+    {/* Backdrop texture — deep charcoal with soft violet/indigo light leaks */}
+    <img
+      src="/images/patterns/doctor-page-hero.jpg"
+      alt=""
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+      aria-hidden="true"
+      loading="eager"
+      fetchpriority="high"
     />
+    {/* Gradient glow accents layered over the texture */}
+    <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl" aria-hidden="true" />
+    <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/10 blur-3xl" aria-hidden="true" />
 
-    <div class="grid gap-10 lg:grid-cols-[1fr_24rem]">
-      <div>
-        <div class="mb-6 flex items-start gap-6" data-anim="stagger-children">
+    <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+      <Breadcrumb
+        items={[
+          { label: t.nav.home, href: '/bn' },
+          { label: t.doctors.title, href: '/bn/doctors' },
+          { label: doctor.name },
+        ]}
+        tone="dark"
+        class="mb-10"
+        data-anim="fade-in-up"
+      />
+
+      <div class="grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
+        {/* Portrait — large, object-top so faces are never cropped */}
+        <div data-anim="image-scale-in">
           {doctor.avatar ? (
             <img
               src={doctor.avatar}
               alt={doctor.name}
-              class="aspect-[4/5] w-36 shrink-0 rounded-card border border-cream-300 object-cover object-top shadow-base md:w-44"
+              class="aspect-[4/5] w-48 rounded-card object-cover object-top shadow-2xl ring-1 ring-cream-100/20 md:w-64"
+              loading="eager"
+              fetchpriority="high"
             />
           ) : (
-            <div class="flex aspect-[4/5] w-36 shrink-0 items-center justify-center rounded-card border border-cream-300 bg-ink font-display text-4xl font-bold text-cream-100 shadow-base md:w-44">
+            <div class="flex aspect-[4/5] w-48 items-center justify-center rounded-card bg-cream-100/10 font-display text-6xl font-bold text-cream-100 ring-1 ring-cream-100/20 md:w-64">
               {doctor.name.charAt(0)}
             </div>
           )}
-          <div>
-            <span class="inline-block rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
-              {doctor.specialty}
-            </span>
-            <h1 class="mt-3 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="headline-reveal">{doctor.name}</h1>
-            <p class="mt-1 text-ink/60">{doctor.bio}</p>
-            <p class="mt-1 text-sm text-ink/50">{doctor.qualification}</p>
-            <p class="mt-1 text-sm text-ink/50">
-              {t.doctors.detail.experienceLabel}: {t.doctors.detail.years.replace('{{years}}', String(doctor.experienceYears))}
-            </p>
-          </div>
         </div>
 
-        <div class="prose prose-ink mt-8 max-w-none" data-anim="scroll-reveal">
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 px-3 py-1 text-xs font-semibold text-white">
+            {doctor.specialty}
+          </span>
+          <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl" data-anim="headline-reveal">
+            {doctor.name}
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-cream-100/70">{doctor.bio}</p>
+
+          {/* Stat row — trust signals as objects, not table rows */}
+          <dl class="mt-8 flex flex-wrap gap-x-12 gap-y-6">
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-cream-100/50">
+                {t.doctors.detail.experienceLabel}
+              </dt>
+              <dd class="mt-1 font-display text-3xl font-bold">
+                {doctor.experienceYears}<span class="text-violet-400">+</span>
+              </dd>
+            </div>
+            {doctor.languages && doctor.languages.length > 0 && (
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wider text-cream-100/50">
+                  {t.doctors.detail.languagesLabel}
+                </dt>
+                <dd class="mt-1 font-display text-3xl font-bold">{doctor.languages.length}</dd>
+              </div>
+            )}
+            {hospital && (
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wider text-cream-100/50">
+                  {t.doctors.detail.atHospital}
+                </dt>
+                <dd class="mt-1 max-w-xs text-sm font-medium leading-snug text-cream-100/80">{hospital.name}</dd>
+              </div>
+            )}
+          </dl>
+
+          {/* CTAs */}
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+              {t.doctors.detail.bookCta}
+            </a>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
+              <Icon name="whatsapp" size={18} />
+              {t.doctors.detail.whatsappCta}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Qualification chips — credentials as scannable objects */}
+      <div class="mt-10 flex flex-wrap gap-2" data-anim="stagger-children">
+        {doctor.qualification.split('|').map((q) => (
+          <span class="rounded-full border border-cream-100/15 bg-cream-100/5 px-3 py-1 text-xs font-medium text-cream-100/70">
+            {q.trim()}
+          </span>
+        ))}
+      </div>
+
+      {/* Expertise chip cloud — areas of focus lifted from the bio */}
+      {doctor.expertise && doctor.expertise.length > 0 && (
+        <div class="mt-6" data-anim="fade-in-up">
+          <ChipCloud
+            items={doctor.expertise}
+            label={t.doctors.detail.expertiseLabel}
+            tone="dark"
+          />
+        </div>
+      )}
+    </div>
+  </section>
+
+  {/* ── PULL QUOTE — emotional beat between hero and prose ────────── */}
+  {doctor.pullQuote && (
+    <section class="container py-12 md:py-16" data-anim="fade-in-up">
+      <PullQuote
+        quote={doctor.pullQuote}
+        attribution={doctor.name}
+        tone="light"
+        class="mx-auto max-w-3xl"
+      />
+    </section>
+  )}
+
+  {/* ── BODY — prose + sticky booking sidebar ─────────────────────── */}
+  <section class="container py-16 md:py-20">
+    <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
+      <div>
+        <div class="prose prose-ink prose-editorial max-w-none prose-headings:font-display" data-anim="scroll-reveal">
           <Content />
         </div>
 
         {doctor.languages && doctor.languages.length > 0 && (
-          <div class="mt-8" data-anim="fade-in-up">
-            <h3 class="mb-2 text-sm font-semibold uppercase tracking-wider text-ink/50">{t.doctors.detail.languagesLabel}</h3>
-            <p class="text-ink/70">{doctor.languages.join(', ')}</p>
+          <div class="mt-10" data-anim="fade-in-up">
+            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-ink/50">{t.doctors.detail.languagesLabel}</h3>
+            <div class="flex flex-wrap gap-2">
+              {doctor.languages.map((lang) => (
+                <span class="rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">{lang}</span>
+              ))}
+            </div>
           </div>
         )}
-
-        <div class="mt-10 flex flex-wrap gap-4" data-anim="stagger-children">
-          <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
-            {t.doctors.detail.bookCta}
-          </a>
-          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
-            <Icon name="whatsapp" size={18} />
-            {t.doctors.detail.whatsappCta}
-          </a>
-        </div>
       </div>
 
-      <aside data-anim="fade-in-up">
+      {/* Sticky conversion rail — booking card stays in view while reading */}
+      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start" data-anim="fade-in-up">
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base">
+          <div class="flex items-center gap-4">
+            {doctor.avatar ? (
+              <img src={doctor.avatar} alt={doctor.name} class="h-14 w-14 rounded-full object-cover object-top" loading="lazy" />
+            ) : (
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink text-lg font-bold text-cream-100">
+                {doctor.name.charAt(0)}
+              </div>
+            )}
+            <div>
+              <p class="font-display text-base font-bold leading-tight text-ink">{doctor.name}</p>
+              <p class="text-xs text-ink/50">{doctor.specialty}</p>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-col gap-3">
+            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+              {t.doctors.detail.bookCta}
+            </a>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
+              <Icon name="whatsapp" size={18} />
+              {t.doctors.detail.whatsappCta}
+            </a>
+          </div>
+        </div>
+
         {hospital && (
           <div>
             <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.doctors.detail.atHospital}</h2>
@@ -154,14 +279,68 @@ if (faqs.length > 0) {
         )}
       </aside>
     </div>
+  </section>
 
-    {faqs.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.doctors.detail.faqTitle}</h2>
-        <FAQAccordion items={faqs} client:visible />
-      </section>
-    )}
+  {/* ── MID-PAGE CTA — dark band closes the emotional peak ────────── */}
+  <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
+    {/* Warm hopeful healthcare backdrop — works under the dark overlay */}
+    <img
+      src="/images/patterns/doctor-page-cta.jpg"
+      alt=""
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+      aria-hidden="true"
+      loading="lazy"
+    />
+    <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
+    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
+    <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">{t.doctors.detail.consultCta.replace('{{name}}', doctor.name)}</h2>
+        <p class="mt-2 max-w-xl text-cream-100/60">
+          {t.doctors.detail.consultSummary}
+          {hospital ? ` — ${hospital.name}` : ''}
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-90" data-anim="press-button">
+          {t.doctors.detail.bookCta}
+        </a>
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
+          <Icon name="whatsapp" size={18} />
+          {t.doctors.detail.whatsappCta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── FAQ ───────────────────────────────────────────────────────── */}
+  {faqs.length > 0 && (
+    <section class="container py-16" data-anim="fade-in-up">
+      <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.doctors.detail.faqTitle}</h2>
+      <FAQAccordion items={faqs} client:visible />
+    </section>
+  )}
   </main>
+
+  <section id="contact" class="bg-cream-200 py-20" data-anim="stagger-children">
+    <div class="container grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
+        <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+      </div>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8">
+        <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
+        <LeadForm
+          client:load
+          source={LEAD_SOURCE.DOCTOR_PAGE}
+          defaultDoctor={doctor.name}
+          doctorSlug={Astro.params.slug}
+          hospitalSlug={hospital?.slug}
+          treatments={treatmentOptions}
+        />
+      </div>
+    </div>
+  </section>
 
   <Footer
     brand={t.site.name}

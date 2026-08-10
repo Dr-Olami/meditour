@@ -12,12 +12,13 @@ procedures:
   - Bladder tumour surgery
   - Male infertility work-up
 relatedDoctorSlugs:
-  - dr-ravi-menon
   - dr-deepak-dubey
+  - dr-uday-bhaskar-m
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '1-4 hours'
 hospitalStay: '1-5 days'
 recoveryTime: '1-4 weeks'

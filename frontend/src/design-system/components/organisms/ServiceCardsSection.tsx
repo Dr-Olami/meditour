@@ -14,12 +14,16 @@ export interface ServiceCardsSectionProps
   extends React.HTMLAttributes<HTMLElement> {
   topCard: ServiceCard;
   bottomCards: [ServiceCard, ServiceCard];
+  bottomWideCard?: ServiceCard;
   exploreLabel?: string;
   contactLabel?: string;
 }
 
 const cardButtonClass =
   'inline-flex h-11 flex-1 items-center justify-center rounded-pill px-4 text-xs font-semibold sm:min-w-[16rem] sm:px-6 sm:text-sm';
+
+const wideCardButtonClass =
+  'inline-flex h-11 w-full items-center justify-center rounded-pill px-5 text-xs font-semibold sm:w-auto sm:min-w-[12rem] sm:px-6 sm:text-sm md:min-w-[14rem] lg:min-w-[16rem]';
 
 const ServiceCardContent = ({
   card,
@@ -45,7 +49,7 @@ const ServiceCardContent = ({
       <img
         src={card.image}
         alt={card.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-slow ease-out-expo group-hover:scale-105"
+        className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         decoding="async"
       />
@@ -68,15 +72,15 @@ const ServiceCardContent = ({
           </p>
         </div>
 
-        <div className="mt-4 md:mt-auto flex w-full gap-3 justify-center sm:gap-4 sm:flex-wrap" data-anim="fade-in-up">
-          <Button asChild variant="primary" className={cardButtonClass}>
+        <div className={cn('mt-4 md:mt-auto flex gap-3 sm:gap-4', variant === 'wide' ? 'w-full justify-center sm:flex-wrap' : 'w-full justify-center sm:flex-wrap')} data-anim="fade-in-up">
+          <Button asChild variant="primary" className={variant === 'wide' ? wideCardButtonClass : cardButtonClass}>
             <a href={card.exploreHref}>{exploreLabel}</a>
           </Button>
           <Button
             asChild
             variant="secondary"
             className={cn(
-              cardButtonClass,
+              variant === 'wide' ? wideCardButtonClass : cardButtonClass,
               'bg-white text-ink hover:bg-cream-100'
             )}
           >
@@ -89,7 +93,8 @@ const ServiceCardContent = ({
 };
 
 /**
- * Two-row service cards section: a wide top card and two side-by-side bottom cards.
+ * Service cards section: a wide top card, two side-by-side middle cards,
+ * and an optional wide bottom card.
  */
 const ServiceCardsSection = React.forwardRef<
   HTMLElement,
@@ -99,6 +104,7 @@ const ServiceCardsSection = React.forwardRef<
       className,
       topCard,
       bottomCards,
+      bottomWideCard,
       exploreLabel = 'Explore More',
       contactLabel = 'Contact Us',
       ...props
@@ -107,7 +113,7 @@ const ServiceCardsSection = React.forwardRef<
   ) => {
     return (
       <section
-        className={cn('bg-cream-100 py-20', className)}
+        className={cn('bg-cream-100 pt-8 pb-20', className)}
         ref={ref}
         {...props}
       >
@@ -131,6 +137,14 @@ const ServiceCardsSection = React.forwardRef<
               exploreLabel={exploreLabel}
               contactLabel={contactLabel}
             />
+            {bottomWideCard && (
+              <ServiceCardContent
+                card={bottomWideCard}
+                variant="wide"
+                exploreLabel={exploreLabel}
+                contactLabel={contactLabel}
+              />
+            )}
           </div>
         </div>
       </section>

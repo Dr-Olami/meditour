@@ -12,7 +12,9 @@ procedures:
   - Orthobiologic injections
   - Immune modulation therapy
 relatedDoctorSlugs:
-  - dr-arun-kumar
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

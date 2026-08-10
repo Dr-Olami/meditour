@@ -10,6 +10,13 @@ bio: HOD & Consultant - Medical Oncology, Immunotherapy and Precision Medicine
 languages:
   - English
   - Hindi
+expertise:
+  - Immunotherapy in Cancer management
+  - Targeted therapies in cancer Molecular Oncology and Personalized cancer treatment
+  - Integration of chemotherapy and biological therapies
+  - "Management of hematological malignancies and solid organ cancers like lung cancer, breast cancer, gastrointestinal cancers, gynaecologic, and head & neck cancers"
+  - Blood and Marrow Transplant (BMT) / Stem cell transplantation
+pullQuote: "Cancer is no longer the end of a story. With immunotherapy and precision medicine, it is increasingly the beginning of a new one."
 faqs:
   - question: "What is Dr. Amit Rauthan's expertise in immunotherapy?"
     answer: "Dr. Amit Rauthan is a pioneer in immunotherapy and targeted therapies in India, with over 20 years of experience in medical oncology. He is the HOD & Consultant for Medical Oncology, Immunotherapy and Precision Medicine at Manipal Hospital. He has vast experience with immunotherapy in clinical practice and has contributed significantly to the field of immuno-oncology in India, serving as a principal investigator in multiple oncology clinical trials."
@@ -26,14 +33,6 @@ As a top medical oncologist in Bangalore, Dr. Amit Rauthan is involved in severa
 With a commendable academic record, Dr. Rauthan completed his MBBS and MD in Internal Medicine from Smt. NHL Municipal Medical College, Ahmedabad. He then pursued his DM - Oncology from Gujarat University in 2004. Dr. Rauthan is a respected member of several prestigious associations, notably the American Society of Clinical Oncology (ASCO), the European Society of Medical Oncology (ESMO), the American Society of Hematology (ASH), the Indian Cooperative Oncology Network (ICON), and the Immuno-Oncology Society of India.
 
 Dr. Rauthan has received various accolades during his medical career, such as the 'Times Healthcare Achievers' Award in Medical Oncology. Dr. Rauthan actively participates in discussions about prevailing challenges and potential solutions in cancer care, as well as the initiation of a daycare centre for cancer patients. His reputation as a sought-after professional in the field of Oncology is further reinforced by his medical experience, awards, memberships, and notable contributions to research and publications. Dr. Rauthan's unwavering dedication and commitment to delivering exceptional care have made him a trusted medical expert in the domain of cancer care.
-
-## Field of Expertise
-
-- Immunotherapy in Cancer management
-- Targeted therapies in cancer Molecular Oncology and Personalized cancer treatment
-- Integration of chemotherapy and biological therapies
-- Management of hematological malignancies and solid organ cancers like lung cancer, breast cancer, gastrointestinal cancers, gynaecologic, and head & neck cancers
-- Blood and Marrow Transplant (BMT) / Stem cell transplantation
 
 ## Fellowships & Memberships
 

@@ -12,6 +12,13 @@ languages:
   - Hindi
   - Kannada
   - Tamil
+expertise:
+  - Female Urology
+  - Laparoscopic Urology
+  - Renal Transplantation
+  - Reconstructive Urology
+  - Robotic Surgery in Urology
+pullQuote: "The best surgery is the one the patient recovers from fastest. Robotics lets me remove the cancer while preserving the life that follows."
 faqs:
   - question: "What is Dr. Deepak Dubey's expertise in robotic urological surgery?"
     answer: "Dr. Deepak Dubey is a distinguished robotic urological surgeon with over 25 years of experience. He specialises in robotic procedures for kidney, bladder, and prostate cancers, advanced laparoscopic urological surgeries, and renal transplant surgeries. He holds the FRCS (Urology) from the Intercollegiate Speciality Board of the Royal College of Surgeons, UK, and serves as Director of Renal Transplantation Services (South Region)."
@@ -30,14 +37,6 @@ At Manipal Hospital Old Airport Road, Dr. Deepak Dubey specialises in robotic ur
 Beyond his clinical practice, Dr. Deepak Dubey has made significant contributions to urological research, education, and innovation. He serves as a reviewer for leading international journals, including the Journal of Urology, Urology (Gold Journal), Indian Journal of Urology, and the International Brazilian Journal of Urology. He has also contributed extensively to academic discussions on robotic surgery, kidney transplantation, urinary tract infections, and advances in urological care through numerous publications, conference presentations, and expert media interactions. His active memberships in the European Association of Urology, Urological Society of India, and American Urological Association reflect his commitment to advancing global standards in urology.
 
 Recognising the immense emotional and physiological stress connected to chronic kidney failure and multi-organ malignancies, Dr. Dubey emphasises a deeply compassionate, patient-centred care environment. Fluent in English, Hindi, Kannada, and Tamil, Dr. Deepak Dubey believes in providing compassionate, transparent, and personalised care to every patient. His international qualifications, leadership in robotic urology and renal transplantation, and dedication to surgical excellence continue to make him one of the best urologists in Bangalore.
-
-## Field of Expertise
-
-- Female Urology
-- Laparoscopic Urology
-- Renal Transplantation
-- Reconstructive Urology
-- Robotic Surgery in Urology
 
 ## Fellowships & Memberships
 

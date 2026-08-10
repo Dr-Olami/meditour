@@ -12,9 +12,9 @@ procedures:
   - স্পাইন ডিকম্প্রেশন
   - আর্থ্রোস্কোপি
 relatedDoctorSlugs:
-  - dr-arun-kumar
   - dr-sunil-g-kini
   - dr-samarth-arya
+  - dr-sharan-shivaraj-patil
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta

@@ -13,6 +13,11 @@ languages:
   - Punjabi
   - Kannada
   - Bengali
+expertise:
+  - Bariatric Surgery
+  - Robotic Surgery
+  - Advanced Laparoscopic Surgery
+pullQuote: "Bariatric surgery is not about looking different — it is about living differently. When the weight lifts, so does the burden of years of struggle."
 faqs:
   - question: "What is Dr. Sumit Talwar's expertise in bariatric surgery?"
     answer: "Dr. Sumit Talwar has over 30 years of experience and is a pioneer in bariatric and metabolic surgery in India. He performs laparoscopic gastric bypass, mini gastric bypass, sleeve gastrectomy, and revisional bariatric procedures. He pioneered the development of bariatric surgery in the Delhi NCR region and has developed a cost-effective technique for single incision laparoscopic (scarless) surgery using routine instruments."
@@ -29,12 +34,6 @@ While working in Delhi NCR, he pioneered the development of Bariatric and Metabo
 Dr. Sumit Talwar is a pioneer of Gastro-intestinal Cancer Surgery for treating GI cancers like pancreatic cancer, hepato-biliary cancer, colorectal cancer, etc. This surgical procedure was focused on providing minimally invasive laparoscopic treatment for these cancer types. He created a fresh technique of performing a 'Scarless Surgery' (Single Incision Laparoscopic Surgery) of various body parts like the gallbladder and appendix. This technique was cost-effective because he used routine equipment and instruments. He still routinely performs various surgeries such as Mediastinal tumour surgeries, lung surgeries, and various laparoscopic surgeries successfully.
 
 He has successfully done over a hundred laparoscopic surgeries, apart from other types of surgeries. He has also performed laparoscopic appendicectomy, sleeve resection laparoscopic surgery, hernia repair surgery, splenectomy, and other critical surgeries successfully. He pioneered lung surgery, oesophagal surgery, and thoracoscopic surgery as well. He holds membership in the Medical Council of India and the Delhi Medical Council. He is interested in conducting clinical research. He has written articles in various newspapers and journals on topics like obesity and its impact on the effectiveness of vaccines on the body.
-
-## Field of Expertise
-
-- Bariatric Surgery
-- Robotic Surgery
-- Advanced Laparoscopic Surgery
 
 ## Awards & Achievements
 

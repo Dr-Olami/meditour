@@ -13,6 +13,17 @@ languages:
   - Hindi
   - Telugu
   - Punjabi
+expertise:
+  - "Basic & Advanced Laparoscopic GI Surgery"
+  - Gastrointestinal/HPB Onco Surgery
+  - "Surgery for Acute & Chronic Pancreatitis"
+  - Laparoscopic Pancreatic/Biliary Surgery
+  - Management of Complex Biliary Strictures
+  - Major Liver Resection Surgery
+  - Laparoscopic Hernia/Reflux Surgery
+  - "Colo-Proctology — Cancers, Fissure, Piles, Fistula Surgery"
+  - Video-Assisted Thoracoscopic Surgeries (VATS)
+pullQuote: "The abdomen holds the story of a patient's health. My job is to read that story carefully and intervene only when the body needs help to heal itself."
 faqs:
   - question: "What conditions does Dr. K Hemanth Kumar treat?"
     answer: "Dr. K Hemanth Kumar specialises in basic and advanced laparoscopic GI surgery, gastrointestinal/HPB onco surgery, surgery for acute and chronic pancreatitis, laparoscopic pancreatic and biliary surgery, management of complex biliary strictures, major liver resection surgery, laparoscopic hernia and reflux surgery, colo-proctology (including cancers, fissure, piles, and fistula surgery), and video-assisted thoracoscopic surgeries (VATS). He has over 15 years of experience in gastrointestinal and HPB onco surgery."
@@ -33,18 +44,6 @@ Dr. Kumar's field of expertise includes basic and advanced laparoscopic GI surge
 Dr. Kumar has received several awards and accolades throughout his career. He was awarded the First Order Medal for academic excellence in M.S. (General Surgery) in 2008 at PGIMER, Chandigarh. He was also honoured with a travel grant for the 10th World Congress of the International Hepato-Pancreato-Biliary Association held in Paris, France, in 2012. In 2016, he was presented with the Bursary Award and Best Poster Award for his work on Surgical Anatomy of the Liver at IASGCON, held in Coimbatore, Tamil Nadu. On 5-8 October 2017, he chaired the 'invited lectures' session at the 27th Annual Conference of the Indian Association of Surgical Gastroenterology (IASG) at JIPMER, Puducherry. He was also bestowed with the Best Poster Award for his work on Esophageal tuberculosis at XXIX IASGCON, AIIMS, New Delhi in 2019.
 
 Numerous research articles of Dr. Kumar have been published in domestic and foreign publications. One of his notable achievements is the surgical architecture of the vasculobiliary system at the hepatic hilum as applied to liver transplants and substantial liver resections. Other published work includes today's experience with abdominal TB surgery from a tertiary care facility, cholesterol homeostasis genes' clinical significance in colorectal cancer, surgery for jejunal tumours from a tertiary care centre, conservative versus aggressive surgery for hepatic hydatid cyst surgical treatment, and the impact of delayed referral on surgery and intervention requirements in acute pancreatitis. Dr. Kumar is fluent in English, Kannada, Hindi, Telugu, and Punjabi. He has also given several talks at various conferences and symposiums.
-
-## Field of Expertise
-
-- Basic & Advanced Laparoscopic GI Surgery
-- Gastrointestinal/HPB Onco Surgery
-- Surgery for Acute & Chronic Pancreatitis
-- Laparoscopic Pancreatic/Biliary Surgery
-- Management of Complex Biliary Strictures
-- Major Liver Resection Surgery
-- Laparoscopic Hernia/Reflux Surgery
-- Colo-Proctology — Cancers, Fissure, Piles, Fistula Surgery
-- Video-Assisted Thoracoscopic Surgeries (VATS)
 
 ## Fellowships & Memberships
 

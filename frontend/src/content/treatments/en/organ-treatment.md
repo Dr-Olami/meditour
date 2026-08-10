@@ -12,14 +12,15 @@ procedures:
   - Living-donor work-up
   - Post-transplant follow-up
 relatedDoctorSlugs:
-  - dr-vikram-patel
   - dr-vishwanath-s
   - dr-jayanth-reddy
   - dr-mohammed-fahad-khan
+  - dr-ravishankar-shetty-k
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '4-12 hours'
 hospitalStay: '2-4 weeks'
 recoveryTime: '3-6 months'

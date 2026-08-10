@@ -12,6 +12,19 @@ languages:
   - Kannada
   - Hindi
   - Bengali
+expertise:
+  - "**Paediatric Neurology** in acute and ambulatory settings"
+  - "**Epilepsy** — evaluation and management of first seizure, epilepsy, refractory epilepsy; dietary therapies (ketogenic diet, modified Atkins diet, low glycaemic index diet)"
+  - "**Headache disorders** — diagnosis and management"
+  - "**Neurodevelopmental disorders** — cerebral palsy, developmental delays, ADHD, autism spectrum, learning disability; multidisciplinary evaluation and management"
+  - "**Demyelinating/immune-mediated disorders** — ADEM, optic neuritis, acute transverse myelitis, multiphasic ADEM, NMOSD, MS, autoimmune encephalitis, opsoclonus-myoclonus ataxia syndrome; diagnosis using MRI, electrophysiology, CSF analysis and antibodies; immunotherapy — acute and long-term care"
+  - "**Neurometabolic disorders** — diagnosis and management, metabolic screening, confirmatory testing, supportive and specific treatment with medicines and special diet"
+  - "**Neurogenetic disorders** — clinical evaluation, diagnosis in liaison with genetics and neuroradiology"
+  - "**Neuromuscular disorders** — clinical evaluation, diagnostic confirmation, medical treatment, physical rehabilitation, genetic counselling"
+  - "**Stroke** — evaluation and management"
+  - "**Neonatal Neurology** — treatment of neonatal seizures, interpretation of neonatal EEG, assessment and follow-up of high-risk newborns"
+  - "**Neuroinfections** — diagnostic evaluation with CSF and neuroimaging, standard treatment and follow-up"
+pullQuote: "A child's brain is remarkably resilient. When we intervene early and precisely, we give them a lifetime they might otherwise never have had."
 faqs:
   - question: "What conditions does Dr. Bidisha Banerjee treat?"
     answer: "Dr. Bidisha Banerjee specialises in paediatric neurology in acute and ambulatory settings, including epilepsy (evaluation, management, and dietary therapies such as ketogenic diet), headache disorders, neurodevelopmental disorders (cerebral palsy, developmental delays, ADHD, autism spectrum, learning disabilities), demyelinating and immune-mediated disorders (ADEM, optic neuritis, transverse myelitis, NMOSD, MS, autoimmune encephalitis), neurometabolic disorders, neurogenetic disorders, neuromuscular disorders, paediatric stroke, neonatal neurology, and neuroinfections. She also provides paediatric electrophysiology services including EEG, video EEG, EMG/nerve conduction studies, VEP, and BERA."
@@ -30,20 +43,6 @@ Pediatric Neurologist Dr. Bidisha Banerjee has an outstanding educational backgr
 Dr. Bidisha Banerjee has participated in research and published in prestigious medical journals and textbooks in the field. Her participation in conferences and contributions to scholarly literature show her dedication to expanding knowledge and treatment of paediatric neurological illnesses. She was awarded for presenting a poster on IEM at the International Child Neurology Conference (ICNC 2018). She contributes to the teaching and training of paediatric, paediatric neurology, and neurology trainees in addition to her clinical practice and academic endeavours. She intends to promote the expansion and development of paediatric neurology in India by actively supporting educational programmes. She is a member of notable societies and has been invited to speak at conferences and workshops.
 
 Dr. Bidisha Banerjee is proficient in the management of paediatric neurological problems in acute and ambulatory settings. She provides specialised care in the treatment of epilepsy, neurodevelopmental, neuro-immunological, neurometabolic, neuromuscular, stroke, neonatal neurology, neurogenetic, and headache disorders. She provides high-end treatment to her patients by fusing her academic knowledge with real-world experience.
-
-## Field of Expertise
-
-- **Paediatric Neurology** in acute and ambulatory settings
-- **Epilepsy** — evaluation and management of first seizure, epilepsy, refractory epilepsy; dietary therapies (ketogenic diet, modified Atkins diet, low glycaemic index diet)
-- **Headache disorders** — diagnosis and management
-- **Neurodevelopmental disorders** — cerebral palsy, developmental delays, ADHD, autism spectrum, learning disability; multidisciplinary evaluation and management
-- **Demyelinating/immune-mediated disorders** — ADEM, optic neuritis, acute transverse myelitis, multiphasic ADEM, NMOSD, MS, autoimmune encephalitis, opsoclonus-myoclonus ataxia syndrome; diagnosis using MRI, electrophysiology, CSF analysis and antibodies; immunotherapy — acute and long-term care
-- **Neurometabolic disorders** — diagnosis and management, metabolic screening, confirmatory testing, supportive and specific treatment with medicines and special diet
-- **Neurogenetic disorders** — clinical evaluation, diagnosis in liaison with genetics and neuroradiology
-- **Neuromuscular disorders** — clinical evaluation, diagnostic confirmation, medical treatment, physical rehabilitation, genetic counselling
-- **Stroke** — evaluation and management
-- **Neonatal Neurology** — treatment of neonatal seizures, interpretation of neonatal EEG, assessment and follow-up of high-risk newborns
-- **Neuroinfections** — diagnostic evaluation with CSF and neuroimaging, standard treatment and follow-up
 
 ## Paediatric Electrophysiology
 

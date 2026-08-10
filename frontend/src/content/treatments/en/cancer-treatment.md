@@ -12,14 +12,20 @@ procedures:
   - Immunotherapy
   - PET-CT staging
 relatedDoctorSlugs:
-  - dr-priya-nair
   - dr-shabber-zaveri
   - dr-amit-rauthan
   - dr-k-hemanth-kumar
+  - dr-vidya-bhushan
+  - dr-sunil-udgire
+  - dr-mahesh-rajashekaraiah
+  - dr-chandrakala-s
+  - dr-g-girish
+  - dr-kanmani-govindrao-telkar
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
   - manipal-hospital-old-airport-road
+  - sparsh-hospital-hennur
 duration: 'Varies by stage'
 hospitalStay: '1-14 days'
 recoveryTime: '2-12 weeks'

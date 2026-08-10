@@ -12,12 +12,13 @@ procedures:
   - ব্লাডার টিউমার সার্জারি
   - পুরুষ বন্ধ্যাত্ব যাচাই
 relatedDoctorSlugs:
-  - dr-ravi-menon
   - dr-deepak-dubey
+  - dr-uday-bhaskar-m
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
 duration: '১-৪ ঘন্টা'
 hospitalStay: '১-৫ দিন'
 recoveryTime: '১-৪ সপ্তাহ'

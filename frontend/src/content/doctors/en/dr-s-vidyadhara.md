@@ -17,6 +17,21 @@ languages:
   - Malayalam
   - Tulu
   - Konkani
+expertise:
+  - Robotic Spine Surgery
+  - "Non-operative and operative treatment of neck & back pain"
+  - Various injection techniques for spinal disorders
+  - Microscopic and Endoscopic Procedures
+  - "Minimally Invasive Spinal Stabilization, Posterior and Transforaminal Lumbar Interbody Fusion (PLIF / TLIF)"
+  - Artificial Disc Replacement
+  - Complex Cervical Spine Surgeries
+  - Vertebroplasty and Kyphoplasty for Osteoporotic fractures
+  - Surgery for Spinal Tumors
+  - Scoliosis Correction Surgeries
+  - Spinal Osteotomies for Kyphosis
+  - Spinal Column Reconstruction – Posterior / Anterior
+  - Surgeries for Spinal Cord / Column Tumors
+pullQuote: "The spine is the pillar of human dignity. When I restore someone's ability to stand straight, I am not just fixing bone — I am giving back their self-respect."
 faqs:
   - question: "Is Dr. S Vidyadhara experienced in robotic spine surgery?"
     answer: "Yes, Dr. S Vidyadhara is a globally acclaimed pioneer in robotic spine surgery and computer-navigated spinal procedures. He has performed over 50 successful robotic spinal surgeries in a single month, setting a record at Manipal Hospital. He is the Chairman & HOD of Spine Surgery and Co-Chairman of the Medical Advisory Board, with international training from the University of Hong Kong."
@@ -35,22 +50,6 @@ At Manipal Hospitals, Dr. Vidyadhara specialises in robotic spine surgery, minim
 Beyond his clinical excellence, Dr. Vidyadhara has made exceptional contributions to spine research and innovation. His work has been published extensively in internationally renowned journals, including Spine, Journal of Spinal Disorders and Techniques, and Journal of Orthopaedic Surgery, with several of his studies receiving international recognition and citations. Widely regarded as one of the best spine surgeons in Bangalore, he is the recipient of numerous prestigious honours, including the International Society for the Study of Lumbar Spine (ISSLS) Best Research Award, Hong Kong Orthopaedic Association Most Promising Spine Research Award, ISCA Young Scientist Award presented by Dr. A.P.J. Abdul Kalam, the Lester Lowe SICOT Award, and the Scoliosis Research Society Travelling Fellowship, further establishing his leadership in the global spine community.
 
 Fluent in English, Kannada, Hindi, Bengali, Tamil, Telugu, Malayalam, Tulu, and Konkani, Dr. Vidyadhara is known for his compassionate patient care, meticulous surgical planning, and commitment to restoring spinal function and quality of life. His combination of robotic surgical expertise, international recognition, groundbreaking research, and patient-centred care has earned him a reputation as the best spine surgeon in Bangalore, trusted for managing everything from routine spinal disorders to the most complex spinal deformities and reconstructive procedures.
-
-## Field of Expertise
-
-- Robotic Spine Surgery
-- Non-operative and operative treatment of neck & back pain
-- Various injection techniques for spinal disorders
-- Microscopic and Endoscopic Procedures
-- Minimally Invasive Spinal Stabilization, Posterior and Transforaminal Lumbar Interbody Fusion (PLIF / TLIF)
-- Artificial Disc Replacement
-- Complex Cervical Spine Surgeries
-- Vertebroplasty and Kyphoplasty for Osteoporotic fractures
-- Surgery for Spinal Tumors
-- Scoliosis Correction Surgeries
-- Spinal Osteotomies for Kyphosis
-- Spinal Column Reconstruction – Posterior / Anterior
-- Surgeries for Spinal Cord / Column Tumors
 
 ## Fellowships & Memberships
 

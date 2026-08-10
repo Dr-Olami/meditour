@@ -12,11 +12,17 @@ procedures:
   - Valve repair/replacement
   - Pacemaker implantation
 relatedDoctorSlugs:
-  - dr-rajesh-sharma
+  - dr-mahadev-swamy-b
+  - dr-devi-prasad-shetty
+  - dr-praveen-r-tambrallimath
+  - dr-varun-shetty
+  - dr-aditi-singhvi
+  - dr-ravindra-setty-b-r
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
+  - sparsh-hospital-hennur
 duration: '1-4 hours'
 hospitalStay: '2-7 days'
 recoveryTime: '2-6 weeks'

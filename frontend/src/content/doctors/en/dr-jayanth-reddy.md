@@ -13,6 +13,13 @@ languages:
   - Hindi
   - Telugu
   - Tamil
+expertise:
+  - "Living Donor and Deceased Donor Liver Transplantation (including Paediatric, Split Liver, and ABO-incompatible)"
+  - "Complex Hepatobiliary Surgery (Extended Liver Resections, Ex-vivo and Ante-situm Liver Resections, Liver Resection for Hilar Cholangiocarcinoma, Gallbladder Cancer, Hepatocellular Carcinoma, and Intra-Hepatic Cholangiocarcinoma)"
+  - "Pancreatic Surgery (Pancreaticoduodenectomy with Vascular Resections, Distal Pancreatectomy)"
+  - Laparoscopic and Robotic HPB Surgery
+  - "Simultaneous Pancreas & Kidney Transplant, Small Intestine and Multivisceral Transplant"
+pullQuote: "A liver transplant is not just a surgery — it is the moment a family gets a second chance. That responsibility drives every decision I make in the operating room."
 faqs:
   - question: "What conditions does Dr. Jayanth Reddy treat?"
     answer: "Dr. Jayanth Reddy specialises in living donor and deceased donor liver transplantation (including paediatric, split liver, and ABO-incompatible), complex hepatobiliary surgery (extended liver resections, ex-vivo and ante-situm liver resections, liver resection for hilar cholangiocarcinoma, gallbladder cancer, hepatocellular carcinoma, and intra-hepatic cholangiocarcinoma), pancreatic surgery (pancreaticoduodenectomy with vascular resections, distal pancreatectomy), laparoscopic and robotic HPB surgery, and simultaneous pancreas-kidney, small intestine, and multivisceral transplantation."
@@ -35,14 +42,6 @@ At Manipal Hospital Old Airport Road, Dr. Jayanth Reddy manages the complete spe
 Beyond clinical practice, Dr. Jayanth Reddy plays an active role in transplant programme development, surgical education, and clinical research. He has mentored M.Ch and DNB trainees, trained international fellows, and contributed extensively to transplant protocols, donor safety programmes, and multidisciplinary transplant services. His research has been published in leading international journals, with significant contributions in liver transplantation, hepatobiliary surgery, donor safety, transplant complications, and complex gastrointestinal surgery. He is a member of prestigious organisations including the International Liver Transplant Society (ILTS), American Society of Transplant Surgeons (ASTS), International Hepato-Pancreato-Biliary Association (IHPBA), Liver Transplant Society of India (LTSI), Royal College of Surgeons of Edinburgh, and the Indian Association of Surgical Gastroenterology.
 
 Fluent in English, Kannada, Hindi, Telugu, and Tamil, Dr. Jayanth Reddy believes in providing compassionate, transparent, and patient-centred care throughout the transplant journey. His expertise in complex hepatobiliary surgery, multidisciplinary transplant care, and minimally invasive surgical techniques has earned him recognition as a highly respected liver transplant specialist in Bangalore, delivering personalised treatment for patients with advanced liver, pancreatic, and biliary diseases.
-
-## Field of Expertise
-
-- Living Donor and Deceased Donor Liver Transplantation (including Paediatric, Split Liver, and ABO-incompatible)
-- Complex Hepatobiliary Surgery (Extended Liver Resections, Ex-vivo and Ante-situm Liver Resections, Liver Resection for Hilar Cholangiocarcinoma, Gallbladder Cancer, Hepatocellular Carcinoma, and Intra-Hepatic Cholangiocarcinoma)
-- Pancreatic Surgery (Pancreaticoduodenectomy with Vascular Resections, Distal Pancreatectomy)
-- Laparoscopic and Robotic HPB Surgery
-- Simultaneous Pancreas & Kidney Transplant, Small Intestine and Multivisceral Transplant
 
 ## Fellowships & Memberships
 

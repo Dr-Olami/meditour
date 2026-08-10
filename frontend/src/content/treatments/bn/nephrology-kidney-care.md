@@ -16,10 +16,12 @@ procedures:
 relatedDoctorSlugs:
   - dr-mohammed-fahad-khan
   - dr-vishwanath-s
+  - dr-akhila-vasanth-hassan
 relatedHospitalSlugs:
   - manipal-hospital-old-airport-road
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - narayana-institute-cardiac-sciences
 duration: 'অবস্থা অনুযায়ী ভিন্ন'
 hospitalStay: '১-৭ দিন (ট্রান্সপ্লান্ট ছাড়া) | ২-৪ সপ্তাহ (ট্রান্সপ্লান্ট)'
 recoveryTime: '২-১২ সপ্তাহ'

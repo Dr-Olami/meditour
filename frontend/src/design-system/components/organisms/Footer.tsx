@@ -94,7 +94,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
         </div>
 
         {/* Giant wordmark bleed row */}
-        <div className="select-none overflow-hidden px-4 pt-2 pb-0 sm:px-8" aria-hidden="true">
+        <div className="select-none overflow-hidden px-4 pt-4 pb-6 sm:px-8" aria-hidden="true">
           <p className="font-display text-[clamp(3rem,13vw,11rem)] font-bold leading-none tracking-tighter text-cream-100 whitespace-nowrap text-center">
             {brand}
           </p>

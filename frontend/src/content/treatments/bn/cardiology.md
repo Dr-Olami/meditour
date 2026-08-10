@@ -12,11 +12,17 @@ procedures:
   - ভালভ মেরামত/প্রতিস্থাপন
   - পেসমেকার ইমপ্লান্টেশন
 relatedDoctorSlugs:
-  - dr-rajesh-sharma
+  - dr-mahadev-swamy-b
+  - dr-devi-prasad-shetty
+  - dr-praveen-r-tambrallimath
+  - dr-varun-shetty
+  - dr-aditi-singhvi
+  - dr-ravindra-setty-b-r
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
+  - sparsh-hospital-hennur
 duration: '১-৪ ঘন্টা'
 hospitalStay: '২-৭ দিন'
 recoveryTime: '২-৬ সপ্তাহ'

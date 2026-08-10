@@ -16,6 +16,10 @@ const doctors = defineCollection({
     avatar: z.string().optional(),
     bio: z.string().min(1),
     languages: z.array(z.string()).optional(),
+    /** Areas of expertise rendered as a scannable chip cloud. */
+    expertise: z.array(z.string()).optional(),
+    /** Patient-care philosophy sentence lifted from the bio; rendered as a pull quote. */
+    pullQuote: z.string().optional(),
     faqs: z.array(
       z.object({
         question: z.string().min(1),
