@@ -54,6 +54,102 @@
 - 8 doctors still lack photos (ananya-sen, arun-kumar, kavita-iyer, priya-nair, rajesh-sharma, sameer-khan, sunita-rao, vikram-patel) — they render the initials fallback panel. **TODO:** add `/images/doctors/<slug>.webp` + `avatar:` frontmatter when photos are available.
 - Optional idea (not implemented): auto-resolve `/images/doctors/<slug>.webp` in `lib/content.ts` when frontmatter `avatar` is absent.
 
+## Editorial Detail-Page Redesign (2026-08-07) — PROTOTYPE (doctor detail, en only)
+
+- [x] `Breadcrumb` molecule: added `tone="light" | "dark"` prop for use on dark hero bands
+- [x] `/doctors/[slug]` (en) rebuilt as editorial prototype: dark ink hero (large 4:5 portrait, gradient specialty pill, oversized display name, stat row — experience years / language count / hospital, dual CTAs, qualification chips), prose body with sticky booking rail, dark mid-page CTA band, FAQ
+- [x] Optional image slots documented inline with specs + AI generation prompts: `/images/patterns/hero-dark-texture.webp` (abstract violet/charcoal backdrop) and `/images/patterns/cta-care-warm.webp` (warm doctor-patient moment)
+- [x] "Refined Light" variant built at `/preview/doctor/[slug]` (same structure, cream register, hairline stat dividers, soft CTA band) for side-by-side comparison
+- [x] **Direction approved: dark editorial (variant A)** — full plan documented in `EDITORIAL_REDESIGN_PLAN.md`; theming deferred; violet→indigo gradient kept
+- [x] Phase 1: port doctor page to bn, expertise chips + pull quote, delete `/preview/`
+- [x] Phase 2: system patterns (`ChipCloud`, `StatBand`, `QuickFacts`, `PullQuote`, `MarqueeStrip`, `StepCards`)
+- [x] Phase 3: treatment detail pages (en + bn)
+- [x] Phase 4: hospital detail pages (en + bn)
+- [x] Phase 5: verification & polish
+- [x] Post-implementation audit fixes (2026-08-07): hero heading contrast bug (global `h1-h6 { color: ink }` rule was overriding dark heroes — added explicit `text-cream-100` to 12 headings), gradient scrim on hospital image hero (breadcrumb readability), MarqueeStrip wired into hospital galleries, doctor card grids back to `lg:grid-cols-2` on treatment/hospital pages, hero/CTA sections moved inside `<main>` landmark (treatment + hospital, en + bn), WhatsApp CTA added to hospital pages via new `getHospitalInquiryLink()` helper
+- [x] Pull-quote editorial sweep (2026-08-07): 28 of 32 doctor pull-quotes read like credential summaries or procedure lists, not emotional beats. Rewrote all 28 in en + bn as first-person philosophical/emotional statements (e.g. "The heart is the only organ that announces life with every beat. When I repair a valve, I am not fixing a machine — I am restoring a rhythm that someone's family depends on."). 4 quotes that were already emotional beats kept as-is (Shetty, Girish, Patil, Udgire). `npm run build` + `npm test` (107 tests) green.
+
+### Discovered During Work
+
+- **Astro compiler limitation:** multi-line JSX arrow-map expressions inside component *props* (`items={arr.map(() => <img/>)}`) fail with misleading esbuild errors — pass children instead of an items prop in .astro templates.
+- **Global heading rule hazard:** `global.css` sets `color: var(--color-text-primary)` on all `h1-h6`, which beats inheritance in dark sections. Any heading on an ink surface MUST carry an explicit `text-cream-100` utility.
+- **Editorial imagery auto-wiring (2026-08-09):** treatment heroes (per-slug `/images/treatments/<slug>.webp|jpg`) and shared CTA backdrops (`treatment-page-cta.jpg`, `hospital-page-cta.jpg`) render automatically when the file exists — via `src/lib/images.ts` `resolvePublicImage()` (build-time fs check, en + bn). First hero landed: `bariatric-weight-loss.jpg`.
+- **Astro frontmatter compiler strips non-exported local function declarations** — build-time helpers must live in `src/lib/` and be imported. Also: never resolve `public/` paths via `import.meta.url` (bundling rewrites it) — use `process.cwd()`, which is the project root in both Astro and vitest.
+- Pull-quote editorial sweep: 4 weak third-person quotes rewritten as first-person emotional beats (devi-prasad-shetty, g-girish, sharan-shivaraj-patil, sunil-udgire) in en + bn.
+- [ ] **Pending:** source the two optional backdrop images above (or keep CSS-glow placeholders)
+
+### Phase 5 — Verification & polish (2026-08-07) — COMPLETE
+
+- [x] **Unit tests for new molecules:** all 6 new molecules have test files — `ChipCloud.test.tsx`, `StatBand.test.tsx`, `QuickFacts.test.tsx`, `MarqueeStrip.test.tsx`, `StepCards.test.tsx`, `PullQuote.test.tsx` (20 test files, 107 tests total, all passing)
+- [x] **Storybook stories for new patterns:** all 6 new molecules have stories files — `ChipCloud.stories.tsx`, `StatBand.stories.tsx`, `QuickFacts.stories.tsx`, `MarqueeStrip.stories.tsx`, `StepCards.stories.tsx`, `PullQuote.stories.tsx`
+- [x] **`npm run test` + `npm run build` green:** both pass after all phases
+- [x] **LCP image optimization — hero images:** added `loading="eager"` + `fetchpriority="high"` to doctor hero portraits (en + bn); added `fetchpriority="high"` to hospital hero images (en + bn, already had `loading="eager"`)
+- [x] **Lazy-loading below-fold images:** added `loading="lazy"` to hospital gallery images (en + bn), doctor page related-doctor avatars (en + bn), treatment page hospital card images (en + bn) — 8 images total
+- [x] **TASK.md statuses updated:** all phases marked complete
+
+### Phase 4 — Hospital detail pages (2026-08-07) — COMPLETE
+
+- [x] Added hospital i18n keys to both `en.json` and `bn.json`: `about`, `gallery`, `specialities`, `bedsLabel`, `establishedLabel`, `specialitiesCountLabel`, `consultCta` (with `{{name}}`), `consultSummary`
+- [x] Added `HOSPITAL_PAGE` to `LEAD_SOURCE` enum in `src/lib/crm.ts`
+- [x] Rewrote `/hospitals/[slug]` (en) to editorial layout: full-bleed hero image with `bg-ink/60` gradient overlay (hospital name + accreditation badges floating on the image, `loading="eager"` for LCP), dark `StatBand` under hero (beds / established year / speciality count), about prose, specialities → `ChipCloud`, prose body, amenities → `ChipCloud`, gallery → horizontal scroll-snap strip (moved out of sidebar), sticky rail with booking + contact details, doctors-at-hospital grid (3-col rhythm), FAQ, dark mid-page CTA band, contact `LeadForm`
+- [x] Rewrote `/bn/hospitals/[slug]` to mirror the en editorial layout (same structure, bn i18n keys, bn contact labels)
+- [x] Inlined the `MarqueeStrip` scroll-snap markup directly in the gallery section (Astro's template parser doesn't support multiline JSX elements inside `.map()` callbacks passed as component props — the `marqueeTrack` cva classes are applied directly to the container div)
+- [x] `npm run build` green (all 5 hospital pages × en/bn render); `npm test` green (107 tests, 20 files)
+
+### Phase 3 — Treatment detail pages (2026-08-07) — COMPLETE
+
+- [x] Added treatment i18n keys to both `en.json` and `bn.json`: `durationLabel`, `stayLabel`, `recoveryLabel`, `priceLabel`, `specialistsHeading`, `specialistsSummary`, `journeyHeading`, 4 journey step titles + descriptions, `consultCta` (with `{{name}}`), `consultSummary`
+- [x] Rewrote `/treatments/[slug]` (en) to editorial layout: dark ink hero (gradient category pill, oversized display name, description, `QuickFacts` icon chips for duration/stay/recovery/price, dual CTAs), "Meet your specialists" section with related doctor face cards above the prose, `StepCards` numbered grid for procedures, prose body, `StepTimeline` patient-journey mini timeline, treating hospitals grid, sticky booking rail (facts moved to hero — rail holds only inquiry CTA), dark mid-page CTA band, FAQ, contact `LeadForm`
+- [x] Rewrote `/bn/treatments/[slug]` to mirror the en editorial layout (same structure, bn i18n keys, bn journey steps)
+- [x] `npm run build` green (all 15 treatment pages × en/bn render); `npm test` green (107 tests, 20 files); lint clean on .astro files (pre-existing JSON eslint config issue on `en.json`/`bn.json` unaffected by this phase)
+
+### Phase 3 — Gaps & oversights fix-up (2026-08-07) — COMPLETE
+
+- [x] **Category→hue map:** created `src/lib/treatment-categories.ts` mapping each of the 16 treatment categories to a unique pair of Tailwind color tokens for the hero glow blobs (e.g. Heart→rose/pink, Oncology→amber/orange, Neurology→cyan/sky, Orthopaedics→emerald/teal). Wired into both en + bn treatment pages; added Tailwind safelist in `tailwind.config.ts` for all dynamically-generated `bg-{color}-600/15` and `bg-{color}-600/10` classes so JIT generates them
+- [x] **Price range in QuickFacts:** all 16 treatments have both `fromPrice` and `toPrice` in frontmatter but QuickFacts only showed `fromPrice`. Now shows "$1,500 – $7,000" range when both are available, falling back to `fromPrice` alone when `toPrice` is absent. Fixed in both en + bn pages
+- [x] **bn page missing LeadForm:** the en treatment page had a contact `LeadForm` section but the bn page went straight from the CTA band to the Footer. Added the `LeadForm` import, `treatmentOptions` variable, and full contact section to the bn page for parity
+- [x] **"Treating Hospitals" heading not i18n'd:** was hardcoded in both en ("Treating Hospitals") and bn ("চিকিৎসা প্রদানকারী হাসপাতাল") pages. Added `treatingHospitals` i18n key to both `en.json` and `bn.json`; both pages now use `t.treatments.detail.treatingHospitals`
+- [x] `npm run build` + `npm test` (107 tests) green after all fixes
+
+### Phase 2 — System patterns (2026-08-07) — COMPLETE
+
+- [x] `StatBand` molecule (`src/design-system/components/molecules/StatBand.tsx`) — big counted numerals row (years/beds/languages), `tone="light" | "dark"`, optional gradient `suffix` (e.g. "+"); exported from molecules barrel with `StatItem` type
+- [x] `QuickFacts` molecule (`src/design-system/components/molecules/QuickFacts.tsx`) — icon chips for treatment key facts (duration/stay/recovery/price), `tone="light" | "dark"`; exported from molecules barrel with `QuickFactItem` type
+- [x] `MarqueeStrip` molecule (`src/design-system/components/molecules/MarqueeStrip.tsx`) — horizontal scroll-snap container with hidden scrollbars for hospital galleries and accreditation badge rows; accepts `items` render-prop array or children; exported from molecules barrel
+- [x] `StepCards` molecule (`src/design-system/components/molecules/StepCards.tsx`) — numbered grid of procedure steps with gradient number badges, `tone="light" | "dark"`; exported from molecules barrel with `StepCardItem` type
+- [x] Added 4 new icons to `Icon` atom: `clock` (duration), `building` (hospital stay), `heart-pulse` (recovery), `tag` (price)
+- [x] Storybook stories for all 4 new molecules (Light/Dark/edge-case variants)
+- [x] Unit tests for all 4 new molecules (20 tests total: StatBand 5, QuickFacts 5, MarqueeStrip 5, StepCards 5) covering expected use, edge case (empty/missing), and failure case (undefined)
+- [x] `npm run build` green; `npm test` green (107 tests, 20 files); lint clean on all new files
+
+### Phase 2 — Gaps & oversights fix-up (2026-08-07) — COMPLETE
+
+- [x] **`prose-editorial` styles:** the plan called for enhanced markdown styles (larger display headings, pull-quote blockquotes with violet accent border, full-bleed media breaks, generous list spacing) for all `<Content />` blocks. Created `.prose-editorial` class in `src/design-system/styles/global.css` building on the existing `.prose` base. Applied to all 8 prose containers across 6 detail pages (doctor en/bn, treatment en/bn, hospital en/bn)
+- [x] **Motion preset variety:** the plan called for "Add mask-reveal + image scale-in; reserve `fade-in-up` for secondary content" to fix the "metronome motion" problem. Added `maskReveal` (clip-path inset wipe) and `imageScaleIn` (subtle 1.05→1 scale + fade) presets to `src/design-system/motion/presets.ts`; wired `runMaskReveal` + `runImageScaleIn` runners into `initAnimations` in `src/design-system/motion/engine.ts`. Applied `image-scale-in` to doctor hero portraits (en + bn, replacing `fade-in-up`); applied `mask-reveal` to hospital hero images (en + bn)
+- [x] `npm run build` + `npm test` (107 tests) green after all fixes
+
+### Phase 1 — Doctor page completion (2026-08-07) — COMPLETE
+
+- [x] Added `expertise: string[]` and `pullQuote: string` optional fields to the `doctors` Zod schema in `src/content/config.ts`
+- [x] Built `ChipCloud` molecule (`src/design-system/components/molecules/ChipCloud.tsx`) — credentials/tags as scannable pill objects, `tone="light" | "dark"` for cream/ink surfaces; exported from molecules barrel
+- [x] Built `PullQuote` molecule (`src/design-system/components/molecules/PullQuote.tsx`) — accent-ruled blockquote for the emotional beat between hero and prose, `tone="light" | "dark"`; exported from molecules barrel
+- [x] Wrote `scripts/migrate-doctor-expertise.mjs` one-shot migration: extracted `## Field of Expertise` / `## দক্ষতার ক্ষেত্র` bullet lists and a patient-care philosophy sentence from each bio into frontmatter; ran across all 64 doctor files (32 en + 32 bn) — 64 expertise lists + 64 pull quotes migrated, `## Field of Expertise` sections removed from bodies
+- [x] Updated `/doctors/[slug]` (en): expertise rendered via `ChipCloud` (dark tone) in hero, `PullQuote` inserted between hero and prose body, mid-page CTA band now uses `t.doctors.detail.consultCta` / `consultSummary` i18n keys
+- [x] Rewrote `/bn/doctors/[slug]` to mirror the en editorial layout: dark ink hero (4:5 portrait, gradient specialty pill, oversized name, stat row, dual CTAs, qualification chips, expertise `ChipCloud`), `PullQuote`, sticky booking rail, dark mid-page CTA band, FAQ, contact `LeadForm`; switched to `getDoctorInquiryLink` for the WhatsApp CTA
+- [x] Added i18n keys `doctors.detail.expertiseLabel`, `doctors.detail.consultCta` (with `{{name}}`), `doctors.detail.consultSummary` to both `en.json` and `bn.json`
+- [x] Deleted `src/pages/preview/` (refined-light prototype) — no references found
+- [x] Unit tests for `ChipCloud` (5) and `PullQuote` (5, incl. dark-tone attribution regression) in `tests/design-system/components/molecules/` covering expected use, edge case (empty/missing), and failure case
+- [x] Storybook stories for `ChipCloud` (Light/Dark/WithoutLabel/Empty) and `PullQuote` (Light/Dark/WithoutAttribution)
+- [x] `npm run build` green (all 64 doctor pages × en/bn + treatments/hospitals/blog render); `npm test` green (87 tests, 16 files); lint clean on all new/modified files (one pre-existing `whatsappHref` unused-var warning in `DoctorCard.test.tsx` from a prior commit, untouched by this phase)
+
+### Phase 1 — Gaps & oversights fix-up (2026-08-07) — COMPLETE
+
+- [x] **Dangling doctor refs:** wrote `scripts/audit-doctor-refs.mjs` to find dead slugs in treatment `relatedDoctorSlugs`; wrote `scripts/fix-doctor-refs.mjs` to clean them. 16 dead slugs removed across 12 en + 12 bn treatment files; `stem-cell-treatment` remapped to the three BMT/haematology doctors (`dr-chandrakala-s`, `dr-mahesh-rajashekaraiah`, `dr-sunil-udgire`); `ophthalmology` and `infertility-treatment` had no matching specialist in the roster so their `relatedDoctorSlugs` field was dropped entirely (the section is conditionally rendered, so it simply won't appear — content decision pending for those two specialties)
+- [x] **Unnecessary hydration:** removed `client:load` from `ChipCloud` and `PullQuote` on both en + bn doctor pages (4 instances) — both are purely presentational and now render as static HTML at build time
+- [x] **PullQuote dark-tone attribution bug:** attribution `<footer>` was hardcoded `text-ink/50` (invisible on ink); now switches to `text-cream-100/50` when `tone="dark"` via `cn()`. Added a regression test in `PullQuote.test.tsx`
+- [x] **Pull-quote content quality:** wrote `scripts/audit-pullquotes.mjs` to flag meta-text quotes; refined 3 of 64 — `dr-ravindra-setty-b-r` (en+bn) trimmed the "is demonstrated by these areas of focus" tail; `dr-praveen-r-tambrallimath` (en+bn) swapped the YouTube/CTSNET sentence for the "innovation and excellence" sentence from the same bio. `dr-devi-prasad-shetty` kept as-is ("legacy of compassion, innovation, and accessibility" is patient-centered)
+- [x] `npm run build` + `npm test` (87 tests) green after all fixes
+
 ## Discovered During Work
 
 - ~~**CSS single-source-of-truth debt:**~~ **RESOLVED** — `main.css` now uses `@import` for the three partials (`tokens.css`, `base.css`, `global.css`) via `postcss-import`. Inline duplication removed. Imports placed before `@tailwind` directives (CSS spec requirement).
