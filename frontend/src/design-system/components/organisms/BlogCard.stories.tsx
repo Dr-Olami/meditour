@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BlogCard } from './BlogCard';
+import { BlogCard, type BlogPostSummary } from './BlogCard';
 
 const meta: Meta<typeof BlogCard> = {
   title: 'Organisms/BlogCard',
@@ -27,7 +27,7 @@ export const Default: Story = {};
 export const NoImage: Story = {
   args: {
     post: {
-      ...meta.args!.post,
+      ...(meta.args!.post as BlogPostSummary),
       coverImage: undefined,
     },
   },
@@ -36,7 +36,7 @@ export const NoImage: Story = {
 export const SingleTag: Story = {
   args: {
     post: {
-      ...meta.args!.post,
+      ...(meta.args!.post as BlogPostSummary),
       tags: ['medical-tourism'],
     },
   },

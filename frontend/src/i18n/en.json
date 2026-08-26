@@ -229,5 +229,40 @@
     "ctaBoxText": "Get a free cost estimate and personalised hospital recommendations.",
     "ctaLabel": "Get a free cost estimate",
     "backToBlog": "Back to blog"
+  },
+  "whyUs": {
+    "title": "Why patients choose us",
+    "items": [
+      {
+        "title": "Free Second Opinion",
+        "description": "From 3 top specialists.\nNo obligation. No cost.",
+        "image": "/images/patterns/doctor-page-cta.jpg",
+        "video": "/videos/why-us/second-opinion.mp4"
+      },
+      {
+        "title": "Transparency",
+        "description": "Clear costs with potential savings.\nNo surprise bills.",
+        "image": "/images/treatments/cardiology.jpg",
+        "video": "/videos/why-us/transparency.mp4"
+      },
+      {
+        "title": "Verified Network",
+        "description": "Accredited hospitals.\nBoard-certified doctors, vetted by us.",
+        "image": "/images/hospitals/apollo-hospitals-bannerghatta.jpg",
+        "video": "/videos/why-us/verified-network.mp4"
+      },
+      {
+        "title": "Dedicated Case Manager",
+        "description": "A personal coordinator with you\nfrom first message to final follow-up.",
+        "image": "/images/patterns/hospital-page-cta.jpg",
+        "video": "/videos/why-us/case-manager.mp4"
+      },
+      {
+        "title": "End-to-End Support",
+        "description": "Medical visa invitation letters.\nAirport pickup. 24/7 coordinators.\nPost-treatment follow-up.",
+        "image": "/images/patterns/treatment-page-cta.jpg",
+        "video": "/videos/why-us/end-to-end-support.mp4"
+      }
+    ]
   }
 }

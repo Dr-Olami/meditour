@@ -21,6 +21,8 @@ const navLinks = getNavLinks('bn');
     brand={t.site.name}
     links={navLinks}
     cta={{ label: t.nav.cta, href: '/bn/#contact' }}
+    locale="bn"
+    currentPath={Astro.url.pathname}
     client:load
   />
 

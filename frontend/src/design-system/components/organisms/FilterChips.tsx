@@ -7,111 +7,128 @@ export interface FilterChipsProps extends Omit<React.HTMLAttributes<HTMLDivEleme
   onSelect: (value: string) => void;
 }
 
-const SCROLL_STEP = 160;
+const SPEED_PX_PER_SECOND = 90;
+const MIN_DURATION_SECONDS = 12;
+const DEFAULT_DURATION_SECONDS = 30;
+
+const chipBaseClasses =
+  'shrink-0 rounded-pill px-4 py-2 text-sm font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500';
 
 /**
- * Horizontal pill chip group for filtering lists (e.g. doctor specialties).
- * Controlled: parent owns `active` state.
- * On mobile a left/right scroll arrow pair appears when content overflows.
+ * Split a list in half for a two-row marquee layout.
+ * The first half contains the first ceil(n/2) items so the rows stay balanced.
+ */
+function splitOptions<T>(options: T[]): [T[], T[]] {
+  const mid = Math.ceil(options.length / 2);
+  return [options.slice(0, mid), options.slice(mid)];
+}
+
+function ChipButton({
+  option,
+  active,
+  onSelect,
+}: {
+  option: string;
+  active: string;
+  onSelect: (value: string) => void;
+}) {
+  const isActive = option === active;
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(option)}
+      aria-pressed={isActive}
+      className={cn(
+        chipBaseClasses,
+        isActive
+          ? 'bg-ink text-cream-100'
+          : 'border border-cream-300 bg-cream-100 text-ink hover:bg-cream-200'
+      )}
+    >
+      {option}
+    </button>
+  );
+}
+
+function MarqueeRow({
+  options,
+  active,
+  onSelect,
+  direction,
+}: {
+  options: string[];
+  active: string;
+  onSelect: (value: string) => void;
+  direction: 'left' | 'right';
+}) {
+  const trackRef = React.useRef<HTMLDivElement>(null);
+  const [duration, setDuration] = React.useState(DEFAULT_DURATION_SECONDS);
+
+  const updateDuration = React.useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const halfWidth = el.scrollWidth / 2;
+    if (halfWidth > 0) {
+      setDuration(Math.max(MIN_DURATION_SECONDS, halfWidth / SPEED_PX_PER_SECOND));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    updateDuration();
+    const el = trackRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(updateDuration);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [options, updateDuration]);
+
+  return (
+    <div className="overflow-hidden" data-row>
+      <div
+        ref={trackRef}
+        className={cn(
+          'flex w-max gap-2 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]',
+          direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+        )}
+        style={{ animationDuration: `${duration}s` }}
+      >
+        {options.map((option) => (
+          <ChipButton key={option} option={option} active={active} onSelect={onSelect} />
+        ))}
+        {options.map((option) => (
+          <ChipButton key={`${option}-dup`} option={option} active={active} onSelect={onSelect} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Two-row auto-scrolling carousel of filter pills.
+ *
+ * Each row loops seamlessly by duplicating its content. The scroll speed is
+ * derived from the measured track width so the animation feels consistent
+ * regardless of the number or length of labels. Animation pauses on hover and
+ * when focus is inside the row so users can comfortably click or keyboard-navigate.
  */
 const FilterChips = React.forwardRef<HTMLDivElement, FilterChipsProps>(
   ({ className, options, active, onSelect, ...props }, ref) => {
-    const scrollRef = React.useRef<HTMLDivElement>(null);
-    const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-    const [canScrollRight, setCanScrollRight] = React.useState(false);
+    const [row1, row2] = React.useMemo(() => splitOptions(options), [options]);
 
-    const updateArrows = React.useCallback(() => {
-      const el = scrollRef.current;
-      if (!el) return;
-      setCanScrollLeft(el.scrollLeft > 0);
-      setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
-    }, []);
-
-    React.useEffect(() => {
-      updateArrows();
-      const el = scrollRef.current;
-      if (!el) return;
-      const ro = new ResizeObserver(updateArrows);
-      ro.observe(el);
-      el.addEventListener('scroll', updateArrows, { passive: true });
-      return () => {
-        ro.disconnect();
-        el.removeEventListener('scroll', updateArrows);
-      };
-    }, [options, updateArrows]);
-
-    const scroll = (dir: 'left' | 'right') => {
-      scrollRef.current?.scrollBy({
-        left: dir === 'left' ? -SCROLL_STEP : SCROLL_STEP,
-        behavior: 'smooth',
-      });
-    };
+    if (options.length === 0) return null;
 
     return (
       <div
-        className={cn('relative flex items-center gap-1', className)}
         ref={ref}
+        role="group"
+        aria-label="Filter options"
+        className={cn('flex flex-col gap-2 overflow-hidden', className)}
         {...props}
       >
-        {/* Left arrow — only rendered when there is content to scroll back to */}
-        <button
-          type="button"
-          aria-label="Scroll filters left"
-          onClick={() => scroll('left')}
-          className={cn(
-            'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cream-300 bg-cream-100 text-ink shadow-sm transition-opacity duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 md:hidden',
-            canScrollLeft ? 'opacity-100' : 'pointer-events-none opacity-0'
-          )}
-          tabIndex={canScrollLeft ? 0 : -1}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-        </button>
-
-        {/* Scrollable chip row */}
-        <div
-          ref={scrollRef}
-          role="group"
-          aria-label="Filter options"
-          className="flex snap-x gap-2 overflow-x-auto scrollbar-none md:flex-wrap"
-        >
-          {options.map((option) => {
-            const isActive = option === active;
-            return (
-              <button
-                key={option}
-                type="button"
-                onClick={() => onSelect(option)}
-                aria-pressed={isActive}
-                className={cn(
-                  'shrink-0 snap-start rounded-pill px-4 py-2 text-sm font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500',
-                  isActive
-                    ? 'bg-ink text-cream-100'
-                    : 'border border-cream-300 bg-cream-100 text-ink hover:bg-cream-200'
-                )}
-              >
-                {option}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Right arrow */}
-        <button
-          type="button"
-          aria-label="Scroll filters right"
-          onClick={() => scroll('right')}
-          className={cn(
-            'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cream-300 bg-cream-100 text-ink shadow-sm transition-opacity duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 md:hidden',
-            canScrollRight ? 'opacity-100' : 'pointer-events-none opacity-0'
-          )}
-          tabIndex={canScrollRight ? 0 : -1}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </button>
+        <MarqueeRow options={row1} active={active} onSelect={onSelect} direction="left" />
+        {row2.length > 0 && (
+          <MarqueeRow options={row2} active={active} onSelect={onSelect} direction="right" />
+        )}
       </div>
     );
   }

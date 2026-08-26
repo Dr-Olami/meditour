@@ -4,6 +4,13 @@
 > WhatsApp: +8801611892986
 > Email: khan@meditour.com
 
+## UI Polish — 2026-08-26 — IN PROGRESS
+
+- [x] **Doctors page specialty chips carousel:** converted `FilterChips` into a two-row auto-scrolling marquee that pauses on hover/focus. Each row duplicates its content for a seamless loop; scroll speed scales with measured track width. Filtering behavior unchanged; added `FilterChips.test.tsx` (6 tests) and updated `FilterChips.stories.tsx`.
+- [x] **Why Us mobile scrollbar clean-up:** replaced the native/custom gradient scrollbar with a simple dark track + arrow row per the design reference. Arrows are plain chevron icons without borders/backgrounds; track is `bg-ink/40`.
+- [x] **Type-check clean-up:** included `tests/**/*.ts` + `tests/**/*.tsx` in `tsconfig.json` so the `jest-dom` matcher augmentation is visible to test files. Fixed pre-existing TS errors in `HeroSection.tsx`, `StatementSection.tsx`, `src/lib/content.ts`, `BlogCard.stories.tsx`, and `src/lib/crm.ts` so `npx tsc --noEmit` is now green.
+- [x] **Stale test fix:** updated `WhyUsSection.test.tsx` to assert hover-only descriptions via DOM text content instead of a visible text query.
+
 ## Foundation Scaffold (initial pass complete — pending visual retune)
 
 - [x] Step 1: Scaffold the Astro project in `frontend/` — `astro.config.mjs`, `tsconfig.json`, aliases

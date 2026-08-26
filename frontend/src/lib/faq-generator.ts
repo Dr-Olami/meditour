@@ -46,6 +46,15 @@ function interpolate(template: string, vars: Record<string, string | undefined>)
   return template.replace(/\{\{(\w+)\}\}/g, (_, key: string) => vars[key] ?? '');
 }
 
+// ─── Helper: strip a leading honorific so templates can re-add it ────────────
+// Reason: doctor `name` frontmatter often includes the "Dr." / "ডাঃ" honorific,
+// but the FAQ templates already hardcode it (e.g. "Dr. {{name}}"). Without
+// stripping we would render "Dr. Dr. Aditi Singhvi".
+const HONORIFIC_RE = /^(?:Dr\.?|ডাঃ)\s+/i;
+function stripHonorific(name: string): string {
+  return name.replace(HONORIFIC_RE, '').trim();
+}
+
 // ─── Merge logic ─────────────────────────────────────────────────────────────
 
 /**
@@ -175,6 +184,11 @@ export function generateTreatmentFaqs(
 /**
  * Generate default FAQs for a doctor page from frontmatter data.
  *
+ * Reduced to the 4 questions potential clients most often search for online:
+ * specialty, experience, hospital affiliation, and booking. Qualification and
+ * language details are already surfaced in the doctor's profile bio, so they
+ * are not duplicated here.
+ *
  * @param doctor - Doctor frontmatter data.
  * @param hospitalName - Resolved name of the affiliated hospital.
  * @param locale - Target locale.
@@ -188,7 +202,9 @@ export function generateDoctorFaqs(
   const t = getTranslations(locale);
   const templates = t.faq.templates.doctor;
   const vars: Record<string, string | undefined> = {
-    name: doctor.name,
+    // Reason: strip the honorific because the templates already prepend "Dr."
+    // / "ডাঃ" to {{name}}. Keeps the raw name available for other consumers.
+    name: stripHonorific(doctor.name),
     specialty: doctor.specialty,
     qualification: doctor.qualification,
     years: String(doctor.experienceYears),
@@ -198,39 +214,25 @@ export function generateDoctorFaqs(
 
   const faqs: FAQItem[] = [];
 
-  // Specialty FAQ
+  // Specialty FAQ — primary search intent ("what does Dr. X treat?")
   faqs.push({
     question: interpolate(templates.specialtyQ, vars),
     answer: interpolate(templates.specialtyA, vars),
   });
 
-  // Experience FAQ
+  // Experience FAQ — trust/credibility signal
   faqs.push({
     question: interpolate(templates.experienceQ, vars),
     answer: interpolate(templates.experienceA, vars),
   });
 
-  // Qualification FAQ
-  faqs.push({
-    question: interpolate(templates.qualificationQ, vars),
-    answer: interpolate(templates.qualificationA, vars),
-  });
-
-  // Hospital affiliation FAQ
+  // Hospital affiliation FAQ — critical for medical tourists choosing a hospital
   faqs.push({
     question: interpolate(templates.hospitalQ, vars),
     answer: interpolate(templates.hospitalA, vars),
   });
 
-  // Languages FAQ (only if field is present)
-  if (doctor.languages?.length) {
-    faqs.push({
-      question: interpolate(templates.languagesQ, vars),
-      answer: interpolate(templates.languagesA, vars),
-    });
-  }
-
-  // Static: booking FAQ
+  // Static: booking FAQ — conversion intent
   faqs.push({
     question: interpolate(templates.bookingQ, vars),
     answer: interpolate(templates.bookingA, vars),

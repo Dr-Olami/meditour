@@ -143,7 +143,7 @@ export async function getBlogPosts(locale: string): Promise<BlogEntry[]> {
   const all = await getCollection('blog');
   return all
     .filter(byLocale<BlogEntry>(locale))
-    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+    .sort((a: BlogEntry, b: BlogEntry) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 }
 
 /**

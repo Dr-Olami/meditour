@@ -1,0 +1,214 @@
+---
+/**
+ * Branded intro loader — one-time, first-visit-only wordmark animation.
+ *
+ * UX spec:
+ *   - Shows only on the homepage, only once per session (sessionStorage).
+ *   - Total duration ≤ 1.2s: 600ms draw-in + 300ms hold + 300ms wipe-away.
+ *   - Skippable via click or Escape; never replays on intra-site navigation.
+ *   - Honours `prefers-reduced-motion` (skipped entirely).
+ *   - If JS fails to run, the overlay stays `hidden` and content is visible.
+ *
+ * The gating/timing logic is canonical in `motion/brandedIntro.ts`; the
+ * decision is duplicated inline here so the script can run synchronously
+ * during parse (`is:inline`) and avoid a first-paint flash of underlying
+ * content. Keep the two in sync if you change timings.
+ *
+ * Props:
+ *   wordmark - Text to reveal (defaults to "Honest Healthcare").
+ */
+import { INTRO_TIMINGS, INTRO_TOTAL_MS, INTRO_STORAGE_KEY } from '../../motion/brandedIntro';
+
+interface Props {
+  wordmark?: string;
+}
+
+const { wordmark = 'Honest Healthcare' } = Astro.props;
+const totalMs = INTRO_TOTAL_MS;
+const drawMs = INTRO_TIMINGS.drawIn;
+const holdMs = INTRO_TIMINGS.hold;
+const wipeMs = INTRO_TIMINGS.wipe;
+---
+
+<div
+  id="branded-intro"
+  class="branded-intro"
+  role="dialog"
+  aria-label={wordmark}
+  aria-modal="true"
+  data-draw-ms={drawMs}
+  data-hold-ms={holdMs}
+  data-wipe-ms={wipeMs}
+  data-total-ms={totalMs}
+  data-storage-key={INTRO_STORAGE_KEY}
+  hidden
+>
+  <div class="branded-intro__inner">
+    <span class="branded-intro__wordmark" data-wordmark>{wordmark}</span>
+  </div>
+</div>
+
+<style>
+  .branded-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    color: var(--color-ink);
+    /* Wipe-away: slide up + fade. Duration matches INTRO_TIMINGS.wipe. */
+    transition:
+      transform 300ms var(--ease-out-expo),
+      opacity 300ms var(--ease-out-expo);
+    will-change: transform, opacity;
+  }
+  /* `hidden` is the safe fallback — if JS never runs, content stays visible. */
+  .branded-intro[hidden] {
+    display: none;
+  }
+  .branded-intro.is-wiping {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .branded-intro__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+  }
+
+  .branded-intro__wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    /* Reason: smaller per UX request — was clamp(1.75rem, 6vw, 3.5rem). */
+    font-size: clamp(1.125rem, 3.5vw, 1.75rem);
+    letter-spacing: var(--tracking-display);
+    line-height: 1;
+    /* Bright-shine black: glossy vertical gradient from #000 to a near-black
+       sheen, giving the ink a polished, light-catching look on white. */
+    background: linear-gradient(
+      180deg,
+      #000000 0%,
+      #2a2a2a 45%,
+      #000000 55%,
+      #1a1a1a 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Subtle sheen sweep across the glyphs while drawing in. */
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Start fully clipped so the draw-in reveals it left→right. */
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  .branded-intro.is-drawing .branded-intro__wordmark {
+    /* Duration matches INTRO_TIMINGS.drawIn (600ms). */
+    animation: branded-intro-draw 600ms var(--ease-out-expo) forwards;
+  }
+
+  @keyframes branded-intro-draw {
+    0% {
+      clip-path: inset(0 100% 0 0);
+      opacity: 0;
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+  }
+
+  /* Body scroll lock applied by the inline script while the intro is visible. */
+  :global(.intro-lock) {
+    overflow: hidden;
+  }
+
+  /* Reduced-motion users never see the overlay; content is shown immediately. */
+  @media (prefers-reduced-motion: reduce) {
+    .branded-intro {
+      display: none !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var root = document.getElementById('branded-intro');
+    if (!root) return;
+
+    var reduced =
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var storageKey = root.getAttribute('data-storage-key') || 'khan:branded-intro-seen';
+
+    var seen = false;
+    try {
+      seen = window.sessionStorage.getItem(storageKey) === '1';
+    } catch (e) {
+      // Reason: sessionStorage can throw in private mode / sandboxed iframes.
+      seen = false;
+    }
+
+    // Reason: skip entirely if reduced-motion is requested or the intro has
+    // already played this session. Remove the node so it never paints.
+    if (reduced || seen) {
+      root.remove();
+      return;
+    }
+
+    try {
+      window.sessionStorage.setItem(storageKey, '1');
+    } catch (e) {
+      // Reason: best-effort persist; failing must never block the page.
+    }
+
+    var drawMs = Number(root.getAttribute('data-draw-ms')) || 600;
+    var holdMs = Number(root.getAttribute('data-hold-ms')) || 300;
+    var wipeMs = Number(root.getAttribute('data-wipe-ms')) || 300;
+    var totalMs = Number(root.getAttribute('data-total-ms')) || drawMs + holdMs + wipeMs;
+
+    // Reveal the overlay now (it was `hidden` as a safe fallback).
+    root.removeAttribute('hidden');
+    document.body.classList.add('intro-lock');
+
+    // Trigger the draw-in on the next frame so the CSS animation fires.
+    requestAnimationFrame(function () {
+      root.classList.add('is-drawing');
+    });
+
+    var wiped = false;
+    function wipe() {
+      if (wiped) return;
+      wiped = true;
+      if (wipeTimer) {
+        clearTimeout(wipeTimer);
+        wipeTimer = undefined;
+      }
+      root.classList.remove('is-drawing');
+      root.classList.add('is-wiping');
+      window.setTimeout(function () {
+        document.body.classList.remove('intro-lock');
+        root.remove();
+        document.removeEventListener('keydown', onKey);
+        root.removeEventListener('click', wipe);
+      }, wipeMs);
+    }
+
+    var wipeTimer = window.setTimeout(wipe, drawMs + holdMs);
+
+    function onKey(e) {
+      if (e.key === 'Escape') wipe();
+    }
+
+    root.addEventListener('click', wipe);
+    document.addEventListener('keydown', onKey);
+
+    // Reason: safety net so a stalled animation or throttled tab can never
+    // leave the visitor stuck behind the overlay.
+    window.setTimeout(wipe, totalMs + 250);
+  })();
+</script>

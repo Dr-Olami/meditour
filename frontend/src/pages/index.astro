@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomePage from '../components/HomePage.astro';
+import BrandedIntro from '../design-system/components/organisms/BrandedIntro.astro';
 import { getTranslations } from '../lib/i18n';
 import {
   getTreatments,
@@ -74,6 +75,7 @@ const jsonLd = medicalBusiness({
 ---
 
 <Layout title={`${t.site.name} — ${t.site.tagline}`} description={t.site.description} locale="en" jsonLd={jsonLd}>
+  <BrandedIntro />
   <HomePage
     locale="en"
     treatments={treatments}

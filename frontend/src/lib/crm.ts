@@ -41,7 +41,7 @@ export type LeadPayload = z.infer<typeof leadSchema>;
  * here (it would be visible in the client bundle). The external CRM must
  * accept unauthenticated POST from trusted origins or use a public-safe token.
  */
-export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; message: string }> {
+export async function submitLead(payload: z.input<typeof leadSchema>): Promise<{ ok: boolean; message: string }> {
   const crmUrl = import.meta.env.PUBLIC_CRM_SUBMIT_URL;
 
   if (!crmUrl) {

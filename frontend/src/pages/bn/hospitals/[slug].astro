@@ -100,7 +100,14 @@ const stats: StatItem[] = [
 ---
 
 <Layout title={title} description={description} locale="bn" image={hospital.image} jsonLd={jsonLd}>
-  <Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '/bn/#contact' }} client:load />
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '/bn/#contact' }}
+    locale="bn"
+    currentPath={Astro.url.pathname}
+    client:load
+  />
 
   <main>
 

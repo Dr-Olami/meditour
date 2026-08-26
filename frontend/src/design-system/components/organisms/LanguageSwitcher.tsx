@@ -1,32 +1,51 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 
-const LOCALES: { code: string; label: string }[] = [
-  { code: 'en', label: 'English' },
-  { code: 'bn', label: 'বাংলা' },
+/**
+ * Supported locales. To add a new language (e.g. Arabic), append a new entry
+ * here — the switcher, path stripping, and href building all adapt
+ * automatically from this single source of truth.
+ */
+const LOCALES: { code: string; label: string; short: string }[] = [
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'bn', label: 'বাংলা', short: 'বাং' },
+  // { code: 'ar', label: 'العربية', short: 'AR' },  // ready for Arabic
 ];
+
+// Reason: build the locale-prefix regex dynamically from LOCALES so adding a
+// new language requires no regex updates.
+const LOCALE_CODES = LOCALES.map((l) => l.code);
+const LOCALE_PREFIX_RE = new RegExp(`^\\/(${LOCALE_CODES.join('|')})\\b`);
 
 export interface LanguageSwitcherProps
   extends React.HTMLAttributes<HTMLDivElement> {
   currentLocale: string;
   currentPath: string;
+  /** Use short labels (e.g. "EN" instead of "English") — for compact spaces. */
+  compact?: boolean;
 }
 
 /**
- * Locale switcher that preserves the current path.
+ * Locale switcher that preserves the current path. Renders a pill toggle with
+ * one button per supported locale. Use `compact` for tight spaces like the
+ * mobile navbar.
  */
 const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>(
-  ({ className, currentLocale, currentPath, ...props }, ref) => {
+  ({ className, currentLocale, currentPath, compact, ...props }, ref) => {
     return (
       <div
-        className={cn('flex items-center gap-1 rounded-base border border-border-default p-1', className)}
+        className={cn(
+          'flex items-center gap-0.5 rounded-full p-0.5',
+          compact ? 'bg-ink/5' : 'border border-border-default p-1',
+          className,
+        )}
         ref={ref}
         {...props}
       >
         {LOCALES.map((locale) => {
           const isActive = locale.code === currentLocale;
           const prefix = locale.code === 'en' ? '' : `/${locale.code}`;
-          const path = currentPath === '/' ? '' : currentPath.replace(/^\/(en|bn)\b/, '');
+          const path = currentPath === '/' ? '' : currentPath.replace(LOCALE_PREFIX_RE, '');
           const href = `${prefix}${path || '/'}`;
 
           return (
@@ -35,21 +54,23 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
               href={href}
               hrefLang={locale.code}
               className={cn(
-                'rounded px-2 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
+                'rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
+                compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm',
                 isActive
                   ? 'bg-ink text-white'
-                  : 'text-text-secondary hover:bg-bg-muted'
+                  : 'text-text-secondary hover:bg-bg-muted',
               )}
               aria-current={isActive ? 'true' : undefined}
+              aria-label={locale.label}
             >
-              {locale.label}
+              {compact ? locale.short : locale.label}
             </a>
           );
         })}
       </div>
     );
-  }
+  },
 );
 LanguageSwitcher.displayName = 'LanguageSwitcher';
 
-export { LanguageSwitcher };
+export { LanguageSwitcher, LOCALES };

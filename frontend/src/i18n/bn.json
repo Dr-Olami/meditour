@@ -229,5 +229,40 @@
     "ctaBoxText": "বিনামূল্যে খরচের অনুমান এবং ব্যক্তিগতকৃত হাসপাতাল সুপারিশ পান।",
     "ctaLabel": "বিনামূল্যে খরচের অনুমান পান",
     "backToBlog": "ব্লগে ফিরুন"
+  },
+  "whyUs": {
+    "title": "কেন রোগীরা আমাদের বেছে নেন",
+    "items": [
+      {
+        "title": "বিনামূল্যে দ্বিতীয় মতামত",
+        "description": "৩ জন শীর্ষ বিশেষজ্ঞের কাছ থেকে।\nকোনো বাধ্যবাধকতা নেই। কোনো খরচ নেই।",
+        "image": "/images/patterns/doctor-page-cta.jpg",
+        "video": "/videos/why-us/second-opinion.mp4"
+      },
+      {
+        "title": "স্বচ্ছতা",
+        "description": "সম্ভাব্য সাশ্রয়সহ স্পষ্ট খরচ।\nকোনো অপ্রত্যাশিত বিল নেই।",
+        "image": "/images/treatments/cardiology.jpg",
+        "video": "/videos/why-us/transparency.mp4"
+      },
+      {
+        "title": "যাচাইকৃত নেটওয়ার্ক",
+        "description": "স্বীকৃত হাসপাতাল।\nবোর্ড-সার্টিফায়েড ডাক্তার, আমাদের দ্বারা যাচাইকৃত।",
+        "image": "/images/hospitals/apollo-hospitals-bannerghatta.jpg",
+        "video": "/videos/why-us/verified-network.mp4"
+      },
+      {
+        "title": "নিবেদিত কেস ম্যানেজার",
+        "description": "প্রথম বার্তা থেকে শেষ ফলো-আপ পর্যন্ত\nআপনার পাশে একজন ব্যক্তিগত সমন্বয়কারী।",
+        "image": "/images/patterns/hospital-page-cta.jpg",
+        "video": "/videos/why-us/case-manager.mp4"
+      },
+      {
+        "title": "শুরু থেকে শেষ পর্যন্ত সহায়তা",
+        "description": "মেডিকেল ভিসা আমন্ত্রণ পত্র।\nএয়ারপোর্ট পিকআপ। ২৪/৭ সমন্বয়কারী।\nচিকিৎসা-পরবর্তী ফলো-আপ।",
+        "image": "/images/patterns/treatment-page-cta.jpg",
+        "video": "/videos/why-us/end-to-end-support.mp4"
+      }
+    ]
   }
 }

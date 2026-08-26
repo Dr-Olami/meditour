@@ -21,7 +21,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     { className, headline, subheadline, primaryCta, secondaryCta, eyebrow, media, ...props },
     ref
   ) => {
-    const innerRef = React.useRef<HTMLElement>(null);
+    const innerRef = React.useRef<HTMLElement>(null) as React.MutableRefObject<HTMLElement | null>;
     const combinedRef = (node: HTMLElement | null) => {
       innerRef.current = node;
       if (typeof ref === 'function') {

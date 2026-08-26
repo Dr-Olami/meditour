@@ -262,4 +262,14 @@
   .font-bengali {
     font-family: var(--font-bengali);
   }
+
+  /* Why Us mobile carousel: hide the native scrollbar.
+     The visible scroll indicator is the custom arrow + track row below the cards. */
+  .why-us-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .why-us-carousel::-webkit-scrollbar {
+    display: none;
+  }
 }

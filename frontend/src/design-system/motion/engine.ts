@@ -338,6 +338,12 @@ function runFaqAccordion(scope: HTMLElement): (() => void)[] {
   const cleanups: (() => void)[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="faq-accordion"]').forEach((container) => {
     container.querySelectorAll<HTMLDetailsElement>('details').forEach((details) => {
+      // Reason: prevent double-initialisation when both the document-level
+      // `initPageAnimations()` and a component-level `useAnimations()` hook
+      // target the same elements (e.g. after `client:visible` hydration).
+      if (details.dataset.faqInit === 'true') return;
+      details.dataset.faqInit = 'true';
+
       const summary = details.querySelector('summary');
       const content = summary?.nextElementSibling as HTMLElement | null;
       if (!summary || !content) return;
@@ -365,7 +371,12 @@ function runFaqAccordion(scope: HTMLElement): (() => void)[] {
         }
       };
       summary.addEventListener('click', toggle);
-      cleanups.push(() => summary.removeEventListener('click', toggle));
+      cleanups.push(() => {
+        summary.removeEventListener('click', toggle);
+        // Reason: clear the guard so the accordion can be re-initialised if
+        // the component re-mounts (e.g. React re-hydration).
+        delete details.dataset.faqInit;
+      });
     });
   });
   return cleanups;

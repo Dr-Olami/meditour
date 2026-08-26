@@ -14,7 +14,7 @@ export interface StatementSectionProps extends React.HTMLAttributes<HTMLElement>
  */
 const StatementSection = React.forwardRef<HTMLElement, StatementSectionProps>(
   ({ className, statement, caption, ...props }, ref) => {
-    const innerRef = React.useRef<HTMLElement>(null);
+    const innerRef = React.useRef<HTMLElement>(null) as React.MutableRefObject<HTMLElement | null>;
     const combinedRef = (node: HTMLElement | null) => {
       innerRef.current = node;
       if (typeof ref === 'function') {

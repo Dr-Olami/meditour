@@ -18,6 +18,8 @@ const ICON_PATHS: Record<string, string> = {
   'building': 'M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v.01M9 12v.01M9 15v.01M9 18v.01',
   'heart-pulse': 'M3 12h4l3 8 4-16 3 8h4',
   'tag': 'M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z M7 7h.01',
+  'arrow-right': 'M12 5l7 7-7 7 M5 12h14',
+  'arrow-left': 'M12 19L5 12l7-7 M19 12H5',
 };
 
 export interface IconProps extends React.SVGAttributes<SVGSVGElement> {

@@ -78,7 +78,14 @@ if (faqs.length > 0) {
 ---
 
 <Layout title={title} description={description} locale="en" image={doctor.avatar} jsonLd={jsonLd}>
-  <Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '/#contact' }} client:load />
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '/#contact' }}
+    locale="en"
+    currentPath={Astro.url.pathname}
+    client:load
+  />
 
   {/* ── HERO — dark editorial band ────────────────────────────────────
       Backdrop IMPLEMENTED: /images/patterns/doctor-page-hero.jpg (opacity-30,

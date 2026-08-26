@@ -1,20 +1,37 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 import { Button } from '../atoms/Button';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
   brand: string;
   links: { label: string; href: string }[];
   cta?: { label: string; href: string };
+  /** Current locale code (e.g. "en", "bn") — enables the in-navbar switcher. */
+  locale?: string;
+  /** Current URL pathname — used by the language switcher to preserve path. */
+  currentPath?: string;
 }
 
 /**
  * Floating pill navbar that condenses (adds shadow + reduces padding) on scroll.
  * Translucent warm-cream pill, centered links,
- * brand left, CTA right.
+ * brand left, CTA right. When `locale` and `currentPath` are provided a
+ * compact language switcher is always visible between the CTA and hamburger.
+ *
+ * Mobile (not scrolled):  [brand]    [switcher] [☰]
+ * Mobile (scrolled):      [initials] [switcher] [CTA] [☰]
+ * Desktop:                [brand] [links] [switcher] [CTA]
  */
 const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
-  ({ className, brand, links, cta, ...props }, ref) => {
+  ({ className, brand, links, cta, locale, currentPath, ...props }, ref) => {
+    // Reason: render the switcher internally so Astro pages only need to pass
+    // string props (locale + currentPath) rather than JSX elements, which
+    // Astro's template parser cannot handle in attribute values.
+    const showSwitcher = Boolean(locale && currentPath);
+    const switcher = showSwitcher ? (
+      <LanguageSwitcher currentLocale={locale!} currentPath={currentPath!} compact />
+    ) : null;
     const [open, setOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
 
@@ -90,7 +107,9 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           </ul>
 
           {/* CTA / Login */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Language switcher — always visible, sits before the CTA */}
+            {switcher}
             {cta && (
               <Button
                 asChild

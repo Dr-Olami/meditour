@@ -14,9 +14,9 @@ import { HeroSection } from '../design-system/components/organisms/HeroSection';
 import { StatementSection } from '../design-system/components/organisms/StatementSection';
 import { FloatingConsultCTA } from '../design-system/components/organisms/FloatingConsultCTA';
 import { StatCounter } from '../design-system/components/organisms/StatCounter';
+import { WhyUsSection } from '../design-system/components/organisms/WhyUsSection';
 import { LeadForm } from '../design-system/components/organisms/LeadForm';
 import { WhatsAppCTA } from '../design-system/components/organisms/WhatsAppCTA';
-import { LanguageSwitcher } from '../design-system/components/organisms/LanguageSwitcher';
 import { ServiceCardsSection } from '../design-system/components/organisms/ServiceCardsSection';
 import { Icon } from '../design-system/components/atoms/Icon';
 import { Link } from '../design-system/components/atoms/Link';
@@ -91,7 +91,14 @@ const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986'
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
 ---
 
-<Navbar brand={t.site.name} links={navLinks} cta={{ label: t.nav.cta, href: '#contact' }} client:load />
+<Navbar
+  brand={t.site.name}
+  links={navLinks}
+  cta={{ label: t.nav.cta, href: '#contact' }}
+  locale={locale}
+  currentPath={Astro.url.pathname}
+  client:load
+/>
 
 <!-- Hero -->
 <HeroSection
@@ -185,6 +192,9 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     </div>
   </div>
 </section>
+
+<!-- Why Us -->
+<WhyUsSection title={t.whyUs.title} items={t.whyUs.items} client:visible />
 
 <!-- Stats bar -->
 <section id="stats" class="bg-cream-200 py-14" data-anim="scroll-reveal">
@@ -327,10 +337,6 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
 />
 
 <WhatsAppCTA number={whatsappNumber} variant="floating" client:load data-floating-cta />
-
-<div class="fixed bottom-6 left-6 z-fixed" data-floating-cta>
-  <LanguageSwitcher currentLocale={locale} currentPath={Astro.url.pathname} client:load />
-</div>
 
 <script>
   // Stick floating CTAs above the footer when it enters the viewport.
