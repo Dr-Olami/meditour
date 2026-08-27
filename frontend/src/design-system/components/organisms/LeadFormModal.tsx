@@ -102,7 +102,7 @@ function LeadFormModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center md:items-center"
+      className="fixed inset-0 z-[400] flex items-end justify-center md:items-center"
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -120,10 +120,11 @@ function LeadFormModal({
         tabIndex={-1}
         className={cn(
           'relative z-10 flex max-h-[92vh] w-full flex-col overflow-hidden bg-cream-100 shadow-2xl outline-none',
-          // Mobile: full-width bottom sheet with rounded top
-          'rounded-t-2xl',
-          // Desktop: centered card with rounded corners
-          'md:max-w-lg md:rounded-2xl',
+          // Mobile: full-width bottom sheet with rounded top, pushed down
+          // below the floating navbar so the header stays visible.
+          'mt-20 rounded-t-2xl',
+          // Desktop: centered card with rounded corners, no top offset
+          'md:mt-0 md:max-w-lg md:rounded-2xl',
         )}
       >
         {/* Header — sticky so it stays visible while scrolling the form */}
