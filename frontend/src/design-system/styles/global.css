@@ -64,6 +64,29 @@
 }
 
 @layer components {
+  /*
+   * Fluid brand CTA — the shared violet→indigo gradient for every primary
+   * conversion action. The gradient drifts continuously (touch devices have
+   * no :hover, so a hover-driven pan never fires on mobile) while the label
+   * stays pure white in every state. Lives in @layer components so it beats
+   * the base `a:hover` link color. The global prefers-reduced-motion reset
+   * in base.css stills the drift for users who opt out of animation.
+   */
+  .cta-gradient {
+    background-image: var(--gradient-accent-fluid);
+    background-size: 220% 100%;
+    background-position: 0% 50%;
+    color: var(--color-text-inverse);
+    animation: gradient-drift 6s var(--ease-in-out-sine) infinite alternate;
+    transition: box-shadow var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .cta-gradient:hover,
+  .cta-gradient:focus-visible,
+  .cta-gradient:active {
+    color: var(--color-text-inverse);
+  }
+
   .container {
     width: min(100% - var(--space-8), var(--site-max-width));
     margin-inline: auto;

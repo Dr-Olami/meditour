@@ -42,4 +42,25 @@ describe('StepCards', () => {
     );
     expect(container.firstChild).toBeNull();
   });
+
+  it('exposes carousel semantics on the scroll region', () => {
+    render(<StepCards steps={STEPS} tone="light" />);
+    expect(
+      screen.getByRole('region', { name: 'Steps' })
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole('group')).toHaveLength(STEPS.length);
+  });
+
+  it('renders mobile dot navigation when there is more than one step', () => {
+    render(<StepCards steps={STEPS} tone="light" />);
+    const dots = screen.getAllByRole('tab');
+    expect(dots).toHaveLength(STEPS.length);
+    expect(dots[0]).toHaveAttribute('aria-selected', 'true');
+    expect(dots[1]).toHaveAttribute('aria-selected', 'false');
+  });
+
+  it('omits dot navigation for a single step (edge case)', () => {
+    render(<StepCards steps={[STEPS[0]]} tone="light" />);
+    expect(screen.queryByRole('tab')).not.toBeInTheDocument();
+  });
 });

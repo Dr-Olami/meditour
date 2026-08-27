@@ -34,7 +34,7 @@ const FloatingConsultCTA = React.forwardRef<HTMLDivElement, FloatingConsultCTAPr
     return (
       <div
         className={cn(
-          'relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 p-8 text-white md:p-12',
+          'relative overflow-hidden rounded-2xl bg-gradient-accent p-8 text-white md:p-12',
           className
         )}
         ref={ref}

@@ -9,8 +9,8 @@ const buttonVariants = cva(
       variant: {
         // Solid black pill — the primary conversion CTA
         primary: 'bg-ink text-white hover:bg-ink-strong hover:text-white',
-        // Violet→indigo gradient — reserved for high-intent actions (e.g. "Book Now")
-        gradient: 'bg-gradient-accent text-white hover:opacity-90',
+        // Violet→indigo fluid gradient — reserved for high-intent actions (e.g. "Book Now")
+        gradient: 'cta-gradient',
         // Soft cream fill for secondary emphasis
         secondary: 'bg-cream-200 text-ink hover:bg-cream-300',
         // Ink outline

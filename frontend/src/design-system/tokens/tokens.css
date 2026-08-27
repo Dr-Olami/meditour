@@ -71,6 +71,13 @@
     --color-accent-violet: #7c3aed;
     --color-accent-indigo: #4f46e5;
     --gradient-accent: linear-gradient(90deg, var(--color-accent-violet), var(--color-accent-indigo));
+    /* Fluid variant — seamless 3-stop loop so the pan never hits a hard edge. */
+    --gradient-accent-fluid: linear-gradient(
+      115deg,
+      var(--color-accent-violet),
+      var(--color-accent-indigo) 50%,
+      var(--color-accent-violet)
+    );
 
     /* ------------------------------------------------------------------ */
     /* Semantic roles — fully monochrome + gradient-only                   */

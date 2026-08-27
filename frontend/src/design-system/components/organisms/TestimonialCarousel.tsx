@@ -150,7 +150,7 @@ const TestimonialCarousel = React.forwardRef<
                     ? cn(
                         'w-10',
                         i === 0 && !hasStarted
-                          ? 'bg-gradient-to-r from-violet-600 to-indigo-600'
+                          ? 'bg-gradient-accent'
                           : 'overflow-hidden bg-cream-300'
                       )
                     : 'w-2.5 bg-cream-300 hover:bg-cream-400'
@@ -160,7 +160,7 @@ const TestimonialCarousel = React.forwardRef<
                   <span
                     key={activeIndex}
                     onAnimationEnd={handleProgressEnd}
-                    className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600"
+                    className="absolute inset-y-0 left-0 rounded-full bg-gradient-accent"
                     style={{
                       width: '0%',
                       animation: `progress-fill ${autoPlayInterval}ms linear forwards`,

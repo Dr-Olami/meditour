@@ -115,7 +115,7 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
           <div className="mt-auto flex items-stretch gap-2 pt-4">
             <a
               href={profileHref}
-              className="flex flex-1 items-center justify-between rounded-card bg-gradient-to-r from-violet-600 to-indigo-600 py-2 pl-4 pr-2 text-sm font-semibold text-white no-underline shadow-md transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+              className="cta-gradient flex flex-1 items-center justify-between rounded-card py-2 pl-4 pr-2 text-sm font-semibold no-underline shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
             >
               <span>{bookLabel}</span>
               {/* Circular arrow badge */}

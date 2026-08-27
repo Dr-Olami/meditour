@@ -29,6 +29,15 @@
   }
 }
 
+@keyframes gradient-drift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
 @keyframes progress-fill {
   from {
     width: 0%;

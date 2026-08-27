@@ -4,24 +4,33 @@ import { cn } from '../../../lib/utils';
 
 /**
  * Visual register for the step cards grid.
+ *
+ * Mobile: horizontal scroll-snap carousel with a peeking next card.
+ * sm and up: static grid (original behavior).
  */
-const stepCardsGrid = cva('grid gap-4 sm:grid-cols-2 lg:grid-cols-3', {
-  variants: {
-    tone: {
-      light: '',
-      dark: '',
+const stepCardsGrid = cva(
+  'flex snap-x snap-mandatory gap-4 overflow-x-auto scrollbar-none [-webkit-overflow-scrolling:touch] sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-x-visible lg:grid-cols-3',
+  {
+    variants: {
+      tone: {
+        light: '',
+        dark: '',
+      },
     },
-  },
-  defaultVariants: {
-    tone: 'light',
-  },
-});
+    defaultVariants: {
+      tone: 'light',
+    },
+  }
+);
 
 /**
  * Visual register for an individual step card, keyed to the grid tone.
+ *
+ * Mobile: fixed-width snap slide so the next card peeks into view.
+ * sm and up: width resets to auto for the grid.
  */
 const stepCardTone = cva(
-  'relative rounded-card border p-5 pt-8',
+  'relative w-[75vw] flex-shrink-0 snap-start rounded-card border p-5 pt-8 sm:w-auto',
   {
     variants: {
       tone: {
@@ -43,8 +52,8 @@ const stepNumberTone = cva(
   {
     variants: {
       tone: {
-        light: 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white',
-        dark: 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white',
+        light: 'bg-gradient-accent text-white',
+        dark: 'bg-gradient-accent text-white',
       },
     },
     defaultVariants: {
@@ -90,6 +99,9 @@ export interface StepCardItem {
   description?: string;
 }
 
+/** Horizontal gap between slides (gap-4) — used in scroll offset math. */
+const GAP_PX = 16;
+
 export interface StepCardsProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof stepCardsGrid> {
@@ -105,28 +117,97 @@ export interface StepCardsProps
  * Replaces the plain bullet list of procedures with numbered cards that
  * communicate sequence and progression. The gradient number badge provides
  * the only color accent, maintaining the monochrome editorial discipline.
+ *
+ * On mobile the grid becomes a swipeable scroll-snap carousel (next card
+ * peeks in from the right) with dot navigation; from `sm` up it stays a
+ * static grid.
  */
 const StepCards = React.forwardRef<HTMLDivElement, StepCardsProps>(
   ({ className, steps, tone, ...props }, ref) => {
-    if (!steps || steps.length === 0) return null;
+    const scrollRef = React.useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = React.useState(0);
+
+    const total = steps?.length ?? 0;
+
+    // Track the snapped card so the mobile dots stay in sync with swipes.
+    React.useEffect(() => {
+      const el = scrollRef.current;
+      if (!el || total <= 1) return;
+      const onScroll = () => {
+        const card = el.firstElementChild as HTMLElement | null;
+        const cardWidth = card ? card.clientWidth + GAP_PX : el.clientWidth;
+        const idx = Math.round(el.scrollLeft / cardWidth);
+        setActiveIndex(Math.min(idx, total - 1));
+      };
+      el.addEventListener('scroll', onScroll, { passive: true });
+      return () => el.removeEventListener('scroll', onScroll);
+    }, [total]);
+
+    const scrollTo = React.useCallback(
+      (index: number) => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const clamped = Math.max(0, Math.min(index, total - 1));
+        const card = el.firstElementChild as HTMLElement | null;
+        const cardWidth = card ? card.clientWidth + GAP_PX : el.clientWidth;
+        el.scrollTo({ left: clamped * cardWidth, behavior: 'smooth' });
+        setActiveIndex(clamped);
+      },
+      [total]
+    );
+
+    if (total === 0) return null;
     return (
-      <div
-        className={cn(stepCardsGrid({ tone }), className)}
-        ref={ref}
-        {...props}
-      >
-        {steps.map((step, index) => (
+      <div className={cn('min-w-0', className)} ref={ref} {...props}>
+        <div
+          ref={scrollRef}
+          className={cn(stepCardsGrid({ tone }))}
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Steps"
+        >
+          {steps.map((step, index) => (
+            <div
+              key={`${step.title}-${index}`}
+              className={cn(stepCardTone({ tone }))}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${total}`}
+            >
+              <span className={cn(stepNumberTone({ tone }))}>{index + 1}</span>
+              <h3 className={cn(stepTitleTone({ tone }))}>{step.title}</h3>
+              {step.description && (
+                <p className={cn(stepDescTone({ tone }))}>{step.description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Dot navigation — mobile carousel only; grid has no paging on sm+. */}
+        {total > 1 && (
           <div
-            key={`${step.title}-${index}`}
-            className={cn(stepCardTone({ tone }))}
+            className="mt-4 flex items-center justify-center gap-2 sm:hidden"
+            role="tablist"
+            aria-label="Step pages"
           >
-            <span className={cn(stepNumberTone({ tone }))}>{index + 1}</span>
-            <h3 className={cn(stepTitleTone({ tone }))}>{step.title}</h3>
-            {step.description && (
-              <p className={cn(stepDescTone({ tone }))}>{step.description}</p>
-            )}
+            {steps.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={i === activeIndex}
+                aria-label={`Go to step ${i + 1}`}
+                onClick={() => scrollTo(i)}
+                className={cn(
+                  'h-2.5 rounded-full transition-all duration-fast ease-out-expo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500',
+                  i === activeIndex
+                    ? 'w-6 bg-gradient-accent'
+                    : 'w-2.5 bg-cream-300 hover:bg-cream-400'
+                )}
+              />
+            ))}
           </div>
-        ))}
+        )}
       </div>
     );
   }
