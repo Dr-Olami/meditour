@@ -17,10 +17,11 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
  * Floating pill navbar that condenses (adds shadow + reduces padding) on scroll.
  * Translucent warm-cream pill, centered links,
  * brand left, CTA right. When `locale` and `currentPath` are provided a
- * compact language switcher is always visible between the CTA and hamburger.
+ * compact language switcher is always visible next to the hamburger on mobile
+ * and between the links and CTA on desktop.
  *
- * Mobile (not scrolled):  [brand]    [switcher] [☰]
- * Mobile (scrolled):      [initials] [switcher] [CTA] [☰]
+ * Mobile (not scrolled):  [brand]              [switcher][☰]
+ * Mobile (scrolled):      [initials]           [switcher][☰]
  * Desktop:                [brand] [links] [switcher] [CTA]
  */
 const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
@@ -107,21 +108,16 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           </ul>
 
           {/* CTA / Login */}
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Language switcher — always visible, sits before the CTA */}
+          <div className="flex items-center gap-1.5 md:gap-3">
+            {/* Language switcher — always visible, sits right before the hamburger on mobile */}
             {switcher}
+            {/* CTA — desktop only; on mobile it lives in the hamburger dropdown */}
             {cta && (
               <Button
                 asChild
                 size="sm"
                 variant="outline"
-                className={cn(
-                  'rounded-pill transition-all duration-500 ease-out-expo md:opacity-100 md:max-w-none md:translate-x-0',
-                  scrolled
-                    ? 'max-w-[10rem] opacity-100 translate-x-0'
-                    : 'max-w-0 opacity-0 translate-x-2 md:max-w-none md:opacity-100 md:translate-x-0'
-                )}
-                style={{ overflow: 'hidden', transitionDelay: scrolled ? '200ms' : '0ms' }}
+                className="hidden rounded-pill md:inline-flex"
               >
                 <a href={cta.href} className="whitespace-nowrap">{cta.label}</a>
               </Button>
