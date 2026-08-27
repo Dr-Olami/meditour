@@ -165,6 +165,11 @@
     "subtitle": "Send us a message and we will reply within 24 hours.",
     "formTitle": "Request a free consultation"
   },
+  "leadModal": {
+    "title": "Request a free consultation",
+    "subtitle": "Send us a message and we will reply within 24 hours.",
+    "close": "Close"
+  },
   "footer": {
     "rights": "All rights reserved.",
     "terms": "Terms & Conditions",

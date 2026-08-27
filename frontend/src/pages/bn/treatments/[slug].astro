@@ -24,6 +24,7 @@ import { generateTreatmentFaqs, mergeFaqs } from '../../../lib/faq-generator';
 import { getCategoryHue } from '../../../lib/treatment-categories';
 import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
 import { LEAD_SOURCE } from '../../../lib/crm';
+import { LeadModalTrigger } from '../../../design-system/components/organisms/LeadModalTrigger';
 
 export async function getStaticPaths() {
   const [treatments, doctors, hospitals] = await Promise.all([
@@ -207,9 +208,17 @@ const journeySteps: Step[] = [
         )}
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-            {t.doctors.detail.bookCta}
-          </a>
+          <LeadModalTrigger
+            client:load
+            label={t.doctors.detail.bookCta}
+            modalTitle={t.leadModal.title}
+            modalSubtitle={t.leadModal.subtitle}
+            closeLabel={t.leadModal.close}
+            source={LEAD_SOURCE.TREATMENT_PAGE}
+            defaultTreatment={treatment.name}
+            treatments={treatmentOptions}
+            className="rounded-card px-6 py-3"
+          />
           <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
             <Icon name="whatsapp" size={18} />
             {t.treatments.detail.inquiryCta}
@@ -283,9 +292,18 @@ const journeySteps: Step[] = [
           </div>
           <p class="mt-3 text-sm text-ink/60">{t.treatments.detail.consultSummary}</p>
           <div class="mt-5 flex flex-col gap-3">
-            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-              {t.doctors.detail.bookCta}
-            </a>
+            <LeadModalTrigger
+              client:load
+              label={t.doctors.detail.bookCta}
+              modalTitle={t.leadModal.title}
+              modalSubtitle={t.leadModal.subtitle}
+              closeLabel={t.leadModal.close}
+              source={LEAD_SOURCE.TREATMENT_PAGE}
+              defaultTreatment={treatment.name}
+              treatments={treatmentOptions}
+              full
+              className="rounded-card px-6 py-3"
+            />
             <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
               <Icon name="whatsapp" size={18} />
               {t.doctors.detail.whatsappCta}
@@ -322,9 +340,17 @@ const journeySteps: Step[] = [
         <p class="mt-2 max-w-xl text-cream-100/60">{t.treatments.detail.consultSummary}</p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-          {t.doctors.detail.bookCta}
-        </a>
+        <LeadModalTrigger
+          client:load
+          label={t.doctors.detail.bookCta}
+          modalTitle={t.leadModal.title}
+          modalSubtitle={t.leadModal.subtitle}
+          closeLabel={t.leadModal.close}
+          source={LEAD_SOURCE.TREATMENT_PAGE}
+          defaultTreatment={treatment.name}
+          treatments={treatmentOptions}
+          className="rounded-card px-6 py-3"
+        />
         <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
           <Icon name="whatsapp" size={18} />
           {t.doctors.detail.whatsappCta}

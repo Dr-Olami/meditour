@@ -16,6 +16,7 @@ import { physician, breadcrumbs, faqPage } from '../../../lib/schema';
 import { getDoctorInquiryLink } from '../../../lib/whatsapp';
 import { generateDoctorFaqs, mergeFaqs } from '../../../lib/faq-generator';
 import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
+import { LeadModalTrigger } from '../../../design-system/components/organisms/LeadModalTrigger';
 import { LEAD_SOURCE } from '../../../lib/crm';
 
 export async function getStaticPaths() {
@@ -175,9 +176,19 @@ if (faqs.length > 0) {
 
           {/* CTAs */}
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-              {t.doctors.detail.bookCta}
-            </a>
+            <LeadModalTrigger
+              client:load
+              label={t.doctors.detail.bookCta}
+              modalTitle={t.leadModal.title}
+              modalSubtitle={t.leadModal.subtitle}
+              closeLabel={t.leadModal.close}
+              source={LEAD_SOURCE.DOCTOR_PAGE}
+              defaultDoctor={doctor.name}
+              doctorSlug={Astro.params.slug}
+              hospitalSlug={hospital?.slug}
+              treatments={treatmentOptions}
+              className="rounded-card px-6 py-3"
+            />
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
               <Icon name="whatsapp" size={18} />
               {t.doctors.detail.whatsappCta}
@@ -257,9 +268,20 @@ if (faqs.length > 0) {
             </div>
           </div>
           <div class="mt-5 flex flex-col gap-3">
-            <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-              {t.doctors.detail.bookCta}
-            </a>
+            <LeadModalTrigger
+              client:load
+              label={t.doctors.detail.bookCta}
+              modalTitle={t.leadModal.title}
+              modalSubtitle={t.leadModal.subtitle}
+              closeLabel={t.leadModal.close}
+              source={LEAD_SOURCE.DOCTOR_PAGE}
+              defaultDoctor={doctor.name}
+              doctorSlug={Astro.params.slug}
+              hospitalSlug={hospital?.slug}
+              treatments={treatmentOptions}
+              full
+              className="rounded-card px-6 py-3"
+            />
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
               <Icon name="whatsapp" size={18} />
               {t.doctors.detail.whatsappCta}
@@ -309,9 +331,19 @@ if (faqs.length > 0) {
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/bn/#contact" class="inline-flex items-center justify-center rounded-card cta-gradient px-6 py-3 text-sm font-semibold shadow-md" data-anim="press-button">
-          {t.doctors.detail.bookCta}
-        </a>
+        <LeadModalTrigger
+          client:load
+          label={t.doctors.detail.bookCta}
+          modalTitle={t.leadModal.title}
+          modalSubtitle={t.leadModal.subtitle}
+          closeLabel={t.leadModal.close}
+          source={LEAD_SOURCE.DOCTOR_PAGE}
+          defaultDoctor={doctor.name}
+          doctorSlug={Astro.params.slug}
+          hospitalSlug={hospital?.slug}
+          treatments={treatmentOptions}
+          className="rounded-card px-6 py-3"
+        />
         <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
           <Icon name="whatsapp" size={18} />
           {t.doctors.detail.whatsappCta}

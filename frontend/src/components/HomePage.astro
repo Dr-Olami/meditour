@@ -22,6 +22,7 @@ import { Icon } from '../design-system/components/atoms/Icon';
 import { Link } from '../design-system/components/atoms/Link';
 import { getInquiryLink } from '../lib/whatsapp';
 import { LEAD_SOURCE } from '../lib/crm';
+import { LeadModalTrigger } from '../design-system/components/organisms/LeadModalTrigger';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../design-system/components/organisms/HospitalCard';
 import type { TestimonialItem } from '../design-system/components/molecules/TestimonialCard';
@@ -175,12 +176,16 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
         <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
         {/* Bento CTA buttons — high contrast over imagery */}
         <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-4 p-6 md:p-10">
-          <a
-            href="#contact"
-            class="inline-flex h-12 items-center justify-center rounded-pill bg-ink px-7 text-sm font-semibold text-cream-100 transition-opacity hover:opacity-90 hover:text-cream-100 md:text-base"
-          >
-            {t.doctorShowcase.bookNow}
-          </a>
+          <LeadModalTrigger
+            client:load
+            label={t.doctorShowcase.bookNow}
+            modalTitle={t.leadModal.title}
+            modalSubtitle={t.leadModal.subtitle}
+            closeLabel={t.leadModal.close}
+            source={LEAD_SOURCE.WEBSITE}
+            variant="dark"
+            className="rounded-pill px-7"
+          />
           <a
             href={`tel:${whatsappNumber}`}
             class="inline-flex h-12 items-center justify-center rounded-pill bg-cream-100 px-7 text-sm font-semibold text-ink transition-opacity hover:opacity-90 md:text-base"
