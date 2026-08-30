@@ -19,11 +19,13 @@ function byName<T extends { data: { name: string } }>(a: T, b: T) {
 export { entrySlug } from './slug';
 
 /**
- * Return all doctors for a given locale, sorted by name.
+ * Return all doctors for a given locale, sorted by experience (most experienced first).
  */
 export async function getDoctors(locale: string): Promise<DoctorEntry[]> {
   const all = await getCollection('doctors');
-  return all.filter(byLocale<DoctorEntry>(locale)).sort(byName);
+  return all
+    .filter(byLocale<DoctorEntry>(locale))
+    .sort((a, b) => (b.data.experienceYears ?? 0) - (a.data.experienceYears ?? 0));
 }
 
 /**

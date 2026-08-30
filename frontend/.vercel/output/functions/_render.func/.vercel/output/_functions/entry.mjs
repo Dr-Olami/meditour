@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { c as createExports } from './chunks/entrypoint_DQbQPB7X.mjs';
-import { manifest } from './manifest_CxIBr9sA.mjs';
+import { manifest } from './manifest_CT8TacRZ.mjs';
 
 const _page0 = () => import('./pages/_image.astro.mjs');
 const _page1 = () => import('./pages/api/lead.astro.mjs');
@@ -13,17 +13,19 @@ const _page7 = () => import('./pages/bn/doctors.astro.mjs');
 const _page8 = () => import('./pages/bn/hospitals/_slug_.astro.mjs');
 const _page9 = () => import('./pages/bn/hospitals.astro.mjs');
 const _page10 = () => import('./pages/bn/how-it-works.astro.mjs');
-const _page11 = () => import('./pages/bn/treatments/_slug_.astro.mjs');
-const _page12 = () => import('./pages/bn/treatments.astro.mjs');
-const _page13 = () => import('./pages/bn.astro.mjs');
-const _page14 = () => import('./pages/doctors/_slug_.astro.mjs');
-const _page15 = () => import('./pages/doctors.astro.mjs');
-const _page16 = () => import('./pages/hospitals/_slug_.astro.mjs');
-const _page17 = () => import('./pages/hospitals.astro.mjs');
-const _page18 = () => import('./pages/how-it-works.astro.mjs');
-const _page19 = () => import('./pages/treatments/_slug_.astro.mjs');
-const _page20 = () => import('./pages/treatments.astro.mjs');
-const _page21 = () => import('./pages/index.astro.mjs');
+const _page11 = () => import('./pages/bn/second-opinion.astro.mjs');
+const _page12 = () => import('./pages/bn/treatments/_slug_.astro.mjs');
+const _page13 = () => import('./pages/bn/treatments.astro.mjs');
+const _page14 = () => import('./pages/bn.astro.mjs');
+const _page15 = () => import('./pages/doctors/_slug_.astro.mjs');
+const _page16 = () => import('./pages/doctors.astro.mjs');
+const _page17 = () => import('./pages/hospitals/_slug_.astro.mjs');
+const _page18 = () => import('./pages/hospitals.astro.mjs');
+const _page19 = () => import('./pages/how-it-works.astro.mjs');
+const _page20 = () => import('./pages/second-opinion.astro.mjs');
+const _page21 = () => import('./pages/treatments/_slug_.astro.mjs');
+const _page22 = () => import('./pages/treatments.astro.mjs');
+const _page23 = () => import('./pages/index.astro.mjs');
 
 const pageMap = new Map([
     ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
@@ -37,17 +39,19 @@ const pageMap = new Map([
     ["src/pages/bn/hospitals/[slug].astro", _page8],
     ["src/pages/bn/hospitals.astro", _page9],
     ["src/pages/bn/how-it-works.astro", _page10],
-    ["src/pages/bn/treatments/[slug].astro", _page11],
-    ["src/pages/bn/treatments.astro", _page12],
-    ["src/pages/bn/index.astro", _page13],
-    ["src/pages/doctors/[slug].astro", _page14],
-    ["src/pages/doctors.astro", _page15],
-    ["src/pages/hospitals/[slug].astro", _page16],
-    ["src/pages/hospitals.astro", _page17],
-    ["src/pages/how-it-works.astro", _page18],
-    ["src/pages/treatments/[slug].astro", _page19],
-    ["src/pages/treatments.astro", _page20],
-    ["src/pages/index.astro", _page21]
+    ["src/pages/bn/second-opinion.astro", _page11],
+    ["src/pages/bn/treatments/[slug].astro", _page12],
+    ["src/pages/bn/treatments.astro", _page13],
+    ["src/pages/bn/index.astro", _page14],
+    ["src/pages/doctors/[slug].astro", _page15],
+    ["src/pages/doctors.astro", _page16],
+    ["src/pages/hospitals/[slug].astro", _page17],
+    ["src/pages/hospitals.astro", _page18],
+    ["src/pages/how-it-works.astro", _page19],
+    ["src/pages/second-opinion.astro", _page20],
+    ["src/pages/treatments/[slug].astro", _page21],
+    ["src/pages/treatments.astro", _page22],
+    ["src/pages/index.astro", _page23]
 ]);
 const serverIslandMap = new Map();
 const _manifest = Object.assign(manifest, {
@@ -57,7 +61,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "800fdf3b-f831-48b2-9c0f-9feddbbe98e0",
+    "middlewareSecret": "2ea77767-b04a-4bb3-a61b-90615172e8ff",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

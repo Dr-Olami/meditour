@@ -183,7 +183,7 @@ export function breadcrumbs(items: BreadcrumbItem[]): WithContext<Record<string,
 }
 
 interface FAQInput {
-  entries: { question: string; answer: string }[];
+  entries: { question: string; answer: string; bullets?: string[]; answerSuffix?: string }[];
 }
 
 /**
@@ -191,14 +191,25 @@ interface FAQInput {
  */
 export function faqPage(data: FAQInput): WithContext<Record<string, unknown>> {
   return thing('FAQPage', {
-    mainEntity: data.entries.map((entry) => ({
-      '@type': 'Question',
-      name: entry.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: entry.answer,
-      },
-    })),
+    mainEntity: data.entries.map((entry) => {
+      // Reason: combine answer, bullets, and answerSuffix into a single text
+      // string for structured data — Google requires a plain text answer.
+      let text = entry.answer;
+      if (entry.bullets?.length) {
+        text += ' ' + entry.bullets.map((b) => `- ${b}`).join(' ');
+      }
+      if (entry.answerSuffix) {
+        text += ` ${entry.answerSuffix}`;
+      }
+      return {
+        '@type': 'Question',
+        name: entry.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text,
+        },
+      };
+    }),
   });
 }
 

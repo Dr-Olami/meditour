@@ -6,6 +6,7 @@ import {
   getDoctorInquiryLink,
   getTreatmentInquiryLink,
   getEstimateInquiryLink,
+  getSecondOpinionLink,
   getContextualWhatsAppLink,
 } from './whatsapp';
 
@@ -72,6 +73,20 @@ describe('getEstimateInquiryLink', () => {
   });
 });
 
+describe('getSecondOpinionLink', () => {
+  it('returns empty string when no number is configured', () => {
+    expect(getSecondOpinionLink()).toBe('');
+  });
+
+  it('includes the second-opinion message when number is configured', () => {
+    vi.stubEnv('PUBLIC_WHATSAPP_NUMBER', '8801611892986');
+    const link = getSecondOpinionLink();
+    expect(link).toContain('https://wa.me/8801611892986?text=');
+    expect(link).toContain('second%20opinion');
+    vi.unstubAllEnvs();
+  });
+});
+
 describe('getContextualWhatsAppLink', () => {
   it('dispatches to getInquiryLink for a general context', () => {
     expect(getContextualWhatsAppLink({ type: 'general' })).toBe(getInquiryLink());
@@ -103,7 +118,15 @@ describe('getContextualWhatsAppLink', () => {
     vi.unstubAllEnvs();
   });
 
+  it('dispatches to getSecondOpinionLink for a second-opinion context', () => {
+    vi.stubEnv('PUBLIC_WHATSAPP_NUMBER', '8801611892986');
+    const link = getContextualWhatsAppLink({ type: 'second-opinion' });
+    expect(link).toContain('second%20opinion');
+    vi.unstubAllEnvs();
+  });
+
   it('returns empty string when no number is configured, regardless of context', () => {
     expect(getContextualWhatsAppLink({ type: 'doctor', doctorName: 'Dr. Sen' })).toBe('');
+    expect(getContextualWhatsAppLink({ type: 'second-opinion' })).toBe('');
   });
 });

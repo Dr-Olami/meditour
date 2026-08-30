@@ -94,6 +94,20 @@ export function getEstimateInquiryLink(treatmentName: string, estimatedTotal: nu
 }
 
 /**
+ * Build a WhatsApp inquiry link for a free second opinion request.
+ *
+ * @returns WhatsApp deep link or empty string if no number configured.
+ */
+export function getSecondOpinionLink(): string {
+  const number = getWhatsAppNumber();
+  if (!number) return '';
+  return buildWhatsAppLink(
+    number,
+    'Hi Khan Meditour, I would like a free honest second opinion on my diagnosis or recommended treatment. I have reports to share.'
+  );
+}
+
+/**
  * Discriminated union describing which contextual WhatsApp message to build.
  * Used by shared CTA components (`WhatsAppCTA`, `FloatingConsultCTA`) so callers
  * can request a contextual message without knowing which builder to call.
@@ -102,7 +116,8 @@ export type WhatsAppContext =
   | { type: 'general' }
   | { type: 'doctor'; doctorName: string }
   | { type: 'treatment'; treatmentName: string }
-  | { type: 'estimate'; treatmentName: string; estimatedTotal: number };
+  | { type: 'estimate'; treatmentName: string; estimatedTotal: number }
+  | { type: 'second-opinion' };
 
 /**
  * Build a WhatsApp deep link for a given page context, dispatching to the
@@ -119,6 +134,8 @@ export function getContextualWhatsAppLink(context: WhatsAppContext): string {
       return getTreatmentInquiryLink(context.treatmentName);
     case 'estimate':
       return getEstimateInquiryLink(context.treatmentName, context.estimatedTotal);
+    case 'second-opinion':
+      return getSecondOpinionLink();
     default:
       return getInquiryLink();
   }

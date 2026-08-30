@@ -6,6 +6,10 @@ import { useAnimations } from '../../motion/use-animations';
 export interface FAQItem {
   question: string;
   answer: string;
+  /** Optional bullet list rendered below the answer text. */
+  bullets?: string[];
+  /** Optional text rendered after the bullet list. */
+  answerSuffix?: string;
 }
 
 export interface FAQAccordionProps
@@ -62,7 +66,19 @@ const FAQAccordion = React.forwardRef<HTMLDivElement, FAQAccordionProps>(
                 size={20}
               />
             </summary>
-            <div className="px-5 pb-5 text-text-secondary">{item.answer}</div>
+            <div className="px-5 pb-5 text-text-secondary">
+              {item.answer}
+              {item.bullets && item.bullets.length > 0 && (
+                <ul className="mt-3 list-disc space-y-1 pl-5">
+                  {item.bullets.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+              )}
+              {item.answerSuffix && (
+                <p className="mt-3">{item.answerSuffix}</p>
+              )}
+            </div>
           </details>
         ))}
       </div>

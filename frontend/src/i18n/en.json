@@ -14,6 +14,7 @@
     "faq": "FAQ",
     "contact": "Contact",
     "blog": "Blog",
+    "secondOpinion": "Second Opinion",
     "cta": "Free consultation"
   },
   "hero": {
@@ -177,6 +178,7 @@
     "concierge": "Concierge & Emergencies",
     "conciergePrefix": "For",
     "conciergeSuffix": "contact",
+    "secondOpinion": "Free Second Opinion",
     "address": "Address line 1\nCity, Country"
   },
   "doctors": {
@@ -220,6 +222,79 @@
     "title": "How it works",
     "subtitle": "Your medical journey to India in 5 simple steps.",
     "cta": "Start your journey"
+  },
+  "secondOpinion": {
+    "title": "Free Honest Second Opinion",
+    "metaDescription": "Been advised surgery or a major treatment? Send your reports and get a free, independent second opinion from senior specialists in India within 24 hours — no cost, no obligation.",
+    "heroTitle": "Not sure about the treatment you have been advised?",
+    "heroSubtitle": "Get a free, honest second opinion from senior specialists at India's leading hospitals — before you spend anything on travel.",
+    "summary": "Send us your medical reports via WhatsApp or the form below. A senior specialist reviews your case and tells you honestly whether the recommended treatment or surgery is truly necessary — and what it should cost. Free, within 24 hours, with no obligation to travel with us.",
+    "primaryCta": "Send reports on WhatsApp",
+    "secondaryCta": "Get Honest Second Opinion",
+    "badge": "Free · No obligation",
+    "modalCta": "Request free opinion",
+    "railTitle": "Send your reports",
+    "railSummary": "Reports reviewed by a senior specialist within 24 hours — free, honest, no obligation.",
+    "heroStats": [
+      { "value": "24h", "label": "Response time" },
+      { "value": "100%", "label": "Free, no obligation" },
+      { "value": "3,500+", "label": "International patients guided" }
+    ],
+    "whenTitle": "When should you get a second opinion?",
+    "whenItems": [
+      "You have been advised surgery or a major procedure",
+      "Your diagnosis is unclear, or treatment is not improving your condition",
+      "The quoted treatment cost feels too high",
+      "You want to compare hospitals, doctors, or treatment approaches",
+      "You want an independent opinion before travelling abroad for treatment"
+    ],
+    "reportsTitle": "Reports that help our doctors respond faster",
+    "reportsItems": [
+      "Recent diagnosis, discharge summary, or doctor's note",
+      "Blood tests, biopsy reports, and scans (X-ray, MRI, CT, PET-CT, ultrasound)",
+      "Current medicines, previous surgery details, and any allergies",
+      "Patient age, country, and your WhatsApp number"
+    ],
+    "reportsNote": "Missing some reports? Send what you have — we will tell you if the specialist needs anything else.",
+    "stepsTitle": "How it works",
+    "steps": [
+      { "title": "Send your reports", "description": "Share your reports via WhatsApp or the form below. It takes about five minutes.", "duration": "~5 minutes" },
+      { "title": "Specialist review", "description": "A senior specialist in the relevant field reviews your case in detail.", "duration": "Within 24 hours" },
+      { "title": "Receive your opinion", "description": "You get a clear answer — proceed, delay, or consider alternatives — plus cost estimates and hospital options if treatment is needed.", "duration": "24–48 hours" }
+    ],
+    "receiveTitle": "What you will receive",
+    "receiveItems": [
+      "An honest assessment of whether the recommended treatment or surgery is truly necessary",
+      "Alternative treatment options where they exist",
+      "A transparent cost estimate with no hidden charges",
+      "A recommended specialist and accredited hospital, matched to your case"
+    ],
+    "doctorsTitle": "Meet the specialists who review your case",
+    "doctorsSummary": "Senior, board-certified doctors at accredited hospitals — who listen more and prescribe only what you truly need.",
+    "faqTitle": "Second opinion — frequently asked questions",
+    "faqs": [
+      { "question": "What is Honest Second Opinion?", "answer": "Honest Second Opinion is a doctor-led review of your diagnosis, scans, reports, and proposed treatment plan designed to help you understand whether surgery is truly needed, what alternatives exist, and what the safest next step could be." },
+      { "question": "Why should I take a second opinion?", "answer": "A second opinion helps you:", "bullets": ["Confirm the diagnosis", "Explore non-surgical options", "Understand risks, timelines, and outcomes", "Make a more informed decision"] },
+      { "question": "Which conditions can I get reviewed?", "answer": "You can reach out to us for conditions spanning:", "bullets": ["Orthopaedic issues (knee, shoulder, spine, joint pain)", "General surgery conditions such as hernia, piles, gallstones", "Urology issues", "Fertility and IVF", "Vascular conditions such as varicose veins", "Gastro issues", "Paediatric surgeries", "ENT and ophthalmology issues"] },
+      { "question": "What reports should I upload?", "answer": "Please upload all necessary information to help us understand your concern completely. This can include:", "bullets": ["Prescriptions", "MRI / CT scan / x-ray reports", "Blood test reports", "Discharge summaries", "Previous consultation notes"], "answerSuffix": "You can upload multiple files together." },
+      { "question": "Can surgery really be avoided?", "answer": "In many cases, yes. Some conditions improve with medication, physiotherapy, lifestyle changes, monitoring, or minimally invasive treatment. If surgery is necessary, we'll tell you honestly." },
+      { "question": "Is the second opinion really free?", "answer": "Yes. Reviewing your reports and sharing an honest opinion is completely free, with no obligation to book treatment or travel with us." },
+      { "question": "How long does it take to get my second opinion?", "answer": "In most cases you will receive a specialist's response within 24 hours of sharing complete reports. Complex cases may take up to 48 hours." },
+      { "question": "What if I don't have all my reports?", "answer": "Send what you have. Our care team will tell you exactly which test or report the specialist needs before giving a reliable opinion." },
+      { "question": "Who reviews my reports?", "answer": "Your case is reviewed by a senior, board-certified specialist in the relevant field at one of our accredited partner hospitals in India." },
+      { "question": "Will you share my medical data with anyone else?", "answer": "No. Your reports are shared only with the reviewing specialist and the hospital you approve. We follow strict data protection practices." },
+      { "question": "What happens after I receive the opinion?", "answer": "The choice is yours. If treatment is recommended and you wish to proceed, we provide a full cost estimate, visa assistance, and travel planning. If not, you simply have peace of mind — free of charge." }
+    ],
+    "ctaTitle": "Get your free second opinion today",
+    "ctaSubtitle": "Send your reports now — an honest answer within 24 hours.",
+    "formTitle": "Request your free second opinion",
+    "formDefaultMessage": "I would like a free second opinion on my diagnosis or recommended treatment. I have reports to share.",
+    "pullQuote": "The second opinion changed everything. The specialist told us the surgery was not needed — and saved us from an unnecessary procedure and thousands of dollars.",
+    "pullQuoteAttribution": "Patient from Bangladesh",
+    "chipCloudLabel": "Conditions we review",
+    "chipCloudItems": ["Cardiology", "Oncology", "Orthopaedics", "Neurology", "Gastroenterology", "Urology", "ENT", "Ophthalmology", "IVF & Fertility", "Cosmetic Surgery", "Transplant", "General Surgery"],
+    "midCtaTitle": "Still deciding? Send your reports — the opinion is free.",
+    "midCtaSubtitle": "No cost, no obligation. Just an honest answer from a senior specialist within 24 hours."
   },
   "blog": {
     "title": "Blog",

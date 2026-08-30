@@ -26,6 +26,7 @@ export function getNavLinks(locale: Locale): NavLink[] {
     { label: t.nav.treatments, href: `${prefix}/treatments` },
     { label: t.nav.doctors, href: `${prefix}/doctors` },
     { label: t.nav.hospitals, href: `${prefix}/hospitals` },
+    { label: t.nav.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.nav.blog, href: `${prefix}/blog` },
   ];
 }

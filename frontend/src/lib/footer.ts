@@ -19,6 +19,7 @@ export function getFooterLegalLinks(locale: Locale): FooterLegalLink[] {
   const prefix = locale === 'bn' ? '/bn' : '';
 
   return [
+    { label: t.footer.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.footer.terms, href: `${prefix}/terms` },
     { label: t.footer.policies, href: `${prefix}/privacy` },
   ];
