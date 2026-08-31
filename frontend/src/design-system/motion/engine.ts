@@ -46,9 +46,16 @@ function splitWords(el: HTMLElement): HTMLSpanElement[] {
 
 /**
  * Parse a human-readable stat like "3,500+", "98%", or "25+" into a number.
- * Returns null for non-numeric values (e.g. "24/7").
+ * Returns null for non-numeric values (e.g. "24/7") and for ranges
+ * (e.g. "50–70%", "8–10h") which should not be animated as counters.
  */
-function parseCounterTarget(text: string): number | null {
+export function parseCounterTarget(text: string): number | null {
+  // Reason: Range values like "50–70%" or "8–10h" contain an en-dash (–)
+  // or hyphen between two numbers. Stripping the dash concatenates them
+  // ("5070", "810"), producing a nonsensical counter target. Ranges are
+  // displayed as-is without animation. Similarly, "24/7" would concatenate
+  // to "247" — also nonsensical.
+  if (/[\d.]\s*[\u2013\-/]\s*[\d.]/.test(text)) return null;
   const cleaned = text.replace(/,/g, '').replace(/[^0-9.]/g, '');
   const value = cleaned ? Number(cleaned) : NaN;
   return Number.isFinite(value) && value > 0 ? value : null;
