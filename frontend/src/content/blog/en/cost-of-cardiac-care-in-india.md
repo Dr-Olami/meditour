@@ -12,6 +12,8 @@ tags:
   - india
 relatedTreatmentSlugs:
   - cardiology
+targetCountries:
+  - global
 ---
 
 India has become one of the most trusted destinations for cardiac care. World-class hospitals, JCI-accredited centres and experienced interventional cardiologists mean patients receive the same (or better) outcomes they would expect at home — at a fraction of the cost.

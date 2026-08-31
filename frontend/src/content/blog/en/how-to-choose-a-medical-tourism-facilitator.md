@@ -13,6 +13,8 @@ relatedTreatmentSlugs:
   - cardiology
   - orthopedics-surgery
   - infertility-treatment
+targetCountries:
+  - global
 ---
 
 Medical tourism can save money and time, but only if your facilitator is transparent, experienced and accountable. Here is what to look for before you commit.

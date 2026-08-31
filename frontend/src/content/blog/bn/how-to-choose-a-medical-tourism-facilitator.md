@@ -13,6 +13,8 @@ relatedTreatmentSlugs:
   - cardiology
   - orthopedics-surgery
   - infertility-treatment
+targetCountries:
+  - global
 ---
 
 মেডিকেল ট্যুরিজম অর্থ ও সময় সঞ্চয় করতে পারে, কিন্তু শুধুমাত্র তখনই যখন ফ্যাসিলিটেটর স্বচ্ছ, অভিজ্ঞ ও দায়বদ্ধ। কমিটমেন্টের আগে যে বিষয়গুলো যাচাই করবেন:

@@ -10,3 +10,4 @@ test-output.log
 .astro
 coverage
 .playwright-report
+.env*

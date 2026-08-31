@@ -12,6 +12,8 @@ tags:
   - bangladesh
 relatedTreatmentSlugs:
   - infertility-treatment
+targetCountries:
+  - bangladesh
 ---
 
 Fertility treatment can feel overwhelming, especially when it involves crossing a border. Over the past few years, India has become a leading destination for Bangladeshi couples seeking IVF, thanks to experienced specialists, modern labs and significant cost savings.

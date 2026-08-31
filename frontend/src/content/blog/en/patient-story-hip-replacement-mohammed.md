@@ -12,6 +12,8 @@ tags:
   - uae
 relatedTreatmentSlugs:
   - orthopedics-surgery
+targetCountries:
+  - uae
 ---
 
 Mohammed, a 64-year-old retiree living in Dubai, had been managing hip pain for years. Local quotes for total hip replacement were far beyond his budget, and waiting times were long. After a friend recommended Khan Meditour, he decided to explore treatment in India.
