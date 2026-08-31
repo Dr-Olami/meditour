@@ -160,3 +160,70 @@ export function formatPatientsTreated(country: CountryMetadata): string {
   if (count < 1000) return `${count}+`;
   return `${Math.round(count / 100) / 10}K+`;
 }
+
+/**
+ * Shorten a flight time string for compact stat display.
+ *
+ * Reason: `flightTime` values like "6 hours from Cairo" or
+ * "10–12 hours from Douala (1–2 stops)" are too long for the 4xl stat
+ * counter and overflow on mobile. This extracts just the duration portion
+ * (e.g. "6h", "15–18h", "2.5h") for the stat, while the full descriptive
+ * string remains in the "Easy Travel" card where it has room to breathe.
+ *
+ * @param flightTime - Full flight time string from country metadata.
+ * @returns Shortened duration like "6h" or "15–18h".
+ */
+export function formatFlightTimeShort(flightTime: string): string {
+  // Match the leading duration: "6 hours", "15–18 hours", "2.5 hours", "8–10 hours"
+  const match = flightTime.match(/^([\d.]+(?:–[\d.]+)?)\s*hours?/i);
+  if (!match) return flightTime;
+  return `${match[1]}h`;
+}
+
+/**
+ * Map treatment slugs to display categories for cost cards.
+ *
+ * Reason: Treatment slugs like "cardiology" or "neuro-and-spine-surgery"
+ * need human-readable category labels for the cost comparison cards.
+ * This provides consistent naming across the site.
+ *
+ * @param slug - Treatment slug from country metadata.
+ * @returns Display category name.
+ */
+export function getTreatmentCategory(slug: string): string {
+  const categoryMap: Record<string, string> = {
+    'cardiology': 'Cardiology',
+    'cancer-treatment': 'Oncology',
+    'orthopedics-surgery': 'Orthopedics',
+    'organ-treatment': 'Transplant',
+    'infertility-treatment': 'Fertility',
+    'neuro-and-spine-surgery': 'Neurosurgery',
+    'cosmetic-surgery': 'Cosmetic',
+    'ophthalmology': 'Ophthalmology',
+    'dental-treatment': 'Dental',
+    'bariatric-surgery': 'Bariatric',
+  };
+  return categoryMap[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/**
+ * Format treatment slug to display name.
+ *
+ * @param slug - Treatment slug.
+ * @returns Human-readable treatment name.
+ */
+export function getTreatmentName(slug: string): string {
+  const nameMap: Record<string, string> = {
+    'cardiology': 'Heart Surgery',
+    'cancer-treatment': 'Cancer Treatment',
+    'orthopedics-surgery': 'Knee/Hip Replacement',
+    'organ-treatment': 'Kidney Transplant',
+    'infertility-treatment': 'IVF Treatment',
+    'neuro-and-spine-surgery': 'Spine Surgery',
+    'cosmetic-surgery': 'Cosmetic Surgery',
+    'ophthalmology': 'Eye Surgery',
+    'dental-treatment': 'Dental Implants',
+    'bariatric-surgery': 'Weight Loss Surgery',
+  };
+  return nameMap[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}

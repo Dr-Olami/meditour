@@ -7,7 +7,8 @@ import { FAQAccordion } from '../../design-system/components/organisms/FAQAccord
 import { StatCounter } from '../../design-system/components/organisms/StatCounter';
 import { Icon } from '../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
-import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated } from '../../data/countries';
+import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
+import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName } from '../../data/countries';
 import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug } from '../../lib/content';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
@@ -58,7 +59,7 @@ const stats = [
   { value: patientsValue, label: patientsLabel },
   { value: countryData.costSavingsVsLocal, label: 'Cost savings' },
   { value: '24/7', label: 'Patient support' },
-  { value: countryData.flightTime, label: 'Travel time' },
+  { value: formatFlightTimeShort(countryData.flightTime), label: 'Travel time' },
 ];
 
 const blogPosts = blogEntries.slice(0, 3).map((entry) => ({
@@ -106,83 +107,91 @@ const jsonLd = [
     client:load
   />
 
-  <main>
-    {/* ── HERO ─────────────────────────────────────────────────────────── */}
-    <section class="relative overflow-hidden bg-cream-100 text-ink">
-      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
-      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
-
-      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+  {/* Add top padding to main to account for sticky navbar */}
+  <main class="pt-20">
+    {/* ── BREADCRUMB (above hero for clean separation) ─────────────────── */}
+    <div class="bg-white py-4">
+      <div class="container">
         <Breadcrumb
           items={[
             { label: t.nav.home, href: '/' },
             { label: 'Countries', href: '/for/' },
             { label: countryData.name },
           ]}
-          class="mb-10"
           data-anim="fade-in-up"
         />
+      </div>
+    </div>
 
-        <div data-anim="stagger-children">
-          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
-            For {countryData.nationality} Patients · {countryData.code}
-          </span>
+    {/* ── MINIMAL HERO - CONTAINED CARD WITH ROUNDED CORNERS ───────────── */}
+    <section class="bg-cream-100 py-8 md:py-12">
+      <div class="container">
+        <div class="relative h-[400px] overflow-hidden rounded-2xl md:h-[500px] lg:h-[550px]">
+          {/* Background image */}
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80"
+            alt="Medical tourism to India"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          
+          {/* Subtle gradient overlay */}
+          <div class="absolute inset-0 bg-gradient-to-br from-ink/70 via-ink/50 to-transparent" />
 
-          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
-            {countryData.heroTitle}
-          </h1>
+          {/* Content - minimal: just badge + H1 */}
+          <div class="relative flex h-full items-center px-6 md:px-12 lg:px-16">
+            <div class="max-w-3xl" data-anim="stagger-children">
+              {/* Small badge */}
+              <span class="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                Patients from {countryData.name}
+              </span>
 
-          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">{countryData.heroSubtitle}</p>
-
-          {/* Key Benefits Grid */}
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-cream-100 p-5">
-              <Icon name="check" size={20} className="mt-0.5 text-green-600" />
-              <div>
-                <h3 class="text-sm font-semibold text-ink">Cost Savings</h3>
-                <p class="text-xs text-ink/60">Save {countryData.costSavingsVsLocal}</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-cream-100 p-5">
-              <Icon name="check" size={20} className="mt-0.5 text-blue-600" />
-              <div>
-                <h3 class="text-sm font-semibold text-ink">Easy Travel</h3>
-                <p class="text-xs text-ink/60">{countryData.flightTime}</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-cream-100 p-5">
-              <Icon name="check" size={20} className="mt-0.5 text-violet-600" />
-              <div>
-                <h3 class="text-sm font-semibold text-ink">Visa Support</h3>
-                <p class="text-xs text-ink/60">{countryData.visaProcessingTime}</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-cream-100 p-5">
-              <Icon name="check" size={20} className="mt-0.5 text-indigo-600" />
-              <div>
-                <h3 class="text-sm font-semibold text-ink">Language Support</h3>
-                <p class="text-xs text-ink/60">{countryData.languages.join(', ')}</p>
-              </div>
+              {/* H1 only - clean and bold */}
+              <h1 class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl" data-anim="headline-reveal">
+                Medical Tourism in India for {countryData.nationality} Patients
+              </h1>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          {/* CTA */}
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-card bg-gradient-accent px-8 py-3 text-sm font-semibold text-white" data-anim="press-button">
-              Free Consultation
-            </a>
-            {whatsappHref && (
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
-                data-anim="press-button"
-              >
-                <Icon name="whatsapp" size={18} />
-                Chat on WhatsApp
-              </a>
-            )}
+    {/* ── KEY BENEFITS GRID (with subtitle as intro) ───────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16">
+      <div class="container">
+        {/* Subtitle moved here from hero */}
+        <p class="mb-8 text-center text-lg leading-relaxed text-ink/70 md:text-xl">
+          {countryData.heroSubtitle}
+        </p>
+
+        {/* Benefits grid */}
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-green-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Cost Savings</h3>
+              <p class="text-xs text-ink/60">Save {countryData.costSavingsVsLocal}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-blue-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Easy Travel</h3>
+              <p class="text-xs text-ink/60">{countryData.flightTime}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-violet-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Visa Support</h3>
+              <p class="text-xs text-ink/60">{countryData.visaProcessingTime}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-indigo-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Language Support</h3>
+              <p class="text-xs text-ink/60">{countryData.languages.join(', ')}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -205,54 +214,39 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── COST COMPARISON TABLE ────────────────────────────────────────── */}
+    {/* ── COST COMPARISON CARDS ────────────────────────────────────────── */}
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
-        <div class="mb-10 max-w-2xl">
-          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-            Treatment costs in India for {countryData.nationality.toLowerCase()} patients
+        <div class="mb-6">
+          <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">Cost comparison</p>
+          <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
+            Treatment costs in India for {countryData.nationality} patients
           </h2>
-          <p class="mt-4 text-base text-ink/60">
+          <p class="mt-4 max-w-2xl text-base text-ink/60">
             Indicative package ranges compared with typical US pricing
             {countryData.currency.code !== 'USD' && `, with an approximate ${countryData.currency.name} (${countryData.currency.symbol}) reference`}
             . Final quotes follow medical review of your reports.
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-card border border-cream-300 bg-cream-100 shadow-base">
-          <table class="w-full text-left text-sm">
-            <thead class="border-b border-cream-300 bg-cream-200 text-xs uppercase tracking-wide text-ink/60">
-              <tr>
-                <th class="px-4 py-3 font-semibold">Treatment</th>
-                <th class="px-4 py-3 font-semibold">India (USD)</th>
-                {countryData.currency.code !== 'USD' && (
-                  <th class="px-4 py-3 font-semibold">Approx. {countryData.currency.code}</th>
-                )}
-                <th class="px-4 py-3 font-semibold">Typical USA</th>
-                <th class="px-4 py-3 font-semibold">Est. savings</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-cream-300">
-              {costTableEntries.map(([slug, cost]) => (
-                <tr class="hover:bg-cream-200/50">
-                  <td class="px-4 py-3 font-medium text-ink">
-                    <a href={`/treatments/${slug}`} class="hover:text-violet-600">
-                      {slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
-                    </a>
-                  </td>
-                  <td class="px-4 py-3 text-ink/80">{cost.indiaUSD}</td>
-                  {countryData.currency.code !== 'USD' && (
-                    <td class="px-4 py-3 text-ink/80">{cost.localCurrency || '—'}</td>
-                  )}
-                  <td class="px-4 py-3 text-ink/80">{cost.usaCost}</td>
-                  <td class="px-4 py-3 font-semibold text-green-700">{cost.savingsPercent}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Card grid - mobile-first, stacks vertically on small screens */}
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {costTableEntries.map(([slug, cost]) => (
+            <TreatmentCostCard
+              slug={slug}
+              name={getTreatmentName(slug)}
+              category={getTreatmentCategory(slug)}
+              indiaUSD={cost.indiaUSD}
+              localCurrency={cost.localCurrency || undefined}
+              currencyCode={countryData.currency.code !== 'USD' ? countryData.currency.code : undefined}
+              usaCost={cost.usaCost}
+              savingsPercent={cost.savingsPercent}
+              client:visible
+            />
+          ))}
         </div>
 
-        <p class="mt-4 text-xs text-ink/50">
+        <p class="mt-6 text-xs text-ink/50">
           Savings vs USA are estimates from mid-range package figures. Exchange rates change — request a written quote for your case.
         </p>
       </div>
@@ -445,6 +439,30 @@ const jsonLd = [
       </div>
     </section>
   </main>
+
+  {/* ── FLOATING CTAs (fixed to viewport, always visible) ──────────────── */}
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    {whatsappHref && (
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
+      >
+        <Icon name="whatsapp" size={16} />
+        <span class="hidden text-sm font-semibold md:inline">Chat on WhatsApp</span>
+      </a>
+    )}
+    <a
+      href="#contact"
+      class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+    >
+      <Icon name="mail" size={16} />
+      <span class="md:hidden">Get cost</span>
+      <span class="hidden md:inline">Get cost estimate</span>
+    </a>
+  </div>
 
   <Footer
     brand={t.site.name}

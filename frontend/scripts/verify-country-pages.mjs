@@ -286,12 +286,17 @@ async function verifyContentQuality(outDir, countrySlugs) {
     check(h1Match !== null, `${slug}: has <h1>`);
   }
 
-  // 2. Cost comparison table present
-  console.log('\n2. Cost comparison table:');
+  // 2. Cost comparison cards present (replaced <table> with card grid)
+  console.log('\n2. Cost comparison cards:');
   for (const slug of countrySlugs) {
     const html = await readHtml(outDir, `for/${slug}/index.html`);
     if (!html) continue;
-    check(html.includes('<table'), `${slug}: has cost comparison <table>`);
+    // Reason: cost section is now a TreatmentCostCard grid; check for card markup
+    // plus the section heading rather than a legacy <table> element.
+    check(
+      html.includes('Cost comparison') && /treatments\/[a-z-]+/.test(html),
+      `${slug}: has cost comparison cards`
+    );
   }
 
   // 3. Visa process steps present

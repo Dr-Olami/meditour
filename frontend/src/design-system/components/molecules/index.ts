@@ -22,3 +22,5 @@ export { StepCards } from './StepCards';
 export type { StepCardsProps, StepCardItem } from './StepCards';
 export { TestimonialCard } from './TestimonialCard';
 export type { TestimonialCardProps, TestimonialItem } from './TestimonialCard';
+export { TreatmentCostCard } from './TreatmentCostCard';
+export type { TreatmentCostCardProps } from './TreatmentCostCard';

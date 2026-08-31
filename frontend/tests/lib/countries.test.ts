@@ -10,6 +10,9 @@ import {
   getRegionLabel,
   getCountryNamesByRegion,
   formatPatientsTreated,
+  formatFlightTimeShort,
+  getTreatmentCategory,
+  getTreatmentName,
 } from '../../src/data/countries';
 import type { CountryMetadata, Region } from '../../src/data/countries';
 
@@ -217,6 +220,110 @@ describe('formatPatientsTreated', () => {
       const result = formatPatientsTreated(country);
       expect(result).toMatch(/^[\d.]+[K+]?\+$/);
     }
+  });
+});
+
+// ─── formatFlightTimeShort ───────────────────────────────────────────────────
+
+describe('formatFlightTimeShort', () => {
+  it('shortens "6 hours from Cairo" to "6h"', () => {
+    expect(formatFlightTimeShort('6 hours from Cairo')).toBe('6h');
+  });
+
+  it('shortens "15–18 hours (1–2 stops)" to "15–18h"', () => {
+    expect(formatFlightTimeShort('15–18 hours (1–2 stops)')).toBe('15–18h');
+  });
+
+  it('shortens "2.5 hours from Kabul" to "2.5h"', () => {
+    expect(formatFlightTimeShort('2.5 hours from Kabul')).toBe('2.5h');
+  });
+
+  it('shortens "10–12 hours from Douala (1–2 stops)" to "10–12h"', () => {
+    expect(formatFlightTimeShort('10–12 hours from Douala (1–2 stops)')).toBe('10–12h');
+  });
+
+  it('shortens "3 hours from Dhaka" to "3h"', () => {
+    expect(formatFlightTimeShort('3 hours from Dhaka')).toBe('3h');
+  });
+
+  it('shortens "1 hour from Dhaka" to "1h"', () => {
+    expect(formatFlightTimeShort('1 hour from Dhaka')).toBe('1h');
+  });
+
+  it('returns the input unchanged if no match is found', () => {
+    expect(formatFlightTimeShort('Varies')).toBe('Varies');
+  });
+
+  it('formats all real countries without error', () => {
+    for (const country of ALL_COUNTRIES) {
+      const result = formatFlightTimeShort(country.flightTime);
+      expect(result.length).toBeLessThanOrEqual(10);
+      expect(result).toMatch(/h$/);
+    }
+  });
+});
+
+// ─── getTreatmentCategory ────────────────────────────────────────────────────
+
+describe('getTreatmentCategory', () => {
+  it('maps "cardiology" to "Cardiology"', () => {
+    expect(getTreatmentCategory('cardiology')).toBe('Cardiology');
+  });
+
+  it('maps "cancer-treatment" to "Oncology"', () => {
+    expect(getTreatmentCategory('cancer-treatment')).toBe('Oncology');
+  });
+
+  it('maps "orthopedics-surgery" to "Orthopedics"', () => {
+    expect(getTreatmentCategory('orthopedics-surgery')).toBe('Orthopedics');
+  });
+
+  it('maps "organ-treatment" to "Transplant"', () => {
+    expect(getTreatmentCategory('organ-treatment')).toBe('Transplant');
+  });
+
+  it('maps "infertility-treatment" to "Fertility"', () => {
+    expect(getTreatmentCategory('infertility-treatment')).toBe('Fertility');
+  });
+
+  it('maps "neuro-and-spine-surgery" to "Neurosurgery"', () => {
+    expect(getTreatmentCategory('neuro-and-spine-surgery')).toBe('Neurosurgery');
+  });
+
+  it('title-cases unknown slugs', () => {
+    expect(getTreatmentCategory('unknown-treatment')).toBe('Unknown Treatment');
+  });
+});
+
+// ─── getTreatmentName ────────────────────────────────────────────────────────
+
+describe('getTreatmentName', () => {
+  it('maps "cardiology" to "Heart Surgery"', () => {
+    expect(getTreatmentName('cardiology')).toBe('Heart Surgery');
+  });
+
+  it('maps "cancer-treatment" to "Cancer Treatment"', () => {
+    expect(getTreatmentName('cancer-treatment')).toBe('Cancer Treatment');
+  });
+
+  it('maps "orthopedics-surgery" to "Knee/Hip Replacement"', () => {
+    expect(getTreatmentName('orthopedics-surgery')).toBe('Knee/Hip Replacement');
+  });
+
+  it('maps "organ-treatment" to "Kidney Transplant"', () => {
+    expect(getTreatmentName('organ-treatment')).toBe('Kidney Transplant');
+  });
+
+  it('maps "infertility-treatment" to "IVF Treatment"', () => {
+    expect(getTreatmentName('infertility-treatment')).toBe('IVF Treatment');
+  });
+
+  it('maps "neuro-and-spine-surgery" to "Spine Surgery"', () => {
+    expect(getTreatmentName('neuro-and-spine-surgery')).toBe('Spine Surgery');
+  });
+
+  it('title-cases unknown slugs', () => {
+    expect(getTreatmentName('unknown-treatment')).toBe('Unknown Treatment');
   });
 });
 
