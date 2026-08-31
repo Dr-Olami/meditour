@@ -212,6 +212,29 @@ export async function getBlogPostsByCountry(
 }
 
 /**
+ * Return treatments filtered by target country.
+ *
+ * Includes treatments tagged with the specific country, 'global' tagged
+ * treatments, and untagged treatments (backwards compatibility).
+ *
+ * @param locale - Target locale ('en' or 'bn').
+ * @param country - Country slug (e.g. 'bangladesh', 'uae', 'nigeria').
+ * @returns Array of treatment entries relevant to the country.
+ */
+export async function getTreatmentsByCountry(
+  locale: string,
+  country: string
+): Promise<TreatmentEntry[]> {
+  const all = await getTreatments(locale);
+  return all.filter(
+    (entry) =>
+      entry.data.targetCountry === country ||
+      entry.data.targetCountry === 'global' ||
+      !entry.data.targetCountry
+  );
+}
+
+/**
  * Return testimonials tagged with a specific country only (excluding global/untagged).
  * Used when a country page wants to show only country-specific stories.
  *

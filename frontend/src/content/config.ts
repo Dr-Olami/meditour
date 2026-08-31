@@ -89,6 +89,8 @@ const treatments = defineCollection({
     hospitalStay: z.string().optional(),
     recoveryTime: z.string().optional(),
     image: z.string().optional(),
+    /** Country slug for country-specific treatment variations; untagged treatments show for all countries. */
+    targetCountry: targetCountrySchema.optional(),
     faqs: z.array(
       z.object({
         question: z.string().min(1),

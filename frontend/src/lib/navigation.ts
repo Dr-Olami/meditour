@@ -26,6 +26,9 @@ export function getNavLinks(locale: Locale): NavLink[] {
     { label: t.nav.treatments, href: `${prefix}/treatments` },
     { label: t.nav.doctors, href: `${prefix}/doctors` },
     { label: t.nav.hospitals, href: `${prefix}/hospitals` },
+    // Reason: country landing pages are English-only for MVP, so this link
+    // stays unprefixed even in bn locale to avoid a /bn/for 404.
+    { label: t.nav.countries, href: '/for' },
     { label: t.nav.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.nav.blog, href: `${prefix}/blog` },
   ];

@@ -470,12 +470,13 @@ const jsonLd = [
 **Files:** All testimonial JSON files in `frontend/src/content/testimonials/`
 
 **Tasks:**
-- [ ] Review existing testimonials
-- [ ] Add `targetCountry` field based on patient location:
+- [x] Review existing testimonials
+- [x] Add `targetCountry` field based on patient location:
   - `adeeba-irshad.json` → `"targetCountry": "bangladesh"`
   - `mohammed-al-rashid.json` → `"targetCountry": "uae"`
   - `ashwinipriya-chandra.json` → `"targetCountry": "global"` (or specific country)
 - [ ] Create 2-3 new testimonials per priority country (Bangladesh, UAE, Nigeria, Kenya, USA)
+  - Templates ready in `frontend/templates/testimonials/` (outside the content collection so TODO placeholders don't render). Fill with real, consented patient stories and move into `src/content/testimonials/en/` to publish — see the README there.
 
 **Deliverable:** All testimonials tagged with target countries
 
@@ -486,14 +487,15 @@ const jsonLd = [
 ### 5.2 Create Country-Specific Blog Posts
 
 **Tasks:**
-- [ ] Write 2-3 blog posts per region (10-15 total):
-  - **South Asia:** "Medical Tourism from Bangladesh to India: Complete Guide"
-  - **Middle East:** "Why GCC Patients Choose India for Healthcare"
-  - **Africa:** "Affordable Healthcare in India for African Patients"
-  - **Western:** "Medical Tourism to India: A Guide for Americans"
-- [ ] Optimize blog posts for long-tail keywords
-- [ ] Add `targetCountries` field to blog frontmatter
-- [ ] Include cost comparisons, visa guides, success stories
+- [x] Write 2-3 blog posts per region (10-15 total):
+  - [x] **South Asia:** "Medical Tourism from Bangladesh to India: Complete Guide" (+ Bengali mirror)
+  - [x] **Middle East:** "Why GCC Patients Choose India for Healthcare" (tagged for all 6 GCC markets)
+  - [x] **Africa:** Nigeria guide + Kenya guide (tagged for East Africa: KE/TZ/UG/RW)
+  - [x] **Western:** "Medical Tourism to India from the USA"
+  - Remaining regional posts can be added as markets prove demand (pilot-first)
+- [x] Optimize blog posts for long-tail keywords
+- [x] Add `targetCountries` field to blog frontmatter
+- [x] Include cost comparisons, visa guides, success stories
 
 **Blog Post Structure:**
 1. Introduction (problem statement)

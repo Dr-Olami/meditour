@@ -142,3 +142,21 @@ export function getRegionLabel(region: Region): string {
 export function getCountryNamesByRegion(region: Region): string[] {
   return getCountriesByRegion(region).map((c) => c.name);
 }
+
+/**
+ * Format the "patients treated" stat for a country page.
+ *
+ * Reason: computing this inline in the [country].astro frontmatter triggers
+ * an esbuild parse error on optional-property ternaries; isolating the
+ * computation here keeps the template clean and the logic testable.
+ *
+ * @param country - Country metadata.
+ * @returns Display value like '1.2K+', or '1K+' when no volume is recorded.
+ */
+export function formatPatientsTreated(country: CountryMetadata): string {
+  const count = country.patientsTreated;
+  if (!count) return '1K+';
+  // Sub-1K volumes read better as exact counts ("300+") than decimals ("0.3K+").
+  if (count < 1000) return `${count}+`;
+  return `${Math.round(count / 100) / 10}K+`;
+}

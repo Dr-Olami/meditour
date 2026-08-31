@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "name": "TODO: Patient name",
+  "location": "TODO: City, United Arab Emirates",
+  "targetCountry": "uae",
+  "quote": "TODO: Patient's own words about their treatment journey in India (1-3 sentences, as shared with consent)",
+  "image": "TODO: Photo URL or delete this line (only with consent)",
+  "video": "TODO: Video URL or delete this line",
+  "videoDuration": "TODO: e.g. 1:42 or delete this line",
+  "brandLabel": "TODO: Campaign label or delete this line",
+  "relatedTreatmentSlugs": ["TODO: treatment slug e.g. cardiology"]
+}

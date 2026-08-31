@@ -19,6 +19,9 @@ export function getFooterLegalLinks(locale: Locale): FooterLegalLink[] {
   const prefix = locale === 'bn' ? '/bn' : '';
 
   return [
+    // Reason: country landing pages are English-only for MVP, so this link
+    // stays unprefixed even in bn locale to avoid a /bn/for 404.
+    { label: t.nav.countries, href: '/for' },
     { label: t.footer.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.footer.terms, href: `${prefix}/terms` },
     { label: t.footer.policies, href: `${prefix}/privacy` },
