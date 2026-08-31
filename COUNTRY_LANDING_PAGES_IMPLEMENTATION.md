@@ -538,13 +538,14 @@ const jsonLd = [
 ### 6.1 Functional Testing
 
 **Tasks:**
-- [ ] Test all 29 country pages load correctly
-- [ ] Verify dynamic content generation (stats, FAQs, testimonials)
-- [ ] Test WhatsApp CTAs with country-specific pre-filled messages
-- [ ] Test internal links (treatments, doctors, hospitals, blog)
-- [ ] Test form submissions from country pages
-- [ ] Test mobile responsiveness on all pages
-- [ ] Test browser compatibility (Chrome, Safari, Firefox, Edge)
+- [x] Test all 31 country pages load correctly — verified by `scripts/verify-country-pages.mjs`
+- [x] Verify dynamic content generation (stats, FAQs, testimonials) — verified on 5 pilot pages
+- [x] Test WhatsApp CTAs with country-specific pre-filled messages — verified on 5 pilot pages
+- [x] Test internal links (treatments, doctors, hospitals, blog) — no broken /for/ or /treatments/ links
+- [ ] Test form submissions from country pages — manual testing required (LeadModalTrigger)
+- [ ] Test mobile responsiveness on all pages — manual/browser preview required
+- [ ] Test browser compatibility (Chrome, Safari, Firefox, Edge) — manual testing required
+- [x] Unit tests: country helpers (30 tests), country FAQ generator (20 tests), WhatsApp CTA (6 tests)
 
 **Deliverable:** Functional test report with bug fixes
 
@@ -555,14 +556,16 @@ const jsonLd = [
 ### 6.2 SEO Testing
 
 **Tasks:**
-- [ ] Validate structured data with Google Rich Results Test
-- [ ] Check meta tags with SEO tools (Screaming Frog, Ahrefs)
-- [ ] Verify canonical URLs
-- [ ] Test page speed (Google PageSpeed Insights, GTmetrix)
-- [ ] Check Core Web Vitals (LCP, FID, CLS)
-- [ ] Validate sitemap.xml includes all country pages
-- [ ] Submit sitemap to Google Search Console
-- [ ] Check robots.txt allows crawling
+- [x] Validate structured data — all 31 pages have MedicalWebPage + FAQPage + BreadcrumbList JSON-LD
+- [ ] Validate structured data with Google Rich Results Test — manual (production URL required)
+- [x] Check meta tags — all 31 titles (60-72 chars) and descriptions unique; OG tags present on pilot pages
+- [x] Verify canonical URLs — present on all country pages
+- [ ] Test page speed (Google PageSpeed Insights, GTmetrix) — manual/external
+- [ ] Check Core Web Vitals (LCP, FID, CLS) — manual/external
+- [x] Validate sitemap.xml includes all country pages — 166 URLs including all 31 /for/ pages
+- [ ] Submit sitemap to Google Search Console — production deployment required
+- [x] Check robots.txt allows crawling — allows all except /api/, references sitemap
+- [ ] Meta description length optimization — 24 of 31 descriptions are 171-191 chars (ideal ≤170); trim in country metadata
 
 **Deliverable:** SEO audit report with optimizations
 
@@ -573,13 +576,15 @@ const jsonLd = [
 ### 6.3 Content Quality Review
 
 **Tasks:**
-- [ ] Proofread all country metadata (grammar, spelling, accuracy)
-- [ ] Verify cost data is accurate and up-to-date
-- [ ] Verify visa information is current
-- [ ] Check flight time estimates
-- [ ] Verify hospital accreditations mentioned
-- [ ] Review FAQ answers for accuracy
-- [ ] Check cultural considerations are appropriate
+- [x] Verify all country metadata has required fields — unit test `ALL_COUNTRIES metadata completeness` (11 checks × 31 countries)
+- [x] Verify every country has cost table, visa steps, recommended cities, languages, keywords
+- [x] Verify every country page renders <h1>, cost comparison <table>, visa content, breadcrumbs
+- [ ] Proofread all country metadata (grammar, spelling, accuracy) — manual review
+- [ ] Verify cost data is accurate and up-to-date — manual review against hospital quotes
+- [ ] Verify visa information is current — manual review against Indian government sources
+- [ ] Check flight time estimates — manual review
+- [ ] Review FAQ answers for accuracy — manual review
+- [ ] Check cultural considerations are appropriate — manual review
 
 **Deliverable:** Content quality report with corrections
 
