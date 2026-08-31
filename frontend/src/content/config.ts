@@ -4,6 +4,22 @@ const LOCALES = ['en', 'bn'] as const;
 
 const localeSchema = z.enum(LOCALES);
 
+/**
+ * Country slugs matching the keys in `src/data/countries/`.
+ * Used to tag testimonials and blog posts for country-specific landing pages.
+ * 'global' indicates content relevant to all countries.
+ */
+const COUNTRY_SLUGS = [
+  'afghanistan', 'australia', 'bahrain', 'bangladesh', 'cameroon',
+  'canada', 'egypt', 'ethiopia', 'ghana', 'iran', 'iraq', 'jordan',
+  'kazakhstan', 'kenya', 'kuwait', 'maldives', 'nepal', 'nigeria',
+  'oman', 'qatar', 'rwanda', 'saudi-arabia', 'sri-lanka', 'sudan',
+  'tanzania', 'uae', 'uganda', 'uk', 'usa', 'yemen', 'zimbabwe',
+  'global',
+] as const;
+
+const targetCountrySchema = z.enum(COUNTRY_SLUGS);
+
 const doctors = defineCollection({
   type: 'content',
   schema: z.object({
@@ -88,6 +104,8 @@ const testimonials = defineCollection({
     locale: localeSchema,
     name: z.string().min(1),
     location: z.string().optional(),
+    /** Country slug for filtering testimonials on country landing pages. */
+    targetCountry: targetCountrySchema.optional(),
     quote: z.string().min(1),
     image: z.string().optional(),
     video: z.string().optional(),
@@ -109,6 +127,8 @@ const blog = defineCollection({
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).optional(),
     relatedTreatmentSlugs: z.array(z.string()).optional(),
+    /** Country slugs for filtering blog posts on country landing pages. */
+    targetCountries: z.array(targetCountrySchema).optional(),
   }),
 });
 

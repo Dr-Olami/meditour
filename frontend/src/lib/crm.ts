@@ -7,6 +7,7 @@ export const LEAD_SOURCE = {
   HOSPITAL_PAGE: 'hospital-page',
   SECOND_OPINION: 'second-opinion',
   GENERAL_CONTACT: 'general-contact',
+  COUNTRY_PAGE: 'country-page',
   WEBSITE: 'website',
 } as const;
 

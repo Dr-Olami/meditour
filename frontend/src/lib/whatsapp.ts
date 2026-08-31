@@ -108,6 +108,23 @@ export function getSecondOpinionLink(): string {
 }
 
 /**
+ * Build a WhatsApp inquiry link for a patient from a specific country.
+ *
+ * @param countryName - Name of the patient's country (e.g. 'Bangladesh').
+ * @param nationality - Nationality adjective (e.g. 'Bangladeshi').
+ * @returns WhatsApp deep link or empty string if no number configured.
+ */
+export function getCountryInquiryLink(countryName: string, nationality?: string): string {
+  const number = getWhatsAppNumber();
+  if (!number) return '';
+  const subject = nationality ? `${nationality} patient` : `patient from ${countryName}`;
+  return buildWhatsAppLink(
+    number,
+    `Hi Khan Meditour, I am a ${subject} from ${countryName} and I am interested in medical treatment in India. Please help me with options and a cost estimate.`
+  );
+}
+
+/**
  * Discriminated union describing which contextual WhatsApp message to build.
  * Used by shared CTA components (`WhatsAppCTA`, `FloatingConsultCTA`) so callers
  * can request a contextual message without knowing which builder to call.

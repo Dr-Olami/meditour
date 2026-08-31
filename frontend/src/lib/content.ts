@@ -158,3 +158,71 @@ export async function getBlogPostBySlug(
   const posts = await getBlogPosts(locale);
   return posts.find((p) => entrySlug(p) === slug);
 }
+
+// ─── Country-specific filtering ──────────────────────────────────────────────
+// Reason: Country landing pages (/for/[country]) need to surface testimonials,
+// blog posts, and treatments relevant to each country. The filtering logic
+// includes content tagged with the specific country, 'global' content, and
+// untagged content (for backwards compatibility).
+
+/**
+ * Return testimonials filtered by target country.
+ *
+ * Includes testimonials tagged with the specific country, 'global' tagged
+ * testimonials, and untagged testimonials (backwards compatibility).
+ *
+ * @param locale - Target locale ('en' or 'bn').
+ * @param country - Country slug (e.g. 'bangladesh', 'uae', 'nigeria').
+ * @returns Array of testimonial entries relevant to the country.
+ */
+export async function getTestimonialsByCountry(
+  locale: string,
+  country: string
+): Promise<TestimonialEntry[]> {
+  const all = await getTestimonials(locale);
+  return all.filter(
+    (entry) =>
+      entry.data.targetCountry === country ||
+      entry.data.targetCountry === 'global' ||
+      !entry.data.targetCountry
+  );
+}
+
+/**
+ * Return blog posts filtered by target country.
+ *
+ * Includes blog posts tagged with the specific country, 'global' tagged
+ * posts, and untagged posts (backwards compatibility).
+ *
+ * @param locale - Target locale ('en' or 'bn').
+ * @param country - Country slug (e.g. 'bangladesh', 'uae', 'nigeria').
+ * @returns Array of blog entries relevant to the country, sorted newest first.
+ */
+export async function getBlogPostsByCountry(
+  locale: string,
+  country: string
+): Promise<BlogEntry[]> {
+  const all = await getBlogPosts(locale);
+  return all.filter(
+    (entry) =>
+      entry.data.targetCountries?.includes(country as never) ||
+      entry.data.targetCountries?.includes('global' as never) ||
+      !entry.data.targetCountries
+  );
+}
+
+/**
+ * Return testimonials tagged with a specific country only (excluding global/untagged).
+ * Used when a country page wants to show only country-specific stories.
+ *
+ * @param locale - Target locale ('en' or 'bn').
+ * @param country - Country slug.
+ * @returns Array of testimonial entries specifically tagged with the country.
+ */
+export async function getTestimonialsForCountryOnly(
+  locale: string,
+  country: string
+): Promise<TestimonialEntry[]> {
+  const all = await getTestimonials(locale);
+  return all.filter((entry) => entry.data.targetCountry === country);
+}
