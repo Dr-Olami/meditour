@@ -15,6 +15,7 @@ relatedDoctorSlugs:
   - dr-sunil-g-kini
   - dr-samarth-arya
   - dr-sharan-shivaraj-patil
+  - dr-manish-samson
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta

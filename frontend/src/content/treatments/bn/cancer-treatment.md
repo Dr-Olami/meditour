@@ -21,6 +21,9 @@ relatedDoctorSlugs:
   - dr-chandrakala-s
   - dr-g-girish
   - dr-kanmani-govindrao-telkar
+  - dr-anil-kamath
+  - dr-rani-akhil-bhat
+  - dr-neema-bhat
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta

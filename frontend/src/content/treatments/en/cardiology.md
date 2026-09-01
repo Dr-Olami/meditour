@@ -18,6 +18,7 @@ relatedDoctorSlugs:
   - dr-varun-shetty
   - dr-aditi-singhvi
   - dr-ravindra-setty-b-r
+  - dr-girish-b-navasundi
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta

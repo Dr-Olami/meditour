@@ -14,6 +14,8 @@ procedures:
 relatedDoctorSlugs:
   - dr-deepak-dubey
   - dr-uday-bhaskar-m
+  - dr-deepak-bolbandi
+  - dr-manohar-t
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

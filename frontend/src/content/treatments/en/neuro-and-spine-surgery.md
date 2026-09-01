@@ -14,6 +14,7 @@ procedures:
 relatedDoctorSlugs:
   - dr-s-vidyadhara
   - dr-murali-mohan
+  - dr-satish-satyanarayana
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

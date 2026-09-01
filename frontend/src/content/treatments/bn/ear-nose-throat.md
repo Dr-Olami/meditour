@@ -13,6 +13,7 @@ procedures:
   - স্লিপ অ্যাপনিয়া সার্জারি
 relatedDoctorSlugs:
   - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

@@ -17,6 +17,7 @@ relatedDoctorSlugs:
   - dr-mohammed-fahad-khan
   - dr-vishwanath-s
   - dr-akhila-vasanth-hassan
+  - dr-gokul-nath
 relatedHospitalSlugs:
   - manipal-hospital-old-airport-road
   - apollo-hospitals-bannerghatta

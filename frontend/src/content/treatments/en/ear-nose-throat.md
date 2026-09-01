@@ -13,6 +13,7 @@ procedures:
   - Sleep apnoea surgery
 relatedDoctorSlugs:
   - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
