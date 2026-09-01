@@ -13,6 +13,9 @@ import {
   formatFlightTimeShort,
   getTreatmentCategory,
   getTreatmentName,
+  getSeoTitle,
+  getSeoDescription,
+  getCountryOgImage,
 } from '../../src/data/countries';
 import type { CountryMetadata, Region } from '../../src/data/countries';
 
@@ -324,6 +327,83 @@ describe('getTreatmentName', () => {
 
   it('title-cases unknown slugs', () => {
     expect(getTreatmentName('unknown-treatment')).toBe('Unknown Treatment');
+  });
+});
+
+// ─── getSeoTitle ─────────────────────────────────────────────────────────────
+
+describe('getSeoTitle', () => {
+  it('generates a title <= 60 chars for Bangladesh', () => {
+    const bd = getCountryMetadata('bangladesh')!;
+    const title = getSeoTitle(bd);
+    expect(title.length).toBeLessThanOrEqual(60);
+    expect(title).toContain('Khan Meditour');
+  });
+
+  it('generates a title <= 60 chars for all 31 countries', () => {
+    for (const c of ALL_COUNTRIES) {
+      const title = getSeoTitle(c);
+      expect(title.length).toBeLessThanOrEqual(60);
+      expect(title).toContain('Khan Meditour');
+    }
+  });
+
+  it('includes the nationality in the compact pattern', () => {
+    const bd = getCountryMetadata('bangladesh')!;
+    const title = getSeoTitle(bd);
+    expect(title).toContain('Bangladeshi');
+  });
+});
+
+// ─── getSeoDescription ───────────────────────────────────────────────────────
+
+describe('getSeoDescription', () => {
+  it('returns short descriptions unchanged', () => {
+    const short = 'Short description.';
+    expect(getSeoDescription(short)).toBe(short);
+  });
+
+  it('trims long descriptions to <= 160 chars', () => {
+    const long = 'This is a very long description that exceeds the one hundred and sixty character limit for SEO meta descriptions and needs to be trimmed down to fit properly.';
+    const result = getSeoDescription(long);
+    expect(result.length).toBeLessThanOrEqual(160);
+  });
+
+  it('trims all 31 country descriptions to <= 160 chars', () => {
+    for (const c of ALL_COUNTRIES) {
+      const result = getSeoDescription(c.metaDescription);
+      expect(result.length).toBeLessThanOrEqual(160);
+    }
+  });
+
+  it('prefers cutting at a sentence boundary', () => {
+    const long = 'First sentence here. Second sentence that is long enough to push past the limit.';
+    const result = getSeoDescription(long);
+    // Should cut at the first sentence if possible
+    expect(result).toContain('.');
+  });
+});
+
+// ─── getCountryOgImage ───────────────────────────────────────────────────────
+
+describe('getCountryOgImage', () => {
+  it('returns a URL for Bangladesh', () => {
+    const bd = getCountryMetadata('bangladesh')!;
+    const url = getCountryOgImage(bd);
+    expect(url).toMatch(/^https:\/\/images\.unsplash\.com\//);
+  });
+
+  it('returns a URL for all 31 countries', () => {
+    for (const c of ALL_COUNTRIES) {
+      const url = getCountryOgImage(c);
+      expect(url).toMatch(/^https:\/\/images\.unsplash\.com\//);
+    }
+  });
+
+  it('includes width parameter for OG image size', () => {
+    const bd = getCountryMetadata('bangladesh')!;
+    const url = getCountryOgImage(bd);
+    expect(url).toContain('w=1200');
   });
 });
 

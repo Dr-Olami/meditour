@@ -34,7 +34,7 @@ Fill one in, then move it into the collection to publish it.
 | `image` | no | Photo URL (only with consent) |
 | `video` | no | Video URL |
 | `videoDuration` | no | e.g. `1:42` |
-| `brandLabel` | no | Campaign label, e.g. `SUPERBIRTH` |
+| `brandLabel` | no | Campaign label, e.g. `BIRTH` |
 | `relatedTreatmentSlugs` | no | Treatment slugs this story relates to |
 
 ## Consent checklist (before moving any file into the collection)

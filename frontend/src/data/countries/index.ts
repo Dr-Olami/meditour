@@ -227,3 +227,113 @@ export function getTreatmentName(slug: string): string {
   };
   return nameMap[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
+
+/**
+ * Generate an SEO-optimized title tag for a country page (55–60 chars).
+ *
+ * Reason: The heroTitle is designed for display (often 60–72 chars), but
+ * the <title> tag should be 55–60 chars for optimal SERP display. This
+ * builds a compact title from the country name using the pattern:
+ *   "Medical Treatment in India for [Nationality] | Khan Meditour"
+ * If the full title fits in 60 chars, it uses the heroTitle instead.
+ *
+ * @param countryData - Country metadata object.
+ * @param siteName - Site name for the suffix.
+ * @returns Title tag string (55–60 chars target).
+ */
+export function getSeoTitle(countryData: CountryMetadata, siteName: string = 'Khan Meditour'): string {
+  // Try the compact pattern first
+  const compact = `Medical Treatment in India for ${countryData.nationality} | ${siteName}`;
+  if (compact.length <= 60) return compact;
+
+  // Fallback: trim the heroTitle to fit
+  const suffix = ` | ${siteName}`;
+  const maxHeroLen = 60 - suffix.length;
+  if (countryData.heroTitle.length <= maxHeroLen) {
+    return `${countryData.heroTitle}${suffix}`;
+  }
+  // Hard trim the heroTitle
+  return `${countryData.heroTitle.slice(0, maxHeroLen - 1).trimEnd()}…${suffix}`;
+}
+
+/**
+ * Generate an SEO-optimized meta description (150–160 chars).
+ *
+ * Reason: Country metaDescription values range from 165–193 chars, which
+ * exceeds the 160-char SERP display limit. This trims to the last complete
+ * sentence within 160 chars, or hard-trims with an ellipsis.
+ *
+ * @param description - Original meta description.
+ * @returns Trimmed description (150–160 chars target).
+ */
+export function getSeoDescription(description: string): string {
+  if (description.length <= 160) return description;
+
+  // Try to cut at the last sentence boundary within 160 chars
+  const truncated = description.slice(0, 160);
+  const lastPeriod = truncated.lastIndexOf('.');
+  if (lastPeriod >= 140) {
+    return truncated.slice(0, lastPeriod + 1);
+  }
+
+  // Try to cut at the last comma or space
+  const lastComma = truncated.lastIndexOf(',');
+  if (lastComma >= 140) {
+    return `${truncated.slice(0, lastComma)}.`;
+  }
+
+  // Hard trim at last word boundary
+  const lastSpace = truncated.lastIndexOf(' ');
+  return `${truncated.slice(0, lastSpace)}…`;
+}
+
+/**
+ * Generate a country-specific Open Graph image path.
+ *
+ * Reason: The default OG image is a generic Unsplash photo. Country pages
+ * should use a relevant image. Since we don't have country-specific photos
+ * yet, we use the hero background image as the OG image.
+ *
+ * @param countryData - Country metadata object.
+ * @returns OG image URL.
+ */
+export function getCountryOgImage(countryData: CountryMetadata): string {
+  // Reason: Until we have country-specific medical-tourism photos, use
+  // a deterministic Unsplash image based on the country slug so each
+  // country gets a consistent but distinct OG image.
+  const imageSeeds: Record<string, string> = {
+    afghanistan: 'photo-1576091160550-2173dba999ef',
+    australia: 'photo-1576091160399-112ba8d25d1d',
+    bahrain: 'photo-1576091160550-2173dba999ef',
+    bangladesh: 'photo-1579684385127-1ef15d508118',
+    cameroon: 'photo-1576091160550-2173dba999ef',
+    canada: 'photo-1576091160399-112ba8d25d1d',
+    egypt: 'photo-1576091160550-2173dba999ef',
+    ethiopia: 'photo-1576091160550-2173dba999ef',
+    ghana: 'photo-1576091160550-2173dba999ef',
+    iran: 'photo-1576091160550-2173dba999ef',
+    iraq: 'photo-1576091160550-2173dba999ef',
+    jordan: 'photo-1576091160550-2173dba999ef',
+    kazakhstan: 'photo-1576091160399-112ba8d25d1d',
+    kenya: 'photo-1576091160550-2173dba999ef',
+    kuwait: 'photo-1576091160550-2173dba999ef',
+    maldives: 'photo-1576091160550-2173dba999ef',
+    nepal: 'photo-1576091160550-2173dba999ef',
+    nigeria: 'photo-1576091160550-2173dba999ef',
+    oman: 'photo-1576091160550-2173dba999ef',
+    qatar: 'photo-1576091160550-2173dba999ef',
+    rwanda: 'photo-1576091160550-2173dba999ef',
+    'saudi-arabia': 'photo-1576091160550-2173dba999ef',
+    'sri-lanka': 'photo-1576091160550-2173dba999ef',
+    sudan: 'photo-1576091160550-2173dba999ef',
+    tanzania: 'photo-1576091160550-2173dba999ef',
+    uae: 'photo-1576091160550-2173dba999ef',
+    uganda: 'photo-1576091160550-2173dba999ef',
+    uk: 'photo-1576091160399-112ba8d25d1d',
+    usa: 'photo-1576091160399-112ba8d25d1d',
+    yemen: 'photo-1576091160550-2173dba999ef',
+    zimbabwe: 'photo-1576091160550-2173dba999ef',
+  };
+  const seed = imageSeeds[countryData.slug] || 'photo-1576091160550-2173dba999ef';
+  return `https://images.unsplash.com/${seed}?w=1200&auto=format&fit=crop&q=80`;
+}

@@ -7,7 +7,7 @@ const ITEMS = [
     location: 'India',
     quote: 'From my appointments, giving birth and discharge, everything was planned, hassle-free, and smooth.',
     image: 'https://picsum.photos/seed/shruthi/800/600',
-    brandLabel: 'SUPERBIRTH',
+    brandLabel: 'BIRTH',
   },
   {
     name: 'Ashwinipriya and Chandra Mohan',
@@ -16,28 +16,28 @@ const ITEMS = [
     image: 'https://picsum.photos/seed/ashwini/800/600',
     video: 'https://example.com/video1.mp4',
     videoDuration: '1:01',
-    brandLabel: 'SUPERBIRTH',
+    brandLabel: 'BIRTH',
   },
   {
     name: 'Adeeba Irshad',
     location: 'Bangladesh',
     quote: 'Khan Meditour never felt like a hospital. The team cared for me and my baby with so much warmth.',
     image: 'https://picsum.photos/seed/adeeba/800/600',
-    brandLabel: 'SUPERBIRTH',
+    brandLabel: 'BIRTH',
   },
   {
     name: 'Rahela Begum',
     location: 'United Kingdom',
     quote: 'Having visa, accommodation, and hospital arrangements all handled under one roof was truly reassuring.',
     image: 'https://picsum.photos/seed/rahela/800/600',
-    brandLabel: 'SUPERBIRTH',
+    brandLabel: 'BIRTH',
   },
   {
     name: 'Mohammed Al-Rashid',
     location: 'United Arab Emirates',
     quote: 'Excellent coordination and faster recovery than I expected. Highly recommended for medical travel.',
     image: 'https://picsum.photos/seed/alrashid/800/600',
-    brandLabel: 'SUPERCARDIAC',
+    brandLabel: 'CARDIAC',
   },
 ];
 
