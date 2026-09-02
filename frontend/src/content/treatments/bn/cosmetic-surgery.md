@@ -11,9 +11,16 @@ procedures:
   - হেয়ার ট্রান্সপ্লান্ট
   - টামি টাক
   - নন-সার্জিক্যাল ফেসিয়াল রিজুভিনেশন
-relatedDoctorSlugs: []
+relatedDoctorSlugs:
+  - dr-naveen-rao
+  - dr-anantheswar-y-n
+  - dr-prashant-puranik
+  - dr-mayur-r-shetty
+  - dr-anand-k
+  - dr-gururaj-hosahalli
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
   - manipal-hospital-old-airport-road
 duration: '১-৬ ঘন্টা'
 hospitalStay: '০-৩ দিন'

@@ -11,6 +11,9 @@ procedures:
   - Corneal transplant
   - Glaucoma surgery
   - Retina laser treatment
+relatedDoctorSlugs:
+  - dr-sharon-d-souza
+  - dr-jyoti-shetty
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

@@ -11,6 +11,9 @@ procedures:
   - এমব্রিও ফ্রিজিং
   - দাতা প্রোগ্রাম
   - ফার্টিলিটি কাউন্সেলিং
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

@@ -11,9 +11,16 @@ procedures:
   - Hair transplant
   - Tummy tuck
   - Non-surgical facial rejuvenation
-relatedDoctorSlugs: []
+relatedDoctorSlugs:
+  - dr-naveen-rao
+  - dr-anantheswar-y-n
+  - dr-prashant-puranik
+  - dr-mayur-r-shetty
+  - dr-anand-k
+  - dr-gururaj-hosahalli
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
   - manipal-hospital-old-airport-road
 duration: '1-6 hours'
 hospitalStay: '0-3 days'

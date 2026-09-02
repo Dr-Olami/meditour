@@ -11,6 +11,9 @@ procedures:
   - কর্নিয়া ট্রান্সপ্লান্ট
   - গ্লুকোমা সার্জারি
   - রেটিনা লেজার চিকিৎসা
+relatedDoctorSlugs:
+  - dr-sharon-d-souza
+  - dr-jyoti-shetty
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road

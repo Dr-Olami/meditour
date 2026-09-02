@@ -11,6 +11,9 @@ procedures:
   - Embryo freezing
   - Donor programme
   - Fertility counselling
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
