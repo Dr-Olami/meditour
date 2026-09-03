@@ -1,0 +1,263 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { Navbar } from '../../../design-system/components/organisms/Navbar';
+import { Footer } from '../../../design-system/components/organisms/Footer';
+import { Icon } from '../../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import { getTranslations } from '../../../lib/i18n';
+import { getNavLinks } from '../../../lib/navigation';
+import { getFooterLegalLinks } from '../../../lib/footer';
+import { medicalBusiness, breadcrumbs } from '../../../lib/schema';
+import {
+  ALL_BN_COUNTRIES,
+  getBnCountryMetadata,
+} from '../../../data/countries/bn';
+import {
+  getCountriesGroupedByRegion,
+  getRegionLabel,
+  getCountryCount,
+  getCountryOgImage,
+  getFlagUrl,
+} from '../../../data/countries';
+import type { Region } from '../../../data/countries';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+// Reason: the Bengali directory shows translated countries (Bangladesh) in
+// Bengali first, then lists all other countries with links to their English
+// pages. This gives Bengali speakers a localized entry point while keeping
+// every country discoverable.
+const bnCountries = ALL_BN_COUNTRIES;
+const countriesByRegion = getCountriesGroupedByRegion();
+const totalCountries = getCountryCount();
+const bnCountrySlugs = new Set(bnCountries.map((c) => c.slug));
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
+
+const jsonLd = [
+  medicalBusiness({
+    name: t.site.name,
+    url: siteUrl,
+    whatsapp: whatsappNumber,
+    email: contactEmail,
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/bn/` },
+    { name: t.nav.countries, url: `${siteUrl}/bn/countries/` },
+  ]),
+];
+---
+
+<Layout
+  title={`${t.nav.countries} — ${t.site.name}`}
+  description={`খান মেডিট্যুর দক্ষিণ এশিয়া, মধ্যপ্রাচ্য, আফ্রিকা ও পশ্চিমা দেশের ${totalCountries}টি দেশের রোগীদের সেবা দেয়। দেশভিত্তিক চিকিৎসা গাইড, খরচ তুলনা ও ভিসা তথ্য পান।`}
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO ─────────────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-cream-100 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/bn/' }, { label: t.nav.countries }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+            {totalCountries}টি দেশ
+          </span>
+
+          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            আমরা যেসব দেশের সেবা দেই
+          </h1>
+
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            খান মেডিট্যুর দক্ষিণ এশিয়া, মধ্যপ্রাচ্য, আফ্রিকা ও পশ্চিমা দেশের {totalCountries}টি দেশের রোগীদের সেবা দেয়। বাংলায় সম্পূর্ণ গাইড পাওয়া যায় বাংলাদেশের জন্য; অন্যান্য দেশের জন্য ইংরেজি গাইড পাওয়া যায়।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── BENGALI-TRANSLATED COUNTRIES (featured) ──────────────────────── */}
+    {bnCountries.length > 0 && (
+      <section class="bg-cream-200 py-12 md:py-16">
+        <div class="container">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            বাংলায় সম্পূর্ণ গাইড
+          </h2>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {bnCountries.map((country) => (
+              <a
+                href={`/bn/countries/${country.slug}`}
+                class="group flex flex-col overflow-hidden rounded-card border border-violet-300 bg-cream-100 transition-all hover:border-violet-500 hover:shadow-base"
+              >
+                <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                  <img
+                    src={country.cardImage || getCountryOgImage(country)}
+                    alt={`ভারতে ${country.nationality} রোগীদের জন্য চিকিৎসা`}
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="flex flex-1 flex-col p-5">
+                  <div class="flex items-center gap-2">
+                    <img
+                      src={getFlagUrl(country.flagCode)}
+                      alt={`${country.name} পতাকা`}
+                      class="h-3.5 w-[18px] rounded-[2px]"
+                      loading="lazy"
+                    />
+                    <span class="text-xs font-semibold uppercase tracking-wide text-ink/50">{country.name}</span>
+                    <span class="ml-auto rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-700">বাংলা</span>
+                  </div>
+                  <h3 class="mt-2 font-display text-lg font-semibold leading-snug text-ink transition-colors group-hover:text-violet-600">
+                    ভারতে {country.nationality} রোগীদের জন্য চিকিৎসা
+                  </h3>
+                  <p class="mt-2 flex-1 text-sm leading-relaxed text-ink/60 line-clamp-3">
+                    {country.introParagraph}
+                  </p>
+                  <div class="mt-4 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-violet-600">
+                      {country.costSavingsVsLocal} সাশ্রয় · {country.flightTime}
+                    </span>
+                    <Icon name="arrow-right" size={16} className="text-ink/40 transition-all group-hover:translate-x-0.5 group-hover:text-violet-600" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── ALL COUNTRIES (English pages) ────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16">
+      <div class="container">
+        <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
+          অন্যান্য দেশ (ইংরেজি গাইড)
+        </h2>
+        <p class="mb-8 text-sm text-ink/60">
+          নিচের দেশগুলোর জন্য ইংরেজি ভাষায় বিস্তারিত গাইড পাওয়া যায়। বাংলা অনুবাদ শীঘ্রই আসবে।
+        </p>
+        {(Object.entries(countriesByRegion) as [Region, (typeof countriesByRegion)[Region]][]).map(([region, countries]) => {
+          // Reason: exclude countries that have a Bengali page (already shown above)
+          const englishOnlyCountries = countries.filter((c) => !bnCountrySlugs.has(c.slug));
+          if (englishOnlyCountries.length === 0) return null;
+          return (
+            <div class="mb-14 last:mb-0" data-anim="scroll-reveal">
+              <h3 class="mb-6 font-display text-xl font-bold text-ink md:text-2xl">
+                {getRegionLabel(region)}
+              </h3>
+              <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {englishOnlyCountries.map((country) => (
+                  <a
+                    href={`/countries/${country.slug}`}
+                    class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-cream-100 transition-all hover:border-violet-400 hover:shadow-base"
+                  >
+                    <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                      <img
+                        src={country.cardImage || getCountryOgImage(country)}
+                        alt={`Medical treatment in India for ${country.nationality} patients`}
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex items-center gap-2">
+                        <img
+                          src={getFlagUrl(country.flagCode)}
+                          alt={`${country.name} flag`}
+                          class="h-3.5 w-[18px] rounded-[2px]"
+                          loading="lazy"
+                        />
+                        <span class="text-xs font-semibold uppercase tracking-wide text-ink/50">{country.name}</span>
+                      </div>
+                      <h4 class="mt-2 font-display text-base font-semibold leading-snug text-ink transition-colors group-hover:text-violet-600">
+                        Medical Treatment in India for {country.nationality} Patients
+                      </h4>
+                      <p class="mt-2 flex-1 text-sm leading-relaxed text-ink/60 line-clamp-3">
+                        {country.introParagraph}
+                      </p>
+                      <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-violet-600">
+                          Save {country.costSavingsVsLocal} · {country.flightTime}
+                        </span>
+                        <Icon name="arrow-right" size={16} className="text-ink/40 transition-all group-hover:translate-x-0.5 group-hover:text-violet-600" />
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    {/* ── CTA ──────────────────────────────────────────────────────────── */}
+    <section id="contact" class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container">
+        <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-cream-100 md:px-12 md:py-12">
+          <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
+          <div class="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100/50">
+                আমরা সাহায্যে আছি
+              </p>
+              <h2 class="mt-2 font-display text-2xl font-bold text-cream-100 md:text-3xl">
+                কোন গাইড আপনার কেসে ফিট করবে নিশ্চিত নন?
+              </h2>
+              <p class="mt-2 max-w-xl text-cream-100/60">
+                আপনার দেশ ও প্রয়োজনীয় চিকিৎসা জানান। আমরা সঠিক গাইড, খরচের অনুমান ও ভিসা ধাপ পাঠাব — বিনামূল্যে, WhatsApp-এ।
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="/bn/second-opinion"
+                class="inline-flex items-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
+              >
+                বিনামূল্যে দ্বিতীয় মতামত নিন
+              </a>
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+              >
+                <Icon name="whatsapp" size={18} />
+                WhatsApp এ চ্যাট
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

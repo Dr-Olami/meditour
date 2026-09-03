@@ -13,6 +13,7 @@ import {
 } from '../../lib/content';
 import { medicalBusiness } from '../../lib/schema';
 import { getDoctorInquiryLink } from '../../lib/whatsapp';
+import { ALL_COUNTRIES } from '../../data/countries';
 import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../../design-system/components/organisms/HospitalCard';
 
@@ -82,5 +83,6 @@ const jsonLd = medicalBusiness({
     featuredDoctors={featuredDoctors}
     featuredHospitals={featuredHospitals}
     testimonials={testimonials}
+    countries={ALL_COUNTRIES}
   />
 </Layout>

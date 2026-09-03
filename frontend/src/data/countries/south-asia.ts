@@ -9,6 +9,7 @@ const bangladesh: CountryMetadata = {
   slug: 'bangladesh',
   nationality: 'Bangladeshi',
   region: 'south-asia',
+  flagCode: 'BD',
 
   primaryKeywords: [
     'medical tourism India from Bangladesh',
@@ -83,6 +84,7 @@ const afghanistan: CountryMetadata = {
   slug: 'afghanistan',
   nationality: 'Afghan',
   region: 'south-asia',
+  flagCode: 'AF',
 
   primaryKeywords: [
     'medical tourism India from Afghanistan',
@@ -155,6 +157,7 @@ const nepal: CountryMetadata = {
   slug: 'nepal',
   nationality: 'Nepali',
   region: 'south-asia',
+  flagCode: 'NP',
 
   primaryKeywords: [
     'medical tourism India from Nepal',
@@ -227,6 +230,7 @@ const sriLanka: CountryMetadata = {
   slug: 'sri-lanka',
   nationality: 'Sri Lankan',
   region: 'south-asia',
+  flagCode: 'LK',
 
   primaryKeywords: [
     'medical tourism India from Sri Lanka',
@@ -299,6 +303,7 @@ const maldives: CountryMetadata = {
   slug: 'maldives',
   nationality: 'Maldivian',
   region: 'south-asia',
+  flagCode: 'MV',
 
   primaryKeywords: [
     'medical tourism India from Maldives',

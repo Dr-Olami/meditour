@@ -14,9 +14,15 @@ interface Props {
   image?: string;
   type?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /**
+   * Whether a Bengali version of this page exists. Reason: country landing
+   * pages are English-only for MVP, so they pass false to avoid emitting an
+   * hreflang="bn" tag that points to a 404 — hreflang targets must return 200.
+   */
+  bnAlternate?: boolean;
 }
 
-const { title, description, locale = 'en', image, type = 'website', jsonLd } = Astro.props;
+const { title, description, locale = 'en', image, type = 'website', jsonLd, bnAlternate = true } = Astro.props;
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const siteName = locale === 'bn' ? 'খান মেডিট্যুর' : 'Khan Meditour';
@@ -58,7 +64,7 @@ const schemaPayloads = jsonLd
     />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="en" href={alternateHref('en')} />
-    <link rel="alternate" hreflang="bn" href={alternateHref('bn')} />
+    {bnAlternate && <link rel="alternate" hreflang="bn" href={alternateHref('bn')} />}
     <link rel="alternate" hreflang="x-default" href={alternateHref('en')} />
     <meta name="description" content={description || 'Khan Meditour'} />
 

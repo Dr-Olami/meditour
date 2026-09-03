@@ -9,6 +9,7 @@ const usa: CountryMetadata = {
   slug: 'usa',
   nationality: 'American',
   region: 'western',
+  flagCode: 'US',
 
   primaryKeywords: [
     'medical tourism India from USA',
@@ -81,6 +82,7 @@ const uk: CountryMetadata = {
   slug: 'uk',
   nationality: 'British',
   region: 'western',
+  flagCode: 'GB',
 
   primaryKeywords: [
     'medical tourism India from UK',
@@ -153,6 +155,7 @@ const canada: CountryMetadata = {
   slug: 'canada',
   nationality: 'Canadian',
   region: 'western',
+  flagCode: 'CA',
 
   primaryKeywords: [
     'medical tourism India from Canada',
@@ -225,6 +228,7 @@ const australia: CountryMetadata = {
   slug: 'australia',
   nationality: 'Australian',
   region: 'western',
+  flagCode: 'AU',
 
   primaryKeywords: [
     'medical tourism India from Australia',
@@ -297,6 +301,7 @@ const kazakhstan: CountryMetadata = {
   slug: 'kazakhstan',
   nationality: 'Kazakh',
   region: 'central-asia',
+  flagCode: 'KZ',
 
   primaryKeywords: [
     'medical tourism India from Kazakhstan',

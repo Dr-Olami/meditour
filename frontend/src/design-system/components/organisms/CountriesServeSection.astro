@@ -1,0 +1,209 @@
+---
+/**
+ * "Countries We Serve" section — two-column dark band showcasing the 30+
+ * countries Khan Meditour serves, with a flag grid on the right.
+ *
+ * Layout:
+ *   LEFT (40%) — eyebrow, headline, description, stats row, CTA button
+ *   RIGHT (60%) — eyebrow, headline, "All countries →" link, flag grid
+ *
+ * Reason: this section sits between the Hospitals teaser and Testimonials on
+ * the homepage. The dark `bg-ink` background breaks the cream section rhythm
+ * and draws attention to global reach, mirroring the reference design.
+ *
+ * Props:
+ *   locale     - Active locale ('en' or 'bn').
+ *   countries  - Array of country metadata (name, slug, flagCode, nationality).
+ *   countriesHref - Link target for the "All countries" CTA (locale-prefixed).
+ */
+import type { Locale } from '../../../lib/i18n';
+import { getTranslations } from '../../../lib/i18n';
+import { getFlagUrl } from '../../../data/countries';
+import type { CountryMetadata } from '../../../data/countries';
+import { Icon } from '../atoms/Icon';
+
+interface Props {
+  locale: Locale;
+  countries: CountryMetadata[];
+  countriesHref: string;
+}
+
+const { locale, countries, countriesHref } = Astro.props;
+const t = getTranslations(locale);
+
+// Reason: cap at 30 flags for a clean 5×6 grid; the directory page lists all.
+// Interleave African countries into the first two columns so the grid
+// showcases regional diversity upfront rather than grouping by region.
+const prioritySlugs = ['bangladesh', 'nigeria', 'nepal', 'kenya', 'sri-lanka', 'ghana'];
+const priority = prioritySlugs
+  .map((slug) => countries.find((c) => c.slug === slug))
+  .filter((c): c is CountryMetadata => Boolean(c));
+const rest = countries.filter((c) => !prioritySlugs.includes(c.slug));
+const flagsToShow = [...priority, ...rest].slice(0, 30);
+
+const isBn = locale === 'bn';
+
+const eyebrow = isBn ? 'আন্তর্জাতিক রোগী' : 'INTERNATIONAL PATIENTS';
+const headline = isBn ? 'বিশ্বজুড়ে স্মিত ছড়াই' : 'Spreading Smiles Across The Globe';
+const description = isBn
+  ? 'বিদেশে চিকিৎসা নেওয়ার চ্যালেঞ্জ আমরা বুঝি। আমাদের সাজানো সেবা আন্তর্জাতিক রোগীদের জন্য একটি নিরবচ্ছিন্ন অভিজ্ঞতা নিশ্চিত করে।'
+  : 'We understand the challenges of seeking treatment abroad. Our customized services ensure a seamless experience for international patients.';
+
+const rightEyebrow = isBn ? '৩০+ দেশ' : '30+ countries';
+const rightHeadline = isBn ? 'যেসব দেশ থেকে পরিবার আসে' : 'WHERE FAMILIES TRAVEL FROM';
+const allCountriesLabel = isBn ? 'সব দেশ দেখুন' : 'All countries';
+const ctaLabel = isBn ? 'দেশভিত্তিক গাইড দেখুন' : 'Browse Country Guides';
+
+// Reason: stats row uses fixed values per the design spec; these are
+// brand-level facts, not per-country, so they don't come from country metadata.
+const stats = isBn
+  ? [
+      { value: '৩০+', label: 'দেশ' },
+      { value: '৭৫০+', label: 'শয্যা' },
+      { value: '১৫+', label: 'বিশেষত্ব' },
+      { value: '২৮+', label: 'ভাষা' },
+      { value: '১০০+', label: 'ডাক্তার' },
+    ]
+  : [
+      { value: '30+', label: 'Countries' },
+      { value: '750+', label: 'Beds' },
+      { value: '15+', label: 'Specialties' },
+      { value: '28+', label: 'Languages' },
+      { value: '100+', label: 'Doctors' },
+    ];
+---
+
+<section class="bg-cream-200 py-16 md:py-24" data-anim="scroll-reveal">
+  <div class="container">
+    {/* Reason: dark card is contained + rounded so cream page background
+        frames it on all sides, matching the CTA card treatment used elsewhere
+        on the site. This avoids a full-bleed dark band touching section edges. */}
+    <div class="relative overflow-hidden rounded-2xl px-6 py-12 md:px-12 md:py-16">
+      {/* Background image — dimmed + gradient overlay for text legibility */}
+      <img
+        src="/images/patterns/countries-we-serve.jpg"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover opacity-50"
+        loading="lazy"
+        aria-hidden="true"
+      />
+      <div
+        class="absolute inset-0"
+        style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)"
+        aria-hidden="true"
+      ></div>
+
+      {/* Subtle violet glow for depth on the dark card */}
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-32 right-0 h-96 w-96 rounded-full bg-violet-600/10 blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-indigo-600/5 blur-3xl"></div>
+      </div>
+
+      <div class="relative grid gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* ── LEFT COLUMN (50%) ─────────────────────────────────────────── */}
+        {/* Reason: right column has a header row above the flag grid, making
+            it taller. Adding top padding centers the left content vertically
+            against the right column's full height. */}
+        <div class="lg:pt-16" data-anim="stagger-children">
+          {/* Eyebrow */}
+          <p class="text-xs font-semibold uppercase tracking-widest text-white">
+            {eyebrow}
+          </p>
+
+          {/* Headline */}
+          <h2 class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl" data-anim="headline-reveal">
+            {isBn ? (
+              headline
+            ) : (
+              <>Spreading Smiles <br /> Across The Globe</>
+            )}
+          </h2>
+
+          {/* Description */}
+          <p class="mt-6 max-w-md text-base leading-relaxed text-white">
+            {description}
+          </p>
+
+          {/* Primary CTA */}
+          <a
+            href={countriesHref}
+            class="mt-8 inline-flex items-center justify-center gap-2 rounded-card bg-cream-100 px-3 py-3 text-sm font-semibold text-ink hover:text-ink"
+            data-anim="press-button"
+          >
+            {ctaLabel}
+            <Icon name="arrow-right" size={16} />
+          </a>
+
+          {/* Stats subheader + translucent cards */}
+          <div class="mt-8">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-white/70">
+              {isBn ? 'আমাদের অংশীদার নেটওয়ার্ক জুড়ে' : 'ACROSS OUR PARTNER NETWORK'}
+            </p>
+            <div class="grid grid-cols-3 gap-2 sm:grid-cols-5">
+              {stats.map((stat) => (
+                <div class="flex flex-col rounded-lg border border-cream-100/10 bg-cream-100/5 px-3 py-3 backdrop-blur-sm transition-colors hover:bg-cream-100/10">
+                  <span class="font-display text-2xl font-medium tracking-tight text-white sm:text-[1.65rem]">{stat.value}</span>
+                  <span class="mt-1 text-[0.7rem] leading-snug text-white/60 sm:text-xs">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── RIGHT COLUMN (50%) ────────────────────────────────────────── */}
+        <div data-anim="stagger-children">
+          {/* Right header: headline + subheader + "All countries →" link */}
+          <div class="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100">
+                {rightHeadline}
+              </p>
+              <h3 class="mt-2 font-display text-xl font-bold leading-tight tracking-tight text-cream-100 md:text-2xl">
+                {rightEyebrow}
+              </h3>
+            </div>
+            <a
+              href={countriesHref}
+              class="inline-flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-cream-100 hover:text-white"
+            >
+              {allCountriesLabel}
+              <Icon name="arrow-right" size={16} />
+            </a>
+          </div>
+
+          {/* Flag grid — 5 cols desktop, 4 tablet, 4 mobile */}
+          <div class="grid grid-cols-4 gap-2 sm:grid-cols-4 lg:grid-cols-5">
+            {flagsToShow.map((country) => (
+              <a
+                href={`${countriesHref}/${country.slug}`}
+                class="group flex flex-col items-center rounded-lg border border-cream-100/30 bg-white p-1.5 transition-all duration-300 hover:border-accent-violet hover:shadow-md hover:scale-105"
+                aria-label={isBn
+                  ? `${country.name} রোগীদের জন্য চিকিৎসা গাইড`
+                  : `Medical treatment guide for ${country.nationality} patients`}
+              >
+                {/* Flag SVG — local Flagpack asset */}
+                <img
+                  src={getFlagUrl(country.flagCode)}
+                  alt={`${country.name} flag`}
+                  class="h-7 w-9 rounded-[2px] object-cover"
+                  loading="lazy"
+                />
+                {/* Country name */}
+                <p class="mt-1 text-center text-[9px] font-semibold leading-tight text-ink line-clamp-1">
+                  {country.name}
+                </p>
+              </a>
+            ))}
+          </div>
+
+          {/* Bottom note — regional coverage summary */}
+          <p class="mt-6 text-xs leading-relaxed text-white">
+            {isBn
+              ? 'আফ্রিকা, উপসাগর, দক্ষিণ এশিয়া, যুক্তরাজ্য ও যুক্তরাষ্ট্রের জন্য দেশভিত্তিক গাইড — ভারতে ভিসা, ভ্রমণ ও বেডসাইড সহায়তা সহ।'
+              : 'Dedicated country guidance for Africa, the Gulf, South Asia, the UK, and the US — with visa, travel, and bedside support in India.'}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

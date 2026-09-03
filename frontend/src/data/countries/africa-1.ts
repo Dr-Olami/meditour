@@ -9,6 +9,7 @@ const nigeria: CountryMetadata = {
   slug: 'nigeria',
   nationality: 'Nigerian',
   region: 'africa',
+  flagCode: 'NG',
 
   primaryKeywords: [
     'medical tourism India from Nigeria',
@@ -81,6 +82,7 @@ const kenya: CountryMetadata = {
   slug: 'kenya',
   nationality: 'Kenyan',
   region: 'africa',
+  flagCode: 'KE',
 
   primaryKeywords: [
     'medical tourism India from Kenya',
@@ -153,6 +155,7 @@ const ghana: CountryMetadata = {
   slug: 'ghana',
   nationality: 'Ghanaian',
   region: 'africa',
+  flagCode: 'GH',
 
   primaryKeywords: [
     'medical tourism India from Ghana',
@@ -225,6 +228,7 @@ const ethiopia: CountryMetadata = {
   slug: 'ethiopia',
   nationality: 'Ethiopian',
   region: 'africa',
+  flagCode: 'ET',
 
   primaryKeywords: [
     'medical tourism India from Ethiopia',
@@ -297,6 +301,7 @@ const tanzania: CountryMetadata = {
   slug: 'tanzania',
   nationality: 'Tanzanian',
   region: 'africa',
+  flagCode: 'TZ',
 
   primaryKeywords: [
     'medical tourism India from Tanzania',

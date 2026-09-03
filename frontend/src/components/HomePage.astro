@@ -18,6 +18,7 @@ import { WhyUsSection } from '../design-system/components/organisms/WhyUsSection
 import { LeadForm } from '../design-system/components/organisms/LeadForm';
 import { WhatsAppCTA } from '../design-system/components/organisms/WhatsAppCTA';
 import { ServiceCardsSection } from '../design-system/components/organisms/ServiceCardsSection';
+import CountriesServeSection from '../design-system/components/organisms/CountriesServeSection.astro';
 import { Icon } from '../design-system/components/atoms/Icon';
 import { Link } from '../design-system/components/atoms/Link';
 import { getInquiryLink } from '../lib/whatsapp';
@@ -26,6 +27,7 @@ import { LeadModalTrigger } from '../design-system/components/organisms/LeadModa
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../design-system/components/organisms/HospitalCard';
 import type { TestimonialItem } from '../design-system/components/molecules/TestimonialCard';
+import type { CountryMetadata } from '../data/countries';
 
 interface HomeTreatment {
   name: string;
@@ -42,9 +44,10 @@ interface Props {
   featuredDoctors: Doctor[];
   featuredHospitals: Hospital[];
   testimonials: TestimonialItem[];
+  countries: CountryMetadata[];
 }
 
-const { locale, treatments, featuredDoctors, featuredHospitals, testimonials } = Astro.props;
+const { locale, treatments, featuredDoctors, featuredHospitals, testimonials, countries } = Astro.props;
 const t = getTranslations(locale);
 const prefix = locale === 'bn' ? '/bn' : '';
 
@@ -273,6 +276,13 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     </div>
   </section>
 )}
+
+<!-- Countries We Serve — dark two-column band with flag grid -->
+<CountriesServeSection
+  locale={locale}
+  countries={countries}
+  countriesHref={`${prefix}/countries`}
+/>
 
 <!-- Testimonials -->
 <section id="testimonials" class="bg-cream-100 py-20" data-anim="scroll-reveal">

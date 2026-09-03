@@ -160,7 +160,7 @@ export async function getBlogPostBySlug(
 }
 
 // ─── Country-specific filtering ──────────────────────────────────────────────
-// Reason: Country landing pages (/for/[country]) need to surface testimonials,
+// Reason: Country landing pages (/countries/[country]) need to surface testimonials,
 // blog posts, and treatments relevant to each country. The filtering logic
 // includes content tagged with the specific country, 'global' content, and
 // untagged content (for backwards compatibility).

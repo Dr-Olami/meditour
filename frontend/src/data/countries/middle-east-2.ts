@@ -9,6 +9,7 @@ const egypt: CountryMetadata = {
   slug: 'egypt',
   nationality: 'Egyptian',
   region: 'middle-east',
+  flagCode: 'EG',
 
   primaryKeywords: [
     'medical tourism India from Egypt',
@@ -81,6 +82,7 @@ const iran: CountryMetadata = {
   slug: 'iran',
   nationality: 'Iranian',
   region: 'middle-east',
+  flagCode: 'IR',
 
   primaryKeywords: [
     'medical tourism India from Iran',
@@ -153,6 +155,7 @@ const iraq: CountryMetadata = {
   slug: 'iraq',
   nationality: 'Iraqi',
   region: 'middle-east',
+  flagCode: 'IQ',
 
   primaryKeywords: [
     'medical tourism India from Iraq',
@@ -225,6 +228,7 @@ const jordan: CountryMetadata = {
   slug: 'jordan',
   nationality: 'Jordanian',
   region: 'middle-east',
+  flagCode: 'JO',
 
   primaryKeywords: [
     'medical tourism India from Jordan',
@@ -297,6 +301,7 @@ const yemen: CountryMetadata = {
   slug: 'yemen',
   nationality: 'Yemeni',
   region: 'middle-east',
+  flagCode: 'YE',
 
   primaryKeywords: [
     'medical tourism India from Yemen',

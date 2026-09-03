@@ -9,6 +9,7 @@ const cameroon: CountryMetadata = {
   slug: 'cameroon',
   nationality: 'Cameroonian',
   region: 'africa',
+  flagCode: 'CM',
 
   primaryKeywords: [
     'medical tourism India from Cameroon',
@@ -81,6 +82,7 @@ const rwanda: CountryMetadata = {
   slug: 'rwanda',
   nationality: 'Rwandan',
   region: 'africa',
+  flagCode: 'RW',
 
   primaryKeywords: [
     'medical tourism India from Rwanda',
@@ -153,6 +155,7 @@ const sudan: CountryMetadata = {
   slug: 'sudan',
   nationality: 'Sudanese',
   region: 'africa',
+  flagCode: 'SD',
 
   primaryKeywords: [
     'medical tourism India from Sudan',
@@ -225,6 +228,7 @@ const uganda: CountryMetadata = {
   slug: 'uganda',
   nationality: 'Ugandan',
   region: 'africa',
+  flagCode: 'UG',
 
   primaryKeywords: [
     'medical tourism India from Uganda',
@@ -297,6 +301,7 @@ const zimbabwe: CountryMetadata = {
   slug: 'zimbabwe',
   nationality: 'Zimbabwean',
   region: 'africa',
+  flagCode: 'ZW',
 
   primaryKeywords: [
     'medical tourism India from Zimbabwe',

@@ -230,9 +230,9 @@
 #### 8. **No Treatment-Specific Landing Pages**
 - **Issue:** Generic country page, not treatment-specific
 - **Opportunity:** Create:
-  - `/for/bangladesh/heart-surgery`
-  - `/for/bangladesh/cancer-treatment`
-  - `/for/bangladesh/ivf-treatment`
+  - `/countries/bangladesh/heart-surgery`
+  - `/countries/bangladesh/cancer-treatment`
+  - `/countries/bangladesh/ivf-treatment`
   - Each with country + treatment-specific content
 
 ---
@@ -250,7 +250,7 @@
 #### 10. **No Multi-Language Support**
 - **Issue:** English only (for Bangladeshi page)
 - **Opportunity:** Add Bengali version:
-  - `/bn/for/bangladesh`
+  - `/bn/countries/bangladesh`
   - Full Bengali translation
   - Bengali testimonials
   - Bengali-language blog posts
@@ -394,8 +394,8 @@
 - Address language barriers (interpreters, translated documents)
 
 #### 5. **Treatment-Specific Country Pages**
-- `/for/bangladesh/heart-surgery`
-- `/for/bangladesh/cancer-treatment`
+- `/countries/bangladesh/heart-surgery`
+- `/countries/bangladesh/cancer-treatment`
 - More targeted, higher conversion
 
 #### 6. **Multi-Language Support**
@@ -639,7 +639,7 @@ Affordable [treatment category] in India for [nationality] patients. Save [X%] w
 10. ✅ Add hospital showcase with country-specific stats
 11. ✅ Create travel logistics section (flights, pickup, accommodation)
 12. ✅ Add cultural considerations section (halal, prayer, family)
-13. ✅ Create treatment-specific country pages (e.g., `/for/bangladesh/heart-surgery`)
+13. ✅ Create treatment-specific country pages (e.g., `/countries/bangladesh/heart-surgery`)
 
 ### Future Enhancement (Low Priority)
 14. ✅ Add video testimonials

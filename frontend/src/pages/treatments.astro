@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../design-system/components/organisms/Navbar';
 import { Footer } from '../design-system/components/organisms/Footer';
 import { TreatmentsPage } from '../components/TreatmentsPage';
+import TreatmentsCtaSection from '../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
@@ -43,6 +44,12 @@ const treatments = treatmentEntries.map((entry) => ({
     filterAll={t.doctors.filterAll}
     treatments={treatments}
     client:load
+  />
+
+  <TreatmentsCtaSection
+    locale="en"
+    primaryCta={{ label: t.nav.cta, href: '/#contact' }}
+    secondaryCta={{ label: t.footer.secondOpinion, href: '/second-opinion' }}
   />
 
   <Footer

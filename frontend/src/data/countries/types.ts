@@ -2,7 +2,7 @@
  * Type definitions for country-specific landing page metadata.
  *
  * Each country has a `CountryMetadata` record that drives the dynamic
- * `/for/[country]` landing pages, including SEO keywords, cost comparisons,
+ * `/countries/[country]` landing pages, including SEO keywords, cost comparisons,
  * visa guidance, city recommendations, and auto-generated FAQs.
  */
 
@@ -153,6 +153,28 @@ export interface CountryMetadata {
   // ── Currency ─────────────────────────────────────────────────────────────
   /** Local currency for price conversion. */
   currency: CurrencyInfo;
+
+  // ── Images (Phase 5.3) ───────────────────────────────────────────────────
+  /**
+   * Country flag code for Flagpack (2-letter ISO 3166-1 alpha-2).
+   * Example: 'BD' for Bangladesh, 'AE' for UAE, 'NG' for Nigeria.
+   * Used to display flag icons via https://flagpack.xyz/flags/4x3/{CODE}.svg
+   */
+  flagCode: string;
+
+  /**
+   * Hero background image for the country page (optional).
+   * If not provided, falls back to regional hero image.
+   * Recommended: WebP format, 1920x1080, optimized for web.
+   */
+  heroImage?: string;
+
+  /**
+   * Card thumbnail for country directory listings (optional).
+   * If not provided, uses a default consultation image.
+   * Recommended: WebP format, 800x600, optimized for web.
+   */
+  cardImage?: string;
 
   // ── Optional overrides ───────────────────────────────────────────────────
   /** Manual FAQs that supplement or override auto-generated ones. */

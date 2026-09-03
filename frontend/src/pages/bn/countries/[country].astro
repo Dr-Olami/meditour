@@ -1,48 +1,67 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Navbar } from '../../design-system/components/organisms/Navbar';
-import { Footer } from '../../design-system/components/organisms/Footer';
-import { TestimonialCarousel } from '../../design-system/components/organisms/TestimonialCarousel';
-import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
-import { StatCounter } from '../../design-system/components/organisms/StatCounter';
-import { Icon } from '../../design-system/components/atoms/Icon';
-import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
-import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
-import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName, ALL_COUNTRIES, getSeoTitle, getSeoDescription, getCountryOgImage } from '../../data/countries';
-import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals } from '../../lib/content';
-import { getTranslations } from '../../lib/i18n';
-import { getNavLinks } from '../../lib/navigation';
-import { getFooterLegalLinks } from '../../lib/footer';
-import { medicalWebPage, faqPage, breadcrumbs } from '../../lib/schema';
-import { getCountryInquiryLink } from '../../lib/whatsapp';
-import { generateCountryFaqs, mergeCountryFaqs } from '../../lib/country-faq-generator';
+import Layout from '../../../layouts/Layout.astro';
+import { Navbar } from '../../../design-system/components/organisms/Navbar';
+import { Footer } from '../../../design-system/components/organisms/Footer';
+import { TestimonialCarousel } from '../../../design-system/components/organisms/TestimonialCarousel';
+import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
+import { StatCounter } from '../../../design-system/components/organisms/StatCounter';
+import { Icon } from '../../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import { TreatmentCostCard } from '../../../design-system/components/molecules/TreatmentCostCard';
+import {
+  getBnCountryMetadata,
+  getAllBnCountrySlugs,
+} from '../../../data/countries/bn';
+import {
+  getRelatedCountries,
+  getRegionLabel,
+  formatPatientsTreated,
+  formatFlightTimeShort,
+  getTreatmentCategory,
+  getTreatmentName,
+  getCountryOgImage,
+  getRegionalHeroImage,
+  getFlagUrl,
+  ALL_COUNTRIES,
+} from '../../../data/countries';
+import {
+  getTreatmentsByCountry,
+  getTestimonialsByCountry,
+  getBlogPostsByCountry,
+  entrySlug,
+  getDoctors,
+  getHospitals,
+} from '../../../lib/content';
+import { getTranslations } from '../../../lib/i18n';
+import { getNavLinks } from '../../../lib/navigation';
+import { getFooterLegalLinks } from '../../../lib/footer';
+import { medicalWebPage, faqPage, breadcrumbs } from '../../../lib/schema';
+import { getCountryInquiryLink } from '../../../lib/whatsapp';
+import { generateCountryFaqsBn, mergeCountryFaqsBn } from '../../../lib/country-faq-generator.bn';
 
+// Reason: only Bangladesh has a Bengali translation, so getStaticPaths
+// returns only the slugs that have Bengali country data.
 export async function getStaticPaths() {
-  return getAllCountrySlugs().map((slug) => ({
+  return getAllBnCountrySlugs().map((slug) => ({
     params: { country: slug },
   }));
 }
 
 const { country } = Astro.params;
-const countryData = getCountryMetadata(country);
+const countryData = getBnCountryMetadata(country);
 
 if (!countryData) {
-  throw new Error(`Country not found: ${country}`);
+  throw new Error(`Bengali country not found: ${country}`);
 }
 
-const locale = 'en';
+const locale = 'bn';
 const t = getTranslations(locale);
 const treatmentEntries = await getTreatmentsByCountry(locale, country);
 const testimonialEntries = await getTestimonialsByCountry(locale, country);
 const blogEntries = await getBlogPostsByCountry(locale, country);
 
-// Reason: Section 4.4 internal linking — country pages link to relevant
-// hospital and doctor profiles. All partner hospitals are in Bangalore,
-// so filtering by city would show the same set on every country page.
-// Instead, we rank hospitals and doctors by relevance to the country's
-// top treatments (from treatmentCosts), so a cardiac-focused country
-// sees Narayana (cardiac specialty) first, while an orthopedics-focused
-// country sees Sparsh (orthopedics specialty) first.
+// Reason: reuse the same hospital/doctor rotation logic as the English page
+// so the same hospitals appear on both language versions of a country page.
 const treatmentSlugToSpecialty: Record<string, string[]> = {
   cardiology: ['cardiac', 'cardio', 'heart'],
   'cancer-treatment': ['oncology', 'cancer'],
@@ -77,24 +96,16 @@ function scoreDoctorByTreatments(specialty: string, expertise: string[], treatme
 const allHospitals = await getHospitals(locale);
 const allDoctors = await getDoctors(locale);
 
-// Reason: With only 5 partner hospitals (all in Bangalore), showing the
-// same 3 on every country page is repetitive. We rotate which 3 hospitals
-// appear using the country's index in ALL_COUNTRIES as an offset, then
-// sort the rotated subset by treatment relevance so the most relevant
-// hospital appears first. Doctors are then pulled from the selected
-// hospitals, so they also rotate naturally across countries.
 const countryIndex = ALL_COUNTRIES.findIndex((c) => c.slug === country);
 const hospitalCount = allHospitals.length;
 const hospitalsToShow = 3;
 const rotationOffset = countryIndex % hospitalCount;
 
-// Build a rotated window of 3 hospitals (wrapping around the array)
 const rotatedHospitals: typeof allHospitals = [];
 for (let i = 0; i < hospitalsToShow && i < hospitalCount; i++) {
   rotatedHospitals.push(allHospitals[(rotationOffset + i) % hospitalCount]);
 }
 
-// Sort the rotated subset by treatment relevance (most relevant first)
 const hospitalsForCountry = rotatedHospitals
   .map((h) => ({
     entry: h,
@@ -103,7 +114,6 @@ const hospitalsForCountry = rotatedHospitals
   .sort((a, b) => b.score - a.score)
   .map((item) => item.entry);
 
-// Get doctors from the selected hospitals, ranked by treatment relevance
 const selectedHospitalSlugs = hospitalsForCountry.map((h) => entrySlug(h));
 const doctorsForCountry = allDoctors
   .filter((d) => selectedHospitalSlugs.includes(d.data.hospitalId))
@@ -130,32 +140,34 @@ const treatmentOptions = treatmentEntries.map((entry) => ({
   label: entry.data.name,
 }));
 
-// Reason: formatted via helper — optional-property ternaries in .astro
-// frontmatter trigger an esbuild parse error (see formatPatientsTreated).
 const patientsValue = formatPatientsTreated(countryData);
-const patientsLabel = `${countryData.nationality} patients treated`;
+const patientsLabel = `${countryData.nationality} রোগী চিকিৎসা`;
 const stats = [
   { value: patientsValue, label: patientsLabel },
-  { value: countryData.costSavingsVsLocal, label: 'Cost savings' },
-  { value: '24/7', label: 'Patient support' },
-  { value: formatFlightTimeShort(countryData.flightTime), label: 'Travel time' },
+  { value: countryData.costSavingsVsLocal, label: 'খরচ সাশ্রয়' },
+  { value: '২৪/৭', label: 'রোগী সহায়তা' },
+  { value: formatFlightTimeShort(countryData.flightTime), label: 'ভ্রমণের সময়' },
 ];
 
+// Reason: Bengali blog links use /bn/blog/ prefix; hospital/doctor links use
+// /bn/ prefix to match the existing Bengali site structure.
 const blogPosts = blogEntries.slice(0, 3).map((entry) => ({
   title: entry.data.title,
   excerpt: entry.data.excerpt,
-  href: `/blog/${entrySlug(entry)}`,
+  href: `/bn/blog/${entrySlug(entry)}`,
 }));
 
-const countryFaqs = mergeCountryFaqs(generateCountryFaqs(countryData), countryData.manualFaqs);
+const countryFaqs = mergeCountryFaqsBn(generateCountryFaqsBn(countryData), countryData.manualFaqs);
 
 const whatsappHref = getCountryInquiryLink(countryData.name, countryData.nationality);
+// Reason: related countries link to the English country pages since only
+// Bangladesh has a Bengali translation. This avoids 404s on /bn/countries/{other}.
 const relatedCountries = getRelatedCountries(countryData.slug, 4);
 const costTableEntries = Object.entries(countryData.treatmentCosts).slice(0, 5);
 
 const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
-const seoTitle = getSeoTitle(countryData, t.site.name);
-const seoDescription = getSeoDescription(countryData.metaDescription);
+const seoTitle = `ভারতে চিকিৎসা — ${countryData.nationality} রোগীদের জন্য | ${t.site.name}`;
+const seoDescription = countryData.metaDescription;
 const ogImage = getCountryOgImage(countryData);
 const jsonLd = [
   medicalWebPage({
@@ -163,12 +175,12 @@ const jsonLd = [
     url: pageUrl,
     description: seoDescription,
     inLanguage: locale,
-    audience: `${countryData.nationality} patients seeking medical treatment in India`,
+    audience: `${countryData.nationality} রোগীদের জন্য ভারতে চিকিৎসা`,
   }),
   faqPage({ entries: countryFaqs }),
   breadcrumbs([
     { name: t.nav.home, url: new URL('/', Astro.url.origin).toString() },
-    { name: 'Countries', url: new URL('/for/', Astro.url.origin).toString() },
+    { name: t.nav.countries, url: new URL('/bn/countries/', Astro.url.origin).toString() },
     { name: countryData.name, url: pageUrl },
   ]),
 ];
@@ -190,15 +202,14 @@ const jsonLd = [
     client:load
   />
 
-  {/* Add top padding to main to account for sticky navbar */}
   <main class="pt-20">
-    {/* ── BREADCRUMB (above hero for clean separation) ─────────────────── */}
+    {/* ── BREADCRUMB ───────────────────────────────────────────────────── */}
     <div class="bg-white py-4">
       <div class="container">
         <Breadcrumb
           items={[
-            { label: t.nav.home, href: '/' },
-            { label: 'Countries', href: '/for/' },
+            { label: t.nav.home, href: '/bn/' },
+            { label: t.nav.countries, href: '/bn/countries/' },
             { label: countryData.name },
           ]}
           data-anim="fade-in-up"
@@ -206,31 +217,30 @@ const jsonLd = [
       </div>
     </div>
 
-    {/* ── MINIMAL HERO - CONTAINED CARD WITH ROUNDED CORNERS ───────────── */}
+    {/* ── HERO ─────────────────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-8 md:py-12">
       <div class="container">
         <div class="relative h-[400px] overflow-hidden rounded-2xl md:h-[500px] lg:h-[550px]">
-          {/* Background image */}
           <img
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80"
-            alt="Medical tourism to India"
+            src={countryData.heroImage || getRegionalHeroImage(countryData.region)}
+            alt={`ভারতে ${countryData.nationality} রোগীদের জন্য চিকিৎসা`}
             class="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
           />
-          
-          {/* Subtle gradient overlay */}
           <div class="absolute inset-0 bg-gradient-to-br from-ink/70 via-ink/50 to-transparent" />
-
-          {/* Content - minimal: just badge + H1 */}
           <div class="relative flex h-full items-center px-6 md:px-12 lg:px-16">
             <div class="max-w-3xl" data-anim="stagger-children">
-              {/* Small badge */}
-              <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg">
-                Patients from {countryData.name}
+              <span class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg">
+                <img
+                  src={getFlagUrl(countryData.flagCode)}
+                  alt={`${countryData.name} পতাকা`}
+                  class="h-4 w-5 rounded-[2px]"
+                  loading="eager"
+                />
+                {countryData.name} থেকে আগা রোগী
               </span>
-
-              {/* H1 only - clean and bold */}
               <h1 class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl" data-anim="headline-reveal">
-                Medical Tourism in India for {countryData.nationality} Patients
+                ভারতে {countryData.nationality} রোগীদের জন্য চিকিৎসা
               </h1>
             </div>
           </div>
@@ -238,41 +248,38 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── KEY BENEFITS GRID (with subtitle as intro) ───────────────────── */}
+    {/* ── KEY BENEFITS GRID ────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-12 md:py-16">
       <div class="container">
-        {/* Subtitle moved here from hero */}
         <p class="mb-8 text-center text-lg leading-relaxed text-ink/70 md:text-xl">
           {countryData.heroSubtitle}
         </p>
-
-        {/* Benefits grid */}
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
             <Icon name="check" size={20} className="mt-0.5 text-green-600" />
             <div>
-              <h3 class="text-sm font-semibold text-ink">Cost Savings</h3>
-              <p class="text-xs text-ink/60">Save {countryData.costSavingsVsLocal}</p>
+              <h3 class="text-sm font-semibold text-ink">খরচ সাশ্রয়</h3>
+              <p class="text-xs text-ink/60">{countryData.costSavingsVsLocal} সাশ্রয়</p>
             </div>
           </div>
           <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
             <Icon name="check" size={20} className="mt-0.5 text-blue-600" />
             <div>
-              <h3 class="text-sm font-semibold text-ink">Easy Travel</h3>
+              <h3 class="text-sm font-semibold text-ink">সহজ ভ্রমণ</h3>
               <p class="text-xs text-ink/60">{countryData.flightTime}</p>
             </div>
           </div>
           <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
             <Icon name="check" size={20} className="mt-0.5 text-violet-600" />
             <div>
-              <h3 class="text-sm font-semibold text-ink">Visa Support</h3>
+              <h3 class="text-sm font-semibold text-ink">ভিসা সহায়তা</h3>
               <p class="text-xs text-ink/60">{countryData.visaProcessingTime}</p>
             </div>
           </div>
           <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
             <Icon name="check" size={20} className="mt-0.5 text-indigo-600" />
             <div>
-              <h3 class="text-sm font-semibold text-ink">Language Support</h3>
+              <h3 class="text-sm font-semibold text-ink">ভাষা সহায়তা</h3>
               <p class="text-xs text-ink/60">{countryData.languages.join(', ')}</p>
             </div>
           </div>
@@ -291,7 +298,7 @@ const jsonLd = [
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-          Medical treatment in India for {countryData.nationality.toLowerCase()} patients
+          ভারতে {countryData.nationality} রোগীদের জন্য চিকিৎসা
         </h2>
         <p class="mt-6 text-lg leading-relaxed text-ink/70">{countryData.introParagraph}</p>
       </div>
@@ -301,18 +308,16 @@ const jsonLd = [
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <div class="mb-6">
-          <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">Cost comparison</p>
+          <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">খরচ তুলনা</p>
           <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
-            Treatment costs in India for {countryData.nationality} patients
+            {countryData.nationality} রোগীদের জন্য ভারতে চিকিৎসার খরচ
           </h2>
           <p class="mt-4 max-w-2xl text-base text-ink/60">
-            Indicative package ranges compared with typical US pricing
-            {countryData.currency.code !== 'USD' && `, with an approximate ${countryData.currency.name} (${countryData.currency.symbol}) reference`}
-            . Final quotes follow medical review of your reports.
+            প্রতিনিধিমূলক প্যাকেজ মূল্যের সীমা, সাধারণ মার্কিন মূল্যের তুলনায়
+            {countryData.currency.code !== 'USD' && `, আনুমানিক ${countryData.currency.name} (${countryData.currency.symbol}) রেফারেন্স সহ`}
+            । চূড়ান্ত মূল্য আপনার রিপোর্ট পর্যালোচনার পরে নির্ধারিত হয়।
           </p>
         </div>
-
-        {/* Card grid - mobile-first, stacks vertically on small screens */}
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {costTableEntries.map(([slug, cost]) => (
             <TreatmentCostCard
@@ -328,9 +333,8 @@ const jsonLd = [
             />
           ))}
         </div>
-
         <p class="mt-6 text-xs text-ink/50">
-          Savings vs USA are estimates from mid-range package figures. Exchange rates change — request a written quote for your case.
+          মার্কিন যুক্তরাষ্ট্রের তুলনায় সাশ্রয় মধ্য-সীমার প্যাকেজ মূল্য থেকে অনুমান করা। বিনিময় হার পরিবর্তিত হয় — আপনার কেসের জন্য লিখিত কোট চান।
         </p>
       </div>
     </section>
@@ -340,13 +344,12 @@ const jsonLd = [
       <div class="container">
         <div class="mx-auto max-w-3xl text-center">
           <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-            Why {countryData.nationality} patients choose India
+            {countryData.nationality} রোগীরা ভারত বেছে নেন কেন
           </h2>
           <p class="mt-4 text-lg text-ink/70">
-            India offers world-class medical care at a fraction of the cost in {countryData.costComparisonCountries.join(', ')}
+            ভারত {countryData.costComparisonCountries.join(', ')} এর খরচের একটি ভগ্নাংশে বিশ্বমানের চিকিৎসা দেয়
           </p>
         </div>
-
         <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {countryData.topConcerns.map((concern) => (
             <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
@@ -362,7 +365,7 @@ const jsonLd = [
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
-          Popular treatment cities for {countryData.nationality.toLowerCase()} patients
+          {countryData.nationality} রোগীদের জন্য জনপ্রিয় চিকিৎসা শহর
         </h2>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {countryData.recommendedCities.map((city) => (
@@ -370,7 +373,7 @@ const jsonLd = [
               <h3 class="font-display text-lg font-semibold text-ink">{city.name}</h3>
               <p class="mt-2 text-sm text-ink/60">{city.flightTime}</p>
               <p class="mt-1 text-xs text-ink/50">
-                {city.directFlights ? 'Direct flights' : 'Connecting flights'} · {city.airlines.join(', ')}
+                {city.directFlights ? 'সরাসরি ফ্লাইট' : 'সংযোগ ফ্লাইট'} · {city.airlines.join(', ')}
               </p>
               <div class="mt-4 flex flex-wrap gap-2">
                 {city.specialties.map((specialty) => (
@@ -381,7 +384,7 @@ const jsonLd = [
           ))}
         </div>
         <p class="mt-6 text-sm text-ink/60">
-          Care languages we commonly support: {countryData.languages.join(', ')}.
+          আমরা সাধারণত যেসব যত্ন ভাষা সমর্থন করি: {countryData.languages.join(', ')}।
         </p>
       </div>
     </section>
@@ -392,16 +395,16 @@ const jsonLd = [
         <div class="container">
           <div class="mb-10 max-w-2xl">
             <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-              Recommended hospitals for {countryData.nationality.toLowerCase()} patients
+              {countryData.nationality} রোগীদের জন্য সুপারিশকৃত হাসপাতাল
             </h2>
             <p class="mt-4 text-base text-ink/60">
-              JCI and NABH accredited hospitals with international patient departments experienced in caring for {countryData.nationality.toLowerCase()} families.
+              JCI ও NABH স্বীকৃত হাসপাতাল, আন্তর্জাতিক রোগী বিভাগ সহ, {countryData.nationality} পরিবারের সেবায় অভিজ্ঞ।
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {hospitalsForCountry.map((hospital) => (
               <a
-                href={`/hospitals/${entrySlug(hospital)}`}
+                href={`/bn/hospitals/${entrySlug(hospital)}`}
                 class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 {hospital.data.image && (
@@ -430,7 +433,7 @@ const jsonLd = [
                     {hospital.data.description}
                   </p>
                   <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
-                    View hospital details
+                    হাসপাতালের বিস্তারিত দেখুন
                     <Icon name="arrow-right" size={16} />
                   </span>
                 </div>
@@ -447,16 +450,16 @@ const jsonLd = [
         <div class="container">
           <div class="mb-10 max-w-2xl">
             <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-              Top specialists for {countryData.nationality.toLowerCase()} patients
+              {countryData.nationality} রোগীদের জন্য শীর্ষ বিশেষজ্ঞ
             </h2>
             <p class="mt-4 text-base text-ink/60">
-              Experienced doctors at our partner hospitals, with international patient coordinators to assist {countryData.nationality.toLowerCase()} families.
+              আমাদের অংশীদার হাসপাতালের অভিজ্ঞ ডাক্তার, আন্তর্জাতিক রোগী কোঅর্ডিনেটর সহ {countryData.nationality} পরিবারের সহায়তায়।
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {doctorsForCountry.map((doctor) => (
               <a
-                href={`/doctors/${entrySlug(doctor)}`}
+                href={`/bn/doctors/${entrySlug(doctor)}`}
                 class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 {doctor.data.avatar && (
@@ -474,12 +477,12 @@ const jsonLd = [
                     {doctor.data.name}
                   </h3>
                   <p class="mt-1 text-xs text-ink/60">{doctor.data.specialty}</p>
-                  <p class="mt-2 text-xs text-ink/50">{doctor.data.experienceYears}+ years experience</p>
+                  <p class="mt-2 text-xs text-ink/50">{doctor.data.experienceYears}+ বছর অভিজ্ঞতা</p>
                   {doctor.data.languages && doctor.data.languages.length > 0 && (
-                    <p class="mt-2 text-xs text-ink/50">Speaks: {doctor.data.languages.join(', ')}</p>
+                    <p class="mt-2 text-xs text-ink/50">ভাষা: {doctor.data.languages.join(', ')}</p>
                   )}
                   <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
-                    View profile
+                    প্রোফাইল দেখুন
                     <Icon name="arrow-right" size={14} />
                   </span>
                 </div>
@@ -494,12 +497,11 @@ const jsonLd = [
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
-          Medical visa process for {countryData.nationality.toLowerCase()} patients
+          {countryData.nationality} রোগীদের জন্য মেডিকেল ভিসা প্রক্রিয়া
         </h2>
         <p class="mb-10 text-base text-ink/60">
-          Practical steps for patients travelling from {countryData.name}. Requirements can vary — we confirm the current checklist with your hospital invitation letter.
+          {countryData.name} থেকে ভ্রমণরত রোগীদের জন্য ব্যবহারিক ধাপ। শর্ত ভিন্ন হতে পারে — আমরা আপনার হাসপাতাল আমন্ত্রণপত্র সহ বর্তমান চেকলিস্ট নিশ্চিত করি।
         </p>
-
         <ol class="space-y-6">
           {countryData.visaSteps.map((step, index) => (
             <li class="flex gap-4">
@@ -521,7 +523,7 @@ const jsonLd = [
       <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
         <div class="container">
           <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
-            Outcomes shared by families from {countryData.name}
+            {countryData.name} থেকে আসা পরিবারের অভিজ্ঞতা
           </h2>
           <TestimonialCarousel items={testimonials} client:load />
         </div>
@@ -532,7 +534,7 @@ const jsonLd = [
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
-          FAQs for {countryData.nationality.toLowerCase()} patients travelling to India
+          {countryData.nationality} রোগীদের জন্য সাধারণ প্রশ্ন
         </h2>
         <FAQAccordion items={countryFaqs} client:visible />
       </div>
@@ -543,12 +545,12 @@ const jsonLd = [
       <section class="bg-cream-200 py-16" data-anim="scroll-reveal">
         <div class="container">
           <h2 class="mb-8 font-display text-2xl font-bold text-ink md:text-3xl">
-            Other {getRegionLabel(countryData.region)} countries we serve
+            আমরা যেসব {getRegionLabel(countryData.region)} দেশের সেবা দেই
           </h2>
           <div class="flex flex-wrap gap-3">
             {relatedCountries.map((related) => (
               <a
-                href={`/for/${related.slug}`}
+                href={`/countries/${related.slug}`}
                 class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
               >
                 {related.name}
@@ -564,7 +566,7 @@ const jsonLd = [
       <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
         <div class="container">
           <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
-            Guides for {countryData.nationality.toLowerCase()} patients
+            {countryData.nationality} রোগীদের জন্য গাইড
           </h2>
           <div class="grid gap-6 md:grid-cols-3">
             {blogPosts.map((post) => (
@@ -579,7 +581,7 @@ const jsonLd = [
                   href={post.href}
                   class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
                 >
-                  Read guide
+                  গাইড পড়ুন
                   <Icon name="arrow-right" size={16} />
                 </a>
               </article>
@@ -590,55 +592,62 @@ const jsonLd = [
     )}
 
     {/* ── CTA ──────────────────────────────────────────────────────────── */}
-    <section id="contact" class="relative overflow-hidden bg-ink py-16 text-cream-100 md:py-20" data-anim="fade-in-up">
-      <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-      <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">
-            Planning treatment from {countryData.name}?
-          </h2>
-          <p class="mt-2 max-w-xl text-cream-100/60">
-            Share your reports on WhatsApp for a free opinion, {countryData.currency.code}-aware cost estimate, and medical visa guidance for {countryData.nationality.toLowerCase()} patients.
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a
-            href={whatsappHref || '#contact'}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
-          >
-            Get Free Quote
-          </a>
-          {whatsappHref && (
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
-              data-anim="press-button"
-            >
-              <Icon name="whatsapp" size={18} />
-              WhatsApp us
-            </a>
-          )}
+    <section id="contact" class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container">
+        <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-cream-100 md:px-12 md:py-12">
+          <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
+          <div class="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100/50">
+                আমরা সাহায্যে আছি
+              </p>
+              <h2 class="mt-2 font-display text-2xl font-bold text-cream-100 md:text-3xl">
+                {countryData.name} থেকে চিকিৎসার পরিকল্পনা করছেন?
+              </h2>
+              <p class="mt-2 max-w-xl text-cream-100/60">
+                বিনামূল্যে মতামত, {countryData.currency.code}-সচেতন খরচের অনুমান ও {countryData.nationality} রোগীদের জন্য মেডিকেল ভিসা পথনির্দেশনার জন্য WhatsApp-এ আপনার রিপোর্ট শেয়ার করুন।
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={whatsappHref || '#contact'}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
+              >
+                বিনামূল্যে কোট নিন
+              </a>
+              {whatsappHref && (
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+                  data-anim="press-button"
+                >
+                  <Icon name="whatsapp" size={18} />
+                  WhatsApp করুন
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  {/* ── FLOATING CTAs (fixed to viewport, always visible) ──────────────── */}
+  {/* ── FLOATING CTAs ──────────────────────────────────────────────────── */}
   <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
     {whatsappHref && (
       <a
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+        aria-label="WhatsApp এ চ্যাট করুন"
         class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
       >
         <Icon name="whatsapp" size={16} />
-        <span class="hidden text-sm font-semibold md:inline">Chat on WhatsApp</span>
+        <span class="hidden text-sm font-semibold md:inline">WhatsApp এ চ্যাট</span>
       </a>
     )}
     <a
@@ -646,8 +655,8 @@ const jsonLd = [
       class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
     >
       <Icon name="mail" size={16} />
-      <span class="md:hidden">Get cost</span>
-      <span class="hidden md:inline">Get cost estimate</span>
+      <span class="md:hidden">খরচ জানুন</span>
+      <span class="hidden md:inline">খরচের অনুমান নিন</span>
     </a>
   </div>
 

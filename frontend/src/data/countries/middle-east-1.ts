@@ -15,6 +15,7 @@ const uae: CountryMetadata = {
   slug: 'uae',
   nationality: 'Emirati',
   region: 'middle-east',
+  flagCode: 'AE',
 
   primaryKeywords: [
     'medical tourism India from UAE',
@@ -87,6 +88,7 @@ const saudiArabia: CountryMetadata = {
   slug: 'saudi-arabia',
   nationality: 'Saudi',
   region: 'middle-east',
+  flagCode: 'SA',
 
   primaryKeywords: [
     'medical tourism India from Saudi Arabia',
@@ -159,6 +161,7 @@ const kuwait: CountryMetadata = {
   slug: 'kuwait',
   nationality: 'Kuwaiti',
   region: 'middle-east',
+  flagCode: 'KW',
 
   primaryKeywords: [
     'medical tourism India from Kuwait',
@@ -231,6 +234,7 @@ const qatar: CountryMetadata = {
   slug: 'qatar',
   nationality: 'Qatari',
   region: 'middle-east',
+  flagCode: 'QA',
 
   primaryKeywords: [
     'medical tourism India from Qatar',
@@ -303,6 +307,7 @@ const oman: CountryMetadata = {
   slug: 'oman',
   nationality: 'Omani',
   region: 'middle-east',
+  flagCode: 'OM',
 
   primaryKeywords: [
     'medical tourism India from Oman',
@@ -375,6 +380,7 @@ const bahrain: CountryMetadata = {
   slug: 'bahrain',
   nationality: 'Bahraini',
   region: 'middle-east',
+  flagCode: 'BH',
 
   primaryKeywords: [
     'medical tourism India from Bahrain',

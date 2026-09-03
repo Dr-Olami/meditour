@@ -11,6 +11,12 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
   locale?: string;
   /** Current URL pathname — used by the language switcher to preserve path. */
   currentPath?: string;
+  /**
+   * Per-locale fallback hrefs for pages not translated into that locale.
+   * Reason: country landing pages are English-only for MVP, so the Bengali
+   * toggle falls back to the Bengali homepage instead of a 404.
+   */
+  localeFallbacks?: Record<string, string>;
 }
 
 /**
@@ -25,13 +31,18 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
  * Desktop:                [brand] [links] [switcher] [CTA]
  */
 const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
-  ({ className, brand, links, cta, locale, currentPath, ...props }, ref) => {
+  ({ className, brand, links, cta, locale, currentPath, localeFallbacks, ...props }, ref) => {
     // Reason: render the switcher internally so Astro pages only need to pass
     // string props (locale + currentPath) rather than JSX elements, which
     // Astro's template parser cannot handle in attribute values.
     const showSwitcher = Boolean(locale && currentPath);
     const switcher = showSwitcher ? (
-      <LanguageSwitcher currentLocale={locale!} currentPath={currentPath!} compact />
+      <LanguageSwitcher
+        currentLocale={locale!}
+        currentPath={currentPath!}
+        localeFallbacks={localeFallbacks}
+        compact
+      />
     ) : null;
     const [open, setOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);

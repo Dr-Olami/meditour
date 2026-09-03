@@ -85,6 +85,33 @@ describe('Navbar', () => {
     expect(screen.getByLabelText('বাংলা')).toBeInTheDocument();
   });
 
+  it('uses localeFallbacks for untranslated pages instead of a 404 path', () => {
+    render(
+      <Navbar
+        brand="Khan Meditour"
+        links={LINKS}
+        locale="en"
+        currentPath="/countries/bangladesh"
+        localeFallbacks={{ bn: '/bn' }}
+      />,
+    );
+
+    // Reason: country pages are English-only for MVP — the Bengali toggle must
+    // fall back to the Bengali homepage, not /bn/countries/bangladesh (a 404).
+    expect(screen.getByLabelText('বাংলা')).toHaveAttribute('href', '/bn');
+    // The English toggle still preserves the current path.
+    expect(screen.getByLabelText('English')).toHaveAttribute('href', '/countries/bangladesh');
+  });
+
+  it('preserves the path for translated locales when no fallback is given', () => {
+    render(
+      <Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/treatments/cardiology" />,
+    );
+
+    expect(screen.getByLabelText('বাংলা')).toHaveAttribute('href', '/bn/treatments/cardiology');
+    expect(screen.getByLabelText('English')).toHaveAttribute('href', '/treatments/cardiology');
+  });
+
   it('toggles the mobile menu open and closed', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} />);
 

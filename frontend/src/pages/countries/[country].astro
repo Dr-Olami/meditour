@@ -1,0 +1,684 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { TestimonialCarousel } from '../../design-system/components/organisms/TestimonialCarousel';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
+import { StatCounter } from '../../design-system/components/organisms/StatCounter';
+import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
+import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName, ALL_COUNTRIES, getSeoTitle, getSeoDescription, getCountryOgImage, getRegionalHeroImage, getFlagUrl } from '../../data/countries';
+import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals } from '../../lib/content';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { medicalWebPage, faqPage, breadcrumbs } from '../../lib/schema';
+import { getCountryInquiryLink } from '../../lib/whatsapp';
+import { generateCountryFaqs, mergeCountryFaqs } from '../../lib/country-faq-generator';
+import { hasBnCountryPage } from '../../data/countries/bn';
+
+export async function getStaticPaths() {
+  return getAllCountrySlugs().map((slug) => ({
+    params: { country: slug },
+  }));
+}
+
+const { country } = Astro.params;
+const countryData = getCountryMetadata(country);
+
+if (!countryData) {
+  throw new Error(`Country not found: ${country}`);
+}
+
+const locale = 'en';
+const t = getTranslations(locale);
+const treatmentEntries = await getTreatmentsByCountry(locale, country);
+const testimonialEntries = await getTestimonialsByCountry(locale, country);
+const blogEntries = await getBlogPostsByCountry(locale, country);
+
+// Reason: Section 4.4 internal linking — country pages link to relevant
+// hospital and doctor profiles. All partner hospitals are in Bangalore,
+// so filtering by city would show the same set on every country page.
+// Instead, we rank hospitals and doctors by relevance to the country's
+// top treatments (from treatmentCosts), so a cardiac-focused country
+// sees Narayana (cardiac specialty) first, while an orthopedics-focused
+// country sees Sparsh (orthopedics specialty) first.
+const treatmentSlugToSpecialty: Record<string, string[]> = {
+  cardiology: ['cardiac', 'cardio', 'heart'],
+  'cancer-treatment': ['oncology', 'cancer'],
+  'orthopedics-surgery': ['orthopaedic', 'orthopedic', 'joint replacement'],
+  'organ-treatment': ['transplant', 'organ'],
+  'infertility-treatment': ['ivf', 'infertility', 'fertility'],
+  'neuro-and-spine-surgery': ['neuro', 'spine'],
+  'cosmetic-surgery': ['cosmetic', 'plastic'],
+  ophthalmology: ['ophthalm', 'eye'],
+  'dental-treatment': ['dental', 'dentistry'],
+  'bariatric-surgery': ['bariatric', 'weight loss'],
+};
+
+const countryTreatmentSlugs = Object.keys(countryData.treatmentCosts);
+
+function scoreHospitalByTreatments(specialities: string[], treatmentSlugs: string[]): number {
+  const specialityText = specialities.join(' ').toLowerCase();
+  return treatmentSlugs.reduce((score, slug) => {
+    const keywords = treatmentSlugToSpecialty[slug] || [];
+    return score + keywords.filter((kw) => specialityText.includes(kw)).length;
+  }, 0);
+}
+
+function scoreDoctorByTreatments(specialty: string, expertise: string[], treatmentSlugs: string[]): number {
+  const doctorText = [specialty, ...expertise].join(' ').toLowerCase();
+  return treatmentSlugs.reduce((score, slug) => {
+    const keywords = treatmentSlugToSpecialty[slug] || [];
+    return score + keywords.filter((kw) => doctorText.includes(kw)).length;
+  }, 0);
+}
+
+const allHospitals = await getHospitals(locale);
+const allDoctors = await getDoctors(locale);
+
+// Reason: With only 5 partner hospitals (all in Bangalore), showing the
+// same 3 on every country page is repetitive. We rotate which 3 hospitals
+// appear using the country's index in ALL_COUNTRIES as an offset, then
+// sort the rotated subset by treatment relevance so the most relevant
+// hospital appears first. Doctors are then pulled from the selected
+// hospitals, so they also rotate naturally across countries.
+const countryIndex = ALL_COUNTRIES.findIndex((c) => c.slug === country);
+const hospitalCount = allHospitals.length;
+const hospitalsToShow = 3;
+const rotationOffset = countryIndex % hospitalCount;
+
+// Build a rotated window of 3 hospitals (wrapping around the array)
+const rotatedHospitals: typeof allHospitals = [];
+for (let i = 0; i < hospitalsToShow && i < hospitalCount; i++) {
+  rotatedHospitals.push(allHospitals[(rotationOffset + i) % hospitalCount]);
+}
+
+// Sort the rotated subset by treatment relevance (most relevant first)
+const hospitalsForCountry = rotatedHospitals
+  .map((h) => ({
+    entry: h,
+    score: scoreHospitalByTreatments(h.data.specialities || [], countryTreatmentSlugs),
+  }))
+  .sort((a, b) => b.score - a.score)
+  .map((item) => item.entry);
+
+// Get doctors from the selected hospitals, ranked by treatment relevance
+const selectedHospitalSlugs = hospitalsForCountry.map((h) => entrySlug(h));
+const doctorsForCountry = allDoctors
+  .filter((d) => selectedHospitalSlugs.includes(d.data.hospitalId))
+  .map((d) => ({
+    entry: d,
+    score: scoreDoctorByTreatments(d.data.specialty, d.data.expertise || [], countryTreatmentSlugs),
+  }))
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 4)
+  .map((item) => item.entry);
+
+const testimonials = testimonialEntries.map((entry) => ({
+  name: entry.data.name,
+  location: entry.data.location,
+  quote: entry.data.quote,
+  image: entry.data.image,
+  video: entry.data.video,
+  videoDuration: entry.data.videoDuration,
+  brandLabel: entry.data.brandLabel,
+}));
+
+const treatmentOptions = treatmentEntries.map((entry) => ({
+  value: entry.data.name,
+  label: entry.data.name,
+}));
+
+// Reason: formatted via helper — optional-property ternaries in .astro
+// frontmatter trigger an esbuild parse error (see formatPatientsTreated).
+const patientsValue = formatPatientsTreated(countryData);
+const patientsLabel = `${countryData.nationality} patients treated`;
+const stats = [
+  { value: patientsValue, label: patientsLabel },
+  { value: countryData.costSavingsVsLocal, label: 'Cost savings' },
+  { value: '24/7', label: 'Patient support' },
+  { value: formatFlightTimeShort(countryData.flightTime), label: 'Travel time' },
+];
+
+const blogPosts = blogEntries.slice(0, 3).map((entry) => ({
+  title: entry.data.title,
+  excerpt: entry.data.excerpt,
+  href: `/blog/${entrySlug(entry)}`,
+}));
+
+const countryFaqs = mergeCountryFaqs(generateCountryFaqs(countryData), countryData.manualFaqs);
+
+const whatsappHref = getCountryInquiryLink(countryData.name, countryData.nationality);
+const relatedCountries = getRelatedCountries(countryData.slug, 4);
+const costTableEntries = Object.entries(countryData.treatmentCosts).slice(0, 5);
+
+const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
+const seoTitle = getSeoTitle(countryData, t.site.name);
+const seoDescription = getSeoDescription(countryData.metaDescription);
+const ogImage = getCountryOgImage(countryData);
+const jsonLd = [
+  medicalWebPage({
+    name: seoTitle,
+    url: pageUrl,
+    description: seoDescription,
+    inLanguage: locale,
+    audience: `${countryData.nationality} patients seeking medical treatment in India`,
+  }),
+  faqPage({ entries: countryFaqs }),
+  breadcrumbs([
+    { name: t.nav.home, url: new URL('/', Astro.url.origin).toString() },
+    { name: 'Countries', url: new URL('/countries/', Astro.url.origin).toString() },
+    { name: countryData.name, url: pageUrl },
+  ]),
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  locale={locale}
+  image={ogImage}
+  jsonLd={jsonLd}
+  bnAlternate={hasBnCountryPage(country)}
+>
+  {/* Reason: only countries with a Bengali translation (currently Bangladesh)
+      emit hreflang="bn" and let the language switcher preserve the path.
+      Other country pages suppress the bn alternate and fall back to /bn/. */}
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    localeFallbacks={hasBnCountryPage(country) ? undefined : { bn: '/bn' }}
+    client:load
+  />
+
+  {/* Add top padding to main to account for sticky navbar */}
+  <main class="pt-20">
+    {/* ── BREADCRUMB (above hero for clean separation) ─────────────────── */}
+    <div class="bg-white py-4">
+      <div class="container">
+        <Breadcrumb
+          items={[
+            { label: t.nav.home, href: '/' },
+            { label: 'Countries', href: '/countries/' },
+            { label: countryData.name },
+          ]}
+          data-anim="fade-in-up"
+        />
+      </div>
+    </div>
+
+    {/* ── MINIMAL HERO - CONTAINED CARD WITH ROUNDED CORNERS ───────────── */}
+    <section class="bg-cream-100 py-8 md:py-12">
+      <div class="container">
+        <div class="relative h-[400px] overflow-hidden rounded-2xl md:h-[500px] lg:h-[550px]">
+          {/* Background image — use country-specific or regional fallback */}
+          <img
+            src={countryData.heroImage || getRegionalHeroImage(countryData.region)}
+            alt={`Medical treatment in India for ${countryData.nationality} patients`}
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+          />
+          
+          {/* Subtle gradient overlay */}
+          <div class="absolute inset-0 bg-gradient-to-br from-ink/70 via-ink/50 to-transparent" />
+
+          {/* Content - minimal: just badge + H1 */}
+          <div class="relative flex h-full items-center px-6 md:px-12 lg:px-16">
+            <div class="max-w-3xl" data-anim="stagger-children">
+              {/* Badge with country flag */}
+              <span class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg">
+                <img 
+                  src={getFlagUrl(countryData.flagCode)}
+                  alt={`${countryData.name} flag`}
+                  class="h-4 w-5 rounded-[2px]"
+                  loading="eager"
+                />
+                Patients from {countryData.name}
+              </span>
+
+              {/* H1 only - clean and bold */}
+              <h1 class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl" data-anim="headline-reveal">
+                Medical Treatment in India for {countryData.nationality} Patients
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── KEY BENEFITS GRID (with subtitle as intro) ───────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16">
+      <div class="container">
+        {/* Subtitle moved here from hero */}
+        <p class="mb-8 text-center text-lg leading-relaxed text-ink/70 md:text-xl">
+          {countryData.heroSubtitle}
+        </p>
+
+        {/* Benefits grid */}
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-green-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Cost Savings</h3>
+              <p class="text-xs text-ink/60">Save {countryData.costSavingsVsLocal}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-blue-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Easy Travel</h3>
+              <p class="text-xs text-ink/60">{countryData.flightTime}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-violet-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Visa Support</h3>
+              <p class="text-xs text-ink/60">{countryData.visaProcessingTime}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+            <Icon name="check" size={20} className="mt-0.5 text-indigo-600" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">Language Support</h3>
+              <p class="text-xs text-ink/60">{countryData.languages.join(', ')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── STATS ────────────────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16" data-anim="fade-in-up">
+      <div class="container">
+        <StatCounter stats={stats} />
+      </div>
+    </section>
+
+    {/* ── INTRO ────────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+          Medical treatment in India for {countryData.nationality.toLowerCase()} patients
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-ink/70">{countryData.introParagraph}</p>
+      </div>
+    </section>
+
+    {/* ── COST COMPARISON CARDS ────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mb-6">
+          <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">Cost comparison</p>
+          <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
+            Treatment costs in India for {countryData.nationality} patients
+          </h2>
+          <p class="mt-4 max-w-2xl text-base text-ink/60">
+            Indicative package ranges compared with typical US pricing
+            {countryData.currency.code !== 'USD' && `, with an approximate ${countryData.currency.name} (${countryData.currency.symbol}) reference`}
+            . Final quotes follow medical review of your reports.
+          </p>
+        </div>
+
+        {/* Card grid - mobile-first, stacks vertically on small screens */}
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {costTableEntries.map(([slug, cost]) => (
+            <TreatmentCostCard
+              slug={slug}
+              name={getTreatmentName(slug)}
+              category={getTreatmentCategory(slug)}
+              indiaUSD={cost.indiaUSD}
+              localCurrency={cost.localCurrency || undefined}
+              currencyCode={countryData.currency.code !== 'USD' ? countryData.currency.code : undefined}
+              usaCost={cost.usaCost}
+              savingsPercent={cost.savingsPercent}
+              client:visible
+            />
+          ))}
+        </div>
+
+        <p class="mt-6 text-xs text-ink/50">
+          Savings vs USA are estimates from mid-range package figures. Exchange rates change — request a written quote for your case.
+        </p>
+      </div>
+    </section>
+
+    {/* ── WHY CHOOSE INDIA ─────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            Why {countryData.nationality} patients choose India
+          </h2>
+          <p class="mt-4 text-lg text-ink/70">
+            India offers world-class medical care at a fraction of the cost in {countryData.costComparisonCountries.join(', ')}
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {countryData.topConcerns.map((concern) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+              <Icon name="check-circle" size={28} className="text-green-600" />
+              <h3 class="mt-4 text-base font-semibold text-ink">{concern}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── RECOMMENDED CITIES ───────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
+          Popular treatment cities for {countryData.nationality.toLowerCase()} patients
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {countryData.recommendedCities.map((city) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+              <h3 class="font-display text-lg font-semibold text-ink">{city.name}</h3>
+              <p class="mt-2 text-sm text-ink/60">{city.flightTime}</p>
+              <p class="mt-1 text-xs text-ink/50">
+                {city.directFlights ? 'Direct flights' : 'Connecting flights'} · {city.airlines.join(', ')}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {city.specialties.map((specialty) => (
+                  <span class="rounded-full bg-cream-200 px-2 py-1 text-xs text-ink/70">{specialty}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-ink/60">
+          Care languages we commonly support: {countryData.languages.join(', ')}.
+        </p>
+      </div>
+    </section>
+
+    {/* ── TOP HOSPITALS ────────────────────────────────────────────────── */}
+    {hospitalsForCountry.length > 0 && (
+      <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+        <div class="container">
+          <div class="mb-10 max-w-2xl">
+            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+              Recommended hospitals for {countryData.nationality.toLowerCase()} patients
+            </h2>
+            <p class="mt-4 text-base text-ink/60">
+              JCI and NABH accredited hospitals with international patient departments experienced in caring for {countryData.nationality.toLowerCase()} families.
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {hospitalsForCountry.map((hospital) => (
+              <a
+                href={`/hospitals/${entrySlug(hospital)}`}
+                class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
+                {hospital.data.image && (
+                  <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                    <img
+                      src={hospital.data.image}
+                      alt={hospital.data.name}
+                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-1 flex-col p-5">
+                  <h3 class="font-display text-lg font-semibold text-ink group-hover:text-violet-600">
+                    {hospital.data.name}
+                  </h3>
+                  <p class="mt-1 text-xs text-ink/50">{hospital.data.city}</p>
+                  {hospital.data.accreditations && hospital.data.accreditations.length > 0 && (
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      {hospital.data.accreditations.map((acc) => (
+                        <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-700">{acc}</span>
+                      ))}
+                    </div>
+                  )}
+                  <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70 line-clamp-3">
+                    {hospital.data.description}
+                  </p>
+                  <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                    View hospital details
+                    <Icon name="arrow-right" size={16} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── SPECIALIST DOCTORS ───────────────────────────────────────────── */}
+    {doctorsForCountry.length > 0 && (
+      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+        <div class="container">
+          <div class="mb-10 max-w-2xl">
+            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+              Top specialists for {countryData.nationality.toLowerCase()} patients
+            </h2>
+            <p class="mt-4 text-base text-ink/60">
+              Experienced doctors at our partner hospitals, with international patient coordinators to assist {countryData.nationality.toLowerCase()} families.
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {doctorsForCountry.map((doctor) => (
+              <a
+                href={`/doctors/${entrySlug(doctor)}`}
+                class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
+                {doctor.data.avatar && (
+                  <div class="aspect-square overflow-hidden bg-cream-200">
+                    <img
+                      src={doctor.data.avatar}
+                      alt={doctor.data.name}
+                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="font-display text-base font-semibold text-ink group-hover:text-violet-600">
+                    {doctor.data.name}
+                  </h3>
+                  <p class="mt-1 text-xs text-ink/60">{doctor.data.specialty}</p>
+                  <p class="mt-2 text-xs text-ink/50">{doctor.data.experienceYears}+ years experience</p>
+                  {doctor.data.languages && doctor.data.languages.length > 0 && (
+                    <p class="mt-2 text-xs text-ink/50">Speaks: {doctor.data.languages.join(', ')}</p>
+                  )}
+                  <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                    View profile
+                    <Icon name="arrow-right" size={14} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── VISA PROCESS ─────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
+          Medical visa process for {countryData.nationality.toLowerCase()} patients
+        </h2>
+        <p class="mb-10 text-base text-ink/60">
+          Practical steps for patients travelling from {countryData.name}. Requirements can vary — we confirm the current checklist with your hospital invitation letter.
+        </p>
+
+        <ol class="space-y-6">
+          {countryData.visaSteps.map((step, index) => (
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <h3 class="font-semibold text-ink">{step.title}</h3>
+                <p class="mt-1 text-sm text-ink/70">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* ── PATIENT STORIES ──────────────────────────────────────────────── */}
+    {testimonials.length > 0 && (
+      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+        <div class="container">
+          <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
+            Outcomes shared by families from {countryData.name}
+          </h2>
+          <TestimonialCarousel items={testimonials} client:load />
+        </div>
+      </section>
+    )}
+
+    {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
+          FAQs for {countryData.nationality.toLowerCase()} patients travelling to India
+        </h2>
+        <FAQAccordion items={countryFaqs} client:visible />
+      </div>
+    </section>
+
+    {/* ── RELATED COUNTRIES ────────────────────────────────────────────── */}
+    {relatedCountries.length > 0 && (
+      <section class="bg-cream-200 py-16" data-anim="scroll-reveal">
+        <div class="container">
+          <h2 class="mb-8 font-display text-2xl font-bold text-ink md:text-3xl">
+            Other {getRegionLabel(countryData.region)} countries we serve
+          </h2>
+          <div class="flex flex-wrap gap-3">
+            {relatedCountries.map((related) => (
+              <a
+                href={`/countries/${related.slug}`}
+                class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
+              >
+                {related.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── GUIDES & ARTICLES ────────────────────────────────────────────── */}
+    {blogPosts.length > 0 && (
+      <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+        <div class="container">
+          <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
+            Guides for {countryData.nationality.toLowerCase()} patients
+          </h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            {blogPosts.map((post) => (
+              <article class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
+                <h3 class="font-display text-lg font-semibold text-ink">
+                  <a href={post.href} class="hover:text-violet-600">
+                    {post.title}
+                  </a>
+                </h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
+                <a
+                  href={post.href}
+                  class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+                >
+                  Read guide
+                  <Icon name="arrow-right" size={16} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── CTA (contained card so it doesn't merge into the dark footer) ── */}
+    <section id="contact" class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container">
+        <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-cream-100 md:px-12 md:py-12">
+          <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
+          {/* Layout: text left, buttons right on md+; buttons stack below on mobile. */}
+          <div class="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100/50">
+                We're here to help
+              </p>
+              <h2 class="mt-2 font-display text-2xl font-bold text-cream-100 md:text-3xl">
+                Planning treatment from {countryData.name}?
+              </h2>
+              <p class="mt-2 max-w-xl text-cream-100/60">
+                Share your reports on WhatsApp for a free opinion, {countryData.currency.code}-aware cost estimate, and medical visa guidance for {countryData.nationality.toLowerCase()} patients.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={whatsappHref || '#contact'}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
+              >
+                Get Free Quote
+              </a>
+              {whatsappHref && (
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+                  data-anim="press-button"
+                >
+                  <Icon name="whatsapp" size={18} />
+                  WhatsApp us
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {/* ── FLOATING CTAs (fixed to viewport, always visible) ──────────────── */}
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    {whatsappHref && (
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
+      >
+        <Icon name="whatsapp" size={16} />
+        <span class="hidden text-sm font-semibold md:inline">Chat on WhatsApp</span>
+      </a>
+    )}
+    <a
+      href="#contact"
+      class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+    >
+      <Icon name="mail" size={16} />
+      <span class="md:hidden">Get cost</span>
+      <span class="hidden md:inline">Get cost estimate</span>
+    </a>
+  </div>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

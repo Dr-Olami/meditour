@@ -1,0 +1,87 @@
+---
+/**
+ * CTA card section for the bottom of treatment listing pages.
+ *
+ * Two-column layout:
+ *   LEFT  — eyebrow, headline, supporting paragraph
+ *   RIGHT — primary + secondary CTA buttons
+ *
+ * Reason: matches the dark-card treatment used on the homepage CountriesServeSection
+ * so the visual language stays consistent across pages.
+ *
+ * Props:
+ *   locale        - Active locale ('en' or 'bn').
+ *   primaryCta    - { label, href } for the primary button (cream bg).
+ *   secondaryCta  - { label, href } for the secondary button (outline).
+ */
+import type { Locale } from '../../../lib/i18n';
+import { Icon } from '../atoms/Icon';
+
+interface CtaAction {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  locale: Locale;
+  primaryCta: CtaAction;
+  secondaryCta: CtaAction;
+}
+
+const { locale, primaryCta, secondaryCta } = Astro.props;
+const isBn = locale === 'bn';
+
+const eyebrow = isBn ? 'আমরা সাহায্যে আছি' : "We're here to help";
+const headline = isBn
+  ? 'ভারতে আপনার চিকিৎসার পরিকল্পনার জন্য প্রস্তুত?'
+  : 'Ready to plan your treatment in India?';
+const body = isBn
+  ? 'আপনার রিপোর্ট শেয়ার করুন — আমরা হাসপাতালের বিকল্প তুলনা করতে, খরচ পরিষ্কার করতে এবং ভিসা, ভ্রমণ ও পুনরুদ্ধার সহায়তা সাজাতে সাহায্য করব — সাধারণত ২৪–৪৮ ঘন্টার মধ্যে।'
+  : 'Share your reports and we\u2019ll help you compare hospital options, clarify costs, and organize visa, travel, and recovery support \u2014 usually within 24\u201348 hours.';
+---
+
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container">
+    <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-12 md:px-12 md:py-14">
+      {/* Decorative glow */}
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-32 right-0 h-96 w-96 rounded-full bg-violet-600/10 blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-indigo-600/5 blur-3xl"></div>
+      </div>
+
+      <div class="relative grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        {/* ── LEFT: copy ─────────────────────────────────────────────── */}
+        <div data-anim="stagger-children">
+          <p class="text-xs font-semibold uppercase tracking-widest text-white">
+            {eyebrow}
+          </p>
+          <h2 class="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight text-white md:text-4xl" data-anim="headline-reveal">
+            {headline}
+          </h2>
+          <p class="mt-5 max-w-md text-base leading-relaxed text-white">
+            {body}
+          </p>
+        </div>
+
+        {/* ── RIGHT: CTAs ────────────────────────────────────────────── */}
+        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end" data-anim="fade-in-up">
+          <a
+            href={primaryCta.href}
+            class="inline-flex items-center justify-center gap-2 rounded-card bg-cream-100 px-6 py-3 text-sm font-semibold text-ink hover:text-ink"
+            data-anim="press-button"
+          >
+            {primaryCta.label}
+            <Icon name="arrow-right" size={16} />
+          </a>
+          <a
+            href={secondaryCta.href}
+            class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/40 px-6 py-3 text-sm font-semibold text-cream-100 hover:text-white"
+            data-anim="press-button"
+          >
+            {secondaryCta.label}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

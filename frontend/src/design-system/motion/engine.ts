@@ -25,22 +25,52 @@ export interface AnimationScope {
 /**
  * Wrap each word of an element's text in a span so it can be animated
  * without a paid SplitText plugin.
+ *
+ * Reason: walks child nodes instead of reading `textContent` so that `<br>`
+ * line-break tags are preserved during the word-split rebuild. Using
+ * `textContent` flattens all HTML, destroying intentional line breaks.
  */
 function splitWords(el: HTMLElement): HTMLSpanElement[] {
-  const words = el.textContent?.trim().split(/\s+/) ?? [];
+  // Reason: capture child nodes BEFORE clearing innerHTML, otherwise the
+  // iteration would see an empty node list and the headline would vanish.
+  const nodes = Array.from(el.childNodes);
   el.innerHTML = '';
   const spans: HTMLSpanElement[] = [];
-  words.forEach((word, index) => {
+  let isFirstWord = true;
+
+  function addWord(word: string) {
+    if (!word) return;
+    if (!isFirstWord) {
+      el.appendChild(document.createTextNode(' '));
+    }
+    isFirstWord = false;
     const span = document.createElement('span');
     span.textContent = word;
     span.style.display = 'inline-block';
     span.style.willChange = 'transform, opacity';
     el.appendChild(span);
     spans.push(span);
-    if (index < words.length - 1) {
-      el.appendChild(document.createTextNode(' '));
+  }
+
+  nodes.forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const words = node.textContent?.trim().split(/\s+/).filter(Boolean) ?? [];
+      words.forEach(addWord);
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const element = node as HTMLElement;
+      if (element.tagName === 'BR') {
+        // Reason: preserve line breaks by re-inserting them between word spans
+        el.appendChild(document.createElement('br'));
+        isFirstWord = true; // next word starts a new line, no leading space
+      } else {
+        // Reason: for non-<br> elements (e.g. <span class="block">), recurse
+        // into their text content so nested words still get animated.
+        const words = element.textContent?.trim().split(/\s+/).filter(Boolean) ?? [];
+        words.forEach(addWord);
+      }
     }
   });
+
   return spans;
 }
 

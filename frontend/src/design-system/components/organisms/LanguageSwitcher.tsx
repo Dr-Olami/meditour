@@ -23,6 +23,13 @@ export interface LanguageSwitcherProps
   currentPath: string;
   /** Use short labels (e.g. "EN" instead of "English") — for compact spaces. */
   compact?: boolean;
+  /**
+   * Per-locale fallback hrefs for pages that are not translated into that
+   * locale. Reason: country landing pages are English-only for MVP, so the
+   * Bengali toggle falls back to the Bengali homepage instead of linking to
+   * a 404 at /bn/countries/{slug}.
+   */
+  localeFallbacks?: Record<string, string>;
 }
 
 /**
@@ -31,7 +38,7 @@ export interface LanguageSwitcherProps
  * mobile navbar.
  */
 const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>(
-  ({ className, currentLocale, currentPath, compact, ...props }, ref) => {
+  ({ className, currentLocale, currentPath, compact, localeFallbacks, ...props }, ref) => {
     return (
       <div
         className={cn(
@@ -46,7 +53,9 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
           const isActive = locale.code === currentLocale;
           const prefix = locale.code === 'en' ? '' : `/${locale.code}`;
           const path = currentPath === '/' ? '' : currentPath.replace(LOCALE_PREFIX_RE, '');
-          const href = `${prefix}${path || '/'}`;
+          // Reason: use the fallback href for untranslated locales so the
+          // switcher never links to a 404.
+          const href = localeFallbacks?.[locale.code] ?? `${prefix}${path || '/'}`;
 
           return (
             <a

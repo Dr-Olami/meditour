@@ -19,7 +19,7 @@ Fill one in, then move it into the collection to publish it.
 4. If a Bengali translation exists, add a mirror file under `src\content\testimonials\bn\`
    with `"locale": "bn"` and the same `targetCountry`.
 5. Run `npx astro build` — the story appears automatically:
-   - On the matching country page (`/for/{targetCountry}/`) via `getTestimonialsByCountry()`
+   - On the matching country page (`/countries/{targetCountry}/`) via `getTestimonialsByCountry()`
    - On any page that renders the general testimonial carousel
 
 ## Field reference (matches `src/content/config.ts` testimonials schema)

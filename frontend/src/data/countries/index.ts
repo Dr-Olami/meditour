@@ -337,3 +337,39 @@ export function getCountryOgImage(countryData: CountryMetadata): string {
   const seed = imageSeeds[countryData.slug] || 'photo-1576091160550-2173dba999ef';
   return `https://images.unsplash.com/${seed}?w=1200&auto=format&fit=crop&q=80`;
 }
+
+/**
+ * Get the regional hero background image for a country.
+ *
+ * Reason: Until country-specific hero images are available, we use regional
+ * hero images that match the cultural/geographic context. Each region has
+ * a curated medical-tourism themed background image.
+ *
+ * @param region - Country's region.
+ * @returns Path to regional hero image.
+ */
+export function getRegionalHeroImage(region: Region): string {
+  const regionalImages: Record<Region, string> = {
+    'south-asia': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&auto=format&fit=crop&q=80',
+    'middle-east': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
+    africa: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80',
+    western: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80',
+    'central-asia': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
+  };
+  return regionalImages[region];
+}
+
+/**
+ * Get the local flag image URL for a country's flag code.
+ *
+ * Reason: Flags are copied from the `flagpack-core` package (size `l`,
+ * 32x24) into `public/images/flags/` so they are served locally with no
+ * runtime dependency on an external CDN. The UK flag is stored as GB.svg
+ * (Flagpack ships it as GB-UKM.svg).
+ *
+ * @param flagCode - ISO 3166-1 alpha-2 code, e.g. 'BD', 'AE', 'NG'.
+ * @returns Local path to the flag SVG.
+ */
+export function getFlagUrl(flagCode: string): string {
+  return `/images/flags/${flagCode.toUpperCase()}.svg`;
+}

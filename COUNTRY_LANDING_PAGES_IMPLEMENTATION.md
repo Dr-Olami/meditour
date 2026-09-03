@@ -20,7 +20,7 @@ Build a scalable system of country-specific landing pages that target high-inten
 - **Scalability:** Single dynamic template generates all 29 pages
 
 ### Architecture Approach
-- **Dynamic routing:** `/for/[country]` URL structure
+- **Dynamic routing:** `/countries/[country]` URL structure
 - **Centralized metadata:** Single configuration file for all countries
 - **Auto-generated content:** FAQs, stats, and messaging generated from metadata
 - **Reusable components:** Leverage existing design system
@@ -317,7 +317,7 @@ export function generateCountryFaqs(
 
 ### 3.1 Create Dynamic Country Page Template
 
-**File:** `frontend/src/pages/for/[country].astro`
+**File:** `frontend/src/pages/countries/[country].astro`
 
 **Tasks:**
 - [ ] Implement `getStaticPaths()` to generate all 29 country pages
@@ -350,7 +350,7 @@ export function generateCountryFaqs(
 
 ### 3.2 Create Bengali Version (Optional)
 
-**File:** `frontend/src/pages/bn/for/[country].astro`
+**File:** `frontend/src/pages/bn/countries/[country].astro`
 
 **Tasks:**
 - [ ] Duplicate English template for Bengali locale
@@ -455,7 +455,7 @@ const jsonLd = [
 - [ ] Link from country pages to relevant blog posts
 - [ ] Add "Related Countries" section (e.g., Bangladesh → Nepal, Sri Lanka)
 - [ ] Add country pages to main navigation (footer or dedicated menu)
-- [ ] Create country directory page: `/for/` listing all 29 countries
+- [ ] Create country directory page: `/countries/` listing all 29 countries
 
 **Deliverable:** Comprehensive internal linking structure
 
@@ -541,7 +541,7 @@ const jsonLd = [
 - [x] Test all 31 country pages load correctly — verified by `scripts/verify-country-pages.mjs`
 - [x] Verify dynamic content generation (stats, FAQs, testimonials) — verified on 5 pilot pages
 - [x] Test WhatsApp CTAs with country-specific pre-filled messages — verified on 5 pilot pages
-- [x] Test internal links (treatments, doctors, hospitals, blog) — no broken /for/ or /treatments/ links
+- [x] Test internal links (treatments, doctors, hospitals, blog) — no broken /countries/ or /treatments/ links
 - [ ] Test form submissions from country pages — manual testing required (LeadModalTrigger)
 - [ ] Test mobile responsiveness on all pages — manual/browser preview required
 - [ ] Test browser compatibility (Chrome, Safari, Firefox, Edge) — manual testing required
@@ -562,7 +562,7 @@ const jsonLd = [
 - [x] Verify canonical URLs — present on all country pages
 - [ ] Test page speed (Google PageSpeed Insights, GTmetrix) — manual/external
 - [ ] Check Core Web Vitals (LCP, FID, CLS) — manual/external
-- [x] Validate sitemap.xml includes all country pages — 166 URLs including all 31 /for/ pages
+- [x] Validate sitemap.xml includes all country pages — 166 URLs including all 31 /countries/ pages
 - [ ] Submit sitemap to Google Search Console — production deployment required
 - [x] Check robots.txt allows crawling — allows all except /api/, references sitemap
 - [ ] Meta description length optimization — 24 of 31 descriptions are 171-191 chars (ideal ≤170); trim in country metadata
@@ -683,7 +683,7 @@ const jsonLd = [
 - [ ] Add more testimonials for each country
 - [ ] Create video testimonials (high conversion)
 - [ ] Write more country-specific blog posts
-- [ ] Create treatment-specific landing pages per country (e.g., `/for/bangladesh/heart-surgery`)
+- [ ] Create treatment-specific landing pages per country (e.g., `/countries/bangladesh/heart-surgery`)
 - [ ] Add doctor profiles mentioning country experience
 - [ ] Create downloadable guides (PDF) per country
 
@@ -703,7 +703,7 @@ const jsonLd = [
 
 **Tasks:**
 - [ ] Translate country metadata to priority languages
-- [ ] Create language-specific country pages (e.g., `/bn/for/bangladesh`, `/ar/for/uae`)
+- [ ] Create language-specific country pages (e.g., `/bn/countries/bangladesh`, `/ar/countries/uae`)
 - [ ] Add hreflang tags for multi-language versions
 - [ ] Hire native translators for quality
 - [ ] Test language switcher functionality
@@ -743,16 +743,16 @@ frontend/
 
 ### URL Structure
 ```
-/for/bangladesh                       # Bangladesh landing page (EN)
-/for/uae                             # UAE landing page (EN)
-/for/nigeria                         # Nigeria landing page (EN)
-/bn/for/bangladesh                   # Bangladesh landing page (BN)
-/for/                                # Country directory (all 29 countries)
+/countries/bangladesh                       # Bangladesh landing page (EN)
+/countries/uae                             # UAE landing page (EN)
+/countries/nigeria                         # Nigeria landing page (EN)
+/bn/countries/bangladesh                   # Bangladesh landing page (BN)
+/countries/                                # Country directory (all 29 countries)
 ```
 
 ### Data Flow
 ```
-1. User visits /for/bangladesh
+1. User visits /countries/bangladesh
 2. Astro getStaticPaths() generates page from countries.ts
 3. getCountryMetadata('bangladesh') fetches metadata
 4. getTestimonialsByCountry('en', 'bangladesh') fetches testimonials

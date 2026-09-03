@@ -111,20 +111,20 @@ async function verifyFunctional(outDir, countrySlugs) {
   // 1. All country pages exist
   console.log('\n1. Country page existence:');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
-    check(html !== null, `/for/${slug}/ exists`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
+    check(html !== null, `/countries/${slug}/ exists`);
   }
 
-  // 2. /for/ directory page exists
+  // 2. /countries/ directory page exists
   console.log('\n2. Directory page:');
-  const dirHtml = await readHtml(outDir, 'for/index.html');
-  check(dirHtml !== null, '/for/ directory page exists');
+  const dirHtml = await readHtml(outDir, 'countries/index.html');
+  check(dirHtml !== null, '/countries/ directory page exists');
 
   // 3. Dynamic content on pilot country pages
   console.log('\n3. Dynamic content on pilot pages:');
   const pilots = ['bangladesh', 'uae', 'nigeria', 'kenya', 'usa'];
   for (const slug of pilots) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     check(html.includes('patients treated'), `${slug}: stat counter renders`);
     check(html.includes('FAQ') || html.includes('faq'), `${slug}: FAQ section renders`);
@@ -134,7 +134,7 @@ async function verifyFunctional(outDir, countrySlugs) {
   // 4. WhatsApp CTA with country-specific message
   console.log('\n4. WhatsApp CTAs:');
   for (const slug of pilots) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const waLinks = html.match(/href="https:\/\/wa\.me\/[^"]*"/g) || [];
     check(waLinks.length > 0, `${slug}: has WhatsApp link(s) (${waLinks.length} found)`);
@@ -147,33 +147,33 @@ async function verifyFunctional(outDir, countrySlugs) {
   // 5. Internal links resolve to existing files
   console.log('\n5. Internal link integrity (country pages):');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const links = [...html.matchAll(/href="(\/(?!https?:\/\/)[^"#]*)"/g)].map((m) => m[1]);
     for (const link of links) {
       // Skip anchors and external
       if (link.startsWith('#') || link.startsWith('http')) continue;
-      // Normalize: /for/bangladesh/ → for/bangladesh/index.html
+      // Normalize: /countries/bangladesh/ → countries/bangladesh/index.html
       let relPath = link.replace(/^\//, '');
       if (relPath.endsWith('/')) relPath += 'index.html';
       else if (!relPath.endsWith('.html')) relPath += '/index.html';
       const exists = await pathExists(outDir, relPath);
-      // Only fail on /for/ and /treatments/ links (other routes may be dynamic)
-      if (!exists && (link.startsWith('/for/') || link.startsWith('/treatments/') || link === '/for/' || link === '/treatments/')) {
+      // Only fail on /countries/ and /treatments/ links (other routes may be dynamic)
+      if (!exists && (link.startsWith('/countries/') || link.startsWith('/treatments/') || link === '/countries/' || link === '/treatments/')) {
         check(false, `${slug}: broken link ${link} → ${relPath}`);
       }
     }
   }
   // If no broken links were reported, log a pass
   if (!failures.some((f) => f.includes('broken link'))) {
-    check(true, 'No broken /for/ or /treatments/ links on any country page');
+    check(true, 'No broken /countries/ or /treatments/ links on any country page');
   }
 
   // 6. Navbar and footer have Countries link
   console.log('\n6. Navigation:');
-  const sampleHtml = await readHtml(outDir, 'for/bangladesh/index.html');
+  const sampleHtml = await readHtml(outDir, 'countries/bangladesh/index.html');
   if (sampleHtml) {
-    check(sampleHtml.includes('href="/for"'), 'Navbar/footer has /for link');
+    check(sampleHtml.includes('href="/countries"'), 'Navbar/footer has /countries link');
   }
 }
 
@@ -186,7 +186,7 @@ async function verifySeo(outDir, countrySlugs) {
   console.log('\n1. Structured data (JSON-LD):');
   const jsonLdTypes = new Map();
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const blocks = extractJsonLd(html);
     check(blocks.length >= 3, `${slug}: has ≥3 JSON-LD blocks (${blocks.length})`);
@@ -206,7 +206,7 @@ async function verifySeo(outDir, countrySlugs) {
   const titles = new Map();
   const descriptions = new Map();
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const titleMatch = html.match(/<title>([^<]*)<\/title>/i);
     const title = titleMatch ? titleMatch[1].trim() : null;
@@ -227,7 +227,7 @@ async function verifySeo(outDir, countrySlugs) {
   // 3. Canonical URLs
   console.log('\n3. Canonical URLs:');
   for (const slug of countrySlugs.slice(0, 5)) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const canonical = html.match(/<link[^>]*rel=["']canonical["'][^>]*>/i);
     check(canonical !== null, `${slug}: has canonical link tag`);
@@ -236,7 +236,7 @@ async function verifySeo(outDir, countrySlugs) {
   // 4. Open Graph tags (sample 5 pages)
   console.log('\n4. Open Graph tags (sample):');
   for (const slug of pilots) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const ogTitle = extractMeta(html, 'og:title');
     const ogDesc = extractMeta(html, 'og:description');
@@ -249,7 +249,7 @@ async function verifySeo(outDir, countrySlugs) {
   const sitemapXml = await readHtml(outDir, 'sitemap-0.xml');
   if (sitemapXml) {
     for (const slug of countrySlugs) {
-      check(sitemapXml.includes(`/for/${slug}`), `sitemap includes /for/${slug}`);
+      check(sitemapXml.includes(`/countries/${slug}`), `sitemap includes /countries/${slug}`);
     }
   } else {
     // Try sitemap.xml (older format)
@@ -280,7 +280,7 @@ async function verifyContentQuality(outDir, countrySlugs) {
   // 1. Every country page has an <h1>
   console.log('\n1. H1 presence:');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     const h1Match = html.match(/<h1[^>]*>([^<]*)<\/h1>/i);
     check(h1Match !== null, `${slug}: has <h1>`);
@@ -289,7 +289,7 @@ async function verifyContentQuality(outDir, countrySlugs) {
   // 2. Cost comparison cards present (replaced <table> with card grid)
   console.log('\n2. Cost comparison cards:');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     // Reason: cost section is now a TreatmentCostCard grid; check for card markup
     // plus the section heading rather than a legacy <table> element.
@@ -302,7 +302,7 @@ async function verifyContentQuality(outDir, countrySlugs) {
   // 3. Visa process steps present
   console.log('\n3. Visa process:');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     check(html.includes('visa') || html.includes('Visa'), `${slug}: mentions visa`);
   }
@@ -310,7 +310,7 @@ async function verifyContentQuality(outDir, countrySlugs) {
   // 4. Breadcrumbs present
   console.log('\n4. Breadcrumbs:');
   for (const slug of pilots) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     check(html.includes('breadcrumb') || html.includes('Breadcrumb') || html.includes('Countries'), `${slug}: has breadcrumb trail`);
   }
@@ -318,13 +318,13 @@ async function verifyContentQuality(outDir, countrySlugs) {
   // 5. Related countries section
   console.log('\n5. Related countries:');
   for (const slug of countrySlugs) {
-    const html = await readHtml(outDir, `for/${slug}/index.html`);
+    const html = await readHtml(outDir, `countries/${slug}/index.html`);
     if (!html) continue;
     // Countries with no neighbours (e.g. central-asia with only 1 country) may not have related
     if (slug === 'kazakhstan') {
       warn(false, `${slug}: no related countries expected (only Central Asia country)`);
     } else {
-      check(html.includes('/for/') && html.includes('countries we serve'), `${slug}: has related countries section`);
+      check(html.includes('/countries/') && html.includes('countries we serve'), `${slug}: has related countries section`);
     }
   }
 }
@@ -335,17 +335,17 @@ async function main() {
   const outDir = await findOutputDir();
   console.log(`Verifying build output in: ${outDir}`);
 
-  // Get country slugs from the built /for/ directory
-  const forDir = join(outDir, 'for');
+  // Get country slugs from the built /countries/ directory
+  const countriesDir = join(outDir, 'countries');
   let countrySlugs = [];
   try {
-    const entries = await readdir(forDir, { withFileTypes: true });
+    const entries = await readdir(countriesDir, { withFileTypes: true });
     countrySlugs = entries
       .filter((e) => e.isDirectory() && e.name !== '_astro')
       .map((e) => e.name)
       .sort();
   } catch {
-    console.error('No /for/ directory in build output');
+    console.error('No /countries/ directory in build output');
     process.exit(1);
   }
 
