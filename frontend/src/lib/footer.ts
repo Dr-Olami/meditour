@@ -22,6 +22,14 @@ export function getFooterLegalLinks(locale: Locale): FooterLegalLink[] {
     // Reason: /bn/countries now has a real Bengali directory page, so the
     // countries link uses the locale prefix like other footer links.
     { label: t.nav.countries, href: `${prefix}/countries` },
+    { label: t.nav.howItWorks, href: `${prefix}/how-it-works` },
+    { label: t.nav.visaAssistance, href: `${prefix}/medical-visa-assistance` },
+    { label: t.nav.travelAccommodation, href: `${prefix}/travel-accommodation-assistance` },
+    { label: t.nav.emergency, href: `${prefix}/emergency-urgent-cases` },
+    { label: t.nav.whyIndia, href: `${prefix}/why-india-for-medical-treatment` },
+    { label: t.nav.costCalculator, href: `${prefix}/cost-calculator` },
+    { label: t.nav.accreditations, href: `${prefix}/accreditations-certifications` },
+    { label: t.nav.contact, href: `${prefix}/contact` },
     { label: t.footer.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.footer.terms, href: `${prefix}/terms` },
     { label: t.footer.policies, href: `${prefix}/privacy` },

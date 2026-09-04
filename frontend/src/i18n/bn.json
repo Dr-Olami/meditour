@@ -11,6 +11,12 @@
     "hospitals": "হাসপাতাল",
     "countries": "দেশসমূহ",
     "howItWorks": "কীভাবে কাজ করে",
+    "visaAssistance": "মেডিকেল ভিসা",
+    "travelAccommodation": "ভ্রমণ ও থাকা",
+    "emergency": "জরুরি কেস",
+    "whyIndia": "কেন ভারত",
+    "costCalculator": "খরচ ক্যালকুলেটর",
+    "accreditations": "স্বীকৃতি",
     "testimonials": "রোগীর অভিজ্ঞতা",
     "faq": "প্রশ্নাবলী",
     "contact": "যোগাযোগ",
@@ -179,7 +185,7 @@
     "concierge": "কনসিয়ার্জ ও জরুরি সেবা",
     "conciergePrefix": "যোগাযোগের জন্য",
     "conciergeSuffix": "যোগাযোগ করুন",
-    "secondOpinion": "বিনামূল্যে দ্বিতীয় মতামত",
+    "secondOpinion": "বিনামূল্যে দ্বিতীয় মতামত নিন",
     "address": "ঠিকানার লাইন ১\nশহর, দেশ"
   },
   "doctors": {

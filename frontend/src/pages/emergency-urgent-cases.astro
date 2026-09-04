@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { LeadForm } from '../design-system/components/organisms/LeadForm';
+import { FAQAccordion } from '../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../design-system/components/atoms/Icon';
+import Breadcrumb from '../design-system/components/molecules/Breadcrumb.astro';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getTreatments } from '../lib/content';
+import { getInquiryLink } from '../lib/whatsapp';
+import { LEAD_SOURCE } from '../lib/crm';
+import { medicalWebPage, breadcrumbs } from '../lib/schema';
+
+const locale = 'en';
+const t = getTranslations(locale);
+
+const treatmentEntries = await getTreatments(locale);
+const treatmentOptions = treatmentEntries.map((entry) => ({
+  value: entry.data.name,
+  label: entry.data.name,
+}));
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/emergency-urgent-cases`;
+
+const urgentPathways = [
+  'Oncology — biopsy pending, staging needed, or treatment delay at home',
+  'Cardiac — angioplasty, bypass, or valve surgery with worsening symptoms',
+  'Transplant — liver or kidney evaluation with limited local options',
+  'Neurosurgery — brain or spine cases needing rapid specialist access',
+];
+
+const urgentSteps = [
+  'Coordinator acknowledges receipt — WhatsApp is fastest.',
+  'Reports are sent to relevant hospital international desks same day when possible.',
+  'You receive hospital fit, timeline, and indicative cost range as soon as reviewed.',
+  'Visa invitation and travel planning are accelerated for confirmed pathways.',
+];
+
+const faqs = [
+  {
+    question: 'How quickly can you respond to an urgent enquiry?',
+    answer: 'We acknowledge urgent enquiries on WhatsApp within hours, not days. Once reports are received, we send them to relevant hospital international desks the same day when possible. Hospital fit, timeline, and indicative cost range are shared as soon as the hospital reviews the case — typically within 24–48 hours.',
+  },
+  {
+    question: 'What documents should I send for an urgent case?',
+    answer: 'Send whatever you have immediately — even partial files help us start hospital outreach. Useful documents include: biopsy or pathology reports, imaging summaries (CT/MRI/echo), doctor notes or referral letters, current medication list, and passport copy. We tell you exactly what else is needed while the review is underway.',
+  },
+  {
+    question: 'Can you fast-track a medical visa for urgent cases?',
+    answer: 'Yes. Once a hospital confirms a treatment pathway, we expedite the invitation letter and coordinate with the embassy or e-visa portal to accelerate processing. In some cases, hospitals can issue a priority invitation letter that supports emergency visa applications. Visa approval timing still depends on the Indian government and your country of application.',
+  },
+  {
+    question: 'What if the patient is too sick to travel?',
+    answer: 'We coordinate with the hospital to assess whether the patient is fit to travel based on the medical reports. If air travel is not advisable, the hospital may advise a teleconsultation first or recommend stabilising treatment locally before travel. For patients who can travel with medical support, we arrange ambulance transfers and medical escort on the flight.',
+  },
+  {
+    question: 'Is there an extra charge for urgent case coordination?',
+    answer: 'No. Our coordination service is the same regardless of urgency. You pay the hospital directly for treatment. We do not charge patients for hospital matching, report review, visa coordination, or travel planning. Our role is to make the pathway faster and clearer for your family.',
+  },
+  {
+    question: 'Can a family member travel with an urgent patient?',
+    answer: 'Yes. Attendant visas are arranged alongside the patient visa, even on expedited timelines. We prioritise attendant visa documentation so a family member can travel with the patient from the start. Up to two attendants are typically allowed on an MX-Visa.',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'Emergency & Urgent Medical Cases',
+    url: pageUrl,
+    description: 'Fast-track support for time-sensitive medical travel to India — oncology, cardiac, transplant, and neurosurgery cases that cannot wait.',
+    inLanguage: 'en',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/` },
+    { name: 'Emergency & Urgent Cases', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`Emergency & Urgent Cases | ${t.site.name}`}
+  description="Fast-track support for time-sensitive medical travel to India — oncology, cardiac, transplant, and neurosurgery cases that cannot wait."
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO (warning-red soft background) ───────────────────────── */}
+    <section class="relative overflow-hidden bg-red-50 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-red-200/40 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-red-100/50 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/' }, { label: 'Emergency & Urgent Cases' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div class="rounded-2xl border border-red-200 bg-white/80 px-6 py-12 shadow-base md:px-12 md:py-14" data-anim="stagger-children">
+          <span class="inline-flex items-center gap-2 rounded-full bg-red-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-red-700">
+            <Icon name="alert" size={14} />
+            Urgent pathway
+          </span>
+          <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            Fast-track support for time-sensitive cases
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            If cancer, cardiac, transplant, or neurosurgery cannot wait, contact us immediately. We prioritize urgent enquiries for hospital matching, invitation letters, and travel planning.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={whatsappInquiryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-6 py-3 text-sm font-semibold text-white hover:bg-red-700"
+              data-anim="press-button"
+            >
+              <Icon name="whatsapp" size={18} />
+              WhatsApp urgent line
+            </a>
+            <a
+              href={`tel:+${whatsappNumber}`}
+              class="inline-flex items-center justify-center gap-2 rounded-card border-2 border-red-600 px-6 py-3 text-sm font-semibold text-red-700 hover:bg-red-50"
+              data-anim="press-button"
+            >
+              <Icon name="phone" size={18} />
+              Call {whatsappNumber}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── TWO-COLUMN: LEFT INFO + RIGHT LEAD FORM ──────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container grid gap-8 lg:grid-cols-2 lg:gap-12">
+        {/* ── LEFT: stacked info cards ─────────────────────────────── */}
+        <div class="space-y-6">
+          {/* Important warning */}
+          <div class="rounded-card border border-red-200 bg-red-50 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-red-700">
+              Important
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/80">
+              This page is for urgent medical travel coordination — not emergency ambulance care in your home country. If someone is in immediate life-threatening danger, call local emergency services first, then contact us for India treatment planning.
+            </p>
+          </div>
+
+          {/* Common urgent pathways */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              Common urgent pathways
+            </p>
+            <h2 class="mt-2 font-display text-xl font-bold text-ink">Cases we fast-track most often</h2>
+            <ul class="mt-4 space-y-3">
+              {urgentPathways.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-ink/80">
+                  <Icon name="check" size={18} className="mt-0.5 text-violet-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 text-sm text-ink/60">
+              Share available reports immediately — even partial files help us start hospital outreach while you gather remaining documents.
+            </p>
+          </div>
+
+          {/* What happens on an urgent enquiry */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ink">
+              What happens on an urgent enquiry
+            </p>
+            <ol class="mt-4 space-y-4">
+              {urgentSteps.map((step, index) => (
+                <li class="flex items-start gap-4 text-sm text-ink/80">
+                  <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border-2 border-ink text-xs font-bold text-ink">
+                    {index + 1}
+                  </span>
+                  <span class="pt-0.5">{step}</span>
+                </li>
+              ))}
+            </ol>
+            <p class="mt-5 text-sm text-ink/60">
+              Learn the full journey on our <a href="/how-it-works" class="font-semibold text-violet-600 hover:text-violet-700">how it works page</a>.
+            </p>
+          </div>
+        </div>
+
+        {/* ── RIGHT: lead form ─────────────────────────────────────── */}
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8 lg:sticky lg:top-8 lg:self-start" data-anim="fade-in-up">
+          <p class="text-xs font-semibold uppercase tracking-widest text-red-600">
+            Urgent enquiry
+          </p>
+          <h2 class="mt-2 font-display text-2xl font-bold text-ink">Send your case now</h2>
+          <p class="mt-2 text-sm text-ink/60">
+            Mark your case as urgent. A coordinator will acknowledge receipt on WhatsApp — usually within hours, not days.
+          </p>
+          <div class="mt-6">
+            <LeadForm
+              source={LEAD_SOURCE.EMERGENCY}
+              treatments={treatmentOptions}
+              client:load
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          Explore further
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          Related services for urgent medical travel to India.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="list" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">How it works</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">The full 8-step patient journey — what happens after you contact us.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">See the journey <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="document" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Medical visa assistance</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Fast-track visa invitation letters and expedited processing for urgent cases.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Visa guidance <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="plane" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Travel & accommodation</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Ambulance transfers, medical escort flights, and urgent accommodation.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Travel support <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/second-opinion" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Free second opinion</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Not sure about your diagnosis? Get a free honest second opinion before travelling.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Get second opinion <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/cost-calculator" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Cost calculator</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Estimate treatment costs quickly — even for urgent cases, indicative ranges help.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Estimate costs <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="phone" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Contact us</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Reach our urgent line on WhatsApp or phone — we acknowledge within hours.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Get in touch <Icon name="arrow-right" size={14} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          Frequently asked questions
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

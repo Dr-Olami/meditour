@@ -13,6 +13,7 @@ import { FAQAccordion } from '../design-system/components/organisms/FAQAccordion
 import { HeroSection } from '../design-system/components/organisms/HeroSection';
 import { StatementSection } from '../design-system/components/organisms/StatementSection';
 import { FloatingConsultCTA } from '../design-system/components/organisms/FloatingConsultCTA';
+import TreatmentsCtaSection from '../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { StatCounter } from '../design-system/components/organisms/StatCounter';
 import { WhyUsSection } from '../design-system/components/organisms/WhyUsSection';
 import { LeadForm } from '../design-system/components/organisms/LeadForm';
@@ -220,6 +221,13 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   caption={locale === 'bn' ? 'আমাদের দর্শন' : 'Our philosophy'}
 />
 
+<!-- Countries We Serve — dark two-column band with flag grid -->
+<CountriesServeSection
+  locale={locale}
+  countries={countries}
+  countriesHref={`${prefix}/countries`}
+/>
+
 <!-- How it works -->
 <section id="steps" class="bg-cream-100 py-20" data-anim="scroll-reveal">
   <div class="container">
@@ -277,13 +285,6 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   </section>
 )}
 
-<!-- Countries We Serve — dark two-column band with flag grid -->
-<CountriesServeSection
-  locale={locale}
-  countries={countries}
-  countriesHref={`${prefix}/countries`}
-/>
-
 <!-- Testimonials -->
 <section id="testimonials" class="bg-cream-100 py-20" data-anim="scroll-reveal">
   <TestimonialCarousel
@@ -301,17 +302,12 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   </div>
 </section>
 
-<!-- Floating consult CTA -->
-<section class="bg-cream-100 py-20" data-anim="scroll-reveal">
-  <div class="container" data-anim="fade-in-up">
-    <FloatingConsultCTA
-      headline={t.cta.title}
-      subtext={t.cta.subtitle}
-      primaryCta={{ label: t.nav.cta, href: '#contact' }}
-      secondaryCta={{ label: locale === 'bn' ? 'হোয়াটসঅ্যাপ' : 'WhatsApp', href: whatsappInquiryHref }}
-    />
-  </div>
-</section>
+<!-- CTA card -->
+<TreatmentsCtaSection
+  locale={locale}
+  primaryCta={{ label: t.nav.cta, href: '#contact' }}
+  secondaryCta={{ label: locale === 'bn' ? 'হোয়াটসঅ্যাপ' : 'WhatsApp', href: whatsappInquiryHref }}
+/>
 
 <!-- Contact form -->
 <section id="contact" class="bg-cream-200 py-20" data-anim="scroll-reveal">

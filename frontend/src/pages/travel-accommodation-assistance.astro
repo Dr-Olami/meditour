@@ -1,0 +1,324 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import { StepTimeline } from '../design-system/components/organisms/StepTimeline';
+import { FAQAccordion } from '../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../design-system/components/atoms/Icon';
+import Breadcrumb from '../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../design-system/components/organisms/TreatmentsCtaSection.astro';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getInquiryLink } from '../lib/whatsapp';
+import { medicalWebPage, breadcrumbs } from '../lib/schema';
+
+const locale = 'en';
+const t = getTranslations(locale);
+
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/travel-accommodation-assistance`;
+
+const travelSteps = [
+  {
+    title: 'Flight guidance & booking',
+    description: "We help identify the best flight routes, airlines, and fares to Bangalore (or your treatment city). We advise on arrival timing to align with hospital admission and visa validity windows.",
+    duration: '1–2 days',
+  },
+  {
+    title: 'Airport pickup',
+    description: "A coordinator meets you at the airport arrivals hall with a name placard. Wheelchair assistance and ambulance transfer can be arranged for patients who cannot travel by car.",
+    duration: 'Pre-arranged',
+  },
+  {
+    title: 'Hospital-area accommodation',
+    description: "We shortlist hotels and serviced apartments within 10–15 minutes of your hospital, filtered by budget, family-friendliness, and recovery needs (kitchenette, elevator, quiet floor).",
+    duration: '1–2 days',
+  },
+  {
+    title: 'Interpreter & language support',
+    description: "Bengali, Arabic, French, Amharic, and other interpreters are arranged for consultations, consent forms, and day-to-day communication — so nothing is lost in translation.",
+    duration: 'On request',
+  },
+  {
+    title: 'Daily logistics during stay',
+    description: "Our Bangalore team stays reachable on WhatsApp throughout your stay. We help with local transport, pharmacy runs, food preferences, SIM cards, and any unexpected needs.",
+    duration: 'Throughout stay',
+  },
+  {
+    title: 'Discharge & departure',
+    description: "We coordinate discharge timing, medicine pickup, airport drop, and flight check-in guidance. For patients needing medical escort on the flight home, we arrange that too.",
+    duration: '1 day',
+  },
+];
+
+const accommodationOptions = [
+  {
+    type: 'Budget guesthouses',
+    price: '₹800–₹1,500 / night',
+    detail: 'Clean, basic rooms near the hospital. Suitable for short stays or attendants on a tight budget.',
+  },
+  {
+    type: 'Mid-range hotels',
+    price: '₹1,500–₹3,500 / night',
+    detail: 'Comfortable rooms with breakfast, Wi-Fi, and AC. Most popular choice for patient families.',
+  },
+  {
+    type: 'Serviced apartments',
+    price: '₹2,500–₹5,000 / night',
+    detail: 'Kitchenette, separate bedroom, and living area. Ideal for longer stays or families cooking their own meals.',
+  },
+  {
+    type: 'Recovery-friendly stays',
+    price: 'On request',
+    detail: 'Ground-floor or elevator access, quiet location, and proximity to physio/dialysis centres. Arranged based on clinical needs.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Do you book flights for us?',
+    answer: 'We do not book flights directly, but we guide you on the best routes, airlines, and timing to align with your hospital admission. We recommend booking through your preferred travel agent or airline website once the treatment dates are confirmed.',
+  },
+  {
+    question: 'Is airport pickup included?',
+    answer: 'Yes. Airport pickup is coordinated by our team at no extra service charge. A coordinator meets you at the arrivals hall with a name placard. For patients who need ambulance transfer from the airport, that is arranged at cost.',
+  },
+  {
+    question: 'How close is the accommodation to the hospital?',
+    answer: 'All recommended accommodation is within 10–15 minutes of your hospital. We prioritise proximity so attendants can easily travel between the hospital and the hotel, and patients can return quickly after discharge.',
+  },
+  {
+    question: 'Can you arrange interpreters for my language?',
+    answer: 'Yes. We arrange interpreters for Bengali, Arabic, French, Amharic, Hausa, and other languages on request. Interpreters can accompany you to consultations, help with consent forms, and assist with day-to-day communication.',
+  },
+  {
+    question: 'What if I have dietary restrictions?',
+    answer: 'Bangalore has restaurants serving South Asian, Middle Eastern, African, and vegetarian cuisine. Serviced apartments with kitchenettes are available if you prefer to cook. We help you find food options that match your dietary or religious requirements.',
+  },
+  {
+    question: 'Is there support after discharge from the hospital?',
+    answer: 'Yes. Our team stays reachable on WhatsApp after discharge. We help with medicine pickup, follow-up appointment scheduling, physiotherapy coordination, and safe departure planning — including medical escort on the flight if needed.',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'Travel & Accommodation Assistance for Medical Treatment in India',
+    url: pageUrl,
+    description: 'Flight guidance, airport pickup, hospital-area accommodation, interpreters, and daily logistics for international patients travelling to India for treatment.',
+    inLanguage: 'en',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/` },
+    { name: 'Travel & Accommodation', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`Travel & Accommodation Assistance | ${t.site.name}`}
+  description="Flight guidance, airport pickup, hospital-area accommodation, interpreters, and daily logistics for international patients travelling to India for treatment."
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO ─────────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-cream-100 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/' }, { label: 'Travel & Accommodation' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+            Travel support
+          </span>
+          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            Travel & accommodation assistance
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            From flight guidance to airport pickup, hospital-area stays, interpreters, and daily logistics — our Bangalore team keeps your family supported at every step of the journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── QUICK ANSWER CARD ────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mx-auto max-w-3xl rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+          <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+            Quick answer
+          </p>
+          <p class="mt-3 text-base leading-relaxed text-ink/80">
+            Khan Meditour coordinates the full travel pathway for international patients: flight guidance, airport pickup, accommodation near your hospital, interpreter support, and daily logistics. Our Bangalore team stays reachable on WhatsApp throughout your stay — you are not navigating India alone.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── TRAVEL PROCESS TIMELINE ──────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          The travel pathway — step by step
+        </h2>
+        <StepTimeline steps={travelSteps} client:load />
+      </div>
+    </section>
+
+    {/* ── ACCOMMODATION OPTIONS ────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2 class="mb-8 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          Accommodation options
+        </h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {accommodationOptions.map((option) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+              <h3 class="font-display text-lg font-bold text-ink">{option.type}</h3>
+              <p class="mt-1 text-sm font-semibold text-violet-600">{option.price}</p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/70">{option.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-ink/50">
+          Prices are indicative and vary by season, location, and availability. We share confirmed rates before you travel.
+        </p>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          Explore further
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          Related services to help you plan your stay in India.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="list" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">How it works</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">The full 8-step patient journey from enquiry to follow-up after return.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">See the journey <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="document" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Medical visa assistance</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Document checklists, processing times, and attendant visas for your trip.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Visa guidance <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/emergency-urgent-cases" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-600/10">
+                <Icon name="alert" size={20} className="text-red-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Urgent cases</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Fast-track travel and hospital coordination for time-sensitive cases.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Urgent pathway <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/countries" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="globe" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Country guides</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Region-specific travel notes, flight routes, and accommodation tips.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Browse guides <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="hospital" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Compare hospitals</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">See hospital locations and facilities to plan your stay nearby.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">View hospitals <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="phone" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Contact us</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Need help booking flights or accommodation? Reach us on WhatsApp.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">Get in touch <Icon name="arrow-right" size={14} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          Frequently asked questions
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+
+    {/* ── READY TO START CARD ──────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="en"
+      variant="light"
+      eyebrow="Ready to start?"
+      headline="Plan your travel with confidence"
+      body="Share your treatment city and expected dates — we will map flights, accommodation, and pickup logistics so your arrival in India is smooth and stress-free."
+      primaryCta={{ label: 'Get free second opinion', href: '/second-opinion' }}
+      secondaryCta={{ label: 'Get a free quote', href: whatsappInquiryHref }}
+    />
+
+    {/* ── CTA ──────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="en"
+      eyebrow="We're here to help"
+      headline="Questions about travel or accommodation?"
+      body="Tell us your treatment type, city, and family size — we will recommend the best accommodation, transport, and interpreter options for your stay."
+      primaryCta={{ label: 'Get free quote', href: whatsappInquiryHref }}
+      secondaryCta={{ label: 'Contact us', href: '/contact' }}
+      tertiaryCta={{ label: 'WhatsApp us', href: whatsappInquiryHref }}
+    />
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

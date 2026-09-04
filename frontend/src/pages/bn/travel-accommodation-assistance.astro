@@ -1,0 +1,324 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { StepTimeline } from '../../design-system/components/organisms/StepTimeline';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/travel-accommodation-assistance`;
+
+const travelSteps = [
+  {
+    title: 'ফ্লাইট নির্দেশনা ও বুকিং',
+    description: 'আমরা ব্যাঙ্গালোরে (বা আপনার চিকিৎসা শহরে) সেরা ফ্লাইট রুট, এয়ারলাইন ও ভাড়া চিহ্নিত করতে সাহায্য করি। হাসপাতাল ভর্তি ও ভিসার বৈধতার সাথে মিলিয়ে আগমনের সময় নির্দেশনা দেই।',
+    duration: '১–২ দিন',
+  },
+  {
+    title: 'এয়ারপোর্ট পিকআপ',
+    description: 'একজন কোঅর্ডিনেটর নামের প্ল্যাকার্ড নিয়ে এয়ারপোর্ট আরাইভাল হলে আপনাকে স্বাগত জানান। যারা গাড়িতে ভ্রমণ করতে পারেন না তাদের জন্য হুইলচেয়ার সহায়তা ও অ্যাম্বুলেন্স ট্রান্সফার সাজানো যায়।',
+    duration: 'পূর্ব-ব্যবস্থা',
+  },
+  {
+    title: 'হাসপাতাল-এলাকায় থাকা',
+    description: 'আমরা আপনার হাসপাতালের ১০–১৫ মিনিটের মধ্যে হোটেল ও সার্ভিসড অ্যাপার্টমেন্ট তালিকা তৈরি করি — বাজেট, পরিবার-বান্ধবতা ও পুনরুদ্ধার প্রয়োজন অনুযায়ী ফিল্টার করে।',
+    duration: '১–২ দিন',
+  },
+  {
+    title: 'অনুবাদক ও ভাষা সহায়তা',
+    description: 'বাংলা, আরবি, ফরাসি, আমহারিক সহ অন্যান্য ভাষার অনুবাদক পরামর্শ, সম্মতি ফর্ম এবং দৈনন্দিন যোগাযোগের জন্য সাজানো হয় — যাতে কিছু অনুবাদে হারিয়ে না যায়।',
+    duration: 'অনুরোধে',
+  },
+  {
+    title: 'থাকাকালীন দৈনন্দিন লজিস্টিকস',
+    description: 'আমাদের ব্যাঙ্গালোর টিম আপনার থাকাকালীন WhatsApp-এ সংযোগযোগ্য থাকে। আমরা স্থানীয় পরিবহন, ফার্মেসি, খাবারের পছন্দ, SIM কার্ড এবং অপ্রত্যাশিত প্রয়োজনে সাহায্য করি।',
+    duration: 'সম্পূর্ণ থাকাকালীন',
+  },
+  {
+    title: 'ডিসচার্জ ও প্রস্থান',
+    description: 'আমরা ডিসচার্জের সময়, ওষুধ পিকআপ, এয়ারপোর্ট ড্রপ এবং ফ্লাইট চেক-ইন নির্দেশনা সমন্বয় করি। দেশে ফেরার ফ্লাইটে মেডিকেল এসকর্ট প্রয়োজন হলে তাও আমরা সাজাই।',
+    duration: '১ দিন',
+  },
+];
+
+const accommodationOptions = [
+  {
+    type: 'বাজেট গেস্টহাউস',
+    price: '₹৮০০–₹১,৫০০ / রাত',
+    detail: 'হাসপাতালের কাছে পরিষ্কার, সাধারণ রুম। সংক্ষিপ্ত থাকা বা কট বাজেটে অ্যাটেনড্যান্টদের জন্য উপযুক্ত।',
+  },
+  {
+    type: 'মধ্যম-স্তরের হোটেল',
+    price: '₹১,৫০০–₹৩,৫০০ / রাত',
+    detail: 'ব্রেকফাস্ট, Wi-Fi ও AC সহ আরামদায়ক রুম। রোগী পরিবারের জন্য সবচেয়ে জনপ্রিয় পছন্দ।',
+  },
+  {
+    type: 'সার্ভিসড অ্যাপার্টমেন্ট',
+    price: '₹২,৫০০–₹৫,০০০ / রাত',
+    detail: 'কিচেনেট, পৃথক বেডরুম ও লিভিং এরিয়া। দীর্ঘ থাকা বা নিজে রান্না করা পরিবারের জন্য আদর্শ।',
+  },
+  {
+    type: 'পুনরুদ্ধার-বান্ধব থাকা',
+    price: 'অনুরোধে',
+    detail: 'নিচতলা বা লিফট অ্যাক্সেস, শান্ত অবস্থান এবং ফিজিও/ডায়ালাইসিস কেন্দ্রের নিকটতা। ক্লিনিকাল প্রয়োজন অনুযায়ী সাজানো হয়।',
+  },
+];
+
+const faqs = [
+  {
+    question: 'আপনারা কি আমাদের জন্য ফ্লাইট বুক করেন?',
+    answer: 'আমরা সরাসরি ফ্লাইট বুক করি না, তবে হাসপাতাল ভর্তির সাথে মিলিয়ে সেরা রুট, এয়ারলাইন ও সময়ের নির্দেশনা দেই। চিকিৎসার তারিখ নিশ্চিত হলে আপনার পছন্দের ট্রাভেল এজেন্ট বা এয়ারলাইন ওয়েবসাইটে বুকিং করতে আমরা সুপারিশ করি।',
+  },
+  {
+    question: 'এয়ারপোর্ট পিকআপ কি অন্তর্ভুক্ত?',
+    answer: 'হ্যাঁ। এয়ারপোর্ট পিকআপ আমাদের টিম দ্বারা সমন্বয় করা হয়, কোনো অতিরিক্ত সার্ভিস চার্জ ছাড়া। একজন কোঅর্ডিনেটর নামের প্ল্যাকার্ড নিয়ে আরাইভাল হলে আপনাকে স্বাগত জানান। এয়ারপোর্ট থেকে অ্যাম্বুলেন্স ট্রান্সফার প্রয়োজন হলে তা খরচে সাজানো হয়।',
+  },
+  {
+    question: 'থাকা হাসপাতাল থেকে কতটা কাছে?',
+    answer: 'সমস্ত সুপারিশকৃত থাকা আপনার হাসপাতালের ১০–১৫ মিনিটের মধ্যে। আমরা নিকটতা অগ্রাধিকার দেই যাতে অ্যাটেনড্যান্টরা হাসপাতাল ও হোটেলের মধ্যে সহজে যাতায়াত করতে পারেন এবং রোগীরা ডিসচার্জের পর দ্রুত ফিরতে পারেন।',
+  },
+  {
+    question: 'আমার ভাষার জন্য অনুবাদক সাজানো যাবে?',
+    answer: 'হ্যাঁ। আমরা অনুরোধে বাংলা, আরবি, ফরাসি, আমহারিক, হাউসা সহ অন্যান্য ভাষার অনুবাদক সাজাই। অনুবাদকরা পরামর্শে সঙ্গী হতে পারেন, সম্মতি ফর্মে সাহায্য করতে পারেন এবং দৈনন্দিন যোগাযোগে সহায়তা করতে পারেন।',
+  },
+  {
+    question: 'খাদ্য সীমাবদ্ধতা থাকলে কী হবে?',
+    answer: 'ব্যাঙ্গালোরে দক্ষিণ এশীয়, মধ্যপ্রাচ্য, আফ্রিকান ও নিরামিষ রেস্তোরাঁ রয়েছে। নিজে রান্না করতে চাইলে কিচেনেট সহ সার্ভিসড অ্যাপার্টমেন্ট উপলব্ধ। আপনার খাদ্য বা ধর্মীয় প্রয়োজন অনুযায়ী খাবারের বিকল্প খুঁজে পেতে আমরা সাহায্য করি।',
+  },
+  {
+    question: 'হাসপাতাল থেকে ডিসচার্জের পর কি সহায়তা আছে?',
+    answer: 'হ্যাঁ। ডিসচার্জের পরও আমাদের টিম WhatsApp-এ সংযোগযোগ্য থাকে। আমরা ওষুধ পিকআপ, ফলো-আপ অ্যাপয়েন্টমেন্ট, ফিজিওথেরাপি সমন্বয় এবং নিরাপদ প্রস্থান পরিকল্পনায় সাহায্য করি — প্রয়োজনে ফ্লাইটে মেডিকেল এসকর্ট সহ।',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'ভারতে চিকিৎসার জন্য ভ্রমণ ও থাকা সহায়তা',
+    url: pageUrl,
+    description: 'আন্তর্জাতিক রোগীদের জন্য ফ্লাইট নির্দেশনা, এয়ারপোর্ট পিকআপ, হাসপাতাল-এলাকায় থাকা, অনুবাদক এবং দৈনন্দিন লজিস্টিকস সহায়তা।',
+    inLanguage: 'bn',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/bn/` },
+    { name: 'ভ্রমণ ও থাকা', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`ভ্রমণ ও থাকা সহায়তা | ${t.site.name}`}
+  description="আন্তর্জাতিক রোগীদের জন্য ফ্লাইট নির্দেশনা, এয়ারপোর্ট পিকআপ, হাসপাতাল-এলাকায় থাকা, অনুবাদক এবং দৈনন্দিন লজিস্টিকস সহায়তা।"
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/bn/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO ─────────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-cream-100 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/bn' }, { label: 'ভ্রমণ ও থাকা' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+            ভ্রমণ সহায়তা
+          </span>
+          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            ভ্রমণ ও থাকা সহায়তা
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            ফ্লাইট নির্দেশনা থেকে এয়ারপোর্ট পিকআপ, হাসপাতাল-এলাকায় থাকা, অনুবাদক এবং দৈনন্দিন লজিস্টিকস — আমাদের ব্যাঙ্গালোর টিম যাত্রার প্রতিটি ধাপে আপনার পরিবারকে সহায়তা দেয়।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── QUICK ANSWER CARD ────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mx-auto max-w-3xl rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+          <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+            দ্রুত উত্তর
+          </p>
+          <p class="mt-3 text-base leading-relaxed text-ink/80">
+            খান মেডিট্যুর আন্তর্জাতিক রোগীদের জন্য সম্পূর্ণ ভ্রমণ পথ সমন্বয় করে: ফ্লাইট নির্দেশনা, এয়ারপোর্ট পিকআপ, হাসপাতালের কাছে থাকা, অনুবাদক সহায়তা এবং দৈনন্দিন লজিস্টিকস। আমাদের ব্যাঙ্গালোর টিম আপনার থাকাকালীন WhatsApp-এ সংযোগযোগ্য থাকে — আপনি একা ভারতে নন।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── TRAVEL PROCESS TIMELINE ──────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          ভ্রমণ পথ — ধাপে ধাপে
+        </h2>
+        <StepTimeline steps={travelSteps} client:load />
+      </div>
+    </section>
+
+    {/* ── ACCOMMODATION OPTIONS ────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2 class="mb-8 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          থাকার বিকল্প
+        </h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {accommodationOptions.map((option) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+              <h3 class="font-display text-lg font-bold text-ink">{option.type}</h3>
+              <p class="mt-1 text-sm font-semibold text-violet-600">{option.price}</p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/70">{option.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-ink/50">
+          মূল্য নির্দেশক এবং ঋতু, অবস্থান ও প্রাপ্যতা অনুযায়ী পরিবর্তিত হয়। আমরা আপনার ভ্রমণের আগে নিশ্চিত হার শেয়ার করি।
+        </p>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          আরও ঘুরে দেখুন
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          ভারতে আপনার থাকা পরিকল্পনায় সাহায্যকারী সম্পর্কিত সেবা।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/bn/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="list" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">কীভাবে কাজ করে</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">অনুসন্ধান থেকে ফেরার পর ফলো-আপ পর্যন্ত সম্পূর্ণ ৮-ধাপের রোগীর যাত্রা।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">যাত্রা দেখুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="document" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">মেডিকেল ভিসা সহায়তা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">আপনার ভ্রমণের জন্য ডকুমেন্ট চেকলিস্ট, প্রক্রিয়াকরণ সময় এবং অ্যাটেনড্যান্ট ভিসা।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">ভিসা নির্দেশনা <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/emergency-urgent-cases" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-600/10">
+                <Icon name="alert" size={20} className="text-red-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">জরুরি কেস</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">সময়-সংবেদনশীল কেসের জন্য দ্রুত-ট্র্যাক ভ্রমণ ও হাসপাতাল সমন্বয়।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">জরুরি পথ <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/countries" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="globe" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">দেশ গাইড</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">বিশেষ ভ্রমণ তথ্য, ফ্লাইট রুট এবং থাকার টিপস।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">গাইড ব্রাউজ করুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="hospital" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">হাসপাতাল তুলনা করুন</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">কাছাকাছি থাকা পরিকল্পনার জন্য হাসপাতালের অবস্থান ও সুবিধা দেখুন।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">হাসপাতাল দেখুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="phone" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">যোগাযোগ করুন</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">ফ্লাইট বা থাকা বুকিংয়ে সাহায্য দরকার? WhatsApp-এ আমাদের সাথে যোগাযোগ করুন।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">যোগাযোগ করুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          সাধারণ জিজ্ঞাসা
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+
+    {/* ── READY TO START CARD ──────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="bn"
+      variant="light"
+      eyebrow="শুরু করতে প্রস্তুত?"
+      headline="আত্মবিশ্বাসের সাথে আপনার ভ্রমণ পরিকল্পনা করুন"
+      body="আপনার চিকিৎসা শহর ও প্রত্যাশিত তারিখ শেয়ার করুন — আমরা ফ্লাইট, থাকা এবং পিকআপ লজিস্টিকস ম্যাপ করব যাতে ভারতে আপনার আগমন মসৃণ ও নিরাময় হয়।"
+      primaryCta={{ label: 'বিনামূল্যে দ্বিতীয় মতামত নিন', href: '/bn/second-opinion' }}
+      secondaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
+    />
+
+    {/* ── CTA ──────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="bn"
+      eyebrow="আমরা সাহায্যে আছি"
+      headline="ভ্রমণ বা থাকা সম্পর্কে প্রশ্ন?"
+      body="আপনার চিকিৎসার ধরন, শহর এবং পরিবারের আকার জানান — আমরা আপনার থাকার জন্য সেরা থাকা, পরিবহন ও অনুবাদক বিকল্প সুপারিশ করব।"
+      primaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
+      secondaryCta={{ label: 'যোগাযোগ করুন', href: '/bn/contact' }}
+      tertiaryCta={{ label: 'WhatsApp করুন', href: whatsappInquiryHref }}
+    />
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

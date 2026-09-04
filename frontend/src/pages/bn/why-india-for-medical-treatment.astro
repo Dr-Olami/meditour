@@ -1,0 +1,401 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/why-india-for-medical-treatment`;
+
+const advantages = [
+  {
+    title: 'উল্লেখযোগ্য খরচ সাশ্রয়',
+    detail: 'ভারতে চিকিৎসা সাধারণত মার্কিন যুক্তরাষ্ট্র, যুক্তরাজ্য বা ইউরোপের তুলনায় ৬০–৯০% কম এবং থাইল্যান্ড বা তুরস্কের তুলনায় ৪০–৭০% কম। একই প্রক্রিয়া, স্বীকৃত হাসপাতাল, ভগ্নাংশ মূল্যে।',
+    icon: 'check',
+  },
+  {
+    title: 'আন্তর্জাতিকভাবে স্বীকৃত হাসপাতাল',
+    detail: 'ভারতে ৪০+ JCI-স্বীকৃত এবং ৫০০+ NABH-স্বীকৃত হাসপাতাল রয়েছে। Apollo, Fortis, Manipal এবং Narayana কার্ডিয়াক, অনকোলজি, ট্রান্সপ্লান্ট ও অর্থোপেডিক কেয়ারে বিশ্বমান পূরণ করে।',
+    icon: 'check',
+  },
+  {
+    title: 'অভিজ্ঞ বিশেষজ্ঞ',
+    detail: 'ভারতীয় সার্জনরা প্রায়ই মার্কিন যুক্তরাষ্ট্র, যুক্তরাজ্য বা জার্মানিতে প্রশিক্ষণ নেন বা অনুশীলন করেন। অনেকেই হাজার হাজার প্রক্রিয়া সম্পন্ন করেছেন — যে অভিজ্ঞতা অন্যত্র কম মেলে।',
+    icon: 'check',
+  },
+  {
+    title: 'কম অপেক্ষার সময়',
+    detail: 'যুক্তরাজ্য, কানাডা ও অস্ট্রেলিয়ায় রোগীরা মাসের পর মাস নির্বাচিত সার্জারির জন্য অপেক্ষা করেন। ভারতে চিকিৎসা প্রায়ই অনুসন্ধানের কয়েকদিনের মধ্যে শুরু হতে পারে — ক্যানসার, কার্ডিয়াক ও ট্রান্সপ্লান্ট কেসের জন্য গুরুত্বপূর্ণ।',
+    icon: 'check',
+  },
+  {
+    title: 'ইংরেজিভাষী কেয়ার টিম',
+    detail: 'ডাক্তার, নার্স ও হাসপাতাল কর্মীরা সাবলীলভাবে ইংরেজি বলেন। প্রয়োজনে বাংলা, আরবি, ফরাসি, আমহারিক সহ অন্যান্য ভাষার অনুবাদক উপলব্ধ।',
+    icon: 'check',
+  },
+  {
+    title: 'উন্নত প্রযুক্তি ও অবকাঠামো',
+    detail: 'ভারতের শীর্ষ হাসপাতালগুলো পশ্চিমা হাসপাতালের মতো একই রোবোটিক সার্জারি, CyberKnife, PET-MRI এবং ট্রান্সপ্লান্ট প্রযুক্তি ব্যবহার করে — প্রায়ই নতুন সরঞ্জাম, সাম্প্রতিক ইনস্টল করা।',
+    icon: 'check',
+  },
+];
+
+const treatmentComparisons = [
+  { procedure: 'করোনারি আর্টারি বাইপাস (CABG)', usa: '$১,৫০,০০০+', india: '$৫,০০০–$৮,০০০', savings: '~৯০%' },
+  { procedure: 'হাঁটু প্রতিস্থাপন (একক)', usa: '$৪০,০০০–$৬০,০০০', india: '$৪,০০০–$৭,০০০', savings: '~৮৫%' },
+  { procedure: 'হিপ প্রতিস্থাপন', usa: '$৩৫,০০০–$৫০,০০০', india: '$৪,০০০–$৬,৫০০', savings: '~৮৫%' },
+  { procedure: 'IVF সাইকেল (ওষুধসহ)', usa: '$১৫,০০০–$২৫,০০০', india: '$২,৫০০–$৪,৫০০', savings: '~৮০%' },
+  { procedure: 'যকৃত ট্রান্সপ্লান্ট', usa: '$৩,০০,০০০–$৫,৭৫,০০০', india: '$৩৫,০০০–$৫০,০০০', savings: '~৮৫%' },
+  { procedure: 'স্পাইনাল ফিউশন', usa: '$৮০,০০০–$১,৫০,০০০', india: '$৬,০০০–$১১,০০০', savings: '~৯০%' },
+];
+
+const faqs = [
+  {
+    question: 'ভারতের হাসপাতালের মান কি সত্যিই পশ্চিমা হাসপাতালের সাথে তুলনীয়?',
+    answer: 'হ্যাঁ। ভারতে ৪০+ JCI-স্বীকৃত হাসপাতাল রয়েছে (Johns Hopkins, Mayo Clinic এবং Cleveland Clinic-এর মতো একই স্বীকৃতি) এবং ৫০০+ NABH-স্বীকৃত সুবিধা। Apollo, Fortis, Manipal এবং Narayana-এর মতো শীর্ষ হাসপাতাল পশ্চিমা প্রতিষ্ঠানের মতো অভিন্ন প্রযুক্তি ও প্রোটোকল ব্যবহার করে। অনেক ভারতীয় বিশেষজ্ঞ মার্কিন যুক্তরাষ্ট্র ও যুক্তরাজ্যে প্রশিক্ষণ নিয়েছেন বা কাজ করেছেন।',
+  },
+  {
+    question: 'ভারতে চিকিৎসা এত সস্তা কেন?',
+    answer: 'কম খরচের কারণ: কম ডাক্তারি বেতন (দক্ষতা বজায় রেখে), কম অবকাঠামো ও প্রশাসনিক খরচ, অনুকূল মুদ্রা বিনিময় হার, এবং উচ্চতর সার্জিক্যাল ভলিউম যা প্রতি-কেস ওভারহেড কমায়। কেয়ারের মান কম নয় — খরচের ভিত্তি কম।',
+  },
+  {
+    question: 'ভাষা কি বাধা হবে?',
+    answer: 'না। বড় ভারতীয় হাসপাতালে ডাক্তার, নার্স ও কর্মীরা সাবলীলভাবে ইংরেজি বলেন। যারা নিজের ভাষা পছন্দ করেন তাদের জন্য আমরা বাংলা, আরবি, ফরাসি, আমহারিক, হাউসা সহ অন্যান্য ভাষার অনুবাদক সাজাই — কোনো অতিরিক্ত সমন্বয় চার্জ ছাড়া।',
+  },
+  {
+    question: 'মেডিকেল পর্যটকদের জন্য কি ভারত নিরাপদ?',
+    answer: 'ব্যাঙ্গালোর, চেন্নাই এবং মুম্বাইয়ের মতো প্রধান চিকিৎসা শহরগুলোতে সুপ্রতিষ্ঠিত মেডিকেল ট্যুরিজম অবকাঠামো রয়েছে। হাসপাতালে আন্তর্জাতিক রোগী বিভাগ রয়েছে। আমাদের ব্যাঙ্গালোর টিম আপনার থাকাকালীন WhatsApp-এ সংযোগযোগ্য থাকে, এয়ারপোর্ট পিকআপ সমন্বয় করে এবং দৈনন্দিন লজিস্টিকসে সাহায্য করে যাতে আপনি একা না ঘুরেন।',
+  },
+  {
+    question: 'ভারত কোন চিকিৎসার জন্য সবচেয়ে পরিচিত?',
+    answer: 'ভারত কার্ডিয়াক সার্জারি (বাইপাস, ভালভ, অ্যাঞ্জিওপ্লাস্টি), অর্থোপেডিক্স (জয়েন্ট প্রতিস্থাপন), অনকোলজি, IVF ও ফার্টিলিটি, অর্গান ট্রান্সপ্লান্ট (যকৃত, কিডনি), অফথালমোলজি এবং নিউরোসার্জারিতে বিশ্বনেতা। ব্যাঙ্গালোর বিশেষত এই সব বিশেষত্বে কেন্দ্রীভূত দক্ষতা রয়েছে।',
+  },
+  {
+    question: 'আমার জন্য কোন হাসপাতাল সঠিক তা কীভাবে জানব?',
+    answer: 'এটাই আমরা করি। আপনার রোগনির্ণয়, বাজেট ও পছন্দের ভিত্তিতে আমরা স্বীকৃত হাসপাতাল ও বিশেষজ্ঞ তালিকা তৈরি করি, লিখিত নির্দেশক খরচের কোট শেয়ার করি এবং বিকল্প তুলনায় সাহায্য করি। আপনি পথ বেছে নেন — আমরা বাকিটা সমন্বয় করি।',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'মেডিকেল চিকিৎসার জন্য কেন ভারত',
+    url: pageUrl,
+    description: 'আন্তর্জাতিক রোগীরা মেডিকেল চিকিৎসার জন্য কেন ভারত বেছে নেন — খরচ সাশ্রয়, স্বীকৃত হাসপাতাল, অভিজ্ঞ বিশেষজ্ঞ, কম অপেক্ষার সময় এবং উন্নত প্রযুক্তি।',
+    inLanguage: 'bn',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/bn/` },
+    { name: 'কেন ভারত', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`মেডিকেল চিকিৎসার জন্য কেন ভারত | ${t.site.name}`}
+  description="আন্তর্জাতিক রোগীরা মেডিকেল চিকিৎসার জন্য কেন ভারত বেছে নেন — খরচ সাশ্রয়, স্বীকৃত হাসপাতাল, অভিজ্ঞ বিশেষজ্ঞ, কম অপেক্ষার সময় এবং উন্নত প্রযুক্তি।"
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/bn/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO ─────────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-cream-100 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/bn' }, { label: 'কেন ভারত' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+            কেন ভারত
+          </span>
+          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            পরিবারগুলো মেডিকেল চিকিৎসার জন্য কেন ভারত বেছে নেয়
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            বিশ্বমানের হাসপাতাল, বিশ্বব্যাপী প্রশিক্ষিত বিশেষজ্ঞ, এবং চিকিৎসা খরচ যা মানসম্মত কেয়ারকে সাশ্রয়ী করে — এখানে কেন ৩০+ দেশের রোগীরা প্রতি বছর ভারতে ভ্রমণ করেন।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── QUICK ANSWER CARD ────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mx-auto max-w-3xl rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+          <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+            দ্রুত উত্তর
+          </p>
+          <p class="mt-3 text-base leading-relaxed text-ink/80">
+            ভারত আন্তর্জাতিকভাবে স্বীকৃত হাসপাতাল, বিশ্বব্যাপী প্রশিক্ষিত সার্জন, উন্নত প্রযুক্তি এবং পশ্চিমা দেশের তুলনায় ৬০–৯০% কম খরচ একসাথে দেয়। অনেক পরিবারের জন্য ভারতই একমাত্র স্থান যেখানে জীবনরক্ষাকারী চিকিৎসা — কার্ডিয়াক সার্জারি, ক্যানসার কেয়ার, ট্রান্সপ্লান্ট — উচ্চমানের এবং সাশ্রয়ী উভয়। অপেক্ষার সময় দিন, মাস নয়।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── ADVANTAGES GRID ──────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          রোগীরা ভারত বেছে নেওয়ার ছয়টি কারণ
+        </h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {advantages.map((item) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+              <div class="flex items-start gap-3">
+                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-600">
+                  <Icon name={item.icon} size={16} className="text-white" />
+                </span>
+                <div>
+                  <h3 class="font-display text-lg font-bold text-ink">{item.title}</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-ink/70">{item.detail}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── COST COMPARISON TABLE ────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          খরচ তুলনা: ভারত বনাম মার্কিন যুক্তরাষ্ট্র
+        </h2>
+        <p class="mb-8 text-sm text-ink/60" data-anim="fade-in-up">
+          নির্দেশক প্যাকেজ খরচ। প্রকৃত মূল্য হাসপাতাল, সার্জন, রুম ক্যাটাগরি এবং কেসের জটিলতা অনুযায়ী পরিবর্তিত হয়। আমরা আপনার ভ্রমণের আগে নিশ্চিত কোট লিখিতভাবে শেয়ার করি।
+        </p>
+        {/* Mobile: cards */}
+        <div class="space-y-4 md:hidden" data-anim="fade-in-up">
+          {treatmentComparisons.map((row) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+              <h3 class="font-display text-base font-bold text-ink">{row.procedure}</h3>
+              <dl class="mt-3 space-y-2 text-sm">
+                <div class="flex items-center justify-between gap-4">
+                  <dt class="text-ink/50">মার্কিন যুক্তরাষ্ট্র</dt>
+                  <dd class="font-medium text-ink/80">{row.usa}</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                  <dt class="text-ink/50">ভারত</dt>
+                  <dd class="font-medium text-ink/80">{row.india}</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4 border-t border-cream-300 pt-2">
+                  <dt class="text-ink/50">সাশ্রয়</dt>
+                  <dd class="font-semibold text-violet-600">{row.savings}</dd>
+                </div>
+              </dl>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: table */}
+        <div class="hidden overflow-x-auto rounded-card border border-cream-300 bg-cream-100 md:block" data-anim="fade-in-up">
+          <table class="w-full text-left text-sm">
+            <thead class="border-b border-cream-300 bg-cream-200/50">
+              <tr>
+                <th class="px-4 py-3 font-semibold text-ink">প্রক্রিয়া</th>
+                <th class="px-4 py-3 font-semibold text-ink">মার্কিন যুক্তরাষ্ট্র (সাধারণ)</th>
+                <th class="px-4 py-3 font-semibold text-ink">ভারত (সাধারণ)</th>
+                <th class="px-4 py-3 font-semibold text-violet-600">সাশ্রয়</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-cream-300">
+              {treatmentComparisons.map((row) => (
+                <tr class="hover:bg-cream-200/30">
+                  <td class="px-4 py-3 font-medium text-ink">{row.procedure}</td>
+                  <td class="px-4 py-3 text-ink/70">{row.usa}</td>
+                  <td class="px-4 py-3 text-ink/70">{row.india}</td>
+                  <td class="px-4 py-3 font-semibold text-violet-600">{row.savings}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          আরও ঘুরে দেখুন
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          আত্মবিশ্বাসের সাথে ভারতে চিকিৎসা পরিকল্পনায় সাহায্যকারী গাইড ও সম্পদ।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Country guides */}
+          <a href="/bn/countries" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="globe" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">দেশ গাইড</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              বাংলাদেশ, উপসাগর, আফ্রিকা, যুক্তরাজ্য ও যুক্তরাষ্ট্রের রোগীদের জন্য বিশেষ নির্দেশনা — আপনার অঞ্চলের ভিসা ধাপ, খরচ ও ভ্রমণ তথ্য।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              দেশ গাইড ব্রাউজ করুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          {/* Hospitals */}
+          <a href="/bn/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="hospital" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">ভারতের হাসপাতাল</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              ব্যাঙ্গালোরে JCI ও NABH-স্বীকৃত হাসপাতাল — Apollo, Fortis, Manipal এবং Narayana। বিশেষত্ব, অবকাঠামো ও রোগী সুবিধা তুলনা করুন।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              হাসপাতাল তুলনা করুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          {/* Treatments */}
+          <a href="/bn/treatments" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">উপলব্ধ চিকিৎসা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              কার্ডিয়াক সার্জারি, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট, নিউরোসার্জারি এবং আরও — নির্দেশক খরচ, সময় ও পুনরুদ্ধার সময়রেখা সহ।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              চিকিৎসা ব্রাউজ করুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          {/* How it works */}
+          <a href="/bn/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="list" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">কীভাবে কাজ করে</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              প্রাথমিক অনুসন্ধান থেকে ফেরার পর ফলো-আপ পর্যন্ত ৮-ধাপের পথ — অনুসন্ধান, রিপোর্ট পর্যালোচনা, হাসপাতাল ম্যাচিং, ভিসা, ভ্রমণ, চিকিৎসা, পুনরুদ্ধার ও ফলো-আপ।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              সম্পূর্ণ যাত্রা দেখুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          {/* Medical visa */}
+          <a href="/bn/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="document" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">মেডিকেল ভিসা সহায়তা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              ধাপে ধাপে ভিসা নির্দেশনা — আমন্ত্রণ পত্র, ডকুমেন্ট চেকলিস্ট, ই-ভিসা বনাম দূতাবাস প্রক্রিয়াকরণ এবং পরিবারের সদস্যদের জন্য অ্যাটেনড্যান্ট ভিসা।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              ভিসা নির্দেশনা
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          {/* Travel & accommodation */}
+          <a href="/bn/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="plane" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">ভ্রমণ ও থাকা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              ফ্লাইট নির্দেশনা, এয়ারপোর্ট পিকআপ, হাসপাতাল-এলাকায় থাকা, অনুবাদক এবং দৈনন্দিন লজিস্টিকস — যাতে ভারতে আপনার আগমন মসৃণ ও নিরাময় হয়।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              ভ্রমণ সহায়তা
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          সাধারণ জিজ্ঞাসা
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+
+    {/* ── READY TO START CARD ──────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="bn"
+      variant="light"
+      eyebrow="শুরু করতে প্রস্তুত?"
+      headline="আপনার কেসের জন্য ভারত কী অফার করতে পারে দেখুন"
+      body="আপনার রোগনির্ণয় শেয়ার করুন — আমরা স্বীকৃত হাসপাতালের সাথে ম্যাচ করব, নির্দেশক খরচের কোট শেয়ার করব এবং বিকল্প তুলনা করব — যাতে আপনি সিদ্ধান্ত নিতে পারেন ভারত আপনার পরিবারের জন্য সঠিক কিনা।"
+      primaryCta={{ label: 'বিনামূল্যে দ্বিতীয় মতামত নিন', href: '/bn/second-opinion' }}
+      secondaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
+    />
+
+    {/* ── CTA ──────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="bn"
+      eyebrow="আমরা সাহায্যে আছি"
+      headline="ভারত আপনার জন্য সঠিক কিনা এখনও সিদ্ধান্ত নিচ্ছেন?"
+      body="আপনার চিকিৎসার ধরন এবং কী সবচেয়ে গুরুত্বপূর্ণ — খরচ, অপেক্ষার সময়, বা হাসপাতালের সুনাম — জানান। আমরা ভারত বনাম আপনার স্থানীয় বিকল্পের সৎ তুলনা দেব।"
+      primaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
+      secondaryCta={{ label: 'যোগাযোগ করুন', href: '/bn/contact' }}
+      tertiaryCta={{ label: 'WhatsApp করুন', href: whatsappInquiryHref }}
+    />
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

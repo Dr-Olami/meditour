@@ -1,5 +1,7 @@
 export { CostEstimator } from './CostEstimator';
 export type { CostEstimatorProps, CostEstimatorOption } from './CostEstimator';
+export { CostCalculator } from './CostCalculator';
+export type { CostCalculatorProps, CostCalculatorTreatment } from './CostCalculator';
 export { BlogCard } from './BlogCard';
 export type { BlogCardProps, BlogPostSummary } from './BlogCard';
 export { BlogFilterList } from './BlogFilterList';

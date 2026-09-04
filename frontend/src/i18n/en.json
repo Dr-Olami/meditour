@@ -11,6 +11,12 @@
     "hospitals": "Hospitals",
     "countries": "Countries",
     "howItWorks": "How it works",
+    "visaAssistance": "Medical Visa",
+    "travelAccommodation": "Travel & Stay",
+    "emergency": "Urgent Cases",
+    "whyIndia": "Why India",
+    "costCalculator": "Cost Calculator",
+    "accreditations": "Accreditations",
     "testimonials": "Stories",
     "faq": "FAQ",
     "contact": "Contact",
@@ -179,7 +185,7 @@
     "concierge": "Concierge & Emergencies",
     "conciergePrefix": "For",
     "conciergeSuffix": "contact",
-    "secondOpinion": "Free Second Opinion",
+    "secondOpinion": "Get Free Second Opinion",
     "address": "Address line 1\nCity, Country"
   },
   "doctors": {

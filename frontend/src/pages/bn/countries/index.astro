@@ -4,6 +4,7 @@ import { Navbar } from '../../../design-system/components/organisms/Navbar';
 import { Footer } from '../../../design-system/components/organisms/Footer';
 import { Icon } from '../../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
@@ -212,43 +213,14 @@ const jsonLd = [
     </section>
 
     {/* ── CTA ──────────────────────────────────────────────────────────── */}
-    <section id="contact" class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
-      <div class="container">
-        <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-cream-100 md:px-12 md:py-12">
-          <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-          <div class="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100/50">
-                আমরা সাহায্যে আছি
-              </p>
-              <h2 class="mt-2 font-display text-2xl font-bold text-cream-100 md:text-3xl">
-                কোন গাইড আপনার কেসে ফিট করবে নিশ্চিত নন?
-              </h2>
-              <p class="mt-2 max-w-xl text-cream-100/60">
-                আপনার দেশ ও প্রয়োজনীয় চিকিৎসা জানান। আমরা সঠিক গাইড, খরচের অনুমান ও ভিসা ধাপ পাঠাব — বিনামূল্যে, WhatsApp-এ।
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a
-                href="/bn/second-opinion"
-                class="inline-flex items-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
-              >
-                বিনামূল্যে দ্বিতীয় মতামত নিন
-              </a>
-              <a
-                href={`https://wa.me/${whatsappNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
-              >
-                <Icon name="whatsapp" size={18} />
-                WhatsApp এ চ্যাট
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TreatmentsCtaSection
+      locale="bn"
+      eyebrow="আমরা সাহায্যে আছি"
+      headline="কোন গাইড আপনার কেসে ফিট করবে নিশ্চিত নন?"
+      body="আপনার দেশ ও প্রয়োজনীয় চিকিৎসা জানান। আমরা সঠিক গাইড, খরচের অনুমান ও ভিসা ধাপ পাঠাব — বিনামূল্যে, WhatsApp-এ।"
+      primaryCta={{ label: 'বিনামূল্যে দ্বিতীয় মতামত নিন', href: '/bn/second-opinion' }}
+      secondaryCta={{ label: 'WhatsApp এ চ্যাট', href: `https://wa.me/${whatsappNumber}` }}
+    />
   </main>
 
   <Footer

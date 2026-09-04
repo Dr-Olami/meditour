@@ -1,0 +1,355 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getHospitals, entrySlug } from '../../lib/content';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const hospitals = await getHospitals(locale);
+const hospitalAccreditations = hospitals
+  .filter((h) => h.data.accreditations && h.data.accreditations.length > 0)
+  .map((h) => ({
+    name: h.data.name,
+    slug: entrySlug(h),
+    city: h.data.city,
+    accreditations: h.data.accreditations!,
+  }));
+
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/accreditations-certifications`;
+
+const accreditations = [
+  {
+    abbr: 'JCI',
+    full: 'Joint Commission International',
+    origin: 'মার্কিন যুক্তরাষ্ট্র',
+    color: 'bg-blue-600',
+    description: 'Joint Commission-এর আন্তর্জাতিক শাখা — যে সংস্থা মার্কিন যুক্তরাষ্ট্রে Johns Hopkins, Mayo Clinic এবং Cleveland Clinic-কে স্বীকৃতি দেয়। JCI ১,৪০০+ পরিমাপযোগ্য উপাদানের বিরুদ্ধে হাসপাতাল জরিপ করে — রোগী সুরক্ষা, সংক্রমণ নিয়ন্ত্রণ, সার্জিক্যাল নিরাপত্তা, ওষুধ ব্যবস্থাপনা এবং রোগী অধিকার সহ।',
+    whatItMeans: [
+      'হাসপাতাল শীর্ষ মার্কিন হাসপাতালের মতো একই মান পূরণ করে',
+      'প্রতি ৩ বছরে কঠোর অন-সাইট জরিপ',
+      'রোগী সুরক্ষা ও ক্লিনিক্যাল প্রক্রিয়ার মানে ফোকাস',
+      'আন্তর্জাতিকভাবে গোল্ড স্ট্যান্ডার্ড হিসেবে স্বীকৃত',
+    ],
+    indiaCount: 'ভারতে ৪০+ JCI-স্বীকৃত হাসপাতাল',
+    verifyLabel: 'JCI অফিসিয়াল সাইটে যাচাই করুন',
+    verifyUrl: 'https://www.jointcommission.org/en',
+  },
+  {
+    abbr: 'NABH',
+    full: 'National Accreditation Board for Hospitals & Healthcare Providers',
+    origin: 'ভারত (ISQuA স্বীকৃত)',
+    color: 'bg-violet-600',
+    description: 'NABH হাসপাতালের জন্য ভারতের স্বীকৃতি সংস্থা, International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত। এটি ক্লিনিক্যাল কেয়ার, রোগী সুরক্ষা, হাসপাতাল অবকাঠামো এবং কর্মী যোগ্যতার জন্য মান নির্ধারণ করে। NABH স্বীকৃতি একটি সুপরিচালিত হাসপাতালের চিহ্ন যা নথিভুক্ত মান বেঞ্চমার্ক পূরণ করে।',
+    whatItMeans: [
+      'ক্লিনিক্যাল ও নন-ক্লিনিক্যাল প্রক্রিয়ার নথিভুক্ত মান',
+      'স্বীকৃতি বজায় রাখতে নিয়মিত নজরদারি অডিট',
+      'ISQua স্বীকৃতি মানে মান বিশ্বব্যাপী বেঞ্চমার্ক পূরণ করে',
+      'ক্যাশলেস চিকিৎসার জন্য অনেক বীমাকারীর প্রয়োজন',
+    ],
+    indiaCount: 'ভারতে ৫০০+ NABH-স্বীকৃত হাসপাতাল',
+    verifyLabel: 'NABH অফিসিয়াল সাইটে যাচাই করুন',
+    verifyUrl: 'https://nabh.co/',
+  },
+  {
+    abbr: 'NABL',
+    full: 'National Accreditation Board for Testing and Calibration Laboratories',
+    origin: 'ভারত (ILAC MRA)',
+    color: 'bg-green-600',
+    description: 'NABL মেডিকেল ল্যাবরেটরির জন্য ISO 15189 মান পূরণকারী ডায়াগনস্টিক ল্যাবকে স্বীকৃতি দেয়। NABL-স্বীকৃত ল্যাব মানে আপনার রক্ত পরীক্ষা, বায়োপসি এবং ইমেজিং রিপোর্ট আন্তর্জাতিকভাবে গৃহীত নির্ভুলতা ও মান অনুযায়ী প্রক্রিয়াজাত — সঠিক রোগনির্ণয় ও চিকিৎসা পরিকল্পনার জন্য গুরুত্বপূর্ণ।',
+    whatItMeans: [
+      'ল্যাব ISO 15189 আন্তর্জাতিক মান পূরণ করে',
+      'সরঞ্জাম নিয়মিত ক্যালিব্রেটেড ও পরীক্ষিত',
+      'রিপোর্ট বিশ্বব্যাপী হাসপাতালে গৃহীত',
+      'ডায়াগনস্টিক ত্রুটির ঝুঁকি কমায়',
+    ],
+    indiaCount: 'ভারতজুড়ে হাজার হাজার NABL-স্বীকৃত ল্যাব',
+    verifyLabel: 'NABL অফিসিয়াল সাইটে যাচাই করুন',
+    verifyUrl: 'https://nabl-india.org/',
+  },
+];
+
+const faqs = [
+  {
+    question: 'মেডিকেল পর্যটকদের জন্য হাসপাতাল স্বীকৃতি কেন গুরুত্বপূর্ণ?',
+    answer: 'স্বীকৃতি একটি স্বাধীন যাচাই যে হাসপাতাল নথিভুক্ত মান ও নিরাপত্তা মান পূরণ করে। যারা ভ্রমণের আগে হাসপাতাল পরিদর্শন করতে পারেন না, তাদের জন্য JCI ও NABH-এর মতো স্বীকৃতি নিশ্চয়তা দেয় যে হাসপাতাল আপনার দেশের শীর্ষ হাসপাতালের মতো একই প্রোটোকল অনুসরণ করে — সার্জারি, সংক্রমণ নিয়ন্ত্রণ, ওষুধ নিরাপত্তা এবং রোগী অধিকারের জন্য।',
+  },
+  {
+    question: 'JCI স্বীকৃতি কি মার্কিন হাসপাতালের মতো একই?',
+    answer: 'JCI Joint Commission-এর আন্তর্জাতিক শাখা, যা বেশিরভাগ বড় মার্কিন হাসপাতালকে স্বীকৃতি দেয়। মান ঘনিষ্ঠভাবে সারিবদ্ধ, যদিও JCI আন্তর্জাতিক রোগীদের জন্য অতিরিক্ত মানদণ্ড অন্তর্ভুক্ত করে যেমন ভাষা অ্যাক্সেস, মেডিকেল রেকর্ড অনুবাদ এবং ক্রস-বর্ডার কেয়ার সমন্বয়। ভারতে JCI-স্বীকৃত হাসপাতাল মার্কিন যুক্তরাষ্ট্রে Joint Commission-স্বীকৃত হাসপাতালের মতো একই কোর মান পূরণ করে।',
+  },
+  {
+    question: 'NABH স্বীকৃতি আমার চিকিৎসার জন্য কী অর্থ বহন করে?',
+    answer: 'NABH স্বীকৃতি মানে হাসপাতাল ক্লিনিক্যাল কেয়ার, রোগী সুরক্ষা, অবকাঠামো এবং কর্মী যোগ্যতার মানের বিরুদ্ধে স্বাধীনভাবে মূল্যায়িত হয়েছে। এটি International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত, তাই মান বিশ্বব্যাপী বেঞ্চমার্ক পূরণ করে। অনেক ভারতীয় বীমাকারী ক্যাশলেস চিকিৎসার জন্য NABH প্রয়োজন, যা আপনার বিলিং প্রক্রিয়া সহজ করতে পারে।',
+  },
+  {
+    question: 'ভারতের সব হাসপাতালে কি এই স্বীকৃতি আছে?',
+    answer: 'না। ভারতের সংখ্যালঘু হাসপাতালই JCI বা NABH স্বীকৃত। আমরা শুধু স্বীকৃত হাসপাতালের সাথে কাজ করি কারণ স্বীকৃতি হলো মান ও নিরাপত্তার সবচেয়ে নির্ভরযোগ্য স্বাধীন সংকেত। আমরা আপনার সাথে হাসপাতালের বিকল্প শেয়ার করলে প্রতিটি হাসপাতালের স্বীকৃতি অবস্থা অন্তর্ভুক্ত করি যাতে আপনি সচেতন সিদ্ধান্ত নিতে পারেন।',
+  },
+  {
+    question: 'আমি কি নিজে হাসপাতালের স্বীকৃতি যাচাই করতে পারি?',
+    answer: 'হ্যাঁ। JCI তাদের ওয়েবসাইটে স্বীকৃত সংস্থার পাবলিক ডিরেক্টরি রাখে। NABH এবং NABL-এরও অনুসন্ধানযোগ্য ডিরেক্টরি আছে। আমরা প্রতিটি হাসপাতালের স্বীকৃতি বিবরণ শেয়ার করি এবং আপনি চিকিৎসার সিদ্ধান্ত নেওয়ার আগে স্বাধীনভাবে যাচাই করতে পারেন।',
+  },
+  {
+    question: 'ডাক্তারের যোগ্যতা সম্পর্কে কী — সেগুলোও কি স্বীকৃত?',
+    answer: 'ডাক্তারের যোগ্যতা স্বীকৃতির পরিবর্তে মেডিকেল কাউন্সিল নিবন্ধনের মাধ্যমে যাচাই করা হয়। ভারতীয় ডাক্তারদের Medical Council of India বা রাজ্য মেডিকেল কাউন্সিলে নিবন্ধিত হতে হয়। আমাদের অনেক পার্টনার ডাক্তার মার্কিন যুক্তরাষ্ট্র, যুক্তরাজ্য বা জার্মান প্রতিষ্ঠান থেকে ফেলোশিপ বা সার্টিফিকেশন ধরে রাখেন। আমরা প্রতিটি ডাক্তারের যোগ্যতা ও প্রশিক্ষণ ইতিহাস তাদের প্রোফাইল পৃষ্ঠায় শেয়ার করি।',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'স্বীকৃতি ও সার্টিফিকেশন',
+    url: pageUrl,
+    description: 'JCI, NABH এবং NABL স্বীকৃতি বুঝুন — ভারতে চিকিৎসার জন্য হাসপাতাল বেছে নেওয়ার সময় এই ব্যাজগুলো আপনার কেয়ারের জন্য কী অর্থ বহন করে।',
+    inLanguage: 'bn',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/bn/` },
+    { name: 'স্বীকৃতি', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`স্বীকৃতি ও সার্টিফিকেশন | ${t.site.name}`}
+  description="JCI, NABH এবং NABL স্বীকৃতি বুঝুন — ভারতে চিকিৎসার জন্য হাসপাতাল বেছে নেওয়ার সময় এই ব্যাজগুলো আপনার কেয়ারের জন্য কী অর্থ বহন করে।"
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/bn/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO ─────────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-cream-100 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-blue-600/5 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/bn' }, { label: 'স্বীকৃতি' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+            মানের মানদণ্ড
+          </span>
+          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            JCI, NABH এবং NABL — আপনার কেয়ারের জন্য ব্যাজগুলো কী অর্থ বহন করে
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            চিকিৎসার জন্য ভ্রমণ করলে আপনাকে জানতে হবে হাসপাতাল আন্তর্জাতিক মানের মান পূরণ করে কিনা। এখানে প্রতিটি স্বীকৃতি কী অর্থ বহন করে — এবং কেন আমরা শুধু স্বীকৃত হাসপাতালের সাথে কাজ করি।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── ACCREDITATION CARDS ──────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="space-y-6">
+          {accreditations.map((acc) => (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6 md:p-8" data-anim="fade-in-up">
+              <div class="grid gap-6 lg:grid-cols-[auto_1fr] lg:gap-8">
+                {/* Badge */}
+                <div class="flex flex-col items-start gap-3">
+                  <span class={`inline-flex items-center justify-center rounded-2xl ${acc.color} px-5 py-3 font-display text-2xl font-bold text-white shadow-base`}>
+                    {acc.abbr}
+                  </span>
+                  <span class="rounded-full bg-cream-200 px-3 py-1 text-xs font-medium text-ink/60">
+                    {acc.origin}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h2 class="font-display text-xl font-bold text-ink">{acc.full}</h2>
+                  <p class="mt-3 text-sm leading-relaxed text-ink/70">
+                    {acc.description}
+                  </p>
+
+                  {/* What it means */}
+                  <div class="mt-5">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-ink">
+                      আপনার জন্য এর অর্থ
+                    </p>
+                    <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+                      {acc.whatItMeans.map((item) => (
+                        <li class="flex items-start gap-2 text-sm text-ink/70">
+                          <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10 text-violet-600">
+                            <Icon name="check" size={12} className="text-violet-600" />
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <p class="mt-5 inline-flex items-center gap-2 rounded-full bg-cream-200 px-3 py-1.5 text-xs font-semibold text-ink/70">
+                    <Icon name="globe" size={12} className="text-ink/50" />
+                    {acc.indiaCount}
+                  </p>
+
+                  <a
+                    href={acc.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+                  >
+                    {acc.verifyLabel}
+                    <Icon name="arrow-right" size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── OUR ACCREDITED HOSPITALS ─────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          আমাদের স্বীকৃত পার্টনার হাসপাতাল
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          আমরা যে প্রতিটি হাসপাতাল সুপারিশ করি সেগুলোর অন্তত একটি স্বীকৃতি রয়েছে। এখানে ব্যাঙ্গালোরে আমাদের পার্টনার হাসপাতাল এবং তাদের স্বীকৃতি অবস্থা।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {hospitalAccreditations.map((h) => (
+            <a href={`/bn/hospitals/${h.slug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+              <h3 class="font-display text-base font-bold text-ink">{h.name}</h3>
+              <p class="mt-1 text-xs text-ink/50">{h.city}</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {h.accreditations.map((acc) => (
+                  <span class="inline-flex items-center gap-1 rounded-full bg-cream-200 px-2.5 py-1 text-xs font-semibold text-ink/70">
+                    <Icon name="check" size={10} className="text-violet-600" />
+                    {acc}
+                  </span>
+                ))}
+              </div>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                হাসপাতাল দেখুন
+                <Icon name="arrow-right" size={14} />
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS ───────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          আরও ঘুরে দেখুন
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          হাসপাতালের মান, চিকিৎসা খরচ এবং রোগীর যাত্রা সম্পর্কে আরও জানুন।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/bn/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="hospital" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">হাসপাতাল তুলনা করুন</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              ব্যাঙ্গালোরে আমাদের পার্টনার হাসপাতালের বিশেষত্ব, অবকাঠামো এবং স্বীকৃতি অবস্থা দেখুন।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              হাসপাতাল দেখুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          <a href="/bn/why-india-for-medical-treatment" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="globe" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">কেন ভারত</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              বুঝুন কেন ভারত মেডিকেল ট্যুরিজমে বিশ্বনেতা — খরচ সাশ্রয়, স্বীকৃত হাসপাতাল এবং অভিজ্ঞ বিশেষজ্ঞ।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              আরও পড়ুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+
+          <a href="/bn/cost-calculator" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">খরচ ক্যালকুলেটর</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              ভারতে স্বীকৃত হাসপাতালে আপনার চিকিৎসার নির্দেশক খরচের পরিসর পান।
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+              খরচ অনুমান করুন
+              <Icon name="arrow-right" size={14} />
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          সাধারণ জিজ্ঞাসা
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+
+    {/* ── CTA ──────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="bn"
+      eyebrow="আমরা সাহায্যে আছি"
+      headline="হাসপাতালের স্বীকৃতি যাচাই করতে চান?"
+      body="আমরা প্রতিটি হাসপাতালের স্বীকৃতি অবস্থা শেয়ার করি যা আমরা সুপারিশ করি। আপনার চিকিৎসার ধরন জানান — আমরা আপনার প্রয়োজনের সাথে মানানসই স্বীকৃত হাসপাতাল খুঁজে দেব।"
+      primaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
+      secondaryCta={{ label: 'যোগাযোগ করুন', href: '/bn/contact' }}
+      tertiaryCta={{ label: 'WhatsApp করুন', href: whatsappInquiryHref }}
+    />
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

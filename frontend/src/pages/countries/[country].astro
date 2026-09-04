@@ -7,6 +7,7 @@ import { FAQAccordion } from '../../design-system/components/organisms/FAQAccord
 import { StatCounter } from '../../design-system/components/organisms/StatCounter';
 import { Icon } from '../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
 import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName, ALL_COUNTRIES, getSeoTitle, getSeoDescription, getCountryOgImage, getRegionalHeroImage, getFlagUrl } from '../../data/countries';
 import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals } from '../../lib/content';
@@ -428,7 +429,7 @@ const jsonLd = [
                   </div>
                 )}
                 <div class="flex flex-1 flex-col p-5">
-                  <h3 class="font-display text-lg font-semibold text-ink group-hover:text-violet-600">
+                  <h3 class="font-display text-lg font-semibold text-ink">
                     {hospital.data.name}
                   </h3>
                   <p class="mt-1 text-xs text-ink/50">{hospital.data.city}</p>
@@ -483,7 +484,7 @@ const jsonLd = [
                   </div>
                 )}
                 <div class="flex flex-1 flex-col p-4">
-                  <h3 class="font-display text-base font-semibold text-ink group-hover:text-violet-600">
+                  <h3 class="font-display text-base font-semibold text-ink">
                     {doctor.data.name}
                   </h3>
                   <p class="mt-1 text-xs text-ink/60">{doctor.data.specialty}</p>
@@ -583,14 +584,14 @@ const jsonLd = [
             {blogPosts.map((post) => (
               <article class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
                 <h3 class="font-display text-lg font-semibold text-ink">
-                  <a href={post.href} class="hover:text-violet-600">
+                  <a href={post.href}">
                     {post.title}
                   </a>
                 </h3>
                 <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
                 <a
                   href={post.href}
-                  class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+                  class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600"
                 >
                   Read guide
                   <Icon name="arrow-right" size={16} />
@@ -602,50 +603,15 @@ const jsonLd = [
       </section>
     )}
 
-    {/* ── CTA (contained card so it doesn't merge into the dark footer) ── */}
-    <section id="contact" class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
-      <div class="container">
-        <div class="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-cream-100 md:px-12 md:py-12">
-          <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-          {/* Layout: text left, buttons right on md+; buttons stack below on mobile. */}
-          <div class="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-widest text-cream-100/50">
-                We're here to help
-              </p>
-              <h2 class="mt-2 font-display text-2xl font-bold text-cream-100 md:text-3xl">
-                Planning treatment from {countryData.name}?
-              </h2>
-              <p class="mt-2 max-w-xl text-cream-100/60">
-                Share your reports on WhatsApp for a free opinion, {countryData.currency.code}-aware cost estimate, and medical visa guidance for {countryData.nationality.toLowerCase()} patients.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a
-                href={whatsappHref || '#contact'}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-card bg-gradient-accent px-6 py-3 text-sm font-semibold text-white"
-              >
-                Get Free Quote
-              </a>
-              {whatsappHref && (
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
-                  data-anim="press-button"
-                >
-                  <Icon name="whatsapp" size={18} />
-                  WhatsApp us
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    {/* ── CTA ──────────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="en"
+      eyebrow="We're here to help"
+      headline={`Planning treatment from ${countryData.name}?`}
+      body={`Share your reports on WhatsApp for a free opinion, ${countryData.currency.code}-aware cost estimate, and medical visa guidance for ${countryData.nationality.toLowerCase()} patients.`}
+      primaryCta={{ label: 'Get Free Quote', href: whatsappHref || '#contact' }}
+      secondaryCta={{ label: 'WhatsApp us', href: whatsappHref || '#contact' }}
+    />
   </main>
 
   {/* ── FLOATING CTAs (fixed to viewport, always visible) ──────────────── */}

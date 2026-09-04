@@ -31,5 +31,6 @@ export function getNavLinks(locale: Locale): NavLink[] {
     { label: t.nav.countries, href: `${prefix}/countries` },
     { label: t.nav.secondOpinion, href: `${prefix}/second-opinion` },
     { label: t.nav.blog, href: `${prefix}/blog` },
+    { label: t.nav.contact, href: `${prefix}/contact` },
   ];
 }

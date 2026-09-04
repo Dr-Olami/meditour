@@ -1,0 +1,319 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import { LeadForm } from '../../design-system/components/organisms/LeadForm';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getTreatments } from '../../lib/content';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { LEAD_SOURCE } from '../../lib/crm';
+import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const treatmentEntries = await getTreatments(locale);
+const treatmentOptions = treatmentEntries.map((entry) => ({
+  value: entry.data.name,
+  label: entry.data.name,
+}));
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/emergency-urgent-cases`;
+
+const urgentPathways = [
+  'অনকোলজি — বায়োপসি অপেক্ষমাণ, স্টেজিং প্রয়োজন, বা দেশে চিকিৎসা বিলম্ব',
+  'কার্ডিয়াক — অ্যাঞ্জিওপ্লাস্টি, বাইপাস, বা ভালভ সার্জারি লক্ষণ খারাপ হচ্ছে',
+  'ট্রান্সপ্লান্ট — যকৃত বা কিডনি মূল্যায়ন সীমিত স্থানীয় বিকল্প',
+  'নিউরোসার্জারি — মস্তিষ্ক বা মেরুদণ্ড কেস দ্রুত বিশেষজ্ঞ প্রবেশ প্রয়োজন',
+];
+
+const urgentSteps = [
+  'কোঅর্ডিনেটর গ্রহণ নিশ্চিত করেন — WhatsApp সবচেয়ে দ্রুত।',
+  'রিপোর্ট সম্ভব হলে একই দিনে সংশ্লিষ্ট হাসপাতালের আন্তর্জাতিক ডেস্কে পাঠানো হয়।',
+  'পর্যালোচনার পর আপনি হাসপাতাল ম্যাচ, সময়রেখা এবং নির্দেশক খরচের পরিসর পান।',
+  'নিশ্চিত পথের জন্য ভিসা আমন্ত্রণ ও ভ্রমণ পরিকল্পনা ত্বরান্বিত করা হয়।',
+];
+
+const faqs = [
+  {
+    question: 'জরুরি অনুসন্ধানে আপনারা কত দ্রুত সাড়া দেন?',
+    answer: 'আমরা জরুরি অনুসন্ধান WhatsApp-এ ঘন্টার মধ্যে, দিন নয়, নিশ্চিত করি। রিপোর্ট পেলে আমরা সেগুলো সম্ভব হলে একই দিনে সংশ্লিষ্ট হাসপাতালের আন্তর্জাতিক ডেস্কে পাঠাই। হাসপাতাল কেস পর্যালোচনা করার পর হাসপাতাল ম্যাচ, সময়রেখা এবং নির্দেশক খরচের পরিসর শেয়ার করা হয় — সাধারণত ২৪–৪৮ ঘন্টার মধ্যে।',
+  },
+  {
+    question: 'জরুরি কেসের জন্য কী ডকুমেন্ট পাঠানো উচিত?',
+    answer: 'যা কিছু আছে অবিলম্বে পাঠান — আংশিক ফাইলও আমাদের হাসপাতালের সাথে যোগাযোগ শুরু করতে সাহায্য করে। উপযোগী ডকুমেন্টের মধ্যে রয়েছে: বায়োপসি বা প্যাথলজি রিপোর্ট, ইমেজিং সারাংশ (CT/MRI/echo), ডাক্তারের নোট বা রেফারেল চিঠি, বর্তমান ওষুধের তালিকা এবং পাসপোর্ট কপি। পর্যালোচনা চলাকালীন আমরা জানিয়ে দেব আর কী প্রয়োজন।',
+  },
+  {
+    question: 'জরুরি কেসের জন্য মেডিকেল ভিসা কি দ্রুত-ট্র্যাক করা যায়?',
+    answer: 'হ্যাঁ। হাসপাতাল চিকিৎসার পথ নিশ্চিত করলে, আমরা আমন্ত্রণ পত্র ত্বরান্বিত করি এবং প্রক্রিয়াকরণ ত্বরান্বিত করতে দূতাবাস বা ই-ভিসা পোর্টালের সাথে সমন্বয় করি। কিছু ক্ষেত্রে হাসপাতাল জরুরি ভিসা আবেদনে সহায়ক অগ্রাধিকার আমন্ত্রণ পত্র জারি করতে পারে। ভিসা অনুমোদনের সময় এখনও ভারত সরকার এবং আপনার আবেদনের দেশের উপর নির্ভর করে।',
+  },
+  {
+    question: 'রোগী ভ্রমণের মতো অসুস্থ হলে কী হবে?',
+    answer: 'আমরা মেডিকেল রিপোর্টের ভিত্তিতে হাসপাতালের সাথে রোগীর ভ্রমণের উপযুক্ততা মূল্যায়ন করি। আকাশপথে ভ্রমণ অনুচিত হলে, হাসপাতাল প্রথমে টেলিকনসালটেশন বা স্থানীয়ভাবে স্থিতিশীলকরণ চিকিৎসা সুপারিশ করতে পারে। মেডিকেল সহায়তায় ভ্রমণ করতে পারে এমন রোগীদের জন্য আমরা অ্যাম্বুলেন্স ট্রান্সফার এবং ফ্লাইটে মেডিকেল এসকর্ট সাজাই।',
+  },
+  {
+    question: 'জরুরি কেস সমন্বয়ের জন্য কি অতিরিক্ত চার্জ আছে?',
+    answer: 'না। আমাদের সমন্বয় সেবা জরুরিতা নির্বিশেষে একই। আপনি চিকিৎসার জন্য সরাসরি হাসপাতালে পরিশোধ করেন। হাসপাতাল ম্যাচিং, রিপোর্ট পর্যালোচনা, ভিসা সমন্বয় বা ভ্রমণ পরিকল্পনার জন্য আমরা রোগীদের থেকে চার্জ করি না। আমাদের ভূমিকা হলো আপনার পরিবারের জন্য পথকে দ্রুত ও স্পষ্ট করা।',
+  },
+  {
+    question: 'জরুরি রোগীর সাথে কি পরিবারের সদস্য ভ্রমণ করতে পারবেন?',
+    answer: 'হ্যাঁ। অ্যাটেনড্যান্ট ভিসা রোগীর ভিসার পাশাপাশি সাজানো হয়, এমনকি ত্বরান্বিত সময়সীমায়ও। আমরা অ্যাটেনড্যান্ট ভিসা ডকুমেন্টেশন অগ্রাধিকার দিই যাতে একজন পরিবারের সদস্য শুরু থেকেই রোগীর সাথে ভ্রমণ করতে পারেন। সাধারণত MX-Visa-এ দুজন পর্যন্ত অ্যাটেনড্যান্ট অনুমোদিত হন।',
+  },
+];
+
+const jsonLd = [
+  medicalWebPage({
+    name: 'জরুরি ও তাত্ক্ষণিক মেডিকেল কেস',
+    url: pageUrl,
+    description: 'ভারতে সময়-সংবেদনশীল মেডিকেল ভ্রমণের জন্য দ্রুত-ট্র্যাক সহায়তা — অনকোলজি, কার্ডিয়াক, ট্রান্সপ্লান্ট এবং নিউরোসার্জারি কেস যা অপেক্ষা করতে পারে না।',
+    inLanguage: 'bn',
+  }),
+  breadcrumbs([
+    { name: t.nav.home, url: `${siteUrl}/bn/` },
+    { name: 'জরুরি ও তাত্ক্ষণিক কেস', url: `${pageUrl}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`জরুরি ও তাত্ক্ষণিক কেস | ${t.site.name}`}
+  description="ভারতে সময়-সংবেদনশীল মেডিকেল ভ্রমণের জন্য দ্রুত-ট্র্যাক সহায়তা — অনকোলজি, কার্ডিয়াক, ট্রান্সপ্লান্ট এবং নিউরোসার্জারি কেস যা অপেক্ষা করতে পারে না।"
+  locale={locale}
+  jsonLd={jsonLd}
+>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks(locale)}
+    cta={{ label: t.nav.cta, href: '/bn/contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    client:load
+  />
+
+  <main>
+    {/* ── HERO (warning-red soft background) ───────────────────────── */}
+    <section class="relative overflow-hidden bg-red-50 text-ink">
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-red-200/40 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-red-100/50 blur-3xl" aria-hidden="true" />
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[{ label: t.nav.home, href: '/bn' }, { label: 'জরুরি ও তাত্ক্ষণিক কেস' }]}
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div class="rounded-2xl border border-red-200 bg-white/80 px-6 py-12 shadow-base md:px-12 md:py-14" data-anim="stagger-children">
+          <span class="inline-flex items-center gap-2 rounded-full bg-red-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-red-700">
+            <Icon name="alert" size={14} />
+            জরুরি পথ
+          </span>
+          <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+            সময়-সংবেদনশীল কেসের জন্য দ্রুত-ট্র্যাক সহায়তা
+          </h1>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
+            ক্যানসার, কার্ডিয়াক, ট্রান্সপ্লান্ট, বা নিউরোসার্জারি অপেক্ষা করতে পারে না হলে, অবিলম্বে আমাদের সাথে যোগাযোগ করুন। আমরা জরুরি অনুসন্ধানকে হাসপাতাল ম্যাচিং, আমন্ত্রণ পত্র এবং ভ্রমণ পরিকল্পনার জন্য অগ্রাধিকার দেই।
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={whatsappInquiryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-6 py-3 text-sm font-semibold text-white hover:bg-red-700"
+              data-anim="press-button"
+            >
+              <Icon name="whatsapp" size={18} />
+              WhatsApp জরুরি লাইন
+            </a>
+            <a
+              href={`tel:+${whatsappNumber}`}
+              class="inline-flex items-center justify-center gap-2 rounded-card border-2 border-red-600 px-6 py-3 text-sm font-semibold text-red-700 hover:bg-red-50"
+              data-anim="press-button"
+            >
+              <Icon name="phone" size={18} />
+              কল {whatsappNumber}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── TWO-COLUMN: LEFT INFO + RIGHT LEAD FORM ──────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container grid gap-8 lg:grid-cols-2 lg:gap-12">
+        {/* ── LEFT: stacked info cards ─────────────────────────────── */}
+        <div class="space-y-6">
+          {/* Important warning */}
+          <div class="rounded-card border border-red-200 bg-red-50 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-red-700">
+              গুরুত্বপূর্ণ
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/80">
+              এই পৃষ্ঠাটি জরুরি মেডিকেল ভ্রমণ সমন্বয়ের জন্য — আপনার দেশে জরুরি অ্যাম্বুলেন্স সেবা নয়। কেউ তাৎক্ষণিক জীবন-হুমকিতে থাকলে, প্রথমে স্থানীয় জরুরি সেবায় কল করুন, তারপর ভারতে চিকিৎসা পরিকল্পনার জন্য আমাদের সাথে যোগাযোগ করুন।
+            </p>
+          </div>
+
+          {/* Common urgent pathways */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              সাধারণ জরুরি পথ
+            </p>
+            <h2 class="mt-2 font-display text-xl font-bold text-ink">যে কেসগুলো আমরা সবচেয়ে বেশি দ্রুত-ট্র্যাক করি</h2>
+            <ul class="mt-4 space-y-3">
+              {urgentPathways.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-ink/80">
+                  <Icon name="check" size={18} className="mt-0.5 text-violet-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 text-sm text-ink/60">
+              উপলব্ধ রিপোর্ট অবিলম্বে শেয়ার করুন — আংশিক ফাইলও আমাদের হাসপাতালের সাথে যোগাযোগ শুরু করতে সাহায্য করে যখন আপনি বাকি ডকুমেন্ট সংগ্রহ করেন।
+            </p>
+          </div>
+
+          {/* What happens on an urgent enquiry */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ink">
+              জরুরি অনুসন্ধানে কী হয়
+            </p>
+            <ol class="mt-4 space-y-4">
+              {urgentSteps.map((step, index) => (
+                <li class="flex items-start gap-4 text-sm text-ink/80">
+                  <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border-2 border-ink text-xs font-bold text-ink">
+                    {index + 1}
+                  </span>
+                  <span class="pt-0.5">{step}</span>
+                </li>
+              ))}
+            </ol>
+            <p class="mt-5 text-sm text-ink/60">
+              সম্পূর্ণ যাত্রা জানতে আমাদের <a href="/bn/how-it-works" class="font-semibold text-violet-600 hover:text-violet-700">কীভাবে কাজ করে পৃষ্ঠা</a> দেখুন।
+            </p>
+          </div>
+        </div>
+
+        {/* ── RIGHT: lead form ─────────────────────────────────────── */}
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8 lg:sticky lg:top-8 lg:self-start" data-anim="fade-in-up">
+          <p class="text-xs font-semibold uppercase tracking-widest text-red-600">
+            জরুরি অনুসন্ধান
+          </p>
+          <h2 class="mt-2 font-display text-2xl font-bold text-ink">এখনই আপনার কেস পাঠান</h2>
+          <p class="mt-2 text-sm text-ink/60">
+            আপনার কেস জরুরি হিসেবে চিহ্নিত করুন। একজন কোঅর্ডিনেটর WhatsApp-এ গ্রহণ নিশ্চিত করবেন — সাধারণত দিনের মধ্যে, দিন নয়।
+          </p>
+          <div class="mt-6">
+            <LeadForm
+              source={LEAD_SOURCE.EMERGENCY}
+              treatments={treatmentOptions}
+              client:load
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          আরও ঘুরে দেখুন
+        </h2>
+        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+          ভারতে জরুরি মেডিকেল ভ্রমণের জন্য সম্পর্কিত সেবা।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/bn/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="list" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">কীভাবে কাজ করে</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">সম্পূর্ণ ৮-ধাপের রোগীর যাত্রা — আমাদের সাথে যোগাযোগের পর কী হয়।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">যাত্রা দেখুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="document" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">মেডিকেল ভিসা সহায়তা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">জরুরি কেসের জন্য দ্রুত-ট্র্যাক ভিসা আমন্ত্রণ পত্র এবং ত্বরান্বিত প্রক্রিয়াকরণ।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">ভিসা নির্দেশনা <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="plane" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">ভ্রমণ ও থাকা</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">অ্যাম্বুলেন্স ট্রান্সফার, মেডিকেল এসকর্ট ফ্লাইট এবং জরুরি থাকা।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">ভ্রমণ সহায়তা <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/second-opinion" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">বিনামূল্যে দ্বিতীয় মতামত</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">রোগনির্ণয় নিশ্চিত নন? ভ্রমণের আগে বিনামূল্যে সৎ দ্বিতীয় মতামত নিন।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">দ্বিতীয় মতামত নিন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/cost-calculator" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">খরচ ক্যালকুলেটর</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">চিকিৎসার খরচ দ্রুত অনুমান করুন — জরুরি কেসেও নির্দেশক পরিসর সাহায্য করে।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">খরচ অনুমান করুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+          <a href="/bn/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
+                <Icon name="phone" size={20} className="text-violet-600" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">যোগাযোগ করুন</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">আমাদের জরুরি লাইনে WhatsApp বা ফোনে পৌঁছান — আমরা ঘন্টার মধ্যে সাড়া দিই।</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">যোগাযোগ করুন <Icon name="arrow-right" size={14} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ──────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+          সাধারণ জিজ্ঞাসা
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
+      </div>
+    </section>
+  </main>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks(locale)}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>
