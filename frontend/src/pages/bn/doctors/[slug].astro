@@ -85,6 +85,10 @@ if (faqs.length > 0) {
     cta={{ label: t.nav.cta, href: '/bn/#contact' }}
     locale="bn"
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 

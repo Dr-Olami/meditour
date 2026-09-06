@@ -89,8 +89,30 @@ const treatments = defineCollection({
     hospitalStay: z.string().optional(),
     recoveryTime: z.string().optional(),
     image: z.string().optional(),
+    /** Long-tail SEO H1 for the treatment detail page; falls back to `name` if absent. */
+    seoHeadline: z.string().optional(),
     /** Country slug for country-specific treatment variations; untagged treatments show for all countries. */
     targetCountry: targetCountrySchema.optional(),
+    /** Concise AI-extractable summary shown in the "In short" callout after the hero. */
+    summary: z.string().optional(),
+    /** Eligibility criteria for the "Who is this treatment for?" section. */
+    eligibility: z.array(z.string()).optional(),
+    /** Items included in the cost estimate. */
+    costInclusions: z.array(z.string()).optional(),
+    /** Items not included in the cost estimate. */
+    costExclusions: z.array(z.string()).optional(),
+    /** Structured recovery timeline phases for the recovery table. */
+    recoveryTimeline: z.array(
+      z.object({
+        phase: z.string().min(1),
+        duration: z.string().min(1),
+        description: z.string().min(1),
+      })
+    ).optional(),
+    /** Procedure-specific risks for the safety section. */
+    risks: z.array(z.string()).optional(),
+    /** Slugs of related treatments for cross-linking. */
+    relatedTreatmentSlugs: z.array(z.string()).optional(),
     faqs: z.array(
       z.object({
         question: z.string().min(1),
@@ -134,10 +156,58 @@ const blog = defineCollection({
   }),
 });
 
+const procedures = defineCollection({
+  type: 'content',
+  schema: z.object({
+    locale: localeSchema,
+    name: z.string().min(1),
+    /** Long-tail SEO H1 for the procedure detail page; falls back to `name` if absent. */
+    seoHeadline: z.string().optional(),
+    /** Parent treatment slug — e.g. "hematology-bone-marrow". */
+    parentTreatmentSlug: z.string().min(1),
+    /** Concise AI-extractable summary shown in the "In short" callout after the hero. */
+    summary: z.string().min(1),
+    description: z.string().min(1),
+    fromPrice: z.string().optional(),
+    toPrice: z.string().optional(),
+    duration: z.string().optional(),
+    hospitalStay: z.string().optional(),
+    recoveryTime: z.string().optional(),
+    image: z.string().optional(),
+    /** Who is this procedure for — eligibility criteria. */
+    eligibility: z.array(z.string()).optional(),
+    /** Items included in the cost estimate. */
+    costInclusions: z.array(z.string()).optional(),
+    /** Items not included in the cost estimate. */
+    costExclusions: z.array(z.string()).optional(),
+    /** Structured recovery timeline phases for the recovery table. */
+    recoveryTimeline: z.array(
+      z.object({
+        phase: z.string().min(1),
+        duration: z.string().min(1),
+        description: z.string().min(1),
+      })
+    ).optional(),
+    /** Procedure-specific risks for the safety section. */
+    risks: z.array(z.string()).optional(),
+    relatedDoctorSlugs: z.array(z.string()).optional(),
+    relatedHospitalSlugs: z.array(z.string()).optional(),
+    /** Slugs of related procedures (within the same category) for cross-linking. */
+    relatedProcedureSlugs: z.array(z.string()).optional(),
+    faqs: z.array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      })
+    ).optional(),
+  }),
+});
+
 export const collections = {
   doctors,
   hospitals,
   treatments,
+  procedures,
   testimonials,
   blog,
 };

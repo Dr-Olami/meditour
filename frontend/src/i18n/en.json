@@ -21,8 +21,10 @@
     "faq": "FAQ",
     "contact": "Contact",
     "blog": "Blog",
-    "secondOpinion": "Second Opinion",
-    "cta": "Free consultation"
+    "secondOpinion": "Free Second Opinion",
+    "cta": "Free consultation",
+    "call": "Call",
+    "whatsapp": "WhatsApp"
   },
   "hero": {
     "title": "Your health journey, supported every step of the way",
@@ -32,7 +34,7 @@
   },
   "serviceCards": {
     "top": {
-      "title": "Honest Second Opinion",
+      "title": "Free Honest Second Opinion",
       "subtitle": "Not sure about surgery? Meet our doctors who listen more. Prescribe less."
     },
     "bottom": [
@@ -89,7 +91,32 @@
       "journeyStep4Desc": "Telemedicine reviews, discharge summary, and continued support once you return home.",
       "consultCta": "Talk to a care advisor about {{name}}",
       "consultSummary": "Free consultation, transparent pricing, visa assistance — your treatment plan in 24 hours.",
-      "treatingHospitals": "Treating hospitals"
+      "treatingHospitals": "Treating hospitals",
+      "inShortLabel": "In short",
+      "typicalCostLabel": "Typical India cost",
+      "whoIsThisFor": "Who is this treatment for?",
+      "recoveryTimelineTitle": "Recovery timeline",
+      "recoveryPhaseHeader": "Phase",
+      "recoveryDurationHeader": "Duration",
+      "recoveryExpectHeader": "What to expect",
+      "costInclusionsTitle": "What's included in the cost",
+      "costIncluded": "Included",
+      "costNotIncluded": "Not included",
+      "countryLinksTitle": "Treatment for international patients",
+      "relatedTreatmentsTitle": "Related treatments",
+      "fromPriceLabel": "From"
+    },
+    "procedures": {
+      "title": "Procedures",
+      "viewAll": "View all procedures",
+      "costInIndia": "Cost in India",
+      "durationLabel": "Duration",
+      "stayLabel": "Hospital stay",
+      "recoveryLabel": "Recovery",
+      "learnMore": "Learn more",
+      "proceduresInCategory": "Procedures in {{category}}",
+      "relatedProcedures": "Related procedures",
+      "backToTreatment": "Back to {{name}}"
     }
   },
   "doctorShowcase": {
@@ -237,7 +264,7 @@
     "heroSubtitle": "Get a free, honest second opinion from senior specialists at India's leading hospitals — before you spend anything on travel.",
     "summary": "Send us your medical reports via WhatsApp or the form below. A senior specialist reviews your case and tells you honestly whether the recommended treatment or surgery is truly necessary — and what it should cost. Free, within 24 hours, with no obligation to travel with us.",
     "primaryCta": "Send reports on WhatsApp",
-    "secondaryCta": "Get Honest Second Opinion",
+    "secondaryCta": "Get Free Honest Second Opinion",
     "badge": "Free · No obligation",
     "modalCta": "Request free opinion",
     "railTitle": "Send your reports",

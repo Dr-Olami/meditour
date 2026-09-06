@@ -33,49 +33,123 @@ export interface LanguageSwitcherProps
 }
 
 /**
- * Locale switcher that preserves the current path. Renders a pill toggle with
- * one button per supported locale. Use `compact` for tight spaces like the
- * mobile navbar.
+ * Locale dropdown switcher that preserves the current path. Renders a button
+ * showing the current locale; clicking reveals a dropdown with all supported
+ * languages. Use `compact` for tight spaces like the mobile navbar.
  */
 const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>(
   ({ className, currentLocale, currentPath, compact, localeFallbacks, ...props }, ref) => {
+    const [open, setOpen] = React.useState(false);
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const current = LOCALES.find((l) => l.code === currentLocale) ?? LOCALES[0];
+
+    // Reason: close on outside click so the dropdown behaves like a native
+    // select without requiring a full-overlay backdrop.
+    React.useEffect(() => {
+      if (!open) return;
+      const handler = (e: MouseEvent) => {
+        if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+          setOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handler);
+      return () => document.removeEventListener('mousedown', handler);
+    }, [open]);
+
+    // Reason: close on Escape for keyboard accessibility.
+    React.useEffect(() => {
+      if (!open) return;
+      const handler = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setOpen(false);
+      };
+      document.addEventListener('keydown', handler);
+      return () => document.removeEventListener('keydown', handler);
+    }, [open]);
+
     return (
       <div
-        className={cn(
-          'flex items-center gap-0.5 rounded-full p-0.5',
-          compact ? 'bg-ink/5' : 'border border-border-default p-1',
-          className,
-        )}
-        ref={ref}
+        className={cn('relative', className)}
+        ref={(node) => {
+          // Forward both the outer ref and the internal containerRef
+          containerRef.current = node;
+          if (typeof ref === 'function') ref(node);
+          else if (ref) ref.current = node;
+        }}
         {...props}
       >
-        {LOCALES.map((locale) => {
-          const isActive = locale.code === currentLocale;
-          const prefix = locale.code === 'en' ? '' : `/${locale.code}`;
-          const path = currentPath === '/' ? '' : currentPath.replace(LOCALE_PREFIX_RE, '');
-          // Reason: use the fallback href for untranslated locales so the
-          // switcher never links to a 404.
-          const href = localeFallbacks?.[locale.code] ?? `${prefix}${path || '/'}`;
+        <button
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-label={`Language: ${current.label}`}
+          className={cn(
+            'flex items-center gap-1.5 rounded-full border border-ink/20 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
+            compact ? 'px-2.5 py-1 text-xs' : 'px-3 py-1.5 text-sm',
+            'bg-cream-100 text-ink hover:border-ink/40 hover:bg-cream-200',
+          )}
+        >
+          {/* Globe icon */}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          <span>{compact ? current.short : current.label}</span>
+          {/* Chevron */}
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 12 12"
+            fill="none"
+            aria-hidden="true"
+            className={cn('shrink-0 transition-transform duration-200', open && 'rotate-180')}
+          >
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
 
-          return (
-            <a
-              key={locale.code}
-              href={href}
-              hrefLang={locale.code}
-              className={cn(
-                'rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
-                compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm',
-                isActive
-                  ? 'bg-ink text-white'
-                  : 'text-text-secondary hover:bg-bg-muted',
-              )}
-              aria-current={isActive ? 'true' : undefined}
-              aria-label={locale.label}
-            >
-              {compact ? locale.short : locale.label}
-            </a>
-          );
-        })}
+        {open && (
+          <ul
+            role="listbox"
+            className="absolute right-0 top-full z-50 mt-1.5 min-w-[8rem] overflow-hidden rounded-xl border border-cream-300 bg-white py-1 shadow-lg"
+          >
+            {LOCALES.map((locale) => {
+              const isActive = locale.code === currentLocale;
+              const prefix = locale.code === 'en' ? '' : `/${locale.code}`;
+              const path = currentPath === '/' ? '' : currentPath.replace(LOCALE_PREFIX_RE, '');
+              // Reason: use the fallback href for untranslated locales so the
+              // switcher never links to a 404.
+              const href = localeFallbacks?.[locale.code] ?? `${prefix}${path || '/'}`;
+
+              return (
+                <li key={locale.code} role="option" aria-selected={isActive}>
+                  <a
+                    href={href}
+                    hrefLang={locale.code}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      'flex items-center justify-between gap-2 px-3 py-2 text-sm no-underline transition-colors',
+                      isActive
+                        ? 'font-semibold text-ink'
+                        : 'text-text-secondary hover:bg-cream-200 hover:text-ink',
+                    )}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="text-xs font-bold uppercase text-ink/40">{locale.short}</span>
+                      {locale.label}
+                    </span>
+                    {isActive && (
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="shrink-0 text-ink">
+                        <path d="M2 7.5L5.5 11L12 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     );
   },

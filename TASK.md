@@ -58,7 +58,7 @@
 
 ### Discovered During Work
 
-- 8 doctors still lack photos (ananya-sen, arun-kumar, kavita-iyer, priya-nair, rajesh-sharma, sameer-khan, sunita-rao, vikram-patel) — they render the initials fallback panel. **TODO:** add `/images/doctors/<slug>.webp` + `avatar:` frontmatter when photos are available.
+- ~~8 doctors still lack photos~~ **RESOLVED:** All 52 doctors now have `avatar:` frontmatter and photos. The 8 placeholder names (ananya-sen, arun-kumar, etc.) were replaced with real doctor profiles.
 - Optional idea (not implemented): auto-resolve `/images/doctors/<slug>.webp` in `lib/content.ts` when frontmatter `avatar` is absent.
 
 ## Editorial Detail-Page Redesign (2026-08-07) — PROTOTYPE (doctor detail, en only)
@@ -321,3 +321,88 @@
 - [x] Build verification: `npm run build` passes, both routes generated, sitemap includes `/second-opinion` + `/bn/second-opinion`; `MedicalWebPage`/`FAQPage`/`BreadcrumbList` confirmed in built HTML (EN + BN); nav links confirmed in built homepage HTML (EN + BN).
 - [x] Content guardrails kept: only existing site stats (3,500+ patients, 25+ hospitals, 98%, 24h response) — no invented medical claims.
 - Bug fixed during build: `faqPage()` expects `{ entries }` object, not a raw array — corrected on both pages.
+
+## Treatment Card Images & Hero Redesign — COMPLETE (2026-09-05)
+
+- [x] **Treatment card images:** `TreatmentCard.tsx` extended with `image?: string` field — renders image header with overlay tags, `object-cover`, rounded top corners, hover scale. Fallback to tag-only layout when no image. Both `/treatments` and `/bn/treatments` listing pages pass `entry.data.image` to cards.
+- [x] **Curated card images:** 13 treatment-specific images added to `/public/images/treatments-cards/` (cardiac-care, cancer-treatment, orthopedics-surgery, ivf-fertility, neuro-spine-surgery, neurology, ophthalmology, cosmetic-surgery, ear-nose-throat, gastroenterology-surgery, urology, bariatric-weight-loss, paediatric-neurology). 3 treatments use fallback from `/images/treatments/` (organ-treatment, nephrology-kidney-care, stem-cell-treatment). All 36 content files (18 EN + 18 BN) updated from shared Unsplash placeholder to local image paths.
+- [x] **Hero background redesign:** Treatment detail pages (`[slug].astro` EN + BN) now use `treatment.image` (card image) as full-bleed hero background on all breakpoints with gradient overlay `linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)`. Old `/images/treatments/` hero background images no longer rendered (prop kept but unused). Single-column hero layout restored (framed card image on right removed).
+- [x] **Description in hero:** Added `<p>` tag below H1 showing `treatment.description` with `text-cream-100/90` brightness, `max-w-2xl`, `data-anim="fade-in-up"`. Both EN + BN templates.
+- [x] Build verification: all 18 EN + 18 BN treatment detail routes generated, all card images confirmed in built HTML for both listing pages.
+
+## New Treatment Pages: Pulmonology & Hematology — COMPLETE (2026-09-05)
+
+- [x] **Pulmonology & Lung Care** (`pulmonology-lung-care`): EN + BN content created. Covers lung resection surgery (lobectomy, pneumonectomy, segmentectomy), VATS, bronchoscopy (diagnostic & therapeutic), COPD/asthma management, sleep apnea evaluation/CPAP, pulmonary rehabilitation. Conditions: COPD, asthma, lung cancer, ILD, bronchiectasis, pulmonary embolism, sleep apnea, pleural diseases, TB, pulmonary hypertension. Hospitals: Apollo, Manipal, Fortis (all list Pulmonology in specialities). No doctors mapped (no pulmonologists in current directory). Image: `/images/treatments-cards/pulmonology-lung-care.jpg`.
+- [x] **Hematology & Bone Marrow Transplant** (`hematology-bone-marrow`): EN + BN content created. Covers autologous/allogeneic BMT, haploidentical transplant, CAR-T cell therapy, thalassemia/sickle cell transplant, aplastic anemia therapy. Conditions: AML, ALL, CML, CLL, lymphomas, multiple myeloma, MDS, MPN, thalassemia, sickle cell, aplastic anemia, haemophilia, immune deficiencies. Doctors: Dr. Sunil Udgire, Dr. Mahesh Rajashekaraiah, Dr. Chandrakala S, Dr. Neema Bhat (actual hematology specialists only). Hospitals: Fortis (Haematology & BMT), SPARSH (Bone Marrow Transplant). Image: `/images/treatments-cards/hematology-bone-marrow.jpg`.
+- [x] Badge chip values kept concise (e.g. `1-6 hours`, `2-10 days`, `2-8 weeks`) matching existing treatment page style.
+- [x] Build verification: both routes generated in EN + BN, both appear on treatment listing pages, images render correctly, no incorrect doctor mappings.
+
+## SEO Headlines for Treatment Pages — COMPLETE (2026-09-05)
+
+- [x] **`seoHeadline` field** added to treatment content schema (`src/content/config.ts`) — optional string, falls back to `name` if absent.
+- [x] **Long-tail H1s** added to all 36 treatment content files (18 EN + 18 BN). Examples: "Fertility Treatments & IVF in India for International Patients", "Cardiac Care & Heart Surgery in India for International Patients", "Hematology & Bone Marrow Transplant in India for International Patients". Bengali headlines localized (e.g. "আন্তর্জাতিক রোগীদের জন্য ভারতে ফার্টিলিটি চিকিৎসা ও আইভিএফ").
+- [x] **Template wiring:** Both `[slug].astro` templates (EN + BN) use `const headline = treatment.seoHeadline || treatment.name` for H1 and `<title>` tag. Short `name` still used for breadcrumbs, filter chips, treatment cards, JSON-LD, and WhatsApp links.
+- [x] **H1 styling** updated: `mt-4 max-w-2xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]` — responsive scaling, `font-medium` for longer headlines, `max-w-2xl` for clean wrapping.
+- [x] SEO impact: `treatment.image` (card image) used in all JSON-LD schemas, Open Graph, and Twitter meta — unchanged. `heroImage` (old `/images/treatments/`) was decorative (`alt=""`, `aria-hidden`) and never in structured data, so removal has no SEO impact.
+
+## Phase 2: Two-Tier Procedure URL Pages (Phase 2A) — COMPLETE (2026-09-06)
+
+Implements the two-tier procedure URL structure from `docs/TREATMENT_PAGES_STRUCTURE_ANALYSIS_AND_PLAN.md` and `docs/PROCEDURE_URL_STRUCTURE_MAPPING.md`. Procedure-level pages nested under treatment category pages at `/treatments/{category}/{procedure}-cost-india` (EN) and `/bn/treatments/{category}/{procedure}-cost-india` (BN).
+
+### Infrastructure
+
+- [x] **Procedures content collection** added to `src/content/config.ts` with Zod schema: `locale`, `name`, `seoHeadline`, `parentTreatmentSlug`, `summary`, `description`, `fromPrice`, `toPrice`, `duration`, `hospitalStay`, `recoveryTime`, `eligibility[]`, `costInclusions[]`, `costExclusions[]`, `recoveryTimeline[]{phase,duration,description}`, `risks[]`, `relatedProcedureSlugs[]`, `faqs[]{question,answer}`.
+- [x] **Procedure helpers** in `src/lib/content.ts`: `getProcedures(locale)`, `getProceduresByCategory(locale, parentSlug)`, `getProcedureBySlug(locale, slug)`, `resolveRelatedProcedures(slugs, procedures)`. Slug comparison uses `.split('/').pop()` to handle nested directory paths (e.g. `cardiology/angioplasty-stent-placement-cost-india` → `angioplasty-stent-placement-cost-india`).
+- [x] **Schema generators** in `src/lib/schema.ts`: reused existing `medicalProcedure()` for procedure-level JSON-LD. `MedicalWebPage`, `BreadcrumbList`, and `FAQPage` helpers already available.
+- [x] **WhatsApp helper** `getProcedureInquiryLink()` added to `src/lib/whatsapp.ts` for procedure-specific inquiry messages.
+- [x] **i18n strings** added to `en.json` and `bn.json` under procedure-page namespace.
+- [x] **EN procedure detail template** `src/pages/treatments/[slug]/[procedure].astro` — breadcrumb hierarchy, H1 from `seoHeadline`, summary, cost range, quick facts, eligibility, procedure details, recovery timeline, cost inclusions/exclusions, risks, related procedures, FAQ accordion, JSON-LD (MedicalProcedure + MedicalWebPage + BreadcrumbList + FAQPage), WhatsApp CTA, LeadForm.
+- [x] **BN procedure detail template** `src/pages/bn/treatments/[slug]/[procedure].astro` — mirrors EN template with Bengali i18n.
+- [x] **Treatment category pages enhanced** — both `treatments/[slug].astro` and `bn/treatments/[slug].astro` now load category procedures via `getProceduresByCategory()` and render a procedure card grid linking to nested procedure URLs.
+
+### Phase 2A Content (64 procedure files: 32 EN + 32 BN)
+
+- [x] **Hematology & Bone Marrow** (10 procedures × 2 locales = 20 files): bone-marrow-transplant, leukemia-treatment, lymphoma-treatment, thalassemia-treatment, sickle-cell-disease-treatment, autologous-stem-cell-transplant, allogeneic-stem-cell-transplant, aplastic-anemia-treatment, multiple-myeloma-treatment, car-t-cell-therapy.
+- [x] **Cardiology** (8 procedures × 2 locales = 16 files): heart-bypass-surgery-cabg, angioplasty-stent-placement, heart-valve-replacement-repair, tavr-transcatheter-aortic-valve-replacement, pacemaker-implantation, asd-vsd-closure-surgery, pediatric-heart-surgery, heart-transplant.
+- [x] **Cancer Treatment** (8 procedures × 2 locales = 16 files): chemotherapy, radiation-therapy, immunotherapy, targeted-therapy, cancer-surgery, breast-cancer-treatment, lung-cancer-treatment, prostate-cancer-treatment.
+- [x] **Orthopedics** (6 procedures × 2 locales = 12 files): total-knee-replacement, total-hip-replacement, shoulder-replacement, arthroscopy, spine-surgery, sports-injury-treatment.
+
+### Bug fix during build
+
+- [x] **Nested directory slug issue:** `entrySlug()` returns `category/procedure-slug` for files in nested content directories (e.g. `procedures/en/cardiology/heart-bypass-surgery-cabg-cost-india.md`). Fixed all slug comparisons in `content.ts` (`getProcedureBySlug`, `resolveRelatedProcedures`) and all four templates (EN/BN procedure detail + EN/BN treatment category) to use `.split('/').pop()` for extracting just the procedure slug segment.
+
+### Verification
+
+- [x] `npm run build` passes with exit code 0.
+- [x] All 32 EN procedure routes generated (e.g. `/treatments/cardiology/heart-bypass-surgery-cabg-cost-india`).
+- [x] All 32 BN procedure routes generated (e.g. `/bn/treatments/cardiology/heart-bypass-surgery-cabg-cost-india`).
+- [x] All 18 EN treatment category pages still render with procedure card grids.
+- [x] All 18 BN treatment category pages still render with procedure card grids.
+- [x] `npm test`: 270 of 277 tests pass. 7 failures are pre-existing `Navbar.test.tsx` issues unrelated to procedure pages. All 18 WhatsApp tests, 10 schema tests, 10 FAQ generator tests pass.
+
+### Discovered During Work
+
+- **Subagent reliability:** First batch of 8 parallel subagents stalled after creating only 15 of 64 files. Re-launched 8 subagents for the remaining 53 files — all completed successfully. Lesson: subagents may hit session/time limits on large content generation tasks; verify file counts after completion and re-launch for missing files.
+- **Content directory structure:** Procedure markdown files are organized as `src/content/procedures/{locale}/{category-slug}/{procedure-slug}.md`. This nested structure requires `.split('/').pop()` on `entrySlug()` output to extract just the procedure filename slug.
+
+## Phase 2B: Two-Tier Procedure URL Pages — COMPLETE (2026-09-06)
+
+Extends Phase 2A with 34 more procedure files (17 EN + 17 BN) across 4 medium-volume categories. Same URL structure, templates, and infrastructure as Phase 2A — no code changes needed, only content.
+
+### Phase 2B Content (34 procedure files: 17 EN + 17 BN)
+
+- [x] **Infertility & IVF** (5 procedures × 2 locales = 10 files): ivf-treatment, icsi-treatment, iui-treatment, surrogacy-program, egg-freezing. Surrogacy content accurately reflects the Surrogacy (Regulation) Act 2021 — only altruistic surrogacy for Indian citizens; international surrogacy restricted.
+- [x] **Organ Transplant** (3 procedures × 2 locales = 6 files): liver-transplant, kidney-transplant, lung-transplant. Content notes that international patients need a living donor (typically a close relative) per Indian organ transplant regulations.
+- [x] **Neuro & Spine Surgery** (4 procedures × 2 locales = 8 files): brain-tumor-surgery, spinal-fusion-surgery, disc-replacement-surgery, deep-brain-stimulation. DBS content mentions Parkinson's disease, essential tremor, and dystonia as primary indications.
+- [x] **Cosmetic Surgery** (5 procedures × 2 locales = 10 files): rhinoplasty, liposuction, breast-augmentation, tummy-tuck, hair-transplant. Hair transplant content covers both FUE and FUT techniques.
+
+### Verification
+
+- [x] `npm run build` passes with exit code 0.
+- [x] All 17 EN Phase 2B procedure routes generated (e.g. `/treatments/infertility-treatment/ivf-treatment-cost-india`).
+- [x] All 17 BN Phase 2B procedure routes generated (e.g. `/bn/treatments/neuro-and-spine-surgery/deep-brain-stimulation-cost-india`).
+- [x] Total procedure routes across Phase 2A + 2B: 98 (49 EN + 49 BN).
+
+### Discovered During Work
+
+- **Subagent reliability (again):** First batch of 8 subagents stalled after creating only 5 of 34 files. Re-launched 8 subagents for the remaining 29 files — all completed successfully. This confirms the pattern: subagents may stall on large content generation batches; always verify file counts and re-launch for missing files.

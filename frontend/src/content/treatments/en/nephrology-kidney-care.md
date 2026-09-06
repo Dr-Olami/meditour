@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Nephrology & Kidney Care
+seoHeadline: "Nephrology & Kidney Care in India for International Patients"
 category: Nephrology
 description: Comprehensive kidney disease management including dialysis, glomerular disease treatment, kidney transplant evaluation, and post-transplant care with advanced renal replacement therapies.
 fromPrice: '$3,000'
@@ -26,7 +27,7 @@ relatedHospitalSlugs:
 duration: 'Varies by condition'
 hospitalStay: '1-7 days (non-transplant) | 2-4 weeks (transplant)'
 recoveryTime: '2-12 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments/nephrology-kidney-care.jpg
 faqs:
   - question: "What is the cost of a kidney transplant in Bangalore?"
     answer: "Kidney transplant costs in Bangalore range from $15,000 to $25,000 depending on the complexity, donor type, and hospital. This includes pre-transplant evaluation, surgery, hospital stay, and initial post-transplant care. Compared to Western countries where kidney transplants cost $100,000-$300,000, Bangalore offers 60-80% savings with equivalent success rates exceeding 95% at one year for living-donor transplants."
@@ -36,6 +37,49 @@ faqs:
     answer: "Yes, many glomerular diseases can be managed with immunosuppressive therapy, ACE inhibitors/ARBs, and disease-specific treatments without requiring dialysis. Our nephrology team includes GlomCon-certified glomerular disease specialists who provide personalised treatment plans based on kidney biopsy findings, immunological profiling, and the latest evidence-based protocols."
   - question: "How long does kidney transplant evaluation take?"
     answer: "Kidney transplant evaluation typically takes 2-4 weeks for living-donor transplants, involving comprehensive medical assessment of both recipient and donor, blood group compatibility testing, tissue typing (HLA), cross-match testing, and transplant committee approval. International patients are prioritised with dedicated transplant coordinators to expedite the process."
+summary: "Nephrology and kidney care in Bangalore offers comprehensive management of acute and chronic kidney disease, dialysis, glomerular disorders, and kidney transplantation at JCI-accredited hospitals. Costs range from $3,000 to $25,000, providing 60-80% savings compared to Western countries with high transplant success rates."
+eligibility:
+  - "Patients with chronic kidney disease, acute kidney injury, or glomerular disorders requiring specialist care"
+  - "Individuals needing dialysis services including haemodialysis, peritoneal dialysis, or CRRT"
+  - "Patients eligible for kidney transplant with a suitable living or deceased donor"
+  - "Those requiring vascular access procedures for dialysis initiation"
+  - "International patients with completed transplant evaluation and legal regulatory clearance"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "1-7 days (non-transplant) | 2-4 weeks (transplant)"
+    description: "Post-procedure monitoring in dedicated transplant ICU, graft function assessment, immunosuppression initiation, and infection surveillance"
+  - phase: "Bangalore recovery"
+    duration: "2-3 weeks"
+    description: "Follow-up consultations, graft function monitoring, medication optimisation, and wound care assessment"
+  - phase: "Return home"
+    duration: "Week 3-8"
+    description: "Gradual return to daily activities with teleconsultation support and regular graft function monitoring"
+  - phase: "Full recovery"
+    duration: "2-12 weeks"
+    description: "Complete healing, stable graft function, and resumption of normal activities with long-term immunosuppression management"
+risks:
+  - "Graft rejection (acute or chronic) requiring immunosuppression adjustment"
+  - "Opportunistic infections due to immunosuppressive therapy"
+  - "Surgical complications including vascular thrombosis or urinary leak"
+  - "Dialysis access complications such as AV fistula thrombosis or infection"
+  - "Disease recurrence in transplanted kidney for certain glomerular diseases"
+relatedTreatmentSlugs:
+  - "urology"
+  - "general-medicine"
 ---
 
 ## Overview
@@ -126,13 +170,13 @@ Our partner hospitals are equipped with **dedicated dialysis units**, **advanced
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Nephrology & Kidney Transplant) |
-|---------|--------------------------------------------------|
-| India (Bangalore) | $3,000 – $25,000 |
-| USA | $50,000 – $300,000 |
-| UK | £20,000 – £150,000 |
-| Singapore | $30,000 – $120,000 |
-| Thailand | $20,000 – $80,000 |
+| Country | Approximate Cost (Nephrology & Kidney Transplant) | vs India |
+|---------|--------------------------------------------------|----------|
+| India (Bangalore) | $3,000 – $25,000 | Baseline |
+| USA | $50,000 – $300,000 | ~12.5× higher |
+| UK | £20,000 – £150,000 | ~6.1× higher |
+| Singapore | $30,000 – $120,000 | ~5.4× higher |
+| Thailand | $20,000 – $80,000 | ~3.6× higher |
 
 ## Why Choose Bangalore for Nephrology Care?
 

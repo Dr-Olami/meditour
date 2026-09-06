@@ -1,0 +1,10 @@
+{
+  "locale": "en",
+  "name": "Robert Thompson",
+  "location": "Houston, USA",
+  "targetCountry": "usa",
+  "quote": "My hip replacement in India cost $6,000 — the same procedure was quoted at $45,000 back home even after insurance. The JCI-accredited hospital was cleaner and more modern than any hospital I have seen in Texas.",
+  "image": "https://picsum.photos/seed/robertthompson/800/600",
+  "brandLabel": "ORTHOPEDICS",
+  "relatedTreatmentSlugs": ["orthopedics-surgery"]
+}

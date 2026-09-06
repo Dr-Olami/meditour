@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Paediatric Neurology
+seoHeadline: "Paediatric Neurology Care in India for International Patients"
 category: Paediatric Neurology
 description: Comprehensive diagnosis and management of paediatric neurological disorders including epilepsy, neurodevelopmental conditions, neurometabolic diseases, neuromuscular disorders, and stroke in children.
 fromPrice: '$2,000'
@@ -23,7 +24,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '1-7 days'
 recoveryTime: 'Varies by condition'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/paediatric-neurology.jpg
 faqs:
   - question: "What is the cost of paediatric neurology treatment in Bangalore?"
     answer: "Paediatric neurology treatment costs in Bangalore range from $2,000 to $15,000 depending on the condition, diagnostic requirements, and treatment plan. This includes consultations, EEG, imaging studies, and ongoing management. Compared to Western countries where costs can exceed $30,000-$80,000, Bangalore offers 60-80% savings with access to internationally trained paediatric neurologists and advanced diagnostic facilities."
@@ -33,6 +34,49 @@ faqs:
     answer: "Paediatric EEG is a painless, non-invasive test that records electrical activity of the brain using electrodes placed on the scalp. For young children who cannot cooperate, a mild oral sedative may be used. Preparation includes clean hair and mild sleep deprivation. The test takes 30-60 minutes for routine EEG, while long-term video EEG may span several days to capture events and classify epilepsy syndromes."
   - question: "What neurodevelopmental disorders are treated?"
     answer: "Our paediatric neurology team manages the full spectrum of neurodevelopmental disorders including cerebral palsy, developmental delays, ADHD, autism spectrum disorders, and learning disabilities. Evaluation and management is multidisciplinary, involving developmental specialists, psychologists, physiotherapists, occupational therapists, ophthalmologists, ENT specialists, and orthopaedic surgeons to provide comprehensive care."
+summary: "Paediatric neurology in Bangalore offers comprehensive diagnosis and management of neurological disorders in children — from epilepsy and neurodevelopmental conditions to neurometabolic diseases, neuromuscular disorders and stroke — at JCI-accredited hospitals. Costs range from $2,000 to $15,000, providing 60-80% savings compared to Western countries with internationally trained paediatric neurologists and multidisciplinary care teams."
+eligibility:
+  - "Children from birth to 18 years with suspected or confirmed neurological disorders"
+  - "Patients with drug-resistant epilepsy requiring advanced evaluation and dietary or surgical management"
+  - "Children with neurodevelopmental disorders (cerebral palsy, ADHD, autism) needing multidisciplinary assessment"
+  - "Patients with neurometabolic or neurogenetic disorders requiring specialist diagnosis and management"
+  - "Children with neuromuscular disorders or paediatric stroke requiring comprehensive evaluation"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "1-7 days"
+    description: "Diagnostic workup, EEG/video EEG monitoring, neuroimaging, initiation of treatment and multidisciplinary assessments"
+  - phase: "Bangalore recovery"
+    duration: "1-3 weeks"
+    description: "Follow-up consultations, therapy sessions (physiotherapy, occupational therapy, speech therapy), treatment plan finalisation"
+  - phase: "Return home"
+    duration: "Week 3-6"
+    description: "Continuation of prescribed therapies and medications at home; tele-consultation follow-up with the neurology team"
+  - phase: "Full recovery"
+    duration: "Varies by condition"
+    description: "Ongoing management and developmental monitoring; chronic conditions require long-term follow-up and periodic reassessment"
+risks:
+  - "Adverse reactions to anti-epileptic drugs requiring dose adjustment or change"
+  - "Inadequate seizure control despite optimal medical and dietary therapy"
+  - "Progression of neurodegenerative or neurometabolic conditions despite treatment"
+  - "Developmental delays persisting or worsening requiring ongoing intervention"
+  - "Complications from immunotherapy (IVIG, plasmapheresis, steroids) in neuro-immunological disorders"
+relatedTreatmentSlugs:
+  - "neurology"
+  - "stem-cell-treatment"
 ---
 
 ## Overview
@@ -106,13 +150,13 @@ Our partner hospitals are equipped with **dedicated paediatric EEG facilities**,
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Paediatric Neurology) |
-|---------|----------------------------------------|
-| India (Bangalore) | $2,000 – $15,000 |
-| USA | $15,000 – $80,000 |
-| UK | £10,000 – £40,000 |
-| Singapore | $8,000 – $30,000 |
-| Thailand | $5,000 – $20,000 |
+| Country | Approximate Cost (Paediatric Neurology) | vs India |
+|---------|----------------------------------------|----------|
+| India (Bangalore) | $2,000 – $15,000 | Baseline |
+| USA | $15,000 – $80,000 | ~5.6× higher |
+| UK | £10,000 – £40,000 | ~2.9× higher |
+| Singapore | $8,000 – $30,000 | ~2.2× higher |
+| Thailand | $5,000 – $20,000 | ~1.5× higher |
 
 ## Why Choose Bangalore for Paediatric Neurology?
 

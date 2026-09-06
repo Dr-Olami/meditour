@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Gastroenterology & GI Surgery
+seoHeadline: "Gastroenterology & GI Surgery in India for International Patients"
 category: Gastroenterology
 description: Comprehensive GI care including surgical gastroenterology, HPB surgery, robotic GI oncology, liver resection, pancreatic surgery, and advanced endoscopic procedures.
 fromPrice: '$2,500'
@@ -25,7 +26,7 @@ relatedHospitalSlugs:
 duration: '1-6 hours'
 hospitalStay: '2-10 days'
 recoveryTime: '1-6 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/gastroenterology-surgery.jpg
 faqs:
   - question: "What is the cost of GI surgery in Bangalore?"
     answer: "Gastroenterology and GI surgery costs in Bangalore range from $2,500 to $18,000 depending on the procedure, complexity, and hospital stay required. Compared to Western countries where GI surgery can cost $15,000-$50,000, Bangalore offers 60-80% savings with access to internationally trained surgical gastroenterologists and advanced robotic surgical systems."
@@ -35,6 +36,49 @@ faqs:
     answer: "Our HPB surgery team performs liver resections for tumours, pancreatic resections (Whipple's procedure, distal pancreatectomy), biliary tract surgery, gallbladder surgery, and complex liver and pancreatic cancer surgeries. The team uses advanced techniques including robotic and laparoscopic approaches for selected cases, with comprehensive post-operative ICU care."
   - question: "How long is the hospital stay after GI surgery?"
     answer: "Hospital stay varies by procedure: laparoscopic cholecystectomy (1-2 days), appendectomy (1-3 days), colorectal surgery (5-8 days), liver resection (5-10 days), and pancreatic surgery (7-14 days). Robotic and minimally invasive approaches typically reduce hospital stay by 30-50% compared to open surgery."
+summary: "Gastroenterology and GI surgery in Bangalore offers comprehensive diagnosis and surgical treatment of digestive system disorders including GI cancers, HPB surgery, robotic procedures, and advanced endoscopy at JCI-accredited hospitals. Costs range from $2,500 to $18,000, providing 60-80% savings compared to Western countries."
+eligibility:
+  - "Patients with GI cancers, benign GI disorders, or HPB conditions requiring surgical intervention"
+  - "Individuals medically fit for surgery as determined by pre-operative evaluation"
+  - "Patients requiring robotic or minimally invasive GI surgery for complex conditions"
+  - "Those needing advanced therapeutic endoscopy for diagnostic or treatment purposes"
+  - "International patients able to travel and stay for the required hospital and recovery period"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "2-10 days"
+    description: "Post-operative monitoring in dedicated GI ICU, pain management, early mobilisation, and gradual resumption of oral intake"
+  - phase: "Bangalore recovery"
+    duration: "1-3 weeks"
+    description: "Follow-up consultations, wound assessment, nutritional counselling, and ERAS protocol continuation"
+  - phase: "Return home"
+    duration: "Week 2-5"
+    description: "Gradual return to normal diet and activities with teleconsultation support and dietary guidance"
+  - phase: "Full recovery"
+    duration: "1-6 weeks"
+    description: "Complete healing, resumption of normal digestive function, and final surgical outcome assessment"
+risks:
+  - "Anastomotic leak or stricture following GI resection surgery"
+  - "Intra-abdominal infection or abscess requiring drainage"
+  - "Bleeding during or after surgery requiring transfusion or re-operation"
+  - "Bile duct injury during gallbladder surgery"
+  - "Post-operative ileus or bowel obstruction"
+relatedTreatmentSlugs:
+  - "bariatric-weight-loss"
+  - "hepatology-liver-care"
 ---
 
 ## Overview
@@ -101,13 +145,13 @@ Our partner hospitals are equipped with **da Vinci robotic surgical systems**, *
 
 ## Cost Comparison
 
-| Country | Approximate Cost (GI Surgery) |
-|---------|------------------------------|
-| India (Bangalore) | $2,500 – $18,000 |
-| USA | $15,000 – $50,000 |
-| UK | £10,000 – £35,000 |
-| Singapore | $8,000 – $30,000 |
-| Thailand | $5,000 – $20,000 |
+| Country | Approximate Cost (GI Surgery) | vs India |
+|---------|------------------------------|----------|
+| India (Bangalore) | $2,500 – $18,000 | Baseline |
+| USA | $15,000 – $50,000 | ~3.2× higher |
+| UK | £10,000 – £35,000 | ~2.2× higher |
+| Singapore | $8,000 – $30,000 | ~1.9× higher |
+| Thailand | $5,000 – $20,000 | ~1.2× higher |
 
 ## Why Choose Bangalore for GI Surgery?
 

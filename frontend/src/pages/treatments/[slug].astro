@@ -17,7 +17,7 @@ import { resolvePublicImage } from '../../lib/images';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
-import { getTreatments, getDoctors, getHospitals, resolveRelatedDoctors, resolveHospital, resolveRelatedHospitals, entrySlug } from '../../lib/content';
+import { getTreatments, getDoctors, getHospitals, getProceduresByCategory, resolveRelatedDoctors, resolveHospital, resolveRelatedHospitals, entrySlug } from '../../lib/content';
 import { medicalProcedure, breadcrumbs, faqPage, medicalWebPage } from '../../lib/schema';
 import { getTreatmentInquiryLink, getDoctorInquiryLink } from '../../lib/whatsapp';
 import { generateTreatmentFaqs, mergeFaqs } from '../../lib/faq-generator';
@@ -25,6 +25,7 @@ import { getCategoryHue } from '../../lib/treatment-categories';
 import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
 import { LEAD_SOURCE } from '../../lib/crm';
 import { LeadModalTrigger } from '../../design-system/components/organisms/LeadModalTrigger';
+import { ALL_COUNTRIES } from '../../data/countries';
 
 export async function getStaticPaths() {
   const [treatments, doctors, hospitals] = await Promise.all([
@@ -34,6 +35,7 @@ export async function getStaticPaths() {
   ]);
 
   return treatments.map((entry) => {
+    const slug = entrySlug(entry);
     const related = resolveRelatedDoctors(entry.data.relatedDoctorSlugs, doctors).map((d) => {
       const hospital = resolveHospital(d.data.hospitalId, hospitals);
       return {
@@ -54,7 +56,6 @@ export async function getStaticPaths() {
       image: h.data.image,
       href: `/hospitals/${entrySlug(h)}`,
     }));
-    const slug = entrySlug(entry);
     return {
       params: { slug },
       props: { treatment: entry.data, related, relatedHospitals, entry, heroImage: resolvePublicImage(`images/treatments/${slug}`) },
@@ -65,6 +66,7 @@ export async function getStaticPaths() {
 const t = getTranslations('en');
 const { treatment, related, relatedHospitals, entry, heroImage } = Astro.props;
 const { Content } = await entry.render();
+const slug = entrySlug(entry);
 
 // Shared CTA backdrop — one image serves all treatment pages; falls back to
 // the ink + glow band until /images/patterns/treatment-page-cta.jpg exists.
@@ -72,7 +74,8 @@ const ctaImage = resolvePublicImage('images/patterns/treatment-page-cta', ['jpg'
 
 const navLinks = getNavLinks('en');
 
-const title = `${treatment.name} — ${t.treatments.title} | ${t.site.name}`;
+const headline = treatment.seoHeadline || treatment.name;
+const title = `${headline} — ${t.treatments.title} | ${t.site.name}`;
 const description = treatment.description;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
@@ -103,8 +106,6 @@ const jsonLd = [
   ]),
 ];
 
-const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name);
-
 const relatedDoctorNames = related.map((d) => d.name);
 const relatedHospitalNames = relatedHospitals.map((h) => h.name);
 const autoFaqs = generateTreatmentFaqs(treatment, relatedDoctorNames, relatedHospitalNames, 'en');
@@ -119,12 +120,20 @@ const treatmentOptions = allTreatments.map((entry) => ({
   label: entry.data.name,
 }));
 
+// Load procedures for this treatment category (Phase 2 procedure pages).
+const categoryProcedures = await getProceduresByCategory('en', slug);
+
 // ── Editorial data shaping ────────────────────────────────────────────
 // QuickFacts: pull key facts out of the sidebar dl into hero icon chips.
 // Price shows a range when both fromPrice and toPrice are available.
 const priceValue = treatment.fromPrice && treatment.toPrice
   ? `${treatment.fromPrice} – ${treatment.toPrice}`
   : treatment.fromPrice;
+
+const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name, {
+  costRange: priceValue,
+  recoveryTime: treatment.recoveryTime,
+});
 
 const quickFacts: QuickFactItem[] = [
   ...(treatment.duration ? [{ icon: 'clock' as const, label: t.treatments.detail.durationLabel, value: treatment.duration }] : []),
@@ -148,6 +157,22 @@ const journeySteps: Step[] = [
   { title: t.treatments.detail.journeyStep3Title, description: t.treatments.detail.journeyStep3Desc },
   { title: t.treatments.detail.journeyStep4Title, description: t.treatments.detail.journeyStep4Desc },
 ];
+
+// Related treatments — resolve slugs to entries for cross-linking.
+const relatedTreatments = (treatment.relatedTreatmentSlugs ?? [])
+  .map((slug) => allTreatments.find((e) => entrySlug(e) === slug))
+  .filter((e): e is NonNullable<typeof e> => Boolean(e))
+  .map((e) => ({
+    name: e.data.name,
+    slug: entrySlug(e),
+    fromPrice: e.data.fromPrice,
+  }));
+
+// Country cross-links — show all countries that have landing pages.
+const countryLinks = ALL_COUNTRIES.map((c) => ({
+  label: c.name,
+  href: `/countries/${c.slug}`,
+}));
 ---
 
 <Layout title={title} description={description} locale="en" image={treatment.image} jsonLd={jsonLd}>
@@ -157,6 +182,10 @@ const journeySteps: Step[] = [
     cta={{ label: t.nav.cta, href: '/#contact' }}
     locale="en"
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 
@@ -175,10 +204,11 @@ const journeySteps: Step[] = [
       auto-detected at build time by resolveTreatmentHero(); the page falls
       back to the ink + glow hero until the file exists. */}
   <section class="relative overflow-hidden bg-ink text-cream-100">
-    {heroImage && (
+    {/* Card image as hero background (all breakpoints) */}
+    {treatment.image && (
       <>
         <img
-          src={heroImage}
+          src={treatment.image}
           alt=""
           class="pointer-events-none absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
@@ -186,7 +216,7 @@ const journeySteps: Step[] = [
           fetchpriority="high"
           data-anim="mask-reveal"
         />
-        <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)" />
       </>
     )}
     <div class={`pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-${hue.primary}/15 blur-3xl`} aria-hidden="true" />
@@ -210,10 +240,20 @@ const journeySteps: Step[] = [
             {treatment.category}
           </span>
         )}
-        <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl" data-anim="headline-reveal">
-          {treatment.name}
+        <h1 class="mt-4 max-w-2xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]" data-anim="headline-reveal">
+          {headline}
         </h1>
-        <div class="mt-16 h-16 md:h-20" aria-hidden="true" />
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-cream-100 sm:text-lg" data-anim="fade-in-up">
+          {treatment.description}
+        </p>
+
+        {/* Cost badge — prominent price display in hero */}
+        {priceValue && (
+          <div class="mt-6 inline-flex items-baseline gap-2 rounded-card bg-white/10 px-5 py-3 backdrop-blur-sm" data-anim="fade-in-up">
+            <span class="text-sm text-cream-100/70">{t.treatments.detail.typicalCostLabel}</span>
+            <span class="font-display text-2xl font-bold text-white">{priceValue}</span>
+          </div>
+        )}
 
         {/* QuickFacts — key facts as scannable icon chips in the hero */}
         {quickFacts.length > 0 && (
@@ -244,6 +284,31 @@ const journeySteps: Step[] = [
     </div>
   </section>
 
+  {/* ── "IN SHORT" SUMMARY — AI-extractable callout ─────────────────── */}
+  {treatment.summary && (
+    <section class="container py-8" data-anim="fade-in-up">
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">{t.treatments.detail.inShortLabel}</p>
+        <p class="mt-2 text-lg leading-relaxed text-ink/80">{treatment.summary}</p>
+      </div>
+    </section>
+  )}
+
+  {/* ── "WHO IS THIS TREATMENT FOR?" — eligibility criteria ─────────── */}
+  {treatment.eligibility && treatment.eligibility.length > 0 && (
+    <section class="container pb-8" data-anim="fade-in-up">
+      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.whoIsThisFor}</h2>
+      <ul class="grid gap-3 md:grid-cols-2">
+        {treatment.eligibility.map((item) => (
+          <li class="flex items-start gap-2 text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <section class="container py-16 md:py-20">
     {/* ── MEET YOUR SPECIALISTS — related doctors above the prose ─────── */}
     {related.length > 0 && (
@@ -268,6 +333,34 @@ const journeySteps: Step[] = [
           <div class="mb-12" data-anim="fade-in-up">
             <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.procedures}</h2>
             <StepCards steps={stepCards} tone="light" client:visible />
+          </div>
+        )}
+
+        {/* ── PROCEDURE CARDS — links to dedicated procedure pages ──── */}
+        {categoryProcedures.length > 0 && (
+          <div class="mb-12" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.procedures.title}</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {categoryProcedures.map((p) => {
+                const pSlug = entrySlug(p).split('/').pop()!;
+                const pPrice = p.data.fromPrice && p.data.toPrice
+                  ? `${p.data.fromPrice} – ${p.data.toPrice}`
+                  : p.data.fromPrice;
+                return (
+                  <a href={`/treatments/${slug}/${pSlug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-5 transition-all hover:border-violet-300 hover:shadow-base">
+                    <p class="text-sm font-semibold text-ink">{p.data.name}</p>
+                    {p.data.summary && <p class="mt-2 text-xs text-ink/60 line-clamp-2">{p.data.summary}</p>}
+                    {pPrice && (
+                      <p class="mt-3 text-xs font-medium text-violet-600">{t.treatments.procedures.costInIndia}: {pPrice}</p>
+                    )}
+                    <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
+                      {t.treatments.procedures.learnMore}
+                      <Icon name="arrow-right" size={14} />
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         )}
 
@@ -339,6 +432,97 @@ const journeySteps: Step[] = [
       <section class="mt-16" data-anim="fade-in-up">
         <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.faqTitle}</h2>
         <FAQAccordion items={faqs} client:visible />
+      </section>
+    )}
+
+    {/* ── RECOVERY TIMELINE — structured phase table ─────────────────── */}
+    {treatment.recoveryTimeline && treatment.recoveryTimeline.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.recoveryTimelineTitle}</h2>
+        <div class="overflow-hidden rounded-card border border-cream-300">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-ink text-white">
+              <tr>
+                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryPhaseHeader}</th>
+                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryDurationHeader}</th>
+                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryExpectHeader}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {treatment.recoveryTimeline.map((row) => (
+                <tr class="border-t border-cream-300">
+                  <td class="px-4 py-3 font-semibold text-ink">{row.phase}</td>
+                  <td class="px-4 py-3 text-ink/70">{row.duration}</td>
+                  <td class="px-4 py-3 text-ink/70">{row.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
+    {(treatment.costInclusions || treatment.costExclusions) && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.costInclusionsTitle}</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {treatment.costInclusions && treatment.costInclusions.length > 0 && (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costIncluded}</h3>
+              <ul class="space-y-2">
+                {treatment.costInclusions.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-ink/70">
+                    <Icon name="check" size={16} class="mt-0.5 shrink-0 text-green-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {treatment.costExclusions && treatment.costExclusions.length > 0 && (
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costNotIncluded}</h3>
+              <ul class="space-y-2">
+                {treatment.costExclusions.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-ink/70">
+                    <Icon name="x" size={16} class="mt-0.5 shrink-0 text-red-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    {/* ── RELATED TREATMENTS — cross-linking ─────────────────────────── */}
+    {relatedTreatments.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.relatedTreatmentsTitle}</h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {relatedTreatments.map((rt) => (
+            <a href={`/treatments/${rt.slug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base">
+              <p class="text-sm font-semibold text-ink">{rt.name}</p>
+              {rt.fromPrice && <p class="mt-1 text-xs text-ink/50">{t.treatments.detail.fromPriceLabel} {rt.fromPrice}</p>}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {/* ── COUNTRY CROSS-LINKS — treatment for international patients ──── */}
+    {countryLinks.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.countryLinksTitle}</h2>
+        <div class="flex flex-wrap gap-3">
+          {countryLinks.map((c) => (
+            <a href={c.href} class="rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white">
+              {c.label}
+            </a>
+          ))}
+        </div>
       </section>
     )}
   </section>

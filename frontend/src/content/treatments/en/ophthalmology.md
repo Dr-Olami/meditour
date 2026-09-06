@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Ophthalmology
+seoHeadline: "Ophthalmology & Eye Surgery in India for International Patients"
 category: Eye
 description: Cataract, LASIK, corneal transplant, glaucoma and retina care with high-end diagnostics and same-day procedure options.
 fromPrice: '$800'
@@ -21,7 +22,7 @@ relatedHospitalSlugs:
 duration: '15 min - 2 hours'
 hospitalStay: 'Day-care'
 recoveryTime: '1-4 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/ophthalmology.jpg
 faqs:
   - question: "Is bladeless cataract surgery available?"
     answer: "Yes, femtosecond laser-assisted cataract surgery (FLACS) is available at our partner hospitals. This bladeless technique uses a laser to perform key steps of the procedure including corneal incisions, capsulotomy, and lens fragmentation, resulting in greater precision, reduced ultrasound energy, and faster visual recovery compared to conventional phacoemulsification."
@@ -29,6 +30,49 @@ faqs:
     answer: "Our partner hospitals offer a full range of premium IOLs including multifocal IOLs for clear vision at all distances, toric IOLs for astigmatism correction, extended depth of focus (EDOF) IOLs for seamless intermediate vision, and monofocal IOLs. The choice of IOL is personalised based on your visual needs, lifestyle, and eye anatomy."
   - question: "Is LASIK suitable for all refractive errors?"
     answer: "LASIK is suitable for most refractive errors including myopia, hyperopia, and astigmatism, but not for everyone. Suitability depends on corneal thickness, refractive stability, and eye health. For patients with thin corneas, alternatives such as PRK, TransPRK, or ICL (implantable collamer lens) are available. A comprehensive pre-operative evaluation determines the best option."
+summary: "Ophthalmology care in Bangalore offers cataract surgery with premium IOLs, LASIK/SMILE, corneal transplant, glaucoma surgery and retina laser treatment at JCI-accredited hospitals with femtosecond laser platforms. Costs range from $800 to $4,000, providing 60-80% savings compared to Western countries with same-day procedures and comprehensive post-operative care."
+eligibility:
+  - "Patients with visually significant cataracts requiring lens replacement"
+  - "Individuals with stable refractive errors and adequate corneal thickness for laser vision correction"
+  - "Patients with glaucoma requiring surgical or laser intervention to control intraocular pressure"
+  - "Patients with corneal disease (keratoconus, scarring, dystrophies) needing corneal transplant"
+  - "Patients with retinal conditions (diabetic retinopathy, detachment, macular degeneration) requiring treatment"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "Day-care"
+    description: "Same-day discharge after procedure; eye shield applied, initial visual assessment and post-operative instructions given"
+  - phase: "Bangalore recovery"
+    duration: "1-2 weeks"
+    description: "Follow-up visual acuity check, eye drop regimen, IOP monitoring for glaucoma patients, retinal review as needed"
+  - phase: "Return home"
+    duration: "Week 2-3"
+    description: "Gradual visual improvement; continuation of eye drop protocol and protective eyewear guidance"
+  - phase: "Full recovery"
+    duration: "1-4 weeks"
+    description: "Stable vision achieved, resumption of normal activities including driving and work"
+risks:
+  - "Infection (endophthalmitis) after intraocular surgery"
+  - "Posterior capsule opacification after cataract surgery"
+  - "Corneal graft rejection after transplant"
+  - "Elevated intraocular pressure or hypotony after glaucoma surgery"
+  - "Under-correction or over-correction after refractive laser surgery"
+relatedTreatmentSlugs:
+  - "neurology"
+  - "paediatric-neurology"
 ---
 
 ## Overview
@@ -103,13 +147,13 @@ Laser vision correction for refractive errors:
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Eye Surgery) |
-|---------|--------------------------------|
-| India (Bangalore) | $800 – $4,000 |
-| USA | $5,000 – $15,000 |
-| UK | £3,000 – £10,000 |
-| Singapore | $4,000 – $10,000 |
-| Thailand | $2,500 – $7,000 |
+| Country | Approximate Cost (Eye Surgery) | vs India |
+|---------|--------------------------------|----------|
+| India (Bangalore) | $800 – $4,000 | Baseline |
+| USA | $5,000 – $15,000 | ~4.2× higher |
+| UK | £3,000 – £10,000 | ~2.7× higher |
+| Singapore | $4,000 – $10,000 | ~2.9× higher |
+| Thailand | $2,500 – $7,000 | ~2.0× higher |
 
 ## Why Choose Bangalore for Eye Care?
 

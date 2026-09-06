@@ -96,6 +96,10 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '/bn/contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 
@@ -234,8 +238,8 @@ const jsonLd = [
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <a href="/bn/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="list" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="list" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">কীভাবে কাজ করে</h3>
             </div>
@@ -244,8 +248,8 @@ const jsonLd = [
           </a>
           <a href="/bn/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="document" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="document" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">মেডিকেল ভিসা সহায়তা</h3>
             </div>
@@ -254,8 +258,8 @@ const jsonLd = [
           </a>
           <a href="/bn/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="plane" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="plane" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">ভ্রমণ ও থাকা</h3>
             </div>
@@ -264,8 +268,8 @@ const jsonLd = [
           </a>
           <a href="/bn/second-opinion" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">বিনামূল্যে দ্বিতীয় মতামত</h3>
             </div>
@@ -274,8 +278,8 @@ const jsonLd = [
           </a>
           <a href="/bn/cost-calculator" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">খরচ ক্যালকুলেটর</h3>
             </div>
@@ -284,8 +288,8 @@ const jsonLd = [
           </a>
           <a href="/bn/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="phone" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="phone" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">যোগাযোগ করুন</h3>
             </div>

@@ -102,6 +102,10 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   cta={{ label: t.nav.cta, href: '#contact' }}
   locale={locale}
   currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
   client:load
 />
 

@@ -51,15 +51,42 @@ export function getDoctorInquiryLink(doctorName: string): string {
  * Build a WhatsApp inquiry link mentioning a specific treatment.
  *
  * @param treatmentName - Name of the treatment.
+ * @param options - Optional cost range and recovery time to include in the message.
  * @returns WhatsApp deep link or empty string if no number configured.
  */
-export function getTreatmentInquiryLink(treatmentName: string): string {
+export function getTreatmentInquiryLink(
+  treatmentName: string,
+  options?: { costRange?: string; recoveryTime?: string }
+): string {
   const number = getWhatsAppNumber();
   if (!number) return '';
-  return buildWhatsAppLink(
-    number,
-    `Hi Khan Meditour, I am interested in ${treatmentName} and would like to know more.`
-  );
+  let message = `Hi Khan Meditour, I am interested in ${treatmentName} in India.`;
+  if (options?.costRange) {
+    message += ` I see the cost is around ${options.costRange}.`;
+  }
+  message += ' Please help me with hospital options, costs, and visa support.';
+  return buildWhatsAppLink(number, message);
+}
+
+/**
+ * Build a WhatsApp inquiry link mentioning a specific procedure.
+ *
+ * @param procedureName - Name of the procedure.
+ * @param options - Optional cost range and recovery time to include in the message.
+ * @returns WhatsApp deep link or empty string if no number configured.
+ */
+export function getProcedureInquiryLink(
+  procedureName: string,
+  options?: { costRange?: string; recoveryTime?: string }
+): string {
+  const number = getWhatsAppNumber();
+  if (!number) return '';
+  let message = `Hi Khan Meditour, I am interested in ${procedureName} in India.`;
+  if (options?.costRange) {
+    message += ` I see the cost is around ${options.costRange}.`;
+  }
+  message += ' Please help me with hospital options, costs, and visa support.';
+  return buildWhatsAppLink(number, message);
 }
 
 /**

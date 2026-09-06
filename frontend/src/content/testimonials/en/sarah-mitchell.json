@@ -1,0 +1,10 @@
+{
+  "locale": "en",
+  "name": "Sarah Mitchell",
+  "location": "Los Angeles, USA",
+  "targetCountry": "usa",
+  "quote": "I saved over $20,000 on my cosmetic surgery compared to LA prices, and the results exceeded my expectations. The international patient team made me feel like I was at a five-star resort, not a hospital.",
+  "image": "https://picsum.photos/seed/sarahmitchell/800/600",
+  "brandLabel": "COSMETIC",
+  "relatedTreatmentSlugs": ["cosmetic-surgery"]
+}

@@ -5,6 +5,7 @@ import { entrySlug } from './slug';
 export type DoctorEntry = CollectionEntry<'doctors'>;
 export type HospitalEntry = CollectionEntry<'hospitals'>;
 export type TreatmentEntry = CollectionEntry<'treatments'>;
+export type ProcedureEntry = CollectionEntry<'procedures'>;
 export type TestimonialEntry = CollectionEntry<'testimonials'>;
 export type BlogEntry = CollectionEntry<'blog'>;
 
@@ -75,6 +76,50 @@ export async function getTreatmentBySlug(
 ): Promise<TreatmentEntry | undefined> {
   const treatments = await getTreatments(locale);
   return treatments.find((t) => entrySlug(t) === slug);
+}
+
+/**
+ * Return all procedures for a given locale, sorted by name.
+ */
+export async function getProcedures(locale: string): Promise<ProcedureEntry[]> {
+  const all = await getCollection('procedures');
+  return all.filter(byLocale<ProcedureEntry>(locale)).sort(byName);
+}
+
+/**
+ * Return all procedures for a given locale and parent treatment slug.
+ */
+export async function getProceduresByCategory(
+  locale: string,
+  parentTreatmentSlug: string
+): Promise<ProcedureEntry[]> {
+  const all = await getProcedures(locale);
+  return all.filter((p) => p.data.parentTreatmentSlug === parentTreatmentSlug);
+}
+
+/**
+ * Find a procedure entry by slug and locale.
+ */
+export async function getProcedureBySlug(
+  locale: string,
+  slug: string
+): Promise<ProcedureEntry | undefined> {
+  const procedures = await getProcedures(locale);
+  // entrySlug returns "category/procedure-slug" for nested dirs; compare just the last segment.
+  return procedures.find((p) => entrySlug(p).split('/').pop() === slug);
+}
+
+/**
+ * Resolve related procedures from their slugs.
+ */
+export function resolveRelatedProcedures(
+  slugs: string[] | undefined,
+  procedures: ProcedureEntry[]
+): ProcedureEntry[] {
+  if (!slugs) return [];
+  return slugs
+    .map((slug) => procedures.find((p) => entrySlug(p).split('/').pop() === slug))
+    .filter((p): p is ProcedureEntry => p !== undefined);
 }
 
 /**
@@ -162,14 +207,16 @@ export async function getBlogPostBySlug(
 // ─── Country-specific filtering ──────────────────────────────────────────────
 // Reason: Country landing pages (/countries/[country]) need to surface testimonials,
 // blog posts, and treatments relevant to each country. The filtering logic
-// includes content tagged with the specific country, 'global' content, and
-// untagged content (for backwards compatibility).
+// includes content tagged with the specific country and 'global' content.
+// Untagged testimonials are excluded so India-based stories don't appear on
+// every country page.
 
 /**
  * Return testimonials filtered by target country.
  *
- * Includes testimonials tagged with the specific country, 'global' tagged
- * testimonials, and untagged testimonials (backwards compatibility).
+ * Includes testimonials tagged with the specific country and 'global' tagged
+ * testimonials. Untagged testimonials are excluded — they are general stories
+ * (e.g. India-based patients) that don't belong on country-specific pages.
  *
  * @param locale - Target locale ('en' or 'bn').
  * @param country - Country slug (e.g. 'bangladesh', 'uae', 'nigeria').
@@ -183,8 +230,7 @@ export async function getTestimonialsByCountry(
   return all.filter(
     (entry) =>
       entry.data.targetCountry === country ||
-      entry.data.targetCountry === 'global' ||
-      !entry.data.targetCountry
+      entry.data.targetCountry === 'global'
   );
 }
 

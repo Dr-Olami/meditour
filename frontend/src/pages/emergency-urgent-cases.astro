@@ -96,6 +96,10 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '/contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 
@@ -234,8 +238,8 @@ const jsonLd = [
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <a href="/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="list" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="list" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">How it works</h3>
             </div>
@@ -244,8 +248,8 @@ const jsonLd = [
           </a>
           <a href="/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="document" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="document" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Medical visa assistance</h3>
             </div>
@@ -254,8 +258,8 @@ const jsonLd = [
           </a>
           <a href="/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="plane" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="plane" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Travel & accommodation</h3>
             </div>
@@ -264,8 +268,8 @@ const jsonLd = [
           </a>
           <a href="/second-opinion" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Free second opinion</h3>
             </div>
@@ -274,8 +278,8 @@ const jsonLd = [
           </a>
           <a href="/cost-calculator" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Cost calculator</h3>
             </div>
@@ -284,8 +288,8 @@ const jsonLd = [
           </a>
           <a href="/contact" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="phone" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="phone" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Contact us</h3>
             </div>

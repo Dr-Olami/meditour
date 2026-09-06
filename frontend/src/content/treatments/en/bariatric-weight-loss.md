@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Bariatric (Weight Loss)
+seoHeadline: "Bariatric & Weight Loss Surgery in India for International Patients"
 category: Surgery
 description: Safe, evidence-based weight-loss surgery including gastric bypass, sleeve gastrectomy and revisional procedures, supported by long-term dietary care.
 fromPrice: '$4,500'
@@ -20,7 +21,7 @@ relatedHospitalSlugs:
 duration: '1-3 hours'
 hospitalStay: '2-4 days'
 recoveryTime: '2-4 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/bariatric-weight-loss.jpg
 faqs:
   - question: "Am I eligible for bariatric surgery?"
     answer: "You may be eligible for bariatric surgery if your BMI is 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension, or sleep apnoea, or if your BMI is 40 or higher without comorbidities. Eligibility is determined through a comprehensive evaluation including medical history, nutritional assessment, and psychological screening by the bariatric team."
@@ -28,6 +29,49 @@ faqs:
     answer: "Yes, lifelong vitamin and mineral supplementation is required after gastric bypass surgery due to reduced nutrient absorption. This typically includes multivitamins, calcium, iron, vitamin B12, and vitamin D. The bariatric team provides personalised supplementation protocols and monitors nutrient levels through regular blood tests."
   - question: "Is revisional bariatric surgery available?"
     answer: "Yes, revisional bariatric surgery is available for patients who have experienced inadequate weight loss, weight regain, or complications from a previous bariatric procedure. Options include band-to-sleeve conversion, sleeve-to-bypass conversion, and revision of dilated gastric pouches. These procedures require specialised expertise and careful pre-operative evaluation."
+summary: "Bariatric surgery in Bangalore offers safe, evidence-based weight-loss procedures including gastric bypass, sleeve gastrectomy and revisional surgery, performed laparoscopically by multidisciplinary teams at JCI-accredited hospitals. Costs range from $4,500 to $9,000, providing 60-80% savings compared to Western countries with comprehensive long-term dietary, nutritional and psychological support programmes."
+eligibility:
+  - "Patients with BMI of 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension or sleep apnoea"
+  - "Patients with BMI of 40 or higher without comorbidities"
+  - "Individuals who have failed sustained weight loss through non-surgical methods"
+  - "Patients who pass psychological screening and nutritional assessment by the bariatric team"
+  - "Patients requiring revisional surgery after failed previous bariatric procedures"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "2-4 days"
+    description: "Post-operative monitoring, pain management, early mobilisation and staged liquid diet initiation"
+  - phase: "Bangalore recovery"
+    duration: "1-2 weeks"
+    description: "Dietary progression from liquids to soft foods, wound review, nutritional counselling and supplementation initiation"
+  - phase: "Return home"
+    duration: "Week 2-3"
+    description: "Gradual return to daily activities; continued dietary progression and vitamin/mineral supplementation protocol"
+  - phase: "Full recovery"
+    duration: "2-4 weeks"
+    description: "Complete wound healing, resumption of normal activities; long-term dietary and weight monitoring ongoing"
+risks:
+  - "Anastomotic leak or staple-line leak requiring re-operation"
+  - "Nutritional deficiencies (vitamin B12, iron, calcium) due to malabsorption"
+  - "Dumping syndrome after gastric bypass"
+  - "Deep vein thrombosis or pulmonary embolism"
+  - "Weight regain or inadequate weight loss requiring revisional surgery"
+relatedTreatmentSlugs:
+  - "gastroenterology-gi-surgery"
+  - "cardiology"
 ---
 
 ## Overview
@@ -81,13 +125,13 @@ Correction or conversion of previous bariatric procedures that have failed or ca
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Bariatric Surgery) |
-|---------|--------------------------------------|
-| India (Bangalore) | $4,500 – $9,000 |
-| USA | $15,000 – $30,000 |
-| UK | £10,000 – £20,000 |
-| Singapore | $12,000 – $22,000 |
-| Thailand | $8,000 – $15,000 |
+| Country | Approximate Cost (Bariatric Surgery) | vs India |
+|---------|--------------------------------------|----------|
+| India (Bangalore) | $4,500 – $9,000 | Baseline |
+| USA | $15,000 – $30,000 | ~3.3× higher |
+| UK | £10,000 – £20,000 | ~2.2× higher |
+| Singapore | $12,000 – $22,000 | ~2.5× higher |
+| Thailand | $8,000 – $15,000 | ~1.7× higher |
 
 ## Why Choose Bangalore for Bariatric Surgery?
 

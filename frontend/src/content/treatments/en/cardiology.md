@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Cardiology
+seoHeadline: "Cardiac Care & Heart Surgery in India for International Patients"
 category: Heart
 description: Comprehensive cardiac care from angiograms and angioplasty to bypass surgery, valve replacement and heart failure management at JCI-accredited hospitals.
 fromPrice: '$1,500'
@@ -27,7 +28,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '2-7 days'
 recoveryTime: '2-6 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/cardiac-care.jpg
 faqs:
   - question: "What is the success rate of cardiac surgery at your partner hospitals?"
     answer: "Our partner hospitals, including Narayana Institute of Cardiac Sciences, perform over 15,000 cardiac surgeries annually with success rates exceeding 98% for routine procedures like CABG and angioplasty. Outcomes are benchmarked against international standards and continuously audited for quality."
@@ -35,6 +36,49 @@ faqs:
     answer: "Yes, minimally invasive cardiac surgery is available including minimally invasive CABG, minimally invasive valve surgery, and transcatheter aortic valve replacement (TAVR). These approaches use smaller incisions, result in less post-operative pain, shorter hospital stays, and faster recovery compared to traditional open-heart surgery."
   - question: "Can I get a same-day angiogram and angioplasty?"
     answer: "Yes, in many cases a diagnostic coronary angiogram and angioplasty (PCI) can be performed in the same session if a treatable blockage is identified. This is determined by the cardiologist based on angiogram findings, patient condition, and clinical guidelines. The procedure is performed in advanced cath labs with IVUS and FFR guidance."
+summary: "Comprehensive cardiac care in Bangalore from angiograms and angioplasty to bypass surgery and valve replacement at JCI-accredited hospitals with success rates exceeding 98%. Costs range from $1,500 to $7,000, representing 60-80% savings compared to Western countries."
+eligibility:
+  - "Confirmed or suspected cardiac condition requiring intervention (coronary artery disease, valve disease, arrhythmia)"
+  - "Adequate cardiac and overall fitness for the planned procedure"
+  - "Recent cardiac imaging or catheterisation records available for review"
+  - "Stable enough for medical travel (or eligible for emergency transfer if clinically indicated)"
+  - "Ability to stay in Bangalore for the hospital stay plus initial cardiac rehabilitation"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "2-7 days"
+    description: "Procedure or surgery performed with continuous cardiac monitoring, pain management, and early mobilisation in a dedicated cardiac care unit"
+  - phase: "Bangalore recovery"
+    duration: "1-2 weeks"
+    description: "Cardiac rehabilitation, wound healing assessment, medication optimisation, and follow-up consultations"
+  - phase: "Return home"
+    duration: "Week 2-4"
+    description: "Gradual return to daily activities with a structured cardiac rehabilitation protocol and teleconsultation support"
+  - phase: "Full recovery"
+    duration: "2-6 weeks"
+    description: "Complete healing, resumption of normal activities, and long-term cardiac follow-up"
+risks:
+  - "Bleeding or haematoma at the catheter access site or surgical incision"
+  - "Infection at the surgical site or device pocket"
+  - "Arrhythmia or conduction abnormalities requiring medication or device intervention"
+  - "Stroke or myocardial infarction during or after the procedure"
+  - "Stent restenosis or valve dysfunction requiring reintervention"
+relatedTreatmentSlugs:
+  - "organ-treatment"
+  - "nephrology-kidney-care"
 ---
 
 ## Overview
@@ -89,13 +133,13 @@ Device implantation for arrhythmia management — pacemakers for slow heart rate
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Cardiac Procedures) |
-|---------|--------------------------------------|
-| India (Bangalore) | $1,500 – $7,000 |
-| USA | $25,000 – $60,000 |
-| UK | £15,000 – £40,000 |
-| Singapore | $18,000 – $45,000 |
-| Thailand | $12,000 – $30,000 |
+| Country | Approximate Cost (Cardiac Procedures) | vs India |
+|---------|--------------------------------------|----------|
+| India (Bangalore) | $1,500 – $7,000 | Baseline |
+| USA | $25,000 – $60,000 | ~10× higher |
+| UK | £15,000 – £40,000 | ~6.5× higher |
+| Singapore | $18,000 – $45,000 | ~7.4× higher |
+| Thailand | $12,000 – $30,000 | ~4.9× higher |
 
 ## Why Choose Bangalore for Cardiac Care?
 

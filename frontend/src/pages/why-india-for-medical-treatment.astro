@@ -115,13 +115,17 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '/contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 
   <main>
     {/* ── HERO ─────────────────────────────────────────────────────── */}
     <section class="relative overflow-hidden bg-cream-100 text-ink">
-      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-3xl" aria-hidden="true" />
+      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-ink/10 blur-3xl" aria-hidden="true" />
       <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
 
       <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
@@ -254,8 +258,8 @@ const jsonLd = [
           {/* Country guides */}
           <a href="/countries" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="globe" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="globe" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Country guides</h3>
             </div>
@@ -271,8 +275,8 @@ const jsonLd = [
           {/* Hospitals */}
           <a href="/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="hospital" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="hospital" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Hospitals in India</h3>
             </div>
@@ -288,8 +292,8 @@ const jsonLd = [
           {/* Treatments */}
           <a href="/treatments" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="stethoscope" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Treatments available</h3>
             </div>
@@ -305,8 +309,8 @@ const jsonLd = [
           {/* How it works */}
           <a href="/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="list" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="list" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">How it works</h3>
             </div>
@@ -322,8 +326,8 @@ const jsonLd = [
           {/* Medical visa */}
           <a href="/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="document" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="document" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Medical visa assistance</h3>
             </div>
@@ -339,8 +343,8 @@ const jsonLd = [
           {/* Travel & accommodation */}
           <a href="/travel-accommodation-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-violet-600/10">
-                <Icon name="plane" size={20} className="text-violet-600" />
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+                <Icon name="plane" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">Travel & accommodation</h3>
             </div>

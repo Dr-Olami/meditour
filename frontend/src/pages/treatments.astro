@@ -21,6 +21,7 @@ const treatments = treatmentEntries.map((entry) => ({
   category: entry.data.category,
   tags: entry.data.category ? [entry.data.category] : undefined,
   href: `/treatments/${entrySlug(entry)}`,
+  image: entry.data.image,
 }));
 ---
 
@@ -35,6 +36,10 @@ const treatments = treatmentEntries.map((entry) => ({
     cta={{ label: t.nav.cta, href: '/#contact' }}
     locale="en"
     currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
     client:load
   />
 

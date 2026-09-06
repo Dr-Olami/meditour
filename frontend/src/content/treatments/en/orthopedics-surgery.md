@@ -1,6 +1,7 @@
 ---
 locale: en
 name: Orthopedics Surgery
+seoHeadline: "Orthopedic Surgery & Joint Replacement in India for International Patients"
 category: Orthopaedics
 description: Knee and hip replacements, spine surgery, arthroscopy, sports injury repair and rehabilitation at centres of excellence.
 fromPrice: '$2,500'
@@ -24,7 +25,7 @@ relatedHospitalSlugs:
 duration: '1-3 hours'
 hospitalStay: '2-5 days'
 recoveryTime: '2-12 weeks'
-image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop
+image: /images/treatments-cards/orthopedics-surgery.jpg
 faqs:
   - question: "Is robotic-assisted joint replacement available in Bangalore?"
     answer: "Yes, robotic-assisted joint replacement is available at our partner hospitals using systems that provide 3D planning and haptic-guided precision for implant positioning. This technology enhances accuracy beyond what is achievable with conventional or computer-navigated techniques, leading to better alignment and potentially longer implant life."
@@ -32,6 +33,49 @@ faqs:
     answer: "Most patients are encouraged to stand and walk with assistance within 24 hours of hip replacement surgery. With the anterior (muscle-sparing) approach, full weight-bearing is often permitted immediately. Independent walking typically resumes within 1-2 weeks, with full recovery in 4-8 weeks depending on the surgical approach and individual rehabilitation progress."
   - question: "What is the success rate of knee replacement surgery?"
     answer: "Total knee replacement at our partner hospitals has a success rate of over 95% with significant pain relief and functional improvement. Implant longevity is typically 15-20 years with proper care. Computer-navigated and robotic-assisted techniques improve alignment accuracy, which contributes to better long-term outcomes."
+summary: "Orthopaedic surgery in Bangalore offers knee and hip replacements, ACL reconstruction, spine surgery and arthroscopy at JCI-accredited hospitals with computer-navigated and robotic-assisted technology. Costs range from $2,500 to $8,000, offering 60-80% savings compared to Western countries."
+eligibility:
+  - "Confirmed orthopaedic condition requiring surgical intervention (osteoarthritis, ligament injury, spinal disorder)"
+  - "Adequate bone quality and general fitness for surgery and anaesthesia"
+  - "Recent X-rays, MRI, or CT imaging available for surgical planning"
+  - "No active infection at the planned surgical site or systemic infection"
+  - "Ability to commit to post-operative rehabilitation and physiotherapy"
+costInclusions:
+  - "Surgeon and anaesthesiologist fees"
+  - "Hospital room charges"
+  - "Surgery/procedure costs"
+  - "Implants and medications (where applicable)"
+  - "Pre-operative diagnostics and tests"
+  - "Post-operative care during hospital stay"
+  - "Airport pickup and drop"
+costExclusions:
+  - "International flights"
+  - "Accommodation outside hospital stay"
+  - "Post-discharge physiotherapy (if needed)"
+  - "Personal expenses and meals for attendants"
+  - "Unexpected ICU stay beyond package"
+recoveryTimeline:
+  - phase: "Hospital stay"
+    duration: "2-5 days"
+    description: "Surgery performed with computer-navigated or robotic-assisted technique, early mobilisation, and pain management in a dedicated orthopaedic ward"
+  - phase: "Bangalore recovery"
+    duration: "1-2 weeks"
+    description: "Inpatient and outpatient physiotherapy, wound care, and follow-up X-rays to confirm implant positioning"
+  - phase: "Return home"
+    duration: "Week 2-4"
+    description: "Continued rehabilitation with tele-rehabilitation support and gradual return to weight-bearing and daily activities"
+  - phase: "Full recovery"
+    duration: "2-12 weeks"
+    description: "Complete healing, restored joint function, and resumption of normal activities including sports where appropriate"
+risks:
+  - "Deep vein thrombosis (DVT) or pulmonary embolism after joint replacement"
+  - "Surgical site infection or prosthetic joint infection"
+  - "Implant loosening, dislocation, or wear requiring revision surgery"
+  - "Nerve or blood vessel injury during surgery"
+  - "Stiffness or limited range of motion requiring prolonged physiotherapy"
+relatedTreatmentSlugs:
+  - "neuro-and-spine-surgery"
+  - "cancer-treatment"
 ---
 
 ## Overview
@@ -91,13 +135,13 @@ Minimally invasive keyhole surgery for joint problems — shoulder rotator cuff 
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Orthopaedic Surgery) |
-|---------|----------------------------------------|
-| India (Bangalore) | $2,500 – $8,000 |
-| USA | $30,000 – $60,000 |
-| UK | £20,000 – £40,000 |
-| Singapore | $18,000 – $35,000 |
-| Thailand | $12,000 – $25,000 |
+| Country | Approximate Cost (Orthopaedic Surgery) | vs India |
+|---------|----------------------------------------|----------|
+| India (Bangalore) | $2,500 – $8,000 | Baseline |
+| USA | $30,000 – $60,000 | ~8.6× higher |
+| UK | £20,000 – £40,000 | ~5.7× higher |
+| Singapore | $18,000 – $35,000 | ~5.0× higher |
+| Thailand | $12,000 – $25,000 | ~3.5× higher |
 
 ## Why Choose Bangalore for Orthopaedic Care?
 
