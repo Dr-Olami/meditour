@@ -1,4 +1,4 @@
-# Khan Meditour — Phase 0 Implementation Tasks
+﻿# Khan Meditour — Phase 0 Implementation Tasks
 
 > Company: Khan Meditour
 > WhatsApp: +8801611892986
@@ -406,3 +406,228 @@ Extends Phase 2A with 34 more procedure files (17 EN + 17 BN) across 4 medium-vo
 ### Discovered During Work
 
 - **Subagent reliability (again):** First batch of 8 subagents stalled after creating only 5 of 34 files. Re-launched 8 subagents for the remaining 29 files — all completed successfully. This confirms the pattern: subagents may stall on large content generation batches; always verify file counts and re-launch for missing files.
+
+## Patient-Focused Procedure Rewrite (Tier 2 & Tier 3 English) — COMPLETE (2026-09-12)
+
+Rewrote all 13 lower-tier English procedure files and trimmed 18 over-limit files so that every English procedure page reads as practical patient guidance rather than medical reference material. All 49 EN procedure files are now 1,500–2,500 words.
+
+### Batches completed
+
+- [x] **Batch 1 — Hematology (4 files):** aplastic anemia, autologous SCT, lymphoma, thalassemia
+- [x] **Batch 2 — Cardiology (3 files):** ASD/VSD closure, heart valve replacement/repair, pacemaker implantation
+- [x] **Batch 3 — Cancer (3 files):** immunotherapy, lung cancer, prostate cancer
+- [x] **Batch 4 — Orthopedics (3 files):** shoulder replacement, spine surgery, sports injury treatment
+- [x] **Batch 5 — Infertility (3 files):** egg freezing, ICSI, IUI
+- [x] **Batch 6 — Organ (1 file):** lung transplant
+- [x] **Batch 7 — Neuro (2 files):** deep brain stimulation, spinal fusion
+- [x] **Batch 8 — Cosmetic (2 files):** breast augmentation, liposuction
+- [x] **Batch 9 — Trim 18 over-limit files:** IVF (3166→2323), brain tumor (3085→2263), CABG (3027→2406), kidney transplant (3004→2318), breast cancer (2980→2238), chemotherapy (2937→2335), allogeneic SCT (2904→2427), disc replacement (2895→2353), rhinoplasty (2871→2304), angioplasty (2701→2276), tummy tuck (2665→2347), bone marrow transplant (2644→2394), total knee replacement (2628→2460), heart transplant (2620→2426), arthroscopy (2598→2469), liver transplant (2587→2466), surrogacy (2542→2452), cancer surgery (2536→2469)
+
+### Verification
+
+- [x] All 49 EN procedure files verified between 1,500 and 2,500 words (0 over, 0 under).
+- [x] Frontmatter, FAQs, cost comparison tables, related procedure links, and cost information preserved in every file.
+- [x] Patient-focused tone: direct second-person language, empathetic introductions, "Will it hurt?" callouts, practical preparation steps, international-patient logistics, fitness-to-fly guidance, and continuity-of-care coordination with home-country doctors.
+- [x] Medically cautious wording maintained — no unsupported guarantees; final decisions framed as dependent on specialist assessment.
+- [x] `npm run build` passes with exit code 0. 342 HTML routes generated (49 EN + 49 BN procedure routes + treatment category pages + country pages + doctor pages + hospital pages + blog posts + static pages). No build errors.
+
+### Discovered During Work
+
+- **Heart transplant file location:** `heart-transplant-cost-india.md` lives in `cardiology/`, not `organ-treatment/` — corrected during Batch 9 verification.
+- **Hematology directory name:** the procedure directory is `hematology-bone-marrow/`, not `hematology/`.
+- **Background subagents cannot run `node`:** exec tools are auto-denied for background subagents, so word-count verification must be done by the parent agent after subagents complete.
+- **Temp file cleanup:** subagents created helper scripts (`count_words.js`, `check_words.js`, `check_words.ps1`, `count.bat`) in the repo root — deleted after verification.
+
+## Bengali Procedure Expansion — COMPLETE (2026-09-12)
+
+Expanded all 49 BN procedure files across all categories to 1,500–2,500 words, aligned with their expanded English counterparts. Each BN page mirrors the EN structure (overview, who-is-this-for, pre-operative preparation, procedure details, what happens during the procedure, post-operative care, long-term outcomes, follow-up care, alternatives, cost comparison, why Bangalore, travel & visa) with faithful Bengali localization.
+
+### Batches completed
+
+- [x] **Batch 1 — Cardiology (8 files)**
+- [x] **Batch 2 — Hematology (10 files)**
+- [x] **Batch 3 — Cancer (8 files)**
+- [x] **Batch 4 — Orthopedics (6 files)**
+- [x] **Batch 5 — Infertility (5 files)**
+- [x] **Batch 6 — Organ (3 files)**
+- [x] **Batch 7 — Neuro & Spine (4 files)**
+- [x] **Batch 8 — Cosmetic (5 files)**
+
+### Trim pass (12 files initially over 2,500 words)
+
+- [x] Trimmed all 12 over-limit BN files to ≤2,500 words: breast cancer (2636→2457), cancer surgery (2728→2109), chemotherapy (2653→2474), hair transplant (2543→2470), allogeneic SCT (2681→2489), bone marrow transplant (2592→2482), sickle cell (2682→2431), IVF (2600→2492), surrogacy (2542→2463), arthroscopy (2738→2282), total hip replacement (2592→2426), total knee replacement (2730→2248).
+
+### Verification
+
+- [x] All 49 BN procedure files verified between 1,500 and 2,500 words (0 over, 0 under). Total files: 49. In range: 49.
+- [x] Frontmatter, FAQs, cost comparison tables, related procedure links, and medical disclaimers preserved in every file.
+- [x] `npm run build` passes with exit code 0. All 49 EN + 49 BN procedure routes generated successfully.
+- [x] BN content stays faithful to EN counterparts — no major sections omitted, no unrelated content introduced.
+
+### Discovered During Work
+
+- **Background subagents cannot run shell commands:** exec tools are auto-denied for background subagents, so word-count verification and trimming of remaining outliers had to be completed by the parent agent.
+- **PowerShell inline variable syntax stripped in exec tool:** `$content` etc. are stripped when passed inline; use script files (`check_one.ps1`, `count_all_bn.ps1`) with `-File` instead.
+- **Temp helper scripts created:** `check_one.ps1`, `check_sub1.ps1` — kept for future verification reuse alongside existing `count_all_bn.ps1`, `verify_trim.ps1`.
+- **BN pages read as translated, not native:** While the BN expansion is medically accurate and structurally aligned with EN, a native Bengali reader would notice English word order, over-use of "আপনি" (you), and literal calques of English idioms (e.g. "বাঁচছেন" for "living with"). A native-fluency pass is needed to rewrite awkward calques and pronoun-heavy sentences into natural Bengali prose while keeping medical content and structure intact. Word counts must remain within 1,500–2,500.
+
+## Pending: Bengali Native-Fluency Pass — 2026-09-12
+
+- [ ] Rewrite all 49 BN procedure files for native Bengali fluency (fix English word order, pronoun density, literal calques).
+- [ ] Keep medical content, structure, frontmatter, FAQs, cost tables, and disclaimers intact.
+- [ ] Verify word counts remain 1,500–2,500 after rewriting.
+- [ ] Re-run build after fluency pass.
+
+## Bengali Bariatric Procedure Pages — COMPLETE (2026-09-07)
+
+Created the missing BN bariatric-weight-loss procedure directory and both Bengali procedure files in native-fluent Bengali, following the established procedure Markdown/YAML architecture and the native Bengali style reference from `bn/neurology/epilepsy-treatment-cost-india.md`.
+
+### Files created
+
+- [x] **BN gastric-bypass-surgery-cost-india.md** — `frontend/src/content/procedures/bn/bariatric-weight-loss/gastric-bypass-surgery-cost-india.md` — 1,942 words, 12 H2 sections. Native Bengali prose describing Roux-en-Y gastric bypass (restriction + malabsorption), $4,000–$10,000 cost, 2–4 hr duration, 3–4 day hospital stay, 4–6 week recovery. Links to gastric-sleeve as related procedure.
+- [x] **BN gastric-sleeve-surgery-cost-india.md** — `frontend/src/content/procedures/bn/bariatric-weight-loss/gastric-sleeve-surgery-cost-india.md` — 2,065 words, 12 H2 sections. Native Bengali prose describing sleeve gastrectomy (restriction only, ~80% stomach removal, ghrelin reduction), $3,500–$9,000 cost, 1–2 hr duration, 2–3 day hospital stay, 2–4 week recovery. Links to gastric-bypass as related procedure.
+
+### Verification
+
+- [x] Both files within 1,500–2,500 word range (1,942 and 2,065 respectively).
+- [x] Frontmatter correct: `locale: bn`, `parentTreatmentSlug: bariatric-weight-loss`, procedure-specific pricing/duration/stay/recovery, correct `relatedProcedureSlugs` cross-linking.
+- [x] 12 unique H2 sections per file, no duplicate headings.
+- [x] Files are distinct (different file sizes 46,502 vs 48,947 bytes, different frontmatter values, different procedure descriptions — bypass describes intestinal bypass/malabsorption, sleeve describes stomach-only restriction).
+- [x] Native Bengali style: patient-directed "আপনি" language, Bengali numerals in prose, medically cautious claims, international-patient context, procedure-specific distinctions preserved.
+
+### Discovered During Work
+
+- **EN gastric sleeve over prior range:** English `gastric-sleeve-surgery-cost-india.md` is 2,569 words (69 over the 2,500 target). Not trimmed in this session — user scoped the task to BN file creation only. Flag for future trim pass if requested.
+- **Native-fluency pass scope:** The two new BN bariatric files were written directly in native Bengali (not translated from EN), so they do not carry the English-word-order/calque issues noted in the broader BN fluency pass pending task. They can serve as additional style references for the remaining fluency rewrite.
+
+## Bengali ENT Procedure Pages — COMPLETE (2026-09-07)
+
+Created the missing BN `ear-nose-throat` procedure directory and both Bengali procedure files in native-fluent Bengali, matching their English counterparts in structure, clinical meaning, frontmatter, and cross-links. English ENT files were intentionally left unchanged per user scope (BN-only creation).
+
+### Files created
+
+- [x] **BN cochlear-implant-cost-india.md** — `frontend/src/content/procedures/bn/ear-nose-throat/cochlear-implant-cost-india.md` — 2,162 words, 12 H2 sections. Native Bengali prose covering severe-to-profound bilateral sensorineural hearing loss, auditory nerve assessment, 12-month paediatric + post-lingual adult eligibility, Cochlear/MED-EL/Advanced Bionics devices, mastoidectomy + electrode array insertion, 3–4 week delayed activation + mapping, risks (infection, facial nerve weakness, tinnitus/vertigo, device failure, CSF leak/meningitis), long-term auditory-verbal therapy, alternatives (advanced hearing aids, bone-anchored devices, CROS), $10,000–$25,000 cost, 2–3 hr duration, 1–2 day stay, 4–6 week recovery. Links to sinus-surgery as related procedure.
+- [x] **BN sinus-surgery-cost-india.md** — `frontend/src/content/procedures/bn/ear-nose-throat/sinus-surgery-cost-india.md` — 2,073 words, 12 H2 sections. Native Bengali prose covering functional endoscopic sinus surgery (FESS), chronic rhinosinusitis >12 weeks despite medical treatment, nasal polyps, recurrent acute sinusitis, anatomical obstruction (deviated septum, concha bullosa, Haller cells), fungal sinusitis/mucocele, CT + nasal endoscopy, HD endoscopic + image-guided surgery, day-care/overnight admission, post-op debridement, risks (bleeding, infection, orbital/optic nerve injury, CSF leak, recurrence), saline irrigation + topical steroids, alternatives (antibiotics, oral corticosteroids, biologics like dupilumab/mepolizumab/omalizumab, septoplasty alone, turbinate reduction), $1,500–$5,000 cost, 1–3 hr duration, 0–1 day stay, 1–2 week recovery. Links to cochlear-implant as related procedure.
+
+### Verification
+
+- [x] Both files within 1,500–2,500 word range (2,162 and 2,073 respectively).
+- [x] Frontmatter correct: `locale: bn`, `parentTreatmentSlug: ear-nose-throat`, procedure-specific pricing/duration/stay/recovery, correct `relatedProcedureSlugs` cross-linking (cochlear→sinus, sinus→cochlear).
+- [x] 12 unique H2 sections per file, no duplicate headings. Section order matches the established 12-section template (Overview, Who Is This For, Pre-operative Preparation, Procedure Details, What Happens During, Post-operative Care, Long-term Outcomes, Follow-up Care, Alternatives, Cost Comparison, Why Bangalore, Travel & Visa).
+- [x] Files are distinct (different file sizes 50,130 vs 49,579 bytes, different frontmatter values, different procedure descriptions — cochlear covers sensorineural hearing loss + electrode insertion, sinus covers chronic rhinosinusitis + endoscopic ostial widening).
+- [x] UTF-8 content integrity confirmed via read tool (PowerShell terminal display shows Bengali as garbled due to encoding, but file content is correct UTF-8 Bengali).
+- [x] Native Bengali style: patient-directed "আপনি" language, Bengali numerals in prose, medically cautious claims, international-patient context, procedure-specific distinctions preserved.
+
+### Discovered During Work
+
+- **EN ENT files over prior range:** English `cochlear-implant-cost-india.md` is 2,587 words (87 over) and `sinus-surgery-cost-india.md` is 2,522 words (22 over). Not trimmed in this session — user explicitly scoped the task to BN file creation only. Flag for future trim pass if requested.
+- **PowerShell Bengali display:** Terminal output renders Bengali Unicode as `?`/garbled bytes due to console code-page limitations. This is a display-only issue; file content is valid UTF-8. Use the `read` tool to verify Bengali content visually.
+
+## Bengali Ophthalmology Procedure Pages — COMPLETE (2026-09-07)
+
+Created the missing BN `ophthalmology` procedure directory and both Bengali procedure files in native-fluent Bengali, matching their English counterparts in structure, clinical meaning, frontmatter, and cross-links. English ophthalmology files were intentionally left unchanged per user scope (BN-only creation).
+
+### Files created
+
+- [x] **BN cataract-surgery-cost-india.md** — `frontend/src/content/procedures/bn/ophthalmology/cataract-surgery-cost-india.md` — 2,055 words, 12 H2 sections. Native Bengali prose covering cloudy vision/colour fading/night glare symptoms, phacoemulsification + femtosecond laser-assisted (FLACS) techniques, IOL types (monofocal/toric/multifocal/accommodating), 2.2mm self-sealing incision, biometry/OCT/corneal topography pre-op, day-care surgery, post-op shield + eye drop regimen, posterior capsule opacity (secondary cataract) + YAG capsulotomy, endophthalmitis/cystoid macular oedema/IOL dislocation/refractive surprise risks, alternatives (glasses, refractive lens exchange, low-vision aids), Alcon/J&J/Carl Zeiss IOLs, $500–$2,000 per eye, 30–45 min, day care, 1–4 week recovery. Links to lasik-eye-surgery as related procedure.
+- [x] **BN lasik-eye-surgery-cost-india.md** — `frontend/src/content/procedures/bn/ophthalmology/lasik-eye-surgery-cost-india.md` — 2,296 words, 12 H2 sections. Native Bengali prose covering myopia/hyperopia/astigmatism correction, bladeless femtosecond LASIK + SMILE techniques, Carl Zeiss VisuMax/Alcon WaveLight EX500/J&J iDesign platforms, corneal topography/pachymetry/wavefront pre-op, 500+ micron corneal thickness requirement, presbyopia realistic expectations, monovision LASIK, excimer laser reshaping + eye-tracking, PRK/Epi-LASIK/ICL/refractive lens exchange alternatives, dry eye/glare/halos/flap complications/corneal ectasia risks, $800–$2,500 per eye, 10–15 min/eye, day care, 1–7 day recovery. Links to cataract-surgery as related procedure.
+
+### Verification
+
+- [x] Both files within 1,500–2,500 word range (2,055 and 2,296 respectively).
+- [x] Frontmatter correct: `locale: bn`, `parentTreatmentSlug: ophthalmology`, procedure-specific pricing/duration/stay/recovery, correct `relatedProcedureSlugs` cross-linking (cataract→lasik, lasik→cataract).
+- [x] 12 unique H2 sections per file, no duplicate headings. Section order matches the established 12-section template.
+- [x] Files are distinct (different file sizes 48,969 vs 52,186 bytes, different frontmatter values, different procedure descriptions — cataract covers lens opacification + IOL implantation, LASIK covers corneal reshaping for refractive error correction).
+- [x] UTF-8 content integrity confirmed via read tool (PowerShell terminal display shows Bengali as garbled due to encoding, but file content is correct UTF-8 Bengali).
+- [x] Native Bengali style: patient-directed "আপনি" language, Bengali numerals in prose, medically cautious claims, international-patient context, procedure-specific distinctions preserved.
+
+### Discovered During Work
+
+- **EN LASIK over prior range:** English `lasik-eye-surgery-cost-india.md` is 2,704 words (204 over the 2,500 target). Not trimmed in this session — user explicitly scoped the task to BN file creation only. Flag for future trim pass if requested.
+- **EN cataract within range:** English `cataract-surgery-cost-india.md` is 2,474 words (within the 1,500–2,500 target).
+
+## Full 18-Category Audit + Structural Fixes — COMPLETE (2026-09-07)
+
+Audited all 136 procedure files (68 EN + 68 BN) across all 18 categories for word count, H2 section count, duplicate headings, and section order. File counts are perfectly symmetric — no missing BN directories or files. Fixed the two structural issues the user selected.
+
+### Audit results (full corpus)
+
+- **Total files:** 136 (68 EN + 68 BN)
+- **Within 1,500–2,500 range:** 120
+- **Over 2,500:** 15 (14 EN + 1 BN) — left unchanged per user scope (only H2 anomaly + BN IUI under-limit selected for fix)
+- **Under 1,500:** 1 (BN IUI) — fixed
+- **H2 anomalies (not 12):** 2 (EN + BN cancer-surgery) — fixed
+
+### Fixes applied
+
+- [x] **EN cancer-surgery-cost-india.md** — Added missing "Procedure Details" H2 section (section 4) covering open/laparoscopic/robotic approaches and resection types (curative, lymph node dissection, debulking, reconstructive). Reordered sections 7–12 to match the standard 12-section template (Long-Term Outcomes → Follow-Up Care → Alternatives → Cost Comparison → Why Choose Bangalore → Travel & Visa). Now 2,613 words, 12 H2, no duplicates. User confirmed 2,613 words is acceptable despite being 113 over the 2,500 target.
+- [x] **BN cancer-surgery-cost-india.md** — Added missing "প্রক্রিয়ার বিস্তারিত" (Procedure Details) H2 section in native Bengali covering the same surgical approach and resection type content. Reordered sections 7–12 to match the standard template. Now 1,786 words, 12 H2, no duplicates.
+- [x] **BN iui-treatment-cost-india.md** — Expanded "পোস্ট-অপারেটিভ যত্ন ও সুস্থতা" section with additional practical guidance on emotional wellbeing during the two-week wait, light exercise, nutrition, and avoiding hot tubs/saunas. Now 1,565 words (was 1,482), 12 H2, no duplicates.
+
+### Remaining flagged files (not fixed — user declined)
+
+14 EN files remain over the 2,500-word target and 1 BN file (nephrology/kidney-stone at 3,005 words) remains over. These are documented for a future trim pass if requested:
+
+| Locale | File | Words |
+|---|---|---|
+| en | bariatric/gastric-sleeve | 2,569 |
+| en | ent/cochlear-implant | 2,587 |
+| en | ent/sinus-surgery | 2,522 |
+| en | gastro/hernia-repair | 2,672 |
+| en | nephrology/dialysis | 2,691 |
+| en | nephrology/kidney-stone | 3,228 |
+| en | neurology/epilepsy | 2,512 |
+| en | neurology/stroke | 2,790 |
+| en | ophthalmology/lasik | 2,704 |
+| en | pulmonology/asthma | 2,586 |
+| en | pulmonology/copd | 2,798 |
+| en | stem-cell/orthopedics | 2,598 |
+| en | urology/kidney-stone-removal | 2,604 |
+| en | urology/prostate-surgery | 2,506 |
+| bn | nephrology/kidney-stone | 3,005 |
+
+## SEO/Authority Gap Fixes — COMPLETE (2026-09-08)
+
+Based on gap analysis of TREATMENT_PAGES_STRUCTURE_ANALYSIS_AND_PLAN.md, PROCEDURE_URL_STRUCTURE_MAPPING.md, and COMPETITOR_CONTENT_STRUCTURE_ANALYSIS.md:
+
+- [x] **P0: Render isks field in procedure templates** — isks frontmatter was populated in all 68 EN files but never displayed. Added risks rendering section (with alert icons + mitigation note) to both EN and BN [procedure].astro templates, positioned after recovery timeline and before cost inclusions. Added isksTitle and isksMitigationNote i18n keys.
+- [x] **P0: Standardize all 136 files to Order A H2 structure** — Found 3 different H2 orderings across the codebase (Order A: patient journey, Order B: procedure-first, Order C: BN-only hybrid). Reordered 45 EN files (Order B -> A) and 36 BN files (18 Order B + 18 Order C -> A). Also fixed 2 heart-transplant files with a 4th variant. All 136 files now follow the same patient-journey order: Overview > Who > Pre-Op > Procedure Details > What Happens > Post-Op > Long-Term > Follow-Up > Alternatives > Cost > Why Bangalore > Travel. Scripts: scripts/reorder-h2-indexed.ps1.
+- [x] **P1: Add fit-to-fly guidance to all files** — 43 EN files and 28 BN files lacked fit-to-fly/fitness-to-fly mentions. Added a standardized fit-to-fly paragraph to the Travel & Visa section. All 136 files now cover this international-patient search intent. Scripts: scripts/add-fit-to-fly.ps1, scripts/remove-duplicate-fit-to-fly.ps1 (for BN dedup).
+- [x] **P1: Add "How to Read a Package Quote" section** — Added as template-rendered section (6 items in 2-col grid) to both EN and BN procedure templates. Covers hidden charges trust intent. i18n keys: packageQuoteTitle, packageQuoteIntro, packageQuoteItem1-6Label/Desc.
+- [x] **P2: Add "Decision Framework for International Patients" section** — Added as template-rendered section (8-item checklist) to both EN and BN procedure templates. Covers commercial + trust search intent. i18n keys: decisionFrameworkTitle, decisionFrameworkIntro, decisionFrameworkItem1-8.
+- [x] **P2: Update Plan doc** — Updated TREATMENT_PAGES_STRUCTURE_ANALYSIS_AND_PLAN.md section 8 to document the actual 12-H2 Order A structure and all template-rendered sections. Added note that the initial 26-procedure scope was superseded by the complete 68-procedure mapping.
+
+### Discovered During Work
+
+- The isks field was populated in all 68 EN files but the template never rendered it — this was the highest-impact fix (data collected, just not displayed).
+- The H2 ordering inconsistency was completely undocumented. Three different orderings existed across 136 files, with EN and BN counterparts often using different structures.
+- 28 BN files received duplicate fit-to-fly content because the pattern matching didn't catch original Bengali phrasing. Fixed with emove-duplicate-fit-to-fly.ps1.
+- The Plan doc's 7-section content template (section 8) was never updated to reflect the actual 12-section implementation. Now documented.
+- Helper scripts created in scripts/ directory: eorder-h2-indexed.ps1, dd-fit-to-fly.ps1, emove-duplicate-fit-to-fly.ps1, n-fit-to-fly.txt, n-fit-to-fly-patterns.txt, n-new-keys.json.
+
+## Procedure x Country Pages Strategy Doc — COMPLETE (2026-09-08)
+
+Created docs/PROCEDURE_COUNTRY_PAGES_STRATEGY.md — comprehensive 1,200-line documentation for the new procedure x country landing pages strategy. Covers:
+
+- **Why dedicated pages beat enhanced existing pages** (SEO/AEO/GEO/AIO comparison)
+- **Competitor research** — Afiya India, Arodya, Forerunners Healthcare, niche IVF competitors
+- **Target keywords** — primary, secondary, long-tail patterns per page
+- **URL architecture** — /countries/{country}/{procedure}-in-india pattern
+- **Page structure** — 21 sections mapped to patient problems and search intents
+- **Data sources** — all existing procedure + country data fields documented
+- **Phased rollout plan** — Phase 1 (100 pages), Phase 2 (680), Phase 3 (1,972)
+- **Developer guide** — route file, getStaticPaths, data loading, currency conversion, FAQ generation, JSON-LD schema
+- **SEO specialist guide** — keyword mapping, internal linking, schema, canonical, sitemap, KPIs
+- **Content writer guide** — voice/tone, what to write vs auto-generated, custom FAQ examples, medical caution rules, Bengali guidelines
+- **Quality checklist** — content, technical, and SEO checks before publishing
+- **Risks & guardrails** — thin content, duplicate content, URL bloat, medical accuracy, currency accuracy
+- **Appendix A** — complete URL list for Phase 1 (100 URLs)
+- **Appendix B** — slug conversion reference
+
+### Discovered During Work
+
+- Afiya India ranks #1 for "heart bypass surgery in India for Nigerian patients" with dedicated procedure-country pages at /en/{procedure}-in-india-for-{nationality}-patients
+- SEO industry consensus confirms: "A programme that doesn't build for each specific route is competing against the entire world's medical-tourism marketing at once — and losing" (Branding Pioneers)
+- Our existing country data already contains longTailKeywords with procedure-specific patterns (e.g. "heart surgery cost in India for Bangladeshi patients") — these should be referenced when writing page content
+- Currency conversion can be auto-generated from existing currency.exchangeRate in country data — no new data needed
+- FAQ generation can combine procedure FAQs + country visa/travel FAQs — template approach with medically cautious language

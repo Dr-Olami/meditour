@@ -63,23 +63,87 @@ faqs:
   - question: "Will I need to take medications for life after a kidney transplant?"
     answer: "Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted kidney. The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan."
 ---
-
 ## Overview
 
-A kidney transplant is a life-saving surgical procedure in which a diseased or failing kidney is replaced with a healthy kidney from a donor. It is typically recommended for patients with end-stage renal disease (ESRD) whose kidneys can no longer function adequately, and for whom dialysis is no longer sufficient or sustainable. In India, living-donor kidney transplantation is the most common approach for international patients, where a healthy kidney from a close relative is surgically removed and transplanted into the recipient.
+If you or someone you love is facing kidney failure, you already know how exhausting dialysis can be — the hours spent hooked up to a machine, the crushing fatigue, the constant restrictions on what you can eat and drink. A kidney transplant could free you from dialysis and give you back a normal life. Instead of spending your days in a clinic, you could be back at work, travelling, enjoying meals with your family, and waking up feeling rested for the first time in years.
 
-Bangalore has emerged as a premier destination for kidney transplant surgery, home to several JCI-accredited hospitals with dedicated kidney transplant units, advanced ICU infrastructure, and multidisciplinary teams comprising nephrologists, transplant surgeons, anaesthesiologists, and specialised nursing staff. These centres follow international clinical protocols and have reported outcomes on par with leading Western institutions.
+A kidney transplant is surgery to replace your failing kidney with a healthy one from a donor. You only need one working kidney to live well, which is why a living donor can give one of theirs and still live a completely normal life. For most international patients coming to India, the donor is a close relative — a spouse, sibling, parent, or adult child — who travels with you and donates one of their kidneys.
 
-For international patients, the combination of clinical excellence and significant cost savings makes Bangalore an attractive choice. A kidney transplant that would cost over $400,000 in the United States can be performed for between $15,000 and $40,000 in Bangalore, without compromising on quality of care or safety standards.
+Under Indian organ transplant law, international patients cannot receive a kidney from a deceased donor. Those organs are reserved for Indian citizens. This means you must bring a compatible living donor who is a close relative, with documents proving your relationship. The living-donor route has real advantages — shorter waiting times, better outcomes, and the ability to plan your surgery in advance rather than waiting years on a list.
+
+Bangalore has become one of the best places in the world for kidney transplant surgery. Hospitals like Aster CMI, Manipal Hospital, Narayana Health, BGS Gleneagles, and Fortis have dedicated transplant units with advanced ICUs, and many of their senior surgeons trained in the UK, USA, or Germany. A kidney transplant that would cost over $400,000 in the United States can be done here for between $15,000 and $40,000 — without compromising on safety or quality.
+
+## Who Is This Procedure For?
+
+A kidney transplant may be right for you if your kidneys can no longer filter waste and excess fluid from your blood — a condition called end-stage renal disease (ESRD). This can be caused by diabetes, high blood pressure, chronic glomerulonephritis, polycystic kidney disease, or autoimmune conditions. If you are already on dialysis, or your doctor has told you dialysis is coming soon, a transplant could transform your life.
+
+You need to be medically fit enough to handle major surgery and lifelong medication. Your heart and lungs need to be working well, with no active infections or uncontrolled cancer. A thorough evaluation before surgery will determine whether you are a good candidate.
+
+Your age alone does not rule you out — older patients are assessed more carefully, but many undergo successful transplants. What matters most is your overall health and your commitment to taking your medications every single day.
+
+You must bring a compatible living donor who is a close relative. Indian law reserves deceased-donor kidneys for Indian citizens, and this is not something hospitals can work around. Your donor needs to be in good health, aged between 18 and 60, with a compatible blood group, and willing to go through a full medical and psychological evaluation.
+
+## Pre-Operative Preparation
+
+Getting ready for a kidney transplant starts weeks before you board a plane. Share all your recent medical records with the Indian hospital in advance — kidney function tests, imaging, biopsy results, and dialysis records. This lets the transplant team review your case and request any extra tests before you arrive.
+
+If you are on dialysis, keep up your prescribed schedule and follow dietary restrictions carefully. Your blood pressure and blood sugar need to be well controlled. Stop smoking and avoid alcohol completely — both can slow down wound healing.
+
+Some medications need to be stopped or adjusted before surgery. Blood thinners like warfarin or aspirin are usually stopped several days beforehand. Give your transplant team a complete list of everything you take. Make sure your vaccinations are up to date, especially hepatitis A and B, influenza, pneumococcal disease, and COVID-19, because after your transplant your immune system will be weakened.
 
 ## Procedure Details
 
-The kidney transplant process begins with a comprehensive evaluation of both the recipient and the living donor. This includes blood tests, imaging studies (CT and ultrasound), tissue typing (HLA matching), cross-matching, and psychosocial assessments. Once compatibility is confirmed and the transplant authorisation committee grants approval, the surgery is scheduled. The living-donor kidney transplant involves two simultaneous surgeries: the donor nephrectomy, in which one healthy kidney is removed from the donor (typically via laparoscopic or robotic-assisted technique), and the recipient surgery, in which the new kidney is implanted.
+The transplant journey starts with a thorough evaluation of both you and your donor. You will both go through blood tests, imaging scans, tissue typing (HLA matching), and cross-matching to confirm compatibility. You will also have a psychosocial assessment. Once compatibility is confirmed and the hospital's transplant authorisation committee approves your case, a surgery date is set.
 
-The surgery itself lasts between 3 and 5 hours under general anaesthesia. Unlike some other organ transplants, the recipient's own kidneys are usually left in place unless they are causing complications such as chronic infection or severe hypertension. The donor kidney is placed in the lower abdomen and connected to the recipient's blood vessels and bladder. After surgery, the recipient is transferred to the ICU for close monitoring of kidney function, urine output, bleeding, and signs of rejection. Immunosuppressive medications are initiated immediately to prevent the body's immune system from attacking the new organ.
+On the day of surgery, two surgical teams work simultaneously in two operating rooms. One team removes a kidney from your donor — usually using a laparoscopic (keyhole) technique with small incisions, meaning less pain and faster recovery for them. The other team prepares you for receiving the kidney. The donor kidney is immediately flushed with a cold preservation solution and brought to your operating room.
 
-Post-operative care is critical and spans several weeks in the hospital followed by extended monitoring in Bangalore. The transplanted kidney begins functioning almost immediately in most cases, and patients are gradually transitioned from ICU to a private room. Regular blood tests (creatinine, urea, electrolytes), ultrasound scans, and biopsies (if needed) are performed to monitor graft function. Patients receive detailed counselling on medication adherence, dietary restrictions, fluid intake, hygiene, and signs of complications before being cleared for travel.
+Your surgeon makes an incision in your lower abdomen and places the new kidney there. They connect the kidney's blood vessels to yours and attach the ureter to your bladder. Once blood flows through the new kidney, it usually starts producing urine right away. The surgery takes about 3 to 5 hours under general anaesthesia.
 
+After surgery, you will be taken to the ICU for close monitoring. You will start taking immunosuppressive medications immediately — these are the drugs that stop your body from rejecting the new kidney, and you will need them for the rest of your life.
+
+## What Happens During the Procedure
+
+On the day of your surgery, you and your donor will both be admitted early in the morning and prepared in separate areas. Two surgical teams will work simultaneously.
+
+Your donor's surgery is usually done laparoscopically — through a few small incisions using a camera and specialised instruments. Most donors are discharged within 3 to 5 days and recover relatively quickly.
+
+Meanwhile, your surgeon makes an incision in your lower abdomen and places the donor kidney in your pelvic region. They connect the kidney's artery and vein to your blood vessels and attach the ureter to your bladder. Once blood flow is restored, the kidney typically starts producing urine immediately. The whole procedure takes about 3 to 5 hours.
+
+After surgery, you will be moved to the ICU where the team will closely monitor your kidney function, urine output, and vital signs. Blood tests will be done frequently to track your creatinine levels, electrolytes, and immunosuppressive drug levels.
+
+## Post-Operative Care & Recovery
+
+The first few days after your transplant will be spent in the ICU, where you will be continuously monitored. Blood tests will be done daily to check your kidney function and medication levels, and ultrasound scans will confirm blood is flowing properly through your new kidney.
+
+Will it hurt? Yes, there will be pain, especially in the first few days, but it is well managed with a combination of IV and oral pain medications. A physiotherapist will help you sit up, stand, and start walking within the first few days to prevent blood clots and pneumonia.
+
+As you stabilise, you will be moved to a private room where your family can be with you. This is when you start learning about your new life: your medication schedule, what side effects to watch for, and why taking every dose on time is so critical. A dietitian will guide you on what to eat and what to avoid. The nurses will teach you and your family about wound care, hygiene, and infection prevention.
+
+Throughout your stay, the transplant team watches for complications like bleeding, urine leakage, infections, or signs of rejection. Most complications, if caught early, can be treated successfully. You will typically be discharged after 2 to 3 weeks.
+
+## Long-Term Outcomes & Success Rates
+
+Bangalore's leading transplant centres report one-year graft survival rates of 95-98% and patient survival rates of 96-99% — numbers that match the best transplant centres in the world. Five-year graft survival rates are typically 85-92%. Your outcomes depend on your overall health, how well-matched the donor kidney is, and how faithfully you take your medications and attend follow-up appointments.
+
+For most people, a successful kidney transplant dramatically improves quality of life compared to dialysis. Within 3 to 6 months, many patients return to near-normal activity — going back to work, travelling, exercising, and enjoying family life without being tied to a dialysis machine.
+
+Lifelong immunosuppressive medication comes with ongoing risks. Because your immune system is suppressed, you will be more susceptible to infections. There is a somewhat higher risk of certain cancers, particularly skin cancers. Some patients develop diabetes or high blood pressure as a side effect of the medications. These risks are manageable with regular monitoring and proactive care.
+
+## Follow-Up Care After Returning Home
+
+Once you are back home, you will need to work closely with both your Bangalore transplant team and a local nephrologist. In the first few months, you will need blood tests about once a week to monitor kidney function and medication levels. As things stabilise, the frequency will gradually decrease. Your Bangalore team stays available for remote consultations.
+
+Your immunosuppressive medications must be taken exactly as prescribed, at the same times every day, without missing a single dose. Carry a detailed medication list and emergency contact numbers with you at all times. Never change or stop a medication without consulting your transplant team first. Be vigilant about infection prevention — avoid crowded places, stay away from people who are sick, wash your hands frequently, and keep your vaccinations up to date.
+
+Call your doctor immediately if you experience fever, reduced urine output, pain or swelling over the transplant site, severe fatigue, or any signs of infection. These could indicate rejection or a serious complication, and early treatment makes a big difference.
+
+## Alternatives to Consider
+
+Before deciding on a transplant, talk openly with your nephrologist about all your options. If your kidney disease is caused by diabetes, high blood pressure, or an autoimmune condition, aggressively managing those underlying conditions can slow the progression and buy you time.
+
+If you are not ready for a transplant — or if you do not have a compatible living donor — dialysis remains a viable option. Both haemodialysis (done at a clinic) and peritoneal dialysis (done at home) can keep you alive and reasonably well indefinitely. Dialysis does not offer the same quality of life or long-term survival benefit as a successful transplant, but it is a lifeline while you explore other options.
+
+A kidney transplant is generally the right choice when your kidney disease has progressed to the point where dialysis is needed or imminent, and the benefits of transplant outweigh the risks. This is not a decision you have to make alone — talk it through with your family, your nephrologist, and the transplant team.
 ## Cost Comparison
 
 | Country | Approximate Cost | vs India |
@@ -90,19 +154,27 @@ Post-operative care is critical and spans several weeks in the hospital followed
 | Singapore | $80,000 – $120,000 | ~4.4x higher |
 | Thailand | $40,000 – $60,000 | ~1.8x higher |
 
+You might be wondering: if the surgery is so much cheaper in India, is the quality lower? The answer is no. The cost difference comes down to structural factors — lower staffing costs, lower administrative overhead, and a favourable exchange rate. Bangalore's top hospitals are JCI-accredited, meeting the same international safety and quality benchmarks as leading hospitals in the West. Their surgeons perform hundreds of transplants a year and report survival rates that match top global centres.
+
+Even when you add the cost of international flights, accommodation, and recovery time in Bangalore, the total is still a fraction of what the surgery alone would cost in the US or UK. You should budget separately for the immunosuppressive medications you will take after discharge, as those are an ongoing expense.
+
 ## Why Choose Bangalore?
 
-- **JCI-accredited hospitals** with dedicated kidney transplant programmes and state-of-the-art ICU facilities
-- **Highly experienced transplant surgeons** many of whom have trained at leading institutions in the UK, USA, and Germany
-- **One-year graft survival rates of 95-98%** comparable to top global transplant centres
-- **Living-donor kidney transplant expertise** with laparoscopic and robotic-assisted donor nephrectomy
-- **Significant cost savings** of up to 90% compared to Western countries
-- **English-speaking medical staff** ensuring clear communication throughout the treatment journey
-- **Comprehensive international patient services** including visa assistance, airport transfers, and dedicated coordinators
-- **Multidisciplinary care teams** including nephrologists, dietitians, physiotherapists, and transplant coordinators
+- **World-class hospitals you can trust** — Aster CMI, Manipal Hospital, Narayana Health, BGS Gleneagles, and Fortis all have dedicated kidney transplant programmes with advanced ICU facilities.
+- **Surgeons with global training** — many of Bangalore's senior transplant surgeons trained or worked at leading institutions in the UK, USA, and Germany.
+- **Survival rates that match the best** — one-year graft survival rates of 95-98% and patient survival rates of 96-99%.
+- **Gentler surgery for your donor** — laparoscopic and robotic-assisted donor nephrectomy means smaller incisions, less pain, and faster recovery.
+- **Savings of up to 90%** compared to Western countries.
+- **English-speaking staff** — doctors, nurses, and coordinators all speak English.
+- **Support designed for international patients** — visa assistance, airport pickups, dedicated coordinators, interpreter services, and help finding accommodation.
+- **A full team looking after you** — nephrologists, dietitians, physiotherapists, social workers, and transplant coordinators all work together.
 
 ## Travel & Visa
 
-International patients travelling to Bangalore for a kidney transplant will need a medical visa (e-Medical Visa), which can be applied for online through the Indian government's e-Visa portal. The hospital will provide a medical visa invitation letter once the evaluation and scheduling are confirmed. The medical visa is typically valid for 60 days and can be extended if a longer stay is required for recovery.
+You will need a medical visa (e-Medical Visa) to travel to India for your transplant, and you can apply online. Once your evaluation and surgery date are confirmed, the hospital will send you a medical visa invitation letter. The visa is usually valid for 60 days and can be extended. Your donor and family members should apply for medical attendant visas.
 
-Patients should plan to arrive in Bangalore at least one week before the scheduled surgery date to complete pre-transplant evaluations, donor workup, and committee approvals. It is advisable to travel with one or two attendants who can provide support during the hospital stay and recovery period. The hospital's international patient team will arrange airport pickup, accommodation guidance for attendants, and local transportation for follow-up visits. Ensure that all medical records, donor relationship documents, and pathology reports are carried in original or attested copies for the transplant authorisation committee review.
+Plan to arrive in Bangalore at least a week before your surgery date to complete pre-transplant evaluations, your donor's workup, and the committee approval process. Travel with one or two family members who can support you. The hospital's international patient team will arrange your airport pickup and help with local transport and accommodation.
+
+Here is what you should pack: comfortable, loose-fitting clothes, all your medical records organised in a folder, your donor's medical records, and documents proving your relationship to your donor — birth certificates, family registry records, or marriage certificates. Bring recent imaging studies, biopsy reports, and a referral letter from your doctor. Make sure everything is in English or has a certified translation.
+
+Most surgeons recommend waiting at least 7-14 days before taking a long-haul flight, to reduce the risk of deep vein thrombosis and other travel-related complications. Khan Meditour can arrange a fitness-to-fly certificate from your medical team and advise you on in-flight precautions such as compression stockings, hydration, and periodic movement during the journey.

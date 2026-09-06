@@ -427,6 +427,24 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
       </section>
     )}
 
+    {/* ── RISKS, COMPLICATIONS & MITIGATION ─────────────────────────── */}
+    {procedure.risks && procedure.risks.length > 0 && (
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.risksTitle}</h2>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <ul class="space-y-3">
+            {procedure.risks.map((risk) => (
+              <li class="flex items-start gap-2 text-sm text-ink/70">
+                <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+                <span>{risk}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-5 border-t border-cream-300 pt-4 text-sm text-ink/60">{t.treatments.detail.risksMitigationNote}</p>
+        </div>
+      </section>
+    )}
+
     {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
     {(procedure.costInclusions || procedure.costExclusions) && (
       <section class="mt-16" data-anim="fade-in-up">
@@ -461,6 +479,110 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
         </div>
       </section>
     )}
+
+    {/* ── HOW TO READ YOUR PACKAGE QUOTE ────────────────────────────── */}
+    <section class="mt-16" data-anim="fade-in-up">
+      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.packageQuoteTitle}</h2>
+      <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.packageQuoteIntro}</p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem1Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem1Desc}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem2Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem2Desc}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem3Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem3Desc}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem4Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem4Desc}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem5Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem5Desc}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+          <div class="flex items-start gap-3">
+            <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+            <div>
+              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem6Label}</p>
+              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem6Desc}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── DECISION FRAMEWORK ────────────────────────────────────────── */}
+    <section class="mt-16" data-anim="fade-in-up">
+      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.decisionFrameworkTitle}</h2>
+      <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.decisionFrameworkIntro}</p>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem1}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem2}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem3}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem4}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem5}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem6}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem7}</span>
+          </li>
+          <li class="flex items-start gap-2 text-sm text-ink/70">
+            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+            <span>{t.treatments.detail.decisionFrameworkItem8}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     {/* ── RELATED PROCEDURES ────────────────────────────────────────── */}
     {relatedProcedures.length > 0 && (

@@ -632,6 +632,8 @@ Based on the competitor's structure and our existing `procedures` frontmatter li
 
 **Total initial procedures:** ~26 procedures × 2 locales = 52 new content files
 
+> **Update:** The initial 26-procedure scope has been superseded by the complete 68-procedure mapping in `PROCEDURE_URL_STRUCTURE_MAPPING.md`. All 68 procedures × 2 locales = 136 content files have been created and standardized. See the URL mapping doc for the canonical category/procedure list and the actual file inventory.
+
 ---
 
 ### Phase 3: Treatment Listing Page Enhancement
@@ -886,3 +888,48 @@ faqs:
 | UK | $100,000 – $280,000 | ~5× higher |
 | UAE | $80,000 – $220,000 | ~4× higher |
 ```
+
+### 8a. Actual Implemented Markdown Body Structure (12 H2 — Order A)
+
+The markdown body of every procedure file uses the following 12-H2 structure, in this exact order (the "patient journey" order). All 136 files (68 EN + 68 BN) have been standardized to this order:
+
+1. **Overview** — what the procedure is, in plain language
+2. **Who Is This Procedure For?** — eligibility criteria and patient profiles
+3. **Pre-Operative Preparation** — tests, consultations, and logistics before travel
+4. **Procedure Details** — clinical description of the treatment
+5. **What Happens During the Procedure** — step-by-step surgical/medical process
+6. **Post-Operative Care & Recovery** — immediate recovery, hospital stay, monitoring
+7. **Long-Term Outcomes & Success Rates** — evidence-based outcomes and survival data
+8. **Follow-Up Care After Returning Home** — post-return monitoring and telemedicine
+9. **Alternatives to Consider** — comparable treatments and their trade-offs
+10. **Cost Comparison** — India vs other countries table with "X× higher" multipliers
+11. **Why Choose Bangalore?** — city-specific advantages for international patients
+12. **Travel & Visa** — visa process, stay duration, packing, and fit-to-fly guidance
+
+Bengali (BN) counterparts use the equivalent Bengali headings in the same order.
+
+### 8b. Template-Rendered Sections (from frontmatter, not markdown body)
+
+In addition to the 12 markdown H2 sections, the procedure page template (`[procedure].astro`) renders these sections from structured frontmatter fields, positioned around the markdown body:
+
+| Template section | Source field | Position |
+|---|---|---|
+| Dark hero with cost badge, QuickFacts, CTAs | `fromPrice`, `toPrice`, `duration`, `hospitalStay`, `recoveryTime` | Top |
+| "In Short" summary callout | `summary` | After hero |
+| "Who Is This For?" eligibility list | `eligibility` | After summary |
+| Related doctors | `relatedDoctorSlugs` | Before body |
+| Markdown body (12 H2 sections) | `Content` | Main column |
+| Patient journey timeline | i18n keys (4-step) | After body |
+| Treating hospitals | `relatedHospitalSlugs` | After body |
+| FAQ accordion | `faqs` + auto-generated | After body |
+| Recovery timeline table | `recoveryTimeline` | After body |
+| **Risks, complications & mitigation** | `risks` | After recovery |
+| Cost inclusions/exclusions | `costInclusions`, `costExclusions` | After risks |
+| **How to read your package quote** | i18n keys (6 items) | After cost |
+| **Decision framework for international patients** | i18n keys (8 items) | After package quote |
+| Related procedures | `relatedProcedureSlugs` | After decision |
+| Country cross-links | `ALL_COUNTRIES` | After related |
+| Mid-page CTA | i18n keys | Before contact |
+| Contact/lead form | `LeadForm` | Bottom |
+
+**Bold** entries are sections added based on competitor analysis to target trust and conversion search intents.
