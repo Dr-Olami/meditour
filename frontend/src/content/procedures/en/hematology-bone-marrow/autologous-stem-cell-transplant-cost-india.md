@@ -50,6 +50,16 @@ risks:
   - "Delayed engraftment or graft failure"
   - "Disease relapse despite transplant"
   - "Long-term secondary malignancy risk"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "allogeneic-stem-cell-transplant-cost-india"
   - "multiple-myeloma-treatment-cost-india"

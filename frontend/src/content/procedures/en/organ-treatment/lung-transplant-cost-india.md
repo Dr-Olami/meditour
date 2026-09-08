@@ -50,6 +50,13 @@ risks:
   - "Infections due to immunosuppression, including opportunistic pulmonary infections"
   - "Primary graft dysfunction, a severe form of early lung injury requiring prolonged ventilatory support"
   - "Bronchiolitis obliterans syndrome (chronic rejection) causing progressive decline in lung function"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-ravishankar-shetty-k
+  - dr-aditi-singhvi
+
 relatedProcedureSlugs:
   - "liver-transplant-cost-india"
   - "kidney-transplant-cost-india"

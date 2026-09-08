@@ -49,6 +49,14 @@ risks:
   - "Hair loss (alopecia) which is usually temporary"
   - "Fatigue and reduced immunity during treatment cycles"
   - "Potential organ toxicity (cardiac, hepatic, or renal) with certain agents"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "radiation-therapy-cost-india"
   - "immunotherapy-cost-india"

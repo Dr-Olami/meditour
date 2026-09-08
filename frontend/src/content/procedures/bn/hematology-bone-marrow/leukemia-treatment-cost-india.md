@@ -50,6 +50,16 @@ risks:
   - "ব্লিডিং ডিসঅর্ডার এবং অ্যানিমিয়া"
   - "ট্রান্সপ্লান্টের ক্ষেত্রে গ্রাফট-ভার্সাস-হোস্ট ডিজিজ (GVHD)"
   - "রোগ পুনরাবৃত্তি বা রিল্যাপ্স"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "autologous-stem-cell-transplant-cost-india"

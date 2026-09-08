@@ -50,6 +50,13 @@ risks:
   - "ভ্রূণ স্থাপন ব্যর্থতা বা রাসায়নিক গর্ভধারণ (প্রথম সাইকেলে সাফল্য হার ৪০–৫০%)"
   - "ডিম্বাণু সংগ্রহের সময় সংক্রমণ বা রক্তক্ষরণ"
   - "গর্ভপাত ঝুঁকি যা বয়স এবং ভ্রূণ গুণমানের সাথে সম্পর্কিত"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "icsi-treatment-cost-india"
   - "iui-treatment-cost-india"

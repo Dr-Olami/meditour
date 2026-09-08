@@ -49,6 +49,15 @@ risks:
   - "কেমোথেরাপির পার্শ্বপ্রতিক্রিয়া — বমি, ক্লান্তি, চুল পড়া, নিউট্রোপেনিয়া"
   - "রেডিয়েশন পার্শ্বপ্রতিক্রিয়া — ত্বকের প্রদাহ, ক্লান্তি এবং স্থানীয় ফাইব্রোসিস"
   - "রোগের পুনরাবৃত্তি বা মেটাস্ট্যাসিস যা অতিরিক্ত চিকিৎসা প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-kanmani-govindrao-telkar
+  - dr-anil-kamath
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

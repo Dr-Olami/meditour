@@ -49,6 +49,12 @@ risks:
   - "কার্ডিয়াক টক্সিসিটি — QT বৃদ্ধি বা হার্ট ফাংশন হ্রাস"
   - "হাইপারটেনশন এবং রক্তকণিকা হ্রাস"
   - "রোগের অগ্রগতি বা রেজিস্ট্যান্স যা চিকিৎসা পরিবর্তন প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

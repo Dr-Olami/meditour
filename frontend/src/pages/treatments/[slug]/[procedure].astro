@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../../layouts/Layout.astro';
 import { Navbar } from '../../../design-system/components/organisms/Navbar';
 import { Footer } from '../../../design-system/components/organisms/Footer';
@@ -179,9 +179,15 @@ const journeySteps: Step[] = [
   { title: t.treatments.detail.journeyStep4Title, description: t.treatments.detail.journeyStep4Desc },
 ];
 
+// Reason: Phase 3 generates country-procedure pages for all 68 procedures
+// for all 31 countries. Every country link points to the procedure-specific
+// country page.
+const currentProcedureSlug = entrySlug(entry).split('/').pop()!;
+const procedurePageSlug = currentProcedureSlug.replace(/-cost-india$/, '-in-india');
 const countryLinks = ALL_COUNTRIES.map((c) => ({
   label: c.name,
-  href: `/countries/${c.slug}`,
+  href: `/countries/${c.slug}/${procedurePageSlug}`,
+  isProcedureCountry: true,
 }));
 ---
 
@@ -192,7 +198,7 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
     cta={{ label: t.nav.cta, href: '/#contact' }}
     locale="en"
     currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}
@@ -603,10 +609,20 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
     {countryLinks.length > 0 && (
       <section class="mt-16" data-anim="fade-in-up">
         <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.countryLinksTitle}</h2>
+        <p class="mb-4 text-sm text-ink/60">Procedure-specific guides with costs in local currency, visa steps, and travel times for {procedure.name.toLowerCase()}.</p>
         <div class="flex flex-wrap gap-3">
           {countryLinks.map((c) => (
-            <a href={c.href} class="rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white">
+            <a
+              href={c.href}
+              class:list={[
+                'rounded-card border px-4 py-2 text-sm font-medium transition-colors',
+                c.isProcedureCountry
+                  ? 'border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-600 hover:text-white'
+                  : 'border-cream-300 bg-cream-100 text-ink hover:bg-ink hover:text-white',
+              ]}
+            >
               {c.label}
+              {c.isProcedureCountry && <span class="ml-1 text-xs opacity-70">→</span>}
             </a>
           ))}
         </div>

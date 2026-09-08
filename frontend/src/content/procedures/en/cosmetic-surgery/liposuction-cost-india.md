@@ -50,6 +50,14 @@ risks:
   - "Fluid accumulation (seroma) requiring drainage"
   - "Skin numbness or changes in sensation in treated areas"
   - "Excessive blood loss or fat embolism in rare cases"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-mayur-r-shetty
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "tummy-tuck-cost-india"
   - "rhinoplasty-cost-india"

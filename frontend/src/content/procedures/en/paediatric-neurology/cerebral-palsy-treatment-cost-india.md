@@ -51,6 +51,14 @@ risks:
   - "Temporary weakness or sensory changes following selective dorsal rhizotomy during nerve root recovery"
   - "Hip instability or dislocation progression despite management requiring future surgical intervention"
   - "Developmental or communication challenges persisting despite therapy requiring long-term educational support"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-bidisha-banerjee
+  - dr-ajit-kumar-roy
+
 relatedProcedureSlugs: []
 faqs:
   - question: "Is cerebral palsy curable with treatment in India?"

@@ -50,6 +50,14 @@ risks:
   - "তরল জমা (সেরোমা) বা ড্রেন সমস্যা"
   - "পেটের অসম ফলাফল বা চামড়ার নেক্রোসিস (বিরল)"
   - "রিভিশন সার্জারি প্রয়োজন হওয়া (প্রায় ৫% ক্ষেত্রে)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-mayur-r-shetty
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "liposuction-cost-india"
   - "rhinoplasty-cost-india"

@@ -49,6 +49,15 @@ risks:
   - "TUR syndrome from absorption of irrigation fluid, rare with modern bipolar technology"
   - "Retrograde ejaculation affecting fertility, occurring in the majority of patients"
   - "Urethral stricture or bladder neck contracture developing weeks to months after surgery"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "kidney-stone-removal-cost-india"
 faqs:

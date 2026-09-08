@@ -49,6 +49,15 @@ risks:
   - "Radiation pneumonitis and oesophagitis during or after thoracic radiotherapy"
   - "Immune-related adverse events including pneumonitis with immunotherapy checkpoint inhibitors"
   - "Disease progression or recurrence requiring treatment modification or second-line therapy"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-anil-kamath
+  - dr-amit-rauthan
+  - dr-shabber-zaveri
+
 relatedProcedureSlugs:
   - "cancer-surgery-cost-india"
   - "radiation-therapy-cost-india"

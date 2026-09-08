@@ -49,6 +49,15 @@ risks:
   - "অ্যারিথমিয়া (অনিয়মিত হৃদস্পন্দন)"
   - "ভালভ বা কন্ডাকশন সিস্টেমের ক্ষতি"
   - "স্ট্রোক বা হৃদরোগের ঝুঁকি"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-varun-shetty
+  - dr-praveen-r-tambrallimath
+
 relatedProcedureSlugs:
   - "pediatric-heart-surgery-cost-india"
   - "heart-valve-replacement-repair-cost-india"

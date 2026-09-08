@@ -50,6 +50,13 @@ risks:
   - "Infection or cramping following the insemination procedure"
   - "Failure to conceive, requiring repeated cycles or escalation to IVF"
   - "Ectopic pregnancy in rare cases"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

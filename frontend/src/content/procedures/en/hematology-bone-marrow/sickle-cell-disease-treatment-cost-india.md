@@ -50,6 +50,15 @@ risks:
   - "Severe infections due to prolonged immunosuppression"
   - "Neurological complications including stroke risk during conditioning"
   - "Long-term endocrine and fertility complications"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

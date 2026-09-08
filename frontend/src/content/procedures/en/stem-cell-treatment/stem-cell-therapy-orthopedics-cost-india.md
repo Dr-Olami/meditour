@@ -50,6 +50,13 @@ risks:
   - "Risk of infection from the harvesting or intra-articular injection procedure"
   - "Potential for immune reactions or, in rare cases, ectopic tissue formation from transplanted cells"
   - "Financial cost with uncertain return on investment, as repeat cycles may be recommended"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-s-vidyadhara
+
 relatedProcedureSlugs:
   - "stem-cell-therapy-neurological-cost-india"
   - "total-knee-replacement-cost-india"

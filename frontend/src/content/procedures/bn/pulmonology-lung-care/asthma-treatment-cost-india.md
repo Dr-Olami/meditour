@@ -49,6 +49,12 @@ risks:
   - "অতিরিক্ত নির্ভরতায় রিলিভার ওষুধের কার্যকারিতা হ্রাস"
   - "দীর্ঘমেয়াদী দৈহিক কর্টিকোস্টেরয়েড ব্যবহারে স্টেরয়েড-সম্পর্কিত জটিলতা"
   - "অ্যালার্জি টেস্টিং বা বায়োলজিক থেরাপির সময় অ্যানাফাইল্যাক্সিস বা গুরুতর অ্যালার্জিক প্রতিক্রিয়া"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs: []
+
 relatedProcedureSlugs:
   - "copd-treatment-cost-india"
 faqs:

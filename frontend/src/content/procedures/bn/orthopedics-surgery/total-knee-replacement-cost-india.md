@@ -49,6 +49,15 @@ risks:
   - "সময়ের সাথে ইমপ্লান্ট শিথিল বা ক্ষয় হয়ে ভবিষ্যতে রিভিশন প্রয়োজন"
   - "জয়েন্ট শক্ত হয়ে যাওয়া বা মোশন রেঞ্জ কমে যাওয়া যার জন্য অ্যানেস্থেসিয়ায় ম্যানিপুলেশন প্রয়োজন"
   - "অপারেটিভ স্থানের আশেপাশে স্নায়ু বা রক্তনালীর ক্ষতি"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-manish-samson
+
 relatedProcedureSlugs:
   - "total-hip-replacement-cost-india"
   - "arthroscopy-cost-india"

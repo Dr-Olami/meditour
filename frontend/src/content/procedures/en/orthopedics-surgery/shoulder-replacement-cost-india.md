@@ -49,6 +49,14 @@ risks:
   - "Implant loosening, dislocation, or wear over time necessitating future revision"
   - "Nerve injury (axillary nerve) causing temporary or permanent weakness"
   - "Stiffness or frozen shoulder requiring prolonged physiotherapy or manipulation"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "total-hip-replacement-cost-india"

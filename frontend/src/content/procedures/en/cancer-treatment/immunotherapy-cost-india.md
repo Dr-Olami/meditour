@@ -49,6 +49,12 @@ risks:
   - "Risk of autoimmune-like reactions requiring corticosteroid intervention"
   - "Infusion reactions including rash, fever, or rarely anaphylaxis"
   - "Potential for colitis, pneumonitis, or thyroid dysfunction with checkpoint inhibitors"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - "targeted-therapy-cost-india"
   - "chemotherapy-cost-india"

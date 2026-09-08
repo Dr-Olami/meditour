@@ -49,6 +49,14 @@ risks:
   - "DBS লিড সরে যাওয়া বা ভাঙা"
   - "মস্তিষ্কে রক্তক্ষরণ বা ফোলা"
   - "ডিভাইস ম্যালফাংশন বা ব্যাটারি প্রতিস্থাপনের প্রয়োজন"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "brain-tumor-surgery-cost-india"
   - "spinal-fusion-surgery-cost-india"

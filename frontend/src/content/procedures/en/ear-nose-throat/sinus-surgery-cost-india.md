@@ -49,6 +49,13 @@ risks:
   - "Damage to surrounding structures including orbit, eye muscles, or optic nerve"
   - "Cerebrospinal fluid leak due to breach of the skull base requiring repair"
   - "Recurrence of nasal polyps or chronic sinus disease requiring revision surgery"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
+
 relatedProcedureSlugs:
   - "cochlear-implant-cost-india"
 faqs:

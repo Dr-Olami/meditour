@@ -49,6 +49,14 @@ risks:
   - "Opportunistic infections due to immunosuppression (CMV, fungal, bacterial)"
   - "Cardiac allograft vasculopathy (chronic rejection) causing progressive coronary artery disease"
   - "Post-transplant lymphoproliferative disorder (PTLD) and other malignancies related to long-term immunosuppression"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-ravishankar-shetty-k
+  - dr-aditi-singhvi
+  - dr-devi-prasad-shetty
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "heart-valve-replacement-repair-cost-india"

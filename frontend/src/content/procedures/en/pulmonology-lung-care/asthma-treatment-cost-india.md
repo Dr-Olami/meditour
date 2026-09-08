@@ -49,6 +49,12 @@ risks:
   - "Reduced effectiveness of reliever medication over time with over-reliance"
   - "Corticosteroid-related complications with long-term systemic use"
   - "Anaphylaxis or severe allergic reaction during allergy testing or biologic therapy"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs: []
+
 relatedProcedureSlugs:
   - "copd-treatment-cost-india"
 faqs:

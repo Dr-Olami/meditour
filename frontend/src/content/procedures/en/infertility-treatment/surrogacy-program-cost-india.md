@@ -50,6 +50,13 @@ risks:
   - "Pregnancy complications for the surrogate (pre-eclampsia, gestational diabetes, preterm labour)"
   - "Disputes over parentage or custody rights"
   - "Emotional and psychological stress for all parties involved"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

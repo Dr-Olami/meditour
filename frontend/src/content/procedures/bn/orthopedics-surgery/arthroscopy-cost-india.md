@@ -49,6 +49,14 @@ risks:
   - "রক্তনালী বা স্নায়ুর ক্ষতি ইনসিশন সাইটের আশেপাশে"
   - "গভীর শিরায় রক্ত জমাট (ডিপ ভেইন থ্রম্বোসিস)"
   - "জয়েন্ট শক্ত হয়ে যাওয়া বা মোশন রেঞ্জ কমে যাওয়া"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "sports-injury-treatment-cost-india"

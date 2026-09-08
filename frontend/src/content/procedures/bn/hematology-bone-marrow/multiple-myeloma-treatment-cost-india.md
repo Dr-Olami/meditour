@@ -50,6 +50,15 @@ risks:
   - "রেনাল ইমপেয়ারমেন্ট এবং হাইপারক্যালসেমিয়া"
   - "অটোলোগাস ট্রান্সপ্লান্টে মোবিলাইজেশন ফেইলিওর"
   - "রোগ পুনরাবৃত্তি বা রিল্যাপ্স"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "autologous-stem-cell-transplant-cost-india"

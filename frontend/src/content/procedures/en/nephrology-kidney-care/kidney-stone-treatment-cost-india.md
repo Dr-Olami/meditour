@@ -50,6 +50,15 @@ risks:
   - "Incomplete stone fragmentation requiring a second procedure"
   - "Ureteral injury or stricture formation after ureteroscopy"
   - "Kidney damage or reduced function in rare cases of complex stones"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "dialysis-cost-india"
   - "kidney-transplant-cost-india"

@@ -49,6 +49,15 @@ risks:
   - "Bleeding requiring re-exploration or blood transfusion"
   - "Surgical site or mediastinal infection requiring prolonged antibiotics"
   - "Stroke or neurological complications from cardiopulmonary bypass"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-varun-shetty
+  - dr-praveen-r-tambrallimath
+
 relatedProcedureSlugs:
   - "pediatric-heart-surgery-cost-india"
   - "heart-valve-replacement-repair-cost-india"

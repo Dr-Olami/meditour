@@ -50,6 +50,13 @@ risks:
   - "ভিট্রিফিকেশন বা থও করার সময় কিছু ডিম্বাণু ক্ষতিগ্রস্ত হওয়া"
   - "সংরক্ষিত ডিম্বাণু দিয়ে গর্ভধারণ সাফল্য গ্যারান্টিড নয়"
   - "দীর্ঘমেয়াদী স্টোরেজ খরচ যা বার্ষিক প্রযোজ্য"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

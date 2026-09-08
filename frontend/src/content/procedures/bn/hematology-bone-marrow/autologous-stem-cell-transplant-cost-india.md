@@ -50,6 +50,16 @@ risks:
   - "মুকোসাইটিস এবং গ্যাস্ট্রোইনটেস্টাইনাল জটিলতা"
   - "স্টেম সেল সংগ্রহে ব্যর্থতা (মোবিলাইজেশন ফেইলিওর)"
   - "রোগ পুনরাবৃত্তি বা রিল্যাপ্স"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

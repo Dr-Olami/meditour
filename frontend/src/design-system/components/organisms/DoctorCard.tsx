@@ -19,6 +19,8 @@ export interface DoctorCardProps extends React.HTMLAttributes<HTMLElement> {
   doctor: Doctor;
   bookLabel?: string;
   whatsappLabel?: string;
+  /** Override the avatar alt text (e.g. to add procedure/country context for SEO). */
+  imageAlt?: string;
 }
 
 /**
@@ -29,7 +31,7 @@ export interface DoctorCardProps extends React.HTMLAttributes<HTMLElement> {
  */
 const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
   (
-    { className, doctor, bookLabel = 'Request appointment', whatsappLabel = 'WhatsApp', ...props },
+    { className, doctor, bookLabel = 'Request appointment', whatsappLabel = 'WhatsApp', imageAlt, ...props },
     ref
   ) => {
     const profileHref = doctor.href ?? '#contact';
@@ -52,7 +54,7 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
           {doctor.avatar ? (
             <img
               src={doctor.avatar}
-              alt={doctor.name}
+              alt={imageAlt ?? doctor.name}
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-top"
             />

@@ -49,6 +49,13 @@ risks:
   - "সিস্টয়েড ম্যাকুলার ইডিমা যা সাময়িক দৃষ্টি ঝাপসা ঘটায়, সাধারণত অ্যান্টি-ইনফ্লেমেটরি ড্রপ দিয়ে সমাধান হয়"
   - "ইনট্রাওকুলার লেন্স স্থানান্তর বা বিকেন্দ্রীকরণ যা গৌণ সংশোধনমূলক প্রক্রিয়া প্রয়োজন"
   - "রিফ্র্যাক্টিভ সারপ্রাইজ — অবশিষ্ট প্রেসক্রিপশন যা চশমা বা LASIK/PRK দ্বারা সংশোধন প্রয়োজন"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jyoti-shetty
+  - dr-sharon-d-souza
+
 relatedProcedureSlugs:
   - "lasik-eye-surgery-cost-india"
 faqs:

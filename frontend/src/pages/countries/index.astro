@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import { Navbar } from '../../design-system/components/organisms/Navbar';
 import { Footer } from '../../design-system/components/organisms/Footer';
@@ -9,6 +9,7 @@ import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
 import { medicalBusiness, breadcrumbs } from '../../lib/schema';
+import { getTopCountryProcedureLinks } from '../../lib/country-procedure-links';
 import {
   getCountriesGroupedByRegion,
   getRegionLabel,
@@ -18,11 +19,95 @@ import {
 } from '../../data/countries';
 import type { Region } from '../../data/countries';
 
+// Reason: Phase 3 generates country-procedure pages for all 68 procedures
+// for all 31 countries. Showing top procedure links directly on the country
+// cards gives users a 2-click path to procedure-specific country content.
+const DEFAULT_PROCEDURES = [
+  { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+  { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  { name: 'Knee Replacement', slug: 'total-knee-replacement-in-india' },
+];
+const TOP_PROCEDURES_BY_COUNTRY: Record<string, { name: string; slug: string }[]> = {
+  nigeria: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+    { name: 'Kidney Transplant', slug: 'kidney-transplant-in-india' },
+  ],
+  bangladesh: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+    { name: 'Knee Replacement', slug: 'total-knee-replacement-in-india' },
+  ],
+  uae: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Bone Marrow Transplant', slug: 'bone-marrow-transplant-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  ],
+  'saudi-arabia': [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Chemotherapy', slug: 'chemotherapy-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  ],
+  kenya: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Knee Replacement', slug: 'total-knee-replacement-in-india' },
+    { name: 'Kidney Transplant', slug: 'kidney-transplant-in-india' },
+  ],
+  iraq: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Cancer Surgery', slug: 'cancer-surgery-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  ],
+  sudan: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Chemotherapy', slug: 'chemotherapy-in-india' },
+    { name: 'Kidney Transplant', slug: 'kidney-transplant-in-india' },
+  ],
+  uganda: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Cancer Surgery', slug: 'cancer-surgery-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  ],
+  oman: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+    { name: 'Knee Replacement', slug: 'total-knee-replacement-in-india' },
+  ],
+  yemen: [
+    { name: 'Heart Bypass', slug: 'heart-bypass-surgery-cabg-in-india' },
+    { name: 'Chemotherapy', slug: 'chemotherapy-in-india' },
+    { name: 'IVF', slug: 'ivf-treatment-in-india' },
+  ],
+  // Phase 3 additions — use default top procedures for new countries
+  afghanistan: DEFAULT_PROCEDURES,
+  nepal: DEFAULT_PROCEDURES,
+  'sri-lanka': DEFAULT_PROCEDURES,
+  maldives: DEFAULT_PROCEDURES,
+  kuwait: DEFAULT_PROCEDURES,
+  qatar: DEFAULT_PROCEDURES,
+  bahrain: DEFAULT_PROCEDURES,
+  egypt: DEFAULT_PROCEDURES,
+  iran: DEFAULT_PROCEDURES,
+  jordan: DEFAULT_PROCEDURES,
+  ghana: DEFAULT_PROCEDURES,
+  ethiopia: DEFAULT_PROCEDURES,
+  tanzania: DEFAULT_PROCEDURES,
+  cameroon: DEFAULT_PROCEDURES,
+  rwanda: DEFAULT_PROCEDURES,
+  zimbabwe: DEFAULT_PROCEDURES,
+  usa: DEFAULT_PROCEDURES,
+  uk: DEFAULT_PROCEDURES,
+  canada: DEFAULT_PROCEDURES,
+  australia: DEFAULT_PROCEDURES,
+  kazakhstan: DEFAULT_PROCEDURES,
+};
+
 const locale = 'en';
 const t = getTranslations(locale);
 
 const countriesByRegion = getCountriesGroupedByRegion();
 const totalCountries = getCountryCount();
+const popularLinks = getTopCountryProcedureLinks('en', 24);
 
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
@@ -56,7 +141,7 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '#contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}
@@ -102,19 +187,18 @@ const jsonLd = [
             </h2>
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {countries.map((country) => (
-                <a
-                  href={`/countries/${country.slug}`}
-                  class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-cream-100 transition-all hover:shadow-base"
+                <div
+                  class="group relative flex flex-col overflow-hidden rounded-card border border-cream-300 bg-cream-100 transition-all hover:shadow-base"
                 >
                   {/* Card image — country-specific when available, OG image fallback */}
-                  <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                  <a href={`/countries/${country.slug}`} class="block aspect-[16/10] overflow-hidden bg-cream-200">
                     <img
                       src={country.cardImage || getCountryOgImage(country)}
                       alt={`Medical treatment in India for ${country.nationality} patients`}
                       class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
-                  </div>
+                  </a>
 
                   <div class="flex flex-1 flex-col p-5">
                     {/* Flag + country label */}
@@ -128,9 +212,11 @@ const jsonLd = [
                       <span class="text-xs font-semibold uppercase tracking-wide text-ink/50">{country.name}</span>
                     </div>
 
-                    {/* Heading */}
+                    {/* Heading — links to country page */}
                     <h3 class="mt-2 font-display text-lg font-semibold leading-snug text-ink">
-                      Medical Treatment in India for {country.nationality} Patients
+                      <a href={`/countries/${country.slug}`} class="after:absolute after:inset-0 after:content-[''] hover:text-violet-700">
+                        Medical Treatment in India for {country.nationality} Patients
+                      </a>
                     </h3>
 
                     {/* Excerpt */}
@@ -145,8 +231,25 @@ const jsonLd = [
                       </span>
                       <Icon name="arrow-right" size={16} className="text-ink/40 transition-all group-hover:translate-x-0.5 group-hover:text-violet-600" />
                     </div>
+
+                    {/* Top procedures for Phase 1 countries */}
+                    {TOP_PROCEDURES_BY_COUNTRY[country.slug] && (
+                      <div class="relative mt-4 border-t border-cream-300 pt-3">
+                        <p class="mb-2 text-xs font-medium uppercase tracking-wide text-ink/40">Top procedures</p>
+                        <div class="flex flex-wrap gap-2">
+                          {TOP_PROCEDURES_BY_COUNTRY[country.slug].map((proc) => (
+                            <a
+                              href={`/countries/${country.slug}/${proc.slug}`}
+                              class="relative z-10 rounded-full bg-cream-200 px-3 py-1 text-xs font-medium text-ink/70 transition-colors hover:bg-violet-100 hover:text-violet-700"
+                            >
+                              {proc.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
@@ -173,5 +276,7 @@ const jsonLd = [
     conciergeSuffix={t.footer.conciergeSuffix}
     copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
     address={t.footer.address}
+    popularLinksTitle="Popular treatments by country"
+    popularLinks={popularLinks}
   />
 </Layout>

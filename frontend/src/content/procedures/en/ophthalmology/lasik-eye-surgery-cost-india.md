@@ -51,6 +51,13 @@ risks:
   - "Flap-related complications including displacement, folds, or inflammation (diffuse lamellar keratitis), more relevant with microkeratome or femtosecond LASIK than SMILE"
   - "Under-correction or over-correction requiring an enhancement procedure, typically performed after 3-6 months of stable vision"
   - "Corneal ectasia — a rare but serious weakening and bulging of the cornea, more likely in patients with thin or abnormal corneas"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jyoti-shetty
+  - dr-sharon-d-souza
+
 relatedProcedureSlugs:
   - "cataract-surgery-cost-india"
 faqs:

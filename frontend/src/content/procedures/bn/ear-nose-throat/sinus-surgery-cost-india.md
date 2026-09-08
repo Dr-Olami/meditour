@@ -49,6 +49,13 @@ risks:
   - "চারপাশের কাঠামোর ক্ষতি যার মধ্যে অরবিট, চোখের পেশি বা অপটিক স্নায়ু অন্তর্ভুক্ত"
   - "খুলির ভিত্তি লঙ্ঘনের কারণে সেরিব্রোস্পাইনাল ফ্লুইড লিক যা মেরামত প্রয়োজন"
   - "নাকের পলিপ বা দীর্ঘস্থায়ী সাইনাস রোগের পুনরাবৃত্তি যা রিভিশন সার্জারি প্রয়োজন"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
+
 relatedProcedureSlugs:
   - "cochlear-implant-cost-india"
 faqs:

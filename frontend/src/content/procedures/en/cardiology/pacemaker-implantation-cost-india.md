@@ -49,6 +49,14 @@ risks:
   - "Pneumothorax (collapsed lung) from subclavian vein access requiring chest drain"
   - "Bleeding or haematoma at the pacemaker pocket site"
   - "Device malfunction or premature battery depletion requiring generator change"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "angioplasty-stent-placement-cost-india"
   - "heart-bypass-surgery-cabg-cost-india"

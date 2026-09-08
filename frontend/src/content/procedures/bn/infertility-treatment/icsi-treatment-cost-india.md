@@ -50,6 +50,13 @@ risks:
   - "ভ্রূণ বিকাশ বন্ধ হয়ে যাওয়া বা ভ্রূণ স্থাপন ব্যর্থতা"
   - "একাধিক গর্ভধারণ (যমজ বা ত্রিগুণ) যা গর্ভধারণ জটিলতার ঝুঁকি বাড়ায়"
   - "ডিম্বাণু সংগ্রহের সময় সংক্রমণ বা রক্তক্ষরণ"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "iui-treatment-cost-india"

@@ -49,6 +49,14 @@ risks:
   - "Bleeding or haematoma at the catheter access site (groin or wrist)"
   - "Contrast-induced nephropathy in patients with pre-existing kidney disease"
   - "Coronary artery dissection or perforation requiring emergency bypass surgery"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "pacemaker-implantation-cost-india"

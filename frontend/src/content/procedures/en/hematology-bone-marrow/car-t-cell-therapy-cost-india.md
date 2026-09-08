@@ -50,6 +50,13 @@ risks:
   - "Prolonged cytopenias and infections"
   - "B-cell aplasia requiring immunoglobulin replacement"
   - "Disease relapse despite CAR-T therapy"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-neema-bhat
+  - dr-sunil-udgire
+
 relatedProcedureSlugs:
   - "autologous-stem-cell-transplant-cost-india"
   - "multiple-myeloma-treatment-cost-india"

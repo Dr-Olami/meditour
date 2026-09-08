@@ -49,6 +49,14 @@ risks:
   - "রক্তক্ষরণ বা রক্তনালীর ক্ষতি"
   - "কিডনির জটিলতা"
   - "অ্যারিথমিয়া (অনিয়মিত হৃদস্পন্দন)"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "heart-valve-replacement-repair-cost-india"
   - "heart-bypass-surgery-cabg-cost-india"

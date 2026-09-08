@@ -50,6 +50,16 @@ risks:
   - "মূত্রনালীর জটিলতা (ইউরেটার স্ট্রিকচার বা লিকেজ)"
   - "অতিরিক্ত রক্তক্ষরণ"
   - "ট্রান্সপ্লান্টের পর কিডনিতে রোগ পুনরাবৃত্তি"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-dubey
+  - dr-mohammed-fahad-khan
+  - dr-gokul-nath
+  - dr-vishwanath-s
+
 relatedProcedureSlugs:
   - "liver-transplant-cost-india"
   - "lung-transplant-cost-india"

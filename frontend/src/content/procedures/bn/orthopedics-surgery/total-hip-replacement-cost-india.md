@@ -49,6 +49,15 @@ risks:
   - "সার্জিক্যাল সাইট বা জয়েন্টের ভেতরে সংক্রমণ যার জন্য অ্যান্টিবায়োটিক বা রিভিশন প্রয়োজন"
   - "পায়ের দৈর্ঘ্যের অসমতা যার জন্য জুতার ইনসোল প্রয়োজন হতে পারে"
   - "সময়ের সাথে ইমপ্লান্ট শিথিল বা ক্ষয়, যা রিভিশন সার্জারি প্রয়োজন হতে পারে"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-samarth-arya
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "shoulder-replacement-cost-india"

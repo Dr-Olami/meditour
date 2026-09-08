@@ -51,6 +51,13 @@ risks:
   - "Dumping syndrome causing nausea, sweating and diarrhoea after eating sugary foods"
   - "Deep vein thrombosis or pulmonary embolism due to reduced mobility post-surgery"
   - "Internal bleeding or infection at surgical sites requiring intervention"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "gastric-sleeve-surgery-cost-india"
 faqs:

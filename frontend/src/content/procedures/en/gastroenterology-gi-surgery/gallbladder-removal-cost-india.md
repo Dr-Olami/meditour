@@ -49,6 +49,14 @@ risks:
   - "Infection at the port sites or within the abdomen requiring antibiotics"
   - "Bile leakage from the cystic duct stump requiring endoscopic stenting or drainage"
   - "Post-cholecystectomy syndrome with persistent bloating or indigestion in some patients"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-k-hemanth-kumar
+  - dr-jayanth-reddy
+
 relatedProcedureSlugs:
   - "hernia-repair-surgery-cost-india"
   - "bariatric-surgery-cost-india"

@@ -49,6 +49,14 @@ risks:
   - "পেসমেকার সিন্ড্রোম"
   - "রক্তক্ষরণ বা হেমাটোমা"
   - "অ্যালার্জিক প্রতিক্রিয়া"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "heart-valve-replacement-repair-cost-india"

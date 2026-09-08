@@ -50,6 +50,13 @@ risks:
   - "সংগ্রহ বা প্রয়োগ প্রক্রিয়া থেকে সংক্রমণের ঝুঁকি"
   - "ইমিউন প্রতিক্রিয়া বা বিরল ক্ষেত্রে প্রয়োগকৃত কোষ থেকে টিউমার গঠনের সম্ভাবনা"
   - "অনিশ্চিত উপকারের বিপরীতে আর্থিক খরচ, কারণ পুনরাবৃত্তি চক্র সুপারিশ হতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-bidisha-banerjee
+
 relatedProcedureSlugs:
   - "stem-cell-therapy-orthopedics-cost-india"
   - "deep-brain-stimulation-cost-india"

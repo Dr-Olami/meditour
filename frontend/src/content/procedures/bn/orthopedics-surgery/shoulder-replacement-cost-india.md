@@ -49,6 +49,14 @@ risks:
   - "রোটেটর কাফ টিয়ার বা স্নায়ুর ক্ষতি (অ্যাক্সিলারি স্নায়ু)"
   - "সময়ের সাথে ইমপ্লান্ট শিথিল বা ক্ষয়"
   - "শোল্ডার শক্ত হয়ে যাওয়া (ফ্রোজেন শোল্ডার) বা মোশন রেঞ্জ কমে যাওয়া"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+
 relatedProcedureSlugs:
   - "total-hip-replacement-cost-india"
   - "total-knee-replacement-cost-india"

@@ -50,6 +50,15 @@ risks:
   - "গ্রাফট ফেইলিওর বা ব্যর্থতা"
   - "কন্ডিশনিং কেমোথেরাপির পার্শ্বপ্রতিক্রিয়া"
   - "দীর্ঘমেয়াদী ইমিউনোসাপ্রেসিভ থেরাপির ঝুঁকি"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

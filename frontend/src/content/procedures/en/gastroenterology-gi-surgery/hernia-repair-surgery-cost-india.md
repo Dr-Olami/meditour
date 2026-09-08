@@ -49,6 +49,14 @@ risks:
   - "Infection at the incision site or around the mesh requiring antibiotics or, rarely, mesh removal"
   - "Bleeding or haematoma formation at the surgical site requiring drainage"
   - "Seroma (fluid collection) at the repair site, usually self-limiting but occasionally requiring aspiration"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-k-hemanth-kumar
+  - dr-jayanth-reddy
+
 relatedProcedureSlugs:
   - "gallbladder-removal-cost-india"
   - "bariatric-surgery-cost-india"

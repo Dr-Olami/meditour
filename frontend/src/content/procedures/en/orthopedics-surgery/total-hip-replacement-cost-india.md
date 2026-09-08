@@ -49,6 +49,15 @@ risks:
   - "Infection at the surgical site or within the joint requiring antibiotics or revision"
   - "Leg-length discrepancy that may require a shoe insert"
   - "Implant loosening or wear over time, potentially needing revision surgery"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-samarth-arya
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "shoulder-replacement-cost-india"

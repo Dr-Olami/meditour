@@ -49,6 +49,14 @@ risks:
   - "Arrhythmias including heart block requiring temporary or permanent pacemaker"
   - "Bleeding requiring re-exploration or blood transfusion"
   - "Neurological complications including seizures or developmental concerns related to cardiopulmonary bypass"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-praveen-r-tambrallimath
+  - dr-varun-shetty
+
 relatedProcedureSlugs:
   - "asd-vsd-closure-surgery-cost-india"
   - "heart-bypass-surgery-cabg-cost-india"

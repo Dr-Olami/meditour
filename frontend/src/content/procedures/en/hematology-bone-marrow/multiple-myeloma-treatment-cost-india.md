@@ -50,6 +50,15 @@ risks:
   - "Disease relapse despite transplant"
   - "Peripheral neuropathy from novel agents"
   - "Venous thromboembolism associated with immunomodulatory drugs"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "autologous-stem-cell-transplant-cost-india"
   - "car-t-cell-therapy-cost-india"

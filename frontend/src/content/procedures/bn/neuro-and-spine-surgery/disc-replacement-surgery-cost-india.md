@@ -49,6 +49,14 @@ risks:
   - "সার্জিক্যাল সাইট সংক্রমণ"
   - "ইমপ্লান্টের আশেপাশে হাড়ের ক্ষয় বা সাবসাইডেন্স"
   - "পার্শ্ববর্তী কশেরুকায় ডিস্ক ক্ষয় (অ্যাডজেসেন্ট সেগমেন্ট ডিজিজ)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "spinal-fusion-surgery-cost-india"
   - "brain-tumor-surgery-cost-india"

@@ -631,3 +631,59 @@ Created docs/PROCEDURE_COUNTRY_PAGES_STRATEGY.md — comprehensive 1,200-line do
 - Our existing country data already contains longTailKeywords with procedure-specific patterns (e.g. "heart surgery cost in India for Bangladeshi patients") — these should be referenced when writing page content
 - Currency conversion can be auto-generated from existing currency.exchangeRate in country data — no new data needed
 - FAQ generation can combine procedure FAQs + country visa/travel FAQs — template approach with medically cautious language
+
+## Phase 1: Country-Procedure Pages — 2026-09-07 — COMPLETE
+
+### Implemented
+
+- [x] **lib/currency.ts** — USD-to-local currency conversion helper (93 lines). Parses USD price ranges from procedure frontmatter, converts using country currency exchangeRate, formats with local symbol.
+- [x] **lib/procedure-country-faq.ts** — FAQ generator for procedure x country pages (99 lines). Produces 4 auto-generated FAQs (cost, visa, travel, safety) merged with up to 4 manual FAQs from procedure frontmatter, capped at 8 total.
+- [x] **i18n keys** — Added procedureCountry namespace with 33 keys to both en.json and n.json (UTF-8 safe insertion for Bengali).
+- [x] **EN route** — pages/countries/[country]/[procedure].astro. Generates 100 pages (10 countries x 10 procedures). URL pattern: /countries/{country}/{procedure}-in-india.
+- [x] **BN route** — pages/bn/countries/[country]/[procedure].astro. Generates 10 pages (Bangladesh only x 10 procedures). URL pattern: /bn/countries/{country}/{procedure}-in-india.
+- [x] **Country page linking** — Both EN and BN country pages now include a "Popular procedures" section linking to the new country-procedure pages.
+- [x] **LEAD_SOURCE** — Added PROCEDURE_COUNTRY_PAGE: 'procedure-country-page' to lib/crm.ts.
+- [x] **Build verification** — Astro build passes. 110 total pages generated (100 EN + 10 BN). All pages include MedicalWebPage, FAQPage, and BreadcrumbList JSON-LD schemas.
+
+### Phase 1 Countries (10)
+
+nigeria, bangladesh, uae, saudi-arabia, kenya, iraq, sudan, uganda, oman, yemen
+
+### Phase 1 Procedures (10)
+
+heart-bypass-surgery-cabg, angioplasty-stent-placement, total-knee-replacement, total-hip-replacement, ivf-treatment, chemotherapy, cancer-surgery, kidney-transplant, liver-transplant, bone-marrow-transplant
+
+### Page Structure (14 H2 sections)
+
+1. Hero (H1 + cost badge + quick facts + CTAs)
+2. In short (summary + cost + savings)
+3. Cost in your currency (USD + local currency)
+4. Cost comparison: India vs your country
+5. Who Is This Procedure For? (eligibility)
+6. Procedure overview (description + link to canonical procedure page)
+7. Recovery & fit-to-fly (recovery timeline table)
+8. Risks, complications & mitigation
+9. Why choose India (country-specific concerns)
+10. Medical visa process (country-specific visa steps)
+11. Travel & logistics (flight time, airports, recommended cities)
+12. Cultural considerations (languages, cultural notes)
+13. What's included in the cost (inclusions/exclusions)
+14. Frequently asked questions (country-procedure specific)
+- Related procedures for {nationality} patients
+- CTA section
+- Lead form
+
+### Design Decisions
+
+- **No full markdown body rendering** — The country-procedure page shows a procedure summary + link to the canonical procedure page, avoiding duplicate H2 headings and thin content. This keeps the page as a localization layer, not a duplicate of the procedure page.
+- **Phase 1 limiting** — Only 10 countries x 10 procedures = 100 EN pages + 10 BN pages = 110 total. Phase 2/3 will expand to all 31 countries x 68 procedures.
+- **BN route limited to Bangladesh** — Only Bangladesh has Bengali country metadata. Other countries will get BN pages when Bengali country data is added.
+- **URL pattern** — /countries/{country}/{procedure}-in-india (not -cost-india) to target "{procedure} in India for {nationality} patients" rather than the procedure-cost keyword already covered by the canonical page.
+
+### Discovered During Work
+
+- getStaticPaths in Astro runs in an isolated context — variables defined in the frontmatter outside getStaticPaths are NOT accessible inside it. Phase 1 filter sets must be defined inside the function.
+- The QuickFacts component takes a acts prop, not items.
+- The DoctorCard component takes a doctor prop, not spread props.
+- The Icon component does not have a message-circle icon — used globe for language indicators instead.
+- Procedure markdown bodies contain their own full H2 structure that duplicates template sections — resolved by not rendering the markdown body and instead showing a summary + canonical link.

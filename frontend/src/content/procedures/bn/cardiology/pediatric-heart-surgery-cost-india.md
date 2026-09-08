@@ -49,6 +49,14 @@ risks:
   - "অ্যারিথমিয়া (অনিয়মিত হৃদস্পন্দন)"
   - "হৃৎপিণ্ড-ফুসফুস মেশিন সম্পর্কিত জটিলতা"
   - "নিউরোলজিক্যাল জটিলতা বা স্ট্রোক"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-praveen-r-tambrallimath
+  - dr-varun-shetty
+
 relatedProcedureSlugs:
   - "asd-vsd-closure-surgery-cost-india"
   - "heart-valve-replacement-repair-cost-india"

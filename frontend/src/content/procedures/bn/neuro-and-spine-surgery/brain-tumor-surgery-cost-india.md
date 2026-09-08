@@ -49,6 +49,14 @@ risks:
   - "মস্তিষ্কের ফোলা বা রক্তক্ষরণ"
   - "খিঁচুনি বা সংজ্ঞাহীনতা"
   - "সেরিব্রোস্পাইনাল ফ্লুইড লিক"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-murali-mohan
+  - dr-satish-satyanarayana
+
 relatedProcedureSlugs:
   - "spinal-fusion-surgery-cost-india"
   - "deep-brain-stimulation-cost-india"

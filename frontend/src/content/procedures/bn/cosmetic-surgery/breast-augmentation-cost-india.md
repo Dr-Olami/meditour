@@ -50,6 +50,14 @@ risks:
   - "স্তনের অসমমিত ফলাফল বা প্রত্যাশা পূরণ না হওয়া"
   - "ইমপ্লান্ট ফাটল বা স্থানান্তর (বিরল)"
   - "রিভিশন সার্জারি প্রয়োজন হওয়া (প্রায় ৫–১০% ক্ষেত্রে)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-kanmani-govindrao-telkar
+  - dr-mayur-r-shetty
+
 relatedProcedureSlugs:
   - "rhinoplasty-cost-india"
   - "liposuction-cost-india"

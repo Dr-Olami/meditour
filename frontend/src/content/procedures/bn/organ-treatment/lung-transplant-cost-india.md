@@ -50,6 +50,13 @@ risks:
   - "ব্রংকিয়াল অ্যানাস্টোমোসিস জটিলতা (স্ট্রিকচার বা লিকেজ)"
   - "অতিরিক্ত রক্তক্ষরণ"
   - "ট্রান্সপ্লান্টের পর ফুসফুসে রোগ পুনরাবৃত্তি"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-ravishankar-shetty-k
+  - dr-aditi-singhvi
+
 relatedProcedureSlugs:
   - "liver-transplant-cost-india"
   - "kidney-transplant-cost-india"

@@ -15,6 +15,10 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
   conciergeSuffix: string;
   copyright: string;
   address?: string;
+  /** Optional quick-links section title (e.g. "Popular treatments"). */
+  popularLinksTitle?: string;
+  /** Optional quick links rendered in a column above the legal links row. */
+  popularLinks?: FooterLegalLink[];
 }
 
 /**
@@ -24,7 +28,7 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
  */
 const Footer = React.forwardRef<HTMLElement, FooterProps>(
   (
-    { className, brand, legalLinks, conciergeLabel, conciergePrefix, conciergeSuffix, copyright, address, ...props },
+    { className, brand, legalLinks, conciergeLabel, conciergePrefix, conciergeSuffix, copyright, address, popularLinksTitle, popularLinks, ...props },
     ref
   ) => {
     const number = getWhatsAppNumber();
@@ -37,6 +41,11 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
       { label: 'Policies', href: '/privacy' },
     ];
 
+    // Reason: Separate the last 2 links (Terms & Policies) into their own
+    // section so the main nav links stay clean in 2 balanced columns.
+    const navLinks = safeLegalLinks.slice(0, -2);
+    const policyLinks = safeLegalLinks.slice(-2);
+
     return (
       <footer
         className={cn('bg-ink text-gray-500 overflow-hidden', className)}
@@ -45,21 +54,60 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
       >
         {/* Inner container: holds everything except the bleeding wordmark */}
         <div className="container">
-          {/* Legal links */}
+          {/* Nav links — 2 columns: left col + right col (pushed to right edge) */}
           <div className="border-t border-cream-100/15 py-8">
-            <ul className="flex flex-wrap gap-6">
-              {safeLegalLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-500 no-underline transition-none hover:text-gray-500 hover:underline"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-row justify-between gap-4">
+              {/* Left column — first half of links */}
+              <ul className="flex flex-col gap-3">
+                {navLinks.slice(0, 5).map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-xs text-white no-underline transition-colors hover:text-gray-300 hover:underline sm:text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {/* Right column — second half of links, aligned to right edge */}
+              <ul className="flex flex-col gap-3 items-end text-right">
+                {navLinks.slice(5).map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-xs text-white no-underline transition-colors hover:text-gray-300 hover:underline sm:text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+
+          {/* Popular quick-links */}
+          {popularLinks && popularLinks.length > 0 && (
+            <div className="border-t border-cream-100/15 py-8">
+              {popularLinksTitle && (
+                <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-600">
+                  {popularLinksTitle}
+                </p>
+              )}
+              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {popularLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-500 no-underline transition-colors hover:text-gray-300 hover:underline"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Concierge / emergency line */}
           {phone && (
@@ -75,6 +123,24 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
                   {phone}
                 </a>
               </p>
+            </div>
+          )}
+
+          {/* Policy links — Terms & Conditions, Policies */}
+          {policyLinks.length > 0 && (
+            <div className="border-t border-cream-100/15 py-6">
+              <ul className="flex flex-wrap gap-6">
+                {policyLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-xs text-gray-500 no-underline transition-colors hover:text-gray-300 hover:underline sm:text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

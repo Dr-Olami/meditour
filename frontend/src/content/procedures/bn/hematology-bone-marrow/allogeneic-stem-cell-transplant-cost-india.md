@@ -50,6 +50,16 @@ risks:
   - "অর্গান ড্যামেজ (যকৃত, কিডনি বা ফুসফুস)"
   - "গ্রাফট ফেইলিওর বা ব্যর্থতা"
   - "দীর্ঘমেয়াদী বন্ধ্যাত্ব বা সেকেন্ডারি ক্যানসার"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "autologous-stem-cell-transplant-cost-india"

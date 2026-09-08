@@ -50,6 +50,15 @@ risks:
   - "Severe infections due to prolonged neutropenia and immunosuppression"
   - "Failure of immunosuppressive therapy requiring salvage transplant"
   - "Long-term risk of clonal evolution to myelodysplasia or leukaemia"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

@@ -49,6 +49,15 @@ risks:
   - "কোলোন, লিভার, স্প্লিন বা প্লিউরার মতো আশেপাশের অঙ্গে আঘাত, বিরল"
   - "অবশিষ্ট পাথর খণ্ড যার জন্য সেকেন্ড-লুক প্রক্রিয়া বা সহায়ক ESWL প্রয়োজন"
   - "স্টেন্ট স্থাপনজনিত ইউরেটার স্ট্রিকচার বা ইউরেটার আঘাত"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "prostate-surgery-cost-india"
 faqs:

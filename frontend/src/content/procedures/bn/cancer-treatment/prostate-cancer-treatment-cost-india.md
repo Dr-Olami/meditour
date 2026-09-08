@@ -49,6 +49,13 @@ risks:
   - "যৌন ডিসফাংশন — ইরেকটাইল ডিসফাংশন (স্নায়ু সংরক্ষণ সত্ত্বেও ঝুঁকি)"
   - "রেডিয়েশন পার্শ্বপ্রতিক্রিয়া — মূত্রাশয়ের জ্বালা, মলদ্বারের জ্বালা বা ক্লান্তি"
   - "রোগের পুনরাবৃত্তি বা অগ্রগতি যা অতিরিক্ত চিকিৎসা প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-g-girish
+  - dr-anil-kamath
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

@@ -49,6 +49,15 @@ risks:
   - "স্ট্রোক বা হৃদরোগের ঝুঁকি"
   - "কৃত্রিম ভালভে রক্ত জমাট বাঁধার ঝুঁকি"
   - "অ্যারিথমিয়া (অনিয়মিত হৃদস্পন্দন)"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-ravindra-setty-b-r
+  - dr-varun-shetty
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "tavr-transcatheter-aortic-valve-replacement-cost-india"

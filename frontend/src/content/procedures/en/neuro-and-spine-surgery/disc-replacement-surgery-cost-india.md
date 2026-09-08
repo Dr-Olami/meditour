@@ -49,6 +49,14 @@ risks:
   - "Nerve or spinal cord injury causing weakness or sensory changes"
   - "Infection at the surgical site or deep spinal infection"
   - "Wear or failure of the artificial disc over time requiring replacement"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "spinal-fusion-surgery-cost-india"
   - "brain-tumor-surgery-cost-india"

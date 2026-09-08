@@ -49,6 +49,14 @@ risks:
   - "পোর্ট সাইটে বা পেটের ভেতরে সংক্রমণ যা অ্যান্টিবায়োটিক প্রয়োজন"
   - "সিস্টিক ডাক্ট স্টাম্প থেকে পিত্ত লিক যা এন্ডোস্কোপিক স্টেন্টিং বা ড্রেনেজ প্রয়োজন"
   - "পোস্ট-কোলেসিস্টেক্টমি সিন্ড্রোম যা কিছু রোগীতে পেট ফাঁপা বা বদহজম সৃষ্টি করে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-k-hemanth-kumar
+  - dr-jayanth-reddy
+
 relatedProcedureSlugs:
   - "hernia-repair-surgery-cost-india"
   - "bariatric-surgery-cost-india"

@@ -49,6 +49,16 @@ risks:
   - "Deep sternal wound infection or mediastinitis requiring prolonged antibiotics"
   - "Stroke due to emboli from the aortic arch during cannulation or clamping"
   - "Graft failure or recurrent angina requiring future intervention"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-ravindra-setty-b-r
+  - dr-varun-shetty
+  - dr-praveen-r-tambrallimath
+
 relatedProcedureSlugs:
   - "heart-valve-replacement-repair-cost-india"
   - "angioplasty-stent-placement-cost-india"

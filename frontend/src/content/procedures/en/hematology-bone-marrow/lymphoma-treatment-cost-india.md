@@ -50,6 +50,16 @@ risks:
   - "Chemotherapy-related organ toxicity (cardiac, pulmonary, renal)"
   - "Disease relapse requiring salvage therapy or autologous transplant"
   - "Long-term effects including secondary malignancies and neuropathy"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "autologous-stem-cell-transplant-cost-india"
   - "leukemia-treatment-cost-india"

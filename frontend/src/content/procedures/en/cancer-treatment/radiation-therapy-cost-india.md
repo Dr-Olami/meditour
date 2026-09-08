@@ -49,6 +49,14 @@ risks:
   - "Localised side effects depending on treatment site (e.g., difficulty swallowing, diarrhoea)"
   - "Risk of long-term fibrosis or tissue changes in the radiation field"
   - "Small risk of secondary radiation-induced cancers years later"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+  - dr-anil-kamath
+
 relatedProcedureSlugs:
   - "chemotherapy-cost-india"
   - "cancer-surgery-cost-india"

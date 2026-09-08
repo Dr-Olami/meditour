@@ -50,6 +50,12 @@ risks:
   - "Uneven or patchy hair growth requiring a second transplant session"
   - "Scarring in the donor area, particularly with the FUT strip technique"
   - "Bleeding or folliculitis (inflammation of hair follicles) in rare cases"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-prashant-puranik
+
 relatedProcedureSlugs:
   - "rhinoplasty-cost-india"
   - "liposuction-cost-india"

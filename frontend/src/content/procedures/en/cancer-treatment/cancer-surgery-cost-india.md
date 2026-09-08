@@ -49,6 +49,16 @@ risks:
   - "Deep vein thrombosis or pulmonary embolism due to reduced mobility"
   - "Anaesthesia-related risks including cardiovascular or respiratory complications"
   - "Potential damage to adjacent organs or structures depending on tumour location"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-anil-kamath
+  - dr-shabber-zaveri
+  - dr-g-girish
+  - dr-vidya-bhushan
+
 relatedProcedureSlugs:
   - "radiation-therapy-cost-india"
   - "chemotherapy-cost-india"

@@ -51,6 +51,14 @@ risks:
   - "সিলেকটিভ ডোরসাল রাইজোটমির পর স্নায়ুমূল সুস্থ হওয়ার সময় সাময়িক দুর্বলতা বা সংবেদন পরিবর্তন"
   - "ব্যবস্থাপনা সত্ত্বেও হিপ অস্থিরতা বা স্থানচ্যুতি অগ্রসর হয়ে ভবিষ্যতে সার্জিক্যাল হস্তক্ষেপ প্রয়োজন"
   - "থেরাপি সত্ত্বেও বিকাশ বা যোগাযোগের চ্যালেঞ্জ বজায় থাকা যার জন্য দীর্ঘমেয়াদী শিক্ষাগত সহায়তা প্রয়োজন"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-bidisha-banerjee
+  - dr-ajit-kumar-roy
+
 relatedProcedureSlugs: []
 faqs:
   - question: "ভারতে চিকিৎসায় কি সেরিব্রাল পালসি সম্পূর্ণ সারে?"

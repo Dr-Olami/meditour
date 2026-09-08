@@ -50,6 +50,14 @@ risks:
   - "চামড়ার অমসৃণ বা অসম ফলাফল"
   - "তরল জমা (সেরোমা) বা চর্বি এম্বোলি (বিরল)"
   - "রিভিশন সার্জারি প্রয়োজন হওয়া (প্রায় ৫% ক্ষেত্রে)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-mayur-r-shetty
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "rhinoplasty-cost-india"
   - "tummy-tuck-cost-india"

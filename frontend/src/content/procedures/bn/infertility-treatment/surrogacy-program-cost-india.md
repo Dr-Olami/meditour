@@ -50,6 +50,13 @@ risks:
   - "একাধিক গর্ভধারণ (যমজ) ঝুঁকি"
   - "সারোগেট মায়ের স্বাস্থ্য জটিলতা (গর্ভধারণ-সম্পর্কিত)"
   - "আইনি এবং নৈতিক বিবেচনা যা দেশভেদে ভিন্ন"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

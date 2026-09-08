@@ -49,6 +49,15 @@ risks:
   - "Injury to surrounding organs such as the colon, liver, spleen, or pleura, which is rare"
   - "Residual stone fragments requiring a second-look procedure or adjunctive ESWL"
   - "Ureteric stricture or ureteric injury from stent placement"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "prostate-surgery-cost-india"
 faqs:

@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import { Navbar } from '../../design-system/components/organisms/Navbar';
 import { Footer } from '../../design-system/components/organisms/Footer';
@@ -35,7 +35,7 @@ const hospitals = hospitalEntries.map((entry) => ({
     cta={{ label: t.nav.cta, href: '/bn/#contact' }}
     locale="bn"
     currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}

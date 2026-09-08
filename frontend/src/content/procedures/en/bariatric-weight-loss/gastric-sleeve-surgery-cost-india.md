@@ -51,6 +51,13 @@ risks:
   - "Gastric stricture or narrowing of the sleeve causing food intolerance and vomiting"
   - "Gastroesophageal reflux disease (GERD) developing or worsening after surgery"
   - "Deep vein thrombosis or pulmonary embolism due to reduced mobility post-surgery"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "gastric-bypass-surgery-cost-india"
 faqs:

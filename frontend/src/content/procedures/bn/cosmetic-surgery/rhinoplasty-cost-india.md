@@ -50,6 +50,13 @@ risks:
   - "নাকের অসমমিত ফলাফল বা প্রত্যাশা পূরণ না হওয়া"
   - "শ্বাসকষ্ট বা নাকের বাধা অব্যাহত থাকা"
   - "রিভিশন সার্জারি প্রয়োজন হওয়া (প্রায় ৫–১০% ক্ষেত্রে)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-naveen-rao
+
 relatedProcedureSlugs:
   - "liposuction-cost-india"
   - "hair-transplant-cost-india"

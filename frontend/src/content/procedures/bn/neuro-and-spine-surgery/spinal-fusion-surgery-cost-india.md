@@ -49,6 +49,14 @@ risks:
   - "সার্জিক্যাল সাইট সংক্রমণ বা গভীর টিস্যু সংক্রমণ"
   - "পার্শ্ববর্তী কশেরুকায় ডিস্ক ক্ষয় (অ্যাডজেসেন্ট সেগমেন্ট ডিজিজ)"
   - "গভীর শিরায় রক্ত জমাট (ডিপ ভেইন থ্রম্বোসিস) বা পালমোনারি এম্বোলিজম"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "brain-tumor-surgery-cost-india"
   - "disc-replacement-surgery-cost-india"

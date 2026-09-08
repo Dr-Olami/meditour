@@ -49,6 +49,14 @@ risks:
   - "Surgical risks including infection, bleeding, or neurological deficits (for epilepsy surgery)"
   - "Cognitive or memory changes following temporal lobe surgery"
   - "Seizure recurrence despite treatment requiring long-term management and lifestyle modifications"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+
 relatedProcedureSlugs:
   - "stroke-treatment-cost-india"
   - "deep-brain-stimulation-cost-india"

@@ -49,6 +49,16 @@ risks:
   - "অঙ্গ কার্যকারিতা হ্রাস — রিসেকশনের পর স্বাভাবিক ফাংশন প্রভাবিত"
   - "লিম্ফেডেমা — লিম্ফ নোড ডিসেকশনের পর স্থানীয় ফোলাভাব"
   - "টিউমারের পুনরাবৃত্তি বা অবশিষ্ট রোগ যা অতিরিক্ত চিকিৎসা প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-anil-kamath
+  - dr-shabber-zaveri
+  - dr-g-girish
+  - dr-vidya-bhushan
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

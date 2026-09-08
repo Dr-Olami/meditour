@@ -49,6 +49,12 @@ risks:
   - "ত্বকের প্রতিক্রিয়া — র্যাশ, প্রুরিটাস বা ভিটিলিগো"
   - "ইনফিউশন রিঅ্যাকশন — জ্বর, কাঁপুনি বা অ্যানাফাইল্যাক্সিস (বিরল)"
   - "রোগের অগ্রগতি বা প্রতিক্রিয়ার অভাব যা চিকিৎসা পরিবর্তন প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

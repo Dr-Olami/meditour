@@ -49,6 +49,14 @@ risks:
   - "গভীর শিরায় রক্ত জমাট (ডিপ ভেইন থ্রম্বোসিস)"
   - "জয়েন্ট শক্ত হয়ে যাওয়া বা মোশন রেঞ্জ কমে যাওয়া"
   - "স্নায়ু বা রক্তনালীর ক্ষতি সার্জিক্যাল সাইটের আশেপাশে"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-manish-samson
+
 relatedProcedureSlugs:
   - "arthroscopy-cost-india"
   - "total-knee-replacement-cost-india"

@@ -49,6 +49,14 @@ risks:
   - "চিকিৎসা এলাকার নিকটবর্তী স্বাভাবিক টিস্যুর ক্ষতি"
   - "দীর্ঘমেয়াদী ফাইব্রোসিস বা অঙ্গ কার্যকারিতা হ্রাস"
   - "সেকেন্ডারি ক্যানসারের ক্ষুদ্র ঝুঁকি (বিরল)"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+  - dr-anil-kamath
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - immunotherapy-cost-india

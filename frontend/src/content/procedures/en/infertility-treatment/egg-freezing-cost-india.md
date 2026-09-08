@@ -50,6 +50,13 @@ risks:
   - "Insufficient number of eggs retrieved despite stimulation"
   - "Reduced egg viability after thawing, though vitrification survival rates exceed 90%"
   - "No guarantee of future pregnancy success with frozen eggs"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

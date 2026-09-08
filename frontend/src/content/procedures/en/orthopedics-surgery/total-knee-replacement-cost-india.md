@@ -49,6 +49,15 @@ risks:
   - "Implant loosening or wear over time necessitating future revision"
   - "Stiffness or reduced range of motion requiring manipulation under anaesthesia"
   - "Nerve or blood vessel injury around the operative site"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-manish-samson
+
 relatedProcedureSlugs:
   - "total-hip-replacement-cost-india"
   - "arthroscopy-cost-india"

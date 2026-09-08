@@ -50,6 +50,14 @@ risks:
   - "Infections due to immunosuppression, including opportunistic infections"
   - "Biliary strictures requiring endoscopic or surgical intervention"
   - "Recurrence of underlying liver disease in the transplanted organ"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jayanth-reddy
+  - dr-k-hemanth-kumar
+
 relatedProcedureSlugs:
   - "kidney-transplant-cost-india"
   - "lung-transplant-cost-india"

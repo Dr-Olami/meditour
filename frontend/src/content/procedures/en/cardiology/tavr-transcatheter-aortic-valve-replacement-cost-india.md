@@ -49,6 +49,14 @@ risks:
   - "Stroke due to embolic debris during valve deployment (2-3% risk)"
   - "Vascular access complications including bleeding, dissection, or pseudoaneurysm"
   - "Coronary ostial obstruction or valve migration requiring emergency intervention"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "heart-valve-replacement-repair-cost-india"
   - "pacemaker-implantation-cost-india"

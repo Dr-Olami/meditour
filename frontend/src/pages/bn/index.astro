@@ -8,6 +8,7 @@ import {
   getDoctors,
   getHospitals,
   getTestimonials,
+  getProcedures,
   resolveHospital,
   entrySlug,
 } from '../../lib/content';
@@ -22,11 +23,12 @@ const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
 
-const [treatmentEntries, doctorEntries, hospitalEntries, testimonialEntries] = await Promise.all([
+const [treatmentEntries, doctorEntries, hospitalEntries, testimonialEntries, procedureEntries] = await Promise.all([
   getTreatments('bn'),
   getDoctors('bn'),
   getHospitals('bn'),
   getTestimonials('bn'),
+  getProcedures('bn'),
 ]);
 
 const treatments = treatmentEntries.map((entry) => ({
@@ -36,6 +38,7 @@ const treatments = treatmentEntries.map((entry) => ({
   category: entry.data.category,
   tags: entry.data.category ? [entry.data.category] : undefined,
   href: `/bn/treatments/${entrySlug(entry)}`,
+  image: entry.data.image,
 }));
 
 const featuredDoctors: Doctor[] = doctorEntries.slice(0, 4).map((entry) => {
@@ -64,6 +67,32 @@ const featuredHospitals: Hospital[] = hospitalEntries.slice(0, 3).map((entry) =>
 
 const testimonials = testimonialEntries.map((entry) => entry.data);
 
+// Reason: Group procedures by their parent treatment so the home page can
+// show a sample of procedures under each treatment card. We pick the first
+// 3 treatments (matching the cards above) and 4 procedures per treatment.
+const homeTreatments = treatmentEntries.slice(0, 3);
+const treatmentProcedures = homeTreatments.map((entry) => {
+  const slug = entrySlug(entry);
+  const procedures = procedureEntries
+    .filter((p) => p.data.parentTreatmentSlug === slug)
+    .slice(0, 4)
+    .map((p) => {
+      const pSlug = entrySlug(p).split('/').pop()!;
+      return {
+        name: p.data.name,
+        summary: p.data.summary,
+        fromPrice: p.data.fromPrice,
+        toPrice: p.data.toPrice,
+        href: `/bn/treatments/${slug}/${pSlug}`,
+      };
+    });
+  return {
+    treatmentName: entry.data.name,
+    treatmentHref: `/bn/treatments/${slug}`,
+    procedures,
+  };
+});
+
 const categories = Array.from(new Set(treatmentEntries.map((entry) => entry.data.category).filter(Boolean)));
 
 const jsonLd = medicalBusiness({
@@ -80,6 +109,7 @@ const jsonLd = medicalBusiness({
   <HomePage
     locale="bn"
     treatments={treatments}
+    treatmentProcedures={treatmentProcedures}
     featuredDoctors={featuredDoctors}
     featuredHospitals={featuredHospitals}
     testimonials={testimonials}

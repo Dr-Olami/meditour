@@ -51,6 +51,13 @@ risks:
   - "মিষ্টি খাবার খাওয়ার পর ডাম্পিং সিনড্রোম — বমি বমি ভাব, ঘাম ও ডায়রিয়া"
   - "সার্জারির পর কম চলাফেরা থেকে ডিপ ভেইন থ্রম্বোসিস বা পালমোনারি এম্বোলিজম"
   - "সার্জিক্যাল সাইটে অভ্যন্তরীণ রক্তপাত বা ইনফেকশন যার জন্য হস্তক্ষেপ প্রয়োজন"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "gastric-sleeve-surgery-cost-india"
 faqs:

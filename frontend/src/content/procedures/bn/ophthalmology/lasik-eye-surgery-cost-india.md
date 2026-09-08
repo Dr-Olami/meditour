@@ -51,6 +51,13 @@ risks:
   - "ফ্ল্যাপ-সম্পর্কিত জটিলতা — স্থানান্তর, ভাঁজ, বা প্রদাহ (ডিফিউজ ল্যামেলার কেরাটাইটিস), মাইক্রোকেরাটোম বা ফেমটোসেকেন্ড LASIK-এ SMILE-এর চেয়ে বেশি প্রাসঙ্গিক"
   - "আন্ডার-কারেকশন বা ওভার-কারেকশন যা এনহান্সমেন্ট প্রক্রিয়া প্রয়োজন, সাধারণত ৩–৬ মাস স্থিতিশীল দৃষ্টির পর"
   - "কর্নিয়াল একটেসিয়া — একটি বিরল কিন্তু গুরুতর কর্নিয়ার দুর্বলতা ও স্ফীতি, পাতলা বা অস্বাভাবিক কর্নিয়া রোগীদের ক্ষেত্রে বেশি সম্ভাবনা"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jyoti-shetty
+  - dr-sharon-d-souza
+
 relatedProcedureSlugs:
   - "cataract-surgery-cost-india"
 faqs:

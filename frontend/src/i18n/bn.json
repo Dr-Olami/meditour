@@ -239,7 +239,7 @@
     "conciergePrefix": "যোগাযোগের জন্য",
     "conciergeSuffix": "যোগাযোগ করুন",
     "secondOpinion": "বিনামূল্যে দ্বিতীয় মতামত নিন",
-    "address": "ঠিকানার লাইন ১\nশহর, দেশ"
+    "address": "ব্যাঙ্গালোর, কর্ণাটক, ভারত"
   },
   "doctors": {
     "title": "আমাদের বিশেষজ্ঞরা",
@@ -404,5 +404,40 @@
         "video": "/videos/why-us/end-to-end-support.mp4"
       }
     ]
+  },
+  "procedureCountry": {
+    "costInCurrency": "আপনার মুদ্রায় {procedureName} খরচ",
+    "costComparisonTitle": "{procedureName} খরচ তুলনা: ভারত বনাম {country}",
+    "costComparisonNote": "সাশ্রয়ের হার মধ্যম-পরিসরের প্যাকেজ থেকে অনুমানিত। বিনিময় হার পরিবর্তিত হয় — আপনার কেসের জন্য লিখিত কোটেশন চান।",
+    "whoIsThisFor": "{procedureName} কাদের জন্য?",
+    "procedureOverview": "{procedureName} পরিচিতি",
+    "whatHappensDuring": "{procedureName} চলাকালীন কী ঘটে",
+    "recoveryAndFitToFly": "{nationality} রোগীদের জন্য পুনরুদ্ধার ও ফ্লাইটে ওঠার যোগ্যতা",
+    "risksTitle": "ঝুঁকি, জটিলতা ও প্রতিরোধ",
+    "risksMitigationNote": "আমাদের অংশীদার হাসপাতালগুলি JCI-স্বীকৃত সুরক্ষা প্রোটোকল, অভিজ্ঞ সার্জিক্যাল টিম, ICU ব্যাকআপ এবং ব্যক্তিগতকৃত সম্মতি আলোচনার মাধ্যমে এই ঝুঁকিগুলি প্রতিরোধ করে।",
+    "whyChooseIndia": "{nationality} রোগীরা {procedureName} জন্য কেন ভারত বেছে নেবেন",
+    "visaProcessTitle": "{nationality} রোগীদের জন্য মেডিকেল ভিসা প্রক্রিয়া",
+    "visaProcessNote": "প্রয়োজনীয়তা ভিন্ন হতে পারে — আমরা আপনার হাসপাতাল আমন্ত্রণপত্রের সাথে বর্তমান চেকলিস্ট নিশ্চিত করি।",
+    "travelLogistics": "{nationality} রোগীদের জন্য ভ্রমণ ও লজিস্টিকস",
+    "culturalConsiderations": "{nationality} রোগীদের জন্য সাংস্কৃতিক বিবেচনা",
+    "recommendedHospitals": "{procedureName} জন্য সুপারিশকৃত হাসপাতাল",
+    "recommendedDoctors": "{procedureName} জন্য সুপারিশকৃত চিকিৎসক",
+    "whatsIncluded": "খরচে কী অন্তর্ভুক্ত",
+    "includedLabel": "অন্তর্ভুক্ত",
+    "notIncludedLabel": "অন্তর্ভুক্ত নয়",
+    "faqTitle": "সাধারণ জিজ্ঞাসা",
+    "relatedProcedures": "{nationality} রোগীদের জন্য সম্পর্কিত প্রক্রিয়া",
+    "getFreeQuote": "বিনামূল্যে কোটেশন পান",
+    "whatsappUs": "WhatsApp করুন",
+    "shareReports": "বিনামূল্যে মতামত, খরচের অনুমান এবং ভিসা গাইডেন্সের জন্য WhatsApp-এ আপনার রিপোর্ট শেয়ার করুন।",
+    "planningTreatment": "{country} থেকে {procedure} পরিকল্পনা করছেন?",
+    "inShortLabel": "সংক্ষেপে",
+    "durationLabel": "প্রক্রিয়ার সময়",
+    "stayLabel": "হাসপাতালে অবস্থান",
+    "recoveryLabel": "পুনরুদ্ধারের সময়",
+    "priceLabel": "খরচের পরিসর",
+    "timeInIndia": "ভারতে অবস্থান",
+    "savingsLabel": "সাশ্রয়",
+    "flightTimeLabel": "ফ্লাইট সময়"
   }
 }

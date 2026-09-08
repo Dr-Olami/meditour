@@ -49,6 +49,15 @@ risks:
   - "কেমোথেরাপির পার্শ্বপ্রতিক্রিয়া — নিউট্রোপেনিয়া, ক্লান্তি, নিউরোপ্যাথি"
   - "রেডিয়েশন পার্শ্বপ্রতিক্রিয়া — নিউমোনাইটিস, ইসোফাজাইটিস বা ক্লান্তি"
   - "রোগের অগ্রগতি বা পুনরাবৃত্তি যা চিকিৎসা পরিবর্তন প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-anil-kamath
+  - dr-amit-rauthan
+  - dr-shabber-zaveri
+
 relatedProcedureSlugs:
   - chemotherapy-cost-india
   - radiation-therapy-cost-india

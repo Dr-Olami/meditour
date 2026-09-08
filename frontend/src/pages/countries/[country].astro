@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import { Navbar } from '../../design-system/components/organisms/Navbar';
 import { Footer } from '../../design-system/components/organisms/Footer';
@@ -10,7 +10,7 @@ import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astr
 import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
 import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName, ALL_COUNTRIES, getSeoTitle, getSeoDescription, getCountryOgImage, getRegionalHeroImage, getFlagUrl } from '../../data/countries';
-import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals } from '../../lib/content';
+import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals, getProcedures, getTreatments } from '../../lib/content';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
@@ -18,6 +18,7 @@ import { medicalWebPage, faqPage, breadcrumbs } from '../../lib/schema';
 import { getCountryInquiryLink } from '../../lib/whatsapp';
 import { generateCountryFaqs, mergeCountryFaqs } from '../../lib/country-faq-generator';
 import { hasBnCountryPage } from '../../data/countries/bn';
+import { getTopCountryProcedureLinks } from '../../lib/country-procedure-links';
 
 export async function getStaticPaths() {
   return getAllCountrySlugs().map((slug) => ({
@@ -33,6 +34,7 @@ if (!countryData) {
 }
 
 const locale = 'en';
+const popularLinks = getTopCountryProcedureLinks('en', 24);
 const t = getTranslations(locale);
 const treatmentEntries = await getTreatmentsByCountry(locale, country);
 const testimonialEntries = await getTestimonialsByCountry(locale, country);
@@ -155,6 +157,34 @@ const whatsappHref = getCountryInquiryLink(countryData.name, countryData.nationa
 const relatedCountries = getRelatedCountries(countryData.slug, 4);
 const costTableEntries = Object.entries(countryData.treatmentCosts).slice(0, 5);
 
+// Reason: Phase 2 generates country-procedure pages for all 68 procedures.
+// This section links from the country page to those dedicated pages, grouped
+// by category for easier navigation.
+const allProcedures = await getProcedures(locale);
+const countryProcedures = allProcedures
+  .map((p) => ({
+    name: p.data.name,
+    fromPrice: p.data.fromPrice,
+    parentSlug: p.data.parentTreatmentSlug,
+    href: `/countries/${country}/${entrySlug(p).split('/').pop()!.replace(/-cost-india$/, '-in-india')}`,
+  }));
+
+// Group procedures by category for display
+const proceduresByCategory = countryProcedures.reduce((acc, p) => {
+  const cat = p.parentSlug || 'other';
+  if (!acc[cat]) acc[cat] = [];
+  acc[cat].push(p);
+  return acc;
+}, {} as Record<string, typeof countryProcedures>);
+
+// Get category labels from treatments
+const allTreatments = await getTreatments(locale);
+const categoryLabels: Record<string, string> = {};
+for (const t of allTreatments) {
+  const slug = entrySlug(t);
+  categoryLabels[slug] = t.data.name;
+}
+
 const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
 const seoTitle = getSeoTitle(countryData, t.site.name);
 const seoDescription = getSeoDescription(countryData.metaDescription);
@@ -193,7 +223,7 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '#contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}
@@ -352,6 +382,48 @@ const jsonLd = [
         </p>
       </div>
     </section>
+
+    {/* ── ALL PROCEDURES FOR {nationality} PATIENTS ─────────────────────── */}
+    {countryProcedures.length > 0 && (
+      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+        <div class="container">
+          <div class="mb-6">
+            <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">All procedures</p>
+            <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
+              {countryData.nationality} patients: procedures in India
+            </h2>
+            <p class="mt-4 max-w-2xl text-base text-ink/60">
+              Procedure-specific pages with costs in {countryData.currency.code}, visa steps, travel times, and recovery guidance for {countryData.nationality.toLowerCase()} patients.
+            </p>
+          </div>
+
+          {(Object.entries(proceduresByCategory) as [string, typeof countryProcedures][]).map(([catSlug, procs]) => (
+            <div class="mb-8 last:mb-0">
+              <h3 class="mb-4 font-display text-xl font-semibold text-ink">
+                {categoryLabels[catSlug] || catSlug}
+              </h3>
+              <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {procs.map((proc) => (
+                  <a
+                    href={proc.href}
+                    class="group flex flex-col rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-all hover:border-violet-300 hover:shadow-md"
+                  >
+                    <h4 class="font-display text-base font-semibold text-ink">{proc.name}</h4>
+                    {proc.fromPrice && (
+                      <p class="mt-1 text-sm text-ink/50">From {proc.fromPrice}</p>
+                    )}
+                    <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                      For {countryData.nationality} patients
+                      <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     {/* ── WHY CHOOSE INDIA ─────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
@@ -650,5 +722,7 @@ const jsonLd = [
     conciergeSuffix={t.footer.conciergeSuffix}
     copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
     address={t.footer.address}
+    popularLinksTitle="Popular treatments by country"
+    popularLinks={popularLinks}
   />
 </Layout>

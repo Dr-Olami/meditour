@@ -51,6 +51,13 @@ risks:
   - "স্লিভের সংকীর্ণতা বা গ্যাস্ট্রিক স্ট্রিকচার যা খাবার অসহিষ্ণুতা ও বমি সৃষ্টি করে"
   - "সার্জারির পর গ্যাস্ট্রোএসোফেজিয়াল রিফ্লাক্স ডিজিজ (GERD) সৃষ্টি বা অবনতি"
   - "সার্জারির পর কম চলাফেরা থেকে ডিপ ভেইন থ্রম্বোসিস বা পালমোনারি এম্বোলিজম"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "gastric-bypass-surgery-cost-india"
 faqs:

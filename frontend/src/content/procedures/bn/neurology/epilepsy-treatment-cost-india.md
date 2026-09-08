@@ -49,6 +49,14 @@ risks:
   - "ইনফেকশন, রক্তপাত বা নিউরোলজিক্যাল ঘাটতির মতো সার্জিক্যাল ঝুঁকি (মৃগীরোগ সার্জারির জন্য)"
   - "টেম্পোরাল লোব সার্জারির পর কগনিটিভ বা মেমরি পরিবর্তন"
   - "চিকিৎসা সত্ত্বেও সিজার পুনরাবৃত্তি যার জন্য দীর্ঘমেয়াদী ব্যবস্থাপনা ও জীবনযাত্রা পরিবর্তন প্রয়োজন"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+
 relatedProcedureSlugs:
   - "stroke-treatment-cost-india"
   - "deep-brain-stimulation-cost-india"

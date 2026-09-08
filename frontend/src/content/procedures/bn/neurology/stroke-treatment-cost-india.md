@@ -49,6 +49,14 @@ risks:
   - "চিকিৎসার পর স্থায়ী নিউরোলজিক্যাল ঘাটতি — দুর্বলতা, কথা বলতে অসুবিধা, বা কগনিটিভ দুর্বলতা"
   - "নিউমোনিয়া, ডিপ ভেইন থ্রম্বোসিস, প্রেসার আলসার, বা কনট্রাকচারের মতো পোস্ট-স্ট্রোক জটিলতা"
   - "অ্যান্টিপ্লেটলেট, অ্যান্টিকোয়াগুল্যান্ট, বা অ্যান্টিহাইপারটেনসিভ থেকে ওষুধের পার্শ্বপ্রতিক্রিয়া"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+
 relatedProcedureSlugs:
   - "epilepsy-treatment-cost-india"
   - "deep-brain-stimulation-cost-india"

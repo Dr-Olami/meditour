@@ -50,6 +50,12 @@ risks:
   - "সেরা চিকিৎসা ব্যবস্থাপনা সত্ত্বেও ফুসফুস ফাংশনের অগ্রসরমান অবনতি"
   - "এক্সাসারবেশনের সময় ঘন দৈহিক স্টেরয়েড ব্যবহারে কর্টিকোস্টেরয়েড-সম্পর্কিত জটিলতা"
   - "অক্সিজেন থেরাপি-সম্পর্কিত ঝুঁকি, গুরুতর COPD-তে কার্বন ডাইঅক্সাইড ধরে রাখা অন্তর্ভুক্ত"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs: []
+
 relatedProcedureSlugs:
   - "asthma-treatment-cost-india"
 faqs:

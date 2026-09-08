@@ -1,4 +1,4 @@
----
+﻿---
 import { getTranslations, type Locale } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
@@ -37,18 +37,34 @@ interface HomeTreatment {
   category?: string;
   tags?: string[];
   href: string;
+  image?: string;
+}
+
+interface HomeProcedure {
+  name: string;
+  summary?: string;
+  fromPrice?: string;
+  toPrice?: string;
+  href: string;
+}
+
+interface HomeTreatmentProcedures {
+  treatmentName: string;
+  treatmentHref: string;
+  procedures: HomeProcedure[];
 }
 
 interface Props {
   locale: Locale;
   treatments: HomeTreatment[];
+  treatmentProcedures?: HomeTreatmentProcedures[];
   featuredDoctors: Doctor[];
   featuredHospitals: Hospital[];
   testimonials: TestimonialItem[];
   countries: CountryMetadata[];
 }
 
-const { locale, treatments, featuredDoctors, featuredHospitals, testimonials, countries } = Astro.props;
+const { locale, treatments, treatmentProcedures = [], featuredDoctors, featuredHospitals, testimonials, countries } = Astro.props;
 const t = getTranslations(locale);
 const prefix = locale === 'bn' ? '/bn' : '';
 
@@ -93,6 +109,7 @@ const treatmentOptions = treatments.map((tx) => ({ value: tx.name, label: tx.nam
 const whatsappInquiryHref = getInquiryLink();
 
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861';
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
 ---
 
@@ -102,7 +119,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   cta={{ label: t.nav.cta, href: '#contact' }}
   locale={locale}
   currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}
@@ -195,7 +212,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
             className="rounded-pill px-7"
           />
           <a
-            href={`tel:${whatsappNumber}`}
+            href={`tel:+${phoneNumber}`}
             class="inline-flex h-12 items-center justify-center rounded-pill bg-cream-100 px-7 text-sm font-semibold text-ink transition-opacity hover:opacity-90 md:text-base"
           >
             {t.doctorShowcase.callConcierge}
@@ -252,6 +269,51 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
         <TreatmentCard treatment={treatment} data-anim="card-hover" />
       ))}
     </div>
+
+    {/* Procedure samples grouped by treatment */}
+    {treatmentProcedures.length > 0 && (
+      <div class="mt-12 space-y-10" data-anim="fade-in-up">
+        {treatmentProcedures.map((group) => (
+          group.procedures.length > 0 && (
+            <div>
+              <div class="mb-4 flex items-center gap-2">
+                <h3 class="font-display text-lg font-bold text-ink">{group.treatmentName}</h3>
+                <Link href={group.treatmentHref} class="text-xs font-medium text-violet-600 hover:underline">
+                  {locale === 'bn' ? 'সব দেখুন' : 'View all'}
+                </Link>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {group.procedures.map((proc) => {
+                  const price = proc.fromPrice && proc.toPrice
+                    ? `${proc.fromPrice} – ${proc.toPrice}`
+                    : proc.fromPrice;
+                  return (
+                    <a
+                      href={proc.href}
+                      class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+                    >
+                      <p class="text-sm font-semibold text-ink">{proc.name}</p>
+                      {proc.summary && (
+                        <p class="mt-1 text-xs text-ink/60 line-clamp-2">{proc.summary}</p>
+                      )}
+                      {price && (
+                        <p class="mt-2 text-xs font-medium text-violet-600">
+                          {locale === 'bn' ? 'খরচ' : 'Cost'}: {price}
+                        </p>
+                      )}
+                      <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
+                        {locale === 'bn' ? 'বিস্তারিত' : 'Learn more'}
+                        <Icon name="arrow-right" size={12} />
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+    )}
   </div>
 </section>
 
@@ -322,7 +384,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
       <div class="mt-8 space-y-3 text-ink/60">
         <p class="flex items-center gap-3">
           <Icon name="phone" size={20} />
-          <Link href={`tel:${whatsappNumber}`}>{whatsappNumber}</Link>
+          <Link href={`tel:+${phoneNumber}`}>+{phoneNumber}</Link>
         </p>
         <p class="flex items-center gap-3">
           <Icon name="mail" size={20} />

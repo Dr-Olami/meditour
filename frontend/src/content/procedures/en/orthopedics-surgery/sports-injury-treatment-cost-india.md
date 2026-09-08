@@ -49,6 +49,14 @@ risks:
   - "Graft failure or re-tear of repaired ligament or tendon requiring revision surgery"
   - "Stiffness or arthrofibrosis requiring prolonged physiotherapy or manipulation"
   - "Incomplete return to pre-injury sport level despite optimal treatment"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+  - dr-manish-samson
+
 relatedProcedureSlugs:
   - "arthroscopy-cost-india"
   - "total-knee-replacement-cost-india"

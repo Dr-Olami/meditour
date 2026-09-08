@@ -49,6 +49,14 @@ risks:
   - "Nerve or blood vessel injury near portal sites or within the joint"
   - "Stiffness or arthrofibrosis requiring prolonged physiotherapy"
   - "Incomplete resolution of symptoms requiring further surgery or reconstruction"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-sunil-g-kini
+
 relatedProcedureSlugs:
   - "sports-injury-treatment-cost-india"
   - "total-knee-replacement-cost-india"

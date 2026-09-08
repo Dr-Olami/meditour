@@ -1,0 +1,1040 @@
+﻿---
+import Layout from '../../../layouts/Layout.astro';
+import { Navbar } from '../../../design-system/components/organisms/Navbar';
+import { Footer } from '../../../design-system/components/organisms/Footer';
+import { DoctorCard } from '../../../design-system/components/organisms/DoctorCard';
+import { LeadForm } from '../../../design-system/components/organisms/LeadForm';
+import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
+import { Icon } from '../../../design-system/components/atoms/Icon';
+import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
+import { QuickFacts } from '../../../design-system/components/molecules/QuickFacts';
+import type { QuickFactItem } from '../../../design-system/components/molecules/QuickFacts';
+import TreatmentsCtaSection from '../../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import { getTranslations } from '../../../lib/i18n';
+import { getNavLinks } from '../../../lib/navigation';
+import { getFooterLegalLinks } from '../../../lib/footer';
+import {
+  getProcedures,
+  getDoctors,
+  getHospitals,
+  getTreatments,
+  resolveRelatedDoctors,
+  resolveHospital,
+  resolveRelatedHospitals,
+  resolveRelatedProcedures,
+  entrySlug,
+} from '../../../lib/content';
+import { medicalWebPage, faqPage, breadcrumbs } from '../../../lib/schema';
+import { getProcedureInquiryLink } from '../../../lib/whatsapp';
+import { generateProcedureCountryFaqs } from '../../../lib/procedure-country-faq';
+import { convertUsdToLocal, formatWithLocal } from '../../../lib/currency';
+import { getCategoryHue } from '../../../lib/treatment-categories';
+import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
+import { LEAD_SOURCE } from '../../../lib/crm';
+import {
+  getCountryMetadata,
+  getAllCountrySlugs,
+  getFlagUrl,
+  ALL_COUNTRIES,
+} from '../../../data/countries';
+import { hasBnCountryPage } from '../../../data/countries/bn';
+import { getTopCountryProcedureLinks } from '../../../lib/country-procedure-links';
+import { generateWhyChooseIndia } from '../../../lib/why-choose-india';
+
+export async function getStaticPaths() {
+  // ─── Phase 3: All 31 countries × All 68 procedures ────────────────────────
+  // Reason: Phase 3 removes the country restriction entirely, generating
+  // procedure × country pages for every country in the dataset.
+  const [procedures, doctors, hospitals, treatments] = await Promise.all([
+    getProcedures('en'),
+    getDoctors('en'),
+    getHospitals('en'),
+    getTreatments('en'),
+  ]);
+
+  const paths = [];
+
+  for (const countrySlug of getAllCountrySlugs()) {
+
+    for (const procedureEntry of procedures) {
+      const procedureSlug = entrySlug(procedureEntry).split('/').pop()!;
+
+      const parentSlug = procedureEntry.data.parentTreatmentSlug;
+      const related = resolveRelatedDoctors(
+        procedureEntry.data.relatedDoctorSlugs,
+        doctors,
+      ).map((d) => {
+        const hospital = resolveHospital(d.data.hospitalId, hospitals);
+        return {
+          name: d.data.name,
+          specialty: d.data.specialty,
+          qualification: d.data.qualification,
+          experienceYears: d.data.experienceYears,
+          avatar: d.data.avatar,
+          href: `/doctors/${entrySlug(d)}`,
+          hospitalName: hospital?.name,
+          hospitalHref: hospital?.href,
+          whatsappHref: '',
+        };
+      });
+      const relatedHospitals = resolveRelatedHospitals(
+        procedureEntry.data.relatedHospitalSlugs,
+        hospitals,
+      ).map((h) => ({
+        name: h.data.name,
+        city: h.data.city,
+        image: h.data.image,
+        href: `/hospitals/${entrySlug(h)}`,
+        accreditations: h.data.accreditations,
+        description: h.data.description,
+      }));
+      const relatedProcedures = resolveRelatedProcedures(
+        procedureEntry.data.relatedProcedureSlugs,
+        procedures,
+      )
+        .map((p) => ({
+          name: p.data.name,
+          slug: entrySlug(p).split('/').pop()!,
+          parentSlug: p.data.parentTreatmentSlug,
+          fromPrice: p.data.fromPrice,
+        }));
+
+      // Convert procedure slug: "heart-bypass-surgery-cabg-cost-india" → "heart-bypass-surgery-cabg-in-india"
+      const pageSlug = procedureSlug.replace(/-cost-india$/, '-in-india');
+
+      paths.push({
+        params: { country: countrySlug, procedure: pageSlug },
+        props: {
+          countrySlug,
+          procedureSlug,
+          parentSlug,
+          procedure: procedureEntry.data,
+          parentTreatment: treatments.find(
+            (t) => entrySlug(t) === parentSlug,
+          )?.data,
+          related,
+          relatedHospitals,
+          relatedProcedures,
+          entry: procedureEntry,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const t = getTranslations('en');
+const popularLinks = getTopCountryProcedureLinks('en', 24);
+const pc = t.procedureCountry;
+// Reason: Replace {nationality}, {country}, {procedureName} placeholders in
+// i18n heading strings so H2s include the country and procedure name for SEO.
+const ph = (s: string) => s
+  .replaceAll('{nationality}', countryData.nationality)
+  .replaceAll('{country}', countryData.name)
+  .replaceAll('{procedureName}', procedure.name);
+const {
+  countrySlug,
+  procedureSlug,
+  parentSlug,
+  procedure,
+  parentTreatment,
+  related,
+  relatedHospitals,
+  relatedProcedures,
+  entry,
+} = Astro.props;
+
+const countryData = getCountryMetadata(countrySlug);
+if (!countryData) {
+  throw new Error(`Country not found: ${countrySlug}`);
+}
+
+
+// ─── SEO ────────────────────────────────────────────────────────────────────
+// Reason: Spec says "Keep under 60 characters. If too long, shorten procedure
+// name." The full pattern "{name} in India for {nationality} Patients | Cost
+// from {price}" often exceeds 60 chars. Rather than truncating the procedure
+// name (which produces garbage like "Heart Byp…"), we use progressively
+// shorter title patterns that preserve the full procedure name.
+function buildSeoTitle(name: string, nationality: string, fromPrice: string): string {
+  // Remove parentheticals: "Heart Bypass Surgery (CABG)" -> "Heart Bypass Surgery"
+  const shortName = name.replace(/\s*\([^)]+\)\s*/g, '').trim();
+
+  // Pattern 1: Full — "{name} in India for {nat} Patients | Cost from {price}"
+  const p1 = `${shortName} in India for ${nationality} Patients | Cost from ${fromPrice}`;
+  if (p1.length <= 60) return p1;
+
+  // Pattern 2: Drop "Patients" — "{name} in India for {nat} | Cost from {price}"
+  const p2 = `${shortName} in India for ${nationality} | Cost from ${fromPrice}`;
+  if (p2.length <= 60) return p2;
+
+  // Pattern 3: Drop cost — "{name} in India for {nat} Patients"
+  const p3 = `${shortName} in India for ${nationality} Patients`;
+  if (p3.length <= 60) return p3;
+
+  // Pattern 4: Compact — "{name} in India for {nat}"
+  const p4 = `${shortName} in India for ${nationality}`;
+  if (p4.length <= 60) return p4;
+
+  // Pattern 5: Cost only — "{name} Cost in India"
+  const p5 = `${shortName} Cost in India`;
+  if (p5.length <= 60) return p5;
+
+  // Fallback: hard truncate the procedure name (rare, only for very long names)
+  const maxLen = 60 - ' Cost in India'.length;
+  return `${shortName.slice(0, maxLen - 1).trimEnd()}\u2026 Cost in India`;
+}
+
+// Reason: Spec says "Meta description is under 160 characters." The full
+// description pattern often exceeds 160 chars for long procedure names.
+// We progressively drop less critical parts, then hard-truncate at sentence
+// boundary as a last resort.
+function buildSeoDescription(
+  name: string,
+  nationality: string,
+  fromPrice: string,
+  savings: string,
+  comparisonCountry: string,
+  hospitalStay: string,
+): string {
+  const nat = nationality.toLowerCase();
+
+  // Pattern 1: Full
+  const p1 = `${name} in India for ${nat} patients from ${fromPrice}. Save ${savings} vs ${comparisonCountry}. ${hospitalStay} hospital stay. Visa support for ${nat} patients.`;
+  if (p1.length <= 160) return p1;
+
+  // Pattern 2: Drop the trailing visa sentence
+  const p2 = `${name} in India for ${nat} patients from ${fromPrice}. Save ${savings} vs ${comparisonCountry}. ${hospitalStay} hospital stay.`;
+  if (p2.length <= 160) return p2;
+
+  // Pattern 3: Drop hospital stay
+  const p3 = `${name} in India for ${nat} patients from ${fromPrice}. Save ${savings} vs ${comparisonCountry}.`;
+  if (p3.length <= 160) return p3;
+
+  // Pattern 4: Drop comparison country
+  const p4 = `${name} in India for ${nat} patients from ${fromPrice}. Save ${savings}.`;
+  if (p4.length <= 160) return p4;
+
+  // Pattern 5: Bare minimum
+  const p5 = `${name} in India for ${nat} patients from ${fromPrice}.`;
+  if (p5.length <= 160) return p5;
+
+  // Fallback: hard truncate at last word boundary within 157 chars + ellipsis
+  const truncated = p5.slice(0, 157);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return `${truncated.slice(0, lastSpace)}\u2026`;
+}
+
+const title = buildSeoTitle(procedure.name, countryData.nationality, procedure.fromPrice);
+const headline = `${procedure.name} in India for ${countryData.nationality} Patients`;
+const description = buildSeoDescription(
+  procedure.name,
+  countryData.nationality,
+  procedure.fromPrice,
+  countryData.costSavingsVsLocal,
+  countryData.costComparisonCountries[0],
+  procedure.hospitalStay,
+);
+const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
+
+// ─── "Why choose India" content (data-driven, country-specific) ────────────
+const whyChooseContent = generateWhyChooseIndia(
+  procedure.name,
+  procedure.fromPrice,
+  procedure.toPrice,
+  countryData,
+);
+
+// ─── Currency conversion ───────────────────────────────────────────────────
+const { exchangeRate, symbol, code } = countryData.currency;
+const fromPriceLocal = procedure.fromPrice
+  ? convertUsdToLocal(procedure.fromPrice, exchangeRate, symbol)
+  : '';
+const toPriceLocal = procedure.toPrice
+  ? convertUsdToLocal(procedure.toPrice, exchangeRate, symbol)
+  : '';
+const priceRangeUsd =
+  procedure.fromPrice && procedure.toPrice
+    ? `${procedure.fromPrice}–${procedure.toPrice}`
+    : procedure.fromPrice || '';
+const priceRangeLocal = fromPriceLocal && toPriceLocal ? `${fromPriceLocal}–${toPriceLocal}` : fromPriceLocal;
+
+// ─── FAQs ───────────────────────────────────────────────────────────────────
+const faqs = generateProcedureCountryFaqs(procedure, countryData);
+
+// ─── JSON-LD ────────────────────────────────────────────────────────────────
+const jsonLd = [
+  medicalWebPage({
+    name: headline,
+    url: pageUrl,
+    description,
+    inLanguage: 'en',
+    audience: `${countryData.nationality} patients seeking ${procedure.name} in India`,
+  }),
+  faqPage({ entries: faqs }),
+  breadcrumbs([
+    { name: t.nav.home, url: new URL('/', Astro.url.origin).toString() },
+    { name: 'Countries', url: new URL('/countries/', Astro.url.origin).toString() },
+    { name: countryData.name, url: new URL(`/countries/${countrySlug}`, Astro.url.origin).toString() },
+    { name: `${procedure.name} in India`, url: pageUrl },
+  ]),
+];
+
+// ─── Quick facts ────────────────────────────────────────────────────────────
+const quickFacts: QuickFactItem[] = [
+  ...(procedure.duration ? [{ icon: 'clock' as const, label: pc.durationLabel, value: procedure.duration }] : []),
+  ...(procedure.hospitalStay ? [{ icon: 'building' as const, label: pc.stayLabel, value: procedure.hospitalStay }] : []),
+  ...(procedure.recoveryTime ? [{ icon: 'heart-pulse' as const, label: pc.recoveryLabel, value: procedure.recoveryTime }] : []),
+  ...(priceRangeUsd ? [{ icon: 'tag' as const, label: pc.priceLabel, value: priceRangeUsd }] : []),
+  ...(countryData.flightTime ? [{ icon: 'plane' as const, label: pc.flightTimeLabel, value: countryData.flightTime }] : []),
+];
+
+// ─── WhatsApp ───────────────────────────────────────────────────────────────
+const procedureWhatsAppHref = getProcedureInquiryLink(procedure.name, {
+  costRange: priceRangeUsd,
+  recoveryTime: procedure.recoveryTime,
+});
+
+// ─── Treatment options for lead form ────────────────────────────────────────
+const allTreatments = await getTreatments('en');
+const treatmentOptions = allTreatments.map((e) => ({
+  value: e.data.name,
+  label: e.data.name,
+}));
+
+// ─── Related procedure × country links ──────────────────────────────────────
+const relatedProcCountryLinks = relatedProcedures.map((rp) => ({
+  name: rp.name,
+  href: `/countries/${countrySlug}/${rp.slug.replace(/-cost-india$/, '-in-india')}`,
+  fromPrice: rp.fromPrice,
+}));
+
+// ─── Hue for category styling ───────────────────────────────────────────────
+const hue = getCategoryHue(parentTreatment?.category);
+
+// ─── BN alternate ───────────────────────────────────────────────────────────
+const bnAlternate = hasBnCountryPage(countrySlug);
+
+// ─── Doctor type mapping ────────────────────────────────────────────────────
+const doctorCards: Doctor[] = related.map((d) => ({
+  name: d.name,
+  specialty: d.specialty,
+  qualification: d.qualification,
+  experienceYears: d.experienceYears,
+  avatar: d.avatar,
+  href: d.href,
+  hospitalName: d.hospitalName,
+  hospitalHref: d.hospitalHref,
+  whatsappHref: d.whatsappHref || undefined,
+}));
+---
+
+<Layout title={title} description={description} locale="en" image={procedure.image} jsonLd={jsonLd} bnAlternate={bnAlternate}>
+  <Navbar
+    brand={t.site.name}
+    links={getNavLinks('en')}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale="en"
+    currentPath={Astro.url.pathname}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
+    callLabel={t.nav.call}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappLabel={t.nav.whatsapp}
+    localeFallbacks={bnAlternate ? undefined : { bn: '/bn' }}
+    client:load
+  />
+
+  <main class="pt-20">
+    {/* ── BREADCRUMB ─────────────────────────────────────────────────────── */}
+    <div class="bg-white py-4">
+      <div class="container">
+        <Breadcrumb
+          items={[
+            { label: t.nav.home, href: '/' },
+            { label: 'Countries', href: '/countries/' },
+            { label: countryData.name, href: `/countries/${countrySlug}` },
+            { label: `${procedure.name} in India` },
+          ]}
+          data-anim="fade-in-up"
+        />
+      </div>
+    </div>
+
+    {/* ── HERO ───────────────────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16">
+      <div class="container">
+        <div class="mx-auto max-w-4xl" data-anim="stagger-children">
+          {/* Country badge with flag */}
+          <span class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg">
+            <img
+              src={getFlagUrl(countryData.flagCode)}
+              alt={`${countryData.name} flag — ${procedure.name} in India for ${countryData.nationality} patients`}
+              class="h-4 w-5 rounded-[2px]"
+              loading="eager"
+            />
+            For {countryData.nationality} Patients
+          </span>
+
+          {/* H1 */}
+          <h1 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl lg:text-5xl">
+            {headline}
+          </h1>
+
+          {/* Cost badge */}
+          {priceRangeUsd && (
+            <div class="mt-6 inline-flex items-center gap-3 rounded-card border border-cream-300 bg-white px-5 py-3 shadow-sm">
+              <Icon name="tag" size={20} class="text-violet-600" />
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wide text-ink/50">{pc.priceLabel}</p>
+                <p class="text-lg font-bold text-ink">{priceRangeUsd} USD</p>
+                {priceRangeLocal && (
+                  <p class="text-sm text-ink/60">≈ {priceRangeLocal} {code}</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Quick facts */}
+          {quickFacts.length > 0 && (
+            <div class="mt-6">
+              <QuickFacts facts={quickFacts} />
+            </div>
+          )}
+
+          {/* CTAs */}
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href={procedureWhatsAppHref || '#contact'}
+              target={procedureWhatsAppHref ? '_blank' : undefined}
+              rel={procedureWhatsAppHref ? 'noopener noreferrer' : undefined}
+              class="inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-700 hover:shadow-md"
+            >
+              <Icon name="whatsapp" size={16} />
+              {pc.whatsappUs}
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md"
+            >
+              <Icon name="mail" size={16} />
+              {pc.getFreeQuote}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── IN SHORT ───────────────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-10 md:py-12">
+      <div class="container max-w-3xl">
+        <div class="rounded-card border border-cream-300 bg-white p-6 shadow-sm">
+          <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">{pc.inShortLabel}</p>
+          <p class="mt-3 text-base leading-relaxed text-ink/80">{procedure.summary}</p>
+          {priceRangeUsd && (
+            <p class="mt-4 text-sm text-ink/60">
+              <strong class="text-ink">{pc.priceLabel}:</strong> {priceRangeUsd} USD
+              {priceRangeLocal && ` (≈ ${priceRangeLocal} ${code})`}
+              {' · '}
+              <strong class="text-ink">{pc.savingsLabel}:</strong> {countryData.costSavingsVsLocal} vs {countryData.costComparisonCountries[0]}
+            </p>
+          )}
+        </div>
+      </div>
+    </section>
+
+    {/* ── COST IN YOUR CURRENCY ───────────────────────────────────────────── */}
+    {priceRangeUsd && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.costInCurrency)}</h2>
+          <div class="rounded-card border border-cream-300 bg-white p-6 shadow-sm">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wide text-ink/50">USD</p>
+                <p class="mt-1 text-xl font-bold text-ink">{priceRangeUsd}</p>
+              </div>
+              <div>
+                <p class="text-xs font-medium uppercase tracking-wide text-ink/50">{code}</p>
+                <p class="mt-1 text-xl font-bold text-ink">{priceRangeLocal}</p>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-ink/50">
+              Exchange rate: 1 USD ≈ {exchangeRate} {code}. Prices in {code} are approximate — request a written quote for the current price.
+            </p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── COST COMPARISON ────────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-4xl">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.costComparisonTitle)}</h2>
+        <p class="mb-6 text-sm text-ink/60">{pc.costComparisonNote}</p>
+        <div class="overflow-x-auto rounded-card border border-cream-300 bg-white shadow-sm">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-cream-300 bg-cream-100">
+                <th class="px-4 py-3 text-left font-semibold text-ink">Country</th>
+                <th class="px-4 py-3 text-left font-semibold text-ink">Cost</th>
+                <th class="px-4 py-3 text-left font-semibold text-ink">vs India</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-cream-300">
+                <td class="px-4 py-3 text-ink">India (Bangalore)</td>
+                <td class="px-4 py-3 font-semibold text-ink">{priceRangeUsd}</td>
+                <td class="px-4 py-3 text-ink/60">Baseline</td>
+              </tr>
+              <tr class="border-b border-cream-300">
+                <td class="px-4 py-3 text-ink">{countryData.costComparisonCountries[0]}</td>
+                <td class="px-4 py-3 text-ink/70">Higher</td>
+                <td class="px-4 py-3 font-semibold text-green-600">{countryData.costSavingsVsLocal} less</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-ink">USA</td>
+                <td class="px-4 py-3 text-ink/70">Significantly higher</td>
+                <td class="px-4 py-3 text-ink/60">Reference</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    {/* ── WHO IS THIS FOR? ───────────────────────────────────────────────── */}
+    {procedure.eligibility && procedure.eligibility.length > 0 && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.whoIsThisFor)}</h2>
+          <ul class="space-y-3">
+            {procedure.eligibility.map((item) => (
+              <li class="flex items-start gap-2 text-sm text-ink/70">
+                <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    {/* ── PROCEDURE OVERVIEW (summary + link to canonical page) ─────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.procedureOverview)}</h2>
+        <p class="text-base leading-relaxed text-ink/70">{procedure.description}</p>
+        <a
+          href={`/treatments/${parentSlug}/${procedureSlug}`}
+          class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-violet-600 shadow-sm transition-all hover:shadow-md"
+        >
+          Read the full {procedure.name} guide
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+    </section>
+
+    {/* ── WHAT HAPPENS DURING ───────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.whatHappensDuring)}</h2>
+        <div class="space-y-4 text-base leading-relaxed text-ink/70">
+          <p>
+            {procedure.name} is performed under appropriate anesthesia by an experienced surgical team at a JCI/NABH-accredited hospital in Bangalore.
+            {procedure.duration && ` The procedure itself typically takes ${procedure.duration.toLowerCase()}.`}
+            {procedure.hospitalStay && ` After the procedure, you will stay in the hospital for ${procedure.hospitalStay.toLowerCase()} for monitoring and initial recovery.`}
+          </p>
+          <p>
+            Your surgical team will explain the specific steps of your procedure, the anesthesia approach, and what to expect during your hospital stay before you provide consent. The exact technique and duration vary based on your individual condition and case complexity.
+          </p>
+          <p class="rounded-card bg-cream-200 p-4 text-sm text-ink/60">
+            For a detailed step-by-step explanation of the procedure, anesthesia, and what you will experience, see the full <a href={`/treatments/${parentSlug}/${procedureSlug}`} class="font-semibold text-violet-600 underline">{procedure.name} guide</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── RECOVERY & FIT-TO-FLY ──────────────────────────────────────────── */}
+    {procedure.recoveryTimeline && procedure.recoveryTimeline.length > 0 && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.recoveryAndFitToFly)}</h2>
+          <div class="overflow-x-auto rounded-card border border-cream-300 bg-white shadow-sm">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-cream-300 bg-cream-100">
+                  <th class="px-4 py-3 text-left font-semibold text-ink">Phase</th>
+                  <th class="px-4 py-3 text-left font-semibold text-ink">Duration</th>
+                  <th class="px-4 py-3 text-left font-semibold text-ink">What to expect</th>
+                </tr>
+              </thead>
+              <tbody>
+                {procedure.recoveryTimeline.map((phase) => (
+                  <tr class="border-b border-cream-300 last:border-0">
+                    <td class="px-4 py-3 font-semibold text-ink">{phase.phase}</td>
+                    <td class="px-4 py-3 text-ink/70">{phase.duration}</td>
+                    <td class="px-4 py-3 text-ink/60">{phase.description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-xs text-ink/50">
+            Recovery timelines vary by individual. Your surgical team will provide personalized guidance. Most surgeons recommend waiting 7-14 days before long-haul flights, with a fitness-to-fly certificate.
+          </p>
+        </div>
+      </section>
+    )}
+
+    {/* ── RISKS ──────────────────────────────────────────────────────────── */}
+    {procedure.risks && procedure.risks.length > 0 && (
+      <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{pc.risksTitle}</h2>
+          <ul class="space-y-3">
+            {procedure.risks.map((risk) => (
+              <li class="flex items-start gap-2 text-sm text-ink/70">
+                <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+                <span>{risk}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 rounded-card bg-cream-100 p-4 text-sm text-ink/60">
+            {pc.risksMitigationNote}
+          </p>
+        </div>
+      </section>
+    )}
+
+    {/* ── WHY CHOOSE INDIA (data-driven, country-specific) ──────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+          {ph(pc.whyChooseIndia)}
+        </h2>
+        <p class="text-base leading-relaxed text-ink/70">
+          {whyChooseContent.intro}
+        </p>
+        <div class="mt-8 space-y-6">
+          {whyChooseContent.subsections.map((sub) => (
+            <div>
+              <h3 class="mb-2 font-display text-lg font-bold text-ink">{sub.heading}</h3>
+              <p class="text-sm leading-relaxed text-ink/70">{sub.body}</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          {countryData.topConcerns.slice(0, 4).map((concern) => (
+            <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-4 shadow-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-green-600" />
+              <p class="text-sm text-ink/70">{concern}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── VISA PROCESS ───────────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+          {ph(pc.visaProcessTitle)}
+        </h2>
+        <p class="mb-8 text-sm text-ink/60">{pc.visaProcessNote}</p>
+        <ol class="space-y-6">
+          {countryData.visaSteps.map((step, index) => (
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <h3 class="font-semibold text-ink">{step.title}</h3>
+                <p class="mt-1 text-sm text-ink/70">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-6 text-sm text-ink/60">
+          <strong>Visa type:</strong> {countryData.visaType} · <strong>Processing time:</strong> {countryData.visaProcessingTime}
+        </p>
+      </div>
+    </section>
+
+    {/* ── TRAVEL & LOGISTICS ─────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.travelLogistics)}</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-white p-5 shadow-sm">
+            <Icon name="plane" size={20} class="text-violet-600" />
+            <h3 class="mt-3 text-sm font-semibold text-ink">Flight time</h3>
+            <p class="mt-1 text-sm text-ink/60">{countryData.flightTime}</p>
+            <p class="mt-1 text-xs text-ink/50">{countryData.directFlights ? 'Direct flights available' : 'Connecting flights'}</p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-white p-5 shadow-sm">
+            <Icon name="map-pin" size={20} class="text-violet-600" />
+            <h3 class="mt-3 text-sm font-semibold text-ink">Airports</h3>
+            <p class="mt-1 text-sm text-ink/60">{countryData.majorAirports.join(', ')}</p>
+          </div>
+        </div>
+        {countryData.recommendedCities.length > 0 && (
+          <div class="mt-6">
+            <h3 class="mb-3 text-sm font-semibold text-ink">Recommended cities</h3>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {countryData.recommendedCities.map((city) => (
+                <div class="rounded-card border border-cream-300 bg-white p-4 shadow-sm">
+                  <p class="text-sm font-semibold text-ink">{city.name}</p>
+                  <p class="mt-1 text-xs text-ink/60">{city.flightTime}</p>
+                  <p class="mt-1 text-xs text-ink/50">{city.directFlights ? 'Direct' : 'Connecting'} · {city.airlines.join(', ')}</p>
+                  <div class="mt-2 flex flex-wrap gap-1">
+                    {city.specialties.map((s) => (
+                      <span class="rounded-full bg-cream-200 px-2 py-0.5 text-xs text-ink/70">{s}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+
+    {/* ── CULTURAL CONSIDERATIONS ───────────────────────────────────────── */}
+    {(countryData.culturalConsiderations.length > 0 || countryData.languages.length > 0) && (
+      <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.culturalConsiderations)}</h2>
+          <div class="flex flex-wrap gap-3">
+            {countryData.culturalConsiderations.map((item) => (
+              <span class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-white px-4 py-2 text-sm text-ink/70">
+                <Icon name="check" size={16} class="text-green-600" />
+                {item}
+              </span>
+            ))}
+            {countryData.languages.map((lang) => (
+              <span class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-white px-4 py-2 text-sm text-ink/70">
+                <Icon name="globe" size={16} class="text-violet-600" />
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── RECOMMENDED HOSPITALS ─────────────────────────────────────────── */}
+    {relatedHospitals.length > 0 && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.recommendedHospitals)}</h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {relatedHospitals.map((hospital) => (
+              <a
+                href={hospital.href}
+                class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
+                {hospital.image && (
+                  <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                    <img
+                      src={hospital.image}
+                      alt={`${hospital.name} for ${procedure.name} in India — ${countryData.nationality} patients`}
+                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-1 flex-col p-5">
+                  <h3 class="font-display text-lg font-semibold text-ink">{hospital.name}</h3>
+                  <p class="mt-1 text-xs text-ink/50">{hospital.city}</p>
+                  {hospital.accreditations && hospital.accreditations.length > 0 && (
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      {hospital.accreditations.map((acc) => (
+                        <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-700">{acc}</span>
+                      ))}
+                    </div>
+                  )}
+                  <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70 line-clamp-3">{hospital.description}</p>
+                  <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                    View hospital
+                    <Icon name="arrow-right" size={16} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── RECOMMENDED DOCTORS ───────────────────────────────────────────── */}
+    {doctorCards.length > 0 && (
+      <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{ph(pc.recommendedDoctors)}</h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {doctorCards.map((doctor) => (
+              <DoctorCard doctor={doctor} imageAlt={`${doctor.name} — ${procedure.name} specialist for ${countryData.nationality} patients`} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── WHAT'S INCLUDED ───────────────────────────────────────────────── */}
+    {(procedure.costInclusions || procedure.costExclusions) && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{pc.whatsIncluded}</h2>
+          <div class="grid gap-6 md:grid-cols-2">
+            {procedure.costInclusions && procedure.costInclusions.length > 0 && (
+              <div class="rounded-card border border-cream-300 bg-white p-5 shadow-sm">
+                <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-ink">
+                  <Icon name="check" size={18} class="text-green-600" />
+                  {pc.includedLabel}
+                </h3>
+                <ul class="space-y-2">
+                  {procedure.costInclusions.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-ink/70">
+                      <Icon name="check" size={14} class="mt-1 shrink-0 text-green-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {procedure.costExclusions && procedure.costExclusions.length > 0 && (
+              <div class="rounded-card border border-cream-300 bg-white p-5 shadow-sm">
+                <h3 class="mb-3 flex items-center gap-2 text-sm font-semibold text-ink">
+                  <Icon name="x" size={18} class="text-amber-600" />
+                  {pc.notIncludedLabel}
+                </h3>
+                <ul class="space-y-2">
+                  {procedure.costExclusions.map((item) => (
+                    <li class="flex items-start gap-2 text-sm text-ink/70">
+                      <Icon name="x" size={14} class="mt-1 shrink-0 text-amber-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── HOW TO READ YOUR PACKAGE QUOTE ──────────────────────────────── */}
+    <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.packageQuoteTitle}</h2>
+        <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.packageQuoteIntro}</p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem1Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem1Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem2Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem2Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem3Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem3Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem4Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem4Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem5Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem5Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem6Label}</p>
+                <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem6Desc}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── DECISION FRAMEWORK ───────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+      <div class="container max-w-3xl">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.decisionFrameworkTitle}</h2>
+        <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.decisionFrameworkIntro}</p>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem1}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem2}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem3}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem4}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem5}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem6}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem7}</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-ink/70">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem8}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* ── FAQ ───────────────────────────────────────────────────────────── */}
+    {faqs.length > 0 && (
+      <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-3xl">
+          <h2 class="mb-8 text-center font-display text-2xl font-bold text-ink md:text-3xl">{pc.faqTitle}</h2>
+          <FAQAccordion items={faqs} client:visible />
+        </div>
+      </section>
+    )}
+
+    {/* ── RELATED PROCEDURES ────────────────────────────────────────────── */}
+    {relatedProcCountryLinks.length > 0 && (
+      <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
+        <div class="container max-w-4xl">
+          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            {pc.relatedProcedures.replace('{nationality}', countryData.nationality)}
+          </h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedProcCountryLinks.map((rp) => (
+              <a
+                href={rp.href}
+                class="group rounded-card border border-cream-300 bg-white p-4 shadow-sm transition-all hover:border-violet-300 hover:shadow-md"
+              >
+                <p class="text-sm font-semibold text-ink">{rp.name}</p>
+                {rp.fromPrice && (
+                  <p class="mt-1 text-xs text-ink/50">From {rp.fromPrice}</p>
+                )}
+                <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600">
+                  For {countryData.nationality} patients
+                  <Icon name="arrow-right" size={12} />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ── MEDICAL DISCLAIMER ───────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-8 md:py-10">
+      <div class="container max-w-3xl">
+        <p class="text-xs leading-relaxed text-ink/50">
+          The information on this page is for general guidance only and is not a substitute for professional medical advice. Treatment suitability, risks, recovery timelines, and costs vary based on your individual medical condition. Always consult a qualified doctor before making healthcare decisions. Final pricing and treatment plans require review of your medical reports by the treating hospital.
+        </p>
+      </div>
+    </section>
+
+    {/* ── CTA ───────────────────────────────────────────────────────────── */}
+    <TreatmentsCtaSection
+      locale="en"
+      eyebrow="We're here to help"
+      headline={pc.planningTreatment.replace('{procedure}', procedure.name).replace('{country}', countryData.name)}
+      body={pc.shareReports}
+      primaryCta={{ label: pc.getFreeQuote, href: procedureWhatsAppHref || '#contact' }}
+      secondaryCta={{ label: pc.whatsappUs, href: procedureWhatsAppHref || '#contact' }}
+    />
+
+    {/* ── CONTACT / LEAD FORM ───────────────────────────────────────────── */}
+    <section id="contact" class="bg-cream-200 py-16 md:py-20">
+      <div class="container max-w-xl">
+        <LeadForm
+          treatments={treatmentOptions}
+          source={LEAD_SOURCE.PROCEDURE_COUNTRY_PAGE}
+          defaultTreatment={procedure.name}
+          client:visible
+        />
+      </div>
+    </section>
+  </main>
+
+  {/* ── FLOATING CTAs ──────────────────────────────────────────────────────── */}
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    {procedureWhatsAppHref && (
+      <a
+        href={procedureWhatsAppHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
+      >
+        <Icon name="whatsapp" size={16} />
+        <span class="hidden text-sm font-semibold md:inline">{pc.whatsappUs}</span>
+      </a>
+    )}
+    <a
+      href="#contact"
+      class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+    >
+      <Icon name="mail" size={16} />
+      <span class="md:hidden">{pc.getFreeQuote}</span>
+      <span class="hidden md:inline">{pc.getFreeQuote}</span>
+    </a>
+  </div>
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={getFooterLegalLinks('en')}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+    popularLinksTitle="Popular treatments by country"
+    popularLinks={popularLinks}
+  />
+</Layout>

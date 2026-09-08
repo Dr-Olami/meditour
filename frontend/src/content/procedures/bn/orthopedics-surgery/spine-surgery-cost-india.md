@@ -49,6 +49,14 @@ risks:
   - "মেরুদণ্ডে তরল লিক (সেরিব্রোস্পাইনাল ফ্লুইড লিক)"
   - "ইমপ্লান্ট বা ফিউশনের ব্যর্থতা (সিউডোআর্থ্রোসিস)"
   - "গভীর শিরায় রক্ত জমাট (ডিপ ভেইন থ্রম্বোসিস) বা পালমোনারি এম্বোলিজম"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "total-hip-replacement-cost-india"

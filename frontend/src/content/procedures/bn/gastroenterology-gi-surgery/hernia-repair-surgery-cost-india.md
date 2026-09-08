@@ -49,6 +49,14 @@ risks:
   - "ইনসিশন সাইটে বা মেশের চারপাশে সংক্রমণ যা অ্যান্টিবায়োটিক বা, কদাচ, মেশ অপসারণ প্রয়োজন"
   - "সার্জিক্যাল সাইটে রক্তক্ষরণ বা হেমাটোমা গঠন যা ড্রেনেজ প্রয়োজন"
   - "রিপেয়ার সাইটে সেরোমা (তরল সংগ্রহ), সাধারণত স্ব-সীমিত কিন্তু মাঝে মাঝে অ্যাস্পিরেশন প্রয়োজন"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-k-hemanth-kumar
+  - dr-jayanth-reddy
+
 relatedProcedureSlugs:
   - "gallbladder-removal-cost-india"
   - "bariatric-surgery-cost-india"

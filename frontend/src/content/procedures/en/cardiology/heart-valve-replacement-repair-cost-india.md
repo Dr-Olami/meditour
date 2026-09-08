@@ -49,6 +49,15 @@ risks:
   - "Prosthetic valve endocarditis requiring prolonged antibiotics or re-operation"
   - "Atrial fibrillation or conduction abnormalities requiring pacemaker insertion"
   - "Structural valve deterioration over time, especially with bioprosthetic valves in younger patients"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-ravindra-setty-b-r
+  - dr-varun-shetty
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "tavr-transcatheter-aortic-valve-replacement-cost-india"

@@ -50,6 +50,13 @@ risks:
   - "Tinnitus worsening or new onset of vertigo and balance disturbances"
   - "Device failure or migration requiring revision surgery"
   - "Cerebrospinal fluid leak or meningitis risk requiring vaccination and monitoring"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
+
 relatedProcedureSlugs:
   - "sinus-surgery-cost-india"
 faqs:

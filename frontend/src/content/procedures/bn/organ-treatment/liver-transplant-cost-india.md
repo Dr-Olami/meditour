@@ -50,6 +50,14 @@ risks:
   - "পিত্তনালীর জটিলতা (বাইলিয়ারি স্ট্রিকচার বা লিকেজ)"
   - "অতিরিক্ত রক্তক্ষরণ"
   - "ট্রান্সপ্লান্টের পর লিভারে রোগ পুনরাবৃত্তি"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jayanth-reddy
+  - dr-k-hemanth-kumar
+
 relatedProcedureSlugs:
   - "kidney-transplant-cost-india"
   - "lung-transplant-cost-india"

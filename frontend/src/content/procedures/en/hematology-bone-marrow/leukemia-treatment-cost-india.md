@@ -50,6 +50,16 @@ risks:
   - "Chemotherapy-related organ toxicity (cardiac, renal, hepatic)"
   - "Disease relapse requiring salvage therapy or transplant"
   - "Long-term effects including secondary malignancies and infertility"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "car-t-cell-therapy-cost-india"

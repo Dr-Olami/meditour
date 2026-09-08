@@ -49,6 +49,14 @@ risks:
   - "করোনারি ধমনী রোগ (ট্রান্সপ্লান্ট ভাস্কুলোপ্যাথি)"
   - "অতিরিক্ত রক্তক্ষরণ"
   - "কিডনি বা লিভারের জটিলতা"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-ravishankar-shetty-k
+  - dr-aditi-singhvi
+  - dr-devi-prasad-shetty
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "heart-valve-replacement-repair-cost-india"

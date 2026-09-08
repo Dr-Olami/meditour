@@ -49,6 +49,14 @@ risks:
   - "Neurological deficits persisting after treatment including weakness, speech difficulties, or cognitive impairment"
   - "Post-stroke complications including pneumonia, deep vein thrombosis, pressure ulcers, or contractures"
   - "Medication side effects from antiplatelets, anticoagulants, or antihypertensives"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+
 relatedProcedureSlugs:
   - "epilepsy-treatment-cost-india"
   - "deep-brain-stimulation-cost-india"

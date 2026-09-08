@@ -50,6 +50,13 @@ risks:
   - "বি-সেল অ্যাপ্লাসিয়া এবং দীর্ঘমেয়াদী ইমিউনোডেফিসিয়েন্সি"
   - "সংক্রমণ এবং রোগ প্রতিরোধ ক্ষমতার দুর্বলতা"
   - "রোগ পুনরাবৃত্তি বা রিল্যাপ্স"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-neema-bhat
+  - dr-sunil-udgire
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "autologous-stem-cell-transplant-cost-india"

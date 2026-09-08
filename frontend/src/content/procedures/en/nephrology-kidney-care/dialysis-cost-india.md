@@ -49,6 +49,16 @@ risks:
   - "Muscle cramps, headaches, and fatigue during or after sessions"
   - "Vascular access complications including stenosis, thrombosis, or aneurysm formation"
   - "Long-term complications such as anaemia, bone disease, and cardiovascular issues"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-gokul-nath
+  - dr-mohammed-fahad-khan
+  - dr-vishwanath-s
+  - dr-akhila-vasanth-hassan
+
 relatedProcedureSlugs:
   - "kidney-stone-treatment-cost-india"
   - "kidney-transplant-cost-india"

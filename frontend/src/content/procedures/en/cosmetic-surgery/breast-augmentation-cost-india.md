@@ -50,6 +50,14 @@ risks:
   - "Infection around the implant site requiring antibiotic treatment or removal"
   - "Changes in nipple or breast sensation, which may be temporary or permanent"
   - "Asymmetry or implant displacement requiring revision surgery"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-kanmani-govindrao-telkar
+  - dr-mayur-r-shetty
+
 relatedProcedureSlugs:
   - "tummy-tuck-cost-india"
   - "liposuction-cost-india"

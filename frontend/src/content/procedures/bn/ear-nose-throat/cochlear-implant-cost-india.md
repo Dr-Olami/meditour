@@ -50,6 +50,13 @@ risks:
   - "টিনিটাস অবনতি বা নতুন ভার্টিগো ও ভারসাম্য ব্যাঘাত"
   - "ডিভাইস ব্যর্থতা বা স্থানান্তর যা রিভিশন সার্জারি প্রয়োজন"
   - "সেরিব্রোস্পাইনাল ফ্লুইড লিক বা মেনিনজাইটিস ঝুঁকি যা ভ্যাকসিনেশন ও মনিটরিং প্রয়োজন"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-srinivas-kunku
+  - dr-sunil-narayan-dutt
+
 relatedProcedureSlugs:
   - "sinus-surgery-cost-india"
 faqs:

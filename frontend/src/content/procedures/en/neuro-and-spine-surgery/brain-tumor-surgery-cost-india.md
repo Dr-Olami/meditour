@@ -49,6 +49,14 @@ risks:
   - "New neurological deficits such as weakness, speech, or vision changes"
   - "Seizures post-operatively requiring anticonvulsant medication"
   - "Cerebrospinal fluid (CSF) leak or hydrocephalus"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-murali-mohan
+  - dr-satish-satyanarayana
+
 relatedProcedureSlugs:
   - "spinal-fusion-surgery-cost-india"
   - "deep-brain-stimulation-cost-india"

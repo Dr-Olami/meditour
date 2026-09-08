@@ -49,6 +49,14 @@ risks:
   - "Hardware complications such as lead fracture, migration, or battery failure"
   - "Side effects from stimulation including paraesthesia, mood changes, or motor disturbances"
   - "Worsening of speech, balance, or cognition in some patients"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-nithin-kumar-n
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "brain-tumor-surgery-cost-india"
   - "spinal-fusion-surgery-cost-india"

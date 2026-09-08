@@ -50,6 +50,14 @@ risks:
   - "Poor wound healing or wound separation, especially in smokers"
   - "Numbness or changes in skin sensation around the abdomen and groin"
   - "Blood clots (deep vein thrombosis) requiring blood-thinning medication"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-mayur-r-shetty
+  - dr-sumit-talwar
+
 relatedProcedureSlugs:
   - "liposuction-cost-india"
   - "breast-augmentation-cost-india"

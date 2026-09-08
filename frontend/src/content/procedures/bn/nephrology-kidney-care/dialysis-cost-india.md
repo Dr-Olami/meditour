@@ -49,6 +49,16 @@ risks:
   - "সেশনের সময় বা পরে পেশী খিঁচুনি, মাথা ব্যথা এবং ক্লান্তি"
   - "ভাস্কুলার অ্যাক্সেস জটিলতা যেমন স্টেনোসিস, থ্রম্বোসিস বা অ্যানিউরিজম গঠন"
   - "দীর্ঘমেয়াদী জটিলতা যেমন অ্যানিমিয়া, হাড়ের রোগ এবং কার্ডিওভাসকুলার সমস্যা"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-gokul-nath
+  - dr-mohammed-fahad-khan
+  - dr-vishwanath-s
+  - dr-akhila-vasanth-hassan
+
 relatedProcedureSlugs:
   - "kidney-stone-treatment-cost-india"
   - "kidney-transplant-cost-india"

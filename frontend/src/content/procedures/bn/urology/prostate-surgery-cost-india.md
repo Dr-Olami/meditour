@@ -49,6 +49,15 @@ risks:
   - "ইরিগেশন তরল শোষণজনিত TUR সিন্ড্রোম, আধুনিক বাইপোলার প্রযুক্তিতে বিরল"
   - "রেট্রোগ্রেড ইজাকুলেশন যা উর্বরতায় প্রভাব ফেলে, বেশিরভাগ রোগীতে ঘটে"
   - "সার্জারির কয়েক সপ্তাহ থেকে মাস পরে ইউরেথ্রাল স্ট্রিকচার বা ব্লাডার নেক কনট্রাকচার"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "kidney-stone-removal-cost-india"
 faqs:

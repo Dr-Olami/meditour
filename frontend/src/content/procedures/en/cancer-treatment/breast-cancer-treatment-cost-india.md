@@ -49,6 +49,15 @@ risks:
   - "Radiation skin reactions and fatigue during and after radiotherapy"
   - "Cardiac toxicity with certain chemotherapy or targeted therapy agents (e.g., anthracyclines, trastuzumab)"
   - "Hormonal therapy side effects including hot flashes, joint pain, and bone density changes"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-kanmani-govindrao-telkar
+  - dr-anil-kamath
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - "cancer-surgery-cost-india"
   - "chemotherapy-cost-india"

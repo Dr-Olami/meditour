@@ -49,6 +49,14 @@ risks:
   - "Nerve injury causing weakness, numbness, or persistent pain"
   - "Infection at the surgical site or deep spinal infection"
   - "Adjacent segment degeneration requiring future surgery"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "disc-replacement-surgery-cost-india"
   - "brain-tumor-surgery-cost-india"

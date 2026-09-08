@@ -50,6 +50,16 @@ risks:
   - "Graft failure or rejection"
   - "Organ toxicity from conditioning chemotherapy"
   - "Long-term endocrine and fertility complications"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "autologous-stem-cell-transplant-cost-india"
   - "bone-marrow-transplant-cost-india"

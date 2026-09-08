@@ -50,6 +50,12 @@ risks:
   - "প্রতিস্থাপিত চুলের বৃদ্ধি না হওয়া (গ্রাফট ব্যর্থতা)"
   - "অস্বাভাবিক বা অপ্রাকৃতিক দেখানো হেয়ারলাইন"
   - "রিভিশন প্রক্রিয়া প্রয়োজন হওয়া (প্রায় ৫% ক্ষেত্রে)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-prashant-puranik
+
 relatedProcedureSlugs:
   - "rhinoplasty-cost-india"
   - "liposuction-cost-india"

@@ -50,6 +50,13 @@ risks:
   - "Ectopic pregnancy requiring medical or surgical intervention"
   - "Ovarian torsion or bleeding following egg retrieval"
   - "Emotional and psychological stress associated with cycle failure or repeated attempts"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "icsi-treatment-cost-india"
   - "iui-treatment-cost-india"

@@ -49,6 +49,16 @@ risks:
   - "স্ট্রোক বা হৃদরোগের ঝুঁকি"
   - "কিডনি বা ফুসফুসের জটিলতা"
   - "অ্যারিথমিয়া (অনিয়মিত হৃদস্পন্দন)"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-devi-prasad-shetty
+  - dr-ravindra-setty-b-r
+  - dr-varun-shetty
+  - dr-praveen-r-tambrallimath
+
 relatedProcedureSlugs:
   - "angioplasty-stent-placement-cost-india"
   - "heart-valve-replacement-repair-cost-india"

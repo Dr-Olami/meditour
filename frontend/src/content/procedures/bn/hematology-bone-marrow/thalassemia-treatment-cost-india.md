@@ -50,6 +50,15 @@ risks:
   - "আয়রন ওভারলোড সম্পর্কিত জটিলতা (প্রি-ট্রান্সপ্লান্ট)"
   - "গ্রাফট ফেইলিওর বা ব্যর্থতা"
   - "দীর্ঘমেয়াদী ইমিউনোসাপ্রেসিভ থেরাপির পার্শ্বপ্রতিক্রিয়া"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

@@ -49,6 +49,12 @@ risks:
   - "Cardiac toxicity including QT prolongation or heart failure with specific inhibitors"
   - "Liver enzyme elevation requiring dose adjustment or interruption"
   - "Risk of bleeding, hypertension, or proteinuria with angiogenesis inhibitors"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+
 relatedProcedureSlugs:
   - "immunotherapy-cost-india"
   - "chemotherapy-cost-india"

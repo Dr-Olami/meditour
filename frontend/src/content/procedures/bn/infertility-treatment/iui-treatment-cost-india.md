@@ -50,6 +50,13 @@ risks:
   - "সংক্রমণ বা জরায়ুতে অস্বস্তি ইনসেমিনেশনের পরে"
   - "গর্ভপাত ঝুঁকি যা সাধারণ গর্ভধারণের সমান"
   - "প্রতি সাইকেলে সাফল্যের হার তুলনামূলকভাবে কম (১০–২০%)"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-chitra-ramamurthy
+  - dr-rashmi-patil
+
 relatedProcedureSlugs:
   - "ivf-treatment-cost-india"
   - "icsi-treatment-cost-india"

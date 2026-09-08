@@ -49,6 +49,13 @@ risks:
   - "Cystoid macular oedema causing temporary visual blurring, usually resolving with anti-inflammatory drops"
   - "Intraocular lens dislocation or decentration requiring a secondary corrective procedure"
   - "Refractive surprise — residual prescription requiring glasses or enhancement with LASIK or PRK"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-jyoti-shetty
+  - dr-sharon-d-souza
+
 relatedProcedureSlugs:
   - "lasik-eye-surgery-cost-india"
 faqs:

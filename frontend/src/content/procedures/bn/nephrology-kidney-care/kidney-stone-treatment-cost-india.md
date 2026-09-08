@@ -50,6 +50,15 @@ risks:
   - "অসম্পূর্ণ পাথর ভাঙন যার জন্য দ্বিতীয় প্রক্রিয়া প্রয়োজন"
   - "ইউরেটারোস্কোপির পর ইউরেটার আঘাত বা স্ট্রিকচার গঠন"
   - "জটিল পাথরের বিরল ক্ষেত্রে কিডনি ক্ষতি বা হ্রাসকৃত ফাংশন"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-deepak-bolbandi
+  - dr-manohar-t
+  - dr-uday-bhaskar-m
+
 relatedProcedureSlugs:
   - "dialysis-cost-india"
   - "kidney-transplant-cost-india"

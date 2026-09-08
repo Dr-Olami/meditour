@@ -49,6 +49,13 @@ risks:
   - "Radiation cystitis or proctitis causing urinary or bowel symptoms"
   - "Hormone therapy side effects including hot flashes, bone density loss, and fatigue"
   - "Risk of urethral stricture or bladder neck contracture after surgical procedures"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-g-girish
+  - dr-anil-kamath
+
 relatedProcedureSlugs:
   - "cancer-surgery-cost-india"
   - "radiation-therapy-cost-india"

@@ -49,6 +49,14 @@ risks:
   - "Surgical site infection or deep wound infection (discitis, epidural abscess)"
   - "Implant failure, screw loosening, or non-union (pseudoarthrosis) requiring revision"
   - "Cerebrospinal fluid leak or dural tear requiring extended bed rest or repair"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-s-vidyadhara
+  - dr-murali-mohan
+
 relatedProcedureSlugs:
   - "total-knee-replacement-cost-india"
   - "total-hip-replacement-cost-india"

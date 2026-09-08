@@ -49,6 +49,14 @@ risks:
   - "অ্যালার্জিক প্রতিক্রিয়া কন্ট্রাস্ট ডাই-এর কারণে"
   - "কিডনির ক্ষতি কন্ট্রাস্ট ডাই থেকে"
   - "হৃদরোগ বা স্ট্রোকের ঝুঁকি"
+relatedHospitalSlugs:
+  - narayana-institute-cardiac-sciences
+  - apollo-hospitals-bannerghatta
+  - fortis-hospital-bannerghatta
+relatedDoctorSlugs:
+  - dr-girish-b-navasundi
+  - dr-mahadev-swamy-b
+
 relatedProcedureSlugs:
   - "heart-bypass-surgery-cabg-cost-india"
   - "pacemaker-implantation-cost-india"

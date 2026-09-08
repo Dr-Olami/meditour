@@ -50,6 +50,13 @@ risks:
   - "Asymmetry or unsatisfactory aesthetic result requiring revision surgery"
   - "Breathing difficulties due to internal nasal structure changes"
   - "Adverse reaction to anaesthesia"
+relatedHospitalSlugs:
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs:
+  - dr-anand-k
+  - dr-naveen-rao
+
 relatedProcedureSlugs:
   - "liposuction-cost-india"
   - "tummy-tuck-cost-india"

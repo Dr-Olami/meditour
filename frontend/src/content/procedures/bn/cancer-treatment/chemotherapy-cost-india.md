@@ -49,6 +49,14 @@ risks:
   - "অ্যানিমিয়া এবং থ্রম্বোসাইটোপেনিয়া (রক্তকণিকা হ্রাস)"
   - "দীর্ঘমেয়াদী জটিলতা — কার্ডিয়াক টক্সিসিটি বা সেকেন্ডারি ক্যানসার"
   - "রোগের অগ্রগতি বা পুনরাবৃত্তি যা চিকিৎসা পরিবর্তন প্রয়োজন করতে পারে"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - sparsh-hospital-hennur
+relatedDoctorSlugs:
+  - dr-amit-rauthan
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - radiation-therapy-cost-india
   - immunotherapy-cost-india

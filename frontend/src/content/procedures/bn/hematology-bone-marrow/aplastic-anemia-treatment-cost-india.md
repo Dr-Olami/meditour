@@ -50,6 +50,15 @@ risks:
   - "গ্রাফট-ভার্সাস-হোস্ট ডিজিজ (GVHD) (ট্রান্সপ্লান্টের ক্ষেত্রে)"
   - "গ্রাফট ফেইলিওর বা ব্যর্থতা"
   - "ক্লোনাল ইভোলিউশন — MDS বা লিউকেমিয়ায় রূপান্তর"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-chandrakala-s
+  - dr-mahesh-rajashekaraiah
+  - dr-sunil-udgire
+  - dr-neema-bhat
+
 relatedProcedureSlugs:
   - "bone-marrow-transplant-cost-india"
   - "allogeneic-stem-cell-transplant-cost-india"

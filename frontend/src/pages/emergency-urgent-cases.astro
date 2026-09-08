@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../design-system/components/organisms/Navbar';
 import { Footer } from '../design-system/components/organisms/Footer';
@@ -24,6 +24,7 @@ const treatmentOptions = treatmentEntries.map((entry) => ({
 }));
 
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861';
 const whatsappInquiryHref = getInquiryLink();
 
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
@@ -96,7 +97,7 @@ const jsonLd = [
     cta={{ label: t.nav.cta, href: '/contact' }}
     locale={locale}
     currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_WHATSAPP_NUMBER}
+    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
     whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
     whatsappLabel={t.nav.whatsapp}
@@ -139,12 +140,12 @@ const jsonLd = [
               WhatsApp urgent line
             </a>
             <a
-              href={`tel:+${whatsappNumber}`}
+              href={`tel:+${phoneNumber}`}
               class="inline-flex items-center justify-center gap-2 rounded-card border-2 border-red-600 px-6 py-3 text-sm font-semibold text-red-700 hover:bg-red-50"
               data-anim="press-button"
             >
               <Icon name="phone" size={18} />
-              Call {whatsappNumber}
+              Call +{phoneNumber}
             </a>
           </div>
         </div>

@@ -50,6 +50,12 @@ risks:
   - "Progressive decline in lung function despite best medical management"
   - "Corticosteroid-related complications with frequent systemic use during exacerbations"
   - "Oxygen therapy-related risks including carbon dioxide retention in severe COPD"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
+relatedDoctorSlugs: []
+
 relatedProcedureSlugs:
   - "asthma-treatment-cost-india"
 faqs:

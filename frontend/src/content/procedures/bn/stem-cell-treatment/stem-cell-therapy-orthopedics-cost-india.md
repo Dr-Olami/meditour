@@ -50,6 +50,13 @@ risks:
   - "সংগ্রহ বা ইনট্রা-আর্টিকুলার ইনজেকশন প্রক্রিয়া থেকে সংক্রমণের ঝুঁকি"
   - "ইমিউন প্রতিক্রিয়া বা বিরল ক্ষেত্রে প্রয়োগকৃত কোষ থেকে জয়েন্টে একটোপিক টিস্যু গঠনের সম্ভাবনা"
   - "অনিশ্চিত উপকারের বিপরীতে আর্থিক খরচ, কারণ পুনরাবৃত্তি চক্র সুপারিশ হতে পারে"
+relatedHospitalSlugs:
+  - sparsh-hospital-hennur
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-sharan-shivaraj-patil
+  - dr-s-vidyadhara
+
 relatedProcedureSlugs:
   - "stem-cell-therapy-neurological-cost-india"
   - "total-knee-replacement-cost-india"

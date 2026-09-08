@@ -50,6 +50,13 @@ risks:
   - "Risk of infection from the harvesting or administration procedure"
   - "Potential for immune reactions or, in rare cases, tumour formation from transplanted cells"
   - "Financial cost with uncertain return on investment, as repeat cycles may be recommended"
+relatedHospitalSlugs:
+  - fortis-hospital-bannerghatta
+  - apollo-hospitals-bannerghatta
+relatedDoctorSlugs:
+  - dr-ajit-kumar-roy
+  - dr-bidisha-banerjee
+
 relatedProcedureSlugs:
   - "stem-cell-therapy-orthopedics-cost-india"
   - "deep-brain-stimulation-cost-india"
