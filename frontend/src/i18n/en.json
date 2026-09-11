@@ -301,9 +301,7 @@
     "relatedArticlesSubtitle": "Country-specific cost guides, visa information and treatment planning resources for patients travelling to Bangalore.",
     "readArticleLabel": "Read guide",
     "consultCta": "Plan your treatment at {{name}}",
-    "consultSummary": "Free consultation, transparent pricing, visa assistance — your treatment plan in 24 hours.",
-    "stickyConsultLabel": "Free consultation",
-    "stickyWhatsappLabel": "WhatsApp"
+    "consultSummary": "Free consultation, transparent pricing, visa assistance — your treatment plan in 24 hours."
   },
   "howItWorks": {
     "title": "How it works",

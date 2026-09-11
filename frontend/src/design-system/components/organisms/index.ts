@@ -42,8 +42,6 @@ export { FilterChips } from './FilterChips';
 export type { FilterChipsProps } from './FilterChips';
 export { FloatingConsultCTA } from './FloatingConsultCTA';
 export type { FloatingConsultCTAProps } from './FloatingConsultCTA';
-export { StickyMobileCta } from './StickyMobileCta';
-export type { StickyMobileCtaProps } from './StickyMobileCta';
 export { HeroSection } from './HeroSection';
 export type { HeroSectionProps } from './HeroSection';
 export { RevealImageCard } from './RevealImageCard';

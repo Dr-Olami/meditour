@@ -8,7 +8,6 @@ import { BlogCard } from '../../../design-system/components/organisms/BlogCard';
 import { LeadForm } from '../../../design-system/components/organisms/LeadForm';
 import { FAQAccordion } from '../../../design-system/components/organisms/FAQAccordion';
 import { MapEmbed } from '../../../design-system/components/organisms/MapEmbed';
-import { StickyMobileCta } from '../../../design-system/components/organisms/StickyMobileCta';
 import { Icon } from '../../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.astro';
 import { MarqueeStrip } from '../../../design-system/components/molecules/MarqueeStrip';
@@ -720,15 +719,4 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
     copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
     address={t.footer.address}
   />
-
-  {/* Sticky mobile CTA bar — appears after scrolling past hero, hidden on desktop */}
-  {hospitalWhatsAppHref && (
-    <StickyMobileCta
-      client:load
-      primaryLabel={t.hospitals.stickyConsultLabel}
-      primaryHref="#contact"
-      whatsappLabel={t.hospitals.stickyWhatsappLabel}
-      whatsappHref={hospitalWhatsAppHref}
-    />
-  )}
 </Layout>

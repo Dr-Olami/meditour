@@ -1,4 +1,4 @@
-﻿# Khan Meditour — Phase 0 Implementation Tasks
+# Khan Meditour — Phase 0 Implementation Tasks
 
 > Company: Khan Meditour
 > WhatsApp: +8801611892986
@@ -695,33 +695,3 @@ heart-bypass-surgery-cabg, angioplasty-stent-placement, total-knee-replacement, 
 - The DoctorCard component takes a doctor prop, not spread props.
 - The Icon component does not have a message-circle icon — used globe for language indicators instead.
 - Procedure markdown bodies contain their own full H2 structure that duplicates template sections — resolved by not rendering the markdown body and instead showing a summary + canonical link.
-
-## Hospital Amenities Restructure + Sticky Mobile CTA — COMPLETE (2026-09-10)
-
-### P4.7 — Restructure amenities from flat chip dump to grouped, hospital-specific sections
-
-Replaced the generic flat `amenities` chip cloud (nearly identical across all 5 hospitals — every one had "International patient lounge, Airport pickup, Pharmacy, Visa assistance, Foreign currency exchange") with a new `structuredAmenities` schema field that groups amenities into 3 categories (International Patient Services, Clinical Facilities, Patient & Family Comfort) with the top 2-3 hospital-differentiating amenities getting a short one-line description each.
-
-- [x] Added `structuredAmenities` to content schema (`config.ts`) with `highlights` (name + description) and `items` (chip cloud) per category.
-- [x] Added i18n labels for the 3 category headings in EN + BN (`amenityCategories`).
-- [x] Wrote hospital-specific content for all 10 hospital files (5 EN + 5 BN): Apollo (CyberKnife suite, Da Vinci Xi, 500+ monthly intl consults), Fortis (MTQUA-certified programme, dedicated BMT unit, 500+ robotic cases), Manipal (Mazor X robotic spine, 6,000+ robotic cancer cases, full-service intl wing), Narayana (8 cath labs, 19 cardiac OTs, dedicated cardiac rehab, yoga therapy), SPARSH (IFEM Gold emergency, AI diagnostics + 3D printing, dedicated BMT unit).
-- [x] Updated both EN + BN hospital templates to render grouped sections with H3 category headings, highlighted feature cards (name + description), and remaining items as ChipCloud.
-- [x] Fallback to flat `amenities` preserved for any hospital without `structuredAmenities`.
-- [x] BN content written in natural Bengali with English medical abbreviations (JCI, BMT, PET-CT, LINAC, ICU).
-- [x] Build verified — all 10 hospital pages render hospital-specific highlighted amenities with category headings.
-
-### P4.8 — Sticky mobile CTA bar for long hospital pages
-
-Hospital pages have 12+ sections and on mobile the desktop sticky sidebar (`lg:sticky`) collapses to inline, leaving users with no persistent call-to-action while scrolling through a very long page.
-
-- [x] Created a new `StickyMobileCta` React component (`design-system/components/organisms/StickyMobileCta.tsx`) — a fixed bottom bar with two buttons (WhatsApp + Free consultation anchor to #contact).
-- [x] Mobile-only (`lg:hidden`), appears only after the user scrolls past 600px (so it doesn't compete with hero CTAs on initial load), uses `translate-y-full` → `translate-y-0` transition for smooth reveal, and uses `client:load` hydration for instant interactivity.
-- [x] Wired into both EN + BN hospital templates with localized labels (`stickyConsultLabel`, `stickyWhatsappLabel`) added to i18n.
-- [x] Exported from organisms barrel.
-- [x] Build verified — sticky bar present in rendered HTML with correct labels, anchors, and mobile-only visibility.
-
-### Discovered During Work
-
-- **PowerShell Bengali encoding:** PowerShell `Set-Content -Encoding UTF8` corrupts Bengali Unicode when the script file is read with the wrong system code page. The `edit` tool (which handles UTF-8 correctly) must be used for Bengali content edits, not PowerShell scripts that embed Bengali string literals.
-- **TASK.md was deleted between sessions:** Restored from git via `git checkout HEAD -- TASK.md` before appending new entries.
-- **Astro JSX cast limitation:** `as Record<string, string>` TypeScript casts inside Astro template JSX expressions cause esbuild parse errors. Use `?? {}` fallback indexing instead: `(t.hospitals.amenityCategories ?? {})[group.category] ?? group.category`.
