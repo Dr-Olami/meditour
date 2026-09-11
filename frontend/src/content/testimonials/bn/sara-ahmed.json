@@ -1,0 +1,12 @@
+{
+  "locale": "bn",
+  "name": "সারা আহমেদ",
+  "location": "মাস্কাট, ওমান",
+  "targetCountry": "oman",
+  "quote": "মাস্কাট থেকে ফোর্টিস ব্যানারঘাট্টায় হার্টের অপারেশনের জন্য এসেছিলাম। JCI-স্বীকৃত হাসপাতাল দেখে মনে ভরসা হলো। আরবি ভাষাভাষী কোঅর্ডিনেটর ভিসা থেকে হালাল খাবার — সব ব্যবস্থা করে দিলেন। চিকিৎসা ছিল একদম আন্তর্জাতিক মানের, আর খরচ দুবাইয়ের তুলনায় অনেক কম।",
+  "image": "https://picsum.photos/seed/saraahmed/800/600",
+  "brandLabel": "কার্ডিয়াক",
+  "relatedTreatmentSlugs": ["cardiology"],
+  "hospitalId": "fortis-hospital-bannerghatta",
+  "rating": 5
+}

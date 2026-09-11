@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "name": "Peter Okoro",
+  "location": "Lagos, Nigeria",
+  "targetCountry": "nigeria",
+  "quote": "I needed a kidney transplant and Manipal Hospital's transplant programme was recommended to me. The international patient team handled my visa, airport pickup, and accommodation. The surgical team was highly skilled and the post-operative care was thorough. I am grateful for the excellent care.",
+  "image": "https://picsum.photos/seed/peterokoro/800/600",
+  "brandLabel": "TRANSPLANT",
+  "relatedTreatmentSlugs": ["organ-treatment"],
+  "hospitalId": "manipal-hospital-old-airport-road",
+  "rating": 5
+}

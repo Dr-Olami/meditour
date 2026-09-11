@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Surgical Oncology (Cancer Surgery)"
 seoHeadline: "Cancer Surgery Cost in India for International Patients"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-anil-kamath

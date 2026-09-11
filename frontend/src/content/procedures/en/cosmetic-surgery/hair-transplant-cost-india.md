@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Hair Transplant"
 seoHeadline: "Hair Transplant Cost in India for International Patients — FUE & FUT Restoration"
@@ -52,6 +52,7 @@ risks:
   - "Bleeding or folliculitis (inflammation of hair follicles) in rare cases"
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-anand-k
   - dr-prashant-puranik

@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Liposuction"
 seoHeadline: "Liposuction Cost in India for International Patients — Affordable Body Contouring"
@@ -52,7 +52,7 @@ risks:
   - "Excessive blood loss or fat embolism in rare cases"
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
-  - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-anand-k
   - dr-mayur-r-shetty

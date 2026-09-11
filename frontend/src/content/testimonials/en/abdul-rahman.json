@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "name": "Abdul Rahman",
+  "location": "Dhaka, Bangladesh",
+  "targetCountry": "bangladesh",
+  "quote": "My father needed a liver transplant that was not available in Dhaka. Khan Meditour connected us to Fortis Bannerghatta within days. The Bengali-speaking coordinator made every step clear for our family, and the surgical team was exceptional. My father is recovering well.",
+  "image": "https://picsum.photos/seed/abdulrahman/800/600",
+  "brandLabel": "TRANSPLANT",
+  "relatedTreatmentSlugs": ["organ-treatment"],
+  "hospitalId": "fortis-hospital-bannerghatta",
+  "rating": 5
+}

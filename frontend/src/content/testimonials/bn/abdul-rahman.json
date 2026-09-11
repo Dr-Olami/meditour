@@ -1,0 +1,12 @@
+{
+  "locale": "bn",
+  "name": "আব্দুল রহমান",
+  "location": "ঢাকা, বাংলাদেশ",
+  "targetCountry": "bangladesh",
+  "quote": "বাবার লিভার ট্রান্সপ্লান্ট দরকার ছিল, ঢাকায় সেটা সম্ভব ছিল না। খান মেডিট্যুর কয়েক দিনের মধ্যেই ফোর্টিস ব্যানারঘাট্টায় ভর্তি করার ব্যবস্থা করল। বাংলায় কথা বলা কোঅর্ডিনেটর থাকায় আমরা পরিবারের সবাই বুঝতে পেরেছি কী হচ্ছে। অপারেশনের ডাক্তাররা খুব দক্ষ ছিলেন। বাবা এখন ভালো হয়ে উঠছেন।",
+  "image": "https://picsum.photos/seed/abdulrahman/800/600",
+  "brandLabel": "ট্রান্সপ্লান্ট",
+  "relatedTreatmentSlugs": ["organ-treatment"],
+  "hospitalId": "fortis-hospital-bannerghatta",
+  "rating": 5
+}

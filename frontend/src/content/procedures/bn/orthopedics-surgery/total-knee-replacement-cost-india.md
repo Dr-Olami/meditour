@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "টোটাল নি রিপ্লেসমেন্ট"
 seoHeadline: "ভারতে টোটাল নি রিপ্লেসমেন্ট খরচ, প্রক্রিয়া ও সেরা হাসপাতাল"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
 relatedDoctorSlugs:
   - dr-sharan-shivaraj-patil

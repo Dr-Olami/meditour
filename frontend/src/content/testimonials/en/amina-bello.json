@@ -6,5 +6,7 @@
   "quote": "My heart surgery in India cost less than a tenth of what I was quoted in the UK. The coordinators spoke English, arranged my e-visa, and even found halal food near the hospital. I felt safe the entire time.",
   "image": "https://picsum.photos/seed/amina/800/600",
   "brandLabel": "CARDIAC",
-  "relatedTreatmentSlugs": ["cardiology"]
+  "relatedTreatmentSlugs": ["cardiology"],
+  "hospitalId": "narayana-institute-cardiac-sciences",
+  "rating": 5
 }

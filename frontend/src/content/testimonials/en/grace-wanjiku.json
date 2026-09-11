@@ -6,5 +6,7 @@
   "quote": "After years of trying for a baby, we came to India for IVF. The clinic was modern, the doctors were compassionate, and our twin girls were born nine months later. Khan Meditour handled our flights, visa, and accommodation perfectly.",
   "image": "https://picsum.photos/seed/gracewanjiku/800/600",
   "brandLabel": "IVF",
-  "relatedTreatmentSlugs": ["infertility-treatment"]
+  "relatedTreatmentSlugs": ["infertility-treatment"],
+  "hospitalId": "apollo-hospitals-bannerghatta",
+  "rating": 5
 }

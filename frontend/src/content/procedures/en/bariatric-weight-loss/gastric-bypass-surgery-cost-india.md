@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Gastric Bypass Surgery"
 seoHeadline: "Gastric Bypass Surgery Cost in India for International Patients"
@@ -54,6 +54,7 @@ risks:
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-sumit-talwar

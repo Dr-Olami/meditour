@@ -590,7 +590,11 @@ Audited all 136 procedure files (68 EN + 68 BN) across all 18 categories for wor
 
 Based on gap analysis of TREATMENT_PAGES_STRUCTURE_ANALYSIS_AND_PLAN.md, PROCEDURE_URL_STRUCTURE_MAPPING.md, and COMPETITOR_CONTENT_STRUCTURE_ANALYSIS.md:
 
-- [x] **P0: Render isks field in procedure templates** — isks frontmatter was populated in all 68 EN files but never displayed. Added risks rendering section (with alert icons + mitigation note) to both EN and BN [procedure].astro templates, positioned after recovery timeline and before cost inclusions. Added isksTitle and isksMitigationNote i18n keys.
+- [x] **P0: Render 
+isks field in procedure templates** — 
+isks frontmatter was populated in all 68 EN files but never displayed. Added risks rendering section (with alert icons + mitigation note) to both EN and BN [procedure].astro templates, positioned after recovery timeline and before cost inclusions. Added 
+isksTitle and 
+isksMitigationNote i18n keys.
 - [x] **P0: Standardize all 136 files to Order A H2 structure** — Found 3 different H2 orderings across the codebase (Order A: patient journey, Order B: procedure-first, Order C: BN-only hybrid). Reordered 45 EN files (Order B -> A) and 36 BN files (18 Order B + 18 Order C -> A). Also fixed 2 heart-transplant files with a 4th variant. All 136 files now follow the same patient-journey order: Overview > Who > Pre-Op > Procedure Details > What Happens > Post-Op > Long-Term > Follow-Up > Alternatives > Cost > Why Bangalore > Travel. Scripts: scripts/reorder-h2-indexed.ps1.
 - [x] **P1: Add fit-to-fly guidance to all files** — 43 EN files and 28 BN files lacked fit-to-fly/fitness-to-fly mentions. Added a standardized fit-to-fly paragraph to the Travel & Visa section. All 136 files now cover this international-patient search intent. Scripts: scripts/add-fit-to-fly.ps1, scripts/remove-duplicate-fit-to-fly.ps1 (for BN dedup).
 - [x] **P1: Add "How to Read a Package Quote" section** — Added as template-rendered section (6 items in 2-col grid) to both EN and BN procedure templates. Covers hidden charges trust intent. i18n keys: packageQuoteTitle, packageQuoteIntro, packageQuoteItem1-6Label/Desc.
@@ -599,11 +603,15 @@ Based on gap analysis of TREATMENT_PAGES_STRUCTURE_ANALYSIS_AND_PLAN.md, PROCEDU
 
 ### Discovered During Work
 
-- The isks field was populated in all 68 EN files but the template never rendered it — this was the highest-impact fix (data collected, just not displayed).
+- The 
+isks field was populated in all 68 EN files but the template never rendered it — this was the highest-impact fix (data collected, just not displayed).
 - The H2 ordering inconsistency was completely undocumented. Three different orderings existed across 136 files, with EN and BN counterparts often using different structures.
-- 28 BN files received duplicate fit-to-fly content because the pattern matching didn't catch original Bengali phrasing. Fixed with emove-duplicate-fit-to-fly.ps1.
+- 28 BN files received duplicate fit-to-fly content because the pattern matching didn't catch original Bengali phrasing. Fixed with 
+emove-duplicate-fit-to-fly.ps1.
 - The Plan doc's 7-section content template (section 8) was never updated to reflect the actual 12-section implementation. Now documented.
-- Helper scripts created in scripts/ directory: eorder-h2-indexed.ps1, dd-fit-to-fly.ps1, emove-duplicate-fit-to-fly.ps1, n-fit-to-fly.txt, n-fit-to-fly-patterns.txt, n-new-keys.json.
+- Helper scripts created in scripts/ directory: 
+eorder-h2-indexed.ps1, dd-fit-to-fly.ps1, 
+emove-duplicate-fit-to-fly.ps1, n-fit-to-fly.txt, n-fit-to-fly-patterns.txt, n-new-keys.json.
 
 ## Procedure x Country Pages Strategy Doc — COMPLETE (2026-09-08)
 
@@ -687,3 +695,33 @@ heart-bypass-surgery-cabg, angioplasty-stent-placement, total-knee-replacement, 
 - The DoctorCard component takes a doctor prop, not spread props.
 - The Icon component does not have a message-circle icon — used globe for language indicators instead.
 - Procedure markdown bodies contain their own full H2 structure that duplicates template sections — resolved by not rendering the markdown body and instead showing a summary + canonical link.
+
+## Hospital Amenities Restructure + Sticky Mobile CTA — COMPLETE (2026-09-10)
+
+### P4.7 — Restructure amenities from flat chip dump to grouped, hospital-specific sections
+
+Replaced the generic flat `amenities` chip cloud (nearly identical across all 5 hospitals — every one had "International patient lounge, Airport pickup, Pharmacy, Visa assistance, Foreign currency exchange") with a new `structuredAmenities` schema field that groups amenities into 3 categories (International Patient Services, Clinical Facilities, Patient & Family Comfort) with the top 2-3 hospital-differentiating amenities getting a short one-line description each.
+
+- [x] Added `structuredAmenities` to content schema (`config.ts`) with `highlights` (name + description) and `items` (chip cloud) per category.
+- [x] Added i18n labels for the 3 category headings in EN + BN (`amenityCategories`).
+- [x] Wrote hospital-specific content for all 10 hospital files (5 EN + 5 BN): Apollo (CyberKnife suite, Da Vinci Xi, 500+ monthly intl consults), Fortis (MTQUA-certified programme, dedicated BMT unit, 500+ robotic cases), Manipal (Mazor X robotic spine, 6,000+ robotic cancer cases, full-service intl wing), Narayana (8 cath labs, 19 cardiac OTs, dedicated cardiac rehab, yoga therapy), SPARSH (IFEM Gold emergency, AI diagnostics + 3D printing, dedicated BMT unit).
+- [x] Updated both EN + BN hospital templates to render grouped sections with H3 category headings, highlighted feature cards (name + description), and remaining items as ChipCloud.
+- [x] Fallback to flat `amenities` preserved for any hospital without `structuredAmenities`.
+- [x] BN content written in natural Bengali with English medical abbreviations (JCI, BMT, PET-CT, LINAC, ICU).
+- [x] Build verified — all 10 hospital pages render hospital-specific highlighted amenities with category headings.
+
+### P4.8 — Sticky mobile CTA bar for long hospital pages
+
+Hospital pages have 12+ sections and on mobile the desktop sticky sidebar (`lg:sticky`) collapses to inline, leaving users with no persistent call-to-action while scrolling through a very long page.
+
+- [x] Created a new `StickyMobileCta` React component (`design-system/components/organisms/StickyMobileCta.tsx`) — a fixed bottom bar with two buttons (WhatsApp + Free consultation anchor to #contact).
+- [x] Mobile-only (`lg:hidden`), appears only after the user scrolls past 600px (so it doesn't compete with hero CTAs on initial load), uses `translate-y-full` → `translate-y-0` transition for smooth reveal, and uses `client:load` hydration for instant interactivity.
+- [x] Wired into both EN + BN hospital templates with localized labels (`stickyConsultLabel`, `stickyWhatsappLabel`) added to i18n.
+- [x] Exported from organisms barrel.
+- [x] Build verified — sticky bar present in rendered HTML with correct labels, anchors, and mobile-only visibility.
+
+### Discovered During Work
+
+- **PowerShell Bengali encoding:** PowerShell `Set-Content -Encoding UTF8` corrupts Bengali Unicode when the script file is read with the wrong system code page. The `edit` tool (which handles UTF-8 correctly) must be used for Bengali content edits, not PowerShell scripts that embed Bengali string literals.
+- **TASK.md was deleted between sessions:** Restored from git via `git checkout HEAD -- TASK.md` before appending new entries.
+- **Astro JSX cast limitation:** `as Record<string, string>` TypeScript casts inside Astro template JSX expressions cause esbuild parse errors. Use `?? {}` fallback indexing instead: `(t.hospitals.amenityCategories ?? {})[group.category] ?? group.category`.

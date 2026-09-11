@@ -6,5 +6,7 @@
   "quote": "I flew from Lagos for a knee replacement that would have cost four times more in South Africa. The hospital in Bangalore was world-class and the Khan Meditour team met me at the airport and stayed with me through recovery.",
   "image": "https://picsum.photos/seed/chinedu/800/600",
   "brandLabel": "ORTHOPEDICS",
-  "relatedTreatmentSlugs": ["orthopedics-surgery"]
+  "relatedTreatmentSlugs": ["orthopedics-surgery"],
+  "hospitalId": "sparsh-hospital-hennur",
+  "rating": 5
 }

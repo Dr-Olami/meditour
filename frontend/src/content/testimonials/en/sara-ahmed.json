@@ -1,0 +1,12 @@
+{
+  "locale": "en",
+  "name": "Sara Ahmed",
+  "location": "Muscat, Oman",
+  "targetCountry": "oman",
+  "quote": "I travelled from Muscat for cardiac surgery at Fortis Bannerghatta. The JCI-accredited hospital gave me confidence, and the Arabic coordinator arranged everything from visa to halal meals. The care was world-class and the cost was a fraction of what I was quoted in Dubai.",
+  "image": "https://picsum.photos/seed/saraahmed/800/600",
+  "brandLabel": "CARDIAC",
+  "relatedTreatmentSlugs": ["cardiology"],
+  "hospitalId": "fortis-hospital-bannerghatta",
+  "rating": 5
+}

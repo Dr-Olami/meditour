@@ -81,6 +81,12 @@ interface HospitalInput {
   website?: string;
   establishedYear?: number;
   specialities?: string[];
+  /** Aggregate patient rating from verified testimonials. */
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
+    bestRating?: number;
+  };
 }
 
 /**
@@ -104,6 +110,14 @@ export function hospital(data: HospitalInput): WithContext<Record<string, unknow
     ...(data.establishedYear ? { foundingDate: String(data.establishedYear) } : {}),
     ...(data.accreditations?.length ? { accreditation: data.accreditations } : {}),
     ...(data.specialities?.length ? { medicalSpecialty: data.specialities } : {}),
+    ...(data.aggregateRating ? {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: data.aggregateRating.ratingValue,
+        reviewCount: data.aggregateRating.reviewCount,
+        bestRating: data.aggregateRating.bestRating ?? 5,
+      },
+    } : {}),
   });
 }
 
@@ -126,6 +140,56 @@ export function medicalProcedure(data: MedicalProcedureInput): WithContext<Recor
     ...(data.image ? { image: data.image } : {}),
     ...(data.procedureType ? { procedureType: data.procedureType } : {}),
   });
+}
+
+interface ProcedureCostInput {
+  procedure: string;
+  fromPrice: string;
+  toPrice: string;
+  note?: string;
+  href?: string;
+}
+
+interface HospitalProcedureCostsInput {
+  hospitalName: string;
+  hospitalUrl: string;
+  procedures: ProcedureCostInput[];
+}
+
+/**
+ * Build an array of MedicalProcedure JSON-LD objects for the procedure
+ * cost table on a hospital page. Each entry includes the procedure name,
+ * a link to the full cost breakdown page, the hospital as provider, and
+ * an Offer with the USD price range.
+ *
+ * Reason: Google's MedicalProcedure type doesn't have a native cost
+ * field, but `offers` with a price range is the standard way to express
+ * cost in schema.org. This makes the cost data AI-extractable for
+ * answer engines that ask "how much does X cost at Y hospital".
+ */
+export function hospitalProcedureCosts(
+  data: HospitalProcedureCostsInput,
+): WithContext<Record<string, unknown>>[] {
+  return data.procedures.map((proc) =>
+    thing('MedicalProcedure', {
+      name: proc.procedure,
+      ...(proc.href ? { url: proc.href } : {}),
+      provider: thing('Hospital', {
+        name: data.hospitalName,
+        url: data.hospitalUrl,
+      }),
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          minPrice: proc.fromPrice,
+          maxPrice: proc.toPrice,
+          ...(proc.note ? { description: proc.note } : {}),
+        },
+      },
+    }),
+  );
 }
 
 interface BlogPostingInput {

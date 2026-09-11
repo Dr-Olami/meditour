@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Tummy Tuck (Abdominoplasty)"
 seoHeadline: "Tummy Tuck (Abdominoplasty) Cost in India for International Patients"
@@ -52,7 +52,7 @@ risks:
   - "Blood clots (deep vein thrombosis) requiring blood-thinning medication"
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
-  - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-anand-k
   - dr-mayur-r-shetty

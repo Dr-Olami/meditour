@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Total Knee Replacement"
 seoHeadline: "Total Knee Replacement Cost in India for International Patients"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
   - fortis-hospital-bannerghatta
 relatedDoctorSlugs:
   - dr-sharan-shivaraj-patil

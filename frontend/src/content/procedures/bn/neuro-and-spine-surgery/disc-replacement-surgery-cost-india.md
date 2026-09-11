@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "ডিস্ক রিপ্লেসমেন্ট সার্জারি"
 seoHeadline: "ভারতে ডিস্ক রিপ্লেসমেন্ট সার্জারি খরচ, প্রক্রিয়া ও সেরা হাসপাতাল"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-s-vidyadhara

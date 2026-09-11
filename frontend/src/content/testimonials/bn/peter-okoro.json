@@ -1,0 +1,12 @@
+{
+  "locale": "bn",
+  "name": "পিটার ওকোরো",
+  "location": "লাগোস, নাইজেরিয়া",
+  "targetCountry": "nigeria",
+  "quote": "কিডনি ট্রান্সপ্লান্ট দরকার ছিল, মণিপাল হাসপাতালের ট্রান্সপ্লান্ট প্রোগ্রামের নাম শুনে সেখানে যাওয়ার সিদ্ধান্ত নিই। বিদেশি রোগীদের টিম আমার ভিসা, এয়ারপোর্ট পিকআপ, থাকা — সব ব্যবস্থা করে দিল। সার্জারি টিম খুব দক্ষ ছিলেন, আর অপারেশনের পরের যত্নও ছিল খুব ভালো। এত ভালো চিকিৎসা পেয়ে আমি কৃতজ্ঞ।",
+  "image": "https://picsum.photos/seed/peterokoro/800/600",
+  "brandLabel": "ট্রান্সপ্লান্ট",
+  "relatedTreatmentSlugs": ["organ-treatment"],
+  "hospitalId": "manipal-hospital-old-airport-road",
+  "rating": 5
+}

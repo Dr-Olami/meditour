@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "হেয়ার ট্রান্সপ্লান্ট"
 seoHeadline: "ভারতে হেয়ার ট্রান্সপ্লান্ট খরচ, প্রক্রিয়া ও সেরা সার্জন"
@@ -52,6 +52,7 @@ risks:
   - "রিভিশন প্রক্রিয়া প্রয়োজন হওয়া (প্রায় ৫% ক্ষেত্রে)"
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-anand-k
   - dr-prashant-puranik

@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "গ্যাস্ট্রিক স্লিভ সার্জারি"
 seoHeadline: "আন্তর্জাতিক রোগীদের জন্য ভারতে গ্যাস্ট্রিক স্লিভ সার্জারি খরচ"
@@ -54,6 +54,7 @@ risks:
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-sumit-talwar

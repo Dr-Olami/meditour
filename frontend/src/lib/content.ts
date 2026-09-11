@@ -150,6 +150,33 @@ export function getDoctorsAtHospital(
 }
 
 /**
+ * Group doctors by their specialty, returning groups in a stable order.
+ *
+ * Reason: hospital pages render a flat list of doctors which becomes hard to
+ * scan when there are 10+ doctors. Grouping by specialty lets patients jump
+ * to the relevant department. Groups are sorted alphabetically by specialty
+ * name, and doctors within each group are sorted by name.
+ *
+ * @param doctors - Doctor entries (already filtered to one hospital).
+ * @returns Array of `{ specialty, doctors }` groups, alphabetically ordered.
+ */
+export function groupDoctorsBySpecialty<T extends { specialty: string }>(
+  doctors: T[]
+): { specialty: string; doctors: T[] }[] {
+  // Reason: use a Map to preserve insertion order while deduplicating keys,
+  // then sort the final array alphabetically for deterministic output.
+  const groups = new Map<string, T[]>();
+  for (const doctor of doctors) {
+    const spec = doctor.specialty;
+    if (!groups.has(spec)) groups.set(spec, []);
+    groups.get(spec)!.push(doctor);
+  }
+  return Array.from(groups.entries())
+    .map(([specialty, docs]) => ({ specialty, doctors: docs }))
+    .sort((a, b) => a.specialty.localeCompare(b.specialty));
+}
+
+/**
  * Resolve related doctors for a treatment from their slugs.
  */
 export function resolveRelatedDoctors(
@@ -181,6 +208,18 @@ export function resolveRelatedHospitals(
 export async function getTestimonials(locale: string): Promise<TestimonialEntry[]> {
   const all = await getCollection('testimonials');
   return all.filter(byLocale<TestimonialEntry>(locale));
+}
+
+/**
+ * Return testimonials tagged with a specific hospital, sorted by rating (highest first).
+ */
+export function getTestimonialsByHospital(
+  hospitalId: string,
+  testimonials: TestimonialEntry[]
+): TestimonialEntry[] {
+  return testimonials
+    .filter((t) => t.data.hospitalId === hospitalId)
+    .sort((a, b) => (b.data.rating ?? 0) - (a.data.rating ?? 0));
 }
 
 /**
@@ -294,4 +333,123 @@ export async function getTestimonialsForCountryOnly(
 ): Promise<TestimonialEntry[]> {
   const all = await getTestimonials(locale);
   return all.filter((entry) => entry.data.targetCountry === country);
+}
+
+// ─── Similar hospitals ─────────────────────────────────────────────────────
+// Reason: international patients comparing hospitals benefit from cross-links
+// to peer facilities with overlapping specialities. Scoring by shared
+// specialities surfaces the most clinically relevant alternatives.
+
+/**
+ * Return similar hospitals ranked by the number of shared specialities.
+ *
+ * Excludes the current hospital. Ties are broken alphabetically by name so
+ * the output is deterministic across builds.
+ *
+ * @param currentSlug - Slug of the hospital to find peers for.
+ * @param hospitals   - All hospital entries for the same locale.
+ * @param limit       - Maximum number of peers to return (default 3).
+ * @returns Hospital entries sorted by shared-speciality count, descending.
+ */
+export function getSimilarHospitals(
+  currentSlug: string,
+  hospitals: HospitalEntry[],
+  limit = 3
+): HospitalEntry[] {
+  const current = hospitals.find((h) => entrySlug(h) === currentSlug);
+  if (!current || !current.data.specialities) return [];
+
+  const currentSpecialities = new Set(current.data.specialities);
+
+  const scored = hospitals
+    .filter((h) => entrySlug(h) !== currentSlug)
+    .map((h) => {
+      const shared = (h.data.specialities ?? []).filter((s) =>
+        currentSpecialities.has(s)
+      ).length;
+      return { entry: h, shared };
+    })
+    .sort((a, b) => {
+      if (b.shared !== a.shared) return b.shared - a.shared;
+      return a.entry.data.name.localeCompare(b.entry.data.name);
+    });
+
+  // If speciality names overlap (e.g. "Cardiac Sciences" matches across
+  // hospitals), return the top-N by shared count. If naming differs (e.g.
+  // Narayana uses "Adult Cardiology" vs "Cardiac Sciences"), fall back to
+  // all peers — they are all Bangalore hospitals relevant for comparison.
+  const withOverlap = scored.filter(({ shared }) => shared > 0);
+  const pool = withOverlap.length > 0 ? withOverlap : scored;
+
+  return pool.slice(0, limit).map(({ entry }) => entry);
+}
+
+// ─── Related articles for hospital pages ────────────────────────────────────
+// Reason: hospital pages benefit from internal links to country-specific and
+// treatment-specific blog posts. This surfaces relevant guides (e.g. "Medical
+// Tourism from Bangladesh to India") directly on the hospital page, improving
+// content depth, internal linking, and patient decision support.
+
+/**
+ * Return blog posts related to a hospital, ranked by relevance.
+ *
+ * Scoring:
+ * 1. Posts whose `relatedTreatmentSlugs` overlap with the hospital's
+ *    `specialities` (mapped to treatment slugs) — highest relevance.
+ * 2. Posts tagged `targetCountries: global` — relevant to all international
+ *    patients regardless of origin.
+ * 3. All other posts as a fallback so the section always has content.
+ *
+ * Excludes posts in a different locale. Returns up to `limit` posts.
+ *
+ * @param hospitalData - The hospital's data object (entry.data) with
+ *                       specialities, or the full HospitalEntry.
+ * @param posts        - All blog posts for the same locale.
+ * @param limit        - Maximum number of posts to return (default 3).
+ * @returns Blog entries sorted by relevance, newest-first within each tier.
+ */
+export function getRelatedArticles(
+  hospitalData: HospitalEntry | HospitalEntry['data'],
+  posts: BlogEntry[],
+  limit = 3
+): BlogEntry[] {
+  // Reason: templates pass `entry.data` (the data object) as `hospital`, so
+  // we accept either the full entry or just the data. Normalize to data.
+  const data = 'data' in hospitalData ? hospitalData.data : hospitalData;
+
+  // Reason: hospital specialities use display names (e.g. "Cardiac Sciences")
+  // while blog relatedTreatmentSlugs use treatment slugs (e.g. "cardiology").
+  // We do a loose match: lowercase the speciality and check if the slug
+  // contains it or vice-versa. This catches "cardiology" ↔ "Cardiac Sciences".
+  const specialityKeywords = (data.specialities ?? []).map((s) =>
+    s.toLowerCase().split(/[\s/&]+/)[0]
+  );
+
+  const scored = posts.map((post) => {
+    let score = 0;
+    const relatedSlugs = post.data.relatedTreatmentSlugs ?? [];
+    for (const slug of relatedSlugs) {
+      const slugLower = slug.toLowerCase();
+      if (specialityKeywords.some((kw) => slugLower.includes(kw) || kw.includes(slugLower))) {
+        score += 3;
+      }
+    }
+    // Global posts are relevant to all international patients
+    const countries = post.data.targetCountries ?? [];
+    if (countries.includes('global' as never)) {
+      score += 1;
+    }
+    // Reason: newer posts rank higher within the same score tier so the
+    // section surfaces fresh content. publishedAt is a Date; subtract a
+    // small fraction of the timestamp to keep score-based ordering primary.
+    return { entry: post, score };
+  });
+
+  // Sort by score descending, then newest first
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.entry.data.publishedAt.getTime() - a.entry.data.publishedAt.getTime();
+  });
+
+  return scored.slice(0, limit).map(({ entry }) => entry);
 }

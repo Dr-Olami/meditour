@@ -1,4 +1,4 @@
----
+﻿---
 locale: en
 name: "Prostate Cancer Treatment"
 seoHeadline: "Prostate Cancer Treatment Cost in India for International Patients"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-g-girish
   - dr-anil-kamath

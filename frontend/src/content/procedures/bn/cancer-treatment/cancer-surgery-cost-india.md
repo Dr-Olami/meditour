@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "সার্জিক্যাল অনকোলজি (ক্যানসার সার্জারি)"
 seoHeadline: "ভারতে ক্যানসার সার্জারির খরচ — আন্তর্জাতিক রোগীদের জন্য সম্পূর্ণ গাইড"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-anil-kamath

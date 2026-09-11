@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "লিপোসাকশন"
 seoHeadline: "ভারতে লিপোসাকশন খরচ, প্রক্রিয়া ও সেরা কসমেটিক সার্জন"
@@ -52,7 +52,7 @@ risks:
   - "রিভিশন সার্জারি প্রয়োজন হওয়া (প্রায় ৫% ক্ষেত্রে)"
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
-  - fortis-hospital-bannerghatta
+  - manipal-hospital-old-airport-road
 relatedDoctorSlugs:
   - dr-anand-k
   - dr-mayur-r-shetty

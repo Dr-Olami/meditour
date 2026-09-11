@@ -1,4 +1,4 @@
----
+﻿---
 locale: bn
 name: "ব্রেস্ট ক্যানসার চিকিৎসা"
 seoHeadline: "ভারতে ব্রেস্ট ক্যানসার চিকিৎসার খরচ — আন্তর্জাতিক রোগীদের জন্য সম্পূর্ণ গাইড"
@@ -52,6 +52,7 @@ risks:
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
+  - manipal-hospital-old-airport-road
   - sparsh-hospital-hennur
 relatedDoctorSlugs:
   - dr-kanmani-govindrao-telkar

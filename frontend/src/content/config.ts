@@ -57,6 +57,28 @@ const hospitals = defineCollection({
     image: z.string().optional(),
     gallery: z.array(z.string()).optional(),
     amenities: z.array(z.string()).optional(),
+    /** Grouped amenities with optional highlighted features for scannable,
+     *  hospital-specific differentiation. Replaces the flat `amenities` chip
+     *  dump with categorized sub-sections (International Patient Services,
+     *  Clinical Facilities, Patient & Family Comfort) where the top 2-3
+     *  hospital-differentiating amenities get a short one-line description. */
+    structuredAmenities: z.array(
+      z.object({
+        /** Category label key — maps to i18n `hospitals.amenityCategories.{key}`. */
+        category: z.string().min(1),
+        /** Highlighted amenities with a short descriptive line explaining
+         *  why this amenity matters at this specific hospital. Rendered as
+         *  feature cards above the chip cloud for the category. */
+        highlights: z.array(
+          z.object({
+            name: z.string().min(1),
+            description: z.string().min(1),
+          })
+        ).optional(),
+        /** Remaining amenities in this category rendered as chips. */
+        items: z.array(z.string().min(1)).optional(),
+      })
+    ).optional(),
     establishedYear: z.number().int().positive().optional(),
     bedCount: z.number().int().positive().optional(),
     specialities: z.array(z.string()).optional(),
@@ -64,6 +86,40 @@ const hospitals = defineCollection({
     phone: z.string().optional(),
     email: z.string().optional(),
     website: z.string().optional(),
+    /** Google Maps embed URL for the hospital location.
+     *  Format: https://www.google.com/maps?q=<query>&output=embed
+     *  Use the hospital name + city for accurate geocoding. */
+    mapEmbedUrl: z.string().url().optional(),
+    /** Latitude / longitude for static map thumbnail generation.
+     *  Used by the MapEmbed facade to show a real map image without
+     *  loading the full Google Maps iframe. */
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
+    /** Verified volume/outcome metrics rendered as a distinct "By the numbers" box.
+     *  Each entry has a big value, a short label, and an optional qualifier
+     *  (e.g. "as of 2024", "network-wide", "cumulative"). */
+    outcomes: z.array(
+      z.object({
+        value: z.string().min(1),
+        label: z.string().min(1),
+        qualifier: z.string().optional(),
+      })
+    ).optional(),
+    /** Estimated procedure costs for international patients, shown as a
+     *  transparent cost table. Prices are USD ranges and include hospital
+     *  stay, surgeon fees, and standard implants where applicable.
+     *  Actual costs vary by case complexity and individual patient needs. */
+    procedureCosts: z.array(
+      z.object({
+        procedure: z.string().min(1),
+        fromPrice: z.string().min(1),
+        toPrice: z.string().min(1),
+        /** Optional note (e.g. "excluding implants", "per cycle"). */
+        note: z.string().optional(),
+        /** Link to the full procedure cost page. */
+        href: z.string().optional(),
+      })
+    ).optional(),
     faqs: z.array(
       z.object({
         question: z.string().min(1),
@@ -136,6 +192,10 @@ const testimonials = defineCollection({
     videoDuration: z.string().optional(),
     brandLabel: z.string().optional(),
     relatedTreatmentSlugs: z.array(z.string()).optional(),
+    /** Hospital slug to associate the testimonial with a specific hospital page. */
+    hospitalId: z.string().optional(),
+    /** Patient star rating 1-5, used for AggregateRating JSON-LD and review cards. */
+    rating: z.number().min(1).max(5).optional(),
   }),
 });
 
