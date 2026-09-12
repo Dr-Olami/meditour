@@ -101,8 +101,8 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                 // selects a treatment and views an estimate.
                 if (e.target.value && typeof window !== 'undefined') {
                   const treatment = treatments.find((t) => t.slug === e.target.value);
-                  (window as any).dataLayer = (window as any).dataLayer || [];
-                  (window as any).dataLayer.push({
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
                     event: 'cost_calculator_complete',
                     treatment_name: treatment?.name || e.target.value,
                     treatment_slug: e.target.value,

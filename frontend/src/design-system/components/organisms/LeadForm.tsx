@@ -142,8 +142,8 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
         // Reason: push to dataLayer so GTM can fire the form_submit
         // conversion event when a lead is successfully submitted.
         if (typeof window !== 'undefined') {
-          (window as any).dataLayer = (window as any).dataLayer || [];
-          (window as any).dataLayer.push({
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
             event: 'form_submit',
             form_source: source || 'general-contact',
           });
