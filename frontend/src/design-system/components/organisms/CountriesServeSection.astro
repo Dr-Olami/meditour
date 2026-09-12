@@ -29,7 +29,7 @@ interface Props {
 }
 
 const { locale, countries, countriesHref } = Astro.props;
-const t = getTranslations(locale);
+const _t = getTranslations(locale);
 
 // Reason: cap at 30 flags for a clean 5×6 grid; the directory page lists all.
 // Interleave African countries into the first two columns so the grid

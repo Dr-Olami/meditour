@@ -17,7 +17,7 @@ const locale = 'en';
 const t = getTranslations(locale);
 
 const whatsappInquiryHref = getInquiryLink();
-const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const _whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
 
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
 const pageUrl = `${siteUrl}/how-it-works`;

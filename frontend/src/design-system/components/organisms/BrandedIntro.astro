@@ -148,7 +148,7 @@ const wipeMs = INTRO_TIMINGS.wipe;
     var seen = false;
     try {
       seen = window.sessionStorage.getItem(storageKey) === '1';
-    } catch (e) {
+    } catch (_e) {
       // Reason: sessionStorage can throw in private mode / sandboxed iframes.
       seen = false;
     }
@@ -162,7 +162,7 @@ const wipeMs = INTRO_TIMINGS.wipe;
 
     try {
       window.sessionStorage.setItem(storageKey, '1');
-    } catch (e) {
+    } catch (_e) {
       // Reason: best-effort persist; failing must never block the page.
     }
 

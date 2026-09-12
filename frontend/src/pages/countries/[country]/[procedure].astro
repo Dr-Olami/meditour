@@ -27,7 +27,7 @@ import {
 import { medicalWebPage, faqPage, breadcrumbs } from '../../../lib/schema';
 import { getProcedureInquiryLink } from '../../../lib/whatsapp';
 import { generateProcedureCountryFaqs } from '../../../lib/procedure-country-faq';
-import { convertUsdToLocal, formatWithLocal } from '../../../lib/currency';
+import { convertUsdToLocal } from '../../../lib/currency';
 import { getCategoryHue } from '../../../lib/treatment-categories';
 import type { Doctor } from '../../../design-system/components/organisms/DoctorCard';
 import { LEAD_SOURCE } from '../../../lib/crm';
@@ -35,7 +35,6 @@ import {
   getCountryMetadata,
   getAllCountrySlugs,
   getFlagUrl,
-  ALL_COUNTRIES,
 } from '../../../data/countries';
 import { hasBnCountryPage } from '../../../data/countries/bn';
 import { getTopCountryProcedureLinks } from '../../../lib/country-procedure-links';
@@ -142,7 +141,7 @@ const {
   related,
   relatedHospitals,
   relatedProcedures,
-  entry,
+  entry: _entry,
 } = Astro.props;
 
 const countryData = getCountryMetadata(countrySlug);
@@ -311,7 +310,7 @@ const relatedProcCountryLinks = relatedProcedures.map((rp) => ({
 }));
 
 // ─── Hue for category styling ───────────────────────────────────────────────
-const hue = getCategoryHue(parentTreatment?.category);
+const _hue = getCategoryHue(parentTreatment?.category);
 
 // ─── BN alternate ───────────────────────────────────────────────────────────
 const bnAlternate = hasBnCountryPage(countrySlug);

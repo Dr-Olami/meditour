@@ -41,7 +41,7 @@ export function generateProcedureCountryFaqs(
   country: CountryMetadata,
 ): FAQItem[] {
   const faqs: FAQItem[] = [];
-  const { name, nationality, currency, visaType, visaProcessingTime, majorCities, flightTime } =
+  const { name: _name, nationality, currency, visaType, visaProcessingTime, majorCities, flightTime } =
     country;
 
   // 1. Cost question — procedure + country specific (highest search intent)

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { generateCountryFaqs, mergeCountryFaqs } from '../../src/lib/country-faq-generator';
 import { getCountryMetadata, ALL_COUNTRIES } from '../../src/data/countries';
-import type { CountryMetadata, CountryFAQItem } from '../../src/data/countries';
+import type { CountryFAQItem } from '../../src/data/countries';
 
 // Use a real country for realistic interpolation testing.
 const bangladesh = getCountryMetadata('bangladesh')!;

@@ -142,7 +142,7 @@ const {
   related,
   relatedHospitals,
   relatedProcedures,
-  entry,
+  entry: _entry,
 } = Astro.props;
 
 const countryData = getBnCountryMetadata(countrySlug);
@@ -298,7 +298,7 @@ const relatedProcCountryLinks = relatedProcedures.map((rp) => ({
 }));
 
 // ─── Hue for category styling ───────────────────────────────────────────────
-const hue = getCategoryHue(parentTreatment?.category);
+const _hue = getCategoryHue(parentTreatment?.category);
 
 // ─── Doctor type mapping ────────────────────────────────────────────────────
 const doctorCards: Doctor[] = related.map((d) => ({

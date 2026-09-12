@@ -16,7 +16,12 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             set -e
+            export PATH="/usr/local/bin:/usr/bin:/bin:$HOME/.nvm/versions/node/*/bin:$PATH"
+            source ~/.bashrc 2>/dev/null || true
+            source ~/.profile 2>/dev/null || true
             echo "=== Deploying khanmeditour.com ==="
+            echo "Node: $(which node)"
+            echo "npm: $(which npm)"
             cd /home/Meditour/src/meditour/frontend
             echo "1. Pulling latest code..."
             git pull origin main

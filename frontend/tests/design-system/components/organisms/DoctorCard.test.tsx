@@ -61,7 +61,7 @@ describe('DoctorCard', () => {
   });
 
   it('omits the WhatsApp CTA when whatsappHref is missing', () => {
-    const { whatsappHref, ...doctor } = DOCTOR;
+    const { whatsappHref: _whatsappHref, ...doctor } = DOCTOR;
     render(<DoctorCard doctor={doctor} />);
     expect(screen.queryByRole('link', { name: /whatsapp/i })).not.toBeInTheDocument();
   });

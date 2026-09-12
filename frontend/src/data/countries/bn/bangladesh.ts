@@ -1,5 +1,5 @@
 import type { CountryMetadata } from '../types';
-import { baseTreatmentCosts, standardVisaSteps, withLocalCurrency } from '../shared';
+import { baseTreatmentCosts, withLocalCurrency } from '../shared';
 
 // Reason: parallel Bengali country data file (per user's chosen content model).
 // Only Bangladesh has a Bengali translation; other countries remain English-only

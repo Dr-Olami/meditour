@@ -1,5 +1,5 @@
 import type { CountryMetadata } from './types';
-import { baseTreatmentCosts, standardVisaSteps, visaOnArrivalSteps } from './shared';
+import { baseTreatmentCosts, standardVisaSteps } from './shared';
 
 // ─── United States ───────────────────────────────────────────────────────────
 

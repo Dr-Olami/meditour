@@ -64,7 +64,7 @@ export async function getStaticPaths() {
 }
 
 const t = getTranslations('en');
-const { treatment, related, relatedHospitals, entry, heroImage } = Astro.props;
+const { treatment, related, relatedHospitals, entry, heroImage: _heroImage } = Astro.props;
 const { Content } = await entry.render();
 const slug = entrySlug(entry);
 

@@ -140,7 +140,7 @@ const testimonials = testimonialEntries.map((entry) => ({
   brandLabel: entry.data.brandLabel,
 }));
 
-const treatmentOptions = treatmentEntries.map((entry) => ({
+const _treatmentOptions = treatmentEntries.map((entry) => ({
   value: entry.data.name,
   label: entry.data.name,
 }));
@@ -649,7 +649,7 @@ const jsonLd = [
             {blogPosts.map((post) => (
               <article class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
                 <h3 class="font-display text-lg font-semibold text-ink">
-                  <a href={post.href}">
+                  <a href={post.href}>
                     {post.title}
                   </a>
                 </h3>
