@@ -38,8 +38,8 @@ const whatsappNumber =
     : '8801611892986';
 const contactEmail =
   typeof import.meta !== 'undefined' && import.meta.env
-    ? import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
-    : 'khan@meditour.com';
+    ? import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmeditour.com'
+    : 'contact@khanmeditour.com';
 
 /**
  * Build a default inquiry message from optional pre-fill context.

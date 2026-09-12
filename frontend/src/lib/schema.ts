@@ -12,6 +12,7 @@ function thing<T extends Record<string, unknown>>(
 interface SiteIdentity {
   name: string;
   url: string;
+  description?: string;
   whatsapp?: string;
   email?: string;
   specialties?: string[];
@@ -28,6 +29,7 @@ export function medicalBusiness(site: SiteIdentity): WithContext<Record<string, 
   return thing('MedicalBusiness', {
     name: site.name,
     url: site.url,
+    ...(site.description ? { description: site.description } : {}),
     ...(site.whatsapp ? { telephone: site.whatsapp } : {}),
     ...(site.email ? { email: site.email } : {}),
     ...(site.specialties?.length ? { medicalSpecialty: site.specialties } : {}),

@@ -52,6 +52,19 @@ const fallbackSchema = medicalBusiness({
   name: siteName,
   url: siteUrl,
   description,
+  whatsapp: import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986',
+  email: import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmeditour.com',
+  // Reason: listing core specialties helps Google understand the business
+  // scope and reduces "field missing" warnings in GSC Enhancements.
+  specialties: [
+    'Cardiology',
+    'Oncology',
+    'Orthopedics',
+    'Neurology',
+    'Nephrology',
+    'Bariatric Surgery',
+    'Infertility Treatment',
+  ],
 });
 const schemaPayloads = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [fallbackSchema];
 ---

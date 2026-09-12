@@ -206,7 +206,7 @@
         "accreditationQ": "Are the hospitals JCI-accredited?",
         "accreditationA": "Yes, our partner hospitals hold JCI and NABH accreditations, ensuring they meet international healthcare quality standards.",
         "bookingQ": "How can I book {{treatment}} through Khan Meditour?",
-        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. Share your medical reports, and we will provide a free consultation, treatment plan, and cost estimate within 24-48 hours."
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email contact@khanmeditour.com. Share your medical reports, and we will provide a free consultation, treatment plan, and cost estimate within 24-48 hours."
       },
       "doctor": {
         "specialtyQ": "What conditions does Dr. {{name}} treat?",
@@ -220,7 +220,7 @@
         "languagesQ": "What languages does Dr. {{name}} speak?",
         "languagesA": "Dr. {{name}} speaks {{languages}}.",
         "bookingQ": "How can I book a consultation with Dr. {{name}}?",
-        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. We will arrange a consultation with Dr. {{name}} at your preferred hospital."
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email contact@khanmeditour.com. We will arrange a consultation with Dr. {{name}} at your preferred hospital."
       },
       "hospital": {
         "accreditationQ": "What accreditations does {{hospital}} have?",
@@ -237,7 +237,7 @@
         "internationalYesA": "Yes, {{hospital}} has a dedicated international patient desk offering visa assistance, airport pickup, interpreter services, and other support for international patients.",
         "internationalNoA": "Yes, {{hospital}} welcomes international patients. Contact us via WhatsApp at +8801611892986 for assistance with your visit.",
         "bookingQ": "How can I book an appointment at {{hospital}} through Khan Meditour?",
-        "bookingA": "Contact us via WhatsApp at +8801611892986 or email khan@meditour.com. We will coordinate your appointment and treatment at {{hospital}}."
+        "bookingA": "Contact us via WhatsApp at +8801611892986 or email contact@khanmeditour.com. We will coordinate your appointment and treatment at {{hospital}}."
       }
     }
   },

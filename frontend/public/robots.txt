@@ -1,6 +1,6 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Allow: /bn/
 Disallow: /api/
 
-Sitemap: https://khanmeditour.com/sitemap-0.xml
+Sitemap: https://khanmeditour.com/sitemap-index.xml

@@ -27,6 +27,20 @@ export default defineConfig({
       configFile: './tailwind.config.ts',
     }),
     mdx(),
+    // Reason: official integration auto-generates sitemap-index.xml + sitemap-0.xml
+    // with hreflang alternates from the i18n config. Replaces the custom
+    // scripts/generate-sitemap.mjs which lacked hreflang annotations.
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          bn: 'bn-BD',
+        },
+      },
+      // Reason: exclude API routes and any non-content paths from the sitemap.
+      filter: (page) => !page.includes('/api/'),
+    }),
   ],
   i18n: {
     locales: ['en', 'bn'],

@@ -22,12 +22,26 @@ describe('schema.org helpers', () => {
       name: 'Khan Meditour',
       url: 'https://example.com',
       whatsapp: '+8801611892986',
-      email: 'khan@meditour.com',
+      email: 'contact@khanmeditour.com',
       specialties: ['Cardiology'],
     });
     expect(json.telephone).toBe('+8801611892986');
-    expect(json.email).toBe('khan@meditour.com');
+    expect(json.email).toBe('contact@khanmeditour.com');
     expect(json.medicalSpecialty).toEqual(['Cardiology']);
+  });
+
+  it('medicalBusiness includes description when provided', () => {
+    const json = medicalBusiness({
+      name: 'Khan Meditour',
+      url: 'https://example.com',
+      description: 'Medical tourism facilitator for India.',
+    });
+    expect(json.description).toBe('Medical tourism facilitator for India.');
+  });
+
+  it('medicalBusiness omits description when not provided', () => {
+    const json = medicalBusiness({ name: 'Khan Meditour', url: 'https://example.com' });
+    expect(json).not.toHaveProperty('description');
   });
 
   it('physician includes worksFor hospital', () => {

@@ -2,7 +2,7 @@
 
 > Company: Khan Meditour
 > WhatsApp: +8801611892986
-> Email: khan@meditour.com
+> Email: contact@khanmeditour.com
 
 ## UI Polish — 2026-08-26 — IN PROGRESS
 
