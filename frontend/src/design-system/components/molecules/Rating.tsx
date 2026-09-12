@@ -33,10 +33,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
               fill={filled ? 'currentColor' : 'none'}
               stroke="currentColor"
               strokeWidth={2}
-              className={cn(
-                'text-secondary-500',
-                !filled && 'text-border-strong'
-              )}
+              className={cn('text-secondary-500', !filled && 'text-border-strong')}
             >
               <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a.53.53 0 0 0 .4.293l5.164.753c.46.067.643.632.31.957l-3.735 3.64a.53.53 0 0 0-.152.472l.882 5.14a.53.53 0 0 1-.77.56l-4.618-2.428a.53.53 0 0 0-.493 0L6.95 20.146a.53.53 0 0 1-.77-.56l.881-5.139a.53.53 0 0 0-.152-.472l-3.735-3.64a.53.53 0 0 1 .31-.957l5.164-.753a.53.53 0 0 0 .4-.293z" />
             </svg>

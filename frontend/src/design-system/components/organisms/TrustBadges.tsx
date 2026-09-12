@@ -6,8 +6,7 @@ export interface Badge {
   value?: string;
 }
 
-export interface TrustBadgesProps
-  extends React.HTMLAttributes<HTMLUListElement> {
+export interface TrustBadgesProps extends React.HTMLAttributes<HTMLUListElement> {
   badges: Badge[];
 }
 
@@ -17,22 +16,13 @@ export interface TrustBadgesProps
 const TrustBadges = React.forwardRef<HTMLUListElement, TrustBadgesProps>(
   ({ className, badges, ...props }, ref) => {
     return (
-      <ul
-        className={cn(
-          'grid grid-cols-2 gap-4 md:grid-cols-4',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
+      <ul className={cn('grid grid-cols-2 gap-4 md:grid-cols-4', className)} ref={ref} {...props}>
         {badges.map((badge) => (
           <li
             key={badge.label}
             className="rounded-lg border border-border-default bg-bg-subtle p-4 text-center"
           >
-            {badge.value && (
-              <p className="text-2xl font-bold text-ink">{badge.value}</p>
-            )}
+            {badge.value && <p className="text-2xl font-bold text-ink">{badge.value}</p>}
             <p className="text-sm font-medium text-text-secondary">{badge.label}</p>
           </li>
         ))}

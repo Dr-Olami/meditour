@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Asthma Treatment"
-seoHeadline: "Asthma Treatment Cost in India for International Patients"
+name: 'Asthma Treatment'
+seoHeadline: 'Asthma Treatment Cost in India for International Patients'
 parentTreatmentSlug: pulmonology-lung-care
-summary: "Comprehensive asthma treatment in India costs between $500 and $3,000, offering savings of up to 80% compared to Western countries. The treatment programme includes diagnostic workup, personalised medication management, inhaler technique training, trigger identification, and pulmonary rehabilitation to achieve long-term asthma control."
-description: "Asthma Treatment in India from $500–$3,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert pulmonologists."
-fromPrice: "$500"
-toPrice: "$3,000"
-duration: "1-2 weeks"
-hospitalStay: "Outpatient"
-recoveryTime: "2-4 weeks"
+summary: 'Comprehensive asthma treatment in India costs between $500 and $3,000, offering savings of up to 80% compared to Western countries. The treatment programme includes diagnostic workup, personalised medication management, inhaler technique training, trigger identification, and pulmonary rehabilitation to achieve long-term asthma control.'
+description: 'Asthma Treatment in India from $500–$3,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert pulmonologists.'
+fromPrice: '$500'
+toPrice: '$3,000'
+duration: '1-2 weeks'
+hospitalStay: 'Outpatient'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Confirmed diagnosis of asthma or recurrent wheezing episodes requiring specialist evaluation"
-  - "Poorly controlled asthma despite current medication regimen with frequent exacerbations"
-  - "Severe or steroid-dependent asthma needing biologic therapy assessment"
-  - "Occupational or allergic asthma requiring comprehensive trigger identification"
-  - "Patients with asthma-COPD overlap syndrome needing tailored management"
+  - 'Confirmed diagnosis of asthma or recurrent wheezing episodes requiring specialist evaluation'
+  - 'Poorly controlled asthma despite current medication regimen with frequent exacerbations'
+  - 'Severe or steroid-dependent asthma needing biologic therapy assessment'
+  - 'Occupational or allergic asthma requiring comprehensive trigger identification'
+  - 'Patients with asthma-COPD overlap syndrome needing tailored management'
 costInclusions:
-  - "Pulmonologist consultations and specialist fees"
-  - "Comprehensive pulmonary function testing (spirometry, reversibility, FeNO)"
-  - "Allergy testing and trigger identification panel"
-  - "Medications (inhalers, controllers, relievers, biologics where indicated)"
-  - "Inhaler technique training and personalised asthma action plan"
-  - "Pulmonary rehabilitation sessions"
-  - "Airport pickup and drop"
+  - 'Pulmonologist consultations and specialist fees'
+  - 'Comprehensive pulmonary function testing (spirometry, reversibility, FeNO)'
+  - 'Allergy testing and trigger identification panel'
+  - 'Medications (inhalers, controllers, relievers, biologics where indicated)'
+  - 'Inhaler technique training and personalised asthma action plan'
+  - 'Pulmonary rehabilitation sessions'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital visits"
-  - "Long-term medication refills after returning home"
-  - "Personal expenses and meals for attendants"
-  - "Treatment of unrelated medical conditions discovered during workup"
+  - 'International flights'
+  - 'Accommodation outside hospital visits'
+  - 'Long-term medication refills after returning home'
+  - 'Personal expenses and meals for attendants'
+  - 'Treatment of unrelated medical conditions discovered during workup'
 recoveryTimeline:
-  - phase: "Diagnostic workup"
-    duration: "2-3 days"
-    description: "Comprehensive pulmonary function testing, allergy panel, and specialist consultation to confirm asthma phenotype and severity."
-  - phase: "Treatment initiation"
-    duration: "3-5 days"
-    description: "Personalised medication regimen started, inhaler technique training, and asthma action plan developed with the pulmonology team."
-  - phase: "Stabilisation"
-    duration: "1-2 weeks"
-    description: "Monitoring of symptom response, medication titration, and pulmonary rehabilitation sessions to optimise lung function."
-  - phase: "Long-term control"
-    duration: "Ongoing"
-    description: "Maintenance therapy continued at home with regular follow-up, trigger avoidance, and adherence to the personalised asthma action plan."
+  - phase: 'Diagnostic workup'
+    duration: '2-3 days'
+    description: 'Comprehensive pulmonary function testing, allergy panel, and specialist consultation to confirm asthma phenotype and severity.'
+  - phase: 'Treatment initiation'
+    duration: '3-5 days'
+    description: 'Personalised medication regimen started, inhaler technique training, and asthma action plan developed with the pulmonology team.'
+  - phase: 'Stabilisation'
+    duration: '1-2 weeks'
+    description: 'Monitoring of symptom response, medication titration, and pulmonary rehabilitation sessions to optimise lung function.'
+  - phase: 'Long-term control'
+    duration: 'Ongoing'
+    description: 'Maintenance therapy continued at home with regular follow-up, trigger avoidance, and adherence to the personalised asthma action plan.'
 risks:
-  - "Medication side effects such as oral thrush from inhaled corticosteroids or tremors from beta-agonists"
-  - "Acute asthma exacerbation requiring emergency treatment despite optimised therapy"
-  - "Reduced effectiveness of reliever medication over time with over-reliance"
-  - "Corticosteroid-related complications with long-term systemic use"
-  - "Anaphylaxis or severe allergic reaction during allergy testing or biologic therapy"
+  - 'Medication side effects such as oral thrush from inhaled corticosteroids or tremors from beta-agonists'
+  - 'Acute asthma exacerbation requiring emergency treatment despite optimised therapy'
+  - 'Reduced effectiveness of reliever medication over time with over-reliance'
+  - 'Corticosteroid-related complications with long-term systemic use'
+  - 'Anaphylaxis or severe allergic reaction during allergy testing or biologic therapy'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -56,14 +56,14 @@ relatedHospitalSlugs:
 relatedDoctorSlugs: []
 
 relatedProcedureSlugs:
-  - "copd-treatment-cost-india"
+  - 'copd-treatment-cost-india'
 faqs:
-  - question: "Can asthma be completely cured with treatment in India?"
-    answer: "Asthma cannot be completely cured, but it can be very effectively controlled with the right treatment plan. Most patients achieve full symptom control and normal lung function with proper medication, inhaler technique, and trigger avoidance. The goal of treatment is to minimise symptoms, prevent exacerbations, and allow you to lead a completely normal, active life."
-  - question: "Will I need to take inhalers for the rest of my life?"
-    answer: "Many patients with persistent asthma require long-term controller inhalers, typically inhaled corticosteroids, to keep inflammation under control. However, the dosage and type of medication may be stepped down over time if your asthma remains well-controlled for several months. Some patients with mild intermittent asthma may only need reliever medication during flare-ups. Your pulmonologist will regularly review and adjust your treatment."
-  - question: "Are biologic therapies for severe asthma available in India?"
-    answer: "Yes, biologic therapies such as omalizumab, mepolizumab, and dupilumab are available at leading Bangalore hospitals for patients with severe eosinophilic or allergic asthma that does not respond to standard therapy. These targeted treatments can dramatically reduce exacerbations and steroid dependence. Your pulmonologist will assess your eligibility based on blood tests and clinical criteria."
+  - question: 'Can asthma be completely cured with treatment in India?'
+    answer: 'Asthma cannot be completely cured, but it can be very effectively controlled with the right treatment plan. Most patients achieve full symptom control and normal lung function with proper medication, inhaler technique, and trigger avoidance. The goal of treatment is to minimise symptoms, prevent exacerbations, and allow you to lead a completely normal, active life.'
+  - question: 'Will I need to take inhalers for the rest of my life?'
+    answer: 'Many patients with persistent asthma require long-term controller inhalers, typically inhaled corticosteroids, to keep inflammation under control. However, the dosage and type of medication may be stepped down over time if your asthma remains well-controlled for several months. Some patients with mild intermittent asthma may only need reliever medication during flare-ups. Your pulmonologist will regularly review and adjust your treatment.'
+  - question: 'Are biologic therapies for severe asthma available in India?'
+    answer: 'Yes, biologic therapies such as omalizumab, mepolizumab, and dupilumab are available at leading Bangalore hospitals for patients with severe eosinophilic or allergic asthma that does not respond to standard therapy. These targeted treatments can dramatically reduce exacerbations and steroid dependence. Your pulmonologist will assess your eligibility based on blood tests and clinical criteria.'
 ---
 
 ## Overview
@@ -140,13 +140,13 @@ If your diagnosis is uncertain—particularly if symptoms are more consistent wi
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $500 – $3,000 | Baseline |
-| USA | $3,000 – $12,000 | ~5x higher |
-| UK | £1,500 – £6,000 | ~3.5x higher |
-| Singapore | $2,500 – $8,000 | ~3x higher |
-| Thailand | $1,500 – $5,000 | ~1.8x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $500 – $3,000    | Baseline     |
+| USA               | $3,000 – $12,000 | ~5x higher   |
+| UK                | £1,500 – £6,000  | ~3.5x higher |
+| Singapore         | $2,500 – $8,000  | ~3x higher   |
+| Thailand          | $1,500 – $5,000  | ~1.8x higher |
 
 The price range within India reflects the complexity of your asthma, the extent of diagnostic testing required, whether biologic therapies are indicated, and the specific hospital and pulmonologist you choose. Even if you require advanced biologic therapy for severe asthma, your total cost in Bangalore will typically be a fraction of the US price. These savings come from favourable exchange rates and lower operational costs—not from any compromise in medication quality or clinical expertise.
 

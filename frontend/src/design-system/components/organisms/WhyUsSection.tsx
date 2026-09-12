@@ -13,8 +13,7 @@ export interface WhyUsItem {
   video?: string;
 }
 
-export interface WhyUsSectionProps
-  extends React.HTMLAttributes<HTMLElement> {
+export interface WhyUsSectionProps extends React.HTMLAttributes<HTMLElement> {
   /** Section heading rendered above the grid. */
   title: string;
   /** Exactly 5 items expected: first 3 form the top row, last 2 the bottom row. */
@@ -56,7 +55,7 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-card shadow-base h-[460px] md:h-[520px]"
+      className="group relative h-[460px] overflow-hidden rounded-card shadow-base md:h-[520px]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -66,7 +65,7 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
       {item.video ? (
         <video
           ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover transition-all duration-300 ease-out-expo group-hover:blur-[8px] group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-all duration-300 ease-out-expo group-hover:scale-105 group-hover:blur-[8px]"
           src={item.video}
           muted
           loop
@@ -76,7 +75,7 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
         />
       ) : (
         <img
-          className="absolute inset-0 h-full w-full object-cover transition-all duration-300 ease-out-expo group-hover:blur-[8px] group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-all duration-300 ease-out-expo group-hover:scale-105 group-hover:blur-[8px]"
           src={item.image}
           alt={item.title}
           loading="lazy"
@@ -88,7 +87,7 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
 
       {/* Constant dark overlay — does NOT change on hover.
           Reason: keeps white text readable over the image at all times. */}
-      <div className="absolute inset-0 bg-ink/40" aria-hidden="true" />
+      <div className="bg-ink/40 absolute inset-0" aria-hidden="true" />
 
       {/* Content — centered title (visible by default, disappears on hover) +
           description (hidden by default, appears instantly on hover). */}
@@ -225,14 +224,14 @@ const WhyUsSection = React.forwardRef<HTMLElement, WhyUsSectionProps>(
               scrollbar is shown on mobile via the `why-us-carousel` class. */}
           <div
             ref={carouselRef}
-            className="why-us-carousel mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-6 md:gap-6 md:overflow-visible md:snap-none md:pb-0"
+            className="why-us-carousel mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:snap-none md:grid-cols-6 md:gap-6 md:overflow-visible md:pb-0"
             data-anim="stagger-cards"
           >
             {topItems.map((item) => (
               <div
                 key={item.title}
                 data-card
-                className="shrink-0 snap-center w-[85%] md:w-auto md:shrink md:col-span-2"
+                className="w-[85%] shrink-0 snap-center md:col-span-2 md:w-auto md:shrink"
               >
                 <WhyUsCard item={item} />
               </div>
@@ -241,7 +240,7 @@ const WhyUsSection = React.forwardRef<HTMLElement, WhyUsSectionProps>(
               <div
                 key={item.title}
                 data-card
-                className="shrink-0 snap-center w-[85%] md:w-auto md:shrink md:col-span-3"
+                className="w-[85%] shrink-0 snap-center md:col-span-3 md:w-auto md:shrink"
               >
                 <WhyUsCard item={item} />
               </div>
@@ -274,9 +273,7 @@ const WhyUsSection = React.forwardRef<HTMLElement, WhyUsSectionProps>(
                 disabled={!canScrollLeft}
                 className={cn(
                   'p-2 transition-colors',
-                  canScrollLeft
-                    ? 'text-ink hover:text-ink/70'
-                    : 'pointer-events-none text-ink/40'
+                  canScrollLeft ? 'hover:text-ink/70 text-ink' : 'text-ink/40 pointer-events-none'
                 )}
               >
                 <Icon name="arrow-left" size={20} />
@@ -288,9 +285,7 @@ const WhyUsSection = React.forwardRef<HTMLElement, WhyUsSectionProps>(
                 disabled={!canScrollRight}
                 className={cn(
                   'p-2 transition-colors',
-                  canScrollRight
-                    ? 'text-ink hover:text-ink/70'
-                    : 'pointer-events-none text-ink/40'
+                  canScrollRight ? 'hover:text-ink/70 text-ink' : 'text-ink/40 pointer-events-none'
                 )}
               >
                 <Icon name="arrow-right" size={20} />

@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Hernia Repair Surgery"
-seoHeadline: "Hernia Repair Surgery Cost in India for International Patients"
+name: 'Hernia Repair Surgery'
+seoHeadline: 'Hernia Repair Surgery Cost in India for International Patients'
 parentTreatmentSlug: gastroenterology-gi-surgery
-summary: "Hernia repair surgery in India costs between $2,000 and $6,000, delivering savings of up to 85% compared to Western countries. The procedure reinforces the weakened abdominal wall with surgical mesh to resolve pain and prevent serious complications like strangulation."
-description: "Hernia repair surgery in India from $2,000–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices with laparoscopic and open techniques."
-fromPrice: "$2,000"
-toPrice: "$6,000"
-duration: "1-2 weeks"
-hospitalStay: "1-3 days"
-recoveryTime: "2-4 weeks"
+summary: 'Hernia repair surgery in India costs between $2,000 and $6,000, delivering savings of up to 85% compared to Western countries. The procedure reinforces the weakened abdominal wall with surgical mesh to resolve pain and prevent serious complications like strangulation.'
+description: 'Hernia repair surgery in India from $2,000–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices with laparoscopic and open techniques.'
+fromPrice: '$2,000'
+toPrice: '$6,000'
+duration: '1-2 weeks'
+hospitalStay: '1-3 days'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Visible or palpable bulge in the groin, umbilical region, or at a previous surgical incision site"
-  - "Pain or discomfort that worsens with lifting, coughing, or prolonged standing"
-  - "Inguinal, femoral, umbilical, incisional, or hiatal hernias confirmed on clinical examination or imaging"
-  - "Recurrent hernia after a previous repair requiring revision surgery"
-  - "General fitness for general anaesthesia and surgical repair"
+  - 'Visible or palpable bulge in the groin, umbilical region, or at a previous surgical incision site'
+  - 'Pain or discomfort that worsens with lifting, coughing, or prolonged standing'
+  - 'Inguinal, femoral, umbilical, incisional, or hiatal hernias confirmed on clinical examination or imaging'
+  - 'Recurrent hernia after a previous repair requiring revision surgery'
+  - 'General fitness for general anaesthesia and surgical repair'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Surgical mesh and fixation devices"
-  - "Pre-operative diagnostics (blood tests, ultrasound, CT)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Surgical mesh and fixation devices'
+  - 'Pre-operative diagnostics (blood tests, ultrasound, CT)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge medications"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge medications'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-3 days"
-    description: "Post-operative monitoring, pain management, and early mobilisation; laparoscopic patients are often walking the same evening and discharged within 24-48 hours."
-  - phase: "Bangalore recovery"
-    duration: "3-5 days"
-    description: "Wound review, gradual return to normal diet, light walking, and a follow-up assessment to confirm the repair is healing well before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 1-2"
+  - phase: 'Hospital stay'
+    duration: '1-3 days'
+    description: 'Post-operative monitoring, pain management, and early mobilisation; laparoscopic patients are often walking the same evening and discharged within 24-48 hours.'
+  - phase: 'Bangalore recovery'
+    duration: '3-5 days'
+    description: 'Wound review, gradual return to normal diet, light walking, and a follow-up assessment to confirm the repair is healing well before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 1-2'
     description: "Resume light daily activities, avoid heavy lifting and straining, and follow your surgeon's guidance on wound care and pain management."
-  - phase: "Full recovery"
-    duration: "2-4 weeks"
-    description: "Most patients return to work and normal activities within 2-4 weeks after laparoscopic repair; heavy lifting and strenuous exercise are avoided for 4-6 weeks."
+  - phase: 'Full recovery'
+    duration: '2-4 weeks'
+    description: 'Most patients return to work and normal activities within 2-4 weeks after laparoscopic repair; heavy lifting and strenuous exercise are avoided for 4-6 weeks.'
 risks:
-  - "Recurrence of the hernia, more common with larger hernias and open repair techniques"
-  - "Chronic post-herniorrhaphy pain affecting the groin or surgical site in a small percentage of patients"
-  - "Infection at the incision site or around the mesh requiring antibiotics or, rarely, mesh removal"
-  - "Bleeding or haematoma formation at the surgical site requiring drainage"
-  - "Seroma (fluid collection) at the repair site, usually self-limiting but occasionally requiring aspiration"
+  - 'Recurrence of the hernia, more common with larger hernias and open repair techniques'
+  - 'Chronic post-herniorrhaphy pain affecting the groin or surgical site in a small percentage of patients'
+  - 'Infection at the incision site or around the mesh requiring antibiotics or, rarely, mesh removal'
+  - 'Bleeding or haematoma formation at the surgical site requiring drainage'
+  - 'Seroma (fluid collection) at the repair site, usually self-limiting but occasionally requiring aspiration'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,15 +58,15 @@ relatedDoctorSlugs:
   - dr-jayanth-reddy
 
 relatedProcedureSlugs:
-  - "gallbladder-removal-cost-india"
-  - "bariatric-surgery-cost-india"
+  - 'gallbladder-removal-cost-india'
+  - 'bariatric-surgery-cost-india'
 faqs:
-  - question: "Is hernia repair done laparoscopically or open?"
-    answer: "Both approaches are available, and the choice depends on the type, size, and location of your hernia as well as your overall health. Laparoscopic (keyhole) repair is preferred for most inguinal and umbilical hernias because it involves smaller incisions, less pain, and a faster recovery. Open surgery may be recommended for very large hernias, complex recurrent hernias, or when you cannot tolerate general anaesthesia. Your surgeon will recommend the best approach after reviewing your scans."
-  - question: "Will I need surgical mesh, and is it safe?"
-    answer: "Yes, surgical mesh is used in the vast majority of hernia repairs because it significantly reduces the risk of recurrence compared to stitching the tissue alone. Modern mesh is made of biocompatible synthetic or biological material and is designed to integrate permanently with your tissues. Mesh-related complications are uncommon, and the benefits of using mesh far outweigh the risks for most patients."
-  - question: "When can I fly home after hernia surgery?"
-    answer: "Most international patients are cleared to fly 5-7 days after uncomplicated laparoscopic hernia repair, once wound healing is satisfactory and a fitness-to-fly certificate is issued. Your surgeon will confirm you are eating well, pain is controlled, and there are no signs of complications before clearing you to travel. For open or complex repairs, a slightly longer stay may be advised."
+  - question: 'Is hernia repair done laparoscopically or open?'
+    answer: 'Both approaches are available, and the choice depends on the type, size, and location of your hernia as well as your overall health. Laparoscopic (keyhole) repair is preferred for most inguinal and umbilical hernias because it involves smaller incisions, less pain, and a faster recovery. Open surgery may be recommended for very large hernias, complex recurrent hernias, or when you cannot tolerate general anaesthesia. Your surgeon will recommend the best approach after reviewing your scans.'
+  - question: 'Will I need surgical mesh, and is it safe?'
+    answer: 'Yes, surgical mesh is used in the vast majority of hernia repairs because it significantly reduces the risk of recurrence compared to stitching the tissue alone. Modern mesh is made of biocompatible synthetic or biological material and is designed to integrate permanently with your tissues. Mesh-related complications are uncommon, and the benefits of using mesh far outweigh the risks for most patients.'
+  - question: 'When can I fly home after hernia surgery?'
+    answer: 'Most international patients are cleared to fly 5-7 days after uncomplicated laparoscopic hernia repair, once wound healing is satisfactory and a fitness-to-fly certificate is issued. Your surgeon will confirm you are eating well, pain is controlled, and there are no signs of complications before clearing you to travel. For open or complex repairs, a slightly longer stay may be advised.'
 ---
 
 ## Overview
@@ -153,13 +153,13 @@ For **hiatal hernias** causing acid reflux, medication (proton pump inhibitors) 
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $6,000 | Baseline |
-| USA | $9,000 – $20,000 | ~4.0x higher |
-| UK | £4,000 – £9,000 | ~2.5x higher |
-| Singapore | $7,000 – $14,000 | ~2.6x higher |
-| Thailand | $5,000 – $10,000 | ~1.8x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $2,000 – $6,000  | Baseline     |
+| USA               | $9,000 – $20,000 | ~4.0x higher |
+| UK                | £4,000 – £9,000  | ~2.5x higher |
+| Singapore         | $7,000 – $14,000 | ~2.6x higher |
+| Thailand          | $5,000 – $10,000 | ~1.8x higher |
 
 If you are looking at these numbers and wondering whether the lower cost means lower quality, the answer is no. Bangalore's accredited hospitals use the same laparoscopic equipment, surgical mesh, and safety protocols as top hospitals in the US and UK. Many surgeons here have trained at prestigious international institutions. The cost difference comes down to favourable exchange rates, lower staff and infrastructure costs, and the high volume of procedures performed.
 

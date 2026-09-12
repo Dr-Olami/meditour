@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Disc Replacement Surgery"
-seoHeadline: "Disc Replacement Surgery Cost in India for International Patients"
+name: 'Disc Replacement Surgery'
+seoHeadline: 'Disc Replacement Surgery Cost in India for International Patients'
 parentTreatmentSlug: neuro-and-spine-surgery
 summary: "Disc replacement surgery in India costs between $4,000 and $12,000, offering international patients an advanced motion-preserving alternative to spinal fusion for degenerative disc disease. Bangalore's leading spine hospitals provide cervical and lumbar artificial disc replacement using FDA-approved implants, performed by highly experienced spine surgeons at a fraction of Western costs."
-description: "Affordable disc replacement surgery in India starting at $4,000. Compare costs, recovery timeline, and top spine hospitals in Bangalore for international patients."
-fromPrice: "$4,000"
-toPrice: "$12,000"
-duration: "2-3 weeks"
-hospitalStay: "3-7 days"
-recoveryTime: "6-12 weeks"
+description: 'Affordable disc replacement surgery in India starting at $4,000. Compare costs, recovery timeline, and top spine hospitals in Bangalore for international patients.'
+fromPrice: '$4,000'
+toPrice: '$12,000'
+duration: '2-3 weeks'
+hospitalStay: '3-7 days'
+recoveryTime: '6-12 weeks'
 eligibility:
-  - "Symptomatic degenerative disc disease confirmed on MRI with single or two-level involvement"
-  - "Failure of at least 6 months of conservative treatment including physiotherapy and pain management"
-  - "No significant facet joint arthritis, spinal stenosis, or instability at the affected level"
-  - "Healthy bone quality and no prior fusion at the same spinal segment"
-  - "BMI within a range that supports surgical success and implant longevity"
+  - 'Symptomatic degenerative disc disease confirmed on MRI with single or two-level involvement'
+  - 'Failure of at least 6 months of conservative treatment including physiotherapy and pain management'
+  - 'No significant facet joint arthritis, spinal stenosis, or instability at the affected level'
+  - 'Healthy bone quality and no prior fusion at the same spinal segment'
+  - 'BMI within a range that supports surgical success and implant longevity'
 costInclusions:
-  - "Neurosurgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants and hardware (where applicable — screws, cages, DBS device)"
-  - "Pre-operative diagnostics (MRI, CT, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Neurosurgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants and hardware (where applicable — screws, cages, DBS device)'
+  - 'Pre-operative diagnostics (MRI, CT, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy/neuro-rehab post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy/neuro-rehab post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-7 days"
-    description: "Pain management, early mobilisation without a brace, wound care, and neurological monitoring in the spinal ward."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Supervised physiotherapy focusing on core stability and range of motion, wound review, and follow-up imaging to confirm implant position."
-  - phase: "Return home"
-    duration: "Week 2-3"
-    description: "Gradual return to daily activities with avoidance of heavy lifting and twisting, continuing a structured home exercise programme."
-  - phase: "Full recovery"
-    duration: "6-12 weeks"
-    description: "Return to full activity including sport, with confirmed integration of the artificial disc and restored spinal mobility."
+  - phase: 'Hospital stay'
+    duration: '3-7 days'
+    description: 'Pain management, early mobilisation without a brace, wound care, and neurological monitoring in the spinal ward.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Supervised physiotherapy focusing on core stability and range of motion, wound review, and follow-up imaging to confirm implant position.'
+  - phase: 'Return home'
+    duration: 'Week 2-3'
+    description: 'Gradual return to daily activities with avoidance of heavy lifting and twisting, continuing a structured home exercise programme.'
+  - phase: 'Full recovery'
+    duration: '6-12 weeks'
+    description: 'Return to full activity including sport, with confirmed integration of the artificial disc and restored spinal mobility.'
 risks:
-  - "Implant migration or subsidence requiring revision surgery"
-  - "Heterotopic ossification causing spontaneous fusion and loss of motion"
-  - "Nerve or spinal cord injury causing weakness or sensory changes"
-  - "Infection at the surgical site or deep spinal infection"
-  - "Wear or failure of the artificial disc over time requiring replacement"
+  - 'Implant migration or subsidence requiring revision surgery'
+  - 'Heterotopic ossification causing spontaneous fusion and loss of motion'
+  - 'Nerve or spinal cord injury causing weakness or sensory changes'
+  - 'Infection at the surgical site or deep spinal infection'
+  - 'Wear or failure of the artificial disc over time requiring replacement'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
@@ -59,16 +59,17 @@ relatedDoctorSlugs:
   - dr-murali-mohan
 
 relatedProcedureSlugs:
-  - "spinal-fusion-surgery-cost-india"
-  - "brain-tumor-surgery-cost-india"
+  - 'spinal-fusion-surgery-cost-india'
+  - 'brain-tumor-surgery-cost-india'
 faqs:
-  - question: "How much does disc replacement surgery cost in India?"
-    answer: "Disc replacement surgery in India costs between $4,000 and $12,000 depending on the spinal level (cervical or lumbar), number of discs replaced, and the specific implant used. This is up to 90% cheaper than in the USA."
-  - question: "What is the difference between disc replacement and spinal fusion?"
-    answer: "Disc replacement preserves motion at the treated level using an artificial disc, while spinal fusion permanently joins the vertebrae. Disc replacement reduces stress on adjacent segments and may lower the risk of future degeneration."
-  - question: "How long is the hospital stay after disc replacement?"
-    answer: "Most patients stay in hospital for 3-7 days after disc replacement surgery. Early mobilisation is encouraged, and patients are typically walking within 24 hours of the procedure."
+  - question: 'How much does disc replacement surgery cost in India?'
+    answer: 'Disc replacement surgery in India costs between $4,000 and $12,000 depending on the spinal level (cervical or lumbar), number of discs replaced, and the specific implant used. This is up to 90% cheaper than in the USA.'
+  - question: 'What is the difference between disc replacement and spinal fusion?'
+    answer: 'Disc replacement preserves motion at the treated level using an artificial disc, while spinal fusion permanently joins the vertebrae. Disc replacement reduces stress on adjacent segments and may lower the risk of future degeneration.'
+  - question: 'How long is the hospital stay after disc replacement?'
+    answer: 'Most patients stay in hospital for 3-7 days after disc replacement surgery. Early mobilisation is encouraged, and patients are typically walking within 24 hours of the procedure.'
 ---
+
 ## Overview
 
 If you've been living with persistent neck or back pain that radiates into your arms or legs, makes it difficult to work, sleep, or enjoy everyday activities, and hasn't improved after months of physiotherapy, painkillers, and injections, you may be wondering whether spine surgery is your next option. Disc replacement surgery could be the answer — and it offers something spinal fusion cannot: it preserves your natural spinal movement.
@@ -150,15 +151,16 @@ Before deciding on disc replacement, make sure you've explored all reasonable no
 Spinal fusion is the traditional surgical alternative and remains the preferred option if you have significant spinal instability, facet joint arthritis, spinal stenosis, or multilevel disease that makes disc replacement unsuitable. Fusion permanently joins the affected vertebrae together and is highly effective for pain relief, though it does carry a higher risk of adjacent segment degeneration over time.
 
 If you're not fit for surgery or prefer to avoid it, pain management programmes combining medications, injections, and rehabilitation can provide sustained symptom control. Khan Meditour can arrange consultations with the spine team in Bangalore to discuss all your available options.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $4,000 – $12,000 | Baseline |
-| USA | $40,000 – $120,000 | ~10x higher |
-| UK | £15,000 – £40,000 | ~10x higher |
-| Singapore | $15,000 – $35,000 | ~3.1x higher |
-| Thailand | $6,000 – $16,000 | ~1.4x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $4,000 – $12,000   | Baseline     |
+| USA               | $40,000 – $120,000 | ~10x higher  |
+| UK                | £15,000 – £40,000  | ~10x higher  |
+| Singapore         | $15,000 – $35,000  | ~3.1x higher |
+| Thailand          | $6,000 – $16,000   | ~1.4x higher |
 
 You might be wondering: if the surgery is so much cheaper in India, is the quality lower? The answer is no. The cost difference comes down to lower operating costs, lower staff salaries, and a favourable exchange rate — not lower standards. You'll receive the same FDA-approved implants, treated by surgeons with international training, in hospitals with JCI accreditation.
 

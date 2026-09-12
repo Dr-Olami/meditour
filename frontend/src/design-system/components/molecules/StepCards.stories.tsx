@@ -2,11 +2,27 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StepCards } from './StepCards';
 
 const STEPS = [
-  { title: 'Consultation', description: 'Initial assessment with the specialist to review your medical history and treatment options.' },
-  { title: 'Pre-operative tests', description: 'Blood work, imaging, and cardiac clearance to ensure surgical readiness.' },
-  { title: 'Surgery', description: 'The procedure is performed under general anaesthesia by your surgical team.' },
-  { title: 'Recovery', description: 'Post-operative monitoring in the ICU followed by ward transfer.' },
-  { title: 'Discharge', description: 'Final consultation, discharge summary, and follow-up schedule.' },
+  {
+    title: 'Consultation',
+    description:
+      'Initial assessment with the specialist to review your medical history and treatment options.',
+  },
+  {
+    title: 'Pre-operative tests',
+    description: 'Blood work, imaging, and cardiac clearance to ensure surgical readiness.',
+  },
+  {
+    title: 'Surgery',
+    description: 'The procedure is performed under general anaesthesia by your surgical team.',
+  },
+  {
+    title: 'Recovery',
+    description: 'Post-operative monitoring in the ICU followed by ward transfer.',
+  },
+  {
+    title: 'Discharge',
+    description: 'Final consultation, discharge summary, and follow-up schedule.',
+  },
   { title: 'Follow-up', description: 'Telemedicine review at 2 weeks and 6 weeks post-discharge.' },
 ];
 

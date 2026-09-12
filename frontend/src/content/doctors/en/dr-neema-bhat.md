@@ -14,15 +14,15 @@ languages:
   - Tamil
   - Telugu
 faqs:
-  - question: "Who is Dr. Neema Bhat?"
-    answer: "Dr. Neema Bhat is a highly qualified Haemato Oncologist based in Bangalore, Karnataka, with over 10 years of experience. She holds MBBS, MD from the United States, and FAAP designation. She is Board Certified in Hematology/Pediatric Oncology by the American Board and specializes in stem cell transplantation, blood disorders, and paediatric oncology. She has directed a major Thalassemia transplant program."
-  - question: "Why do patients choose Dr. Neema Bhat?"
-    answer: "Patients choose Dr. Neema Bhat for her expertise in haemato oncology and bone marrow transplantation, her US training and board certifications, and her patient-centric approach. She is fluent in five languages (English, Hindi, Kannada, Tamil, Telugu) and has held leadership roles including Program Director and HOD of BMT Unit at Bhagawan Mahaveer Jain Hospital and Consultant Hematologist at Fortis Hospitals and BGS Gleneagles Global Hospitals."
+  - question: 'Who is Dr. Neema Bhat?'
+    answer: 'Dr. Neema Bhat is a highly qualified Haemato Oncologist based in Bangalore, Karnataka, with over 10 years of experience. She holds MBBS, MD from the United States, and FAAP designation. She is Board Certified in Hematology/Pediatric Oncology by the American Board and specializes in stem cell transplantation, blood disorders, and paediatric oncology. She has directed a major Thalassemia transplant program.'
+  - question: 'Why do patients choose Dr. Neema Bhat?'
+    answer: 'Patients choose Dr. Neema Bhat for her expertise in haemato oncology and bone marrow transplantation, her US training and board certifications, and her patient-centric approach. She is fluent in five languages (English, Hindi, Kannada, Tamil, Telugu) and has held leadership roles including Program Director and HOD of BMT Unit at Bhagawan Mahaveer Jain Hospital and Consultant Hematologist at Fortis Hospitals and BGS Gleneagles Global Hospitals.'
   - question: "What are Dr. Neema Bhat's medical qualifications?"
-    answer: "Dr. Neema Bhat holds MBBS, MD from the United States, and FAAP (Fellow of the American Academy of Pediatrics). She is Board Certified in Hematology/Pediatric Oncology (American Board, 2019), Board Certified in General Pediatrics (American Board of Pediatrics, 2015), and holds ECFMG certification (2010) and Medical Council of India certification (2017)."
-  - question: "What conditions does Dr. Neema Bhat treat?"
-    answer: "Dr. Neema Bhat treats a wide range of blood disorders and cancers including acute myeloid leukemia, chronic myeloid leukemia, aplastic anemia, thalassemia, Burkitt lymphoma, hemophilia, blood cancer, polycythemia vera, hemolytic anemia, sideroblastic anemia, paroxysmal nocturnal hemoglobinuria, hereditary spherocytosis, chronic granulomatous disease, Bernard Soulier syndrome, Glanzmann thrombasthenia, and Hermansky Pudlak syndrome."
-  - question: "How can I book an appointment with Dr. Neema Bhat?"
+    answer: 'Dr. Neema Bhat holds MBBS, MD from the United States, and FAAP (Fellow of the American Academy of Pediatrics). She is Board Certified in Hematology/Pediatric Oncology (American Board, 2019), Board Certified in General Pediatrics (American Board of Pediatrics, 2015), and holds ECFMG certification (2010) and Medical Council of India certification (2017).'
+  - question: 'What conditions does Dr. Neema Bhat treat?'
+    answer: 'Dr. Neema Bhat treats a wide range of blood disorders and cancers including acute myeloid leukemia, chronic myeloid leukemia, aplastic anemia, thalassemia, Burkitt lymphoma, hemophilia, blood cancer, polycythemia vera, hemolytic anemia, sideroblastic anemia, paroxysmal nocturnal hemoglobinuria, hereditary spherocytosis, chronic granulomatous disease, Bernard Soulier syndrome, Glanzmann thrombasthenia, and Hermansky Pudlak syndrome.'
+  - question: 'How can I book an appointment with Dr. Neema Bhat?'
     answer: "You can book an appointment with Dr. Neema Bhat at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on her profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 
@@ -89,7 +89,7 @@ Additionally, she received a Gold Medal in Physiology from Sri Devaraj Urs Medic
 
 ## Research & Publications
 
-- Neema Bhat and Lisa McGregor (2017). "Neuroblastoma: The Clinical Aspects," in *Neuroblastoma — Current State and Recent Updates*, Dr. Chandrika Gowda (Ed.), InTech. DOI: 10.5772/intechopen.70486.
+- Neema Bhat and Lisa McGregor (2017). "Neuroblastoma: The Clinical Aspects," in _Neuroblastoma — Current State and Recent Updates_, Dr. Chandrika Gowda (Ed.), InTech. DOI: 10.5772/intechopen.70486.
 
 ## Memberships
 

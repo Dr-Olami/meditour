@@ -19,10 +19,7 @@ export interface FormFieldProps extends React.HTMLAttributes<HTMLDivElement> {
  * Wrapper that composes a label, input-like control, hint and error text.
  */
 const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
-  (
-    { className, label, name, required, error, hint, children, ...props },
-    ref
-  ) => {
+  ({ className, label, name, required, error, hint, children, ...props }, ref) => {
     return (
       <div className={cn('space-y-1', className)} ref={ref} {...props}>
         <Label htmlFor={name} required={required}>
@@ -137,12 +134,7 @@ const FormCheckbox = React.forwardRef<HTMLInputElement, FormCheckboxProps>(
   ({ checkboxProps, error, ...fieldProps }, ref) => {
     return (
       <FormField error={error} {...fieldProps}>
-        <Checkbox
-          id={fieldProps.name}
-          name={fieldProps.name}
-          ref={ref}
-          {...checkboxProps}
-        />
+        <Checkbox id={fieldProps.name} name={fieldProps.name} ref={ref} {...checkboxProps} />
       </FormField>
     );
   }

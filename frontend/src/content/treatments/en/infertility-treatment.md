@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Infertility Treatment
-seoHeadline: "Fertility Treatments & IVF in India for International Patients"
+seoHeadline: 'Fertility Treatments & IVF in India for International Patients'
 category: Fertility
 description: Compassionate, high-success IVF, ICSI, egg freezing and donor programmes with transparent pricing and emotional support.
 fromPrice: '$3,500'
@@ -24,55 +24,55 @@ hospitalStay: 'Day-care'
 recoveryTime: '1-2 weeks'
 image: /images/treatments-cards/ivf-fertility.webp
 faqs:
-  - question: "What is the success rate of IVF per cycle?"
-    answer: "IVF success rates at our partner hospitals are 50-65% per cycle for women under 35, declining with age. Success depends on factors including female age, ovarian reserve, cause of infertility, and embryo quality. The programmes use time-lapse embryo monitoring and endometrial receptivity analysis (ERA) to optimise transfer timing and improve outcomes."
-  - question: "Is egg freezing available for cancer patients?"
-    answer: "Yes, egg freezing (oocyte cryopreservation) is available for cancer patients facing fertility-threatening treatment. The fertility team coordinates with oncologists for expedited ovarian stimulation before chemotherapy or radiation. Vitrification technique ensures high survival rates upon thawing. Embryo freezing and ovarian tissue cryopreservation are also available."
-  - question: "Is preimplantation genetic testing (PGT) available?"
-    answer: "Yes, preimplantation genetic testing is available including PGT-A for chromosomal aneuploidy screening, PGT-M for specific single gene disorders such as thalassaemia and cystic fibrosis, and PGT-SR for structural rearrangements. Genetic counselling is provided as part of the PGT programme to help patients understand testing options and results."
-summary: "Infertility treatment in Bangalore offers IVF, ICSI, egg freezing, donor programmes and preimplantation genetic testing at JCI-accredited hospitals with success rates of 50-65% per cycle for women under 35. Costs range from $3,500 to $7,000, offering 60-70% savings compared to Western countries."
+  - question: 'What is the success rate of IVF per cycle?'
+    answer: 'IVF success rates at our partner hospitals are 50-65% per cycle for women under 35, declining with age. Success depends on factors including female age, ovarian reserve, cause of infertility, and embryo quality. The programmes use time-lapse embryo monitoring and endometrial receptivity analysis (ERA) to optimise transfer timing and improve outcomes.'
+  - question: 'Is egg freezing available for cancer patients?'
+    answer: 'Yes, egg freezing (oocyte cryopreservation) is available for cancer patients facing fertility-threatening treatment. The fertility team coordinates with oncologists for expedited ovarian stimulation before chemotherapy or radiation. Vitrification technique ensures high survival rates upon thawing. Embryo freezing and ovarian tissue cryopreservation are also available.'
+  - question: 'Is preimplantation genetic testing (PGT) available?'
+    answer: 'Yes, preimplantation genetic testing is available including PGT-A for chromosomal aneuploidy screening, PGT-M for specific single gene disorders such as thalassaemia and cystic fibrosis, and PGT-SR for structural rearrangements. Genetic counselling is provided as part of the PGT programme to help patients understand testing options and results.'
+summary: 'Infertility treatment in Bangalore offers IVF, ICSI, egg freezing, donor programmes and preimplantation genetic testing at JCI-accredited hospitals with success rates of 50-65% per cycle for women under 35. Costs range from $3,500 to $7,000, offering 60-70% savings compared to Western countries.'
 eligibility:
-  - "Confirmed or suspected infertility requiring assisted reproductive technology"
-  - "Female partner under 45 years with adequate ovarian reserve (or eligible for donor programme)"
-  - "No contraindications to ovarian stimulation or pregnancy"
-  - "Recent fertility evaluation (hormone profile, ultrasound, semen analysis) available for review"
-  - "Ability to stay in Bangalore for 2-6 weeks per treatment cycle"
+  - 'Confirmed or suspected infertility requiring assisted reproductive technology'
+  - 'Female partner under 45 years with adequate ovarian reserve (or eligible for donor programme)'
+  - 'No contraindications to ovarian stimulation or pregnancy'
+  - 'Recent fertility evaluation (hormone profile, ultrasound, semen analysis) available for review'
+  - 'Ability to stay in Bangalore for 2-6 weeks per treatment cycle'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "Day-care"
-    description: "Egg retrieval and embryo transfer performed as day-care procedures with same-day discharge and minimal recovery time"
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Ovarian stimulation monitoring, embryo transfer, and initial pregnancy test with follow-up consultations"
-  - phase: "Return home"
-    duration: "Week 1-2"
-    description: "Continued medication support, pregnancy monitoring, and teleconsultation for early pregnancy care"
-  - phase: "Full recovery"
-    duration: "1-2 weeks"
-    description: "Confirmation of pregnancy status and transition to routine antenatal care or planning for subsequent cycles"
+  - phase: 'Hospital stay'
+    duration: 'Day-care'
+    description: 'Egg retrieval and embryo transfer performed as day-care procedures with same-day discharge and minimal recovery time'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Ovarian stimulation monitoring, embryo transfer, and initial pregnancy test with follow-up consultations'
+  - phase: 'Return home'
+    duration: 'Week 1-2'
+    description: 'Continued medication support, pregnancy monitoring, and teleconsultation for early pregnancy care'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks'
+    description: 'Confirmation of pregnancy status and transition to routine antenatal care or planning for subsequent cycles'
 risks:
-  - "Ovarian hyperstimulation syndrome (OHSS) from stimulation medications"
-  - "Multiple pregnancy (twins or higher-order) increasing pregnancy complications"
-  - "Ectopic pregnancy or miscarriage after embryo transfer"
-  - "Ovarian torsion or bleeding following egg retrieval"
-  - "Cycle cancellation due to poor ovarian response or fertilisation failure"
+  - 'Ovarian hyperstimulation syndrome (OHSS) from stimulation medications'
+  - 'Multiple pregnancy (twins or higher-order) increasing pregnancy complications'
+  - 'Ectopic pregnancy or miscarriage after embryo transfer'
+  - 'Ovarian torsion or bleeding following egg retrieval'
+  - 'Cycle cancellation due to poor ovarian response or fertilisation failure'
 relatedTreatmentSlugs:
-  - "cancer-treatment"
-  - "hematology-bone-marrow"
+  - 'cancer-treatment'
+  - 'hematology-bone-marrow'
 ---
 
 ## Overview
@@ -135,13 +135,13 @@ Cryopreservation of excess embryos for future use. Allows multiple transfer atte
 
 ## Cost Comparison
 
-| Country | Approximate Cost (IVF / Fertility Treatment) | vs India |
-|---------|-----------------------------------------------|----------|
-| India (Bangalore) | $3,500 – $7,000 | Baseline |
-| USA | $12,000 – $25,000 | ~3.5× higher |
-| UK | £8,000 – £15,000 | ~2.2× higher |
-| Singapore | $10,000 – $18,000 | ~2.7× higher |
-| Thailand | $6,000 – $12,000 | ~1.7× higher |
+| Country           | Approximate Cost (IVF / Fertility Treatment) | vs India     |
+| ----------------- | -------------------------------------------- | ------------ |
+| India (Bangalore) | $3,500 – $7,000                              | Baseline     |
+| USA               | $12,000 – $25,000                            | ~3.5× higher |
+| UK                | £8,000 – £15,000                             | ~2.2× higher |
+| Singapore         | $10,000 – $18,000                            | ~2.7× higher |
+| Thailand          | $6,000 – $12,000                             | ~1.7× higher |
 
 ## Why Choose Bangalore for Fertility Treatment?
 

@@ -12,15 +12,15 @@ languages:
   - Hindi
   - Kannada
 faqs:
-  - question: "Who is Dr. Manohar T?"
-    answer: "Dr. Manohar T is a distinguished Urologist based in Bengaluru, Karnataka, with 24 years of extensive experience in urology. He holds MBBS, MS, DNB in Surgery, DNB in Urology, a fellowship in Endourology & Laparoscopy, and is a Robotic Surgery Fellow. He is the Chief Urologist and Director of the Institute of Renal Sciences (AIRS), with over 17,000 kidney stone surgeries, 30,000+ laser prostate treatments, 500 kidney transplants, and 89,000+ cancer-related surgeries to his credit."
-  - question: "Why do patients choose Dr. Manohar T?"
-    answer: "Patients choose Dr. Manohar T for his 24+ years of experience and his expertise in laser, laparoscopic, and robotic surgical techniques. He has performed over 17,000 surgeries for kidney stones, 30,000+ laser prostate treatments, 500 kidney transplants, and 89,000+ cancer-related surgeries. He has published over 250 articles and received prestigious awards including the Aryabhata International Award (2011), Best Urologist in Bengaluru (Times Media, 2016), and Karnataka Media Research Award (2017)."
+  - question: 'Who is Dr. Manohar T?'
+    answer: 'Dr. Manohar T is a distinguished Urologist based in Bengaluru, Karnataka, with 24 years of extensive experience in urology. He holds MBBS, MS, DNB in Surgery, DNB in Urology, a fellowship in Endourology & Laparoscopy, and is a Robotic Surgery Fellow. He is the Chief Urologist and Director of the Institute of Renal Sciences (AIRS), with over 17,000 kidney stone surgeries, 30,000+ laser prostate treatments, 500 kidney transplants, and 89,000+ cancer-related surgeries to his credit.'
+  - question: 'Why do patients choose Dr. Manohar T?'
+    answer: 'Patients choose Dr. Manohar T for his 24+ years of experience and his expertise in laser, laparoscopic, and robotic surgical techniques. He has performed over 17,000 surgeries for kidney stones, 30,000+ laser prostate treatments, 500 kidney transplants, and 89,000+ cancer-related surgeries. He has published over 250 articles and received prestigious awards including the Aryabhata International Award (2011), Best Urologist in Bengaluru (Times Media, 2016), and Karnataka Media Research Award (2017).'
   - question: "What are Dr. Manohar T's medical qualifications?"
-    answer: "Dr. Manohar T holds MBBS, MS, DNB in Surgery, DNB in Urology, a fellowship in Endourology & Laparoscopy, and is a Robotic Surgery Fellow. He is recognized globally as a key opinion leader in laser applications in urology."
-  - question: "What procedures does Dr. Manohar T perform?"
-    answer: "Dr. Manohar T performs laser, laparoscopic, and robotic surgeries for a wide range of urological conditions including kidney stones, prostate conditions, kidney transplants, and uro-oncology cases. His expertise includes pyeloplasty, pyelolithotomy, lithotripsy, augmentation cystoplasty, endourology, pelvic lymph node dissection, and treatment of haematuria."
-  - question: "How can I book an appointment with Dr. Manohar T?"
+    answer: 'Dr. Manohar T holds MBBS, MS, DNB in Surgery, DNB in Urology, a fellowship in Endourology & Laparoscopy, and is a Robotic Surgery Fellow. He is recognized globally as a key opinion leader in laser applications in urology.'
+  - question: 'What procedures does Dr. Manohar T perform?'
+    answer: 'Dr. Manohar T performs laser, laparoscopic, and robotic surgeries for a wide range of urological conditions including kidney stones, prostate conditions, kidney transplants, and uro-oncology cases. His expertise includes pyeloplasty, pyelolithotomy, lithotripsy, augmentation cystoplasty, endourology, pelvic lymph node dissection, and treatment of haematuria.'
+  - question: 'How can I book an appointment with Dr. Manohar T?'
     answer: "You can book an appointment with Dr. Manohar T at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

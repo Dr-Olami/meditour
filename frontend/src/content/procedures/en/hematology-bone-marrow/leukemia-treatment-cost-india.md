@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Leukemia Treatment"
-seoHeadline: "Leukemia Treatment Cost in India for International Patients"
+name: 'Leukemia Treatment'
+seoHeadline: 'Leukemia Treatment Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Leukemia treatment in India costs between $8,000 and $35,000, covering chemotherapy, targeted therapy and supportive care at leading Bangalore cancer centres. International patients access evidence-based protocols with high remission rates at a fraction of Western costs."
-description: "Affordable leukemia treatment in India from $8,000–$35,000 at accredited Bangalore hospitals. Compare costs, protocols and recovery."
-fromPrice: "$8,000"
-toPrice: "$35,000"
-duration: "4-12 months"
-hospitalStay: "2-6 weeks per cycle"
-recoveryTime: "6-24 months"
+summary: 'Leukemia treatment in India costs between $8,000 and $35,000, covering chemotherapy, targeted therapy and supportive care at leading Bangalore cancer centres. International patients access evidence-based protocols with high remission rates at a fraction of Western costs.'
+description: 'Affordable leukemia treatment in India from $8,000–$35,000 at accredited Bangalore hospitals. Compare costs, protocols and recovery.'
+fromPrice: '$8,000'
+toPrice: '$35,000'
+duration: '4-12 months'
+hospitalStay: '2-6 weeks per cycle'
+recoveryTime: '6-24 months'
 eligibility:
-  - "Patients with confirmed acute or chronic leukaemia (AML, ALL, CML or CLL)"
-  - "Adequate organ function to tolerate chemotherapy or targeted agents"
-  - "No active uncontrolled infection at the start of induction"
-  - "Suitable performance status (ECOG 0–3) for the planned regimen"
-  - "Realistic expectation of the multi-cycle, long-duration treatment pathway"
+  - 'Patients with confirmed acute or chronic leukaemia (AML, ALL, CML or CLL)'
+  - 'Adequate organ function to tolerate chemotherapy or targeted agents'
+  - 'No active uncontrolled infection at the start of induction'
+  - 'Suitable performance status (ECOG 0–3) for the planned regimen'
+  - 'Realistic expectation of the multi-cycle, long-duration treatment pathway'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-6 weeks per cycle"
-    description: "Induction or consolidation chemotherapy with close monitoring for cytopenias, infections and transfusion support as needed."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Outpatient monitoring of blood counts between cycles, management of side effects and planning of subsequent consolidation or maintenance therapy."
-  - phase: "Return home"
-    duration: "Week 8-16"
-    description: "Transition to maintenance therapy or local haematology follow-up with periodic return visits to Bangalore for reassessment."
-  - phase: "Full recovery"
-    duration: "6-24 months"
-    description: "Sustained remission with ongoing surveillance bone marrows, immune reconstitution and gradual return to normal life."
+  - phase: 'Hospital stay'
+    duration: '2-6 weeks per cycle'
+    description: 'Induction or consolidation chemotherapy with close monitoring for cytopenias, infections and transfusion support as needed.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Outpatient monitoring of blood counts between cycles, management of side effects and planning of subsequent consolidation or maintenance therapy.'
+  - phase: 'Return home'
+    duration: 'Week 8-16'
+    description: 'Transition to maintenance therapy or local haematology follow-up with periodic return visits to Bangalore for reassessment.'
+  - phase: 'Full recovery'
+    duration: '6-24 months'
+    description: 'Sustained remission with ongoing surveillance bone marrows, immune reconstitution and gradual return to normal life.'
 risks:
-  - "Severe neutropenic infections during induction"
-  - "Bleeding complications from thrombocytopenia"
-  - "Chemotherapy-related organ toxicity (cardiac, renal, hepatic)"
-  - "Disease relapse requiring salvage therapy or transplant"
-  - "Long-term effects including secondary malignancies and infertility"
+  - 'Severe neutropenic infections during induction'
+  - 'Bleeding complications from thrombocytopenia'
+  - 'Chemotherapy-related organ toxicity (cardiac, renal, hepatic)'
+  - 'Disease relapse requiring salvage therapy or transplant'
+  - 'Long-term effects including secondary malignancies and infertility'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - sparsh-hospital-hennur
@@ -61,16 +61,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "bone-marrow-transplant-cost-india"
-  - "car-t-cell-therapy-cost-india"
+  - 'bone-marrow-transplant-cost-india'
+  - 'car-t-cell-therapy-cost-india'
 faqs:
-  - question: "How much does leukemia treatment cost in India?"
-    answer: "Leukemia treatment in India costs between $8,000 and $35,000 depending on the subtype, number of chemotherapy cycles required and whether a stem cell transplant is needed as part of the cure."
-  - question: "Which leukaemia subtypes are treated in Bangalore hospitals?"
-    answer: "Bangalore cancer centres treat all major subtypes including acute myeloid leukaemia (AML), acute lymphoblastic leukaemia (ALL), chronic myeloid leukaemia (CML) and chronic lymphocytic leukaemia (CLL) using international protocols."
-  - question: "Do I need to stay in India for the entire treatment duration?"
-    answer: "Not necessarily. Many patients complete induction in Bangalore and return home for maintenance or consolidation under local haematology supervision, returning periodically for reassessment or transplant."
+  - question: 'How much does leukemia treatment cost in India?'
+    answer: 'Leukemia treatment in India costs between $8,000 and $35,000 depending on the subtype, number of chemotherapy cycles required and whether a stem cell transplant is needed as part of the cure.'
+  - question: 'Which leukaemia subtypes are treated in Bangalore hospitals?'
+    answer: 'Bangalore cancer centres treat all major subtypes including acute myeloid leukaemia (AML), acute lymphoblastic leukaemia (ALL), chronic myeloid leukaemia (CML) and chronic lymphocytic leukaemia (CLL) using international protocols.'
+  - question: 'Do I need to stay in India for the entire treatment duration?'
+    answer: 'Not necessarily. Many patients complete induction in Bangalore and return home for maintenance or consolidation under local haematology supervision, returning periodically for reassessment or transplant.'
 ---
+
 ## Overview
 
 If you or someone you love has just been told the word "leukaemia," you are probably feeling overwhelmed, frightened and full of questions. That is completely natural. A leukaemia diagnosis turns your life upside down overnight, and the road ahead can look daunting. This guide is here to walk you through what treatment in Bangalore actually involves, so you can make decisions with clarity rather than fear.
@@ -130,15 +131,16 @@ You are advised to return to Bangalore annually for a comprehensive reassessment
 You may also consider a stem cell transplant as a definitive option for high-risk or relapsed leukaemia, particularly an allogeneic transplant when a matched donor is available. CAR-T cell therapy is emerging as an alternative for relapsed B-ALL, though it is available at select centres and at a higher cost than standard chemotherapy.
 
 For chronic forms such as CML, lifelong oral targeted therapy may suffice without the need for a transplant. In some cases, you may choose to receive induction in your home country and travel to India only for the transplant component. Khan Meditour can help you structure a hybrid plan that balances your clinical needs, cost and travel logistics.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $8,000 – $35,000 | Baseline |
-| USA | $150,000 – $500,000 | ~15.1x higher |
-| UK | £80,000 – £250,000 | ~7.7x higher |
-| Singapore | $40,000 – $120,000 | ~3.7x higher |
-| Thailand | $25,000 – $70,000 | ~2.2x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $8,000 – $35,000    | Baseline      |
+| USA               | $150,000 – $500,000 | ~15.1x higher |
+| UK                | £80,000 – £250,000  | ~7.7x higher  |
+| Singapore         | $40,000 – $120,000  | ~3.7x higher  |
+| Thailand          | $25,000 – $70,000   | ~2.2x higher  |
 
 The cost variation within India reflects your specific subtype, the number of cycles you need and whether a stem cell transplant forms part of your plan. Induction chemotherapy alone sits at the lower end, while a full allogeneic transplant with donor matching and a prolonged inpatient stay reaches the upper end. Even at the highest tier, your cost remains a fraction of US pricing, largely because of lower drug acquisition costs, competitive hospital pricing and favourable exchange rates. You should request an itemised estimate after your initial workup, because the final figure depends on your response to induction and any complications you encounter along the way.
 

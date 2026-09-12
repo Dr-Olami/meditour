@@ -12,15 +12,15 @@ languages:
   - Hindi
   - Kannada
 faqs:
-  - question: "Who is Dr. Deepak Bolbandi?"
-    answer: "Dr. Deepak Bolbandi is a distinguished Urologist and Kidney Transplant Surgeon with over 30 years of extensive experience in treating various urological conditions. Practicing in Bangalore, Karnataka, he holds MBBS, MS, DNB, and MCh (Urology) qualifications. He is renowned for his compassionate approach, dedication to patient care, and expertise in minimally invasive urological techniques."
-  - question: "Why do patients choose Dr. Deepak Bolbandi?"
-    answer: "Patients choose Dr. Deepak Bolbandi for his 30+ years of experience in urology, his expertise in minimally invasive techniques including PCNL, RIRS, Laser URS, and laser prostate surgeries, and his dedication to personalized care plans. He is the honorary secretary of the Bangalore Urological Society and the Urological Society of India and Karnataka, making him a trusted figure in urological health."
+  - question: 'Who is Dr. Deepak Bolbandi?'
+    answer: 'Dr. Deepak Bolbandi is a distinguished Urologist and Kidney Transplant Surgeon with over 30 years of extensive experience in treating various urological conditions. Practicing in Bangalore, Karnataka, he holds MBBS, MS, DNB, and MCh (Urology) qualifications. He is renowned for his compassionate approach, dedication to patient care, and expertise in minimally invasive urological techniques.'
+  - question: 'Why do patients choose Dr. Deepak Bolbandi?'
+    answer: 'Patients choose Dr. Deepak Bolbandi for his 30+ years of experience in urology, his expertise in minimally invasive techniques including PCNL, RIRS, Laser URS, and laser prostate surgeries, and his dedication to personalized care plans. He is the honorary secretary of the Bangalore Urological Society and the Urological Society of India and Karnataka, making him a trusted figure in urological health.'
   - question: "What are Dr. Deepak Bolbandi's medical qualifications?"
-    answer: "Dr. Deepak Bolbandi holds MBBS, MS in General Surgery, DNB in Urology/Genito-Urinary Surgery, and MCh in Urology. He also holds a fellowship from the Singapore Urological Association."
-  - question: "What procedures does Dr. Deepak Bolbandi perform?"
-    answer: "Dr. Deepak Bolbandi performs a wide range of urological procedures including removal of kidney stones by PCNL, removal of complex calyceal kidney stones by RIRS, removal of stones in ureter by Laser URS, bladder stone removal, prostate surgeries, laser surgeries for prostate gland removal, kidney transplant surgeries, pyeloplasty, pyelolithotomy, lithotripsy, and augmentation cystoplasty."
-  - question: "How can I book an appointment with Dr. Deepak Bolbandi?"
+    answer: 'Dr. Deepak Bolbandi holds MBBS, MS in General Surgery, DNB in Urology/Genito-Urinary Surgery, and MCh in Urology. He also holds a fellowship from the Singapore Urological Association.'
+  - question: 'What procedures does Dr. Deepak Bolbandi perform?'
+    answer: 'Dr. Deepak Bolbandi performs a wide range of urological procedures including removal of kidney stones by PCNL, removal of complex calyceal kidney stones by RIRS, removal of stones in ureter by Laser URS, bladder stone removal, prostate surgeries, laser surgeries for prostate gland removal, kidney transplant surgeries, pyeloplasty, pyelolithotomy, lithotripsy, and augmentation cystoplasty.'
+  - question: 'How can I book an appointment with Dr. Deepak Bolbandi?'
     answer: "You can book an appointment with Dr. Deepak Bolbandi at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

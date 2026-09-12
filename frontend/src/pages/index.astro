@@ -23,13 +23,14 @@ const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com';
 
-const [treatmentEntries, doctorEntries, hospitalEntries, testimonialEntries, procedureEntries] = await Promise.all([
-  getTreatments('en'),
-  getDoctors('en'),
-  getHospitals('en'),
-  getTestimonials('en'),
-  getProcedures('en'),
-]);
+const [treatmentEntries, doctorEntries, hospitalEntries, testimonialEntries, procedureEntries] =
+  await Promise.all([
+    getTreatments('en'),
+    getDoctors('en'),
+    getHospitals('en'),
+    getTestimonials('en'),
+    getProcedures('en'),
+  ]);
 
 const treatments = treatmentEntries.map((entry) => ({
   name: entry.data.name,
@@ -95,7 +96,9 @@ const treatmentProcedures = homeTreatments.map((entry) => {
   };
 });
 
-const categories = Array.from(new Set(treatmentEntries.map((entry) => entry.data.category).filter(Boolean)));
+const categories = Array.from(
+  new Set(treatmentEntries.map((entry) => entry.data.category).filter(Boolean))
+);
 
 // Reason: define FAQ entries here (not in HomePage) so the same data can feed
 // both the visible FAQAccordion and the FAQPage JSON-LD structured data that
@@ -103,51 +106,63 @@ const categories = Array.from(new Set(treatmentEntries.map((entry) => entry.data
 const faqs = [
   {
     question: 'How do I plan medical treatment in India from abroad?',
-    answer: 'Share your medical reports via our consultation form or WhatsApp. A coordinator reviews your case and recommends the best hospital and doctor within 24 hours, followed by a free video consultation with the specialist before you travel.',
+    answer:
+      'Share your medical reports via our consultation form or WhatsApp. A coordinator reviews your case and recommends the best hospital and doctor within 24 hours, followed by a free video consultation with the specialist before you travel.',
   },
   {
     question: 'Is my medical data kept private?',
-    answer: 'Yes. We follow strict data protection practices and only share reports with the hospitals and specialists you approve. Your records are never sent to third parties.',
+    answer:
+      'Yes. We follow strict data protection practices and only share reports with the hospitals and specialists you approve. Your records are never sent to third parties.',
   },
   {
     question: 'Can I get help with my medical visa and accommodation in India?',
-    answer: 'Yes. Our packages include the visa invitation letter from the hospital, airport pickup, hotel or guest-house options near the hospital, and a local interpreter for your language.',
+    answer:
+      'Yes. Our packages include the visa invitation letter from the hospital, airport pickup, hotel or guest-house options near the hospital, and a local interpreter for your language.',
   },
   {
     question: 'How much can I save compared to treatment in my home country?',
-    answer: 'Treatment in India is typically 60–80% cheaper than in the USA or UK. For example, knee replacement costs $5,000–9,000 in India versus $35,000–70,000 in the USA, and heart bypass surgery costs $6,000–12,000 versus $70,000–150,000. Even after adding flights and accommodation, the savings remain substantial.',
+    answer:
+      'Treatment in India is typically 60–80% cheaper than in the USA or UK. For example, knee replacement costs $5,000–9,000 in India versus $35,000–70,000 in the USA, and heart bypass surgery costs $6,000–12,000 versus $70,000–150,000. Even after adding flights and accommodation, the savings remain substantial.',
   },
   {
     question: 'Are Indian hospitals accredited and safe for international patients?',
-    answer: 'Our partner hospitals hold JCI (Joint Commission International) and NABH accreditations — the global gold standard for patient safety and quality. Fewer than 40 of India\'s 50,000+ registered hospitals hold JCI accreditation, and we only work with hospitals that have been independently assessed for safety, infection control, and clinical outcomes.',
+    answer:
+      "Our partner hospitals hold JCI (Joint Commission International) and NABH accreditations — the global gold standard for patient safety and quality. Fewer than 40 of India's 50,000+ registered hospitals hold JCI accreditation, and we only work with hospitals that have been independently assessed for safety, infection control, and clinical outcomes.",
   },
   {
     question: 'How do I know the surgeon is qualified and experienced?',
-    answer: 'We share each surgeon\'s full profile — qualifications, years of experience, annual procedure volume, and success rates. Our specialists are board-certified, and most hold fellowships from the USA or UK. You can speak with your surgeon via video consultation before you fly, so you know exactly who will treat you.',
+    answer:
+      "We share each surgeon's full profile — qualifications, years of experience, annual procedure volume, and success rates. Our specialists are board-certified, and most hold fellowships from the USA or UK. You can speak with your surgeon via video consultation before you fly, so you know exactly who will treat you.",
   },
   {
     question: 'What is included in the cost estimate — are there hidden charges?',
-    answer: 'We provide an itemised quote covering surgery, hospital stay, surgeon fees, anaesthesia, implants, medications, and diagnostic tests. We clearly state what is included and what is not — such as flights, visa fees, accommodation, and post-return follow-up. The final cost is confirmed after the surgeon evaluates you, but we add no hidden markup.',
+    answer:
+      'We provide an itemised quote covering surgery, hospital stay, surgeon fees, anaesthesia, implants, medications, and diagnostic tests. We clearly state what is included and what is not — such as flights, visa fees, accommodation, and post-return follow-up. The final cost is confirmed after the surgeon evaluates you, but we add no hidden markup.',
   },
   {
     question: 'How do I get a medical visa for India and how long does it take?',
-    answer: 'Once your hospital is selected, we arrange an official Visa Invitation Letter (VIL) from the hospital. Most e-Medical Visas are approved within 24–72 hours. You will need a passport with 6 months validity, photographs, medical reports, and the invitation letter. We coordinate the entire application process.',
+    answer:
+      'Once your hospital is selected, we arrange an official Visa Invitation Letter (VIL) from the hospital. Most e-Medical Visas are approved within 24–72 hours. You will need a passport with 6 months validity, photographs, medical reports, and the invitation letter. We coordinate the entire application process.',
   },
   {
     question: 'Can a family member travel with me for treatment in India?',
-    answer: 'Yes. Attendants can apply for a Medical Attendant Visa (MX Visa) linked to the patient\'s visa. Typically 1–2 attendants are permitted; for complex procedures such as transplants, up to 3–4 may be allowed. We coordinate attendant visas, accommodation, and airport transfers.',
+    answer:
+      "Yes. Attendants can apply for a Medical Attendant Visa (MX Visa) linked to the patient's visa. Typically 1–2 attendants are permitted; for complex procedures such as transplants, up to 3–4 may be allowed. We coordinate attendant visas, accommodation, and airport transfers.",
   },
   {
     question: 'What happens if I have complications after returning home?',
-    answer: 'Our partner hospitals provide structured follow-up support including post-discharge teleconsultation, so you stay connected with your surgeon after returning home. We provide coordinator support and report review in your language for up to six months. In an emergency, we can also connect you with a local specialist.',
+    answer:
+      'Our partner hospitals provide structured follow-up support including post-discharge teleconsultation, so you stay connected with your surgeon after returning home. We provide coordinator support and report review in your language for up to six months. In an emergency, we can also connect you with a local specialist.',
   },
   {
     question: 'Will there be a language barrier if I do not speak English?',
-    answer: 'No. Our partner hospitals have coordinators in Arabic, Bengali, French, and Russian. We arrange on-site interpreters and translate consultation notes, consent forms, discharge summaries, and medication instructions. Written instructions are provided in your language so you can recover safely at home.',
+    answer:
+      'No. Our partner hospitals have coordinators in Arabic, Bengali, French, and Russian. We arrange on-site interpreters and translate consultation notes, consent forms, discharge summaries, and medication instructions. Written instructions are provided in your language so you can recover safely at home.',
   },
   {
     question: 'How do I pay for treatment — do Indian hospitals accept international insurance?',
-    answer: 'Major Indian hospitals typically operate on a self-pay deposit system. For large bills we recommend SWIFT wire transfer (clears in 2–3 business days); Visa and Mastercard are also accepted. Standard travel insurance does not cover planned treatment — check with your insurer beforehand. We assist with proforma invoices and payment guidance.',
+    answer:
+      'Major Indian hospitals typically operate on a self-pay deposit system. For large bills we recommend SWIFT wire transfer (clears in 2–3 business days); Visa and Mastercard are also accepted. Standard travel insurance does not cover planned treatment — check with your insurer beforehand. We assist with proforma invoices and payment guidance.',
   },
 ];
 
@@ -163,7 +178,12 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={`${t.site.name} — ${t.site.tagline}`} description={t.site.description} locale="en" jsonLd={jsonLd}>
+<Layout
+  title={`${t.site.name} — ${t.site.tagline}`}
+  description={t.site.description}
+  locale="en"
+  jsonLd={jsonLd}
+>
   <BrandedIntro />
   <HomePage
     locale="en"

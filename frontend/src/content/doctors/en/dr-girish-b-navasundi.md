@@ -13,17 +13,17 @@ languages:
   - Telugu
   - Kannada
 faqs:
-  - question: "Who is Dr. Girish B Navasundi?"
-    answer: "Dr. Girish B Navasundi is a highly esteemed cardiologist based in Bangalore, Karnataka, with over 21 years of extensive experience in the field of cardiology. He holds MBBS, MD in General Medicine, and DNB in Cardiology. He is known for his patient-centered approach and fluency in English, Hindi, Kannada, and Telugu, catering to a diverse patient population."
-  - question: "Why do patients visit Dr. Girish B Navasundi?"
-    answer: "Patients visit Dr. Girish B Navasundi for his expertise in diagnosing, treating, and managing various heart-related conditions, including angioplasties, coronary artery disease screening, cardiovascular disease prevention, irregular heartbeat, heart transplantation, and cardiac emergencies. He employs the latest medical advancements and techniques while communicating complex medical information in an easily understood manner."
+  - question: 'Who is Dr. Girish B Navasundi?'
+    answer: 'Dr. Girish B Navasundi is a highly esteemed cardiologist based in Bangalore, Karnataka, with over 21 years of extensive experience in the field of cardiology. He holds MBBS, MD in General Medicine, and DNB in Cardiology. He is known for his patient-centered approach and fluency in English, Hindi, Kannada, and Telugu, catering to a diverse patient population.'
+  - question: 'Why do patients visit Dr. Girish B Navasundi?'
+    answer: 'Patients visit Dr. Girish B Navasundi for his expertise in diagnosing, treating, and managing various heart-related conditions, including angioplasties, coronary artery disease screening, cardiovascular disease prevention, irregular heartbeat, heart transplantation, and cardiac emergencies. He employs the latest medical advancements and techniques while communicating complex medical information in an easily understood manner.'
   - question: "What are Dr. Girish B Navasundi's medical qualifications?"
-    answer: "Dr. Girish B Navasundi holds MBBS, MD in General Medicine, and DNB in Cardiology. He has over 21 years of experience in the field of cardiology and is a member of the Cardiological Society of India (CSI)."
-  - question: "What to expect at my first visit to a cardiologist?"
-    answer: "At your first visit with Dr. Girish B Navasundi, expect a thorough evaluation of your cardiac health, including a review of your medical history, physical examination, and potentially diagnostic tests such as ECG, echocardiogram, or blood tests. He will discuss your symptoms, assess your risk factors, and recommend a personalised treatment plan. His patient-centered approach ensures you understand your condition and treatment options clearly."
-  - question: "When should I consult a cardiologist?"
-    answer: "You should consult Dr. Girish B Navasundi if you experience chest pain, palpitations, irregular heartbeat, shortness of breath, dizziness, or have risk factors such as high blood pressure, diabetes, family history of heart disease, or a previous cardiac event. Early consultation can help with preventive care and early detection of coronary artery disease, valvular heart disease, and other cardiac conditions."
-  - question: "How can I book an appointment with Dr. Girish B Navasundi?"
+    answer: 'Dr. Girish B Navasundi holds MBBS, MD in General Medicine, and DNB in Cardiology. He has over 21 years of experience in the field of cardiology and is a member of the Cardiological Society of India (CSI).'
+  - question: 'What to expect at my first visit to a cardiologist?'
+    answer: 'At your first visit with Dr. Girish B Navasundi, expect a thorough evaluation of your cardiac health, including a review of your medical history, physical examination, and potentially diagnostic tests such as ECG, echocardiogram, or blood tests. He will discuss your symptoms, assess your risk factors, and recommend a personalised treatment plan. His patient-centered approach ensures you understand your condition and treatment options clearly.'
+  - question: 'When should I consult a cardiologist?'
+    answer: 'You should consult Dr. Girish B Navasundi if you experience chest pain, palpitations, irregular heartbeat, shortness of breath, dizziness, or have risk factors such as high blood pressure, diabetes, family history of heart disease, or a previous cardiac event. Early consultation can help with preventive care and early detection of coronary artery disease, valvular heart disease, and other cardiac conditions.'
+  - question: 'How can I book an appointment with Dr. Girish B Navasundi?'
     answer: "You can book an appointment with Dr. Girish B Navasundi at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

@@ -4,7 +4,8 @@ import { TestimonialCard } from './TestimonialCard';
 const ITEM = {
   name: 'B. Shruthi & Arjun',
   location: 'India',
-  quote: 'From my appointments, giving birth and discharge, everything was planned, hassle-free, and smooth.',
+  quote:
+    'From my appointments, giving birth and discharge, everything was planned, hassle-free, and smooth.',
   image: 'https://picsum.photos/seed/shruthi/800/600',
   brandLabel: 'BIRTH',
 };
@@ -12,7 +13,8 @@ const ITEM = {
 const VIDEO_ITEM = {
   name: 'Ashwinipriya and Chandra Mohan',
   location: 'India',
-  quote: 'We had seen great healthcare in Sweden. Khan Meditour gave us that same sense of confidence and comfort.',
+  quote:
+    'We had seen great healthcare in Sweden. Khan Meditour gave us that same sense of confidence and comfort.',
   image: 'https://picsum.photos/seed/ashwini/800/600',
   video: 'https://example.com/video1.mp4',
   videoDuration: '1:01',

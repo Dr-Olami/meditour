@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Kenyan Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Nairobi to India for treatment: medical visa requirements, Kenya Airways routes, cost comparisons in Kenyan Shillings, and choosing the right hospital for Kenyan families."
+excerpt: 'Travelling from Nairobi to India for treatment: medical visa requirements, Kenya Airways routes, cost comparisons in Kenyan Shillings, and choosing the right hospital for Kenyan families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-07-19
@@ -35,13 +35,13 @@ Kenyan families have travelled to India for cardiac surgery, orthopedics, cancer
 
 Heart surgery cost India vs Kenya is the comparison most families start with. Indicative package prices (at roughly KSh 129 per US dollar):
 
-| Treatment | India (USD) | Approx. KES | South Africa | UK |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | KSh 580K–1.5M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | KSh 322K–1M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | KSh 387K–3.2M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | KSh 516K–1.5M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | KSh 451K–903K | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. KES   | South Africa | UK         |
+| -------------------- | ------------- | ------------- | ------------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | KSh 580K–1.5M | Higher       | Far higher |
+| Knee/hip replacement | $2,500–8,000  | KSh 322K–1M   | Higher       | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | KSh 387K–3.2M | Higher       | Far higher |
+| Spine surgery        | $4,000–12,000 | KSh 516K–1.5M | Higher       | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | KSh 451K–903K | Higher       | Far higher |
 
 IVF treatment in India for Kenyan couples is a growing route — full cycles planned around a 2–3 week stay, with medication protocols shared with your Nairobi gynaecologist for follow-up.
 

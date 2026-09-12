@@ -53,23 +53,48 @@ const nigeria: CountryMetadata = {
 
   languages: ['English'],
   religiousMajority: 'mixed',
-  culturalConsiderations: ['Halal food available', 'Christian chapel access', 'African cuisine options'],
+  culturalConsiderations: [
+    'Halal food available',
+    'Christian chapel access',
+    'African cuisine options',
+  ],
 
   patientsTreated: 1200,
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '9 hours from Lagos (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '8 hours from Lagos (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '10 hours from Lagos (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '9 hours from Lagos (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '8 hours from Lagos (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '10 hours from Lagos (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Medical Care in India for Nigerian Patients',
-  heroSubtitle: 'Save 50–70% on world-class treatments. English-speaking staff. Comprehensive travel support from Lagos and Abuja.',
-  metaDescription: 'Affordable advanced healthcare in India for Nigerian patients. Save on cardiac, orthopedic, cancer treatments with visa assistance, flight support, and English-speaking coordinators.',
-  introParagraph: 'Patients from Lagos, Abuja, and Port Harcourt travel to India for cardiac surgery, orthopedics, cancer treatment, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Save 50–70% on world-class treatments. English-speaking staff. Comprehensive travel support from Lagos and Abuja.',
+  metaDescription:
+    'Affordable advanced healthcare in India for Nigerian patients. Save on cardiac, orthopedic, cancer treatments with visa assistance, flight support, and English-speaking coordinators.',
+  introParagraph:
+    'Patients from Lagos, Abuja, and Port Harcourt travel to India for cardiac surgery, orthopedics, cancer treatment, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'NGN', symbol: '₦', exchangeRate: 1600, name: 'Nigerian Naira' },
 };
@@ -126,23 +151,48 @@ const kenya: CountryMetadata = {
 
   languages: ['English', 'Swahili'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'African cuisine options'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'African cuisine options',
+  ],
 
   patientsTreated: 900,
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '7 hours from Nairobi (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Mumbai)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '6 hours from Nairobi', directFlights: true, airlines: ['Kenya Airways'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '7 hours from Nairobi (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Mumbai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '7 hours from Nairobi (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Mumbai)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '6 hours from Nairobi',
+      directFlights: true,
+      airlines: ['Kenya Airways'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '7 hours from Nairobi (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Mumbai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Kenyan Patients',
-  heroSubtitle: 'Direct flights from Nairobi. English and Swahili support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Kenyan patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, English/Swahili staff, and JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Nairobi, Mombasa, and Kisumu travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English and Swahili language support, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Direct flights from Nairobi. English and Swahili support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Kenyan patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, English/Swahili staff, and JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Nairobi, Mombasa, and Kisumu travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English and Swahili language support, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'KES', symbol: 'KSh', exchangeRate: 129, name: 'Kenyan Shilling' },
 };
@@ -199,23 +249,48 @@ const ghana: CountryMetadata = {
 
   languages: ['English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'African cuisine options'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'African cuisine options',
+  ],
 
   patientsTreated: 500,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '10 hours from Accra (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '9 hours from Accra (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '10 hours from Accra (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '10 hours from Accra (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '9 hours from Accra (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '10 hours from Accra (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Ghanaian Patients',
-  heroSubtitle: 'Flights from Accra. English-speaking coordinators. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Ghanaian patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, English staff, and JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Accra, Kumasi, and Tamale travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Accra. English-speaking coordinators. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Ghanaian patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, English staff, and JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Accra, Kumasi, and Tamale travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'GHS', symbol: '₵', exchangeRate: 15, name: 'Ghanaian Cedi' },
 };
@@ -272,23 +347,49 @@ const ethiopia: CountryMetadata = {
 
   languages: ['Amharic', 'English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'Ethiopian cuisine options', 'Fasting accommodation'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'Ethiopian cuisine options',
+    'Fasting accommodation',
+  ],
 
   patientsTreated: 400,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '6.5 hours from Addis Ababa', directFlights: true, airlines: ['Ethiopian Airlines'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '6 hours from Addis Ababa', directFlights: true, airlines: ['Ethiopian Airlines'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '6.5 hours from Addis Ababa', directFlights: true, airlines: ['Ethiopian Airlines'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '6.5 hours from Addis Ababa',
+      directFlights: true,
+      airlines: ['Ethiopian Airlines'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '6 hours from Addis Ababa',
+      directFlights: true,
+      airlines: ['Ethiopian Airlines'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '6.5 hours from Addis Ababa',
+      directFlights: true,
+      airlines: ['Ethiopian Airlines'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Ethiopian Patients',
-  heroSubtitle: 'Direct flights from Addis Ababa. Amharic and English support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Ethiopian patients. Direct flights, Amharic/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Addis Ababa and across Ethiopia travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Amharic and English language support, direct flights via Ethiopian Airlines, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Direct flights from Addis Ababa. Amharic and English support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Ethiopian patients. Direct flights, Amharic/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Addis Ababa and across Ethiopia travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Amharic and English language support, direct flights via Ethiopian Airlines, and JCI-accredited hospitals.',
 
   currency: { code: 'ETB', symbol: 'Br', exchangeRate: 128, name: 'Ethiopian Birr' },
 };
@@ -345,31 +446,50 @@ const tanzania: CountryMetadata = {
 
   languages: ['Swahili', 'English'],
   religiousMajority: 'mixed',
-  culturalConsiderations: ['Halal food available', 'Christian chapel access', 'African cuisine options'],
+  culturalConsiderations: [
+    'Halal food available',
+    'Christian chapel access',
+    'African cuisine options',
+  ],
 
   patientsTreated: 350,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '8 hours from Dar es Salaam (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '7 hours from Dar es Salaam (1 stop)', directFlights: false, airlines: ['Kenya Airways (via Nairobi)', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '8 hours from Dar es Salaam (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '8 hours from Dar es Salaam (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '7 hours from Dar es Salaam (1 stop)',
+      directFlights: false,
+      airlines: ['Kenya Airways (via Nairobi)', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '8 hours from Dar es Salaam (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Tanzanian Patients',
-  heroSubtitle: 'Flights from Dar es Salaam. Swahili and English support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Tanzanian patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, Swahili/English staff, and JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Dar es Salaam, Dodoma, and Arusha travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Swahili and English language support, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Dar es Salaam. Swahili and English support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Tanzanian patients. Save 50–70% on cardiac, cancer, orthopedic care with visa support, Swahili/English staff, and JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Dar es Salaam, Dodoma, and Arusha travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Swahili and English language support, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'TZS', symbol: 'TSh', exchangeRate: 2540, name: 'Tanzanian Shilling' },
 };
 
-export const africaCountriesPart1: CountryMetadata[] = [
-  ethiopia,
-  ghana,
-  kenya,
-  nigeria,
-  tanzania,
-];
+export const africaCountriesPart1: CountryMetadata[] = [ethiopia, ghana, kenya, nigeria, tanzania];

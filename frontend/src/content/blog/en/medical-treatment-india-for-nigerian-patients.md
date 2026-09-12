@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Nigerian Patients — Costs, Visa & Travel Guide
-excerpt: "How to travel from Lagos or Abuja to India for treatment: medical visa requirements, flight routes, cost comparisons in Naira, and choosing the best hospital for Nigerians."
+excerpt: 'How to travel from Lagos or Abuja to India for treatment: medical visa requirements, flight routes, cost comparisons in Naira, and choosing the best hospital for Nigerians.'
 coverImage: https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-07-17
@@ -32,13 +32,13 @@ Nigerian patients have travelled to India for serious medical care for decades �
 
 Orthopedic surgery in India for Nigerian patients is one of the most-travelled routes, alongside cardiac and cancer care. Indicative package prices (at roughly ₦1,600 per US dollar):
 
-| Treatment | India (USD) | Approx. NGN | South Africa | UK/USA |
-| --- | --- | --- | --- | --- |
-| Knee/hip replacement | $2,500–8,000 | ₦4M–12.8M | Higher | $30,000–60,000 |
-| Cardiac surgery | $4,500–12,000 | ₦7.2M–19.2M | Higher | $70,000–150,000 |
-| Cancer treatment | $3,000–25,000 | ₦4.8M–40M | Higher | $50,000–200,000 |
-| Kidney transplant | $25,000–40,000 | ₦40M–64M | Limited | $300,000+ |
-| Spine surgery | $4,000–12,000 | ₦6.4M–19.2M | Higher | $50,000–150,000 |
+| Treatment            | India (USD)    | Approx. NGN | South Africa | UK/USA          |
+| -------------------- | -------------- | ----------- | ------------ | --------------- |
+| Knee/hip replacement | $2,500–8,000   | ₦4M–12.8M   | Higher       | $30,000–60,000  |
+| Cardiac surgery      | $4,500–12,000  | ₦7.2M–19.2M | Higher       | $70,000–150,000 |
+| Cancer treatment     | $3,000–25,000  | ₦4.8M–40M   | Higher       | $50,000–200,000 |
+| Kidney transplant    | $25,000–40,000 | ₦40M–64M    | Limited      | $300,000+       |
+| Spine surgery        | $4,000–12,000  | ₦6.4M–19.2M | Higher       | $50,000–150,000 |
 
 Kidney transplant cost in India for Nigerians is a frequent question — transplant programmes at major Indian centres quote package pricing of $25,000–40,000 including work-up, surgery and early post-operative care, with donor coordination requirements explained before you commit to travel.
 

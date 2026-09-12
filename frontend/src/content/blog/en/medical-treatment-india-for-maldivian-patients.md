@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Maldivian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Male to India for treatment: visa-on-arrival requirements, flight routes, cost comparisons in Rufiyaa, and choosing the right hospital for Maldivian families."
+excerpt: 'Travelling from Male to India for treatment: visa-on-arrival requirements, flight routes, cost comparisons in Rufiyaa, and choosing the right hospital for Maldivian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-26
@@ -32,13 +32,13 @@ Maldivian families have travelled to India for cardiac surgery, orthopedics, can
 
 Heart surgery cost India vs the Maldives is the comparison most families start with. Indicative package prices (at roughly Rf15 per US dollar):
 
-| Treatment | India (USD) | Approx. MVR | Singapore | Thailand |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | Rf67,500–180,000 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | Rf37,500–120,000 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | Rf45,000–375,000 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | Rf60,000–180,000 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | Rf52,500–105,000 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. MVR      | Singapore | Thailand   |
+| -------------------- | ------------- | ---------------- | --------- | ---------- |
+| Cardiac surgery      | $4,500–12,000 | Rf67,500–180,000 | Higher    | Far higher |
+| Knee/hip replacement | $2,500–8,000  | Rf37,500–120,000 | Higher    | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | Rf45,000–375,000 | Higher    | Far higher |
+| Spine surgery        | $4,000–12,000 | Rf60,000–180,000 | Higher    | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | Rf52,500–105,000 | Higher    | Far higher |
 
 Transplant and cardiac procedures are a growing route for Maldivian patients — dedicated programmes with international coordinators handle the full referral, admission and follow-up pathway.
 

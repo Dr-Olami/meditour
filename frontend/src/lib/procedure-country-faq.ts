@@ -38,11 +38,18 @@ interface ProcedureData {
  */
 export function generateProcedureCountryFaqs(
   procedure: ProcedureData,
-  country: CountryMetadata,
+  country: CountryMetadata
 ): FAQItem[] {
   const faqs: FAQItem[] = [];
-  const { name: _name, nationality, currency, visaType, visaProcessingTime, majorCities, flightTime } =
-    country;
+  const {
+    name: _name,
+    nationality,
+    currency,
+    visaType,
+    visaProcessingTime,
+    majorCities,
+    flightTime,
+  } = country;
 
   // 1. Cost question — procedure + country specific (highest search intent)
   if (procedure.fromPrice) {
@@ -73,7 +80,9 @@ export function generateProcedureCountryFaqs(
   });
 
   // 3. Travel/stay question — country + procedure specific
-  const stayInfo = procedure.hospitalStay ? `${procedure.hospitalStay} in the hospital` : 'a hospital stay';
+  const stayInfo = procedure.hospitalStay
+    ? `${procedure.hospitalStay} in the hospital`
+    : 'a hospital stay';
   const recoveryInfo = procedure.recoveryTime ? ` plus ${procedure.recoveryTime} of recovery` : '';
   faqs.push({
     question: `How long do I need to stay in India for ${procedure.name}?`,

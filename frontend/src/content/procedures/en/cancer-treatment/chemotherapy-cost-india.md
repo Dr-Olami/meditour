@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Chemotherapy"
-seoHeadline: "Chemotherapy Cost in India per Cycle for International Patients"
+name: 'Chemotherapy'
+seoHeadline: 'Chemotherapy Cost in India per Cycle for International Patients'
 parentTreatmentSlug: cancer-treatment
-summary: "Chemotherapy in India costs $500–$2,500 per cycle, making it one of the most affordable destinations globally. Patients typically require 4–8 cycles depending on cancer type and stage, with treatment delivered by expert oncologists in JCI-accredited hospitals."
-description: "Affordable chemotherapy in India starting at $500 per cycle for international patients. Compare costs, understand inclusions, and plan your medical trip."
-fromPrice: "$500"
-toPrice: "$2,500"
-duration: "3-6 months"
-hospitalStay: "Day-care to 3 days"
-recoveryTime: "Varies by treatment protocol"
+summary: 'Chemotherapy in India costs $500–$2,500 per cycle, making it one of the most affordable destinations globally. Patients typically require 4–8 cycles depending on cancer type and stage, with treatment delivered by expert oncologists in JCI-accredited hospitals.'
+description: 'Affordable chemotherapy in India starting at $500 per cycle for international patients. Compare costs, understand inclusions, and plan your medical trip.'
+fromPrice: '$500'
+toPrice: '$2,500'
+duration: '3-6 months'
+hospitalStay: 'Day-care to 3 days'
+recoveryTime: 'Varies by treatment protocol'
 eligibility:
-  - "Confirmed cancer diagnosis through biopsy and pathology"
-  - "Adequate blood counts (hemoglobin, WBC, platelets) before each cycle"
-  - "No severe organ dysfunction (liver, kidney, heart) that contraindicates chemotherapy"
-  - "Performance status of 0–2 on the ECOG scale"
-  - "Willingness to undergo multiple cycles with monitoring"
+  - 'Confirmed cancer diagnosis through biopsy and pathology'
+  - 'Adequate blood counts (hemoglobin, WBC, platelets) before each cycle'
+  - 'No severe organ dysfunction (liver, kidney, heart) that contraindicates chemotherapy'
+  - 'Performance status of 0–2 on the ECOG scale'
+  - 'Willingness to undergo multiple cycles with monitoring'
 costInclusions:
-  - "Oncologist consultation fees"
-  - "Chemotherapy/radiation/medication costs"
-  - "Hospital room charges (where applicable)"
-  - "Pre-treatment diagnostics (biopsy, imaging, blood tests)"
-  - "Supportive medications (anti-nausea, growth factors)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Oncologist consultation fees'
+  - 'Chemotherapy/radiation/medication costs'
+  - 'Hospital room charges (where applicable)'
+  - 'Pre-treatment diagnostics (biopsy, imaging, blood tests)'
+  - 'Supportive medications (anti-nausea, growth factors)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term maintenance therapy post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term maintenance therapy post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "3-6 months"
-    description: "Multiple chemotherapy cycles administered at 2–3 week intervals, with blood count monitoring between cycles."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-cycle observation for side effects, blood count recovery, and tolerance assessment before next cycle."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual recovery of blood counts and energy levels; maintenance medications may be continued at home."
-  - phase: "Full recovery"
-    duration: "Varies by treatment protocol"
-    description: "Complete recovery from side effects after final cycle; long-term surveillance imaging and follow-up as advised."
+  - phase: 'Treatment period'
+    duration: '3-6 months'
+    description: 'Multiple chemotherapy cycles administered at 2–3 week intervals, with blood count monitoring between cycles.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-cycle observation for side effects, blood count recovery, and tolerance assessment before next cycle.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual recovery of blood counts and energy levels; maintenance medications may be continued at home.'
+  - phase: 'Full recovery'
+    duration: 'Varies by treatment protocol'
+    description: 'Complete recovery from side effects after final cycle; long-term surveillance imaging and follow-up as advised.'
 risks:
-  - "Bone marrow suppression leading to low blood counts and infection risk"
-  - "Nausea, vomiting, and gastrointestinal side effects"
-  - "Hair loss (alopecia) which is usually temporary"
-  - "Fatigue and reduced immunity during treatment cycles"
-  - "Potential organ toxicity (cardiac, hepatic, or renal) with certain agents"
+  - 'Bone marrow suppression leading to low blood counts and infection risk'
+  - 'Nausea, vomiting, and gastrointestinal side effects'
+  - 'Hair loss (alopecia) which is usually temporary'
+  - 'Fatigue and reduced immunity during treatment cycles'
+  - 'Potential organ toxicity (cardiac, hepatic, or renal) with certain agents'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "radiation-therapy-cost-india"
-  - "immunotherapy-cost-india"
-  - "targeted-therapy-cost-india"
+  - 'radiation-therapy-cost-india'
+  - 'immunotherapy-cost-india'
+  - 'targeted-therapy-cost-india'
 faqs:
-  - question: "How many chemotherapy cycles will I need?"
-    answer: "The number of cycles depends on your cancer type, stage, and treatment protocol. Most patients require 4–8 cycles, spaced 2–3 weeks apart. Your oncologist will determine the exact regimen after reviewing your pathology and imaging reports."
-  - question: "Is chemotherapy in India as effective as in Western countries?"
-    answer: "Yes. Indian oncology hospitals use the same internationally approved chemotherapy drugs and protocols as Western countries. The cost difference is due to lower operational and drug procurement costs, not a difference in quality or efficacy."
-  - question: "Can I return home between chemotherapy cycles?"
-    answer: "Yes, many international patients choose to return home between cycles if the gap is 3 weeks or more. However, some prefer to stay in Bangalore for closer monitoring. Your oncologist will advise based on your treatment response and blood count recovery."
+  - question: 'How many chemotherapy cycles will I need?'
+    answer: 'The number of cycles depends on your cancer type, stage, and treatment protocol. Most patients require 4–8 cycles, spaced 2–3 weeks apart. Your oncologist will determine the exact regimen after reviewing your pathology and imaging reports.'
+  - question: 'Is chemotherapy in India as effective as in Western countries?'
+    answer: 'Yes. Indian oncology hospitals use the same internationally approved chemotherapy drugs and protocols as Western countries. The cost difference is due to lower operational and drug procurement costs, not a difference in quality or efficacy.'
+  - question: 'Can I return home between chemotherapy cycles?'
+    answer: 'Yes, many international patients choose to return home between cycles if the gap is 3 weeks or more. However, some prefer to stay in Bangalore for closer monitoring. Your oncologist will advise based on your treatment response and blood count recovery.'
 ---
+
 ## Overview
 
 Being told you need chemotherapy can feel like your whole world has shifted. You probably have questions racing through your mind — what will the treatment be like, how long will it take, how will you feel during it, and what about your hair, your energy, your family. These are completely normal concerns, and you deserve honest answers.
@@ -148,15 +149,16 @@ Targeted therapy attacks specific molecular changes driving your cancer's growth
 Immunotherapy helps your own immune system recognise and fight the cancer. It has shown remarkable results for melanoma, certain lung cancers, and kidney cancer. If your tumour tests show high PD-L1 or high microsatellite instability (MSI-H), immunotherapy might be recommended as your first treatment. Your oncologist in Bangalore will test your cancer's molecular profile and discuss whether these options are right for you.
 
 Sometimes, the best approach is a combination — chemotherapy alongside targeted therapy or immunotherapy. Every person's cancer is different, and the decision is always personalised to you.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $500 – $2,500 | Baseline |
-| USA | $10,000 – $30,000 | ~13.3x higher |
-| UK | £4,000 – £15,000 | ~6.3x higher |
-| Singapore | $5,000 – $15,000 | ~6.7x higher |
-| Thailand | $2,000 – $6,000 | ~2.7x higher |
+| Country           | Approximate Cost  | vs India      |
+| ----------------- | ----------------- | ------------- |
+| India (Bangalore) | $500 – $2,500     | Baseline      |
+| USA               | $10,000 – $30,000 | ~13.3x higher |
+| UK                | £4,000 – £15,000  | ~6.3x higher  |
+| Singapore         | $5,000 – $15,000  | ~6.7x higher  |
+| Thailand          | $2,000 – $6,000   | ~2.7x higher  |
 
 When you see these numbers, it's natural to wonder if lower cost means lower quality. It doesn't. India has a strong generic pharmaceutical industry that produces the same chemotherapy drugs used worldwide, approved by international regulatory bodies. The savings come from lower operational expenses, lower staff costs, and lower infrastructure costs — not from cutting corners on your care.
 

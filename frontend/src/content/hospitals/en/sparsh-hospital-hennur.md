@@ -13,10 +13,10 @@ gallery:
 structuredAmenities:
   - category: international
     highlights:
-      - name: "International patient desk"
-        description: "Dedicated desk for overseas patients with single-point-of-contact coordinators managing the entire care journey."
-      - name: "Visa and travel assistance"
-        description: "Medical visa documentation, airport transfers, and travel logistics arranged end-to-end by the international team."
+      - name: 'International patient desk'
+        description: 'Dedicated desk for overseas patients with single-point-of-contact coordinators managing the entire care journey.'
+      - name: 'Visa and travel assistance'
+        description: 'Medical visa documentation, airport transfers, and travel logistics arranged end-to-end by the international team.'
     items:
       - Airport pickup & drop
       - Foreign currency exchange
@@ -24,12 +24,12 @@ structuredAmenities:
       - Medical records transfer
   - category: clinical
     highlights:
-      - name: "IFEM Gold emergency care (first in India)"
-        description: "24/7 emergency & trauma centre certified at IFEM Gold Level â€” the first hospital in India to earn this distinction."
-      - name: "AI-assisted diagnostics & 3D printing"
-        description: "AI imaging for faster diagnosis and 3D-printed surgical models for complex orthopaedic and oncology planning."
-      - name: "Dedicated BMT unit"
-        description: "HePA-filtered bone marrow transplant suites for allogeneic and autologous transplants in North-East Bangalore."
+      - name: 'IFEM Gold emergency care (first in India)'
+        description: '24/7 emergency & trauma centre certified at IFEM Gold Level â€” the first hospital in India to earn this distinction.'
+      - name: 'AI-assisted diagnostics & 3D printing'
+        description: 'AI imaging for faster diagnosis and 3D-printed surgical models for complex orthopaedic and oncology planning.'
+      - name: 'Dedicated BMT unit'
+        description: 'HePA-filtered bone marrow transplant suites for allogeneic and autologous transplants in North-East Bangalore.'
     items:
       - 24/7 pharmacy
       - PET-CT & LINAC oncology
@@ -39,8 +39,8 @@ structuredAmenities:
       - Dialysis
   - category: comfort
     highlights:
-      - name: "International cuisine"
-        description: "Halal, vegetarian, and regional menus prepared fresh on request â€” dietitian-supervised for post-surgery recovery."
+      - name: 'International cuisine'
+        description: 'Halal, vegetarian, and regional menus prepared fresh on request â€” dietitian-supervised for post-surgery recovery.'
     items:
       - Prayer room
       - Family waiting lounge
@@ -71,65 +71,65 @@ mapEmbedUrl: https://www.google.com/maps?q=SPARSH+Hospital+Hennur+Road+HBR+Layou
 latitude: 13.036
 longitude: 77.65
 outcomes:
-  - value: "50+"
-    label: "Speciality departments"
-    qualifier: ""
-  - value: "300"
-    label: "Beds at launch"
-    qualifier: "May 2025"
-  - value: "1,700+"
-    label: "Planned beds across group"
-    qualifier: "by end of 2025"
+  - value: '50+'
+    label: 'Speciality departments'
+    qualifier: ''
+  - value: '300'
+    label: 'Beds at launch'
+    qualifier: 'May 2025'
+  - value: '1,700+'
+    label: 'Planned beds across group'
+    qualifier: 'by end of 2025'
 procedureCosts:
-  - procedure: "Total Knee Replacement"
-    fromPrice: "$3,500"
-    toPrice: "$7,000"
-    href: "/treatments/orthopedics-surgery/total-knee-replacement-cost-india"
-  - procedure: "Total Hip Replacement"
-    fromPrice: "$4,000"
-    toPrice: "$8,000"
-    href: "/treatments/orthopedics-surgery/total-hip-replacement-cost-india"
-  - procedure: "Shoulder Replacement"
-    fromPrice: "$5,000"
-    toPrice: "$10,000"
-    href: "/treatments/orthopedics-surgery/shoulder-replacement-cost-india"
-  - procedure: "Arthroscopy (Keyhole Surgery)"
-    fromPrice: "$2,000"
-    toPrice: "$5,000"
-    href: "/treatments/orthopedics-surgery/arthroscopy-cost-india"
-  - procedure: "Spinal Fusion Surgery"
-    fromPrice: "$5,000"
-    toPrice: "$15,000"
-    href: "/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india"
-  - procedure: "Sports Injury Treatment"
-    fromPrice: "$2,000"
-    toPrice: "$8,000"
-    href: "/treatments/orthopedics-surgery/sports-injury-treatment-cost-india"
-  - procedure: "Coronary Artery Bypass Grafting (CABG)"
-    fromPrice: "$4,500"
-    toPrice: "$12,000"
-    href: "/treatments/cardiology/heart-bypass-surgery-cabg-cost-india"
+  - procedure: 'Total Knee Replacement'
+    fromPrice: '$3,500'
+    toPrice: '$7,000'
+    href: '/treatments/orthopedics-surgery/total-knee-replacement-cost-india'
+  - procedure: 'Total Hip Replacement'
+    fromPrice: '$4,000'
+    toPrice: '$8,000'
+    href: '/treatments/orthopedics-surgery/total-hip-replacement-cost-india'
+  - procedure: 'Shoulder Replacement'
+    fromPrice: '$5,000'
+    toPrice: '$10,000'
+    href: '/treatments/orthopedics-surgery/shoulder-replacement-cost-india'
+  - procedure: 'Arthroscopy (Keyhole Surgery)'
+    fromPrice: '$2,000'
+    toPrice: '$5,000'
+    href: '/treatments/orthopedics-surgery/arthroscopy-cost-india'
+  - procedure: 'Spinal Fusion Surgery'
+    fromPrice: '$5,000'
+    toPrice: '$15,000'
+    href: '/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india'
+  - procedure: 'Sports Injury Treatment'
+    fromPrice: '$2,000'
+    toPrice: '$8,000'
+    href: '/treatments/orthopedics-surgery/sports-injury-treatment-cost-india'
+  - procedure: 'Coronary Artery Bypass Grafting (CABG)'
+    fromPrice: '$4,500'
+    toPrice: '$12,000'
+    href: '/treatments/cardiology/heart-bypass-surgery-cabg-cost-india'
 faqs:
-  - question: "What is SPARSH Hospital Hennur known for?"
-    answer: "SPARSH Hospital Hennur is a 300-bed quaternary care multi-speciality centre offering orthopaedics and joint replacement, cardiac sciences, oncology, neurosciences, trauma care, ENT, obstetrics and general medicine. Inaugurated on May 18, 2025, it is the newest addition to the SPARSH Group of Hospitals, an established healthcare network in Karnataka."
-  - question: "Is SPARSH Hospital Hennur accredited?"
-    answer: "Yes, SPARSH Hospital Hennur is NABH accredited. The hospital is equipped with cutting-edge technology, a highly experienced clinical team and a patient-first approach. It offers comprehensive services including 24/7 emergency and trauma services, dialysis, blood bank, physiotherapy and rehab centre."
-  - question: "Does SPARSH Hospital Hennur offer international patient services?"
-    answer: "Yes, SPARSH Hospital Hennur has an international patient desk offering visa and travel assistance, airport pickup, international cuisine, pharmacy services and 24/7 ambulance services. The hospital is located at HBR Layout on Hennur Road, Bangalore, and also offers bone marrow transplant and bariatric surgery programmes."
-  - question: "How long will I need to stay in Bangalore for my treatment?"
-    answer: "Typical stays vary by procedure: joint replacement 10-14 days, spine surgery 7-12 days, cardiac procedures 5-10 days, oncology surgery 7-14 days, and arthroscopy 3-5 days. As a newly opened facility (May 2025), your treating doctor will confirm the exact duration after reviewing your case."
-  - question: "What languages are spoken at the international patient desk?"
+  - question: 'What is SPARSH Hospital Hennur known for?'
+    answer: 'SPARSH Hospital Hennur is a 300-bed quaternary care multi-speciality centre offering orthopaedics and joint replacement, cardiac sciences, oncology, neurosciences, trauma care, ENT, obstetrics and general medicine. Inaugurated on May 18, 2025, it is the newest addition to the SPARSH Group of Hospitals, an established healthcare network in Karnataka.'
+  - question: 'Is SPARSH Hospital Hennur accredited?'
+    answer: 'Yes, SPARSH Hospital Hennur is NABH accredited. The hospital is equipped with cutting-edge technology, a highly experienced clinical team and a patient-first approach. It offers comprehensive services including 24/7 emergency and trauma services, dialysis, blood bank, physiotherapy and rehab centre.'
+  - question: 'Does SPARSH Hospital Hennur offer international patient services?'
+    answer: 'Yes, SPARSH Hospital Hennur has an international patient desk offering visa and travel assistance, airport pickup, international cuisine, pharmacy services and 24/7 ambulance services. The hospital is located at HBR Layout on Hennur Road, Bangalore, and also offers bone marrow transplant and bariatric surgery programmes.'
+  - question: 'How long will I need to stay in Bangalore for my treatment?'
+    answer: 'Typical stays vary by procedure: joint replacement 10-14 days, spine surgery 7-12 days, cardiac procedures 5-10 days, oncology surgery 7-14 days, and arthroscopy 3-5 days. As a newly opened facility (May 2025), your treating doctor will confirm the exact duration after reviewing your case.'
+  - question: 'What languages are spoken at the international patient desk?'
     answer: "SPARSH Hennur's international patient desk has English-speaking coordinators, with Bengali and Arabic coordinators available. Interpreter services for additional languages including Swahili and French can be arranged on request."
-  - question: "What is included in the international patient package?"
+  - question: 'What is included in the international patient package?'
     answer: "The package typically includes consultation, diagnostic tests, surgery/procedure, hospital stay, surgeon and anaesthetist fees, implant costs (where applicable), airport pickup, accommodation assistance for one companion, international cuisine, and post-operative follow-up. Customised packages are tailored to each patient's treatment plan."
-  - question: "What payment methods and currencies does SPARSH Hennur accept?"
-    answer: "SPARSH Hennur accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard), bank wire transfers, and UPI. The international patient desk assists with foreign currency exchange and provides cost estimates in USD, AED, and BDT. Transparent, itemised billing is provided for insurance claims and TPA coordination."
-  - question: "What diagnostic and imaging facilities are available on-site?"
-    answer: "SPARSH Hennur has state-of-the-art on-site diagnostics including PET-CT, MRI, CT scan, digital X-ray, mammography, ultrasound, EEG, pulmonary function tests, sleep study, uroflowmetry, 2D echocardiography, cath lab for cardiac procedures, and comprehensive laboratory services. The hospital also has LINAC for radiation oncology and HEPA-filtered BMT suites, making it one of the most well-equipped new hospitals in North Bangalore."
-  - question: "What infection control measures are in place?"
+  - question: 'What payment methods and currencies does SPARSH Hennur accept?'
+    answer: 'SPARSH Hennur accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard), bank wire transfers, and UPI. The international patient desk assists with foreign currency exchange and provides cost estimates in USD, AED, and BDT. Transparent, itemised billing is provided for insurance claims and TPA coordination.'
+  - question: 'What diagnostic and imaging facilities are available on-site?'
+    answer: 'SPARSH Hennur has state-of-the-art on-site diagnostics including PET-CT, MRI, CT scan, digital X-ray, mammography, ultrasound, EEG, pulmonary function tests, sleep study, uroflowmetry, 2D echocardiography, cath lab for cardiac procedures, and comprehensive laboratory services. The hospital also has LINAC for radiation oncology and HEPA-filtered BMT suites, making it one of the most well-equipped new hospitals in North Bangalore.'
+  - question: 'What infection control measures are in place?'
     answer: "As an NABH-accredited hospital with IFEM Gold Level Certification for Emergency Care, SPARSH Hennur follows comprehensive infection control protocols. These include HEPA-filtered operation theatres, dedicated BMT suites with specialised air filtration for transplant patients, isolation rooms, hand hygiene compliance programmes, antibiotic stewardship, and 24/7 emergency infection response protocols. The hospital's 2025 infrastructure incorporates the latest design standards for infection prevention."
-  - question: "Can I use international health insurance or get a second opinion before travelling?"
-    answer: "Yes. SPARSH Hennur works with international insurance providers and TPAs. The international patient desk coordinates pre-authorisation and direct billing where agreements exist. Khan Meditour can arrange a remote second opinion from SPARSH specialists — particularly for orthopaedic and joint replacement cases where SPARSH has a strong heritage. Share your medical records and imaging for review and receive a written opinion within 48-72 hours."
+  - question: 'Can I use international health insurance or get a second opinion before travelling?'
+    answer: 'Yes. SPARSH Hennur works with international insurance providers and TPAs. The international patient desk coordinates pre-authorisation and direct billing where agreements exist. Khan Meditour can arrange a remote second opinion from SPARSH specialists — particularly for orthopaedic and joint replacement cases where SPARSH has a strong heritage. Share your medical records and imaging for review and receive a written opinion within 48-72 hours.'
 ---
 
 ## Overview
@@ -151,6 +151,7 @@ Carrying forward the SPARSH legacy of excellence in orthopaedics, the Hennur cam
 Explore [orthopedics surgery treatments and costs →](/treatments/orthopedics-surgery)
 
 **Key procedures:**
+
 - Total [hip](/treatments/orthopedics-surgery/total-hip-replacement-cost-india), [knee](/treatments/orthopedics-surgery/total-knee-replacement-cost-india) and [shoulder](/treatments/orthopedics-surgery/shoulder-replacement-cost-india) replacement
 - Robotic-assisted joint replacement
 - [Arthroscopy](/treatments/orthopedics-surgery/arthroscopy-cost-india) and [sports injury](/treatments/orthopedics-surgery/sports-injury-treatment-cost-india) repair
@@ -165,6 +166,7 @@ The cardiac sciences department offers interventional cardiology, cardiac surger
 Explore [cardiology treatments and costs →](/treatments/cardiology)
 
 **Key procedures:**
+
 - [Coronary artery bypass grafting (CABG)](/treatments/cardiology/heart-bypass-surgery-cabg-cost-india)
 - [Angioplasty and stent placement](/treatments/cardiology/angioplasty-stent-placement-cost-india)
 - [Heart valve repair and replacement](/treatments/cardiology/heart-valve-replacement-repair-cost-india)
@@ -179,6 +181,7 @@ SPARSH Hennur provides comprehensive cancer care powered by advanced technology 
 Explore [cancer treatment treatments and costs →](/treatments/cancer-treatment)
 
 **Key procedures:**
+
 - [Radiation therapy (LINAC)](/treatments/cancer-treatment/radiation-therapy-cost-india)
 - [Chemotherapy](/treatments/cancer-treatment/chemotherapy-cost-india) and [targeted therapy](/treatments/cancer-treatment/targeted-therapy-cost-india)
 - [Surgical oncology (breast, lung, gastrointestinal)](/treatments/cancer-treatment/cancer-surgery-cost-india)
@@ -193,6 +196,7 @@ The neurosciences team covers neurology, neurosurgery, interventional neurology 
 Explore [neuro and spine surgery treatments and costs →](/treatments/neuro-and-spine-surgery)
 
 **Key procedures:**
+
 - [Brain tumour surgery](/treatments/neuro-and-spine-surgery/brain-tumor-surgery-cost-india)
 - [Spine surgery (cervical, lumbar)](/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india)
 - [Stroke management and intervention](/treatments/neurology/stroke-treatment-cost-india)
@@ -207,6 +211,7 @@ The gastroenterology department offers medical and surgical gastroenterology, in
 Explore [gastroenterology gi surgery treatments and costs →](/treatments/gastroenterology-gi-surgery)
 
 **Key procedures:**
+
 - Diagnostic and therapeutic endoscopy
 - Bariatric endoscopy
 - Treatment for inflammatory bowel disease
@@ -244,6 +249,7 @@ SPARSH Hospital, Hennur Road welcomes international patients with comprehensive 
 ## Why International Patients Choose SPARSH Hospital Hennur
 
 ### Patients from Bangladesh
+
 - **Bengali-speaking coordinators** available for seamless communication
 - Direct flights from Dhaka to Bangalore (Kempegowda International Airport)
 - SPARSH's **orthopaedic heritage** — joint replacement and spine surgery aligned with high-demand treatments for Bangladeshi patients
@@ -251,6 +257,7 @@ SPARSH Hospital, Hennur Road welcomes international patients with comprehensive 
 - Visa assistance and medical visa invitation letters provided
 
 ### Patients from the Middle East (GCC)
+
 - **Arabic-speaking coordinators** upon request and international cuisine including halal options
 - Modern facility with **advanced oncology (LINAC) and cardiac care** suited to GCC patient preferences
 - IFEM Gold Level Certification for Emergency Care — first in India
@@ -258,6 +265,7 @@ SPARSH Hospital, Hennur Road welcomes international patients with comprehensive 
 - Direct connectivity from Dubai, Riyadh, Doha, and Muscat to Bangalore
 
 ### Patients from Africa
+
 - **English-speaking coordinators** and interpreter services for Swahili and French upon request
 - Modern **orthopaedic and joint replacement** programmes with robotic-assisted surgery
 - Affordable treatment packages compared to Western destinations
@@ -278,20 +286,24 @@ SPARSH Hospital, Hennur Road welcomes international patients with comprehensive 
 **Address:** HBR Layout, Hennur Road, Bangalore - 560043
 
 ### By Air
+
 - **Kempegowda International Airport (BLR):** ~32-36 km | ~50-80 minutes by taxi depending on traffic
 - Airport pickup can be arranged through the international patient desk
 - Ride-hailing (Uber/Ola) and prepaid airport taxis are readily available
 
 ### By Metro
+
 - **Nearest station:** Baiyappanahalli (Purple Line) — ~8-10 km from the hospital
 - Auto-rickshaws and taxis are available outside the metro station for the final leg
 - Note: No direct metro line currently serves Hennur Road; taxi or ride-hailing is recommended
 
 ### By Road
+
 - Located at HBR Layout on Hennur Road in North-East Bangalore
 - Easily accessible via Outer Ring Road and Hennur Main Road
 - Ample parking available on-site for patients and visitors
 
 ### Nearby Landmarks
+
 - HBR Layout (Hennur-Banaswadi-Road Layout)
 - Close to Manyata Tech Park and Kalyan Nagar

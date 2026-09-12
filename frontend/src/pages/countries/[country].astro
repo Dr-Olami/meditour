@@ -9,8 +9,32 @@ import { Icon } from '../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
 import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
 import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
-import { getCountryMetadata, getAllCountrySlugs, getRelatedCountries, getRegionLabel, formatPatientsTreated, formatFlightTimeShort, getTreatmentCategory, getTreatmentName, ALL_COUNTRIES, getSeoTitle, getSeoDescription, getCountryOgImage, getRegionalHeroImage, getFlagUrl } from '../../data/countries';
-import { getTreatmentsByCountry, getTestimonialsByCountry, getBlogPostsByCountry, entrySlug, getDoctors, getHospitals, getProcedures, getTreatments } from '../../lib/content';
+import {
+  getCountryMetadata,
+  getAllCountrySlugs,
+  getRelatedCountries,
+  getRegionLabel,
+  formatPatientsTreated,
+  formatFlightTimeShort,
+  getTreatmentCategory,
+  getTreatmentName,
+  ALL_COUNTRIES,
+  getSeoTitle,
+  getSeoDescription,
+  getCountryOgImage,
+  getRegionalHeroImage,
+  getFlagUrl,
+} from '../../data/countries';
+import {
+  getTreatmentsByCountry,
+  getTestimonialsByCountry,
+  getBlogPostsByCountry,
+  entrySlug,
+  getDoctors,
+  getHospitals,
+  getProcedures,
+  getTreatments,
+} from '../../lib/content';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
@@ -70,7 +94,11 @@ function scoreHospitalByTreatments(specialities: string[], treatmentSlugs: strin
   }, 0);
 }
 
-function scoreDoctorByTreatments(specialty: string, expertise: string[], treatmentSlugs: string[]): number {
+function scoreDoctorByTreatments(
+  specialty: string,
+  expertise: string[],
+  treatmentSlugs: string[]
+): number {
   const doctorText = [specialty, ...expertise].join(' ').toLowerCase();
   return treatmentSlugs.reduce((score, slug) => {
     const keywords = treatmentSlugToSpecialty[slug] || [];
@@ -161,21 +189,26 @@ const costTableEntries = Object.entries(countryData.treatmentCosts).slice(0, 5);
 // This section links from the country page to those dedicated pages, grouped
 // by category for easier navigation.
 const allProcedures = await getProcedures(locale);
-const countryProcedures = allProcedures
-  .map((p) => ({
-    name: p.data.name,
-    fromPrice: p.data.fromPrice,
-    parentSlug: p.data.parentTreatmentSlug,
-    href: `/countries/${country}/${entrySlug(p).split('/').pop()!.replace(/-cost-india$/, '-in-india')}`,
-  }));
+const countryProcedures = allProcedures.map((p) => ({
+  name: p.data.name,
+  fromPrice: p.data.fromPrice,
+  parentSlug: p.data.parentTreatmentSlug,
+  href: `/countries/${country}/${entrySlug(p)
+    .split('/')
+    .pop()!
+    .replace(/-cost-india$/, '-in-india')}`,
+}));
 
 // Group procedures by category for display
-const proceduresByCategory = countryProcedures.reduce((acc, p) => {
-  const cat = p.parentSlug || 'other';
-  if (!acc[cat]) acc[cat] = [];
-  acc[cat].push(p);
-  return acc;
-}, {} as Record<string, typeof countryProcedures>);
+const proceduresByCategory = countryProcedures.reduce(
+  (acc, p) => {
+    const cat = p.parentSlug || 'other';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(p);
+    return acc;
+  },
+  {} as Record<string, typeof countryProcedures>
+);
 
 // Get category labels from treatments
 const allTreatments = await getTreatments(locale);
@@ -214,9 +247,11 @@ const jsonLd = [
   jsonLd={jsonLd}
   bnAlternate={hasBnCountryPage(country)}
 >
-  {/* Reason: only countries with a Bengali translation (currently Bangladesh)
+  {
+    /* Reason: only countries with a Bengali translation (currently Bangladesh)
       emit hreflang="bn" and let the language switcher preserve the path.
-      Other country pages suppress the bn alternate and fall back to /bn/. */}
+      Other country pages suppress the bn alternate and fall back to /bn/. */
+  }
   <Navbar
     brand={t.site.name}
     links={getNavLinks(locale)}
@@ -258,16 +293,19 @@ const jsonLd = [
             class="absolute inset-0 h-full w-full object-cover"
             loading="eager"
           />
-          
+
           {/* Subtle gradient overlay */}
-          <div class="absolute inset-0 bg-gradient-to-br from-ink/70 via-ink/50 to-transparent" />
+          <div class="from-ink/70 via-ink/50 absolute inset-0 bg-gradient-to-br to-transparent">
+          </div>
 
           {/* Content - minimal: just badge + H1 */}
           <div class="relative flex h-full items-center px-6 md:px-12 lg:px-16">
             <div class="max-w-3xl" data-anim="stagger-children">
               {/* Badge with country flag */}
-              <span class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg">
-                <img 
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white shadow-lg"
+              >
+                <img
                   src={getFlagUrl(countryData.flagCode)}
                   alt={`${countryData.name} flag`}
                   class="h-4 w-5 rounded-[2px]"
@@ -277,7 +315,10 @@ const jsonLd = [
               </span>
 
               {/* H1 only - clean and bold */}
-              <h1 class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl" data-anim="headline-reveal">
+              <h1
+                class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
+                data-anim="headline-reveal"
+              >
                 Medical Treatment in India for {countryData.nationality} Patients
               </h1>
             </div>
@@ -290,38 +331,46 @@ const jsonLd = [
     <section class="bg-cream-100 py-12 md:py-16">
       <div class="container">
         {/* Subtitle moved here from hero */}
-        <p class="mb-8 text-center text-lg leading-relaxed text-ink/70 md:text-xl">
+        <p class="text-ink/70 mb-8 text-center text-lg leading-relaxed md:text-xl">
           {countryData.heroSubtitle}
         </p>
 
         {/* Benefits grid */}
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div
+            class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+          >
             <Icon name="check" size={20} className="mt-0.5 text-green-600" />
             <div>
               <h3 class="text-sm font-semibold text-ink">Cost Savings</h3>
-              <p class="text-xs text-ink/60">Save {countryData.costSavingsVsLocal}</p>
+              <p class="text-ink/60 text-xs">Save {countryData.costSavingsVsLocal}</p>
             </div>
           </div>
-          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div
+            class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+          >
             <Icon name="check" size={20} className="mt-0.5 text-blue-600" />
             <div>
               <h3 class="text-sm font-semibold text-ink">Easy Travel</h3>
-              <p class="text-xs text-ink/60">{countryData.flightTime}</p>
+              <p class="text-ink/60 text-xs">{countryData.flightTime}</p>
             </div>
           </div>
-          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div
+            class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+          >
             <Icon name="check" size={20} className="mt-0.5 text-violet-600" />
             <div>
               <h3 class="text-sm font-semibold text-ink">Visa Support</h3>
-              <p class="text-xs text-ink/60">{countryData.visaProcessingTime}</p>
+              <p class="text-ink/60 text-xs">{countryData.visaProcessingTime}</p>
             </div>
           </div>
-          <div class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div
+            class="flex items-start gap-3 rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+          >
             <Icon name="check" size={20} className="mt-0.5 text-indigo-600" />
             <div>
               <h3 class="text-sm font-semibold text-ink">Language Support</h3>
-              <p class="text-xs text-ink/60">{countryData.languages.join(', ')}</p>
+              <p class="text-ink/60 text-xs">{countryData.languages.join(', ')}</p>
             </div>
           </div>
         </div>
@@ -341,7 +390,7 @@ const jsonLd = [
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
           Medical treatment in India for {countryData.nationality.toLowerCase()} patients
         </h2>
-        <p class="mt-6 text-lg leading-relaxed text-ink/70">{countryData.introParagraph}</p>
+        <p class="text-ink/70 mt-6 text-lg leading-relaxed">{countryData.introParagraph}</p>
       </div>
     </section>
 
@@ -349,81 +398,101 @@ const jsonLd = [
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <div class="mb-6">
-          <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">Cost comparison</p>
+          <p class="text-ink/60 text-sm font-semibold uppercase tracking-wide">Cost comparison</p>
           <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
             Treatment costs in India for {countryData.nationality} patients
           </h2>
-          <p class="mt-4 max-w-2xl text-base text-ink/60">
+          <p class="text-ink/60 mt-4 max-w-2xl text-base">
             Indicative package ranges compared with typical US pricing
-            {countryData.currency.code !== 'USD' && `, with an approximate ${countryData.currency.name} (${countryData.currency.symbol}) reference`}
+            {
+              countryData.currency.code !== 'USD' &&
+                `, with an approximate ${countryData.currency.name} (${countryData.currency.symbol}) reference`
+            }
             . Final quotes follow medical review of your reports.
           </p>
         </div>
 
         {/* Card grid - mobile-first, stacks vertically on small screens */}
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {costTableEntries.map(([slug, cost]) => (
-            <TreatmentCostCard
-              slug={slug}
-              name={getTreatmentName(slug)}
-              category={getTreatmentCategory(slug)}
-              indiaUSD={cost.indiaUSD}
-              localCurrency={cost.localCurrency || undefined}
-              currencyCode={countryData.currency.code !== 'USD' ? countryData.currency.code : undefined}
-              usaCost={cost.usaCost}
-              savingsPercent={cost.savingsPercent}
-              client:visible
-            />
-          ))}
+          {
+            costTableEntries.map(([slug, cost]) => (
+              <TreatmentCostCard
+                slug={slug}
+                name={getTreatmentName(slug)}
+                category={getTreatmentCategory(slug)}
+                indiaUSD={cost.indiaUSD}
+                localCurrency={cost.localCurrency || undefined}
+                currencyCode={
+                  countryData.currency.code !== 'USD' ? countryData.currency.code : undefined
+                }
+                usaCost={cost.usaCost}
+                savingsPercent={cost.savingsPercent}
+                client:visible
+              />
+            ))
+          }
         </div>
 
-        <p class="mt-6 text-xs text-ink/50">
-          Savings vs USA are estimates from mid-range package figures. Exchange rates change — request a written quote for your case.
+        <p class="text-ink/50 mt-6 text-xs">
+          Savings vs USA are estimates from mid-range package figures. Exchange rates change —
+          request a written quote for your case.
         </p>
       </div>
     </section>
 
     {/* ── ALL PROCEDURES FOR {nationality} PATIENTS ─────────────────────── */}
-    {countryProcedures.length > 0 && (
-      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
-        <div class="container">
-          <div class="mb-6">
-            <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">All procedures</p>
-            <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
-              {countryData.nationality} patients: procedures in India
-            </h2>
-            <p class="mt-4 max-w-2xl text-base text-ink/60">
-              Procedure-specific pages with costs in {countryData.currency.code}, visa steps, travel times, and recovery guidance for {countryData.nationality.toLowerCase()} patients.
-            </p>
-          </div>
-
-          {(Object.entries(proceduresByCategory) as [string, typeof countryProcedures][]).map(([catSlug, procs]) => (
-            <div class="mb-8 last:mb-0">
-              <h3 class="mb-4 font-display text-xl font-semibold text-ink">
-                {categoryLabels[catSlug] || catSlug}
-              </h3>
-              <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {procs.map((proc) => (
-                  <a
-                    href={proc.href}
-                    class="group flex flex-col rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-all hover:border-violet-300 hover:shadow-md"
-                  >
-                    <h4 class="font-display text-base font-semibold text-ink">{proc.name}</h4>
-                    {proc.fromPrice && (
-                      <p class="mt-1 text-sm text-ink/50">From {proc.fromPrice}</p>
-                    )}
-                    <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
-                      For {countryData.nationality} patients
-                      <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </a>
-                ))}
-              </div>
+    {
+      countryProcedures.length > 0 && (
+        <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+          <div class="container">
+            <div class="mb-6">
+              <p class="text-ink/60 text-sm font-semibold uppercase tracking-wide">
+                All procedures
+              </p>
+              <h2 class="mt-2 font-display text-3xl font-bold text-ink md:text-4xl">
+                {countryData.nationality} patients: procedures in India
+              </h2>
+              <p class="text-ink/60 mt-4 max-w-2xl text-base">
+                Procedure-specific pages with costs in {countryData.currency.code}, visa steps,
+                travel times, and recovery guidance for {countryData.nationality.toLowerCase()}{' '}
+                patients.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
-    )}
+
+            {(Object.entries(proceduresByCategory) as [string, typeof countryProcedures][]).map(
+              ([catSlug, procs]) => (
+                <div class="mb-8 last:mb-0">
+                  <h3 class="mb-4 font-display text-xl font-semibold text-ink">
+                    {categoryLabels[catSlug] || catSlug}
+                  </h3>
+                  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {procs.map((proc) => (
+                      <a
+                        href={proc.href}
+                        class="group flex flex-col rounded-card border border-cream-300 bg-white p-5 shadow-sm transition-all hover:border-violet-300 hover:shadow-md"
+                      >
+                        <h4 class="font-display text-base font-semibold text-ink">{proc.name}</h4>
+                        {proc.fromPrice && (
+                          <p class="text-ink/50 mt-1 text-sm">From {proc.fromPrice}</p>
+                        )}
+                        <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                          For {countryData.nationality} patients
+                          <Icon
+                            name="arrow-right"
+                            size={14}
+                            class="transition-transform group-hover:translate-x-1"
+                          />
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        </section>
+      )
+    }
 
     {/* ── WHY CHOOSE INDIA ─────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
@@ -432,18 +501,22 @@ const jsonLd = [
           <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
             Why {countryData.nationality} patients choose India
           </h2>
-          <p class="mt-4 text-lg text-ink/70">
-            India offers world-class medical care at a fraction of the cost in {countryData.costComparisonCountries.join(', ')}
+          <p class="text-ink/70 mt-4 text-lg">
+            India offers world-class medical care at a fraction of the cost in {
+              countryData.costComparisonCountries.join(', ')
+            }
           </p>
         </div>
 
         <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {countryData.topConcerns.map((concern) => (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <Icon name="check-circle" size={28} className="text-green-600" />
-              <h3 class="mt-4 text-base font-semibold text-ink">{concern}</h3>
-            </div>
-          ))}
+          {
+            countryData.topConcerns.map((concern) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                <Icon name="check-circle" size={28} className="text-green-600" />
+                <h3 class="mt-4 text-base font-semibold text-ink">{concern}</h3>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -455,130 +528,147 @@ const jsonLd = [
           Popular treatment cities for {countryData.nationality.toLowerCase()} patients
         </h2>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {countryData.recommendedCities.map((city) => (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <h3 class="font-display text-lg font-semibold text-ink">{city.name}</h3>
-              <p class="mt-2 text-sm text-ink/60">{city.flightTime}</p>
-              <p class="mt-1 text-xs text-ink/50">
-                {city.directFlights ? 'Direct flights' : 'Connecting flights'} · {city.airlines.join(', ')}
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                {city.specialties.map((specialty) => (
-                  <span class="rounded-full bg-cream-200 px-2 py-1 text-xs text-ink/70">{specialty}</span>
-                ))}
+          {
+            countryData.recommendedCities.map((city) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                <h3 class="font-display text-lg font-semibold text-ink">{city.name}</h3>
+                <p class="text-ink/60 mt-2 text-sm">{city.flightTime}</p>
+                <p class="text-ink/50 mt-1 text-xs">
+                  {city.directFlights ? 'Direct flights' : 'Connecting flights'} ·{' '}
+                  {city.airlines.join(', ')}
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {city.specialties.map((specialty) => (
+                    <span class="text-ink/70 rounded-full bg-cream-200 px-2 py-1 text-xs">
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
-        <p class="mt-6 text-sm text-ink/60">
+        <p class="text-ink/60 mt-6 text-sm">
           Care languages we commonly support: {countryData.languages.join(', ')}.
         </p>
       </div>
     </section>
 
     {/* ── TOP HOSPITALS ────────────────────────────────────────────────── */}
-    {hospitalsForCountry.length > 0 && (
-      <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
-        <div class="container">
-          <div class="mb-10 max-w-2xl">
-            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-              Recommended hospitals for {countryData.nationality.toLowerCase()} patients
-            </h2>
-            <p class="mt-4 text-base text-ink/60">
-              JCI and NABH accredited hospitals with international patient departments experienced in caring for {countryData.nationality.toLowerCase()} families.
-            </p>
-          </div>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {hospitalsForCountry.map((hospital) => (
-              <a
-                href={`/hospitals/${entrySlug(hospital)}`}
-                class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
-              >
-                {hospital.data.image && (
-                  <div class="aspect-[16/10] overflow-hidden bg-cream-200">
-                    <img
-                      src={hospital.data.image}
-                      alt={hospital.data.name}
-                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="flex flex-1 flex-col p-5">
-                  <h3 class="font-display text-lg font-semibold text-ink">
-                    {hospital.data.name}
-                  </h3>
-                  <p class="mt-1 text-xs text-ink/50">{hospital.data.city}</p>
-                  {hospital.data.accreditations && hospital.data.accreditations.length > 0 && (
-                    <div class="mt-3 flex flex-wrap gap-2">
-                      {hospital.data.accreditations.map((acc) => (
-                        <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-700">{acc}</span>
-                      ))}
+    {
+      hospitalsForCountry.length > 0 && (
+        <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+          <div class="container">
+            <div class="mb-10 max-w-2xl">
+              <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+                Recommended hospitals for {countryData.nationality.toLowerCase()} patients
+              </h2>
+              <p class="text-ink/60 mt-4 text-base">
+                JCI and NABH accredited hospitals with international patient departments experienced
+                in caring for {countryData.nationality.toLowerCase()} families.
+              </p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {hospitalsForCountry.map((hospital) => (
+                <a
+                  href={`/hospitals/${entrySlug(hospital)}`}
+                  class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
+                >
+                  {hospital.data.image && (
+                    <div class="aspect-[16/10] overflow-hidden bg-cream-200">
+                      <img
+                        src={hospital.data.image}
+                        alt={hospital.data.name}
+                        class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
                   )}
-                  <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70 line-clamp-3">
-                    {hospital.data.description}
-                  </p>
-                  <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
-                    View hospital details
-                    <Icon name="arrow-right" size={16} />
-                  </span>
-                </div>
-              </a>
-            ))}
+                  <div class="flex flex-1 flex-col p-5">
+                    <h3 class="font-display text-lg font-semibold text-ink">
+                      {hospital.data.name}
+                    </h3>
+                    <p class="text-ink/50 mt-1 text-xs">{hospital.data.city}</p>
+                    {hospital.data.accreditations && hospital.data.accreditations.length > 0 && (
+                      <div class="mt-3 flex flex-wrap gap-2">
+                        {hospital.data.accreditations.map((acc) => (
+                          <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-700">
+                            {acc}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <p class="text-ink/70 mt-3 line-clamp-3 flex-1 text-sm leading-relaxed">
+                      {hospital.data.description}
+                    </p>
+                    <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                      View hospital details
+                      <Icon name="arrow-right" size={16} />
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    )}
+        </section>
+      )
+    }
 
     {/* ── SPECIALIST DOCTORS ───────────────────────────────────────────── */}
-    {doctorsForCountry.length > 0 && (
-      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
-        <div class="container">
-          <div class="mb-10 max-w-2xl">
-            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
-              Top specialists for {countryData.nationality.toLowerCase()} patients
-            </h2>
-            <p class="mt-4 text-base text-ink/60">
-              Experienced doctors at our partner hospitals, with international patient coordinators to assist {countryData.nationality.toLowerCase()} families.
-            </p>
-          </div>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {doctorsForCountry.map((doctor) => (
-              <a
-                href={`/doctors/${entrySlug(doctor)}`}
-                class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
-              >
-                {doctor.data.avatar && (
-                  <div class="aspect-square overflow-hidden bg-cream-200">
-                    <img
-                      src={doctor.data.avatar}
-                      alt={doctor.data.name}
-                      class="h-full w-full object-cover transition-transform group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="flex flex-1 flex-col p-4">
-                  <h3 class="font-display text-base font-semibold text-ink">
-                    {doctor.data.name}
-                  </h3>
-                  <p class="mt-1 text-xs text-ink/60">{doctor.data.specialty}</p>
-                  <p class="mt-2 text-xs text-ink/50">{doctor.data.experienceYears}+ years experience</p>
-                  {doctor.data.languages && doctor.data.languages.length > 0 && (
-                    <p class="mt-2 text-xs text-ink/50">Speaks: {doctor.data.languages.join(', ')}</p>
+    {
+      doctorsForCountry.length > 0 && (
+        <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+          <div class="container">
+            <div class="mb-10 max-w-2xl">
+              <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+                Top specialists for {countryData.nationality.toLowerCase()} patients
+              </h2>
+              <p class="text-ink/60 mt-4 text-base">
+                Experienced doctors at our partner hospitals, with international patient
+                coordinators to assist {countryData.nationality.toLowerCase()} families.
+              </p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {doctorsForCountry.map((doctor) => (
+                <a
+                  href={`/doctors/${entrySlug(doctor)}`}
+                  class="group flex flex-col overflow-hidden rounded-card border border-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md"
+                >
+                  {doctor.data.avatar && (
+                    <div class="aspect-square overflow-hidden bg-cream-200">
+                      <img
+                        src={doctor.data.avatar}
+                        alt={doctor.data.name}
+                        class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
                   )}
-                  <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
-                    View profile
-                    <Icon name="arrow-right" size={14} />
-                  </span>
-                </div>
-              </a>
-            ))}
+                  <div class="flex flex-1 flex-col p-4">
+                    <h3 class="font-display text-base font-semibold text-ink">
+                      {doctor.data.name}
+                    </h3>
+                    <p class="text-ink/60 mt-1 text-xs">{doctor.data.specialty}</p>
+                    <p class="text-ink/50 mt-2 text-xs">
+                      {doctor.data.experienceYears}+ years experience
+                    </p>
+                    {doctor.data.languages && doctor.data.languages.length > 0 && (
+                      <p class="text-ink/50 mt-2 text-xs">
+                        Speaks: {doctor.data.languages.join(', ')}
+                      </p>
+                    )}
+                    <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
+                      View profile
+                      <Icon name="arrow-right" size={14} />
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    )}
+        </section>
+      )
+    }
 
     {/* ── VISA PROCESS ─────────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
@@ -586,37 +676,42 @@ const jsonLd = [
         <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
           Medical visa process for {countryData.nationality.toLowerCase()} patients
         </h2>
-        <p class="mb-10 text-base text-ink/60">
-          Practical steps for patients travelling from {countryData.name}. Requirements can vary — we confirm the current checklist with your hospital invitation letter.
+        <p class="text-ink/60 mb-10 text-base">
+          Practical steps for patients travelling from {countryData.name}. Requirements can vary —
+          we confirm the current checklist with your hospital invitation letter.
         </p>
 
         <ol class="space-y-6">
-          {countryData.visaSteps.map((step, index) => (
-            <li class="flex gap-4">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
-                {index + 1}
-              </span>
-              <div>
-                <h3 class="font-semibold text-ink">{step.title}</h3>
-                <p class="mt-1 text-sm text-ink/70">{step.description}</p>
-              </div>
-            </li>
-          ))}
+          {
+            countryData.visaSteps.map((step, index) => (
+              <li class="flex gap-4">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 class="font-semibold text-ink">{step.title}</h3>
+                  <p class="text-ink/70 mt-1 text-sm">{step.description}</p>
+                </div>
+              </li>
+            ))
+          }
         </ol>
       </div>
     </section>
 
     {/* ── PATIENT STORIES ──────────────────────────────────────────────── */}
-    {testimonials.length > 0 && (
-      <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
-        <div class="container">
-          <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
-            Outcomes shared by families from {countryData.name}
-          </h2>
-          <TestimonialCarousel items={testimonials} client:load />
-        </div>
-      </section>
-    )}
+    {
+      testimonials.length > 0 && (
+        <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+          <div class="container">
+            <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl">
+              Outcomes shared by families from {countryData.name}
+            </h2>
+            <TestimonialCarousel items={testimonials} client:load />
+          </div>
+        </section>
+      )
+    }
 
     {/* ── FAQ ──────────────────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
@@ -629,55 +724,57 @@ const jsonLd = [
     </section>
 
     {/* ── RELATED COUNTRIES ────────────────────────────────────────────── */}
-    {relatedCountries.length > 0 && (
-      <section class="bg-cream-200 py-16" data-anim="scroll-reveal">
-        <div class="container">
-          <h2 class="mb-8 font-display text-2xl font-bold text-ink md:text-3xl">
-            Other {getRegionLabel(countryData.region)} countries we serve
-          </h2>
-          <div class="flex flex-wrap gap-3">
-            {relatedCountries.map((related) => (
-              <a
-                href={`/countries/${related.slug}`}
-                class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
-              >
-                {related.name}
-              </a>
-            ))}
+    {
+      relatedCountries.length > 0 && (
+        <section class="bg-cream-200 py-16" data-anim="scroll-reveal">
+          <div class="container">
+            <h2 class="mb-8 font-display text-2xl font-bold text-ink md:text-3xl">
+              Other {getRegionLabel(countryData.region)} countries we serve
+            </h2>
+            <div class="flex flex-wrap gap-3">
+              {relatedCountries.map((related) => (
+                <a
+                  href={`/countries/${related.slug}`}
+                  class="inline-flex items-center gap-2 rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
+                >
+                  {related.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    )}
+        </section>
+      )
+    }
 
     {/* ── GUIDES & ARTICLES ────────────────────────────────────────────── */}
-    {blogPosts.length > 0 && (
-      <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
-        <div class="container">
-          <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
-            Guides for {countryData.nationality.toLowerCase()} patients
-          </h2>
-          <div class="grid gap-6 md:grid-cols-3">
-            {blogPosts.map((post) => (
-              <article class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
-                <h3 class="font-display text-lg font-semibold text-ink">
-                  <a href={post.href}>
-                    {post.title}
+    {
+      blogPosts.length > 0 && (
+        <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+          <div class="container">
+            <h2 class="mb-10 font-display text-3xl font-bold text-ink md:text-4xl">
+              Guides for {countryData.nationality.toLowerCase()} patients
+            </h2>
+            <div class="grid gap-6 md:grid-cols-3">
+              {blogPosts.map((post) => (
+                <article class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
+                  <h3 class="font-display text-lg font-semibold text-ink">
+                    <a href={post.href}>{post.title}</a>
+                  </h3>
+                  <p class="text-ink/70 mt-3 flex-1 text-sm leading-relaxed">{post.excerpt}</p>
+                  <a
+                    href={post.href}
+                    class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600"
+                  >
+                    Read guide
+                    <Icon name="arrow-right" size={16} />
                   </a>
-                </h3>
-                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
-                <a
-                  href={post.href}
-                  class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600"
-                >
-                  Read guide
-                  <Icon name="arrow-right" size={16} />
-                </a>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    )}
+        </section>
+      )
+    }
 
     {/* ── CTA ──────────────────────────────────────────────────────────── */}
     <TreatmentsCtaSection
@@ -692,18 +789,20 @@ const jsonLd = [
 
   {/* ── FLOATING CTAs (fixed to viewport, always visible) ──────────────── */}
   <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-    {whatsappHref && (
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
-      >
-        <Icon name="whatsapp" size={16} />
-        <span class="hidden text-sm font-semibold md:inline">Chat on WhatsApp</span>
-      </a>
-    )}
+    {
+      whatsappHref && (
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-xl transition-all hover:scale-105 hover:bg-green-700 hover:shadow-2xl md:h-auto md:w-auto md:gap-2 md:px-5 md:py-3"
+        >
+          <Icon name="whatsapp" size={16} />
+          <span class="hidden text-sm font-semibold md:inline">Chat on WhatsApp</span>
+        </a>
+      )
+    }
     <a
       href="#contact"
       class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"

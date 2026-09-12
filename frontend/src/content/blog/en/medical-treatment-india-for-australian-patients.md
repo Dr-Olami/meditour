@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Australian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Sydney to India for treatment: medical visa requirements, flight routes, cost comparisons in Australian dollars, and choosing the right hospital for Australian families."
+excerpt: 'Travelling from Sydney to India for treatment: medical visa requirements, flight routes, cost comparisons in Australian dollars, and choosing the right hospital for Australian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-25
@@ -32,13 +32,13 @@ Patients from Australia increasingly travel to India for medical treatment, seek
 
 For Australian families weighing private treatment abroad against public waiting lists, the savings are significant. Indicative package prices (at roughly 1.52 AUD per US dollar):
 
-| Treatment | India (USD) | Approx. AUD | Australia | Thailand |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | A$6,840–18,240 | Higher | Higher |
-| Knee/hip replacement | $2,500–8,000 | A$3,800–12,160 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | A$4,560–38,000 | Higher | Higher |
-| Spine surgery | $4,000–12,000 | A$6,080–18,240 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | A$5,320–10,640 | Higher | Higher |
+| Treatment            | India (USD)   | Approx. AUD    | Australia | Thailand |
+| -------------------- | ------------- | -------------- | --------- | -------- |
+| Cardiac surgery      | $4,500–12,000 | A$6,840–18,240 | Higher    | Higher   |
+| Knee/hip replacement | $2,500–8,000  | A$3,800–12,160 | Higher    | $30,000+ |
+| Cancer treatment     | $3,000–25,000 | A$4,560–38,000 | Higher    | Higher   |
+| Spine surgery        | $4,000–12,000 | A$6,080–18,240 | Higher    | $50,000+ |
+| IVF (per cycle)      | $3,500–7,000  | A$5,320–10,640 | Higher    | Higher   |
 
 Knee and hip replacement is one of the most common procedures Australian patients travel for, with package prices often less than half the out-of-pocket cost of private surgery in Australia.
 

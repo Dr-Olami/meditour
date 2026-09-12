@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Prostate Surgery (TURP)"
-seoHeadline: "Prostate Surgery (TURP) Cost in India for International Patients"
+name: 'Prostate Surgery (TURP)'
+seoHeadline: 'Prostate Surgery (TURP) Cost in India for International Patients'
 parentTreatmentSlug: urology
-summary: "Transurethral Resection of the Prostate (TURP) in India costs between $2,500 and $6,000, offering savings of up to 85% compared to Western countries. This minimally invasive procedure removes excess prostate tissue through the urethra to relieve urinary obstruction caused by benign prostatic hyperplasia (BPH)."
-description: "Prostate Surgery (TURP) in India from $2,500–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices with expert urologists."
-fromPrice: "$2,500"
-toPrice: "$6,000"
-duration: "1-2 weeks"
-hospitalStay: "2-4 days"
-recoveryTime: "2-4 weeks"
+summary: 'Transurethral Resection of the Prostate (TURP) in India costs between $2,500 and $6,000, offering savings of up to 85% compared to Western countries. This minimally invasive procedure removes excess prostate tissue through the urethra to relieve urinary obstruction caused by benign prostatic hyperplasia (BPH).'
+description: 'Prostate Surgery (TURP) in India from $2,500–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices with expert urologists.'
+fromPrice: '$2,500'
+toPrice: '$6,000'
+duration: '1-2 weeks'
+hospitalStay: '2-4 days'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Moderate to severe benign prostatic hyperplasia (BPH) with significant urinary symptoms not responding to medication"
-  - "Recurrent urinary retention requiring catheterisation"
-  - "Recurrent urinary tract infections or bladder stones secondary to bladder outlet obstruction"
-  - "Elevated post-void residual urine with compromised bladder function or hydronephrosis"
-  - "Prostate size suitable for transurethral resection (typically under 80-100 grams)"
+  - 'Moderate to severe benign prostatic hyperplasia (BPH) with significant urinary symptoms not responding to medication'
+  - 'Recurrent urinary retention requiring catheterisation'
+  - 'Recurrent urinary tract infections or bladder stones secondary to bladder outlet obstruction'
+  - 'Elevated post-void residual urine with compromised bladder function or hydronephrosis'
+  - 'Prostate size suitable for transurethral resection (typically under 80-100 grams)'
 costInclusions:
-  - "Urologist and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs including resectoscope and electrodes"
-  - "Pre-operative diagnostics (blood tests, ultrasound, uroflowmetry, PSA)"
-  - "Post-operative care during hospital stay including catheter management"
-  - "Operating room and recovery room charges"
-  - "Airport pickup and drop"
+  - 'Urologist and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs including resectoscope and electrodes'
+  - 'Pre-operative diagnostics (blood tests, ultrasound, uroflowmetry, PSA)'
+  - 'Post-operative care during hospital stay including catheter management'
+  - 'Operating room and recovery room charges'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-4 days"
-    description: "Continuous bladder irrigation is maintained for 24-48 hours to prevent clot retention, the urinary catheter is monitored for haematuria, and early mobilisation begins once irrigation is stopped."
-  - phase: "Bangalore recovery"
-    duration: "3-7 days"
-    description: "Catheter removal and trial of void, followed by monitoring for urinary retention and bleeding; a follow-up uroflowmetry and ultrasound are performed before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual resumption of light activities, increased fluid intake, and avoidance of heavy lifting or straining; mild urinary frequency and urgency are common and typically resolve over several weeks."
-  - phase: "Full recovery"
-    duration: "2-4 weeks"
-    description: "Most patients return to work and normal activities within 2 to 4 weeks; complete healing of the prostatic fossa and resolution of urinary symptoms may take up to 6 weeks."
+  - phase: 'Hospital stay'
+    duration: '2-4 days'
+    description: 'Continuous bladder irrigation is maintained for 24-48 hours to prevent clot retention, the urinary catheter is monitored for haematuria, and early mobilisation begins once irrigation is stopped.'
+  - phase: 'Bangalore recovery'
+    duration: '3-7 days'
+    description: 'Catheter removal and trial of void, followed by monitoring for urinary retention and bleeding; a follow-up uroflowmetry and ultrasound are performed before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual resumption of light activities, increased fluid intake, and avoidance of heavy lifting or straining; mild urinary frequency and urgency are common and typically resolve over several weeks.'
+  - phase: 'Full recovery'
+    duration: '2-4 weeks'
+    description: 'Most patients return to work and normal activities within 2 to 4 weeks; complete healing of the prostatic fossa and resolution of urinary symptoms may take up to 6 weeks.'
 risks:
-  - "Transient haematuria or clot retention requiring catheter irrigation in the early post-operative period"
-  - "Urinary tract infection requiring antibiotic treatment"
-  - "TUR syndrome from absorption of irrigation fluid, rare with modern bipolar technology"
-  - "Retrograde ejaculation affecting fertility, occurring in the majority of patients"
-  - "Urethral stricture or bladder neck contracture developing weeks to months after surgery"
+  - 'Transient haematuria or clot retention requiring catheter irrigation in the early post-operative period'
+  - 'Urinary tract infection requiring antibiotic treatment'
+  - 'TUR syndrome from absorption of irrigation fluid, rare with modern bipolar technology'
+  - 'Retrograde ejaculation affecting fertility, occurring in the majority of patients'
+  - 'Urethral stricture or bladder neck contracture developing weeks to months after surgery'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -59,14 +59,14 @@ relatedDoctorSlugs:
   - dr-uday-bhaskar-m
 
 relatedProcedureSlugs:
-  - "kidney-stone-removal-cost-india"
+  - 'kidney-stone-removal-cost-india'
 faqs:
-  - question: "What is the difference between TURP and laser prostate surgery?"
-    answer: "TURP uses a wire loop electrode to cut away excess prostate tissue, while laser prostate surgery (such as HoLEP or GreenLight) uses laser energy to enucleate or vaporise the tissue. Laser techniques result in less bleeding, shorter catheter time, and shorter hospital stays, and are preferred for larger prostates or patients on blood thinners. Your urologist will recommend the best technique based on your prostate size and overall health."
-  - question: "Will I have sexual problems after TURP?"
-    answer: "TURP does not typically affect erectile function, and most men maintain their ability to have erections. However, retrograde ejaculation — where semen flows backward into the bladder during orgasm instead of out through the penis — occurs in approximately 65-75% of patients after TURP. This is not harmful but can affect fertility. If preserving fertility is important to you, discuss alternative techniques with your urologist."
-  - question: "How long will I need a urinary catheter after TURP?"
-    answer: "Most patients have a urinary catheter for 1 to 3 days after TURP. The catheter is typically removed once the urine clears and you are able to urinate independently. With newer bipolar TURP or laser techniques, catheter time may be even shorter. Your urologist will assess your urine output and bleeding before removing the catheter."
+  - question: 'What is the difference between TURP and laser prostate surgery?'
+    answer: 'TURP uses a wire loop electrode to cut away excess prostate tissue, while laser prostate surgery (such as HoLEP or GreenLight) uses laser energy to enucleate or vaporise the tissue. Laser techniques result in less bleeding, shorter catheter time, and shorter hospital stays, and are preferred for larger prostates or patients on blood thinners. Your urologist will recommend the best technique based on your prostate size and overall health.'
+  - question: 'Will I have sexual problems after TURP?'
+    answer: 'TURP does not typically affect erectile function, and most men maintain their ability to have erections. However, retrograde ejaculation — where semen flows backward into the bladder during orgasm instead of out through the penis — occurs in approximately 65-75% of patients after TURP. This is not harmful but can affect fertility. If preserving fertility is important to you, discuss alternative techniques with your urologist.'
+  - question: 'How long will I need a urinary catheter after TURP?'
+    answer: 'Most patients have a urinary catheter for 1 to 3 days after TURP. The catheter is typically removed once the urine clears and you are able to urinate independently. With newer bipolar TURP or laser techniques, catheter time may be even shorter. Your urologist will assess your urine output and bleeding before removing the catheter.'
 ---
 
 ## Overview
@@ -139,13 +139,13 @@ If your prostate is very large (over 80-100 grams), Holmium Laser Enucleation of
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,500 – $6,000 | Baseline |
-| USA | $15,000 – $30,000 | ~5.8x higher |
-| UK | £6,000 – £12,000 | ~3.5x higher |
-| Singapore | $8,000 – $15,000 | ~2.5x higher |
-| Thailand | $5,000 – $9,000 | ~1.6x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,500 – $6,000   | Baseline     |
+| USA               | $15,000 – $30,000 | ~5.8x higher |
+| UK                | £6,000 – £12,000  | ~3.5x higher |
+| Singapore         | $8,000 – $15,000  | ~2.5x higher |
+| Thailand          | $5,000 – $9,000   | ~1.6x higher |
 
 The price range within India reflects the size of your prostate, the specific technique used (monopolar versus bipolar TURP versus laser), the choice of hospital and urologist, and whether any additional procedures are needed. Even if you require the most advanced bipolar TURP system or laser technique, your total cost in Bangalore will typically be less than a third of the US price. These savings come from favourable exchange rates, lower labour costs, and high procedural volumes — not from any compromise in equipment quality or surgical expertise.
 

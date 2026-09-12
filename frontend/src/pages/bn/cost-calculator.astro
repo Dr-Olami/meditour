@@ -66,34 +66,42 @@ const calculatorLabels = {
   quoteWindowValue: '২৪–৪৮ ঘন্টা',
   inTheRange: 'পরিসরে সাধারণত যা থাকে',
   getExactQuote: 'আপনার কেসের জন্য সঠিক কোট নিন',
-  disclaimer: 'অনুমানগুলো নির্দেশক প্যাকেজ পরিসর। চূড়ান্ত কোট পার্টনার হাসপাতালে মেডিকেল পর্যালোচনার পর দেওয়া হয়। ফ্লাইট অন্তর্ভুক্ত নয়।',
-  selectPrompt: 'নির্দেশক খরচের পরিসর, মার্কিন তুলনা এবং প্যাকেজ বিভাজন দেখতে বাম পাশে একটি চিকিৎসা নির্বাচন করুন।',
+  disclaimer:
+    'অনুমানগুলো নির্দেশক প্যাকেজ পরিসর। চূড়ান্ত কোট পার্টনার হাসপাতালে মেডিকেল পর্যালোচনার পর দেওয়া হয়। ফ্লাইট অন্তর্ভুক্ত নয়।',
+  selectPrompt:
+    'নির্দেশক খরচের পরিসর, মার্কিন তুলনা এবং প্যাকেজ বিভাজন দেখতে বাম পাশে একটি চিকিৎসা নির্বাচন করুন।',
 };
 
 const faqs = [
   {
     question: 'এই মূল্যগুলো কি নিশ্চিত?',
-    answer: 'না। এগুলো আমাদের পার্টনার হাসপাতালের সাধারণ কেসের ভিত্তিতে নির্দেশক প্যাকেজ পরিসর। আপনার চূড়ান্ত কোট নির্দিষ্ট হাসপাতাল, সার্জন, রুম ক্যাটাগরি, কেসের জটিলতা এবং যেকোনো জটিলতার উপর নির্ভর করে। আমরা আপনার রিপোর্টের মেডিকেল পর্যালোচনার পর লিখিত নিশ্চিত কোট শেয়ার করি।',
+    answer:
+      'না। এগুলো আমাদের পার্টনার হাসপাতালের সাধারণ কেসের ভিত্তিতে নির্দেশক প্যাকেজ পরিসর। আপনার চূড়ান্ত কোট নির্দিষ্ট হাসপাতাল, সার্জন, রুম ক্যাটাগরি, কেসের জটিলতা এবং যেকোনো জটিলতার উপর নির্ভর করে। আমরা আপনার রিপোর্টের মেডিকেল পর্যালোচনার পর লিখিত নিশ্চিত কোট শেয়ার করি।',
   },
   {
     question: 'প্যাকেজ মূল্যে সাধারণত কী থাকে?',
-    answer: 'সাধারণ প্যাকেজে হাসপাতাল ফি (রুম, অপারেটিং থিয়েটার, নার্সিং), সার্জন ও অ্যানেস্থেটিস্ট ফি, প্রি-অপারেটিভ ডায়াগনস্টিকস, হাসপাতালে থাকাকালীন ওষুধ এবং সাধারণ ভর্তি সহায়তা অন্তর্ভুক্ত। আন্তর্জাতিক ফ্লাইট, হাসপাতালের বাইরে থাকা, বা দেশে ডিসচার্জ-পরবর্তী ওষুধ অন্তর্ভুক্ত নয়।',
+    answer:
+      'সাধারণ প্যাকেজে হাসপাতাল ফি (রুম, অপারেটিং থিয়েটার, নার্সিং), সার্জন ও অ্যানেস্থেটিস্ট ফি, প্রি-অপারেটিভ ডায়াগনস্টিকস, হাসপাতালে থাকাকালীন ওষুধ এবং সাধারণ ভর্তি সহায়তা অন্তর্ভুক্ত। আন্তর্জাতিক ফ্লাইট, হাসপাতালের বাইরে থাকা, বা দেশে ডিসচার্জ-পরবর্তী ওষুধ অন্তর্ভুক্ত নয়।',
   },
   {
     question: 'কিছু চিকিৎসার জন্য পরিসর এত প্রশস্ত কেন?',
-    answer: 'পরিসর ভিন্ন কেসের জটিলতা প্রতিফলিত করে। উদাহরণস্বরূপ, কার্ডিওলজি সাধারণ অ্যাঞ্জিওগ্রামের জন্য $১,৫০০ থেকে জটিল বাইপাসের জন্য $৭,০০০ পর্যন্ত। ক্যানসার চিকিৎসা প্রাথমিক থেরাপির জন্য $৩,০০০ থেকে উন্নত মাল্টি-মোডাল চিকিৎসার জন্য $১৫,০০০+ পর্যন্ত। আপনার নির্দিষ্ট কেসের জটিলতা নির্ধারণ করে আপনি পরিসরের কোথায় পড়বেন।',
+    answer:
+      'পরিসর ভিন্ন কেসের জটিলতা প্রতিফলিত করে। উদাহরণস্বরূপ, কার্ডিওলজি সাধারণ অ্যাঞ্জিওগ্রামের জন্য $১,৫০০ থেকে জটিল বাইপাসের জন্য $৭,০০০ পর্যন্ত। ক্যানসার চিকিৎসা প্রাথমিক থেরাপির জন্য $৩,০০০ থেকে উন্নত মাল্টি-মোডাল চিকিৎসার জন্য $১৫,০০০+ পর্যন্ত। আপনার নির্দিষ্ট কেসের জটিলতা নির্ধারণ করে আপনি পরিসরের কোথায় পড়বেন।',
   },
   {
     question: 'ভ্রমণের আগে কি সঠিক কোট পাওয়া যায়?',
-    answer: 'হ্যাঁ। WhatsApp বা আমাদের যোগাযোগ ফর্মে আপনার মেডিকেল রিপোর্ট শেয়ার করুন। আমরা সেগুলো সংশ্লিষ্ট হাসপাতালে পর্যালোচনার জন্য পাঠাই এবং লিখিত কোট নিয়ে ফিরি — সাধারণত ২৪–৪৮ ঘন্টার মধ্যে। কোটে ঠিক কী অন্তর্ভুক্ত এবং চূড়ান্ত খরচে প্রভাব ফেলতে পারে এমন ভেরিয়েবল উল্লেখ থাকবে।',
+    answer:
+      'হ্যাঁ। WhatsApp বা আমাদের যোগাযোগ ফর্মে আপনার মেডিকেল রিপোর্ট শেয়ার করুন। আমরা সেগুলো সংশ্লিষ্ট হাসপাতালে পর্যালোচনার জন্য পাঠাই এবং লিখিত কোট নিয়ে ফিরি — সাধারণত ২৪–৪৮ ঘন্টার মধ্যে। কোটে ঠিক কী অন্তর্ভুক্ত এবং চূড়ান্ত খরচে প্রভাব ফেলতে পারে এমন ভেরিয়েবল উল্লেখ থাকবে।',
   },
   {
     question: 'আমি কি খান মেডিট্যুরকে নাকি হাসপাতালকে পরিশোধ করব?',
-    answer: 'আপনি সরাসরি হাসপাতালকে পরিশোধ করেন। খান মেডিট্যুর সমন্বয়ের জন্য রোগীদের থেকে চার্জ করে না — হাসপাতাল ম্যাচিং, রিপোর্ট পর্যালোচনা, ভিসা সহায়তা এবং ভ্রমণ পরিকল্পনা সব বিনামূল্যে। আমাদের ভূমিকা হলো পথকে স্পষ্ট করা এবং বিকল্প তুলনায় সাহায্য করা।',
+    answer:
+      'আপনি সরাসরি হাসপাতালকে পরিশোধ করেন। খান মেডিট্যুর সমন্বয়ের জন্য রোগীদের থেকে চার্জ করে না — হাসপাতাল ম্যাচিং, রিপোর্ট পর্যালোচনা, ভিসা সহায়তা এবং ভ্রমণ পরিকল্পনা সব বিনামূল্যে। আমাদের ভূমিকা হলো পথকে স্পষ্ট করা এবং বিকল্প তুলনায় সাহায্য করা।',
   },
   {
     question: 'আমার চিকিৎসার খরচ অনুমানের চেয়ে বেশি হলে কী হবে?',
-    answer: 'চিকিৎসাকালীন জটিলতা দেখা দিলে যা খরচ বাড়ায়, হাসপাতাল যেকোনো অতিরিক্ত প্রক্রিয়া এগিয়ে যাওয়ার আগে আপনাকে জানাবে। আমরা সংশোধিত খরচ বুঝতে এবং হাসপাতাল বিলিং টিমের সাথে যোগাযোগে সাহায্য করি। কোনো লুকানো অ্যাড-অন নেই — সবকিছু ঘটার আগে আলোচনা করা হয়।',
+    answer:
+      'চিকিৎসাকালীন জটিলতা দেখা দিলে যা খরচ বাড়ায়, হাসপাতাল যেকোনো অতিরিক্ত প্রক্রিয়া এগিয়ে যাওয়ার আগে আপনাকে জানাবে। আমরা সংশোধিত খরচ বুঝতে এবং হাসপাতাল বিলিং টিমের সাথে যোগাযোগে সাহায্য করি। কোনো লুকানো অ্যাড-অন নেই — সবকিছু ঘটার আগে আলোচনা করা হয়।',
   },
 ];
 
@@ -101,7 +109,8 @@ const jsonLd = [
   medicalWebPage({
     name: 'মেডিকেল চিকিৎসা খরচ ক্যালকুলেটর',
     url: pageUrl,
-    description: 'ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।',
+    description:
+      'ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।',
     inLanguage: 'bn',
   }),
   breadcrumbs([
@@ -133,8 +142,16 @@ const jsonLd = [
   <main>
     {/* ── HERO ─────────────────────────────────────────────────────── */}
     <section class="relative overflow-hidden bg-cream-100 text-ink">
-      <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-ink/10 blur-3xl" aria-hidden="true" />
-      <div class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl" aria-hidden="true" />
+      <div
+        class="bg-ink/10 pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-indigo-600/5 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
 
       <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
         <Breadcrumb
@@ -144,14 +161,20 @@ const jsonLd = [
         />
 
         <div data-anim="stagger-children">
-          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+          <span
+            class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white"
+          >
             খরচ অনুমানকারী
           </span>
-          <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl" data-anim="headline-reveal">
+          <h1
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            data-anim="headline-reveal"
+          >
             মেডিকেল চিকিৎসা খরচ ক্যালকুলেটর
           </h1>
-          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/70">
-            আমাদের পার্টনার হাসপাতালে নির্দেশক প্যাকেজ খরচের পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন। ২৪–৪৮ ঘন্টার মধ্যে লিখিত ব্যক্তিগত কোট পান।
+          <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
+            আমাদের পার্টনার হাসপাতালে নির্দেশক প্যাকেজ খরচের পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।
+            ২৪–৪৮ ঘন্টার মধ্যে লিখিত ব্যক্তিগত কোট পান।
           </p>
         </div>
       </div>
@@ -160,7 +183,10 @@ const jsonLd = [
     {/* ── CALCULATOR ───────────────────────────────────────────────── */}
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-4xl">
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+        <div
+          class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8"
+          data-anim="fade-in-up"
+        >
           <CostCalculator
             treatments={calculatorTreatments}
             costData={bnCostData}
@@ -174,23 +200,33 @@ const jsonLd = [
     {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
-        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
           আরও ঘুরে দেখুন
         </h2>
-        <p class="mb-10 max-w-2xl text-sm text-ink/60" data-anim="fade-in-up">
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
           খরচের পরিসর দেখেছেন — এখন বেশিরভাগ পরিবার যে পরবর্তী ধাপগুলো নেয়।
         </p>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* Treatments */}
-          <a href="/bn/treatments" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/treatments"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="stethoscope" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">চিকিৎসা ব্রাউজ করুন</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              প্রতিটি চিকিৎসা বিভাগের প্রক্রিয়া, সময়কাল, হাসপাতালে থাকা এবং পুনরুদ্ধার সময়রেখা দেখুন।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              প্রতিটি চিকিৎসা বিভাগের প্রক্রিয়া, সময়কাল, হাসপাতালে থাকা এবং পুনরুদ্ধার সময়রেখা
+              দেখুন।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               সব চিকিৎসা দেখুন
@@ -199,15 +235,22 @@ const jsonLd = [
           </a>
 
           {/* Hospitals */}
-          <a href="/bn/hospitals" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/hospitals"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="hospital" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">হাসপাতাল তুলনা করুন</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              ব্যাঙ্গালোরে JCI ও NABH-স্বীকৃত হাসপাতাল — Apollo, Fortis, Manipal এবং Narayana। বিশেষত্ব ও সুবিধা দেখুন।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              ব্যাঙ্গালোরে JCI ও NABH-স্বীকৃত হাসপাতাল — Apollo, Fortis, Manipal এবং Narayana।
+              বিশেষত্ব ও সুবিধা দেখুন।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               হাসপাতাল তুলনা করুন
@@ -216,15 +259,22 @@ const jsonLd = [
           </a>
 
           {/* Why India */}
-          <a href="/bn/why-india-for-medical-treatment" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/why-india-for-medical-treatment"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="globe" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">ভারত কেন সস্তা</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              বুঝুন কেন ভারতে চিকিৎসা মার্কিন যুক্তরাষ্ট্র বা যুক্তরাজ্যের তুলনায় ৬০–৯০% কম — মান বা প্রযুক্তিতে আপস ছাড়াই।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              বুঝুন কেন ভারতে চিকিৎসা মার্কিন যুক্তরাষ্ট্র বা যুক্তরাজ্যের তুলনায় ৬০–৯০% কম — মান
+              বা প্রযুক্তিতে আপস ছাড়াই।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               তুলনা দেখুন
@@ -233,15 +283,22 @@ const jsonLd = [
           </a>
 
           {/* How it works */}
-          <a href="/bn/how-it-works" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/how-it-works"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="list" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">কীভাবে কাজ করে</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              প্রাথমিক অনুসন্ধান থেকে ফলো-আপ পর্যন্ত ৮-ধাপের পথ — যাতে খরচের অনুমান দেখার পর কী হয় জানেন।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              প্রাথমিক অনুসন্ধান থেকে ফলো-আপ পর্যন্ত ৮-ধাপের পথ — যাতে খরচের অনুমান দেখার পর কী হয়
+              জানেন।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               সম্পূর্ণ যাত্রা দেখুন
@@ -250,15 +307,22 @@ const jsonLd = [
           </a>
 
           {/* Medical visa */}
-          <a href="/bn/medical-visa-assistance" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/medical-visa-assistance"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="document" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">মেডিকেল ভিসা সহায়তা</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              ডকুমেন্ট চেকলিস্ট, প্রক্রিয়াকরণ সময় এবং অ্যাটেনড্যান্ট ভিসা — ভারত ভ্রমণ পরিকল্পনার জন্য যা প্রয়োজন।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              ডকুমেন্ট চেকলিস্ট, প্রক্রিয়াকরণ সময় এবং অ্যাটেনড্যান্ট ভিসা — ভারত ভ্রমণ পরিকল্পনার
+              জন্য যা প্রয়োজন।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               ভিসা নির্দেশনা
@@ -267,15 +331,22 @@ const jsonLd = [
           </a>
 
           {/* Country guides */}
-          <a href="/bn/countries" class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base" data-anim="fade-in-up">
+          <a
+            href="/bn/countries"
+            class="group rounded-card border border-cream-300 bg-cream-100 p-6 transition-shadow hover:shadow-base"
+            data-anim="fade-in-up"
+          >
             <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-ink/10">
+              <span
+                class="bg-ink/10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full"
+              >
                 <Icon name="globe" size={20} className="text-ink" />
               </span>
               <h3 class="font-display text-base font-bold text-ink">দেশ গাইড</h3>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              বাংলাদেশ, উপসাগর, আফ্রিকা, যুক্তরাজ্য ও যুক্তরাষ্ট্রের রোগীদের জন্য বিশেষ নির্দেশনা — ভিসা ধাপ ও ভ্রমণ তথ্য সহ।
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              বাংলাদেশ, উপসাগর, আফ্রিকা, যুক্তরাজ্য ও যুক্তরাষ্ট্রের রোগীদের জন্য বিশেষ নির্দেশনা —
+              ভিসা ধাপ ও ভ্রমণ তথ্য সহ।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               দেশ গাইড ব্রাউজ করুন
@@ -289,7 +360,10 @@ const jsonLd = [
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
-        <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+        <h2
+          class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
           সাধারণ জিজ্ঞাসা
         </h2>
         <FAQAccordion items={faqs} client:visible />

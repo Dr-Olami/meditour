@@ -21,9 +21,7 @@ describe('WhatsAppCTA', () => {
 
   it('builds a contextual link from the configured number when context is provided', () => {
     vi.stubEnv('PUBLIC_WHATSAPP_NUMBER', '8801611892986');
-    render(
-      <WhatsAppCTA context={{ type: 'doctor', doctorName: 'Dr. Sen' }}>Chat</WhatsAppCTA>
-    );
+    render(<WhatsAppCTA context={{ type: 'doctor', doctorName: 'Dr. Sen' }}>Chat</WhatsAppCTA>);
     const href = screen.getByRole('link', { name: /chat/i }).getAttribute('href');
     expect(href).toContain('wa.me/8801611892986');
     expect(href).toContain('Dr.%20Sen');

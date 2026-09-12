@@ -3,7 +3,12 @@ export type { BreadcrumbProps, BreadcrumbItem } from './Breadcrumb';
 export { ChipCloud } from './ChipCloud';
 export type { ChipCloudProps } from './ChipCloud';
 export { FormField, FormInput, FormTextarea, FormSelect } from './FormField';
-export type { FormFieldProps, FormInputProps, FormTextareaProps, FormSelectProps } from './FormField';
+export type {
+  FormFieldProps,
+  FormInputProps,
+  FormTextareaProps,
+  FormSelectProps,
+} from './FormField';
 export { MarqueeStrip } from './MarqueeStrip';
 export type { MarqueeStripProps } from './MarqueeStrip';
 export { PullQuote } from './PullQuote';

@@ -22,7 +22,7 @@ export interface TreatmentCostCardProps extends React.HTMLAttributes<HTMLDivElem
 
 /**
  * Treatment cost comparison card - mobile-first design.
- * 
+ *
  * Displays treatment costs in a card format optimized for mobile viewing,
  * with visual hierarchy and clear cost breakdowns. Based on competitor
  * analysis showing card-based layouts are more scannable than tables on
@@ -66,9 +66,7 @@ const TreatmentCostCard = React.forwardRef<HTMLDivElement, TreatmentCostCardProp
         </div>
 
         {/* Treatment name */}
-        <h3 className="mb-4 font-display text-lg font-semibold text-ink">
-          {name}
-        </h3>
+        <h3 className="mb-4 font-display text-lg font-semibold text-ink">{name}</h3>
 
         {/* Cost breakdown */}
         <div className="space-y-3 border-t border-cream-200 pt-4">
@@ -81,15 +79,15 @@ const TreatmentCostCard = React.forwardRef<HTMLDivElement, TreatmentCostCardProp
           {/* Local currency (if provided) */}
           {localCurrency && currencyCode && (
             <div className="flex items-baseline justify-between">
-              <span className="text-xs text-ink/60">≈ {currencyCode}</span>
-              <span className="text-sm text-ink/80">{localCurrency}</span>
+              <span className="text-ink/60 text-xs">≈ {currencyCode}</span>
+              <span className="text-ink/80 text-sm">{localCurrency}</span>
             </div>
           )}
 
           {/* USA cost */}
           <div className="flex items-baseline justify-between border-t border-cream-200 pt-3">
-            <span className="text-sm font-medium text-ink/60">Typical USA</span>
-            <span className="text-base text-ink/60">{usaCost}</span>
+            <span className="text-ink/60 text-sm font-medium">Typical USA</span>
+            <span className="text-ink/60 text-base">{usaCost}</span>
           </div>
         </div>
 
@@ -105,12 +103,7 @@ const TreatmentCostCard = React.forwardRef<HTMLDivElement, TreatmentCostCardProp
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>

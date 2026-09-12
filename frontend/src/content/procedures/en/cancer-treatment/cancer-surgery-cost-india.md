@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Surgical Oncology (Cancer Surgery)"
-seoHeadline: "Cancer Surgery Cost in India for International Patients"
+name: 'Surgical Oncology (Cancer Surgery)'
+seoHeadline: 'Cancer Surgery Cost in India for International Patients'
 parentTreatmentSlug: cancer-treatment
-summary: "Cancer surgery in India costs $4,000–$15,000, offering savings of up to 90% compared to Western countries. Procedures are performed by expert surgical oncologists using minimally invasive and robotic techniques in JCI-accredited hospitals."
-description: "Affordable cancer surgery in India starting at $4,000 for international patients. Compare costs, understand inclusions, and plan your medical trip."
-fromPrice: "$4,000"
-toPrice: "$15,000"
-duration: "1-3 weeks"
-hospitalStay: "2-7 days"
-recoveryTime: "4-8 weeks"
+summary: 'Cancer surgery in India costs $4,000–$15,000, offering savings of up to 90% compared to Western countries. Procedures are performed by expert surgical oncologists using minimally invasive and robotic techniques in JCI-accredited hospitals.'
+description: 'Affordable cancer surgery in India starting at $4,000 for international patients. Compare costs, understand inclusions, and plan your medical trip.'
+fromPrice: '$4,000'
+toPrice: '$15,000'
+duration: '1-3 weeks'
+hospitalStay: '2-7 days'
+recoveryTime: '4-8 weeks'
 eligibility:
-  - "Confirmed cancer diagnosis with tumour deemed surgically resectable on imaging"
-  - "Adequate overall health and fitness for surgery (ASA class I–III)"
-  - "No distant metastases that would make surgery non-curative (unless palliative surgery is indicated)"
-  - "Acceptable cardiac and pulmonary function confirmed through pre-anaesthetic evaluation"
-  - "Realistic surgical goals established by the surgical oncology team"
+  - 'Confirmed cancer diagnosis with tumour deemed surgically resectable on imaging'
+  - 'Adequate overall health and fitness for surgery (ASA class I–III)'
+  - 'No distant metastases that would make surgery non-curative (unless palliative surgery is indicated)'
+  - 'Acceptable cardiac and pulmonary function confirmed through pre-anaesthetic evaluation'
+  - 'Realistic surgical goals established by the surgical oncology team'
 costInclusions:
-  - "Oncologist consultation fees"
-  - "Chemotherapy/radiation/medication costs"
-  - "Hospital room charges (where applicable)"
-  - "Pre-treatment diagnostics (biopsy, imaging, blood tests)"
-  - "Supportive medications (anti-nausea, growth factors)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Oncologist consultation fees'
+  - 'Chemotherapy/radiation/medication costs'
+  - 'Hospital room charges (where applicable)'
+  - 'Pre-treatment diagnostics (biopsy, imaging, blood tests)'
+  - 'Supportive medications (anti-nausea, growth factors)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term maintenance therapy post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term maintenance therapy post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "1-3 weeks"
-    description: "Surgical resection of the tumour followed by in-hospital recovery, wound care, and gradual mobilisation under surgical team supervision."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-operative monitoring for complications, wound healing assessment, pathology review of resected tissue, and discharge planning."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual return to normal activities with wound care instructions; pathology results guide any need for adjuvant therapy."
-  - phase: "Full recovery"
-    duration: "4-8 weeks"
-    description: "Complete surgical wound healing and return to normal function; long-term surveillance imaging and follow-up as advised by oncologist."
+  - phase: 'Treatment period'
+    duration: '1-3 weeks'
+    description: 'Surgical resection of the tumour followed by in-hospital recovery, wound care, and gradual mobilisation under surgical team supervision.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-operative monitoring for complications, wound healing assessment, pathology review of resected tissue, and discharge planning.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual return to normal activities with wound care instructions; pathology results guide any need for adjuvant therapy.'
+  - phase: 'Full recovery'
+    duration: '4-8 weeks'
+    description: 'Complete surgical wound healing and return to normal function; long-term surveillance imaging and follow-up as advised by oncologist.'
 risks:
-  - "Surgical site infection and wound healing complications"
-  - "Bleeding during or after surgery requiring transfusion or re-operation"
-  - "Deep vein thrombosis or pulmonary embolism due to reduced mobility"
-  - "Anaesthesia-related risks including cardiovascular or respiratory complications"
-  - "Potential damage to adjacent organs or structures depending on tumour location"
+  - 'Surgical site infection and wound healing complications'
+  - 'Bleeding during or after surgery requiring transfusion or re-operation'
+  - 'Deep vein thrombosis or pulmonary embolism due to reduced mobility'
+  - 'Anaesthesia-related risks including cardiovascular or respiratory complications'
+  - 'Potential damage to adjacent organs or structures depending on tumour location'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -61,15 +61,15 @@ relatedDoctorSlugs:
   - dr-vidya-bhushan
 
 relatedProcedureSlugs:
-  - "radiation-therapy-cost-india"
-  - "chemotherapy-cost-india"
+  - 'radiation-therapy-cost-india'
+  - 'chemotherapy-cost-india'
 faqs:
-  - question: "What types of cancer surgery are available in Bangalore?"
-    answer: "Bangalore hospitals offer the full spectrum of cancer surgery including minimally invasive laparoscopic surgery, robotic-assisted surgery (da Vinci), open surgical resection, organ-preserving surgery, and reconstructive surgery. Common procedures include mastectomy, colectomy, lung resection, prostatectomy, thyroidectomy, and head and neck cancer resection."
-  - question: "Is robotic surgery available for cancer treatment in India?"
-    answer: "Yes. Several hospitals in Bangalore are equipped with the da Vinci surgical system for robotic-assisted cancer surgery. Robotic surgery offers enhanced precision, smaller incisions, less blood loss, shorter hospital stays, and faster recovery compared to traditional open surgery. It is commonly used for prostate, gynaecological, colorectal, and head and neck cancers."
-  - question: "How long do I need to stay in Bangalore after cancer surgery?"
-    answer: "The typical stay is 2–3 weeks, including the hospital stay (2–7 days depending on the procedure) and 1–2 weeks of post-operative monitoring before being cleared to travel. Your surgical oncologist will determine the exact duration based on the complexity of the surgery, your recovery progress, and pathology results that may indicate the need for adjuvant treatment."
+  - question: 'What types of cancer surgery are available in Bangalore?'
+    answer: 'Bangalore hospitals offer the full spectrum of cancer surgery including minimally invasive laparoscopic surgery, robotic-assisted surgery (da Vinci), open surgical resection, organ-preserving surgery, and reconstructive surgery. Common procedures include mastectomy, colectomy, lung resection, prostatectomy, thyroidectomy, and head and neck cancer resection.'
+  - question: 'Is robotic surgery available for cancer treatment in India?'
+    answer: 'Yes. Several hospitals in Bangalore are equipped with the da Vinci surgical system for robotic-assisted cancer surgery. Robotic surgery offers enhanced precision, smaller incisions, less blood loss, shorter hospital stays, and faster recovery compared to traditional open surgery. It is commonly used for prostate, gynaecological, colorectal, and head and neck cancers.'
+  - question: 'How long do I need to stay in Bangalore after cancer surgery?'
+    answer: 'The typical stay is 2–3 weeks, including the hospital stay (2–7 days depending on the procedure) and 1–2 weeks of post-operative monitoring before being cleared to travel. Your surgical oncologist will determine the exact duration based on the complexity of the surgery, your recovery progress, and pathology results that may indicate the need for adjuvant treatment.'
 ---
 
 ## Overview
@@ -152,13 +152,13 @@ Active surveillance is another alternative for certain slow-growing or low-risk 
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $4,000 – $15,000 | Baseline |
-| USA | $40,000 – $120,000 | ~8.4x higher |
-| UK | £25,000 – £70,000 | ~5.0x higher |
-| Singapore | $20,000 – $60,000 | ~4.2x higher |
-| Thailand | $10,000 – $30,000 | ~2.1x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $4,000 – $15,000   | Baseline     |
+| USA               | $40,000 – $120,000 | ~8.4x higher |
+| UK                | £25,000 – £70,000  | ~5.0x higher |
+| Singapore         | $20,000 – $60,000  | ~4.2x higher |
+| Thailand          | $10,000 – $30,000  | ~2.1x higher |
 
 The cost variation within India reflects the complexity of your procedure. A straightforward lumpectomy or thyroidectomy sits at the lower end of the range, while complex resections such as robotic prostatectomy, oesophagectomy, or pancreaticoduodenectomy (Whipple's procedure) fall at the higher end. The quoted package typically includes surgeon fees, anaesthesia, operating room charges, hospital stay, implants or consumables used during surgery, and standard post-operative care. Additional costs may arise if an extended ICU stay is required or if unexpected complications necessitate a second operation. Khan Meditour will walk you through every line item so there are no surprises.
 

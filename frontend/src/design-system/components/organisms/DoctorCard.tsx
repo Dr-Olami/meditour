@@ -31,7 +31,14 @@ export interface DoctorCardProps extends React.HTMLAttributes<HTMLElement> {
  */
 const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
   (
-    { className, doctor, bookLabel = 'Request appointment', whatsappLabel = 'WhatsApp', imageAlt, ...props },
+    {
+      className,
+      doctor,
+      bookLabel = 'Request appointment',
+      whatsappLabel = 'WhatsApp',
+      imageAlt,
+      ...props
+    },
     ref
   ) => {
     const profileHref = doctor.href ?? '#contact';
@@ -70,7 +77,7 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
 
         {/* Details */}
         <div className="flex flex-1 flex-col p-5">
-          <span className="inline-block self-start rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold text-ink/70">
+          <span className="text-ink/70 inline-block self-start rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold">
             {doctor.specialty}
           </span>
 
@@ -84,20 +91,31 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
           </h3>
 
           {doctor.qualification && (
-            <p className="mt-1 line-clamp-2 text-xs text-ink/50">{doctor.qualification}</p>
+            <p className="text-ink/50 mt-1 line-clamp-2 text-xs">{doctor.qualification}</p>
           )}
 
           <div className="mt-3 space-y-1.5">
             {doctor.hospitalName && (
-              <p className="flex items-start gap-1.5 text-sm text-ink/60">
+              <p className="text-ink/60 flex items-start gap-1.5 text-sm">
                 <Icon name="map-pin" size={14} className="mt-0.5 shrink-0" aria-hidden="true" />
                 <span>{doctor.hospitalName}</span>
               </p>
             )}
             {doctor.experience && (
-              <p className="flex items-start gap-1.5 text-sm text-ink/50">
+              <p className="text-ink/50 flex items-start gap-1.5 text-sm">
                 {/* Clock icon */}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" aria-hidden="true">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 shrink-0"
+                  aria-hidden="true"
+                >
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 6v6l4 2" />
                 </svg>
@@ -105,9 +123,20 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
               </p>
             )}
             {!doctor.experience && doctor.experienceYears !== undefined && (
-              <p className="flex items-start gap-1.5 text-sm text-ink/50">
+              <p className="text-ink/50 flex items-start gap-1.5 text-sm">
                 {/* Clock icon */}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" aria-hidden="true">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 shrink-0"
+                  aria-hidden="true"
+                >
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 6v6l4 2" />
                 </svg>
@@ -124,8 +153,20 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
             >
               <span>{bookLabel}</span>
               {/* Circular arrow badge */}
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+              <span
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20"
+                aria-hidden="true"
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </span>
@@ -136,7 +177,7 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${whatsappLabel} — ${doctor.name}`}
-                className="flex items-center justify-center gap-1.5 rounded-card border border-ink/20 px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+                className="border-ink/20 flex items-center justify-center gap-1.5 rounded-card border px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
               >
                 <Icon name="whatsapp" size={16} aria-hidden="true" />
                 <span className="hidden xl:inline">{whatsappLabel}</span>

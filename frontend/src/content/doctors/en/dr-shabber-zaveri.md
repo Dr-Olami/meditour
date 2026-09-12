@@ -16,17 +16,17 @@ expertise:
   - General Surgical Oncology
   - Oncoplastic Breast Surgery
   - Head and Neck Oncology
-  - "HIPEC & PIPAC"
+  - 'HIPEC & PIPAC'
   - Sarcoma Specialist
   - Lung and Mediastinal Tumour Resections
   - Gastrointestinal Malignancy
   - Gynaec Oncology
-pullQuote: "Cancer surgery is not just about removing the tumour. It is about leaving behind a body that can still heal, and a spirit that can still hope."
+pullQuote: 'Cancer surgery is not just about removing the tumour. It is about leaving behind a body that can still heal, and a spirit that can still hope.'
 faqs:
   - question: "What is Dr. Shabber Zaveri's expertise in HIPEC surgery?"
-    answer: "Dr. Shabber Zaveri pioneered the HIPEC (Hyperthermic Intraperitoneal Chemotherapy) programme at Manipal Hospital Bengaluru in 2013. He holds a fellowship in Cytoreductive Surgery & HIPEC from the European Institute of Surgery, Hamburg, Germany, and PIPAC from St. Elizabeth Hospital, Germany. He is one of the few surgeons in India offering this advanced treatment for peritoneal surface malignancies."
-  - question: "What types of cancer does Dr. Shabber Zaveri treat?"
-    answer: "Dr. Shabber Zaveri treats breast cancer (including oncoplastic breast surgery), head and neck cancers, gastrointestinal malignancies, gynaecological cancers, sarcoma, and lung and mediastinal tumours. He also performs robotic-assisted cancer surgeries and introduced sentinel lymph node biopsy and radioisotope occult lesion localisation (ROLL) for breast cancer treatment in India."
+    answer: 'Dr. Shabber Zaveri pioneered the HIPEC (Hyperthermic Intraperitoneal Chemotherapy) programme at Manipal Hospital Bengaluru in 2013. He holds a fellowship in Cytoreductive Surgery & HIPEC from the European Institute of Surgery, Hamburg, Germany, and PIPAC from St. Elizabeth Hospital, Germany. He is one of the few surgeons in India offering this advanced treatment for peritoneal surface malignancies.'
+  - question: 'What types of cancer does Dr. Shabber Zaveri treat?'
+    answer: 'Dr. Shabber Zaveri treats breast cancer (including oncoplastic breast surgery), head and neck cancers, gastrointestinal malignancies, gynaecological cancers, sarcoma, and lung and mediastinal tumours. He also performs robotic-assisted cancer surgeries and introduced sentinel lymph node biopsy and radioisotope occult lesion localisation (ROLL) for breast cancer treatment in India.'
 ---
 
 ## About the Doctor

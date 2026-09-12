@@ -60,8 +60,7 @@ export interface StatItem {
 }
 
 export interface StatBandProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof statBandTone> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof statBandTone> {
   /** Stats to render in the band. */
   stats: StatItem[];
   /** Surface tone — `light` for cream sections, `dark` for ink bands. */
@@ -79,22 +78,13 @@ const StatBand = React.forwardRef<HTMLDivElement, StatBandProps>(
   ({ className, stats, tone, ...props }, ref) => {
     if (!stats || stats.length === 0) return null;
     return (
-      <div
-        className={cn(statBandTone({ tone }), className)}
-        ref={ref}
-        {...props}
-      >
+      <div className={cn(statBandTone({ tone }), className)} ref={ref} {...props}>
         {stats.map((stat, index) => (
-          <div
-            key={`${stat.label}-${index}`}
-            className={cn(statCellTone({ tone }))}
-          >
+          <div key={`${stat.label}-${index}`} className={cn(statCellTone({ tone }))}>
             <dt className={cn(statLabelTone({ tone }))}>{stat.label}</dt>
             <dd className="mt-1 font-display text-2xl font-bold md:text-3xl lg:text-4xl">
               {stat.value}
-              {stat.suffix && (
-                <span className="text-violet-500">{stat.suffix}</span>
-              )}
+              {stat.suffix && <span className="text-violet-500">{stat.suffix}</span>}
             </dd>
           </div>
         ))}

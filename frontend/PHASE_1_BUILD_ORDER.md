@@ -18,21 +18,23 @@ Khan Meditour is a medical tourism facilitator: patients abroad share reports, g
 
 ### The 5-Step Journey (canonical copy — replaces placeholder `steps.items` in `en.json`/`bn.json`)
 
-| # | Step | What happens | Timeframe |
-|---|------|--------------|-----------|
-| 1 | Share Your Medical Reports | Patient sends diagnosis, test results, scans, or doctor's notes via WhatsApp or email. No reports yet? We help figure out what's needed. | ~5 minutes |
-| 2 | Receive Expert Medical Opinion | Medical team reviews the case, connects patient with a specialist for consultation (video call or written report). Free, no obligation. | 24–48 hours |
-| 3 | Get Treatment Plan & Cost Breakdown | Personalised plan: hospital, doctor/surgeon, procedure dates, full cost estimate, no hidden charges. | 3–5 days |
-| 4 | Travel — We Handle Everything | Visa assistance, flight guidance, hotel booking, airport pickup, hospital admission. Coordinator with patient in-person + WhatsApp. | Prepared in advance |
-| 5 | Treatment, Recovery & Follow-Up | Treatment at matched hospital; post-return video-call follow-up with coordinator + doctor. | Ongoing |
+| #   | Step                                | What happens                                                                                                                             | Timeframe           |
+| --- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| 1   | Share Your Medical Reports          | Patient sends diagnosis, test results, scans, or doctor's notes via WhatsApp or email. No reports yet? We help figure out what's needed. | ~5 minutes          |
+| 2   | Receive Expert Medical Opinion      | Medical team reviews the case, connects patient with a specialist for consultation (video call or written report). Free, no obligation.  | 24–48 hours         |
+| 3   | Get Treatment Plan & Cost Breakdown | Personalised plan: hospital, doctor/surgeon, procedure dates, full cost estimate, no hidden charges.                                     | 3–5 days            |
+| 4   | Travel — We Handle Everything       | Visa assistance, flight guidance, hotel booking, airport pickup, hospital admission. Coordinator with patient in-person + WhatsApp.      | Prepared in advance |
+| 5   | Treatment, Recovery & Follow-Up     | Treatment at matched hospital; post-return video-call follow-up with coordinator + doctor.                                               | Ongoing             |
 
 - **Action:** Replace `src/i18n/en.json` → `steps.items` (and `bn.json` equivalent) with these 5 steps (title + description + `duration` field — **new field**, `StepTimeline` needs a `duration?: string` prop added to render the "⏱" timeframe).
 
 ### Doctor ↔ Hospital Relationship
+
 - **One doctor maps to exactly one hospital** (not many-to-many). Model doctors with a `hospitalId` foreign key, not a free-text `hospital` string.
 - Doctor card → click → doctor detail page. Hospital card → click → hospital detail page. Hospital detail page lists its doctors (reverse lookup by `hospitalId`).
 
 ### Treatments (canonical list — replaces any ad-hoc treatment arrays)
+
 Cardiology · Cancer Treatment · Bariatric (Weight Loss) · Organ Treatment · Neuro and Spine Surgery · Ophthalmology · Infertility Treatment · Orthopedics Surgery · Stem Cell Treatment · Urology · Ear Nose Throat · Cosmetic Surgery
 
 ---
@@ -89,40 +91,48 @@ Add `src/content/config.ts` collections (Zod-validated, per-locale where noted):
 ## Build Order (sequential)
 
 ### Step 1 — Content collections & schema
+
 - `src/content/config.ts` — define `doctors`, `hospitals`, `treatments` collections with Zod schemas above.
 - Seed real content: 6+ doctors (reuse existing seed data in `doctors.astro`, add `hospitalId` + `slug` + `bio`), 3+ hospitals, all 12 treatments.
 - Remove hardcoded `doctors` array from `src/pages/doctors.astro`; read from `getCollection('doctors')` instead.
 
 ### Step 2 — How It Works page/section
+
 - Update `src/i18n/en.json` + `bn.json` → `steps.items` with the 5-step canonical copy (title, description, duration).
 - Add `duration?: string` prop to `StepTimeline` (`@/design-system/components/organisms/StepTimeline.tsx`) rendering a small "⏱ {duration}" line under the description.
 - Promote `/​#steps` section on Home into its own dedicated `/how-it-works` route for direct linking/SEO, while keeping a condensed version embedded in Home.
 
 ### Step 3 — Treatments page (`/treatments`, `/bn/treatments`)
+
 - List all 12 canonical treatments as a responsive grid (`TreatmentCard`), sourced from the `treatments` collection.
 - `FilterChips` for category grouping if categories are added later (optional this phase).
 - `/treatments/[slug]` detail page: hero, long description, sub-procedures list, "related doctors" grid (via `relatedDoctorSlugs`), CTA to `LeadForm`/WhatsApp.
 
 ### Step 4 — Doctors page enhancements (`/doctors`, `/bn/doctors`)
+
 - Already exists; migrate data source to `getCollection('doctors')` with `hospitalId` resolved to hospital `name`/`slug` for display.
 - `DoctorCard` becomes a link wrapper (`href="/doctors/[slug]"`) — verify whole card is clickable, not just the CTA pill.
 - `/doctors/[slug]` detail page: avatar, name, specialty, qualification, experience, bio, linked hospital card (photo + name + link to `/hospitals/[slug]`), booking CTA (`LeadForm` pre-filled with doctor name, or WhatsApp deep link).
 
 ### Step 5 — Hospitals page (new, `/hospitals`, `/bn/hospitals`)
+
 - New `HospitalCard` organism (mirror `DoctorCard` visual style): image, name, city/country, accreditation badges, "View hospital" CTA.
 - `/hospitals` — responsive grid of all hospitals.
 - `/hospitals/[slug]` detail page: hero image/gallery, description, amenities list, accreditations, **list of doctors at this hospital** (reverse lookup by `hospitalId`, rendered with `DoctorCard`).
 
 ### Step 6 — Home page integration
+
 - Ensure Home's treatments section pulls from the real `treatments` collection (not the placeholder array) and testimonials keep using the Phase-0 `TestimonialCarousel`.
 - Add a "Meet our specialists" teaser (3–4 `DoctorCard`s) and/or "Our partner hospitals" teaser linking to the new pages.
 - Update `Navbar`/`Footer` nav links across all pages to include `Doctors`, `Hospitals`, `Treatments`, `How it Works` consistently (currently only `doctors.astro` has the `Doctors` link).
 
 ### Step 7 — i18n parity
+
 - Every new page (`/treatments`, `/hospitals`, `/how-it-works`, and all `[slug]` detail pages) must have a `/bn/...` equivalent route, following the existing `/bn/doctors` pattern.
 - Add missing i18n keys: `treatments.detail.*`, `hospitals.*`, `doctors.detail.*`, `howItWorks.*` (dedicated page copy vs. the existing condensed `steps.*`).
 
 ### Step 8 — SEO basics for new pages
+
 - `<Layout title description>` per page/detail page using real content (doctor name + specialty, hospital name + city, treatment name).
 - Canonical URLs + `hreflang` alternates between `/en` and `/bn` variants (if not already handled globally in `Layout.astro` — verify).
 
@@ -130,12 +140,12 @@ Add `src/content/config.ts` collections (Zod-validated, per-locale where noted):
 
 ## New/Extended Components
 
-| Component | Type | Notes |
-|-----------|------|-------|
-| `HospitalCard` | organism (new) | Mirrors `DoctorCard` styling: image, name, location, accreditation tags, CTA |
-| `StepTimeline` | organism (extend) | Add optional `duration` field per step |
-| `DoctorCard` | organism (extend) | Replace free-text `hospital` with resolved `hospitalName` + `hospitalHref`; ensure full-card click-through |
-| `TreatmentCard` | organism (reuse) | No changes expected — already supports `href` for detail navigation |
+| Component       | Type              | Notes                                                                                                      |
+| --------------- | ----------------- | ---------------------------------------------------------------------------------------------------------- |
+| `HospitalCard`  | organism (new)    | Mirrors `DoctorCard` styling: image, name, location, accreditation tags, CTA                               |
+| `StepTimeline`  | organism (extend) | Add optional `duration` field per step                                                                     |
+| `DoctorCard`    | organism (extend) | Replace free-text `hospital` with resolved `hospitalName` + `hospitalHref`; ensure full-card click-through |
+| `TreatmentCard` | organism (reuse)  | No changes expected — already supports `href` for detail navigation                                        |
 
 All new/extended components need Storybook stories per Phase-0 convention (Step 9 there).
 
@@ -149,6 +159,7 @@ All new/extended components need Storybook stories per Phase-0 convention (Step 
 ---
 
 ## Definition of Done (Phase 1)
+
 - [ ] `doctors`, `hospitals`, `treatments` content collections defined and seeded with real data (no placeholder arrays left in `.astro` files).
 - [ ] `/treatments`, `/treatments/[slug]`, `/hospitals`, `/hospitals/[slug]`, `/doctors/[slug]`, `/how-it-works` routes live in EN + BN.
 - [ ] Doctor ↔ Hospital 1:1 relationship enforced in content schema and rendered correctly both directions (doctor page shows its one hospital; hospital page lists all its doctors).

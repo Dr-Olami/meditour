@@ -88,7 +88,7 @@ export function generateTreatmentFaqs(
   treatment: TreatmentData,
   relatedDoctorNames: string[],
   relatedHospitalNames: string[],
-  locale: Locale,
+  locale: Locale
 ): FAQItem[] {
   const t = getTranslations(locale);
   const templates = t.faq.templates.treatment;
@@ -197,7 +197,7 @@ export function generateTreatmentFaqs(
 export function generateDoctorFaqs(
   doctor: DoctorData,
   hospitalName: string,
-  locale: Locale,
+  locale: Locale
 ): FAQItem[] {
   const t = getTranslations(locale);
   const templates = t.faq.templates.doctor;
@@ -250,10 +250,7 @@ export function generateDoctorFaqs(
  * @param locale - Target locale.
  * @returns Array of FAQ items.
  */
-export function generateHospitalFaqs(
-  hospital: HospitalData,
-  locale: Locale,
-): FAQItem[] {
+export function generateHospitalFaqs(hospital: HospitalData, locale: Locale): FAQItem[] {
   const t = getTranslations(locale);
   const templates = t.faq.templates.hospital;
   const vars: Record<string, string | undefined> = {
@@ -308,11 +305,14 @@ export function generateHospitalFaqs(
 
   // International patient services FAQ
   const hasIntlServices = hospital.amenities?.some((a) =>
-    /international|visa|airport|interpreter|currency|transl/i.test(a),
+    /international|visa|airport|interpreter|currency|transl/i.test(a)
   );
   faqs.push({
     question: interpolate(templates.internationalQ, vars),
-    answer: interpolate(hasIntlServices ? templates.internationalYesA : templates.internationalNoA, vars),
+    answer: interpolate(
+      hasIntlServices ? templates.internationalYesA : templates.internationalNoA,
+      vars
+    ),
   });
 
   // Static: booking FAQ

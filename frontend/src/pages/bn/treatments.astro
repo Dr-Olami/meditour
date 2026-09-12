@@ -71,41 +71,46 @@ const procedures = procedureEntries.map((p) => {
   />
 
   {/* ── ALL PROCEDURES (ungrouped) ─────────────────────────────────── */}
-  {procedures.length > 0 && (
-    <section class="bg-cream-100 py-16" data-anim="scroll-reveal">
-      <div class="container">
-        <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.procedures.title}</h2>
-        <p class="mb-8 text-sm text-ink/60">{t.treatments.procedures.viewAll}</p>
-        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-anim="stagger-cards">
-          {procedures.map((proc) => {
-            const price = proc.fromPrice && proc.toPrice
-              ? `${proc.fromPrice} – ${proc.toPrice}`
-              : proc.fromPrice;
-            return (
-              <a
-                href={proc.href}
-                class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
-              >
-                <p class="text-sm font-semibold text-ink">{proc.name}</p>
-                {proc.summary && (
-                  <p class="mt-1 text-xs text-ink/60 line-clamp-2">{proc.summary}</p>
-                )}
-                {price && (
-                  <p class="mt-2 text-xs font-medium text-violet-600">
-                    {t.treatments.procedures.costInIndia}: {price}
-                  </p>
-                )}
-                <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
-                  {t.treatments.procedures.learnMore}
-                  <Icon name="arrow-right" size={12} />
-                </span>
-              </a>
-            );
-          })}
+  {
+    procedures.length > 0 && (
+      <section class="bg-cream-100 py-16" data-anim="scroll-reveal">
+        <div class="container">
+          <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
+            {t.treatments.procedures.title}
+          </h2>
+          <p class="text-ink/60 mb-8 text-sm">{t.treatments.procedures.viewAll}</p>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-anim="stagger-cards">
+            {procedures.map((proc) => {
+              const price =
+                proc.fromPrice && proc.toPrice
+                  ? `${proc.fromPrice} – ${proc.toPrice}`
+                  : proc.fromPrice;
+              return (
+                <a
+                  href={proc.href}
+                  class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+                >
+                  <p class="text-sm font-semibold text-ink">{proc.name}</p>
+                  {proc.summary && (
+                    <p class="text-ink/60 mt-1 line-clamp-2 text-xs">{proc.summary}</p>
+                  )}
+                  {price && (
+                    <p class="mt-2 text-xs font-medium text-violet-600">
+                      {t.treatments.procedures.costInIndia}: {price}
+                    </p>
+                  )}
+                  <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
+                    {t.treatments.procedures.learnMore}
+                    <Icon name="arrow-right" size={12} />
+                  </span>
+                </a>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 
   <TreatmentsCtaSection
     locale="bn"

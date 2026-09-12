@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Lymphoma Treatment"
-seoHeadline: "Lymphoma Treatment Cost in India for International Patients"
+name: 'Lymphoma Treatment'
+seoHeadline: 'Lymphoma Treatment Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Lymphoma treatment in India costs between $6,000 and $28,000, covering chemotherapy, immunotherapy and radiotherapy for Hodgkin and non-Hodgkin lymphoma at leading Bangalore cancer centres. International patients access modern R-CHOP and BEACOPP protocols at a fraction of Western costs."
-description: "Affordable lymphoma treatment in India from $6,000–$28,000 at accredited Bangalore hospitals. Compare costs, protocols and recovery."
-fromPrice: "$6,000"
-toPrice: "$28,000"
-duration: "3-9 months"
-hospitalStay: "1-4 weeks per cycle"
-recoveryTime: "3-12 months"
+summary: 'Lymphoma treatment in India costs between $6,000 and $28,000, covering chemotherapy, immunotherapy and radiotherapy for Hodgkin and non-Hodgkin lymphoma at leading Bangalore cancer centres. International patients access modern R-CHOP and BEACOPP protocols at a fraction of Western costs.'
+description: 'Affordable lymphoma treatment in India from $6,000–$28,000 at accredited Bangalore hospitals. Compare costs, protocols and recovery.'
+fromPrice: '$6,000'
+toPrice: '$28,000'
+duration: '3-9 months'
+hospitalStay: '1-4 weeks per cycle'
+recoveryTime: '3-12 months'
 eligibility:
-  - "Patients with confirmed Hodgkin or non-Hodgkin lymphoma by biopsy and imaging"
-  - "Adequate organ function to tolerate chemotherapy or immunotherapy"
-  - "No active uncontrolled infection at the start of treatment"
-  - "Suitable performance status (ECOG 0–3) for the planned regimen"
-  - "Realistic expectation of multi-cycle therapy and follow-up surveillance"
+  - 'Patients with confirmed Hodgkin or non-Hodgkin lymphoma by biopsy and imaging'
+  - 'Adequate organ function to tolerate chemotherapy or immunotherapy'
+  - 'No active uncontrolled infection at the start of treatment'
+  - 'Suitable performance status (ECOG 0–3) for the planned regimen'
+  - 'Realistic expectation of multi-cycle therapy and follow-up surveillance'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-4 weeks per cycle"
-    description: "Chemotherapy or immunotherapy infusion with monitoring for cytopenias, infusion reactions and infection prophylaxis."
-  - phase: "Bangalore recovery"
-    duration: "2-3 weeks"
-    description: "Inter-cycle outpatient monitoring of blood counts, imaging response assessment and planning of subsequent cycles."
-  - phase: "Return home"
-    duration: "Week 6-20"
-    description: "Completion of remaining cycles locally or maintenance therapy with periodic return visits for PET-CT reassessment."
-  - phase: "Full recovery"
-    duration: "3-12 months"
-    description: "Sustained remission with surveillance imaging, immune recovery and gradual return to normal activities."
+  - phase: 'Hospital stay'
+    duration: '1-4 weeks per cycle'
+    description: 'Chemotherapy or immunotherapy infusion with monitoring for cytopenias, infusion reactions and infection prophylaxis.'
+  - phase: 'Bangalore recovery'
+    duration: '2-3 weeks'
+    description: 'Inter-cycle outpatient monitoring of blood counts, imaging response assessment and planning of subsequent cycles.'
+  - phase: 'Return home'
+    duration: 'Week 6-20'
+    description: 'Completion of remaining cycles locally or maintenance therapy with periodic return visits for PET-CT reassessment.'
+  - phase: 'Full recovery'
+    duration: '3-12 months'
+    description: 'Sustained remission with surveillance imaging, immune recovery and gradual return to normal activities.'
 risks:
-  - "Neutropenic infections during chemotherapy cycles"
-  - "Infusion reactions to monoclonal antibodies such as rituximab"
-  - "Chemotherapy-related organ toxicity (cardiac, pulmonary, renal)"
-  - "Disease relapse requiring salvage therapy or autologous transplant"
-  - "Long-term effects including secondary malignancies and neuropathy"
+  - 'Neutropenic infections during chemotherapy cycles'
+  - 'Infusion reactions to monoclonal antibodies such as rituximab'
+  - 'Chemotherapy-related organ toxicity (cardiac, pulmonary, renal)'
+  - 'Disease relapse requiring salvage therapy or autologous transplant'
+  - 'Long-term effects including secondary malignancies and neuropathy'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - sparsh-hospital-hennur
@@ -61,16 +61,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "autologous-stem-cell-transplant-cost-india"
-  - "leukemia-treatment-cost-india"
+  - 'autologous-stem-cell-transplant-cost-india'
+  - 'leukemia-treatment-cost-india'
 faqs:
-  - question: "How much does lymphoma treatment cost in India?"
-    answer: "Lymphoma treatment in India costs between $6,000 and $28,000 depending on the subtype, number of chemotherapy cycles, use of immunotherapy and whether a stem cell transplant is required for relapsed disease."
-  - question: "Are Hodgkin and non-Hodgkin lymphoma both treated in Bangalore?"
-    answer: "Yes. Bangalore cancer centres treat both Hodgkin lymphoma (using ABVD or BEACOPP protocols) and non-Hodgkin lymphoma (using R-CHOP and other targeted regimens) with outcomes comparable to international standards."
-  - question: "Will I need a stem cell transplant as part of lymphoma treatment?"
-    answer: "Not always. Many lymphomas are cured with chemotherapy and immunotherapy alone. Autologous stem cell transplant is reserved for relapsed or high-risk cases and would be discussed by the treating haematologist."
+  - question: 'How much does lymphoma treatment cost in India?'
+    answer: 'Lymphoma treatment in India costs between $6,000 and $28,000 depending on the subtype, number of chemotherapy cycles, use of immunotherapy and whether a stem cell transplant is required for relapsed disease.'
+  - question: 'Are Hodgkin and non-Hodgkin lymphoma both treated in Bangalore?'
+    answer: 'Yes. Bangalore cancer centres treat both Hodgkin lymphoma (using ABVD or BEACOPP protocols) and non-Hodgkin lymphoma (using R-CHOP and other targeted regimens) with outcomes comparable to international standards.'
+  - question: 'Will I need a stem cell transplant as part of lymphoma treatment?'
+    answer: 'Not always. Many lymphomas are cured with chemotherapy and immunotherapy alone. Autologous stem cell transplant is reserved for relapsed or high-risk cases and would be discussed by the treating haematologist.'
 ---
+
 ## Overview
 
 Hearing the word "lymphoma" for the first time can leave you reeling. You may be sitting with a biopsy report you barely understand, trying to make sense of what comes next. That fear and uncertainty are completely natural — but you should know that lymphoma is one of the most treatable cancers in modern medicine, and many forms are curable. This guide will walk you through what treatment in Bangalore actually involves, so you can plan your next steps with clarity.
@@ -130,15 +131,16 @@ Your Bangalore team remains available for tele-consultation and will review any 
 If your lymphoma is relapsed or refractory, an autologous stem cell transplant is the standard salvage approach and is available at all major Bangalore transplant centres. CAR-T cell therapy is an emerging option for certain B-cell lymphomas, offered at select hospitals, though at a higher cost than conventional salvage therapy.
 
 For early-stage Hodgkin lymphoma, radiotherapy alone or combined with limited chemotherapy may be sufficient. You may also choose to receive initial cycles in your home country and travel to India only for the transplant component if relapse occurs. Khan Meditour can help you design a hybrid treatment plan that balances your clinical priorities, cost and travel logistics, ensuring you receive the right level of care at the right time.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $6,000 – $28,000 | Baseline |
-| USA | $120,000 – $450,000 | ~16.8x higher |
-| UK | £60,000 – £220,000 | ~8.2x higher |
-| Singapore | $30,000 – $90,000 | ~3.5x higher |
-| Thailand | $20,000 – $55,000 | ~2.2x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $6,000 – $28,000    | Baseline      |
+| USA               | $120,000 – $450,000 | ~16.8x higher |
+| UK                | £60,000 – £220,000  | ~8.2x higher  |
+| Singapore         | $30,000 – $90,000   | ~3.5x higher  |
+| Thailand          | $20,000 – $55,000   | ~2.2x higher  |
 
 You may be wondering why India is so much more affordable. The savings come from lower drug acquisition costs (India manufactures many generic and biosimilar versions of expensive immunotherapy agents), competitive hospital pricing and favourable exchange rates — not from any compromise in clinical quality. The wide range reflects the diversity of lymphoma subtypes: early-stage Hodgkin lymphoma treated with 2–4 cycles of ABVD sits at the lower end, while aggressive non-Hodgkin lymphoma requiring 6–8 cycles of R-CHOP or a relapsed case needing transplant reaches the upper end. You should request an itemised estimate after your staging is complete, because the final figure depends on your response and any complications along the way.
 

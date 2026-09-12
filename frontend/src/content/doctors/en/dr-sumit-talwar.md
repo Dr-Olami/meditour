@@ -17,12 +17,12 @@ expertise:
   - Bariatric Surgery
   - Robotic Surgery
   - Advanced Laparoscopic Surgery
-pullQuote: "Bariatric surgery is not about looking different — it is about living differently. When the weight lifts, so does the burden of years of struggle."
+pullQuote: 'Bariatric surgery is not about looking different — it is about living differently. When the weight lifts, so does the burden of years of struggle.'
 faqs:
   - question: "What is Dr. Sumit Talwar's expertise in bariatric surgery?"
-    answer: "Dr. Sumit Talwar has over 30 years of experience and is a pioneer in bariatric and metabolic surgery in India. He performs laparoscopic gastric bypass, mini gastric bypass, sleeve gastrectomy, and revisional bariatric procedures. He pioneered the development of bariatric surgery in the Delhi NCR region and has developed a cost-effective technique for single incision laparoscopic (scarless) surgery using routine instruments."
-  - question: "Does Dr. Sumit Talwar perform scarless surgery?"
-    answer: "Yes, Dr. Sumit Talwar developed a technique for Single Incision Laparoscopic Surgery (SILS), also known as scarless surgery, for procedures like gallbladder removal, appendix removal, and hernia repair. He used routine equipment and instruments to make the technique cost-effective, and has performed over a hundred such procedures. He also pioneered thoracoscopic and oesophageal surgery."
+    answer: 'Dr. Sumit Talwar has over 30 years of experience and is a pioneer in bariatric and metabolic surgery in India. He performs laparoscopic gastric bypass, mini gastric bypass, sleeve gastrectomy, and revisional bariatric procedures. He pioneered the development of bariatric surgery in the Delhi NCR region and has developed a cost-effective technique for single incision laparoscopic (scarless) surgery using routine instruments.'
+  - question: 'Does Dr. Sumit Talwar perform scarless surgery?'
+    answer: 'Yes, Dr. Sumit Talwar developed a technique for Single Incision Laparoscopic Surgery (SILS), also known as scarless surgery, for procedures like gallbladder removal, appendix removal, and hernia repair. He used routine equipment and instruments to make the technique cost-effective, and has performed over a hundred such procedures. He also pioneered thoracoscopic and oesophageal surgery.'
 ---
 
 ## About the Doctor

@@ -33,9 +33,7 @@ describe('Navbar', () => {
   });
 
   it('renders the language switcher when locale and currentPath are provided', () => {
-    render(
-      <Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />,
-    );
+    render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
     // Reason: compact mode renders short labels (EN, বাং) with aria-labels
     // for accessibility.
@@ -57,18 +55,14 @@ describe('Navbar', () => {
   });
 
   it('marks the current locale as active in the switcher', () => {
-    render(
-      <Navbar brand="Khan Meditour" links={LINKS} locale="bn" currentPath="/bn" />,
-    );
+    render(<Navbar brand="Khan Meditour" links={LINKS} locale="bn" currentPath="/bn" />);
 
     const bnLink = screen.getByText('বাং').closest('a');
     expect(bnLink).toHaveAttribute('aria-current', 'true');
   });
 
   it('always shows the switcher — no need to open the mobile menu', () => {
-    render(
-      <Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />,
-    );
+    render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
     // Reason: the switcher is always visible in the navbar, not hidden inside
     // the hamburger dropdown. It should be present before any click.
@@ -77,9 +71,7 @@ describe('Navbar', () => {
   });
 
   it('switcher links have accessible aria-labels with full language names', () => {
-    render(
-      <Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />,
-    );
+    render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
     expect(screen.getByLabelText('English')).toBeInTheDocument();
     expect(screen.getByLabelText('বাংলা')).toBeInTheDocument();
@@ -93,7 +85,7 @@ describe('Navbar', () => {
         locale="en"
         currentPath="/countries/bangladesh"
         localeFallbacks={{ bn: '/bn' }}
-      />,
+      />
     );
 
     // Reason: country pages are English-only for MVP — the Bengali toggle must
@@ -105,7 +97,12 @@ describe('Navbar', () => {
 
   it('preserves the path for translated locales when no fallback is given', () => {
     render(
-      <Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/treatments/cardiology" />,
+      <Navbar
+        brand="Khan Meditour"
+        links={LINKS}
+        locale="en"
+        currentPath="/treatments/cardiology"
+      />
     );
 
     expect(screen.getByLabelText('বাংলা')).toHaveAttribute('href', '/bn/treatments/cardiology');

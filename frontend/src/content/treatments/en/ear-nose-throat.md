@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Ear Nose Throat
-seoHeadline: "ENT & Head-Neck Surgery in India for International Patients"
+seoHeadline: 'ENT & Head-Neck Surgery in India for International Patients'
 category: ENT
 description: Advanced ENT care including endoscopic sinus surgery, cochlear implants, thyroid surgery and sleep apnoea management.
 fromPrice: '$1,200'
@@ -25,55 +25,55 @@ hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'
 image: /images/treatments-cards/ear-nose-throat.webp
 faqs:
-  - question: "Is cochlear implant available for children?"
-    answer: "Yes, cochlear implantation is available for children with severe-to-profound sensorineural hearing loss. The programme includes paediatric evaluation, surgery with intra-operative neural response telemetry, and post-activation audiology and speech therapy. Early implantation (typically between 1-3 years of age) provides the best outcomes for speech and language development."
-  - question: "What is the recovery time after endoscopic sinus surgery?"
-    answer: "Recovery from functional endoscopic sinus surgery (FESS) typically takes 1-2 weeks. Nasal packing is removed within 1-2 days, and most patients return to work within a week. Complete healing of sinus mucosa takes 4-6 weeks. Saline nasal irrigation and regular follow-up endoscopic cleaning are part of the post-operative care protocol."
-  - question: "Is sleep apnoea surgery available?"
-    answer: "Yes, surgical options for obstructive sleep apnoea are available including UPPP (uvulopalatopharyngoplasty), septoplasty with turbinate reduction, maxillomandibular advancement, and hypoglossal nerve stimulation. The appropriate procedure is determined after a comprehensive sleep study (polysomnography) and upper airway evaluation by the ENT surgeon."
-summary: "ENT and head-neck surgery in Bangalore covers endoscopic sinus surgery, cochlear implants, thyroid surgery and sleep apnoea management at JCI-accredited hospitals. Costs range from $1,200 to $5,000, offering 60-80% savings compared to Western countries with sub-specialty trained surgeons and comprehensive post-treatment care."
+  - question: 'Is cochlear implant available for children?'
+    answer: 'Yes, cochlear implantation is available for children with severe-to-profound sensorineural hearing loss. The programme includes paediatric evaluation, surgery with intra-operative neural response telemetry, and post-activation audiology and speech therapy. Early implantation (typically between 1-3 years of age) provides the best outcomes for speech and language development.'
+  - question: 'What is the recovery time after endoscopic sinus surgery?'
+    answer: 'Recovery from functional endoscopic sinus surgery (FESS) typically takes 1-2 weeks. Nasal packing is removed within 1-2 days, and most patients return to work within a week. Complete healing of sinus mucosa takes 4-6 weeks. Saline nasal irrigation and regular follow-up endoscopic cleaning are part of the post-operative care protocol.'
+  - question: 'Is sleep apnoea surgery available?'
+    answer: 'Yes, surgical options for obstructive sleep apnoea are available including UPPP (uvulopalatopharyngoplasty), septoplasty with turbinate reduction, maxillomandibular advancement, and hypoglossal nerve stimulation. The appropriate procedure is determined after a comprehensive sleep study (polysomnography) and upper airway evaluation by the ENT surgeon.'
+summary: 'ENT and head-neck surgery in Bangalore covers endoscopic sinus surgery, cochlear implants, thyroid surgery and sleep apnoea management at JCI-accredited hospitals. Costs range from $1,200 to $5,000, offering 60-80% savings compared to Western countries with sub-specialty trained surgeons and comprehensive post-treatment care.'
 eligibility:
-  - "Patients with chronic sinusitis unresponsive to medical management"
-  - "Children or adults with severe-to-profound sensorineural hearing loss suitable for cochlear implantation"
-  - "Individuals with recurrent tonsillitis or obstructive sleep apnoea requiring surgical intervention"
-  - "Patients with thyroid nodules, goitre or thyroid cancer requiring thyroidectomy"
-  - "Patients medically fit for surgery as determined by pre-operative assessment"
+  - 'Patients with chronic sinusitis unresponsive to medical management'
+  - 'Children or adults with severe-to-profound sensorineural hearing loss suitable for cochlear implantation'
+  - 'Individuals with recurrent tonsillitis or obstructive sleep apnoea requiring surgical intervention'
+  - 'Patients with thyroid nodules, goitre or thyroid cancer requiring thyroidectomy'
+  - 'Patients medically fit for surgery as determined by pre-operative assessment'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "0-3 days"
-    description: "Observation and initial recovery; nasal packing removal for sinus surgery, wound monitoring for thyroid surgery"
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up endoscopic cleaning for sinus patients, audiology activation for cochlear implant patients, wound review"
-  - phase: "Return home"
-    duration: "Week 2-3"
-    description: "Gradual return to daily activities; saline irrigation protocols and voice rest as advised"
-  - phase: "Full recovery"
-    duration: "1-4 weeks"
-    description: "Complete healing of surgical sites, resumption of normal activities and work"
+  - phase: 'Hospital stay'
+    duration: '0-3 days'
+    description: 'Observation and initial recovery; nasal packing removal for sinus surgery, wound monitoring for thyroid surgery'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up endoscopic cleaning for sinus patients, audiology activation for cochlear implant patients, wound review'
+  - phase: 'Return home'
+    duration: 'Week 2-3'
+    description: 'Gradual return to daily activities; saline irrigation protocols and voice rest as advised'
+  - phase: 'Full recovery'
+    duration: '1-4 weeks'
+    description: 'Complete healing of surgical sites, resumption of normal activities and work'
 risks:
-  - "Bleeding or infection at the surgical site"
-  - "Changes in voice or vocal cord dysfunction after thyroid surgery"
-  - "Cerebrospinal fluid leak in skull base or sinus surgery"
-  - "Device-related complications with cochlear implants (infection, migration)"
-  - "Persistent or recurrent sinus disease after FESS"
+  - 'Bleeding or infection at the surgical site'
+  - 'Changes in voice or vocal cord dysfunction after thyroid surgery'
+  - 'Cerebrospinal fluid leak in skull base or sinus surgery'
+  - 'Device-related complications with cochlear implants (infection, migration)'
+  - 'Persistent or recurrent sinus disease after FESS'
 relatedTreatmentSlugs:
-  - "pulmonology-lung-care"
-  - "neurology"
+  - 'pulmonology-lung-care'
+  - 'neurology'
 ---
 
 ## Overview
@@ -136,13 +136,13 @@ Surgical removal of tonsils and adenoids for recurrent infections or obstructive
 
 ## Cost Comparison
 
-| Country | Approximate Cost (ENT Procedures) | vs India |
-|---------|-----------------------------------|----------|
-| India (Bangalore) | $1,200 – $5,000 | Baseline |
-| USA | $10,000 – $30,000 | ~6.5× higher |
-| UK | £7,000 – £20,000 | ~4.4× higher |
-| Singapore | $7,000 – $18,000 | ~4.0× higher |
-| Thailand | $4,000 – $10,000 | ~2.3× higher |
+| Country           | Approximate Cost (ENT Procedures) | vs India     |
+| ----------------- | --------------------------------- | ------------ |
+| India (Bangalore) | $1,200 – $5,000                   | Baseline     |
+| USA               | $10,000 – $30,000                 | ~6.5× higher |
+| UK                | £7,000 – £20,000                  | ~4.4× higher |
+| Singapore         | $7,000 – $18,000                  | ~4.0× higher |
+| Thailand          | $4,000 – $10,000                  | ~2.3× higher |
 
 ## Why Choose Bangalore for ENT Care?
 

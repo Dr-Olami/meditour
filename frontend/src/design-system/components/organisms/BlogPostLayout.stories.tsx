@@ -6,14 +6,13 @@ const meta: Meta<typeof BlogPostLayout> = {
   component: BlogPostLayout,
   args: {
     title: 'Cost of Cardiac Care in India vs. Bangladesh, UAE & UK',
-    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop',
+    coverImage:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop',
     publishedAt: '10 July 2026',
     updatedAt: '15 July 2026',
     author: 'Khan Meditour Team',
     tags: ['cardiology', 'cost-guide'],
-    relatedTreatments: [
-      { name: 'Cardiology', href: '/treatments/cardiology' },
-    ],
+    relatedTreatments: [{ name: 'Cardiology', href: '/treatments/cardiology' }],
     ctaHref: '/#contact',
     ctaLabel: 'Get a free cost estimate',
     backHref: '/blog',

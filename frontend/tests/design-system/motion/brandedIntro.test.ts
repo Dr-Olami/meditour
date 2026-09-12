@@ -82,8 +82,6 @@ describe('brandedIntro — timings', () => {
   });
 
   it('composes the total from the three phases', () => {
-    expect(INTRO_TOTAL_MS).toBe(
-      INTRO_TIMINGS.drawIn + INTRO_TIMINGS.hold + INTRO_TIMINGS.wipe
-    );
+    expect(INTRO_TOTAL_MS).toBe(INTRO_TIMINGS.drawIn + INTRO_TIMINGS.hold + INTRO_TIMINGS.wipe);
   });
 });

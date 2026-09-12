@@ -16,5 +16,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { placeholder: 'Describe your medical query…', rows: 4 } };
-export const Error: Story = { args: { state: 'error', placeholder: 'This field is required', rows: 4 } };
+export const Error: Story = {
+  args: { state: 'error', placeholder: 'This field is required', rows: 4 },
+};
 export const Disabled: Story = { args: { placeholder: 'Not editable', disabled: true, rows: 3 } };

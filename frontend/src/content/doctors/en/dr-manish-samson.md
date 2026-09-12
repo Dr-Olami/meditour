@@ -13,15 +13,15 @@ languages:
   - Kannada
   - Marathi
 faqs:
-  - question: "Who is Dr. Manish Samson?"
-    answer: "Dr. Manish Samson is a highly experienced Orthopaedician and Joint Replacement Surgeon based in Bangalore, Karnataka, with 26 years of expertise in orthopaedics. He holds D.Orth, MS (Orth), MCh Orth (UK), and a Fellowship in Adult Joint Reconstruction from Singapore. He specializes in adult joint reconstruction, computer-assisted navigated surgery, and primary and revision hip, knee, shoulder, and elbow replacement surgeries."
-  - question: "Does an Orthopedist treat foot and ankle problems?"
-    answer: "Yes, Dr. Manish Samson treats a wide range of foot and ankle problems including ankle sprains, Achilles tendon rupture and tear, plantar fasciitis, flat foot issues, foot drop, foot pain, heel pain, and congenital vertical talus. He is experienced in both non-surgical and surgical treatment approaches for foot and ankle conditions."
-  - question: "What is the difference between an Orthopaedist and an Orthopaedic Surgeon?"
-    answer: "An Orthopaedist diagnoses and treats musculoskeletal disorders using both non-surgical and surgical approaches. An Orthopaedic Surgeon specifically performs surgical procedures. Dr. Manish Samson is both — as a Senior Consultant Orthopaedician and Joint Replacement Surgeon, he provides comprehensive care from non-surgical treatments to advanced surgical procedures including joint replacements."
+  - question: 'Who is Dr. Manish Samson?'
+    answer: 'Dr. Manish Samson is a highly experienced Orthopaedician and Joint Replacement Surgeon based in Bangalore, Karnataka, with 26 years of expertise in orthopaedics. He holds D.Orth, MS (Orth), MCh Orth (UK), and a Fellowship in Adult Joint Reconstruction from Singapore. He specializes in adult joint reconstruction, computer-assisted navigated surgery, and primary and revision hip, knee, shoulder, and elbow replacement surgeries.'
+  - question: 'Does an Orthopedist treat foot and ankle problems?'
+    answer: 'Yes, Dr. Manish Samson treats a wide range of foot and ankle problems including ankle sprains, Achilles tendon rupture and tear, plantar fasciitis, flat foot issues, foot drop, foot pain, heel pain, and congenital vertical talus. He is experienced in both non-surgical and surgical treatment approaches for foot and ankle conditions.'
+  - question: 'What is the difference between an Orthopaedist and an Orthopaedic Surgeon?'
+    answer: 'An Orthopaedist diagnoses and treats musculoskeletal disorders using both non-surgical and surgical approaches. An Orthopaedic Surgeon specifically performs surgical procedures. Dr. Manish Samson is both — as a Senior Consultant Orthopaedician and Joint Replacement Surgeon, he provides comprehensive care from non-surgical treatments to advanced surgical procedures including joint replacements.'
   - question: "What are Dr. Manish Samson's special interests?"
-    answer: "Dr. Manish Samson is adept in adult joint reconstruction with additional training in computer-assisted navigated surgery (CANS). His special interests include orthopaedic trauma surgeries, minimally invasive hip and knee replacement surgeries, CANS hip and knee replacement, and primary and revision arthroplasty surgeries for hip, knee, shoulder, and elbow joints."
-  - question: "How can I book an appointment with Dr. Manish Samson?"
+    answer: 'Dr. Manish Samson is adept in adult joint reconstruction with additional training in computer-assisted navigated surgery (CANS). His special interests include orthopaedic trauma surgeries, minimally invasive hip and knee replacement surgeries, CANS hip and knee replacement, and primary and revision arthroplasty surgeries for hip, knee, shoulder, and elbow joints.'
+  - question: 'How can I book an appointment with Dr. Manish Samson?'
     answer: "You can book an appointment with Dr. Manish Samson at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

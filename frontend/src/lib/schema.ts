@@ -1,7 +1,12 @@
 type WithContext<T> = T & { '@context': 'https://schema.org' };
 
-function thing<T extends Record<string, unknown>>(type: string, data: T): WithContext<T & { '@type': string }> {
-  return { '@context': 'https://schema.org', '@type': type, ...data } as WithContext<T & { '@type': string }>;
+function thing<T extends Record<string, unknown>>(
+  type: string,
+  data: T
+): WithContext<T & { '@type': string }> {
+  return { '@context': 'https://schema.org', '@type': type, ...data } as WithContext<
+    T & { '@type': string }
+  >;
 }
 
 interface SiteIdentity {
@@ -62,7 +67,9 @@ export function physician(data: PhysicianInput): WithContext<Record<string, unkn
     ...(data.alumniOf ? { alumniOf: data.alumniOf } : {}),
     ...(data.award?.length ? { award: data.award } : {}),
     ...(data.qualification ? { qualification: data.qualification } : {}),
-    ...(data.yearsExperience !== undefined ? { hasCredential: `Years of experience: ${data.yearsExperience}` } : {}),
+    ...(data.yearsExperience !== undefined
+      ? { hasCredential: `Years of experience: ${data.yearsExperience}` }
+      : {}),
     ...(data.languages?.length ? { knowsLanguage: data.languages } : {}),
   });
 }
@@ -110,14 +117,16 @@ export function hospital(data: HospitalInput): WithContext<Record<string, unknow
     ...(data.establishedYear ? { foundingDate: String(data.establishedYear) } : {}),
     ...(data.accreditations?.length ? { accreditation: data.accreditations } : {}),
     ...(data.specialities?.length ? { medicalSpecialty: data.specialities } : {}),
-    ...(data.aggregateRating ? {
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: data.aggregateRating.ratingValue,
-        reviewCount: data.aggregateRating.reviewCount,
-        bestRating: data.aggregateRating.bestRating ?? 5,
-      },
-    } : {}),
+    ...(data.aggregateRating
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: data.aggregateRating.ratingValue,
+            reviewCount: data.aggregateRating.reviewCount,
+            bestRating: data.aggregateRating.bestRating ?? 5,
+          },
+        }
+      : {}),
   });
 }
 
@@ -132,7 +141,9 @@ interface MedicalProcedureInput {
 /**
  * Build a MedicalProcedure JSON-LD object for a treatment detail page.
  */
-export function medicalProcedure(data: MedicalProcedureInput): WithContext<Record<string, unknown>> {
+export function medicalProcedure(
+  data: MedicalProcedureInput
+): WithContext<Record<string, unknown>> {
   return thing('MedicalProcedure', {
     name: data.name,
     url: data.url,
@@ -168,7 +179,7 @@ interface HospitalProcedureCostsInput {
  * answer engines that ask "how much does X cost at Y hospital".
  */
 export function hospitalProcedureCosts(
-  data: HospitalProcedureCostsInput,
+  data: HospitalProcedureCostsInput
 ): WithContext<Record<string, unknown>>[] {
   return data.procedures.map((proc) =>
     thing('MedicalProcedure', {
@@ -188,7 +199,7 @@ export function hospitalProcedureCosts(
           ...(proc.note ? { description: proc.note } : {}),
         },
       },
-    }),
+    })
   );
 }
 
@@ -286,7 +297,9 @@ interface MedicalConditionInput {
 /**
  * Build a MedicalCondition JSON-LD object for treatment pages.
  */
-export function medicalCondition(data: MedicalConditionInput): WithContext<Record<string, unknown>> {
+export function medicalCondition(
+  data: MedicalConditionInput
+): WithContext<Record<string, unknown>> {
   return thing('MedicalCondition', {
     name: data.name,
     ...(data.description ? { description: data.description } : {}),

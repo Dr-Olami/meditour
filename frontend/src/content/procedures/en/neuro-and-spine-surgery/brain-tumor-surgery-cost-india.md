@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Brain Tumor Surgery"
-seoHeadline: "Brain Tumor Surgery Cost in India for International Patients"
+name: 'Brain Tumor Surgery'
+seoHeadline: 'Brain Tumor Surgery Cost in India for International Patients'
 parentTreatmentSlug: neuro-and-spine-surgery
-summary: "Brain tumor surgery in India costs between $6,000 and $20,000, offering international patients access to advanced neurosurgical care including microsurgery, awake craniotomy, and image-guided resection at a fraction of Western prices. Top neurosurgery hospitals in Bangalore provide JCI-accredited facilities, experienced neurosurgeons, and comprehensive post-operative care."
-description: "Affordable brain tumor surgery in India starting at $6,000. Compare costs, recovery timeline, and top neurosurgery hospitals in Bangalore for international patients."
-fromPrice: "$6,000"
-toPrice: "$20,000"
-duration: "3-5 weeks"
-hospitalStay: "5-10 days"
-recoveryTime: "6-12 weeks"
+summary: 'Brain tumor surgery in India costs between $6,000 and $20,000, offering international patients access to advanced neurosurgical care including microsurgery, awake craniotomy, and image-guided resection at a fraction of Western prices. Top neurosurgery hospitals in Bangalore provide JCI-accredited facilities, experienced neurosurgeons, and comprehensive post-operative care.'
+description: 'Affordable brain tumor surgery in India starting at $6,000. Compare costs, recovery timeline, and top neurosurgery hospitals in Bangalore for international patients.'
+fromPrice: '$6,000'
+toPrice: '$20,000'
+duration: '3-5 weeks'
+hospitalStay: '5-10 days'
+recoveryTime: '6-12 weeks'
 eligibility:
-  - "Confirmed diagnosis of a primary or metastatic brain tumor on MRI or CT imaging"
-  - "Tumor is surgically accessible and resectable based on neurosurgical evaluation"
-  - "Patient is medically stable enough to undergo general anaesthesia and craniotomy"
-  - "No uncontrolled systemic conditions that significantly increase surgical risk"
-  - "Realistic expectations regarding extent of resection and functional outcomes"
+  - 'Confirmed diagnosis of a primary or metastatic brain tumor on MRI or CT imaging'
+  - 'Tumor is surgically accessible and resectable based on neurosurgical evaluation'
+  - 'Patient is medically stable enough to undergo general anaesthesia and craniotomy'
+  - 'No uncontrolled systemic conditions that significantly increase surgical risk'
+  - 'Realistic expectations regarding extent of resection and functional outcomes'
 costInclusions:
-  - "Neurosurgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants and hardware (where applicable — screws, cages, DBS device)"
-  - "Pre-operative diagnostics (MRI, CT, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Neurosurgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants and hardware (where applicable — screws, cages, DBS device)'
+  - 'Pre-operative diagnostics (MRI, CT, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy/neuro-rehab post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy/neuro-rehab post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "5-10 days"
-    description: "Post-operative monitoring in the neuro-ICU followed by ward transfer, with pain management, wound care, and early neurological assessment."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultation with the neurosurgeon, stitch removal, repeat imaging if needed, and gradual mobilisation under supervision."
-  - phase: "Return home"
-    duration: "Week 3-4"
-    description: "Gradual resumption of light activities with restrictions on heavy lifting and air travel cleared by the surgical team."
-  - phase: "Full recovery"
-    duration: "6-12 weeks"
-    description: "Complete wound healing and return to normal activities, with ongoing surveillance imaging as per the treatment plan."
+  - phase: 'Hospital stay'
+    duration: '5-10 days'
+    description: 'Post-operative monitoring in the neuro-ICU followed by ward transfer, with pain management, wound care, and early neurological assessment.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultation with the neurosurgeon, stitch removal, repeat imaging if needed, and gradual mobilisation under supervision.'
+  - phase: 'Return home'
+    duration: 'Week 3-4'
+    description: 'Gradual resumption of light activities with restrictions on heavy lifting and air travel cleared by the surgical team.'
+  - phase: 'Full recovery'
+    duration: '6-12 weeks'
+    description: 'Complete wound healing and return to normal activities, with ongoing surveillance imaging as per the treatment plan.'
 risks:
-  - "Infection at the surgical site or within the cranial cavity ( meningitis)"
-  - "Bleeding or haematoma requiring reoperation"
-  - "New neurological deficits such as weakness, speech, or vision changes"
-  - "Seizures post-operatively requiring anticonvulsant medication"
-  - "Cerebrospinal fluid (CSF) leak or hydrocephalus"
+  - 'Infection at the surgical site or within the cranial cavity ( meningitis)'
+  - 'Bleeding or haematoma requiring reoperation'
+  - 'New neurological deficits such as weakness, speech, or vision changes'
+  - 'Seizures post-operatively requiring anticonvulsant medication'
+  - 'Cerebrospinal fluid (CSF) leak or hydrocephalus'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-satish-satyanarayana
 
 relatedProcedureSlugs:
-  - "spinal-fusion-surgery-cost-india"
-  - "deep-brain-stimulation-cost-india"
+  - 'spinal-fusion-surgery-cost-india'
+  - 'deep-brain-stimulation-cost-india'
 faqs:
-  - question: "How much does brain tumor surgery cost in India?"
-    answer: "Brain tumor surgery in India typically costs between $6,000 and $20,000 depending on the tumor type, location, surgical approach, and length of ICU stay. This is roughly 70-80% lower than in the USA or UK."
-  - question: "Which surgical techniques are available in Bangalore hospitals?"
-    answer: "Leading neurosurgery centres in Bangalore offer microsurgical resection, neuronavigation-guided surgery, awake craniotomy, intraoperative MRI, and endoscopic transsphenoidal approaches for pituitary tumors."
-  - question: "How long do international patients need to stay in India?"
-    answer: "Most patients should plan for a 3-5 week stay, including 5-10 days in hospital followed by 1-2 weeks of recovery and follow-up in Bangalore before being cleared to fly home."
+  - question: 'How much does brain tumor surgery cost in India?'
+    answer: 'Brain tumor surgery in India typically costs between $6,000 and $20,000 depending on the tumor type, location, surgical approach, and length of ICU stay. This is roughly 70-80% lower than in the USA or UK.'
+  - question: 'Which surgical techniques are available in Bangalore hospitals?'
+    answer: 'Leading neurosurgery centres in Bangalore offer microsurgical resection, neuronavigation-guided surgery, awake craniotomy, intraoperative MRI, and endoscopic transsphenoidal approaches for pituitary tumors.'
+  - question: 'How long do international patients need to stay in India?'
+    answer: 'Most patients should plan for a 3-5 week stay, including 5-10 days in hospital followed by 1-2 weeks of recovery and follow-up in Bangalore before being cleared to fly home.'
 ---
+
 ## Overview
 
 Being told you have a brain tumor is one of the most frightening things you can hear. You may be feeling scared, confused, and desperate for clear answers. Take a breath. You are not alone in this, and there are options available that combine world-class surgical care with costs far more manageable than you might expect.
@@ -155,15 +156,16 @@ For small tumours that are not causing symptoms — particularly if you are olde
 Stereotactic radiosurgery (SRS), such as Gamma Knife or CyberKnife, is a non-invasive alternative for small tumours or tumours in locations difficult to reach surgically. SRS delivers highly focused radiation while sparing surrounding brain tissue, and is effective for tumours up to approximately 3 cm. It is particularly useful for metastatic tumours, acoustic neuromas, and recurrent meningiomas. If you are not fit enough for surgery, a biopsy alone may be performed to establish a diagnosis, followed by radiotherapy or chemotherapy.
 
 Khan Meditour can arrange consultations with radiation oncologists and neuro-oncologists to help you understand all available options. In some cases, a combination of surgery and radiosurgery offers the best outcome.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $6,000 – $20,000 | Baseline |
-| USA | $50,000 – $150,000 | ~7.7x higher |
-| UK | £20,000 – £60,000 | ~7.7x higher |
-| Singapore | $25,000 – $60,000 | ~3.3x higher |
-| Thailand | $10,000 – $30,000 | ~1.5x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $6,000 – $20,000   | Baseline     |
+| USA               | $50,000 – $150,000 | ~7.7x higher |
+| UK                | £20,000 – £60,000  | ~7.7x higher |
+| Singapore         | $25,000 – $60,000  | ~3.3x higher |
+| Thailand          | $10,000 – $30,000  | ~1.5x higher |
 
 You may be wondering why there is such a wide range within India. The cost depends on how complex your tumour is, the surgical technique used, and how long you need in the ICU. A straightforward meningioma may cost closer to $6,000, while a complex glioma requiring awake craniotomy with intraoperative MRI and extended ICU monitoring may approach $20,000. Even at the upper end, you are still paying roughly 70-80% less than in the USA or UK.
 

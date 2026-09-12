@@ -28,8 +28,7 @@ export const INTRO_TIMINGS = {
 } as const;
 
 /** Total intro duration in milliseconds. */
-export const INTRO_TOTAL_MS =
-  INTRO_TIMINGS.drawIn + INTRO_TIMINGS.hold + INTRO_TIMINGS.wipe;
+export const INTRO_TOTAL_MS = INTRO_TIMINGS.drawIn + INTRO_TIMINGS.hold + INTRO_TIMINGS.wipe;
 
 /**
  * Decide whether the branded intro should play on this visit.

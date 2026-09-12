@@ -44,7 +44,7 @@ export const AccreditationBadges: Story = {
       items={ACCREDITATIONS.map((badge, i) => (
         <span
           key={i}
-          className="inline-flex items-center rounded-full border border-cream-100/15 bg-cream-100/5 px-5 py-2.5 text-sm font-semibold text-cream-100"
+          className="border-cream-100/15 bg-cream-100/5 inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold text-cream-100"
         >
           {badge}
         </span>

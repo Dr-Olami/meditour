@@ -18,7 +18,8 @@ const textareaVariants = cva(
 );
 
 export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  extends
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     VariantProps<typeof textareaVariants> {}
 
 /**
@@ -26,13 +27,7 @@ export interface TextareaProps
  */
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, state, ...props }, ref) => {
-    return (
-      <textarea
-        className={cn(textareaVariants({ state }), className)}
-        ref={ref}
-        {...props}
-      />
-    );
+    return <textarea className={cn(textareaVariants({ state }), className)} ref={ref} {...props} />;
   }
 );
 Textarea.displayName = 'Textarea';

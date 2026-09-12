@@ -23,14 +23,14 @@ An uninsured knee replacement in the United States can cost more than a car. A h
 
 Substantially — and the math is simple. Indicative package prices at accredited Indian hospitals:
 
-| Procedure | India (USD) | USA typical | Est. savings |
-| --- | --- | --- | --- |
-| Hip replacement | $2,500–8,000 | $30,000–60,000 | ~85% |
-| Knee replacement | $2,500–8,000 | $30,000–60,000 | ~85% |
-| Cardiac bypass surgery | $4,500–12,000 | $70,000–150,000 | ~90% |
-| Spine surgery | $4,000–12,000 | $50,000–150,000 | ~90% |
-| IVF (per cycle) | $3,500–7,000 | $15,000–30,000 | ~75% |
-| Dental implants (per implant) | $300–2,500 | $2,000–6,000 | ~65% |
+| Procedure                     | India (USD)   | USA typical     | Est. savings |
+| ----------------------------- | ------------- | --------------- | ------------ |
+| Hip replacement               | $2,500–8,000  | $30,000–60,000  | ~85%         |
+| Knee replacement              | $2,500–8,000  | $30,000–60,000  | ~85%         |
+| Cardiac bypass surgery        | $4,500–12,000 | $70,000–150,000 | ~90%         |
+| Spine surgery                 | $4,000–12,000 | $50,000–150,000 | ~90%         |
+| IVF (per cycle)               | $3,500–7,000  | $15,000–30,000  | ~75%         |
+| Dental implants (per implant) | $300–2,500    | $2,000–6,000    | ~65%         |
 
 Knee replacement cost India vs United States is the classic example: a $40,000 US procedure becomes a $2,500–8,000 package including hospital stay — often less than the deductible alone at home. Even after flights and a week of accommodation, hip replacement cost India vs USA leaves most patients thousands of dollars ahead.
 

@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Aplastic Anemia Treatment"
-seoHeadline: "Aplastic Anemia Treatment Cost in India for International Patients"
+name: 'Aplastic Anemia Treatment'
+seoHeadline: 'Aplastic Anemia Treatment Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Aplastic anemia treatment in India costs between $10,000 and $45,000, covering immunosuppressive therapy and curative stem cell transplant options. Leading Bangalore hospitals offer comprehensive aplastic anemia management for international patients at a fraction of Western costs."
-description: "Affordable aplastic anemia treatment in India from $10,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$10,000"
-toPrice: "$45,000"
-duration: "4-12 weeks"
-hospitalStay: "4-6 weeks"
-recoveryTime: "6-12 months"
+summary: 'Aplastic anemia treatment in India costs between $10,000 and $45,000, covering immunosuppressive therapy and curative stem cell transplant options. Leading Bangalore hospitals offer comprehensive aplastic anemia management for international patients at a fraction of Western costs.'
+description: 'Affordable aplastic anemia treatment in India from $10,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$10,000'
+toPrice: '$45,000'
+duration: '4-12 weeks'
+hospitalStay: '4-6 weeks'
+recoveryTime: '6-12 months'
 eligibility:
-  - "Patients with confirmed severe or very severe aplastic anaemia with marrow hypoplasia"
-  - "Younger patients (typically under 40) with an HLA-matched sibling donor eligible for upfront transplant"
-  - "Older patients or those without a matched donor eligible for immunosuppressive therapy"
-  - "Adequate cardiac, renal and hepatic function to tolerate conditioning or immunosuppression"
-  - "No active uncontrolled infection at the time of admission"
+  - 'Patients with confirmed severe or very severe aplastic anaemia with marrow hypoplasia'
+  - 'Younger patients (typically under 40) with an HLA-matched sibling donor eligible for upfront transplant'
+  - 'Older patients or those without a matched donor eligible for immunosuppressive therapy'
+  - 'Adequate cardiac, renal and hepatic function to tolerate conditioning or immunosuppression'
+  - 'No active uncontrolled infection at the time of admission'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy followed by donor stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "6-12 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and clonal evolution."
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy followed by donor stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '6-12 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and clonal evolution.'
 risks:
-  - "Graft failure or graft rejection"
-  - "Graft-versus-host disease in allogeneic transplants"
-  - "Severe infections due to prolonged neutropenia and immunosuppression"
-  - "Failure of immunosuppressive therapy requiring salvage transplant"
-  - "Long-term risk of clonal evolution to myelodysplasia or leukaemia"
+  - 'Graft failure or graft rejection'
+  - 'Graft-versus-host disease in allogeneic transplants'
+  - 'Severe infections due to prolonged neutropenia and immunosuppression'
+  - 'Failure of immunosuppressive therapy requiring salvage transplant'
+  - 'Long-term risk of clonal evolution to myelodysplasia or leukaemia'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "bone-marrow-transplant-cost-india"
-  - "allogeneic-stem-cell-transplant-cost-india"
+  - 'bone-marrow-transplant-cost-india'
+  - 'allogeneic-stem-cell-transplant-cost-india'
 faqs:
-  - question: "How much does aplastic anemia treatment cost in India?"
-    answer: "Aplastic anemia treatment in India costs between $10,000 and $45,000 depending on the modality — immunosuppressive therapy with ATG and cyclosporine sits at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end."
-  - question: "Can aplastic anemia be cured with a bone marrow transplant in Bangalore?"
-    answer: "Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for severe aplastic anaemia, and Bangalore transplant centres report long-term survival rates of 80–90% in younger patients with matched sibling donors."
-  - question: "How long do I need to stay in India for aplastic anemia treatment?"
-    answer: "For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does aplastic anemia treatment cost in India?'
+    answer: 'Aplastic anemia treatment in India costs between $10,000 and $45,000 depending on the modality — immunosuppressive therapy with ATG and cyclosporine sits at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end.'
+  - question: 'Can aplastic anemia be cured with a bone marrow transplant in Bangalore?'
+    answer: 'Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for severe aplastic anaemia, and Bangalore transplant centres report long-term survival rates of 80–90% in younger patients with matched sibling donors.'
+  - question: 'How long do I need to stay in India for aplastic anemia treatment?'
+    answer: 'For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 Being told your bone marrow has stopped working properly is terrifying. You may have been feeling exhausted, getting infections easily, bruising without explanation — and then a blood test and bone marrow biopsy confirmed aplastic anaemia. You are probably full of questions: What does this mean? Can it be cured? How long will treatment take? This guide is here to help you understand your options in Bangalore, so you can make informed decisions with confidence rather than fear.
@@ -129,15 +130,16 @@ For transplant patients, immunosuppressive medications are gradually tapered ove
 If you are not a candidate for an allogeneic transplant or lack a matched donor, immunosuppressive therapy remains the standard alternative and can be highly effective. Eltrombopag, a thrombopoietin receptor agonist, has been added to immunosuppressive regimens in recent years and has improved response rates, particularly in patients with very severe aplastic anaemia.
 
 Haploidentical (half-matched) transplants from family members are increasingly offered at experienced centres if you do not have a fully matched donor, using post-transplant cyclophosphamide to reduce graft-versus-host disease. Unrelated donor transplants through international registries are another option, though the search process can take several months and the cost is higher. You should discuss all available options with your treating haematologist to determine the most appropriate pathway based on your age, donor availability, disease severity and personal circumstances.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $10,000 – $45,000 | Baseline |
-| USA | $150,000 – $500,000 | ~11.8x higher |
-| UK | £80,000 – £300,000 | ~6.9x higher |
-| Singapore | $45,000 – $150,000 | ~3.5x higher |
-| Thailand | $25,000 – $80,000 | ~1.9x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $10,000 – $45,000   | Baseline      |
+| USA               | $150,000 – $500,000 | ~11.8x higher |
+| UK                | £80,000 – £300,000  | ~6.9x higher  |
+| Singapore         | $45,000 – $150,000  | ~3.5x higher  |
+| Thailand          | $25,000 – $80,000   | ~1.9x higher  |
 
 The cost varies based on your chosen treatment. Immunosuppressive therapy with ATG and cyclosporine typically costs $10,000–$20,000 including your inpatient stay, medications and follow-up. A curative allogeneic stem cell transplant with a matched sibling donor ranges from $25,000–$45,000 depending on the length of hospitalisation, complications and the need for additional blood products or ICU care. Even at the higher end, you save 70–90% compared to US or European pricing, making curative treatment accessible when it might otherwise be financially out of reach.
 

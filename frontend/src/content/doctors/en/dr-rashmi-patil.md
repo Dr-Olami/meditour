@@ -13,13 +13,13 @@ languages:
   - English
   - Marathi
 faqs:
-  - question: "Who is Dr. Rashmi Patil?"
-    answer: "Dr. Rashmi Patil is a highly experienced Consultant Obstetrician, Gynaecologist and Laparoscopic Surgeon with over 15 years of clinical expertise, currently practising at Apollo Hospitals Bannerghatta, Bangalore. She holds MBBS, MS (OBG), DNB, MRCOG (UK), EFOG-EBCOG (Europe), FACOG, FICOG, FKCOG, and FMAS. She specialises in vaginal and instrumental deliveries, high-risk pregnancy management, minimally invasive advanced gynaecologic surgeries (laparoscopy and hysteroscopy), fertility treatment, adolescent gynaecology, and menopausal health."
-  - question: "Why do patients choose Dr. Rashmi Patil?"
+  - question: 'Who is Dr. Rashmi Patil?'
+    answer: 'Dr. Rashmi Patil is a highly experienced Consultant Obstetrician, Gynaecologist and Laparoscopic Surgeon with over 15 years of clinical expertise, currently practising at Apollo Hospitals Bannerghatta, Bangalore. She holds MBBS, MS (OBG), DNB, MRCOG (UK), EFOG-EBCOG (Europe), FACOG, FICOG, FKCOG, and FMAS. She specialises in vaginal and instrumental deliveries, high-risk pregnancy management, minimally invasive advanced gynaecologic surgeries (laparoscopy and hysteroscopy), fertility treatment, adolescent gynaecology, and menopausal health.'
+  - question: 'Why do patients choose Dr. Rashmi Patil?'
     answer: "Patients choose Dr. Patil for her extensive international qualifications (MRCOG UK, EFOG-EBCOG Europe, FACOG USA), her expertise in minimally invasive laparoscopic and hysteroscopic surgery, and her patient-centric approach to comprehensive women's healthcare. She has presented numerous research papers at national and international conferences, winning multiple awards including the Dr Pramila Bhatia Young Scientist Award. She is fluent in Kannada, Hindi, English, and Marathi, and is committed to evidence-based, compassionate care with a 'Healthy Mother and Healthy Baby' philosophy."
   - question: "What are Dr. Rashmi Patil's medical qualifications?"
-    answer: "Dr. Patil holds MBBS from JJMMC Davangere, MS (OBG) from LTMMC Mumbai, Sion, DNB, FMAS (Fellowship in Minimal Access Surgery), MRCOG (Member of Royal College of Obstetrics and Gynaecology, London, UK), EFOG-EBCOG (Europe), FACOG (Fellow of American College of Obstetricians and Gynaecologists), FICOG (Fellow of Indian College of Obstetrics and Gynaecology), and FKCOG (Fellow of Karnataka College of Obstetricians and Gynaecologists)."
-  - question: "How can I book an appointment with Dr. Rashmi Patil?"
+    answer: 'Dr. Patil holds MBBS from JJMMC Davangere, MS (OBG) from LTMMC Mumbai, Sion, DNB, FMAS (Fellowship in Minimal Access Surgery), MRCOG (Member of Royal College of Obstetrics and Gynaecology, London, UK), EFOG-EBCOG (Europe), FACOG (Fellow of American College of Obstetricians and Gynaecologists), FICOG (Fellow of Indian College of Obstetrics and Gynaecology), and FKCOG (Fellow of Karnataka College of Obstetricians and Gynaecologists).'
+  - question: 'How can I book an appointment with Dr. Rashmi Patil?'
     answer: "You can book an appointment with Dr. Rashmi Patil at Apollo Hospitals Bannerghatta, Bangalore through our platform. Simply use the 'Request appointment' button on her profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

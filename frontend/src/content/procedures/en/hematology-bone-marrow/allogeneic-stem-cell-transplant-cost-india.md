@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Allogeneic Stem Cell Transplant"
-seoHeadline: "Allogeneic Stem Cell Transplant Cost in India for International Patients"
+name: 'Allogeneic Stem Cell Transplant'
+seoHeadline: 'Allogeneic Stem Cell Transplant Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Allogeneic stem cell transplant in India costs between $25,000 and $55,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform matched-sibling, unrelated and haploidentical transplants with high success rates."
-description: "Affordable allogeneic stem cell transplant in India from $25,000–$55,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$25,000"
-toPrice: "$55,000"
-duration: "5-10 weeks"
-hospitalStay: "4-6 weeks"
-recoveryTime: "6-12 months"
+summary: 'Allogeneic stem cell transplant in India costs between $25,000 and $55,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform matched-sibling, unrelated and haploidentical transplants with high success rates.'
+description: 'Affordable allogeneic stem cell transplant in India from $25,000–$55,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$25,000'
+toPrice: '$55,000'
+duration: '5-10 weeks'
+hospitalStay: '4-6 weeks'
+recoveryTime: '6-12 months'
 eligibility:
-  - "Patients with acute leukaemia, myelodysplastic syndromes, aplastic anaemia or inherited bone marrow disorders"
-  - "Availability of a suitable donor — HLA-matched sibling, matched unrelated donor or haploidentical family donor"
-  - "Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy"
-  - "Performance status of 0–2 (ECOG) with no severe uncontrolled comorbidities"
-  - "No active uncontrolled infection at the time of admission"
+  - 'Patients with acute leukaemia, myelodysplastic syndromes, aplastic anaemia or inherited bone marrow disorders'
+  - 'Availability of a suitable donor — HLA-matched sibling, matched unrelated donor or haploidentical family donor'
+  - 'Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy'
+  - 'Performance status of 0–2 (ECOG) with no severe uncontrolled comorbidities'
+  - 'No active uncontrolled infection at the time of admission'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy followed by donor stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "6-12 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and relapse."
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy followed by donor stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '6-12 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and relapse.'
 risks:
-  - "Graft-versus-host disease (acute and chronic)"
-  - "Severe infections due to prolonged immunosuppression"
-  - "Graft failure or rejection"
-  - "Organ toxicity from conditioning chemotherapy"
-  - "Long-term endocrine and fertility complications"
+  - 'Graft-versus-host disease (acute and chronic)'
+  - 'Severe infections due to prolonged immunosuppression'
+  - 'Graft failure or rejection'
+  - 'Organ toxicity from conditioning chemotherapy'
+  - 'Long-term endocrine and fertility complications'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - sparsh-hospital-hennur
@@ -61,16 +61,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "autologous-stem-cell-transplant-cost-india"
-  - "bone-marrow-transplant-cost-india"
+  - 'autologous-stem-cell-transplant-cost-india'
+  - 'bone-marrow-transplant-cost-india'
 faqs:
-  - question: "How much does an allogeneic stem cell transplant cost in India?"
-    answer: "An allogeneic stem cell transplant in India typically costs between $25,000 and $55,000 depending on the donor source (matched sibling, unrelated or haploidentical), conditioning regimen and the length of hospital stay required."
-  - question: "What is the success rate of allogeneic transplants in Bangalore hospitals?"
-    answer: "Leading Bangalore transplant centres report long-term survival rates of 50–90% depending on the underlying disease, donor match quality and patient condition, comparable to international benchmarks."
-  - question: "How long do I need to stay in India for an allogeneic stem cell transplant?"
-    answer: "Patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does an allogeneic stem cell transplant cost in India?'
+    answer: 'An allogeneic stem cell transplant in India typically costs between $25,000 and $55,000 depending on the donor source (matched sibling, unrelated or haploidentical), conditioning regimen and the length of hospital stay required.'
+  - question: 'What is the success rate of allogeneic transplants in Bangalore hospitals?'
+    answer: 'Leading Bangalore transplant centres report long-term survival rates of 50–90% depending on the underlying disease, donor match quality and patient condition, comparable to international benchmarks.'
+  - question: 'How long do I need to stay in India for an allogeneic stem cell transplant?'
+    answer: 'Patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 Being told you need an allogeneic stem cell transplant is overwhelming, and you probably have dozens of questions. Let us walk you through what this treatment means in plain, honest language.
@@ -142,15 +143,16 @@ Taking your medications exactly as prescribed is critical. Immunosuppressive med
 If you are not a candidate for an allogeneic transplant, or if no suitable donor can be found, there are other paths worth discussing with your doctor. For blood cancers, continued chemotherapy with newer targeted drugs or immunotherapy may achieve disease control without the risks of transplant. If you have chronic myeloid leukaemia, tyrosine kinase inhibitors can provide excellent long-term control without a transplant in most cases.
 
 For non-malignant conditions like thalassemia and sickle cell disease, lifelong transfusion and chelation therapy remains a viable option, though it does not offer a cure and carries long-term risks of iron overload and organ damage. Gene therapy is an emerging alternative that uses your own genetically modified stem cells, potentially eliminating the need for a donor and the risk of GVHD — but availability is still limited and costs are high. If you are older or have significant other health conditions, a reduced-intensity allogeneic transplant may offer a middle ground with lower conditioning toxicity.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $25,000 – $55,000 | Baseline |
-| USA | $350,000 – $900,000 | ~15.6x higher |
-| UK | £180,000 – £500,000 | ~8.5x higher |
-| Singapore | $90,000 – $250,000 | ~4.3x higher |
-| Thailand | $55,000 – $150,000 | ~2.6x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $25,000 – $55,000   | Baseline      |
+| USA               | $350,000 – $900,000 | ~15.6x higher |
+| UK                | £180,000 – £500,000 | ~8.5x higher  |
+| Singapore         | $90,000 – $250,000  | ~4.3x higher  |
+| Thailand          | $55,000 – $150,000  | ~2.6x higher  |
 
 You are probably wondering how India can offer the same procedure at such a dramatically lower price. The answer is not lower quality — it is lower infrastructure and staffing costs, combined with locally manufactured generic medications and blood products. Clinical protocols, technology and training meet the same international standards. Even after factoring in flights, accommodation and outpatient stay, your total expense remains a small fraction of what you would pay at home.
 

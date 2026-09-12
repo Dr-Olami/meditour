@@ -23,7 +23,13 @@ export const Default: Story = {
     treatments: TREATMENT_OPTIONS,
     source: LEAD_SOURCE.GENERAL_CONTACT,
   },
-  decorators: [(S) => <div className="max-w-md"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-md">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const PreFilledFromTreatment: Story = {
@@ -32,7 +38,13 @@ export const PreFilledFromTreatment: Story = {
     source: LEAD_SOURCE.TREATMENT_PAGE,
     defaultTreatment: 'Cardiac Surgery',
   },
-  decorators: [(S) => <div className="max-w-md"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-md">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const PreFilledFromDoctor: Story = {
@@ -43,7 +55,13 @@ export const PreFilledFromDoctor: Story = {
     doctorSlug: 'dr-aisha-rahman',
     hospitalSlug: 'dhaka-medical',
   },
-  decorators: [(S) => <div className="max-w-md"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-md">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const WithEstimateContext: Story = {
@@ -53,5 +71,11 @@ export const WithEstimateContext: Story = {
     defaultTreatment: 'Knee Replacement',
     estimatedTotal: 3500,
   },
-  decorators: [(S) => <div className="max-w-md"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-md">
+        <S />
+      </div>
+    ),
+  ],
 };

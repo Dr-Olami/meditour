@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Shoulder Replacement"
-seoHeadline: "Shoulder Replacement Cost in India for International Patients"
+name: 'Shoulder Replacement'
+seoHeadline: 'Shoulder Replacement Cost in India for International Patients'
 parentTreatmentSlug: orthopedics-surgery
-summary: "Shoulder Replacement in India costs between $5,000 and $10,000, offering international patients savings of up to 85% compared to Western countries. The procedure replaces the damaged shoulder joint with a metal and plastic prosthesis to relieve pain and restore arm mobility."
-description: "Shoulder Replacement surgery in India from $5,000–$10,000 with JCI-accredited hospitals in Bangalore. Save up to 85% versus US/UK prices."
-fromPrice: "$5,000"
-toPrice: "$10,000"
-duration: "1-2 weeks"
-hospitalStay: "2-4 days"
-recoveryTime: "3-6 months"
+summary: 'Shoulder Replacement in India costs between $5,000 and $10,000, offering international patients savings of up to 85% compared to Western countries. The procedure replaces the damaged shoulder joint with a metal and plastic prosthesis to relieve pain and restore arm mobility.'
+description: 'Shoulder Replacement surgery in India from $5,000–$10,000 with JCI-accredited hospitals in Bangalore. Save up to 85% versus US/UK prices.'
+fromPrice: '$5,000'
+toPrice: '$10,000'
+duration: '1-2 weeks'
+hospitalStay: '2-4 days'
+recoveryTime: '3-6 months'
 eligibility:
-  - "Severe osteoarthritis or rheumatoid arthritis of the shoulder with cartilage loss"
-  - "Chronic shoulder pain not relieved by conservative treatments (medication, physiotherapy, injections)"
-  - "Significant loss of shoulder function affecting daily activities and sleep"
-  - "Complex fracture of the humeral head or failed previous shoulder surgery"
-  - "Good general health to tolerate anaesthesia and post-operative rehabilitation"
+  - 'Severe osteoarthritis or rheumatoid arthritis of the shoulder with cartilage loss'
+  - 'Chronic shoulder pain not relieved by conservative treatments (medication, physiotherapy, injections)'
+  - 'Significant loss of shoulder function affecting daily activities and sleep'
+  - 'Complex fracture of the humeral head or failed previous shoulder surgery'
+  - 'Good general health to tolerate anaesthesia and post-operative rehabilitation'
 costInclusions:
-  - "Orthopaedic surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implant (joint prosthesis where applicable)"
-  - "Pre-operative diagnostics (X-ray, MRI, blood tests)"
-  - "Post-operative care and physiotherapy during hospital stay"
-  - "Airport pickup and drop"
+  - 'Orthopaedic surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implant (joint prosthesis where applicable)'
+  - 'Pre-operative diagnostics (X-ray, MRI, blood tests)'
+  - 'Post-operative care and physiotherapy during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy post-discharge (typically 6-12 weeks)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy post-discharge (typically 6-12 weeks)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-4 days"
-    description: "Pain management, wound care, and gentle passive range-of-motion exercises begin on day one with a sling for support and immobilisation."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Supervised physiotherapy progresses from pendulum exercises to active-assisted movements; follow-up wound review and X-ray before departure."
-  - phase: "Return home"
-    duration: "Week 3-12"
-    description: "Gradual increase in active range of motion and strengthening under a home exercise programme; sling is typically discontinued by week 4-6."
-  - phase: "Full recovery"
-    duration: "3-6 months"
-    description: "Complete soft-tissue healing and restored shoulder strength and mobility; most patients resume normal activities including light recreational sports."
+  - phase: 'Hospital stay'
+    duration: '2-4 days'
+    description: 'Pain management, wound care, and gentle passive range-of-motion exercises begin on day one with a sling for support and immobilisation.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Supervised physiotherapy progresses from pendulum exercises to active-assisted movements; follow-up wound review and X-ray before departure.'
+  - phase: 'Return home'
+    duration: 'Week 3-12'
+    description: 'Gradual increase in active range of motion and strengthening under a home exercise programme; sling is typically discontinued by week 4-6.'
+  - phase: 'Full recovery'
+    duration: '3-6 months'
+    description: 'Complete soft-tissue healing and restored shoulder strength and mobility; most patients resume normal activities including light recreational sports.'
 risks:
-  - "Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis"
-  - "Surgical site or deep joint infection potentially requiring revision surgery"
-  - "Implant loosening, dislocation, or wear over time necessitating future revision"
-  - "Nerve injury (axillary nerve) causing temporary or permanent weakness"
-  - "Stiffness or frozen shoulder requiring prolonged physiotherapy or manipulation"
+  - 'Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis'
+  - 'Surgical site or deep joint infection potentially requiring revision surgery'
+  - 'Implant loosening, dislocation, or wear over time necessitating future revision'
+  - 'Nerve injury (axillary nerve) causing temporary or permanent weakness'
+  - 'Stiffness or frozen shoulder requiring prolonged physiotherapy or manipulation'
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
@@ -59,16 +59,17 @@ relatedDoctorSlugs:
   - dr-sunil-g-kini
 
 relatedProcedureSlugs:
-  - "total-knee-replacement-cost-india"
-  - "total-hip-replacement-cost-india"
+  - 'total-knee-replacement-cost-india'
+  - 'total-hip-replacement-cost-india'
 faqs:
-  - question: "How long do shoulder implants typically last?"
-    answer: "Modern shoulder implants have a 10-15 year lifespan in 90% of patients. Longevity depends on activity level, body weight, and implant alignment. Heavy lifting and overhead activities should be moderated to extend implant life."
-  - question: "When can I fly home after shoulder replacement?"
-    answer: "Most international patients are cleared to fly 10-14 days after surgery, once wound healing is satisfactory and passive range of motion is progressing well. A medical fitness-to-fly certificate is provided before departure."
-  - question: "Will I need a reverse shoulder replacement or a standard one?"
-    answer: "Standard (anatomic) shoulder replacement is used when the rotator cuff is intact. Reverse shoulder replacement is recommended for patients with rotator cuff arthropathy or severe fractures. Your surgeon will determine the best option based on MRI and clinical assessment."
+  - question: 'How long do shoulder implants typically last?'
+    answer: 'Modern shoulder implants have a 10-15 year lifespan in 90% of patients. Longevity depends on activity level, body weight, and implant alignment. Heavy lifting and overhead activities should be moderated to extend implant life.'
+  - question: 'When can I fly home after shoulder replacement?'
+    answer: 'Most international patients are cleared to fly 10-14 days after surgery, once wound healing is satisfactory and passive range of motion is progressing well. A medical fitness-to-fly certificate is provided before departure.'
+  - question: 'Will I need a reverse shoulder replacement or a standard one?'
+    answer: 'Standard (anatomic) shoulder replacement is used when the rotator cuff is intact. Reverse shoulder replacement is recommended for patients with rotator cuff arthropathy or severe fractures. Your surgeon will determine the best option based on MRI and clinical assessment.'
 ---
+
 ## Overview
 
 If you are living with chronic shoulder pain that makes it difficult to sleep, reach overhead, wash your hair, or even dress yourself, you know how exhausting it can be. Night pain is particularly distressing — many people find themselves unable to sleep on the affected side, waking repeatedly through the night. If conservative treatments like physiotherapy, medications and injections have stopped helping, shoulder replacement surgery could give you your life back. It is one of the most effective orthopaedic procedures for relieving pain and restoring arm function.
@@ -130,15 +131,16 @@ Monitor your wound as it heals over the first 2–3 weeks. If you experience sud
 Before committing to shoulder replacement, you may explore conservative and less invasive alternatives, particularly if your symptoms are moderate. These include activity modification, physiotherapy to strengthen the rotator cuff and scapular stabilisers, and analgesic or anti-inflammatory medications. Intra-articular injections of corticosteroids can provide temporary relief, while hyaluronic acid injections may lubricate the joint. PRP injections are increasingly used for mild to moderate tendon and cartilage conditions.
 
 For certain conditions, arthroscopic procedures may be appropriate — keyhole surgery can address rotator cuff tears, labral tears, impingement syndrome and loose bodies without replacing the joint. However, once arthritis is advanced with complete cartilage loss and bone-on-bone contact, shoulder replacement remains the most reliable and durable solution. Your surgeon will recommend the best approach based on your MRI findings, clinical examination, age and activity level.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $5,000 – $10,000 | Baseline |
-| USA | $50,000 – $70,000 | ~8.0x higher |
-| UK | £10,000 – £15,000 | ~1.7x higher |
-| Singapore | $15,000 – $22,000 | ~2.5x higher |
-| Thailand | $8,000 – $13,000 | ~1.4x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $5,000 – $10,000  | Baseline     |
+| USA               | $50,000 – $70,000 | ~8.0x higher |
+| UK                | £10,000 – £15,000 | ~1.7x higher |
+| Singapore         | $15,000 – $22,000 | ~2.5x higher |
+| Thailand          | $8,000 – $13,000  | ~1.4x higher |
 
 The cost disparity is driven by differences in surgeon fees, hospital overheads and administrative costs — not by implant quality. Bangalore hospitals use identical FDA-approved implants from manufacturers such as Zimmer Biomet, Stryker and DePuy. The price range within Bangalore reflects your choice of implant brand, the complexity of the procedure (anatomic vs reverse, primary vs revision) and the hospital room category.
 
@@ -155,4 +157,3 @@ The cost disparity is driven by differences in surgeon fees, hospital overheads 
 You will travel to Bangalore on a Medical Visa (e-Medical Visa available for citizens of 160+ countries), typically granted within 48–72 hours. The visa is valid for up to one year with triple entry, allowing follow-up visits if needed. Khan Meditour assists with the visa invitation letter, hospital appointment scheduling and the entire ground logistics chain.
 
 Upon arrival at Kempegowda International Airport, you will be met by a dedicated driver for private transfer to the hospital. We recommend arriving 2–3 days before your scheduled surgery date to complete diagnostics and consultations, and planning a 10–14 day stay in Bangalore for surgery and initial rehabilitation before flying home.
-

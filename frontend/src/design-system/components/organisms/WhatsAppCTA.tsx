@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
-import { buildWhatsAppLink, getContextualWhatsAppLink, getWhatsAppNumber, type WhatsAppContext } from '../../../lib/whatsapp';
+import {
+  buildWhatsAppLink,
+  getContextualWhatsAppLink,
+  getWhatsAppNumber,
+  type WhatsAppContext,
+} from '../../../lib/whatsapp';
 import { Button } from '../atoms/Button';
 import { Icon } from '../atoms/Icon';
 
-export interface WhatsAppCTAProps
-  extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface WhatsAppCTAProps extends React.HTMLAttributes<HTMLAnchorElement> {
   number?: string;
   message?: string;
   /**
@@ -58,17 +62,8 @@ const WhatsAppCTA = React.forwardRef<HTMLAnchorElement, WhatsAppCTAProps>(
     }
 
     return (
-      <Button
-        asChild
-        className={cn('bg-[#25D366] hover:bg-[#1ebe5a]', className)}
-      >
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          ref={ref}
-          {...props}
-        >
+      <Button asChild className={cn('bg-[#25D366] hover:bg-[#1ebe5a]', className)}>
+        <a href={href} target="_blank" rel="noopener noreferrer" ref={ref} {...props}>
           <Icon name="whatsapp" size={20} />
           {children || 'Chat on WhatsApp'}
         </a>

@@ -53,14 +53,10 @@ const BlogPostLayout = React.forwardRef<HTMLElement, BlogPostLayoutProps>(
     ref
   ) => {
     return (
-      <article
-        ref={ref}
-        className={cn('container py-24 md:py-28', className)}
-        {...props}
-      >
+      <article ref={ref} className={cn('container py-24 md:py-28', className)} {...props}>
         <a
           href={backHref}
-          className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-ink/60 hover:text-ink"
+          className="text-ink/60 mb-6 inline-flex items-center gap-2 text-sm font-medium hover:text-ink"
         >
           <Icon name="arrow-left" size={16} />
           {backLabel}
@@ -72,7 +68,7 @@ const BlogPostLayout = React.forwardRef<HTMLElement, BlogPostLayoutProps>(
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink/70"
+                  className="text-ink/70 rounded-full bg-cream-300 px-3 py-1 text-xs font-semibold uppercase tracking-wider"
                 >
                   {tag}
                 </span>
@@ -82,7 +78,7 @@ const BlogPostLayout = React.forwardRef<HTMLElement, BlogPostLayoutProps>(
           <h1 className="font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
             {title}
           </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink/60">
+          <div className="text-ink/60 mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
             <span>
               {byLabel} <span className="font-medium text-ink">{author}</span>
             </span>
@@ -139,7 +135,7 @@ const BlogPostLayout = React.forwardRef<HTMLElement, BlogPostLayoutProps>(
               <h2 className="mb-2 font-display text-lg font-semibold text-ink">
                 Need help with treatment?
               </h2>
-              <p className="mb-4 text-sm text-ink/60">
+              <p className="text-ink/60 mb-4 text-sm">
                 Get a free cost estimate and personalised hospital recommendations.
               </p>
               <a

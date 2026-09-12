@@ -76,7 +76,7 @@ function LeadFormModal({
       }
       if (e.key === 'Tab' && dialog) {
         const focusable = dialog.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
         if (focusable.length === 0) return;
         const first = focusable[0];
@@ -102,14 +102,14 @@ function LeadFormModal({
 
   return createPortal(
     <div
-      className="fixed top-40 inset-x-0 bottom-0 z-[400] flex items-end justify-center md:inset-0 md:items-center"
+      className="fixed inset-x-0 bottom-0 top-40 z-[400] flex items-end justify-center md:inset-0 md:items-center"
       role="dialog"
       aria-modal="true"
       aria-label={title}
     >
       {/* Backdrop — click to close */}
       <div
-        className="absolute inset-0 bg-ink/60 backdrop-blur-sm"
+        className="bg-ink/60 absolute inset-0 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -124,18 +124,14 @@ function LeadFormModal({
           // The container's pt-28 pushes the sheet below the floating navbar.
           'rounded-t-2xl',
           // Desktop: centered card with rounded corners
-          'md:max-w-lg md:rounded-2xl',
+          'md:max-w-lg md:rounded-2xl'
         )}
       >
         {/* Header — sticky so it stays visible while scrolling the form */}
         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-cream-300 bg-cream-100 px-5 py-4 md:px-6">
           <div>
-            <h2 className="font-display text-lg font-bold text-ink md:text-xl">
-              {title}
-            </h2>
-            {subtitle && (
-              <p className="mt-1 text-sm text-ink/60">{subtitle}</p>
-            )}
+            <h2 className="font-display text-lg font-bold text-ink md:text-xl">{title}</h2>
+            {subtitle && <p className="text-ink/60 mt-1 text-sm">{subtitle}</p>}
           </div>
           <button
             type="button"
@@ -144,7 +140,12 @@ function LeadFormModal({
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-ink transition-colors hover:bg-cream-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path
+                d="M2 2l12 12M14 2L2 14"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           </button>
         </div>
@@ -165,7 +166,7 @@ function LeadFormModal({
         </div>
       </div>
     </div>,
-    document.body,
+    document.body
   );
 }
 

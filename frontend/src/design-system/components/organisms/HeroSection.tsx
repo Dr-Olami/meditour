@@ -36,22 +36,22 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     return (
       <section
         className={cn(
-          'relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-cream-100 px-6 pt-28 pb-24 text-center',
+          'relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-cream-100 px-6 pb-24 pt-28 text-center',
           className
         )}
         ref={combinedRef}
         {...props}
       >
         {/* Background gradient blob */}
-        <div
-          className="pointer-events-none absolute inset-0 -z-10"
-          aria-hidden="true"
-        >
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
           <div className="absolute left-1/2 top-1/3 h-[40vw] w-[40vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-violet-200/30 to-indigo-200/20 blur-3xl" />
         </div>
 
         {eyebrow && (
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink/40" data-anim="fade-in-up">
+          <p
+            className="text-ink/40 mb-5 text-xs font-semibold uppercase tracking-[0.2em]"
+            data-anim="fade-in-up"
+          >
             {eyebrow}
           </p>
         )}
@@ -64,12 +64,18 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
         </h1>
 
         {subheadline && (
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/60 md:text-xl" data-anim="fade-in-up">
+          <p
+            className="text-ink/60 mx-auto mt-6 max-w-2xl text-lg leading-relaxed md:text-xl"
+            data-anim="fade-in-up"
+          >
             {subheadline}
           </p>
         )}
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4" data-anim="fade-in-up">
+        <div
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          data-anim="fade-in-up"
+        >
           {primaryCta && (
             <a
               href={primaryCta.href}

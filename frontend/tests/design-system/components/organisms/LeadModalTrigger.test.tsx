@@ -23,10 +23,7 @@ describe('LeadModalTrigger', () => {
 
   it('renders the trigger button with the provided label', () => {
     render(
-      <LeadModalTrigger
-        label="Request appointment"
-        modalTitle="Request a free consultation"
-      />,
+      <LeadModalTrigger label="Request appointment" modalTitle="Request a free consultation" />
     );
 
     expect(screen.getByText('Request appointment')).toBeInTheDocument();
@@ -34,10 +31,7 @@ describe('LeadModalTrigger', () => {
 
   it('does not show the modal before the trigger is clicked', () => {
     render(
-      <LeadModalTrigger
-        label="Request appointment"
-        modalTitle="Request a free consultation"
-      />,
+      <LeadModalTrigger label="Request appointment" modalTitle="Request a free consultation" />
     );
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -50,7 +44,7 @@ describe('LeadModalTrigger', () => {
         modalTitle="Request a free consultation"
         modalSubtitle="Send us a message and we will reply within 24 hours."
         closeLabel="Close"
-      />,
+      />
     );
 
     fireEvent.click(screen.getByText('Request appointment'));
@@ -60,7 +54,7 @@ describe('LeadModalTrigger', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
     expect(screen.getByText('Request a free consultation')).toBeInTheDocument();
     expect(
-      screen.getByText('Send us a message and we will reply within 24 hours.'),
+      screen.getByText('Send us a message and we will reply within 24 hours.')
     ).toBeInTheDocument();
   });
 
@@ -70,7 +64,7 @@ describe('LeadModalTrigger', () => {
         label="Request appointment"
         modalTitle="Request a free consultation"
         closeLabel="Close"
-      />,
+      />
     );
 
     fireEvent.click(screen.getByText('Request appointment'));
@@ -82,10 +76,7 @@ describe('LeadModalTrigger', () => {
 
   it('closes the modal when the backdrop is clicked', () => {
     render(
-      <LeadModalTrigger
-        label="Request appointment"
-        modalTitle="Request a free consultation"
-      />,
+      <LeadModalTrigger label="Request appointment" modalTitle="Request a free consultation" />
     );
 
     fireEvent.click(screen.getByText('Request appointment'));
@@ -93,9 +84,7 @@ describe('LeadModalTrigger', () => {
 
     // Reason: the backdrop is the first child div with onClick={onClose}.
     // It has aria-hidden="true" and no text content.
-    const backdrop = screen.getByRole('dialog').querySelector(
-      'div[aria-hidden="true"]',
-    );
+    const backdrop = screen.getByRole('dialog').querySelector('div[aria-hidden="true"]');
     expect(backdrop).not.toBeNull();
     fireEvent.click(backdrop!);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
@@ -103,10 +92,7 @@ describe('LeadModalTrigger', () => {
 
   it('closes the modal when ESC key is pressed', () => {
     render(
-      <LeadModalTrigger
-        label="Request appointment"
-        modalTitle="Request a free consultation"
-      />,
+      <LeadModalTrigger label="Request appointment" modalTitle="Request a free consultation" />
     );
 
     fireEvent.click(screen.getByText('Request appointment'));
@@ -117,12 +103,7 @@ describe('LeadModalTrigger', () => {
   });
 
   it('applies the gradient variant class by default', () => {
-    render(
-      <LeadModalTrigger
-        label="Book Now"
-        modalTitle="Request a free consultation"
-      />,
-    );
+    render(<LeadModalTrigger label="Book Now" modalTitle="Request a free consultation" />);
 
     const trigger = screen.getByText('Book Now');
     expect(trigger.className).toContain('cta-gradient');
@@ -130,11 +111,7 @@ describe('LeadModalTrigger', () => {
 
   it('applies the dark variant class when specified', () => {
     render(
-      <LeadModalTrigger
-        label="Book Now"
-        modalTitle="Request a free consultation"
-        variant="dark"
-      />,
+      <LeadModalTrigger label="Book Now" modalTitle="Request a free consultation" variant="dark" />
     );
 
     const trigger = screen.getByText('Book Now');
@@ -142,13 +119,7 @@ describe('LeadModalTrigger', () => {
   });
 
   it('renders full-width when full prop is set', () => {
-    render(
-      <LeadModalTrigger
-        label="Book Now"
-        modalTitle="Request a free consultation"
-        full
-      />,
-    );
+    render(<LeadModalTrigger label="Book Now" modalTitle="Request a free consultation" full />);
 
     const trigger = screen.getByText('Book Now');
     expect(trigger.className).toContain('w-full');

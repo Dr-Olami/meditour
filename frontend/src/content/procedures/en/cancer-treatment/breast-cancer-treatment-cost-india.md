@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Breast Cancer Treatment"
-seoHeadline: "Breast Cancer Treatment Cost in India for International Patients"
+name: 'Breast Cancer Treatment'
+seoHeadline: 'Breast Cancer Treatment Cost in India for International Patients'
 parentTreatmentSlug: cancer-treatment
-summary: "Breast cancer treatment in India costs $5,000–$20,000 for a complete course, offering savings of up to 90% compared to Western countries. Treatment includes surgery, chemotherapy, radiation, and targeted therapy delivered by expert oncologists in JCI-accredited hospitals."
-description: "Comprehensive breast cancer treatment in India starting at $5,000 for international patients. Compare costs, understand inclusions, and plan your medical trip."
-fromPrice: "$5,000"
-toPrice: "$20,000"
-duration: "3-9 months"
-hospitalStay: "2-5 days"
-recoveryTime: "4-12 weeks"
+summary: 'Breast cancer treatment in India costs $5,000–$20,000 for a complete course, offering savings of up to 90% compared to Western countries. Treatment includes surgery, chemotherapy, radiation, and targeted therapy delivered by expert oncologists in JCI-accredited hospitals.'
+description: 'Comprehensive breast cancer treatment in India starting at $5,000 for international patients. Compare costs, understand inclusions, and plan your medical trip.'
+fromPrice: '$5,000'
+toPrice: '$20,000'
+duration: '3-9 months'
+hospitalStay: '2-5 days'
+recoveryTime: '4-12 weeks'
 eligibility:
-  - "Confirmed breast cancer diagnosis through core needle biopsy and histopathology"
-  - "ER, PR, and HER2 receptor status determined through immunohistochemistry and FISH testing"
-  - "Adequate overall health to tolerate the planned multimodal treatment approach"
-  - "No uncontrolled severe comorbidities that would contraindicate surgery or chemotherapy"
-  - "Realistic treatment goals established by the multidisciplinary breast cancer team"
+  - 'Confirmed breast cancer diagnosis through core needle biopsy and histopathology'
+  - 'ER, PR, and HER2 receptor status determined through immunohistochemistry and FISH testing'
+  - 'Adequate overall health to tolerate the planned multimodal treatment approach'
+  - 'No uncontrolled severe comorbidities that would contraindicate surgery or chemotherapy'
+  - 'Realistic treatment goals established by the multidisciplinary breast cancer team'
 costInclusions:
-  - "Oncologist consultation fees"
-  - "Chemotherapy/radiation/medication costs"
-  - "Hospital room charges (where applicable)"
-  - "Pre-treatment diagnostics (biopsy, imaging, blood tests)"
-  - "Supportive medications (anti-nausea, growth factors)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Oncologist consultation fees'
+  - 'Chemotherapy/radiation/medication costs'
+  - 'Hospital room charges (where applicable)'
+  - 'Pre-treatment diagnostics (biopsy, imaging, blood tests)'
+  - 'Supportive medications (anti-nausea, growth factors)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term maintenance therapy post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term maintenance therapy post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "3-9 months"
-    description: "Multimodal treatment including surgery, chemotherapy, radiation, and/or targeted therapy delivered in a sequenced plan based on cancer stage and receptor status."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-treatment assessment of surgical wound healing, treatment response, and side effect management before transitioning to maintenance or follow-up."
-  - phase: "Return home"
-    duration: "Week 2-6"
-    description: "Gradual recovery from treatment effects; hormonal therapy may be continued at home with remote follow-up and periodic return visits."
-  - phase: "Full recovery"
-    duration: "4-12 weeks"
-    description: "Complete recovery from acute treatment effects; long-term hormonal therapy and surveillance imaging as advised by oncologist."
+  - phase: 'Treatment period'
+    duration: '3-9 months'
+    description: 'Multimodal treatment including surgery, chemotherapy, radiation, and/or targeted therapy delivered in a sequenced plan based on cancer stage and receptor status.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-treatment assessment of surgical wound healing, treatment response, and side effect management before transitioning to maintenance or follow-up.'
+  - phase: 'Return home'
+    duration: 'Week 2-6'
+    description: 'Gradual recovery from treatment effects; hormonal therapy may be continued at home with remote follow-up and periodic return visits.'
+  - phase: 'Full recovery'
+    duration: '4-12 weeks'
+    description: 'Complete recovery from acute treatment effects; long-term hormonal therapy and surveillance imaging as advised by oncologist.'
 risks:
-  - "Surgical risks including infection, bleeding, seroma, or lymphoedema after axillary dissection"
-  - "Chemotherapy side effects including nausea, fatigue, hair loss, and reduced immunity"
-  - "Radiation skin reactions and fatigue during and after radiotherapy"
-  - "Cardiac toxicity with certain chemotherapy or targeted therapy agents (e.g., anthracyclines, trastuzumab)"
-  - "Hormonal therapy side effects including hot flashes, joint pain, and bone density changes"
+  - 'Surgical risks including infection, bleeding, seroma, or lymphoedema after axillary dissection'
+  - 'Chemotherapy side effects including nausea, fatigue, hair loss, and reduced immunity'
+  - 'Radiation skin reactions and fatigue during and after radiotherapy'
+  - 'Cardiac toxicity with certain chemotherapy or targeted therapy agents (e.g., anthracyclines, trastuzumab)'
+  - 'Hormonal therapy side effects including hot flashes, joint pain, and bone density changes'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-amit-rauthan
 
 relatedProcedureSlugs:
-  - "cancer-surgery-cost-india"
-  - "chemotherapy-cost-india"
+  - 'cancer-surgery-cost-india'
+  - 'chemotherapy-cost-india'
 faqs:
-  - question: "What treatment options are available for breast cancer in India?"
+  - question: 'What treatment options are available for breast cancer in India?'
     answer: "Bangalore hospitals offer the full spectrum of breast cancer treatment including surgery (lumpectomy, mastectomy, sentinel lymph node biopsy), chemotherapy, radiation therapy, targeted therapy (trastuzumab for HER2-positive cancer), hormonal therapy (tamoxifen, aromatase inhibitors), and immunotherapy. The treatment plan is personalised based on cancer stage, receptor status, and the patient's overall health."
-  - question: "Can I get breast reconstruction surgery in India?"
+  - question: 'Can I get breast reconstruction surgery in India?'
     answer: "Yes. Breast reconstruction is available in Bangalore hospitals and can be performed either immediately at the time of mastectomy or as a delayed procedure. Options include implant-based reconstruction, autologous tissue reconstruction (using the patient's own tissue from the abdomen or back), and oncoplastic surgery. Your surgical oncologist and plastic surgeon will discuss the most suitable option for you."
-  - question: "How long does a complete breast cancer treatment course take?"
-    answer: "The total duration depends on the treatment modalities required. Surgery alone may require 2–3 weeks of stay, while a full course including surgery, chemotherapy (4–8 cycles), and radiation therapy (5–6 weeks) can span 4–9 months. Hormonal therapy, if indicated, is typically continued for 5–10 years and can be managed at home with periodic follow-up."
+  - question: 'How long does a complete breast cancer treatment course take?'
+    answer: 'The total duration depends on the treatment modalities required. Surgery alone may require 2–3 weeks of stay, while a full course including surgery, chemotherapy (4–8 cycles), and radiation therapy (5–6 weeks) can span 4–9 months. Hormonal therapy, if indicated, is typically continued for 5–10 years and can be managed at home with periodic follow-up.'
 ---
+
 ## Overview
 
 Hearing the words "you have breast cancer" is one of the most frightening moments you can face. You may be feeling overwhelmed, scared, and unsure about what comes next. That's completely natural, and you don't have to figure this out alone. Every year, thousands of women from Bangladesh, the Gulf countries, and across Africa travel to Bangalore for breast cancer treatment that is both world-class and affordable.
@@ -147,15 +148,16 @@ Breast cancer treatment is highly individualised. For some women, surgery alone 
 If your cancer is HER2-positive, targeted therapy with trastuzumab, pertuzumab, or T-DM1 may be recommended alongside or instead of traditional chemotherapy. These targeted drugs attack specific proteins on your cancer cells and often cause fewer side effects. If your cancer is hormone receptor-positive and you're postmenopausal, hormonal therapy alone may be enough for certain low-risk cases.
 
 If you have triple-negative breast cancer, immunotherapy may be an option, particularly in combination with chemotherapy for locally advanced or metastatic disease. Your multidisciplinary team in Bangalore will discuss all available options and recommend the most appropriate treatment based on your cancer's molecular profile, its stage, and your own health and preferences.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $5,000 – $20,000 | Baseline |
-| USA | $50,000 – $200,000 | ~10.0x higher |
-| UK | £30,000 – £100,000 | ~5.2x higher |
-| Singapore | $25,000 – $80,000 | ~4.2x higher |
-| Thailand | $12,000 – $40,000 | ~2.1x higher |
+| Country           | Approximate Cost   | vs India      |
+| ----------------- | ------------------ | ------------- |
+| India (Bangalore) | $5,000 – $20,000   | Baseline      |
+| USA               | $50,000 – $200,000 | ~10.0x higher |
+| UK                | £30,000 – £100,000 | ~5.2x higher  |
+| Singapore         | $25,000 – $80,000  | ~4.2x higher  |
+| Thailand          | $12,000 – $40,000  | ~2.1x higher  |
 
 You might be looking at these numbers and wondering why India is so much more affordable. The lower cost is not because of lower quality — you'll receive the same internationally approved chemotherapy drugs, targeted therapies, and surgical techniques as in the West. The savings come from India's lower cost of living, lower staff salaries, and the favourable exchange rate. If you only need surgery, your costs will be at the lower end. If you need a full course of surgery, chemotherapy, radiation, and targeted therapy, you'll be at the higher end — but still a fraction of what you'd pay at home.
 

@@ -10,15 +10,15 @@ bio: Lead Surgeon — Robotic & Laparoscopic Gynecological Oncology, Apollo Hosp
 languages:
   - English
 faqs:
-  - question: "Who is Dr. Rani Akhil Bhat?"
-    answer: "Dr. Rani Akhil Bhat is a distinguished Gynaecological Oncologist based at Apollo Hospitals Bannerghatta Road, Bangalore, with 20 years of experience. She holds MBBS & MS (ObsGyn) from India, MRCOG from the Royal College of Obstetricians and Gynaecologists (UK), fellowships in Gynae-Oncology from Singapore and Hong Kong, and a Diploma in Gynaecological Operative Endoscopy from France. She is the Lead Surgeon for Robotic & Laparoscopic Gynecological Oncology."
-  - question: "Why do patients choose Dr. Rani Akhil Bhat?"
-    answer: "Patients choose Dr. Rani Akhil Bhat for her 20+ years of experience in gynaecological oncology, her expertise in robotic and laparoscopic surgery, and her patient-centric approach. She has held leadership roles including Chief of Gyn-Oncology at HCG Hospital and Senior Consultant at BGS Gleneagles Global Hospitals. She has won the prestigious Avon Foundation-AACR International Scholar-in-Training Grant and has over 30 peer-reviewed publications."
+  - question: 'Who is Dr. Rani Akhil Bhat?'
+    answer: 'Dr. Rani Akhil Bhat is a distinguished Gynaecological Oncologist based at Apollo Hospitals Bannerghatta Road, Bangalore, with 20 years of experience. She holds MBBS & MS (ObsGyn) from India, MRCOG from the Royal College of Obstetricians and Gynaecologists (UK), fellowships in Gynae-Oncology from Singapore and Hong Kong, and a Diploma in Gynaecological Operative Endoscopy from France. She is the Lead Surgeon for Robotic & Laparoscopic Gynecological Oncology.'
+  - question: 'Why do patients choose Dr. Rani Akhil Bhat?'
+    answer: 'Patients choose Dr. Rani Akhil Bhat for her 20+ years of experience in gynaecological oncology, her expertise in robotic and laparoscopic surgery, and her patient-centric approach. She has held leadership roles including Chief of Gyn-Oncology at HCG Hospital and Senior Consultant at BGS Gleneagles Global Hospitals. She has won the prestigious Avon Foundation-AACR International Scholar-in-Training Grant and has over 30 peer-reviewed publications.'
   - question: "What are Dr. Rani Akhil Bhat's medical qualifications?"
     answer: "Dr. Rani Akhil Bhat holds MBBS & MS (ObsGyn) from India, MRCOG from the Royal College of Obstetricians and Gynaecologists (UK), a Fellowship in Gynae-Oncology from KK Women's & Children's Hospital (Singapore), a Fellowship in Gynae-Oncology & Robotic Surgery from Queen Mary Hospital (Hong Kong), and a Diploma in Gynaecological Operative Endoscopy from Clermont Ferrand (France)."
-  - question: "What conditions does Dr. Rani Akhil Bhat treat?"
-    answer: "Dr. Rani Akhil Bhat specializes in treating cervical cancer, endometrial cancer, ovarian cancer, fallopian-tube cancer, vaginal cancer, and vulval cancer. She is also expert in HIPEC surgery, robotic surgery, and laparoscopic surgery for gynaecological malignancies."
-  - question: "How can I book an appointment with Dr. Rani Akhil Bhat?"
+  - question: 'What conditions does Dr. Rani Akhil Bhat treat?'
+    answer: 'Dr. Rani Akhil Bhat specializes in treating cervical cancer, endometrial cancer, ovarian cancer, fallopian-tube cancer, vaginal cancer, and vulval cancer. She is also expert in HIPEC surgery, robotic surgery, and laparoscopic surgery for gynaecological malignancies.'
+  - question: 'How can I book an appointment with Dr. Rani Akhil Bhat?'
     answer: "You can book an appointment with Dr. Rani Akhil Bhat at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on her profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

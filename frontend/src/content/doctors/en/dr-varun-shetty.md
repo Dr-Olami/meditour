@@ -12,9 +12,9 @@ languages:
   - Kannada
 expertise:
   - Adult Cardiac Surgery
-  - "Paediatric & Congenital Heart Surgery"
+  - 'Paediatric & Congenital Heart Surgery'
   - Aortic Surgery
-  - "Heart Transplant & Ventricular Assist Devices Program"
+  - 'Heart Transplant & Ventricular Assist Devices Program'
   - Lung Transplant
   - Advanced Cardio-Pulmonary Therapeutics
   - Valve-Sparing Root Reimplantation
@@ -26,14 +26,14 @@ expertise:
   - Pulmonary Thromboendarterectomy
 pullQuote: "The aorta is the body's main highway. When I rebuild it, I am not just repairing a vessel — I am keeping every road to life open."
 faqs:
-  - question: "Is Dr. Varun Shetty experienced in cardiac surgery?"
-    answer: "Yes, Dr. Varun Shetty is a Senior Consultant Cardiac Surgeon at Narayana Institute of Cardiac Sciences with expertise in complex aortic surgery, advanced heart surgery, advanced heart failure, pulmonary hypertension, and complex congenital repairs. He has extensive experience in high-risk redo surgeries, complex root reconstructions in infective endocarditis, and advanced root replacement strategies. He completed his DNB in Cardiothoracic and Vascular Surgery from the National Board of Examinations at Narayana Health, followed by FRCS in Cardiothoracic Surgery from Edinburgh."
-  - question: "What types of cardiac surgery does Dr. Varun Shetty perform?"
-    answer: "Dr. Varun Shetty specializes in aortic surgery and aortic aneurysm management, including valve-sparing root reimplantation, Ross procedure, aortic root and homograft root replacement, Commando procedure, arch replacement, thoracoabdominal aortic surgery, septal myectomy, pulmonary thromboendarterectomy, and heart and lung transplantation. His expertise spans adult cardiac surgery, paediatric and congenital heart surgery, and advanced cardio-pulmonary therapeutics."
-  - question: "Is Dr. Varun Shetty one of the best cardiac surgeons in Bangalore?"
-    answer: "Yes, Dr. Varun Shetty is a highly skilled Senior Consultant Cardiac Surgeon at Narayana Institute of Cardiac Sciences, Bangalore. He is actively involved in academic training, research, and translational work focused on improving outcomes in heart failure, Takayasu disease, and complex aortic disease. He has contributed to significant publications in renowned journals including The Annals of Thoracic Surgery, JTCVS Techniques, and Indian Journal of Thoracic and Cardiovascular Surgery."
-  - question: "What is the cost of cardiac surgery with Dr. Varun Shetty in Bangalore?"
-    answer: "Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Varun Shetty practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to world-class cardiac surgeons and advanced surgical facilities."
+  - question: 'Is Dr. Varun Shetty experienced in cardiac surgery?'
+    answer: 'Yes, Dr. Varun Shetty is a Senior Consultant Cardiac Surgeon at Narayana Institute of Cardiac Sciences with expertise in complex aortic surgery, advanced heart surgery, advanced heart failure, pulmonary hypertension, and complex congenital repairs. He has extensive experience in high-risk redo surgeries, complex root reconstructions in infective endocarditis, and advanced root replacement strategies. He completed his DNB in Cardiothoracic and Vascular Surgery from the National Board of Examinations at Narayana Health, followed by FRCS in Cardiothoracic Surgery from Edinburgh.'
+  - question: 'What types of cardiac surgery does Dr. Varun Shetty perform?'
+    answer: 'Dr. Varun Shetty specializes in aortic surgery and aortic aneurysm management, including valve-sparing root reimplantation, Ross procedure, aortic root and homograft root replacement, Commando procedure, arch replacement, thoracoabdominal aortic surgery, septal myectomy, pulmonary thromboendarterectomy, and heart and lung transplantation. His expertise spans adult cardiac surgery, paediatric and congenital heart surgery, and advanced cardio-pulmonary therapeutics.'
+  - question: 'Is Dr. Varun Shetty one of the best cardiac surgeons in Bangalore?'
+    answer: 'Yes, Dr. Varun Shetty is a highly skilled Senior Consultant Cardiac Surgeon at Narayana Institute of Cardiac Sciences, Bangalore. He is actively involved in academic training, research, and translational work focused on improving outcomes in heart failure, Takayasu disease, and complex aortic disease. He has contributed to significant publications in renowned journals including The Annals of Thoracic Surgery, JTCVS Techniques, and Indian Journal of Thoracic and Cardiovascular Surgery.'
+  - question: 'What is the cost of cardiac surgery with Dr. Varun Shetty in Bangalore?'
+    answer: 'Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Varun Shetty practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to world-class cardiac surgeons and advanced surgical facilities.'
 ---
 
 ## About the Doctor

@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Heart Transplant"
-seoHeadline: "Heart Transplant Cost in India for International Patients"
+name: 'Heart Transplant'
+seoHeadline: 'Heart Transplant Cost in India for International Patients'
 parentTreatmentSlug: cardiology
-summary: "Heart transplant surgery in India costs between $50,000 and $100,000, delivering savings of up to 85% compared to Western countries. The procedure replaces a failing heart with a healthy donor heart for patients with end-stage heart failure, offering a chance at renewed life and improved long-term survival."
-description: "Heart Transplant surgery in India from $50,000–$100,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices."
-fromPrice: "$50,000"
-toPrice: "$100,000"
-duration: "4-8 weeks"
-hospitalStay: "14-21 days"
-recoveryTime: "3-6 months"
+summary: 'Heart transplant surgery in India costs between $50,000 and $100,000, delivering savings of up to 85% compared to Western countries. The procedure replaces a failing heart with a healthy donor heart for patients with end-stage heart failure, offering a chance at renewed life and improved long-term survival.'
+description: 'Heart Transplant surgery in India from $50,000–$100,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices.'
+fromPrice: '$50,000'
+toPrice: '$100,000'
+duration: '4-8 weeks'
+hospitalStay: '14-21 days'
+recoveryTime: '3-6 months'
 eligibility:
-  - "End-stage heart failure with maximal medical therapy and no further surgical or device options"
-  - "Severe ischaemic, dilated, or restrictive cardiomyopathy with ejection fraction below 20%"
-  - "Age typically under 65 years with adequate pulmonary vascular resistance for donor heart fit"
-  - "No active infection, malignancy, or irreversible end-organ damage"
-  - "Psychological readiness and strong social support for lifelong immunosuppression adherence"
+  - 'End-stage heart failure with maximal medical therapy and no further surgical or device options'
+  - 'Severe ischaemic, dilated, or restrictive cardiomyopathy with ejection fraction below 20%'
+  - 'Age typically under 65 years with adequate pulmonary vascular resistance for donor heart fit'
+  - 'No active infection, malignancy, or irreversible end-organ damage'
+  - 'Psychological readiness and strong social support for lifelong immunosuppression adherence'
 costInclusions:
-  - "Cardiac surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants (stents, valves, pacemaker where applicable)"
-  - "Pre-operative diagnostics (angiogram, echo, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Cardiac surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants (stents, valves, pacemaker where applicable)'
+  - 'Pre-operative diagnostics (angiogram, echo, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Cardiac rehabilitation program post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Cardiac rehabilitation program post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "14-21 days"
-    description: "Initial ICU stay of 5-10 days with immunosuppression induction, invasive monitoring, endomyocardial biopsy surveillance for rejection, and progressive mobilisation."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Continued immunosuppression titration, serial biopsies, infection surveillance, cardiac rehabilitation, and patient education on lifelong medication and self-monitoring."
-  - phase: "Return home"
-    duration: "Month 2-3"
-    description: "Transition to local transplant team for ongoing care, continue immunosuppression and infection prophylaxis, and gradually increase physical activity."
-  - phase: "Full recovery"
-    duration: "3-6 months"
-    description: "Most patients return to near-normal activity levels; lifelong immunosuppression, regular biopsies, and transplant surveillance continue indefinitely."
+  - phase: 'Hospital stay'
+    duration: '14-21 days'
+    description: 'Initial ICU stay of 5-10 days with immunosuppression induction, invasive monitoring, endomyocardial biopsy surveillance for rejection, and progressive mobilisation.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Continued immunosuppression titration, serial biopsies, infection surveillance, cardiac rehabilitation, and patient education on lifelong medication and self-monitoring.'
+  - phase: 'Return home'
+    duration: 'Month 2-3'
+    description: 'Transition to local transplant team for ongoing care, continue immunosuppression and infection prophylaxis, and gradually increase physical activity.'
+  - phase: 'Full recovery'
+    duration: '3-6 months'
+    description: 'Most patients return to near-normal activity levels; lifelong immunosuppression, regular biopsies, and transplant surveillance continue indefinitely.'
 risks:
-  - "Acute or chronic rejection requiring immunosuppression adjustment or anti-rejection therapy"
-  - "Primary graft dysfunction or delayed graft function in the early post-transplant period"
-  - "Opportunistic infections due to immunosuppression (CMV, fungal, bacterial)"
-  - "Cardiac allograft vasculopathy (chronic rejection) causing progressive coronary artery disease"
-  - "Post-transplant lymphoproliferative disorder (PTLD) and other malignancies related to long-term immunosuppression"
+  - 'Acute or chronic rejection requiring immunosuppression adjustment or anti-rejection therapy'
+  - 'Primary graft dysfunction or delayed graft function in the early post-transplant period'
+  - 'Opportunistic infections due to immunosuppression (CMV, fungal, bacterial)'
+  - 'Cardiac allograft vasculopathy (chronic rejection) causing progressive coronary artery disease'
+  - 'Post-transplant lymphoproliferative disorder (PTLD) and other malignancies related to long-term immunosuppression'
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - fortis-hospital-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-devi-prasad-shetty
 
 relatedProcedureSlugs:
-  - "heart-bypass-surgery-cabg-cost-india"
-  - "heart-valve-replacement-repair-cost-india"
+  - 'heart-bypass-surgery-cabg-cost-india'
+  - 'heart-valve-replacement-repair-cost-india'
 faqs:
-  - question: "How long is the waiting period for a donor heart in India?"
+  - question: 'How long is the waiting period for a donor heart in India?'
     answer: "Waiting times for a donor heart in India vary depending on blood type, body size, and urgency status. Patients listed as urgent (Status 1) may receive a heart within days to weeks, while less urgent cases may wait several months. India's organ donation network (NOTTO) coordinates allocation, and Bangalore transplant centres have active waiting lists with reasonable wait times compared to many Western countries."
-  - question: "What is the long-term survival after heart transplant?"
-    answer: "International registry data shows 1-year survival of approximately 90% and 10-year survival of 60-70% after heart transplantation. Most patients experience dramatic improvement in quality of life and return to near-normal activity. Long-term survival depends on immunosuppression adherence, rejection surveillance, and management of cardiac allograft vasculopathy."
-  - question: "What medications will I need to take after a heart transplant?"
-    answer: "Heart transplant recipients require lifelong immunosuppression, typically a triple regimen of tacrolimus, mycophenolate mofetil, and prednisolone (gradually tapered). Additional medications include anti-infection prophylaxis (valganciclovir, cotrimoxazole, nystatin), statins, and antihypertensives. Medication levels are monitored closely to balance rejection prevention with infection risk."
+  - question: 'What is the long-term survival after heart transplant?'
+    answer: 'International registry data shows 1-year survival of approximately 90% and 10-year survival of 60-70% after heart transplantation. Most patients experience dramatic improvement in quality of life and return to near-normal activity. Long-term survival depends on immunosuppression adherence, rejection surveillance, and management of cardiac allograft vasculopathy.'
+  - question: 'What medications will I need to take after a heart transplant?'
+    answer: 'Heart transplant recipients require lifelong immunosuppression, typically a triple regimen of tacrolimus, mycophenolate mofetil, and prednisolone (gradually tapered). Additional medications include anti-infection prophylaxis (valganciclovir, cotrimoxazole, nystatin), statins, and antihypertensives. Medication levels are monitored closely to balance rejection prevention with infection risk.'
 ---
+
 ## Overview
 
 If your doctor has told you that a heart transplant may be your best option, you are probably feeling a mix of hope and worry. That is completely natural. A heart transplant is a major decision, but it is also one that has given thousands of people around the world a second chance at life. Understanding what lies ahead can help you feel more in control and less anxious about the journey.
@@ -133,15 +134,16 @@ Taking your immunosuppressive medications every day, without fail, is the single
 If a heart transplant is not suitable for you, or if the waiting time is too long, there are other options. A left ventricular assist device, or LVAD, is an implantable pump that takes over the work of your failing left ventricle. It can be used as a bridge while you wait for a transplant, or as a long-term solution if transplant is not an option. Bangalore's cardiac centres offer LVAD implantation.
 
 Sometimes, optimising your heart failure medications with the latest drugs can significantly improve your symptoms and may even delay or eliminate the need for a transplant. A biventricular pacemaker can also help if you have specific electrical problems in your heart. If your heart failure is caused by something that can be fixed, such as severe valve disease or blocked arteries, corrective surgery may be a better option. Your transplant team will carefully evaluate all alternatives before recommending that you go on the waiting list.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $50,000 – $100,000 | Baseline |
-| USA | $800,000 – $1,500,000 | ~15.3x higher |
-| UK | £250,000 – £500,000 | ~6.5x higher |
-| Singapore | $250,000 – $450,000 | ~4.7x higher |
-| Thailand | $150,000 – $250,000 | ~2.7x higher |
+| Country           | Approximate Cost      | vs India      |
+| ----------------- | --------------------- | ------------- |
+| India (Bangalore) | $50,000 – $100,000    | Baseline      |
+| USA               | $800,000 – $1,500,000 | ~15.3x higher |
+| UK                | £250,000 – £500,000   | ~6.5x higher  |
+| Singapore         | $250,000 – $450,000   | ~4.7x higher  |
+| Thailand          | $150,000 – $250,000   | ~2.7x higher  |
 
 You may be wondering why a heart transplant in India costs so much less than in the United States or Europe. The lower cost does not mean lower quality. India's lower cost of living, lower staff salaries, and high volume of procedures allow hospitals to offer the same world-class care at a fraction of the price. The surgeons are highly trained, many with international experience, and the facilities are accredited and equipped with the latest technology. The package typically includes the transplant surgery, donor organ procurement, your hospital stay, and initial post-operative care. Long-term immunosuppressive medications and follow-up biopsies may incur additional costs over time, so it is wise to budget for those.
 

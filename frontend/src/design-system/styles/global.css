@@ -115,10 +115,7 @@
 
   .grid-auto {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min(var(--grid-min, 16rem), 100%), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min, 16rem), 100%), 1fr));
     gap: var(--grid-gap, var(--space-6));
   }
 
@@ -325,7 +322,7 @@
   }
 
   .prose-editorial table tbody tr:first-child:hover {
-    background: rgb(139 92 246 / 0.10);
+    background: rgb(139 92 246 / 0.1);
   }
 
   .prose-editorial table tbody td {

@@ -16,16 +16,16 @@ expertise:
   - Paediatric Orthopaedics
   - Joint Replacement
   - Complex Trauma
-pullQuote: "No family should have to cross half a state for world-class orthopaedic care. My mission is to bring it within reach of every home in Karnataka."
+pullQuote: 'No family should have to cross half a state for world-class orthopaedic care. My mission is to bring it within reach of every home in Karnataka.'
 faqs:
-  - question: "Is Dr. Sharan Patil experienced in orthopaedic surgery?"
-    answer: "Yes, Dr. Sharan Patil has 34 years of experience and has performed over 5,000 major complex surgical procedures, focusing on Paediatric Orthopaedics, Joint Replacement, and Complex Trauma. He trained in the U.K. at leading institutions and holds an MCh in Orthopaedics from Liverpool University and FRCS from the Royal College of Surgeons, England. He is recognised as one of the best joint replacement surgeons in Bangalore."
-  - question: "What types of orthopaedic surgery does Dr. Sharan Patil perform?"
-    answer: "Dr. Sharan Patil performs orthopaedic surgery, paediatric orthopaedics, joint replacement, and complex trauma procedures. His expertise includes total knee arthroplasty, total hip replacement, and robotic arm-assisted total knee arthroplasty. He has published extensively on outcomes of joint arthroplasty, femoral notching, electrolyte imbalance after total joint arthroplasty, and robotic-assisted knee replacement."
-  - question: "Is Dr. Sharan Patil the founder of SPARSH Hospital?"
-    answer: "Yes, Dr. Sharan Patil established SPARSH Hospital in 2006 with a focus on providing affordable healthcare. The facility is equipped with 120 beds and 5 operating rooms, capable of performing over 30 surgeries daily. Under his leadership, SPARSH Hospital has grown to offer premium-quality care and expanded to different units across Tier 1 and Tier 2 regions in Karnataka."
-  - question: "What is the cost of orthopaedic surgery with Dr. Sharan Patil in Bangalore?"
-    answer: "Orthopaedic surgery and joint replacement costs in Bangalore range from $2,500 to $8,000 depending on the procedure and complexity. Dr. Sharan Patil practices at SPARSH Hospital, Hennur Road, which offers comprehensive orthopaedic care with advanced surgical technology including robotic-assisted surgery. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained orthopaedic surgeons."
+  - question: 'Is Dr. Sharan Patil experienced in orthopaedic surgery?'
+    answer: 'Yes, Dr. Sharan Patil has 34 years of experience and has performed over 5,000 major complex surgical procedures, focusing on Paediatric Orthopaedics, Joint Replacement, and Complex Trauma. He trained in the U.K. at leading institutions and holds an MCh in Orthopaedics from Liverpool University and FRCS from the Royal College of Surgeons, England. He is recognised as one of the best joint replacement surgeons in Bangalore.'
+  - question: 'What types of orthopaedic surgery does Dr. Sharan Patil perform?'
+    answer: 'Dr. Sharan Patil performs orthopaedic surgery, paediatric orthopaedics, joint replacement, and complex trauma procedures. His expertise includes total knee arthroplasty, total hip replacement, and robotic arm-assisted total knee arthroplasty. He has published extensively on outcomes of joint arthroplasty, femoral notching, electrolyte imbalance after total joint arthroplasty, and robotic-assisted knee replacement.'
+  - question: 'Is Dr. Sharan Patil the founder of SPARSH Hospital?'
+    answer: 'Yes, Dr. Sharan Patil established SPARSH Hospital in 2006 with a focus on providing affordable healthcare. The facility is equipped with 120 beds and 5 operating rooms, capable of performing over 30 surgeries daily. Under his leadership, SPARSH Hospital has grown to offer premium-quality care and expanded to different units across Tier 1 and Tier 2 regions in Karnataka.'
+  - question: 'What is the cost of orthopaedic surgery with Dr. Sharan Patil in Bangalore?'
+    answer: 'Orthopaedic surgery and joint replacement costs in Bangalore range from $2,500 to $8,000 depending on the procedure and complexity. Dr. Sharan Patil practices at SPARSH Hospital, Hennur Road, which offers comprehensive orthopaedic care with advanced surgical technology including robotic-assisted surgery. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained orthopaedic surgeons.'
 ---
 
 ## About the Doctor

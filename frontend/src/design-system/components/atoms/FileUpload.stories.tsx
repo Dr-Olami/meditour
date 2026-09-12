@@ -14,5 +14,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { label: 'Click to upload your medical report' } };
-export const CustomAccept: Story = { args: { label: 'Upload passport scan (PDF/JPG)', accept: '.pdf,.jpg,.jpeg' } };
+export const CustomAccept: Story = {
+  args: { label: 'Upload passport scan (PDF/JPG)', accept: '.pdf,.jpg,.jpeg' },
+};
 export const Disabled: Story = { args: { label: 'Upload not available', disabled: true } };

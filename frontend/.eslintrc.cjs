@@ -20,7 +20,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'jsx-a11y'],
   rules: {
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
+    ],
   },
   overrides: [
     {
@@ -44,7 +47,8 @@ module.exports = {
             patterns: [
               {
                 group: ['**/features/**'],
-                message: 'design-system/* must not import from features/*. Keep the dependency arrow one-way.',
+                message:
+                  'design-system/* must not import from features/*. Keep the dependency arrow one-way.',
               },
             ],
           },

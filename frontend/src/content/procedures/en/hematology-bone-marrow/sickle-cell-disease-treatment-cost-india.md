@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Sickle Cell Disease Treatment"
-seoHeadline: "Sickle Cell Disease Treatment Cost in India for International Patients"
+name: 'Sickle Cell Disease Treatment'
+seoHeadline: 'Sickle Cell Disease Treatment Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Sickle cell disease treatment in India costs between $3,000 and $40,000, covering crisis management, disease-modifying therapy and curative stem cell transplant options. Leading Bangalore hospitals offer comprehensive sickle cell care for international patients at a fraction of Western costs."
-description: "Affordable sickle cell disease treatment in India from $3,000–$40,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$3,000"
-toPrice: "$40,000"
-duration: "4-12 weeks"
-hospitalStay: "4-6 weeks"
-recoveryTime: "3-12 months"
+summary: 'Sickle cell disease treatment in India costs between $3,000 and $40,000, covering crisis management, disease-modifying therapy and curative stem cell transplant options. Leading Bangalore hospitals offer comprehensive sickle cell care for international patients at a fraction of Western costs.'
+description: 'Affordable sickle cell disease treatment in India from $3,000–$40,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$3,000'
+toPrice: '$40,000'
+duration: '4-12 weeks'
+hospitalStay: '4-6 weeks'
+recoveryTime: '3-12 months'
 eligibility:
-  - "Patients with confirmed sickle cell disease (HbSS, HbSβ-thalassemia or other sickle genotypes)"
-  - "Individuals with recurrent vaso-occlusive crises, stroke or organ damage despite optimal medical therapy"
-  - "Availability of an HLA-matched sibling donor for curative transplant candidates"
-  - "Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy"
-  - "No active uncontrolled infection or acute crisis at the time of admission"
+  - 'Patients with confirmed sickle cell disease (HbSS, HbSβ-thalassemia or other sickle genotypes)'
+  - 'Individuals with recurrent vaso-occlusive crises, stroke or organ damage despite optimal medical therapy'
+  - 'Availability of an HLA-matched sibling donor for curative transplant candidates'
+  - 'Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy'
+  - 'No active uncontrolled infection or acute crisis at the time of admission'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Outpatient follow-up with blood counts, infection surveillance and assessment of donor cell engraftment before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "3-12 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and sickle-related complications."
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Outpatient follow-up with blood counts, infection surveillance and assessment of donor cell engraftment before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '3-12 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and sickle-related complications.'
 risks:
-  - "Graft rejection or graft failure"
-  - "Graft-versus-host disease in allogeneic transplants"
-  - "Severe infections due to prolonged immunosuppression"
-  - "Neurological complications including stroke risk during conditioning"
-  - "Long-term endocrine and fertility complications"
+  - 'Graft rejection or graft failure'
+  - 'Graft-versus-host disease in allogeneic transplants'
+  - 'Severe infections due to prolonged immunosuppression'
+  - 'Neurological complications including stroke risk during conditioning'
+  - 'Long-term endocrine and fertility complications'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "bone-marrow-transplant-cost-india"
-  - "allogeneic-stem-cell-transplant-cost-india"
+  - 'bone-marrow-transplant-cost-india'
+  - 'allogeneic-stem-cell-transplant-cost-india'
 faqs:
-  - question: "How much does sickle cell disease treatment cost in India?"
-    answer: "Sickle cell disease treatment in India costs between $3,000 and $40,000 depending on the modality — crisis management and hydroxyurea therapy sit at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end."
-  - question: "Can sickle cell disease be cured with a bone marrow transplant in Bangalore?"
-    answer: "Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for sickle cell disease, and Bangalore transplant centres report disease-free survival rates of 85–95% in paediatric patients with matched sibling donors."
-  - question: "How long do I need to stay in India for sickle cell disease treatment?"
-    answer: "For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does sickle cell disease treatment cost in India?'
+    answer: 'Sickle cell disease treatment in India costs between $3,000 and $40,000 depending on the modality — crisis management and hydroxyurea therapy sit at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end.'
+  - question: 'Can sickle cell disease be cured with a bone marrow transplant in Bangalore?'
+    answer: 'Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for sickle cell disease, and Bangalore transplant centres report disease-free survival rates of 85–95% in paediatric patients with matched sibling donors.'
+  - question: 'How long do I need to stay in India for sickle cell disease treatment?'
+    answer: 'For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 If you or your child has sickle cell disease, you know the pain and exhaustion that come with every crisis. You may have watched the unpredictable pain episodes, the hospital admissions and the worry about what the next month will bring. You may also have been told that a bone marrow transplant is the only real cure — and then discovered how difficult and expensive that can be to access in your own country. This page is here to help you understand your options in India, clearly and honestly.
@@ -125,6 +126,7 @@ You should contact your doctor immediately if you develop a fever, rash, jaundic
 If a transplant is not the right path for you — or while you are waiting for a donor to be found — optimised medical management can still be highly effective. Hydroxyurea, regular transfusion programmes and newer drugs like crizanlizumab and voxelotor can significantly reduce how often you have crises and help protect your organs from damage. For many people, these therapies make a meaningful difference to daily life.
 
 Gene therapy is an exciting emerging alternative that uses your own modified stem cells, which would eliminate the need for a donor altogether. However, it is currently available only through clinical trials and at very high cost in Western centres, so it is not a practical option for most families today. The best thing you can do is discuss all your options openly with the Bangalore haematology team. They will give you a balanced, honest recommendation based on how severe your disease is, whether a donor is available, your age and your organ function. In some cases, a trial of intensified medical therapy is the wisest first step before committing to a transplant.
+
 ## Cost Comparison
 
 || Country | Approximate Cost | vs India |

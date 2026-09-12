@@ -19,7 +19,10 @@ export async function getStaticPaths() {
     const related = (entry.data.relatedTreatmentSlugs || [])
       .map((slug) => treatmentMap.get(slug))
       .filter(Boolean)
-      .map((t) => ({ name: t!.name, href: `/bn/treatments/${entrySlug(treatments.find((e) => e.data.name === t!.name)!)}` }));
+      .map((t) => ({
+        name: t!.name,
+        href: `/bn/treatments/${entrySlug(treatments.find((e) => e.data.name === t!.name)!)}`,
+      }));
 
     return {
       params: { slug: entrySlug(entry) },
@@ -35,9 +38,7 @@ const { Content } = await post.render();
 const publishedAt = formatDate(post.data.publishedAt, 'bn');
 const updatedAt = post.data.updatedAt ? formatDate(post.data.updatedAt, 'bn') : undefined;
 
-const ctaHref = related.length > 0
-  ? getTreatmentInquiryLink(related[0].name)
-  : getInquiryLink();
+const ctaHref = related.length > 0 ? getTreatmentInquiryLink(related[0].name) : getInquiryLink();
 
 const title = `${post.data.title} | ${t.site.name}`;
 const description = post.data.excerpt;
@@ -65,7 +66,14 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description} locale="bn" image={image} type="article" jsonLd={jsonLd}>
+<Layout
+  title={title}
+  description={description}
+  locale="bn"
+  image={image}
+  type="article"
+  jsonLd={jsonLd}
+>
   <Navbar
     brand={t.site.name}
     links={getNavLinks('bn')}

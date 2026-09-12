@@ -22,14 +22,14 @@ expertise:
   - Minimally Invasive Valve Replacement
 pullQuote: "The heart is the only organ that announces life with every beat. When I repair a valve, I am not fixing a machine — I am restoring a rhythm that someone's family depends on."
 faqs:
-  - question: "Is Dr. Ravindra Setty B R experienced in cardiac surgery?"
-    answer: "Yes, Dr. Ravindra Setty B R is a renowned Senior Consultant in Adult Cardiac Surgery with extensive experience in all forms of adult heart surgeries. His expertise includes coronary artery bypass surgery, valve replacements, complex redo valve procedures, mitral valve repairs, and TAPVC repairs. He specializes in complex coronary artery surgeries with a high degree of precision and surgical skill."
-  - question: "What types of cardiac surgery does Dr. Ravindra Setty B R perform?"
-    answer: "Dr. Ravindra Setty B R performs all forms of adult cardiac surgery including coronary artery bypass surgery, valve replacements, mitral valve repairs, redo valve surgeries, TAPVC repairs, and complex coronary artery surgeries. He has a particular interest in difficult valve replacements and sophisticated coronary artery surgeries, using state-of-the-art techniques to enhance patient outcomes."
-  - question: "Is Dr. Ravindra Setty B R one of the best cardiac surgeons in Bangalore?"
-    answer: "Yes, Dr. Ravindra Setty B R is an experienced adult cardiac surgeon at Narayana Institute of Cardiac Sciences who thrives in challenging cases. He is a Life Member of the Indian Association of Cardiovascular and Thoracic Surgeons, Vice President of the Karnataka Association of Cardiovascular and Thoracic Surgeons, and a DNB examiner in Cardio Thoracic Surgery. He has published multiple papers in the Indian Journal of Cardiovascular and Thoracic Surgery and is passionate about academic growth in the field."
-  - question: "What is the cost of cardiac surgery with Dr. Ravindra Setty B R in Bangalore?"
-    answer: "Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Ravindra Setty B R practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced cardiac surgeons and advanced surgical facilities."
+  - question: 'Is Dr. Ravindra Setty B R experienced in cardiac surgery?'
+    answer: 'Yes, Dr. Ravindra Setty B R is a renowned Senior Consultant in Adult Cardiac Surgery with extensive experience in all forms of adult heart surgeries. His expertise includes coronary artery bypass surgery, valve replacements, complex redo valve procedures, mitral valve repairs, and TAPVC repairs. He specializes in complex coronary artery surgeries with a high degree of precision and surgical skill.'
+  - question: 'What types of cardiac surgery does Dr. Ravindra Setty B R perform?'
+    answer: 'Dr. Ravindra Setty B R performs all forms of adult cardiac surgery including coronary artery bypass surgery, valve replacements, mitral valve repairs, redo valve surgeries, TAPVC repairs, and complex coronary artery surgeries. He has a particular interest in difficult valve replacements and sophisticated coronary artery surgeries, using state-of-the-art techniques to enhance patient outcomes.'
+  - question: 'Is Dr. Ravindra Setty B R one of the best cardiac surgeons in Bangalore?'
+    answer: 'Yes, Dr. Ravindra Setty B R is an experienced adult cardiac surgeon at Narayana Institute of Cardiac Sciences who thrives in challenging cases. He is a Life Member of the Indian Association of Cardiovascular and Thoracic Surgeons, Vice President of the Karnataka Association of Cardiovascular and Thoracic Surgeons, and a DNB examiner in Cardio Thoracic Surgery. He has published multiple papers in the Indian Journal of Cardiovascular and Thoracic Surgery and is passionate about academic growth in the field.'
+  - question: 'What is the cost of cardiac surgery with Dr. Ravindra Setty B R in Bangalore?'
+    answer: 'Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Ravindra Setty B R practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced cardiac surgeons and advanced surgical facilities.'
 ---
 
 ## About the Doctor

@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Iranian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Tehran to India for treatment: medical visa requirements, flight routes, cost comparisons in Iranian Rials, and choosing the right hospital for Iranian families."
+excerpt: 'Travelling from Tehran to India for treatment: medical visa requirements, flight routes, cost comparisons in Iranian Rials, and choosing the right hospital for Iranian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-26
@@ -32,13 +32,13 @@ Iranian families increasingly travel to India for cardiac surgery, orthopedics, 
 
 Heart surgery cost India vs Iran is the comparison most families start with. Indicative package prices (at roughly IRR 42,000 per US dollar):
 
-| Treatment | India (USD) | Approx. IRR | Turkey | UAE |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ﷼189M–504M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | ﷼105M–336M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | ﷼126M–1.05B | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | ﷼168M–504M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | ﷼147M–294M | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. IRR | Turkey | UAE        |
+| -------------------- | ------------- | ----------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | ﷼189M–504M  | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | ﷼105M–336M  | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | ﷼126M–1.05B | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | ﷼168M–504M  | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | ﷼147M–294M  | Higher | Far higher |
 
 Cancer care is a leading reason Iranian patients travel — full protocols including radiation and surgical oncology at JCI-accredited Indian hospitals come in well below comparable private pricing in Turkey or the UAE, with Persian-speaking coordinators supporting the family throughout.
 

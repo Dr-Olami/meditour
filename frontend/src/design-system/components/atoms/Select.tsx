@@ -18,8 +18,7 @@ const selectVariants = cva(
 );
 
 export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement>,
-    VariantProps<typeof selectVariants> {}
+  extends React.SelectHTMLAttributes<HTMLSelectElement>, VariantProps<typeof selectVariants> {}
 
 /**
  * Select dropdown atom.
@@ -28,11 +27,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ className, state, children, ...props }, ref) => {
     return (
       <div className="relative">
-        <select
-          className={cn(selectVariants({ state }), className)}
-          ref={ref}
-          {...props}
-        >
+        <select className={cn(selectVariants({ state }), className)} ref={ref} {...props}>
           {children}
         </select>
         <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-text-muted">

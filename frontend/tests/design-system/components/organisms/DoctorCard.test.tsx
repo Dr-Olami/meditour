@@ -23,9 +23,7 @@ describe('DoctorCard', () => {
 
   it('links the portrait and name to the doctor detail page', () => {
     render(<DoctorCard doctor={DOCTOR} />);
-    const links = screen
-      .getAllByRole('link')
-      .filter((l) => l.getAttribute('href') === DOCTOR.href);
+    const links = screen.getAllByRole('link').filter((l) => l.getAttribute('href') === DOCTOR.href);
     // portrait link, name link, and Book Now CTA all point to the profile
     expect(links.length).toBeGreaterThanOrEqual(3);
   });

@@ -41,7 +41,7 @@ export function TreatmentsPage({ title, subtitle, filterAll, treatments }: Treat
         <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 text-lg text-ink/60">{subtitle}</p>
+        <p className="text-ink/60 mt-4 text-lg">{subtitle}</p>
       </div>
 
       {categories.length > 1 && (

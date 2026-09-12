@@ -7,12 +7,7 @@
  */
 
 /** Geographic region grouping used for related-country linking. */
-export type Region =
-  | 'south-asia'
-  | 'middle-east'
-  | 'africa'
-  | 'western'
-  | 'central-asia';
+export type Region = 'south-asia' | 'middle-east' | 'africa' | 'western' | 'central-asia';
 
 /** Visa application pathway available to a country's citizens. */
 export type VisaType = 'on-arrival' | 'e-visa' | 'embassy' | 'visa-free';

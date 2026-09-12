@@ -25,16 +25,16 @@ expertise:
   - Thyroid Surgery
   - Vocal Cord Surgery
   - Endoscopic Skull Base Surgery
-pullQuote: "ENT conditions affect how we hear, breathe, and speak — the very things that connect us to others. Restoring those functions is restoring relationships."
+pullQuote: 'ENT conditions affect how we hear, breathe, and speak — the very things that connect us to others. Restoring those functions is restoring relationships.'
 faqs:
-  - question: "Is Dr. Srinivas Kunku experienced in cochlear implant surgery?"
-    answer: "Yes, Dr. Srinivas Kunku has over 15 years of clinical excellence in ENT surgery and is experienced in cochlear implant procedures. He has trained and worked with renowned ENT specialists across the globe and his expertise spans the full spectrum of ENT care, including cochlear implants, reconstructive middle ear surgery, and functional endoscopic sinus surgery (FESS)."
-  - question: "What ENT conditions does Dr. Srinivas Kunku treat?"
-    answer: "Dr. Srinivas Kunku treats a wide range of ENT conditions including hearing loss, chronic sinusitis, nasal allergies, thyroid disorders, vocal cord problems, and skull base conditions. He is known for his precise surgical skills, thorough diagnostic approach, and compassionate patient interaction, with expertise in reconstructive middle ear surgery, cochlear implants, FESS, microsurgery of the larynx, and nasal septum surgery."
-  - question: "Does Dr. Srinivas Kunku perform endoscopic skull base surgery?"
+  - question: 'Is Dr. Srinivas Kunku experienced in cochlear implant surgery?'
+    answer: 'Yes, Dr. Srinivas Kunku has over 15 years of clinical excellence in ENT surgery and is experienced in cochlear implant procedures. He has trained and worked with renowned ENT specialists across the globe and his expertise spans the full spectrum of ENT care, including cochlear implants, reconstructive middle ear surgery, and functional endoscopic sinus surgery (FESS).'
+  - question: 'What ENT conditions does Dr. Srinivas Kunku treat?'
+    answer: 'Dr. Srinivas Kunku treats a wide range of ENT conditions including hearing loss, chronic sinusitis, nasal allergies, thyroid disorders, vocal cord problems, and skull base conditions. He is known for his precise surgical skills, thorough diagnostic approach, and compassionate patient interaction, with expertise in reconstructive middle ear surgery, cochlear implants, FESS, microsurgery of the larynx, and nasal septum surgery.'
+  - question: 'Does Dr. Srinivas Kunku perform endoscopic skull base surgery?'
     answer: "Yes, endoscopic skull base surgery is one of Dr. Srinivas Kunku's specialities. He has trained with renowned ENT specialists globally and combines advanced endoscopic techniques with his extensive ENT surgical experience to treat complex skull base conditions through minimally invasive approaches."
-  - question: "What is the cost of ENT consultation with Dr. Srinivas Kunku in Bangalore?"
-    answer: "ENT consultation and treatment costs in Bangalore range from $1,200 to $5,000 depending on the procedure. Dr. Srinivas Kunku practices at SPARSH Hospital, Hennur Road, which offers comprehensive ENT care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced ENT surgeons."
+  - question: 'What is the cost of ENT consultation with Dr. Srinivas Kunku in Bangalore?'
+    answer: 'ENT consultation and treatment costs in Bangalore range from $1,200 to $5,000 depending on the procedure. Dr. Srinivas Kunku practices at SPARSH Hospital, Hennur Road, which offers comprehensive ENT care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced ENT surgeons.'
 ---
 
 ## About the Doctor

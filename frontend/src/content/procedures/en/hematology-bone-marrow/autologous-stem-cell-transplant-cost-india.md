@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Autologous Stem Cell Transplant"
-seoHeadline: "Autologous Stem Cell Transplant Cost in India for International Patients"
+name: 'Autologous Stem Cell Transplant'
+seoHeadline: 'Autologous Stem Cell Transplant Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Autologous stem cell transplant in India costs between $15,000 and $30,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform autologous transplants for lymphoma, myeloma and selected solid tumours with high success rates."
-description: "Affordable autologous stem cell transplant in India from $15,000–$30,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$15,000"
-toPrice: "$30,000"
-duration: "3-6 weeks"
-hospitalStay: "2-4 weeks"
-recoveryTime: "3-6 months"
+summary: 'Autologous stem cell transplant in India costs between $15,000 and $30,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform autologous transplants for lymphoma, myeloma and selected solid tumours with high success rates.'
+description: 'Affordable autologous stem cell transplant in India from $15,000–$30,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$15,000'
+toPrice: '$30,000'
+duration: '3-6 weeks'
+hospitalStay: '2-4 weeks'
+recoveryTime: '3-6 months'
 eligibility:
-  - "Patients with multiple myeloma, relapsed lymphoma or selected solid tumours in remission or response"
-  - "Adequate stem cell yield from prior mobilisation and apheresis"
-  - "Adequate cardiac, renal and hepatic function to tolerate high-dose chemotherapy"
-  - "Performance status of 0–2 (ECOG) with no severe comorbidities"
-  - "No active uncontrolled infection at the time of admission"
+  - 'Patients with multiple myeloma, relapsed lymphoma or selected solid tumours in remission or response'
+  - 'Adequate stem cell yield from prior mobilisation and apheresis'
+  - 'Adequate cardiac, renal and hepatic function to tolerate high-dose chemotherapy'
+  - 'Performance status of 0–2 (ECOG) with no severe comorbidities'
+  - 'No active uncontrolled infection at the time of admission'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-4 weeks"
+  - phase: 'Hospital stay'
+    duration: '2-4 weeks'
     description: "High-dose conditioning chemotherapy followed by reinfusion of the patient's own stem cells and monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-3 weeks"
-    description: "Outpatient follow-up with blood counts, infection surveillance and nutritional support before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 4-7"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "3-6 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for disease relapse."
+  - phase: 'Bangalore recovery'
+    duration: '2-3 weeks'
+    description: 'Outpatient follow-up with blood counts, infection surveillance and nutritional support before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 4-7'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '3-6 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for disease relapse.'
 risks:
-  - "Severe mucositis and infections due to neutropenia"
-  - "Conditioning-related organ toxicity (cardiac, hepatic, renal)"
-  - "Delayed engraftment or graft failure"
-  - "Disease relapse despite transplant"
-  - "Long-term secondary malignancy risk"
+  - 'Severe mucositis and infections due to neutropenia'
+  - 'Conditioning-related organ toxicity (cardiac, hepatic, renal)'
+  - 'Delayed engraftment or graft failure'
+  - 'Disease relapse despite transplant'
+  - 'Long-term secondary malignancy risk'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - sparsh-hospital-hennur
@@ -61,16 +61,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "allogeneic-stem-cell-transplant-cost-india"
-  - "multiple-myeloma-treatment-cost-india"
+  - 'allogeneic-stem-cell-transplant-cost-india'
+  - 'multiple-myeloma-treatment-cost-india'
 faqs:
-  - question: "How much does an autologous stem cell transplant cost in India?"
-    answer: "An autologous stem cell transplant in India typically costs between $15,000 and $30,000 depending on the underlying disease, conditioning regimen and the length of hospital stay required."
-  - question: "What is the success rate of autologous transplants in Bangalore hospitals?"
-    answer: "Leading Bangalore transplant centres report progression-free survival rates of 50–80% at five years depending on the underlying disease and remission status, comparable to international benchmarks."
-  - question: "How long do I need to stay in India for an autologous stem cell transplant?"
-    answer: "Patients should plan for 4–7 weeks in India, including 2–4 weeks of hospitalisation followed by 2–3 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does an autologous stem cell transplant cost in India?'
+    answer: 'An autologous stem cell transplant in India typically costs between $15,000 and $30,000 depending on the underlying disease, conditioning regimen and the length of hospital stay required.'
+  - question: 'What is the success rate of autologous transplants in Bangalore hospitals?'
+    answer: 'Leading Bangalore transplant centres report progression-free survival rates of 50–80% at five years depending on the underlying disease and remission status, comparable to international benchmarks.'
+  - question: 'How long do I need to stay in India for an autologous stem cell transplant?'
+    answer: 'Patients should plan for 4–7 weeks in India, including 2–4 weeks of hospitalisation followed by 2–3 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 If your doctor has recommended an autologous stem cell transplant, you may be feeling anxious about what lies ahead. That is completely understandable. The good news is that this type of transplant uses your own stem cells — meaning there is no donor matching needed and no risk of graft-versus-host disease. This makes the procedure safer and your recovery faster than an allogeneic transplant, while still giving you the best chance of long-term disease control.
@@ -130,15 +131,16 @@ If you have myeloma, maintenance therapy with lenalidomide or bortezomib is typi
 If you are not a candidate for autologous transplant due to poor stem cell mobilisation, organ dysfunction or advanced age, continued standard-dose therapy with novel agents may be your best option. In myeloma, this includes combinations of proteasome inhibitors, immunomodulatory drugs and monoclonal antibodies administered in cycles without the need for high-dose conditioning.
 
 If your lymphoma has relapsed after an autologous transplant, an allogeneic stem cell transplant may be considered as a salvage strategy. CAR-T cell therapy is another emerging option for relapsed B-cell lymphoma or leukaemia. Bangalore centres offer both allogeneic transplant and CAR-T therapy. You should discuss all available alternatives with your treating haematologist to determine the most appropriate pathway based on your disease type, response to prior therapy, age, fitness and personal circumstances.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $15,000 – $30,000 | Baseline |
-| USA | $200,000 – $500,000 | ~15.6x higher |
-| UK | £100,000 – £300,000 | ~8.9x higher |
-| Singapore | $60,000 – $150,000 | ~4.7x higher |
-| Thailand | $35,000 – $90,000 | ~2.8x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $15,000 – $30,000   | Baseline      |
+| USA               | $200,000 – $500,000 | ~15.6x higher |
+| UK                | £100,000 – £300,000 | ~8.9x higher  |
+| Singapore         | $60,000 – $150,000  | ~4.7x higher  |
+| Thailand          | $35,000 – $90,000   | ~2.8x higher  |
 
 The cost varies based on your underlying disease, conditioning regimen and length of hospital stay. Myeloma transplants with single-agent melphalan conditioning tend to be at the lower end, while lymphoma transplants using the multi-agent BEAM regimen may be at the higher end due to the cost of carmustine and the longer inpatient stay. Even at the higher end, you save 70–90% compared to Western pricing.
 

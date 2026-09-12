@@ -14,13 +14,13 @@ languages:
   - Telugu
   - Marathi
 faqs:
-  - question: "Who is Dr. Anantheswar Y N?"
+  - question: 'Who is Dr. Anantheswar Y N?'
     answer: "Dr. Anantheswar Y N is the HOD & Consultant of Plastic, Cosmetic & Reconstructive Surgery at Manipal Hospital Old Airport Road, Bangalore. He holds MBBS, MS, MCh, and DNB in Plastic Surgery, and is widely regarded as one of Bangalore's best cosmetic surgeons. He is a founder member of the Association of Cleft Lip, Palate & Craniofacial Anomalies of India and the Skull Base Society of India, and serves as editor of the International Journal of Plastic Surgery & Transplantation."
-  - question: "Why do patients choose Dr. Anantheswar Y N?"
-    answer: "Patients choose Dr. Anantheswar for his decades of experience across plastic, reconstructive, cosmetic, craniofacial, and microvascular hand surgery. He is an international faculty member of Craniomaxillofacial Surgeons, AO Switzerland, president-elect of KAPRAS (Karnataka Association of Plastic & Reconstructive Surgeons) for 2020, and has numerous peer-reviewed publications. He is fluent in English, Kannada, Hindi, Telugu, and Marathi, making him accessible to a diverse patient population."
+  - question: 'Why do patients choose Dr. Anantheswar Y N?'
+    answer: 'Patients choose Dr. Anantheswar for his decades of experience across plastic, reconstructive, cosmetic, craniofacial, and microvascular hand surgery. He is an international faculty member of Craniomaxillofacial Surgeons, AO Switzerland, president-elect of KAPRAS (Karnataka Association of Plastic & Reconstructive Surgeons) for 2020, and has numerous peer-reviewed publications. He is fluent in English, Kannada, Hindi, Telugu, and Marathi, making him accessible to a diverse patient population.'
   - question: "What are Dr. Anantheswar Y N's medical qualifications?"
-    answer: "Dr. Anantheswar holds MBBS, MS, MCh, and DNB in Plastic Surgery. He is a fellow and member of multiple distinguished associations including the Association of Plastic Surgeons of India, Association of Surgeons of India, Association of Brachial Plexus Society of India, and the Association of Society of Hand Surgeons of India."
-  - question: "How can I book an appointment with Dr. Anantheswar Y N?"
+    answer: 'Dr. Anantheswar holds MBBS, MS, MCh, and DNB in Plastic Surgery. He is a fellow and member of multiple distinguished associations including the Association of Plastic Surgeons of India, Association of Surgeons of India, Association of Brachial Plexus Society of India, and the Association of Society of Hand Surgeons of India.'
+  - question: 'How can I book an appointment with Dr. Anantheswar Y N?'
     answer: "You can book an appointment with Dr. Anantheswar Y N at Manipal Hospital Old Airport Road, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

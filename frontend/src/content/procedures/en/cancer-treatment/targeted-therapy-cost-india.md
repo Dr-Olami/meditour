@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Targeted Therapy"
-seoHeadline: "Targeted Therapy Cost in India for International Cancer Patients"
+name: 'Targeted Therapy'
+seoHeadline: 'Targeted Therapy Cost in India for International Cancer Patients'
 parentTreatmentSlug: cancer-treatment
-summary: "Targeted therapy in India costs $3,000–$12,000 per course, offering savings of up to 90% compared to Western countries. Treatment uses precision medicines that target specific cancer-driving mutations, delivered by expert oncologists in accredited hospitals."
-description: "Affordable targeted therapy in India starting at $3,000 for international patients. Compare costs, understand inclusions, and plan your medical trip."
-fromPrice: "$3,000"
-toPrice: "$12,000"
-duration: "3-12 months"
-hospitalStay: "Day-care to 2 days"
-recoveryTime: "Varies by treatment protocol"
+summary: 'Targeted therapy in India costs $3,000–$12,000 per course, offering savings of up to 90% compared to Western countries. Treatment uses precision medicines that target specific cancer-driving mutations, delivered by expert oncologists in accredited hospitals.'
+description: 'Affordable targeted therapy in India starting at $3,000 for international patients. Compare costs, understand inclusions, and plan your medical trip.'
+fromPrice: '$3,000'
+toPrice: '$12,000'
+duration: '3-12 months'
+hospitalStay: 'Day-care to 2 days'
+recoveryTime: 'Varies by treatment protocol'
 eligibility:
-  - "Confirmed cancer diagnosis with molecular profiling identifying a targetable mutation or protein"
-  - "Adequate organ function (liver, kidney, heart) confirmed through blood tests"
-  - "No contraindications to the specific targeted agent being considered"
-  - "Performance status of 0–2 on the ECOG scale"
-  - "Willingness to undergo regular monitoring and adhere to oral medication regimens where applicable"
+  - 'Confirmed cancer diagnosis with molecular profiling identifying a targetable mutation or protein'
+  - 'Adequate organ function (liver, kidney, heart) confirmed through blood tests'
+  - 'No contraindications to the specific targeted agent being considered'
+  - 'Performance status of 0–2 on the ECOG scale'
+  - 'Willingness to undergo regular monitoring and adhere to oral medication regimens where applicable'
 costInclusions:
-  - "Oncologist consultation fees"
-  - "Chemotherapy/radiation/medication costs"
-  - "Hospital room charges (where applicable)"
-  - "Pre-treatment diagnostics (biopsy, imaging, blood tests)"
-  - "Supportive medications (anti-nausea, growth factors)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Oncologist consultation fees'
+  - 'Chemotherapy/radiation/medication costs'
+  - 'Hospital room charges (where applicable)'
+  - 'Pre-treatment diagnostics (biopsy, imaging, blood tests)'
+  - 'Supportive medications (anti-nausea, growth factors)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term maintenance therapy post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term maintenance therapy post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "3-12 months"
-    description: "Targeted therapy administered orally or intravenously on a continuous or cyclic schedule, with regular imaging and blood tests to monitor response and side effects."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Initial tolerance assessment, side effect evaluation, and dosage optimisation before transitioning to maintenance or home-based oral therapy."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Continuation of oral targeted therapy at home with remote follow-up; periodic return visits for reassessment as scheduled."
-  - phase: "Full recovery"
-    duration: "Varies by treatment protocol"
-    description: "Resolution of treatment-related side effects; ongoing surveillance imaging and molecular monitoring as advised by oncologist."
+  - phase: 'Treatment period'
+    duration: '3-12 months'
+    description: 'Targeted therapy administered orally or intravenously on a continuous or cyclic schedule, with regular imaging and blood tests to monitor response and side effects.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Initial tolerance assessment, side effect evaluation, and dosage optimisation before transitioning to maintenance or home-based oral therapy.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Continuation of oral targeted therapy at home with remote follow-up; periodic return visits for reassessment as scheduled.'
+  - phase: 'Full recovery'
+    duration: 'Varies by treatment protocol'
+    description: 'Resolution of treatment-related side effects; ongoing surveillance imaging and molecular monitoring as advised by oncologist.'
 risks:
-  - "Skin rashes and hand-foot syndrome with EGFR and multi-kinase inhibitors"
-  - "Diarrhoea and gastrointestinal disturbance with certain targeted agents"
-  - "Cardiac toxicity including QT prolongation or heart failure with specific inhibitors"
-  - "Liver enzyme elevation requiring dose adjustment or interruption"
-  - "Risk of bleeding, hypertension, or proteinuria with angiogenesis inhibitors"
+  - 'Skin rashes and hand-foot syndrome with EGFR and multi-kinase inhibitors'
+  - 'Diarrhoea and gastrointestinal disturbance with certain targeted agents'
+  - 'Cardiac toxicity including QT prolongation or heart failure with specific inhibitors'
+  - 'Liver enzyme elevation requiring dose adjustment or interruption'
+  - 'Risk of bleeding, hypertension, or proteinuria with angiogenesis inhibitors'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -56,16 +56,17 @@ relatedDoctorSlugs:
   - dr-amit-rauthan
 
 relatedProcedureSlugs:
-  - "immunotherapy-cost-india"
-  - "chemotherapy-cost-india"
+  - 'immunotherapy-cost-india'
+  - 'chemotherapy-cost-india'
 faqs:
-  - question: "What is the difference between targeted therapy and chemotherapy?"
-    answer: "Targeted therapy specifically attacks cancer cells by blocking particular molecules or mutations that drive tumour growth, while chemotherapy affects all rapidly dividing cells throughout the body. Targeted therapy generally causes fewer side effects because it spares most normal cells, but it requires the cancer to have a specific targetable mutation identified through molecular testing."
-  - question: "Do I need genetic testing before starting targeted therapy?"
-    answer: "Yes. Targeted therapy requires molecular profiling of the tumour to identify specific mutations, gene amplifications, or protein overexpression that the drug is designed to target. Common tests include EGFR, ALK, ROS1, BRAF, HER2, and KRAS testing depending on your cancer type. These tests are performed on biopsy tissue or blood samples."
-  - question: "Is targeted therapy given as pills or injections?"
-    answer: "Targeted therapy can be administered either orally as tablets or capsules, or intravenously as infusions, depending on the specific drug. Many modern targeted therapies are oral medications taken daily at home, which is convenient for international patients who can continue treatment after returning home, with periodic follow-up visits to Bangalore."
+  - question: 'What is the difference between targeted therapy and chemotherapy?'
+    answer: 'Targeted therapy specifically attacks cancer cells by blocking particular molecules or mutations that drive tumour growth, while chemotherapy affects all rapidly dividing cells throughout the body. Targeted therapy generally causes fewer side effects because it spares most normal cells, but it requires the cancer to have a specific targetable mutation identified through molecular testing.'
+  - question: 'Do I need genetic testing before starting targeted therapy?'
+    answer: 'Yes. Targeted therapy requires molecular profiling of the tumour to identify specific mutations, gene amplifications, or protein overexpression that the drug is designed to target. Common tests include EGFR, ALK, ROS1, BRAF, HER2, and KRAS testing depending on your cancer type. These tests are performed on biopsy tissue or blood samples.'
+  - question: 'Is targeted therapy given as pills or injections?'
+    answer: 'Targeted therapy can be administered either orally as tablets or capsules, or intravenously as infusions, depending on the specific drug. Many modern targeted therapies are oral medications taken daily at home, which is convenient for international patients who can continue treatment after returning home, with periodic follow-up visits to Bangalore.'
 ---
+
 ## Overview
 
 Being told that your cancer has a specific genetic mutation can feel frightening, but it also opens a door to one of the most exciting advances in modern oncology—targeted therapy. Targeted therapy is a precision cancer treatment that uses drugs designed to specifically identify and attack cancer cells based on their unique molecular characteristics. Unlike conventional chemotherapy, which affects all rapidly dividing cells, targeted therapy zeroes in on specific proteins, genes, or signalling pathways that cancer cells rely on for growth and survival. This approach minimises damage to healthy cells and often results in fewer and more manageable side effects.
@@ -125,15 +126,16 @@ After returning home, you will continue your oral targeted therapy as prescribed
 ## Alternatives to Consider
 
 Targeted therapy is one option within a broader treatment landscape. Depending on your cancer type and stage, alternatives may include chemotherapy, immunotherapy, radiation therapy, or surgery. In many cases, targeted therapy is combined with other treatments for the best result. Your oncologist will explain which options suit your specific molecular profile and help you weigh the benefits, side effects, and costs of each approach so you can make the decision that feels right for you and your family.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $3,000 – $12,000 | Baseline |
-| USA | $30,000 – $100,000 | ~8.7x higher |
-| UK | £20,000 – £70,000 | ~6.0x higher |
-| Singapore | $15,000 – $50,000 | ~4.3x higher |
-| Thailand | $8,000 – $25,000 | ~2.2x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $3,000 – $12,000   | Baseline     |
+| USA               | $30,000 – $100,000 | ~8.7x higher |
+| UK                | £20,000 – £70,000  | ~6.0x higher |
+| Singapore         | $15,000 – $50,000  | ~4.3x higher |
+| Thailand          | $8,000 – $25,000   | ~2.2x higher |
 
 Targeted therapy drugs are among the most expensive cancer medicines in the world, and many patients simply cannot afford them in their home countries. You may be wondering how India can offer the same drugs at such a fraction of the cost. The answer lies in India's pharmaceutical manufacturing capacity, generic drug industry, and government pricing controls—not in any compromise on quality. The drugs you receive are the same molecules, manufactured to the same standards, and prescribed using the same international guidelines. Your treatment package includes oncologist consultations, molecular testing, the targeted therapy drugs themselves, supportive medications, and monitoring during your stay in Bangalore.
 

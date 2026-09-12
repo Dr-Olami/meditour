@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Lung Transplant"
-seoHeadline: "Lung Transplant Cost in India for International Patients"
+name: 'Lung Transplant'
+seoHeadline: 'Lung Transplant Cost in India for International Patients'
 parentTreatmentSlug: organ-treatment
 summary: "Lung transplant surgery in India costs between $40,000 and $90,000, offering international patients savings of up to 85% compared to Western countries. Bangalore's leading transplant centres provide world-class surgical expertise, advanced ICU facilities, and comprehensive post-transplant care."
-description: "Affordable lung transplant surgery in Bangalore, India ranging from $40,000 to $90,000 with top transplant surgeons and JCI-accredited hospitals."
-fromPrice: "$40,000"
-toPrice: "$90,000"
-duration: "6-12 weeks"
-hospitalStay: "3-6 weeks"
-recoveryTime: "6-12 months"
+description: 'Affordable lung transplant surgery in Bangalore, India ranging from $40,000 to $90,000 with top transplant surgeons and JCI-accredited hospitals.'
+fromPrice: '$40,000'
+toPrice: '$90,000'
+duration: '6-12 weeks'
+hospitalStay: '3-6 weeks'
+recoveryTime: '6-12 months'
 eligibility:
-  - "End-stage lung disease (COPD, pulmonary fibrosis, cystic fibrosis, or pulmonary hypertension) confirmed by pulmonologist"
-  - "A living donor who is a close relative (as per Indian organ transplant regulations, where living-donor lobar transplant is considered)"
-  - "Adequate cardiac function and no uncontrolled comorbidities"
-  - "No active infections or uncontrolled malignancies"
-  - "Realistic psychosocial and financial ability to comply with post-transplant care"
+  - 'End-stage lung disease (COPD, pulmonary fibrosis, cystic fibrosis, or pulmonary hypertension) confirmed by pulmonologist'
+  - 'A living donor who is a close relative (as per Indian organ transplant regulations, where living-donor lobar transplant is considered)'
+  - 'Adequate cardiac function and no uncontrolled comorbidities'
+  - 'No active infections or uncontrolled malignancies'
+  - 'Realistic psychosocial and financial ability to comply with post-transplant care'
 costInclusions:
-  - "Transplant surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery and transplant costs"
-  - "Donor workup and evaluation (where applicable)"
-  - "Immunosuppressive medications during hospital stay"
-  - "Pre-transplant diagnostics (blood tests, imaging, tissue typing)"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Transplant surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery and transplant costs'
+  - 'Donor workup and evaluation (where applicable)'
+  - 'Immunosuppressive medications during hospital stay'
+  - 'Pre-transplant diagnostics (blood tests, imaging, tissue typing)'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-6 weeks"
-    description: "Recipient is monitored in the ICU immediately after surgery with mechanical ventilation support, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy."
-  - phase: "Bangalore recovery"
-    duration: "3-6 weeks"
-    description: "Regular follow-up appointments, pulmonary function tests, blood tests, and imaging to monitor lung function and detect early signs of rejection or infection before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-12"
-    description: "Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule, pulmonary rehabilitation, and infection precautions under guidance from the home-country physician."
-  - phase: "Full recovery"
-    duration: "6-12 months"
-    description: "Complete healing of the surgical site, stabilisation of lung function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring."
+  - phase: 'Hospital stay'
+    duration: '3-6 weeks'
+    description: 'Recipient is monitored in the ICU immediately after surgery with mechanical ventilation support, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy.'
+  - phase: 'Bangalore recovery'
+    duration: '3-6 weeks'
+    description: 'Regular follow-up appointments, pulmonary function tests, blood tests, and imaging to monitor lung function and detect early signs of rejection or infection before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-12'
+    description: 'Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule, pulmonary rehabilitation, and infection precautions under guidance from the home-country physician.'
+  - phase: 'Full recovery'
+    duration: '6-12 months'
+    description: 'Complete healing of the surgical site, stabilisation of lung function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring.'
 risks:
-  - "Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy"
-  - "Surgical complications including bleeding, airway dehiscence, or vascular thrombosis"
-  - "Infections due to immunosuppression, including opportunistic pulmonary infections"
-  - "Primary graft dysfunction, a severe form of early lung injury requiring prolonged ventilatory support"
-  - "Bronchiolitis obliterans syndrome (chronic rejection) causing progressive decline in lung function"
+  - 'Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy'
+  - 'Surgical complications including bleeding, airway dehiscence, or vascular thrombosis'
+  - 'Infections due to immunosuppression, including opportunistic pulmonary infections'
+  - 'Primary graft dysfunction, a severe form of early lung injury requiring prolonged ventilatory support'
+  - 'Bronchiolitis obliterans syndrome (chronic rejection) causing progressive decline in lung function'
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - fortis-hospital-bannerghatta
@@ -58,18 +58,19 @@ relatedDoctorSlugs:
   - dr-aditi-singhvi
 
 relatedProcedureSlugs:
-  - "liver-transplant-cost-india"
-  - "kidney-transplant-cost-india"
+  - 'liver-transplant-cost-india'
+  - 'kidney-transplant-cost-india'
 faqs:
-  - question: "Can an international patient get a lung transplant in India without a living donor?"
+  - question: 'Can an international patient get a lung transplant in India without a living donor?'
     answer: "No. Under Indian organ transplant regulations, foreign patients are generally eligible only for living-donor lobar lung transplants, where the donor must be a close relative. Deceased-donor organs are prioritised for Indian citizens. You will need to bring compatible living donors (typically two donors for a bilateral lobar transplant) and provide documented proof of relationship, which is reviewed by the hospital's transplant authorisation committee and government authorities."
-  - question: "How long do I need to stay in India after a lung transplant?"
-    answer: "Most patients should plan for a total stay of 6 to 12 weeks in India. This includes the hospital stay of 3 to 6 weeks followed by a recovery period in Bangalore for close monitoring, pulmonary function tests, follow-up blood tests, and clearance from the transplant team before it is safe to fly home."
-  - question: "What is the success rate of lung transplants in Bangalore hospitals?"
+  - question: 'How long do I need to stay in India after a lung transplant?'
+    answer: 'Most patients should plan for a total stay of 6 to 12 weeks in India. This includes the hospital stay of 3 to 6 weeks followed by a recovery period in Bangalore for close monitoring, pulmonary function tests, follow-up blood tests, and clearance from the transplant team before it is safe to fly home.'
+  - question: 'What is the success rate of lung transplants in Bangalore hospitals?'
     answer: "Leading transplant centres in Bangalore report one-year patient survival rates of 85-90% and graft survival rates of 83-88%, which are comparable to international benchmarks. Outcomes depend on the patient's overall health, the quality of the donor organ, and strict adherence to post-transplant medication, pulmonary rehabilitation, and follow-up."
-  - question: "Will I need to take medications for life after a lung transplant?"
-    answer: "Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted lung(s). The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan."
+  - question: 'Will I need to take medications for life after a lung transplant?'
+    answer: 'Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted lung(s). The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan.'
 ---
+
 ## Overview
 
 Being told that you need a lung transplant is one of the most overwhelming moments you can face. You may have been living with worsening breathlessness for years — perhaps you are now dependent on oxygen around the clock, unable to walk across a room, and watching your world shrink. The decision to pursue a transplant is enormous, and it is completely natural to feel frightened, hopeful, and exhausted all at once. This guide will help you understand what a lung transplant in Bangalore involves, so you and your family can face the road ahead with clarity.
@@ -143,15 +144,16 @@ You should seek immediate medical attention if you experience fever, worsening b
 Before pursuing a lung transplant, you should explore all other treatment options with your pulmonologist. For COPD, optimisation of bronchodilator therapy, pulmonary rehabilitation, oxygen supplementation and lung volume reduction surgery (in selected cases) may improve symptoms and delay the need for transplant. For pulmonary fibrosis, antifibrotic medications such as pirfenidone or nintedanib may help. For pulmonary arterial hypertension, advanced vasodilator therapies may be effective.
 
 If you are not yet ready for transplant or do not have suitable living donors, maximal medical management remains a viable option. While it does not reverse end-stage lung disease, it can sustain you and improve quality of life for a period. A lung transplant is generally reserved for patients whose lung disease has progressed to the point where medical therapy can no longer sustain adequate function or quality of life. The decision should be made jointly by you, your family, your pulmonologist and the transplant team.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $40,000 – $90,000 | Baseline |
-| USA | $800,000 – $1,200,000 | ~18.5x higher |
-| UK | £300,000 – £500,000 | ~9.3x higher |
-| Singapore | $250,000 – $350,000 | ~5.5x higher |
-| Thailand | $100,000 – $150,000 | ~2.2x higher |
+| Country           | Approximate Cost      | vs India      |
+| ----------------- | --------------------- | ------------- |
+| India (Bangalore) | $40,000 – $90,000     | Baseline      |
+| USA               | $800,000 – $1,200,000 | ~18.5x higher |
+| UK                | £300,000 – £500,000   | ~9.3x higher  |
+| Singapore         | $250,000 – $350,000   | ~5.5x higher  |
+| Thailand          | $100,000 – $150,000   | ~2.2x higher  |
 
 The cost differences reflect structural factors rather than differences in clinical quality. Bangalore hospitals achieve comparable surgical outcomes at a fraction of the cost because of lower staffing expenses, reduced administrative burden and favourable currency exchange rates. The quoted package typically includes surgeon fees, hospital stay, diagnostics and in-hospital medications. You should budget separately for long-term immunosuppressive medications and any unexpected complications that may extend the ICU stay.
 

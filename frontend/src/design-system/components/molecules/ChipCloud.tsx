@@ -40,8 +40,7 @@ const chipTone = cva(
 );
 
 export interface ChipCloudProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>,
-    VariantProps<typeof chipCloudTone> {
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>, VariantProps<typeof chipCloudTone> {
   /** Chip labels to render. */
   items: string[];
   /** Optional accessible heading rendered as a small uppercase label above the cloud. */
@@ -61,11 +60,7 @@ const ChipCloud = React.forwardRef<HTMLDivElement, ChipCloudProps>(
   ({ className, items, label, tone, ...props }, ref) => {
     if (!items || items.length === 0) return null;
     return (
-      <div
-        className={cn(chipCloudTone({ tone }), className)}
-        ref={ref}
-        {...props}
-      >
+      <div className={cn(chipCloudTone({ tone }), className)} ref={ref} {...props}>
         {label && (
           <span
             className={cn(

@@ -24,18 +24,18 @@ Fill one in, then move it into the collection to publish it.
 
 ## Field reference (matches `src/content/config.ts` testimonials schema)
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| `locale` | yes | `en` here; use `bn` for Bengali mirrors |
-| `name` | yes | Patient name as they consented to publish |
-| `location` | no | e.g. `Dhaka, Bangladesh` |
-| `targetCountry` | no | One of the slugs in `COUNTRY_SLUGS` (config.ts). Controls which country page shows the story |
-| `quote` | yes | The patient's own words, as shared |
-| `image` | no | Photo URL (only with consent) |
-| `video` | no | Video URL |
-| `videoDuration` | no | e.g. `1:42` |
-| `brandLabel` | no | Campaign label, e.g. `BIRTH` |
-| `relatedTreatmentSlugs` | no | Treatment slugs this story relates to |
+| Field                   | Required | Notes                                                                                        |
+| ----------------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `locale`                | yes      | `en` here; use `bn` for Bengali mirrors                                                      |
+| `name`                  | yes      | Patient name as they consented to publish                                                    |
+| `location`              | no       | e.g. `Dhaka, Bangladesh`                                                                     |
+| `targetCountry`         | no       | One of the slugs in `COUNTRY_SLUGS` (config.ts). Controls which country page shows the story |
+| `quote`                 | yes      | The patient's own words, as shared                                                           |
+| `image`                 | no       | Photo URL (only with consent)                                                                |
+| `video`                 | no       | Video URL                                                                                    |
+| `videoDuration`         | no       | e.g. `1:42`                                                                                  |
+| `brandLabel`            | no       | Campaign label, e.g. `BIRTH`                                                                 |
+| `relatedTreatmentSlugs` | no       | Treatment slugs this story relates to                                                        |
 
 ## Consent checklist (before moving any file into the collection)
 

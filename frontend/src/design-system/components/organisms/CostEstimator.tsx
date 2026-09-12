@@ -9,8 +9,7 @@ export interface CostEstimatorOption {
   cost: number;
 }
 
-export interface CostEstimatorProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface CostEstimatorProps extends React.HTMLAttributes<HTMLDivElement> {
   treatments: CostEstimatorOption[];
   accommodations: CostEstimatorOption[];
   disclaimer?: string;
@@ -37,14 +36,11 @@ const CostEstimator = React.forwardRef<HTMLDivElement, CostEstimatorProps>(
     ref
   ) => {
     const [treatment, setTreatment] = React.useState(treatments[0]?.value ?? '');
-    const [accommodation, setAccommodation] = React.useState(
-      accommodations[0]?.value ?? ''
-    );
+    const [accommodation, setAccommodation] = React.useState(accommodations[0]?.value ?? '');
 
     const treatmentOption = treatments.find((t) => t.value === treatment);
     const treatmentCost = treatmentOption?.cost ?? 0;
-    const accommodationCost =
-      accommodations.find((a) => a.value === accommodation)?.cost ?? 0;
+    const accommodationCost = accommodations.find((a) => a.value === accommodation)?.cost ?? 0;
     const total = treatmentCost + accommodationCost;
 
     const quoteHref = getQuoteHref
@@ -98,9 +94,7 @@ const CostEstimator = React.forwardRef<HTMLDivElement, CostEstimatorProps>(
         <div className="flex flex-col items-center justify-between gap-4 rounded-xl bg-white p-6 sm:flex-row">
           <div>
             <p className="text-sm text-text-muted">Estimated total</p>
-            <p className="text-4xl font-bold text-ink">
-              ${total.toLocaleString()}
-            </p>
+            <p className="text-4xl font-bold text-ink">${total.toLocaleString()}</p>
           </div>
           <Button size="lg" asChild>
             <a href={quoteHref}>{quoteCta}</a>

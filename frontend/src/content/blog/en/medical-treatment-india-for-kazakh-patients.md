@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Kazakh Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Almaty to India for treatment: medical visa requirements, flight routes, cost comparisons in Kazakhstani tenge, and choosing the right hospital for Kazakh families."
+excerpt: 'Travelling from Almaty to India for treatment: medical visa requirements, flight routes, cost comparisons in Kazakhstani tenge, and choosing the right hospital for Kazakh families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-27
@@ -32,13 +32,13 @@ Patients from Kazakhstan increasingly travel to India for medical treatment, see
 
 For Kazakh families weighing treatment in India against popular regional alternatives, the savings are meaningful. Indicative package prices (at roughly 470 KZT per US dollar):
 
-| Treatment | India (USD) | Approx. KZT | Turkey | South Korea |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ₸2.1M–5.6M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | ₸1.2M–3.8M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | ₸1.4M–11.8M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | ₸1.9M–5.6M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | ₸1.6M–3.3M | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. KZT | Turkey | South Korea |
+| -------------------- | ------------- | ----------- | ------ | ----------- |
+| Cardiac surgery      | $4,500–12,000 | ₸2.1M–5.6M  | Higher | Far higher  |
+| Knee/hip replacement | $2,500–8,000  | ₸1.2M–3.8M  | Higher | $30,000+    |
+| Cancer treatment     | $3,000–25,000 | ₸1.4M–11.8M | Higher | Far higher  |
+| Spine surgery        | $4,000–12,000 | ₸1.9M–5.6M  | Higher | $50,000+    |
+| IVF (per cycle)      | $3,500–7,000  | ₸1.6M–3.3M  | Higher | Far higher  |
 
 Cardiac surgery and orthopedic procedures are among the most common treatments Kazakh patients travel for, with package prices often significantly below those in Turkey and South Korea.
 

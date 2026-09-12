@@ -18,8 +18,25 @@ import { resolvePublicImage } from '../../lib/images';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
-import { getHospitals, getDoctors, getTestimonials, getTestimonialsByHospital, resolveHospital, getDoctorsAtHospital, groupDoctorsBySpecialty, getSimilarHospitals, getBlogPosts, getRelatedArticles, entrySlug } from '../../lib/content';
-import { hospital as hospitalSchema, breadcrumbs, faqPage, hospitalProcedureCosts } from '../../lib/schema';
+import {
+  getHospitals,
+  getDoctors,
+  getTestimonials,
+  getTestimonialsByHospital,
+  resolveHospital,
+  getDoctorsAtHospital,
+  groupDoctorsBySpecialty,
+  getSimilarHospitals,
+  getBlogPosts,
+  getRelatedArticles,
+  entrySlug,
+} from '../../lib/content';
+import {
+  hospital as hospitalSchema,
+  breadcrumbs,
+  faqPage,
+  hospitalProcedureCosts,
+} from '../../lib/schema';
 import { getDoctorInquiryLink, getHospitalInquiryLink } from '../../lib/whatsapp';
 import { generateHospitalFaqs, mergeFaqs } from '../../lib/faq-generator';
 import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
@@ -51,7 +68,13 @@ export async function getStaticPaths() {
     const hospitalReviews = getTestimonialsByHospital(slug, testimonials);
     return {
       params: { slug },
-      props: { hospital: entry.data, doctors: hospitalDoctors, entry, allHospitals: hospitals, reviews: hospitalReviews },
+      props: {
+        hospital: entry.data,
+        doctors: hospitalDoctors,
+        entry,
+        allHospitals: hospitals,
+        reviews: hospitalReviews,
+      },
     };
   });
 }
@@ -84,8 +107,7 @@ const aggregateRating =
   ratedReviews.length > 0
     ? {
         ratingValue:
-          ratedReviews.reduce((sum, r) => sum + (r.data.rating ?? 0), 0) /
-          ratedReviews.length,
+          ratedReviews.reduce((sum, r) => sum + (r.data.rating ?? 0), 0) / ratedReviews.length,
         reviewCount: ratedReviews.length,
       }
     : undefined;
@@ -123,11 +145,13 @@ if (faqs.length > 0) {
 // Reason: emit MedicalProcedure JSON-LD for each procedure cost entry so
 // AI/answer engines can extract "how much does X cost at Y hospital".
 if (hospital.procedureCosts && hospital.procedureCosts.length > 0) {
-  jsonLd.push(...hospitalProcedureCosts({
-    hospitalName: hospital.name,
-    hospitalUrl: pageUrl,
-    procedures: hospital.procedureCosts,
-  }));
+  jsonLd.push(
+    ...hospitalProcedureCosts({
+      hospitalName: hospital.name,
+      hospitalUrl: pageUrl,
+      procedures: hospital.procedureCosts,
+    })
+  );
 }
 
 // ── Editorial data shaping ────────────────────────────────────────────
@@ -135,8 +159,12 @@ if (hospital.procedureCosts && hospital.procedureCosts.length > 0) {
 // trust signals as big counted numerals on the dark band under the hero.
 const stats: StatItem[] = [
   ...(hospital.bedCount ? [{ value: hospital.bedCount, label: t.hospitals.bedsLabel }] : []),
-  ...(hospital.establishedYear ? [{ value: hospital.establishedYear, label: t.hospitals.establishedLabel }] : []),
-  ...(hospital.specialities ? [{ value: hospital.specialities.length, label: t.hospitals.specialitiesCountLabel }] : []),
+  ...(hospital.establishedYear
+    ? [{ value: hospital.establishedYear, label: t.hospitals.establishedLabel }]
+    : []),
+  ...(hospital.specialities
+    ? [{ value: hospital.specialities.length, label: t.hospitals.specialitiesCountLabel }]
+    : []),
   ...(hospital.accreditations && hospital.accreditations.length > 0
     ? [{ value: hospital.accreditations.length, label: t.hospitals.accreditationsLabel }]
     : []),
@@ -180,230 +208,92 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
   />
 
   <main>
-
-  {/* ── FULL-BLEED HERO IMAGE with bg-ink/60 gradient overlay ──────────
-      Hospital name + accreditation badges float on the image. */}
-  <section class="relative overflow-hidden bg-ink text-cream-100">
-    {hospital.image && (
-      <img
-        src={hospital.image}
-        alt={hospital.name}
-        class="absolute inset-0 h-full w-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-        data-anim="mask-reveal"
-      />
-    )}
-    {/* Gradient scrim — darker at top (breadcrumb zone) and bottom (title
+    {
+      /* ── FULL-BLEED HERO IMAGE with bg-ink/60 gradient overlay ──────────
+      Hospital name + accreditation badges float on the image. */
+    }
+    <section class="relative overflow-hidden bg-ink text-cream-100">
+      {
+        hospital.image && (
+          <img
+            src={hospital.image}
+            alt={hospital.name}
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            data-anim="mask-reveal"
+          />
+        )
+      }
+      {
+        /* Gradient scrim — darker at top (breadcrumb zone) and bottom (title
         zone), with a diagonal rgba overlay so the hospital name and
         accreditation badges stay readable on bright photos. Matches the
-        CountriesServeSection overlay pattern for consistency. */}
-    <div
-      class="absolute inset-0"
-      style="background:linear-gradient(180deg, rgba(14,36,56,0.88) 0%, rgba(14,36,56,0.62) 45%, rgba(14,36,56,0.85) 100%)"
-      aria-hidden="true"
-    />
-    <div class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-
-    <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
-      <Breadcrumb
-        items={[
-          { label: t.nav.home, href: '/' },
-          { label: t.hospitals.title, href: '/hospitals' },
-          { label: hospital.name },
-        ]}
-        tone="dark"
-        class="mb-10"
-        data-anim="fade-in-up"
-      />
-
-      <div data-anim="stagger-children">
-        <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl" data-anim="headline-reveal">
-          {hospital.name}
-        </h1>
-        <p class="mt-4 flex items-center gap-2 text-lg text-white">
-          <Icon name="map-pin" size={18} />
-          {hospital.city}, {hospital.country}
-        </p>
-
-        {/* Accreditation badges floating on the image — logo if available, text pill fallback */}
-        {hospital.accreditations && hospital.accreditations.length > 0 && (
-          <div class="mt-6 flex flex-wrap items-center gap-3" data-anim="fade-in-up">
-            {hospital.accreditations.map((badge) => {
-              const logo = accreditationLogos[badge];
-              return logo ? (
-                <img
-                  src={logo}
-                  alt={`${badge} `}
-                  title={badge}
-                  class="h-10 w-auto rounded bg-cream-100/95 p-1 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <span class="rounded-full border border-cream-100/20 bg-cream-100/10 px-4 py-1.5 text-xs font-semibold text-cream-100 backdrop-blur-sm">
-                  {badge}
-                </span>
-              );
-            })}
-          </div>
-        )}
-
-        {/* CTAs */}
-        <div class="mt-8 flex flex-wrap gap-4">
-          <LeadModalTrigger
-            client:load
-            label={t.doctors.detail.bookCta}
-            modalTitle={t.leadModal.title}
-            modalSubtitle={t.leadModal.subtitle}
-            closeLabel={t.leadModal.close}
-            source={LEAD_SOURCE.HOSPITAL_PAGE}
-            hospitalSlug={Astro.params.slug}
-            className="rounded-card px-6 py-3"
-          />
-          {hospitalWhatsAppHref && (
-            <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
-              <Icon name="whatsapp" size={18} />
-              {t.doctors.detail.whatsappCta}
-            </a>
-          )}
-        </div>
+        CountriesServeSection overlay pattern for consistency. */
+      }
+      <div
+        class="absolute inset-0"
+        style="background:linear-gradient(180deg, rgba(14,36,56,0.88) 0%, rgba(14,36,56,0.62) 45%, rgba(14,36,56,0.85) 100%)"
+        aria-hidden="true"
+      >
       </div>
-    </div>
-  </section>
-
-  {/* ── DARK STATBAND — beds / established / speciality count ─────────── */}
-  {stats.length > 0 && (
-    <section class="bg-ink py-12 text-cream-100" data-anim="fade-in-up">
-      <div class="container">
-        <StatBand stats={stats} tone="dark" />
-      </div>
-    </section>
-  )}
-
-  <section class="container py-16 md:py-20">
-    {/* ── BODY + STICKY RAIL ──────────────────────────────────────────── */}
-    <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
-      <div>
-        {/* About */}
-        <div class="prose prose-ink prose-editorial max-w-none" data-anim="fade-in-up">
-          <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.hospitals.about}</h2>
-          <p class="text-ink/70 leading-relaxed">{hospital.description}</p>
-        </div>
-
-        {/* Outcomes — "By the numbers" box with verified volume metrics */}
-        {hospital.outcomes && hospital.outcomes.length > 0 && (
-          <div class="mt-10 not-prose" data-anim="fade-in-up">
-            <h2 class="mb-5 font-display text-xl font-semibold text-ink">{t.hospitals.outcomesTitle}</h2>
-            <div class="grid gap-4 sm:grid-cols-3">
-              {hospital.outcomes.map((item) => (
-                <div class="rounded-xl border border-cream-200 bg-cream-50 p-5">
-                  <div class="font-display text-2xl font-bold text-violet-600 md:text-3xl">
-                    {item.value}
-                  </div>
-                  <div class="mt-1 text-sm font-medium text-ink">
-                    {item.label}
-                  </div>
-                  {item.qualifier && (
-                    <div class="mt-0.5 text-xs text-ink/50">
-                      {item.qualifier}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Specialities → ChipCloud */}
-        {hospital.specialities && hospital.specialities.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.specialities}</h2>
-            <ChipCloud items={hospital.specialities} tone="light" />
-          </div>
-        )}
-
-        {/* Prose body */}
-        <div class="prose prose-ink prose-editorial mt-12 max-w-none" data-anim="scroll-reveal">
-          <Content />
-        </div>
-
-        {/* Interactive map — click-to-load facade placed after the
-            "How to Reach" prose section so patients see the visual
-            right where they're reading directions. */}
-        {hospital.mapEmbedUrl && (
-          <div class="mt-8" data-anim="fade-in-up">
-            <MapEmbed
-              client:visible
-              src={hospital.mapEmbedUrl}
-              name={hospital.name}
-              address={hospital.address}
-              openLabel={t.hospitals.openInGoogleMaps}
-              latitude={hospital.latitude}
-              longitude={hospital.longitude}
-            />
-          </div>
-        )}
-
-        {/* Amenities → grouped by category with highlighted features */}
-        {hospital.structuredAmenities && hospital.structuredAmenities.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.amenities}</h2>
-            <div class="space-y-8">
-              {hospital.structuredAmenities.map((group) => {
-                const categoryLabel = (t.hospitals.amenityCategories ?? {})[group.category] ?? group.category;
-                return (
-                  <div>
-                    <h3 class="mb-4 font-display text-lg font-semibold text-ink/80">{categoryLabel}</h3>
-                    {group.highlights && group.highlights.length > 0 && (
-                      <div class="mb-4 grid gap-4 sm:grid-cols-2">
-                        {group.highlights.map((highlight) => (
-                          <div class="rounded-card border border-cream-300 bg-cream-100 p-4">
-                            <p class="text-sm font-semibold text-ink">{highlight.name}</p>
-                            <p class="mt-1 text-sm leading-relaxed text-ink/60">{highlight.description}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {group.items && group.items.length > 0 && (
-                      <ChipCloud items={group.items} tone="light" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Fallback: flat amenities (for hospitals without structuredAmenities) */}
-        {!hospital.structuredAmenities && hospital.amenities && hospital.amenities.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.amenities}</h2>
-            <ChipCloud items={hospital.amenities} tone="light" />
-          </div>
-        )}
-
-        {/* Gallery → MarqueeStrip horizontal scroll */}
-        {hospital.gallery && hospital.gallery.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.gallery}</h2>
-            <MarqueeStrip>
-              {hospital.gallery.map((image, i) => (
-                <div class="shrink-0 snap-start">
-                  <img src={image} alt={`${hospital.name} gallery ${i + 1}`} class="h-48 w-72 rounded-card object-cover md:h-56" loading="lazy" />
-                </div>
-              ))}
-            </MarqueeStrip>
-          </div>
-        )}
+      <div
+        class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl"
+        aria-hidden="true"
+      >
       </div>
 
-      {/* Sticky rail — contact info + booking */}
-      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <h2 class="mb-4 font-display text-lg font-semibold text-ink">{t.doctors.detail.bookCta}</h2>
-          <p class="text-sm text-ink/60">{t.hospitals.consultSummary}</p>
-          <div class="mt-5 flex flex-col gap-3">
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[
+            { label: t.nav.home, href: '/' },
+            { label: t.hospitals.title, href: '/hospitals' },
+            { label: hospital.name },
+          ]}
+          tone="dark"
+          class="mb-10"
+          data-anim="fade-in-up"
+        />
+
+        <div data-anim="stagger-children">
+          <h1
+            class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl"
+            data-anim="headline-reveal"
+          >
+            {hospital.name}
+          </h1>
+          <p class="mt-4 flex items-center gap-2 text-lg text-white">
+            <Icon name="map-pin" size={18} />
+            {hospital.city}, {hospital.country}
+          </p>
+
+          {/* Accreditation badges floating on the image — logo if available, text pill fallback */}
+          {
+            hospital.accreditations && hospital.accreditations.length > 0 && (
+              <div class="mt-6 flex flex-wrap items-center gap-3" data-anim="fade-in-up">
+                {hospital.accreditations.map((badge) => {
+                  const logo = accreditationLogos[badge];
+                  return logo ? (
+                    <img
+                      src={logo}
+                      alt={`${badge} `}
+                      title={badge}
+                      class="bg-cream-100/95 h-10 w-auto rounded object-contain p-1"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span class="border-cream-100/20 bg-cream-100/10 rounded-full border px-4 py-1.5 text-xs font-semibold text-cream-100 backdrop-blur-sm">
+                      {badge}
+                    </span>
+                  );
+                })}
+              </div>
+            )
+          }
+
+          {/* CTAs */}
+          <div class="mt-8 flex flex-wrap gap-4">
             <LeadModalTrigger
               client:load
               label={t.doctors.detail.bookCta}
@@ -412,262 +302,523 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
               closeLabel={t.leadModal.close}
               source={LEAD_SOURCE.HOSPITAL_PAGE}
               hospitalSlug={Astro.params.slug}
-              full
               className="rounded-card px-6 py-3"
             />
-            {hospitalWhatsAppHref && (
-              <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
-                <Icon name="whatsapp" size={18} />
-                {t.doctors.detail.whatsappCta}
-              </a>
-            )}
+            {
+              hospitalWhatsAppHref && (
+                <a
+                  href={hospitalWhatsAppHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+                  data-anim="press-button"
+                >
+                  <Icon name="whatsapp" size={18} />
+                  {t.doctors.detail.whatsappCta}
+                </a>
+              )
+            }
           </div>
         </div>
+      </div>
+    </section>
 
-        {/* Contact details */}
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <h2 class="mb-4 font-display text-lg font-semibold text-ink">Contact</h2>
-          <dl class="space-y-3 text-sm" data-anim="stagger-children">
-            {hospital.address && (
-              <div class="flex flex-col gap-1">
-                <dt class="text-ink/50">Address</dt>
-                <dd class="font-medium text-ink/80">{hospital.address}</dd>
+    {/* ── DARK STATBAND — beds / established / speciality count ─────────── */}
+    {
+      stats.length > 0 && (
+        <section class="bg-ink py-12 text-cream-100" data-anim="fade-in-up">
+          <div class="container">
+            <StatBand stats={stats} tone="dark" />
+          </div>
+        </section>
+      )
+    }
+
+    <section class="container py-16 md:py-20">
+      {/* ── BODY + STICKY RAIL ──────────────────────────────────────────── */}
+      <div class="grid gap-12 lg:grid-cols-[1fr_22rem]">
+        <div>
+          {/* About */}
+          <div class="prose prose-ink prose-editorial max-w-none" data-anim="fade-in-up">
+            <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.hospitals.about}</h2>
+            <p class="text-ink/70 leading-relaxed">{hospital.description}</p>
+          </div>
+
+          {/* Outcomes — "By the numbers" box with verified volume metrics */}
+          {
+            hospital.outcomes && hospital.outcomes.length > 0 && (
+              <div class="not-prose mt-10" data-anim="fade-in-up">
+                <h2 class="mb-5 font-display text-xl font-semibold text-ink">
+                  {t.hospitals.outcomesTitle}
+                </h2>
+                <div class="grid gap-4 sm:grid-cols-3">
+                  {hospital.outcomes.map((item) => (
+                    <div class="rounded-xl border border-cream-200 bg-cream-50 p-5">
+                      <div class="font-display text-2xl font-bold text-violet-600 md:text-3xl">
+                        {item.value}
+                      </div>
+                      <div class="mt-1 text-sm font-medium text-ink">{item.label}</div>
+                      {item.qualifier && (
+                        <div class="text-ink/50 mt-0.5 text-xs">{item.qualifier}</div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            )}
-            {hospital.phone && (
-              <div class="flex justify-between gap-4">
-                <dt class="text-ink/50">Phone</dt>
-                <dd class="font-medium text-ink/80">{hospital.phone}</dd>
+            )
+          }
+
+          {/* Specialities → ChipCloud */}
+          {
+            hospital.specialities && hospital.specialities.length > 0 && (
+              <div class="mt-12" data-anim="fade-in-up">
+                <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.hospitals.specialities}
+                </h2>
+                <ChipCloud items={hospital.specialities} tone="light" />
               </div>
-            )}
-            {hospital.email && (
-              <div class="flex flex-col gap-1">
-                <dt class="text-ink/50">Email</dt>
-                <dd class="font-medium text-ink/80">{hospital.email}</dd>
+            )
+          }
+
+          {/* Prose body */}
+          <div class="prose prose-ink prose-editorial mt-12 max-w-none" data-anim="scroll-reveal">
+            <Content />
+          </div>
+
+          {
+            /* Interactive map — click-to-load facade placed after the
+            "How to Reach" prose section so patients see the visual
+            right where they're reading directions. */
+          }
+          {
+            hospital.mapEmbedUrl && (
+              <div class="mt-8" data-anim="fade-in-up">
+                <MapEmbed
+                  client:visible
+                  src={hospital.mapEmbedUrl}
+                  name={hospital.name}
+                  address={hospital.address}
+                  openLabel={t.hospitals.openInGoogleMaps}
+                  latitude={hospital.latitude}
+                  longitude={hospital.longitude}
+                />
               </div>
-            )}
-          </dl>
+            )
+          }
+
+          {/* Amenities → grouped by category with highlighted features */}
+          {
+            hospital.structuredAmenities && hospital.structuredAmenities.length > 0 && (
+              <div class="mt-12" data-anim="fade-in-up">
+                <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.hospitals.amenities}
+                </h2>
+                <div class="space-y-8">
+                  {hospital.structuredAmenities.map((group) => {
+                    const categoryLabel =
+                      (t.hospitals.amenityCategories ?? {})[group.category] ?? group.category;
+                    return (
+                      <div>
+                        <h3 class="text-ink/80 mb-4 font-display text-lg font-semibold">
+                          {categoryLabel}
+                        </h3>
+                        {group.highlights && group.highlights.length > 0 && (
+                          <div class="mb-4 grid gap-4 sm:grid-cols-2">
+                            {group.highlights.map((highlight) => (
+                              <div class="rounded-card border border-cream-300 bg-cream-100 p-4">
+                                <p class="text-sm font-semibold text-ink">{highlight.name}</p>
+                                <p class="text-ink/60 mt-1 text-sm leading-relaxed">
+                                  {highlight.description}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {group.items && group.items.length > 0 && (
+                          <ChipCloud items={group.items} tone="light" />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )
+          }
+
+          {/* Fallback: flat amenities (for hospitals without structuredAmenities) */}
+          {
+            !hospital.structuredAmenities &&
+              hospital.amenities &&
+              hospital.amenities.length > 0 && (
+                <div class="mt-12" data-anim="fade-in-up">
+                  <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                    {t.hospitals.amenities}
+                  </h2>
+                  <ChipCloud items={hospital.amenities} tone="light" />
+                </div>
+              )
+          }
+
+          {/* Gallery → MarqueeStrip horizontal scroll */}
+          {
+            hospital.gallery && hospital.gallery.length > 0 && (
+              <div class="mt-12" data-anim="fade-in-up">
+                <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.hospitals.gallery}
+                </h2>
+                <MarqueeStrip>
+                  {hospital.gallery.map((image, i) => (
+                    <div class="shrink-0 snap-start">
+                      <img
+                        src={image}
+                        alt={`${hospital.name} gallery ${i + 1}`}
+                        class="h-48 w-72 rounded-card object-cover md:h-56"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </MarqueeStrip>
+              </div>
+            )
+          }
         </div>
-      </aside>
-    </div>
 
-    {/* ── DOCTORS AT HOSPITAL — grouped by specialty ─────────────────── */}
-    {doctors.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.doctorsAtHospital}</h2>
-        {groupDoctorsBySpecialty(doctors).map((group: { specialty: string; doctors: Doctor[] }) => (
-          <div class="mb-10">
-            <h3 class="mb-4 font-display text-lg font-semibold text-ink/80">{group.specialty}</h3>
-            <div class="grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
-              {group.doctors.map((doctor: Doctor) => (
-                <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
-              ))}
+        {/* Sticky rail — contact info + booking */}
+        <aside
+          class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"
+          data-anim="fade-in-up"
+        >
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <h2 class="mb-4 font-display text-lg font-semibold text-ink">
+              {t.doctors.detail.bookCta}
+            </h2>
+            <p class="text-ink/60 text-sm">{t.hospitals.consultSummary}</p>
+            <div class="mt-5 flex flex-col gap-3">
+              <LeadModalTrigger
+                client:load
+                label={t.doctors.detail.bookCta}
+                modalTitle={t.leadModal.title}
+                modalSubtitle={t.leadModal.subtitle}
+                closeLabel={t.leadModal.close}
+                source={LEAD_SOURCE.HOSPITAL_PAGE}
+                hospitalSlug={Astro.params.slug}
+                full
+                className="rounded-card px-6 py-3"
+              />
+              {
+                hospitalWhatsAppHref && (
+                  <a
+                    href={hospitalWhatsAppHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
+                    data-anim="press-button"
+                  >
+                    <Icon name="whatsapp" size={18} />
+                    {t.doctors.detail.whatsappCta}
+                  </a>
+                )
+              }
             </div>
           </div>
-        ))}
-      </section>
-    )}
 
-    {/* ── FAQ ───────────────────────────────────────────────────────── */}
-    {faqs.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.hospitals.faqTitle}</h2>
-        <FAQAccordion items={faqs} client:visible />
-      </section>
-    )}
-  </section>
+          {/* Contact details */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <h2 class="mb-4 font-display text-lg font-semibold text-ink">Contact</h2>
+            <dl class="space-y-3 text-sm" data-anim="stagger-children">
+              {
+                hospital.address && (
+                  <div class="flex flex-col gap-1">
+                    <dt class="text-ink/50">Address</dt>
+                    <dd class="text-ink/80 font-medium">{hospital.address}</dd>
+                  </div>
+                )
+              }
+              {
+                hospital.phone && (
+                  <div class="flex justify-between gap-4">
+                    <dt class="text-ink/50">Phone</dt>
+                    <dd class="text-ink/80 font-medium">{hospital.phone}</dd>
+                  </div>
+                )
+              }
+              {
+                hospital.email && (
+                  <div class="flex flex-col gap-1">
+                    <dt class="text-ink/50">Email</dt>
+                    <dd class="text-ink/80 font-medium">{hospital.email}</dd>
+                  </div>
+                )
+              }
+            </dl>
+          </div>
+        </aside>
+      </div>
 
-  {/* ── PROCEDURE COST TABLE — transparent USD price ranges ─────────── */}
-  {hospital.procedureCosts && hospital.procedureCosts.length > 0 && (
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="fade-in-up">
-      <div class="container">
-        <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
-          {t.hospitals.costTableTitle}
-        </h2>
-        <p class="mb-8 max-w-2xl text-ink/60">
-          {t.hospitals.costTableSubtitle}
-        </p>
-        <div class="rounded-card border border-cream-300 bg-white shadow-base">
-          {/* Desktop: table layout (md and up) */}
-          <table class="hidden w-full text-left text-sm md:table">
-            <thead class="border-b border-cream-300 bg-cream-100">
-              <tr>
-                <th class="px-5 py-4 font-semibold text-ink">{t.hospitals.costTableProcedure}</th>
-                <th class="px-5 py-4 font-semibold text-ink whitespace-nowrap">{t.hospitals.costTableEstimatedCost}</th>
-                <th class="hidden px-5 py-4 font-semibold text-ink lg:table-cell">{t.hospitals.costTableNotes}</th>
-                <th class="px-5 py-4"></th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-cream-200">
-              {hospital.procedureCosts.map((cost) => (
-                <tr class="hover:bg-cream-50">
-                  <td class="px-5 py-4 font-medium text-ink">{cost.procedure}</td>
-                  <td class="px-5 py-4 whitespace-nowrap text-violet-600 font-semibold">
-                    {cost.fromPrice} – {cost.toPrice}
-                  </td>
-                  <td class="hidden px-5 py-4 text-ink/50 lg:table-cell">
-                    {cost.note ?? '—'}
-                  </td>
-                  <td class="px-5 py-4 text-right">
+      {/* ── DOCTORS AT HOSPITAL — grouped by specialty ─────────────────── */}
+      {
+        doctors.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.hospitals.doctorsAtHospital}
+            </h2>
+            {groupDoctorsBySpecialty(doctors).map(
+              (group: { specialty: string; doctors: Doctor[] }) => (
+                <div class="mb-10">
+                  <h3 class="text-ink/80 mb-4 font-display text-lg font-semibold">
+                    {group.specialty}
+                  </h3>
+                  <div class="grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
+                    {group.doctors.map((doctor: Doctor) => (
+                      <DoctorCard
+                        key={doctor.name}
+                        doctor={doctor}
+                        bookLabel={t.doctors.bookCta}
+                        whatsappLabel={t.doctors.detail.whatsappCta}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            )}
+          </section>
+        )
+      }
+
+      {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      {
+        faqs.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.hospitals.faqTitle}
+            </h2>
+            <FAQAccordion items={faqs} client:visible />
+          </section>
+        )
+      }
+    </section>
+
+    {/* ── PROCEDURE COST TABLE — transparent USD price ranges ─────────── */}
+    {
+      hospital.procedureCosts && hospital.procedureCosts.length > 0 && (
+        <section class="bg-cream-100 py-16 md:py-20" data-anim="fade-in-up">
+          <div class="container">
+            <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.hospitals.costTableTitle}
+            </h2>
+            <p class="text-ink/60 mb-8 max-w-2xl">{t.hospitals.costTableSubtitle}</p>
+            <div class="rounded-card border border-cream-300 bg-white shadow-base">
+              {/* Desktop: table layout (md and up) */}
+              <table class="hidden w-full text-left text-sm md:table">
+                <thead class="border-b border-cream-300 bg-cream-100">
+                  <tr>
+                    <th class="px-5 py-4 font-semibold text-ink">
+                      {t.hospitals.costTableProcedure}
+                    </th>
+                    <th class="whitespace-nowrap px-5 py-4 font-semibold text-ink">
+                      {t.hospitals.costTableEstimatedCost}
+                    </th>
+                    <th class="hidden px-5 py-4 font-semibold text-ink lg:table-cell">
+                      {t.hospitals.costTableNotes}
+                    </th>
+                    <th class="px-5 py-4" />
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-cream-200">
+                  {hospital.procedureCosts.map((cost) => (
+                    <tr class="hover:bg-cream-50">
+                      <td class="px-5 py-4 font-medium text-ink">{cost.procedure}</td>
+                      <td class="whitespace-nowrap px-5 py-4 font-semibold text-violet-600">
+                        {cost.fromPrice} – {cost.toPrice}
+                      </td>
+                      <td class="text-ink/50 hidden px-5 py-4 lg:table-cell">{cost.note ?? '—'}</td>
+                      <td class="px-5 py-4 text-right">
+                        {cost.href && (
+                          <a
+                            href={cost.href}
+                            class="text-sm font-medium text-violet-600 hover:text-violet-700 hover:underline"
+                          >
+                            {t.hospitals.costTableViewDetails} →
+                          </a>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {/* Mobile: stacked card layout (below md) */}
+              <div class="divide-y divide-cream-200 md:hidden">
+                {hospital.procedureCosts.map((cost) => (
+                  <div class="p-5">
+                    <div class="font-medium text-ink">{cost.procedure}</div>
+                    <div class="mt-1 font-semibold text-violet-600">
+                      {cost.fromPrice} – {cost.toPrice}
+                    </div>
+                    {cost.note && <div class="text-ink/50 mt-1 text-xs">{cost.note}</div>}
                     {cost.href && (
-                      <a href={cost.href} class="text-sm font-medium text-violet-600 hover:text-violet-700 hover:underline">
+                      <a
+                        href={cost.href}
+                        class="mt-2 inline-block text-sm font-medium text-violet-600 hover:text-violet-700 hover:underline"
+                      >
                         {t.hospitals.costTableViewDetails} →
                       </a>
                     )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          {/* Mobile: stacked card layout (below md) */}
-          <div class="divide-y divide-cream-200 md:hidden">
-            {hospital.procedureCosts.map((cost) => (
-              <div class="p-5">
-                <div class="font-medium text-ink">{cost.procedure}</div>
-                <div class="mt-1 text-violet-600 font-semibold">{cost.fromPrice} – {cost.toPrice}</div>
-                {cost.note && (
-                  <div class="mt-1 text-xs text-ink/50">{cost.note}</div>
-                )}
-                {cost.href && (
-                  <a href={cost.href} class="mt-2 inline-block text-sm font-medium text-violet-600 hover:text-violet-700 hover:underline">
-                    {t.hospitals.costTableViewDetails} →
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-ink/40">
-          {t.hospitals.costTableDisclaimer}
-        </p>
-      </div>
-    </section>
-  )}
-
-  {/* ── SIMILAR HOSPITALS — cross-link to peers with shared specialities ── */}
-  {similarHospitals.length > 0 && (
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="fade-in-up">
-      <div class="container">
-        <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
-          {t.hospitals.similarHospitalsTitle}
-        </h2>
-        <p class="mb-8 max-w-2xl text-ink/60">
-          {t.hospitals.similarHospitalsSubtitle}
-        </p>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {similarHospitals.map((peer) => (
-            <HospitalCard
-              client:load
-              hospital={{
-                slug: entrySlug(peer),
-                name: peer.data.name,
-                city: peer.data.city,
-                country: peer.data.country,
-                image: peer.data.image,
-                accreditations: peer.data.accreditations,
-              }}
-              viewLabel={t.hospitals.viewHospital}
-              locale="en"
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {/* ── RELATED ARTICLES — country-specific guides + treatment planning ─── */}
-  {relatedArticles.length > 0 && (
-    <section class="py-16 md:py-20" data-anim="fade-in-up">
-      <div class="container">
-        <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
-          {t.hospitals.relatedArticlesTitle}
-        </h2>
-        <p class="mb-8 max-w-2xl text-ink/60">
-          {t.hospitals.relatedArticlesSubtitle}
-        </p>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {relatedArticles.map((post) => (
-            <BlogCard
-              client:load
-              post={{
-                slug: entrySlug(post),
-                title: post.data.title,
-                excerpt: post.data.excerpt,
-                coverImage: post.data.coverImage,
-                date: post.data.publishedAt.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                }),
-                tags: post.data.tags,
-              }}
-              href={`/blog/${entrySlug(post)}`}
-              readMoreLabel={t.hospitals.readArticleLabel}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  {/* ── PATIENT REVIEWS — testimonials tagged with this hospital ─────── */}
-  {reviews.length > 0 && (
-    <section class="py-16 md:py-20" data-anim="fade-in-up">
-      <div class="container">
-        <div class="mb-8 flex items-start justify-between gap-4">
-          <div>
-            <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">
-              {t.hospitals.patientReviewsTitle}
-            </h2>
-            <p class="mt-2 max-w-2xl text-ink/60">
-              {t.hospitals.patientReviewsSubtitle}
-            </p>
-          </div>
-          {aggregateRating && (
-            <div class="shrink-0 rounded-card border border-cream-300 bg-cream-100 px-5 py-3 text-center">
-              <div class="font-display text-3xl font-bold text-violet-600">
-                {aggregateRating.ratingValue.toFixed(1)}
-              </div>
-              <div class="mt-1 text-xs text-ink/60">
-                {t.hospitals.basedOnReviews.replace('{{count}}', String(aggregateRating.reviewCount))}
+                  </div>
+                ))}
               </div>
             </div>
-          )}
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {reviews.slice(0, 6).map((review) => (
-            <div class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
-              {review.data.rating && (
-                <div class="mb-3 flex gap-0.5" aria-label={`${review.data.rating} out of 5 stars`}>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill={i < (review.data.rating ?? 0) ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="1.5" class={i < (review.data.rating ?? 0) ? 'text-amber-400' : 'text-cream-300'}>
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
+            <p class="text-ink/40 mt-4 text-xs">{t.hospitals.costTableDisclaimer}</p>
+          </div>
+        </section>
+      )
+    }
+
+    {/* ── SIMILAR HOSPITALS — cross-link to peers with shared specialities ── */}
+    {
+      similarHospitals.length > 0 && (
+        <section class="bg-cream-100 py-16 md:py-20" data-anim="fade-in-up">
+          <div class="container">
+            <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.hospitals.similarHospitalsTitle}
+            </h2>
+            <p class="text-ink/60 mb-8 max-w-2xl">{t.hospitals.similarHospitalsSubtitle}</p>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {similarHospitals.map((peer) => (
+                <HospitalCard
+                  client:load
+                  hospital={{
+                    slug: entrySlug(peer),
+                    name: peer.data.name,
+                    city: peer.data.city,
+                    country: peer.data.country,
+                    image: peer.data.image,
+                    accreditations: peer.data.accreditations,
+                  }}
+                  viewLabel={t.hospitals.viewHospital}
+                  locale="en"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {/* ── RELATED ARTICLES — country-specific guides + treatment planning ─── */}
+    {
+      relatedArticles.length > 0 && (
+        <section class="py-16 md:py-20" data-anim="fade-in-up">
+          <div class="container">
+            <h2 class="mb-2 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.hospitals.relatedArticlesTitle}
+            </h2>
+            <p class="text-ink/60 mb-8 max-w-2xl">{t.hospitals.relatedArticlesSubtitle}</p>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedArticles.map((post) => (
+                <BlogCard
+                  client:load
+                  post={{
+                    slug: entrySlug(post),
+                    title: post.data.title,
+                    excerpt: post.data.excerpt,
+                    coverImage: post.data.coverImage,
+                    date: post.data.publishedAt.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    }),
+                    tags: post.data.tags,
+                  }}
+                  href={`/blog/${entrySlug(post)}`}
+                  readMoreLabel={t.hospitals.readArticleLabel}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {/* ── PATIENT REVIEWS — testimonials tagged with this hospital ─────── */}
+    {
+      reviews.length > 0 && (
+        <section class="py-16 md:py-20" data-anim="fade-in-up">
+          <div class="container">
+            <div class="mb-8 flex items-start justify-between gap-4">
+              <div>
+                <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.hospitals.patientReviewsTitle}
+                </h2>
+                <p class="text-ink/60 mt-2 max-w-2xl">{t.hospitals.patientReviewsSubtitle}</p>
+              </div>
+              {aggregateRating && (
+                <div class="shrink-0 rounded-card border border-cream-300 bg-cream-100 px-5 py-3 text-center">
+                  <div class="font-display text-3xl font-bold text-violet-600">
+                    {aggregateRating.ratingValue.toFixed(1)}
+                  </div>
+                  <div class="text-ink/60 mt-1 text-xs">
+                    {t.hospitals.basedOnReviews.replace(
+                      '{{count}}',
+                      String(aggregateRating.reviewCount)
+                    )}
+                  </div>
                 </div>
               )}
-              <p class="flex-1 text-sm leading-relaxed text-ink/80">
-                &ldquo;{review.data.quote}&rdquo;
-              </p>
-              <div class="mt-4 flex items-center gap-3">
-                {review.data.image && (
-                  <img src={review.data.image} alt={review.data.name} class="h-10 w-10 rounded-full object-cover" loading="lazy" />
-                )}
-                <div>
-                  <div class="text-sm font-semibold text-ink">{review.data.name}</div>
-                  {review.data.location && (
-                    <div class="text-xs text-ink/50">{review.data.location}</div>
-                  )}
-                </div>
-              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {reviews.slice(0, 6).map((review) => (
+                <div class="flex flex-col rounded-card border border-cream-300 bg-cream-100 p-6">
+                  {review.data.rating && (
+                    <div
+                      class="mb-3 flex gap-0.5"
+                      aria-label={`${review.data.rating} out of 5 stars`}
+                    >
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill={i < (review.data.rating ?? 0) ? 'currentColor' : 'none'}
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          class={
+                            i < (review.data.rating ?? 0) ? 'text-amber-400' : 'text-cream-300'
+                          }
+                        >
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                  )}
+                  <p class="text-ink/80 flex-1 text-sm leading-relaxed">
+                    &ldquo;{review.data.quote}&rdquo;
+                  </p>
+                  <div class="mt-4 flex items-center gap-3">
+                    {review.data.image && (
+                      <img
+                        src={review.data.image}
+                        alt={review.data.name}
+                        class="h-10 w-10 rounded-full object-cover"
+                        loading="lazy"
+                      />
+                    )}
+                    <div>
+                      <div class="text-sm font-semibold text-ink">{review.data.name}</div>
+                      {review.data.location && (
+                        <div class="text-ink/50 text-xs">{review.data.location}</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
 
-  {/* ── MID-PAGE CTA — dark band ────────────────────────────────────
+    {
+      /* ── MID-PAGE CTA — dark band ────────────────────────────────────
       IMAGE SLOT (background): international-patient welcome moment —
       care coordinator or nurse patient family at a
       premium hospital reception, conveying arrival + being looked after.
@@ -679,44 +830,69 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
       warm tones, no text, faces not looking at camera, 21:9"
       Export: /images/patterns/hospital-page-cta.webp (1920×800, <150KB),
       render as absolute inset-0 object-cover with a bg-ink/70 overlay div.
-      Auto-detected at build time. */}
-  <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
-    {ctaImage && (
-      <>
-        <img src={ctaImage} alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover" aria-hidden="true" loading="lazy" />
-        <div
-          class="pointer-events-none absolute inset-0"
-          style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.78) 68%, rgba(20,51,82,0.72) 100%)"
-          aria-hidden="true"
-        />
-      </>
-    )}
-    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-    <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-      <div>
-        <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">{t.hospitals.consultCta.replace('{{name}}', hospital.name)}</h2>
-        <p class="mt-2 max-w-xl text-cream-100/60">{t.hospitals.consultSummary}</p>
+      Auto-detected at build time. */
+    }
+    <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
+      {
+        ctaImage && (
+          <>
+            <img
+              src={ctaImage}
+              alt=""
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <div
+              class="pointer-events-none absolute inset-0"
+              style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.78) 68%, rgba(20,51,82,0.72) 100%)"
+              aria-hidden="true"
+            />
+          </>
+        )
+      }
+      <div
+        class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl"
+        aria-hidden="true"
+      >
       </div>
-      <div class="flex flex-wrap gap-3">
-        <LeadModalTrigger
-          client:load
-          label={t.doctors.detail.bookCta}
-          modalTitle={t.leadModal.title}
-          modalSubtitle={t.leadModal.subtitle}
-          closeLabel={t.leadModal.close}
-          source={LEAD_SOURCE.HOSPITAL_PAGE}
-          hospitalSlug={Astro.params.slug}
-          className="rounded-card px-6 py-3"
-        />
-        {hospitalWhatsAppHref && (
-          <a href={hospitalWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
-            <Icon name="whatsapp" size={18} />
-            {t.doctors.detail.whatsappCta}
-          </a>
-        )}
+      <div
+        class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">
+            {t.hospitals.consultCta.replace('{{name}}', hospital.name)}
+          </h2>
+          <p class="text-cream-100/60 mt-2 max-w-xl">{t.hospitals.consultSummary}</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <LeadModalTrigger
+            client:load
+            label={t.doctors.detail.bookCta}
+            modalTitle={t.leadModal.title}
+            modalSubtitle={t.leadModal.subtitle}
+            closeLabel={t.leadModal.close}
+            source={LEAD_SOURCE.HOSPITAL_PAGE}
+            hospitalSlug={Astro.params.slug}
+            className="rounded-card px-6 py-3"
+          />
+          {
+            hospitalWhatsAppHref && (
+              <a
+                href={hospitalWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+                data-anim="press-button"
+              >
+                <Icon name="whatsapp" size={18} />
+                {t.doctors.detail.whatsappCta}
+              </a>
+            )
+          }
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </main>
 
   {/* ── CONTACT / LEAD FORM ─────────────────────────────────────────── */}
@@ -724,14 +900,11 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
     <div class="container grid gap-12 lg:grid-cols-2">
       <div>
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
-        <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+        <p class="text-ink/60 mt-4 text-lg">{t.cta.subtitle}</p>
       </div>
       <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8">
         <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
-        <LeadForm
-          client:load
-          source={LEAD_SOURCE.HOSPITAL_PAGE}
-        />
+        <LeadForm client:load source={LEAD_SOURCE.HOSPITAL_PAGE} />
       </div>
     </div>
   </section>

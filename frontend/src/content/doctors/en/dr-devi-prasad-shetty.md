@@ -13,21 +13,21 @@ languages:
   - Kannada
 expertise:
   - Adult Cardiac Surgery
-  - "Paediatric & Congenital Heart Surgery"
-  - "Paediatric Cardiac Surgery, Valve Repairs in Infants and Children"
-  - "Pulmonary Endarterectomy, Ross Procedure"
+  - 'Paediatric & Congenital Heart Surgery'
+  - 'Paediatric Cardiac Surgery, Valve Repairs in Infants and Children'
+  - 'Pulmonary Endarterectomy, Ross Procedure'
   - Redo Heart Surgery
   - Surgery for Aortic Aneurysms
 pullQuote: "A heartbeat should never depend on the size of a wallet. My life's work rests on one belief — world-class heart care must be within everyone's reach."
 faqs:
-  - question: "Is Dr. Devi Prasad Shetty experienced in cardiac surgery?"
+  - question: 'Is Dr. Devi Prasad Shetty experienced in cardiac surgery?'
     answer: "Yes, Dr. Devi Prasad Shetty has conducted over 120,000 heart surgeries with a significant focus on paediatric cases. He is the Founder and Chairman of Narayana Health, one of India's largest healthcare groups. He trained as a cardiothoracic surgeon under the National Health Service UK and holds FRCS from the Royal College of Surgeons, England. He is widely recognised as one of the most accomplished cardiac surgeons in the world."
-  - question: "What types of cardiac surgery does Dr. Devi Prasad Shetty perform?"
-    answer: "Dr. Devi Prasad Shetty performs adult cardiac surgery, paediatric and congenital heart surgery, paediatric cardiac surgery including valve repairs in infants and children, pulmonary endarterectomy, Ross procedure, redo heart surgery, and surgery for aortic aneurysms. His expertise spans the full spectrum of cardiac surgical care for both adults and children."
-  - question: "Is Dr. Devi Prasad Shetty the founder of Narayana Health?"
+  - question: 'What types of cardiac surgery does Dr. Devi Prasad Shetty perform?'
+    answer: 'Dr. Devi Prasad Shetty performs adult cardiac surgery, paediatric and congenital heart surgery, paediatric cardiac surgery including valve repairs in infants and children, pulmonary endarterectomy, Ross procedure, redo heart surgery, and surgery for aortic aneurysms. His expertise spans the full spectrum of cardiac surgical care for both adults and children.'
+  - question: 'Is Dr. Devi Prasad Shetty the founder of Narayana Health?'
     answer: "Yes, Dr. Devi Prasad Shetty founded Narayana Health (formerly Narayana Hrudayalaya) in Bangalore in 2000. Under his leadership, it has grown into one of India's largest healthcare groups, providing world-class, affordable, and quality care. He also pioneered micro health insurance with 'Yeshaswini Micro Health Insurance' to make healthcare affordable for the underprivileged."
-  - question: "What is the cost of cardiac surgery with Dr. Devi Prasad Shetty in Bangalore?"
-    answer: "Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Devi Prasad Shetty practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to world-class cardiac surgeons and advanced surgical facilities."
+  - question: 'What is the cost of cardiac surgery with Dr. Devi Prasad Shetty in Bangalore?'
+    answer: 'Cardiac surgery costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Devi Prasad Shetty practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to world-class cardiac surgeons and advanced surgical facilities.'
 ---
 
 ## About the Doctor

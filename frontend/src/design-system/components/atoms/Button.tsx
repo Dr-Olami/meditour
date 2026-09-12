@@ -38,8 +38,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
@@ -51,14 +50,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = cn(buttonVariants({ variant, size, full }), className);
 
     if (asChild && React.isValidElement(children)) {
-      return React.cloneElement(
-        children,
-        {
-          ref,
-          className: cn(classes, children.props.className),
-          ...props,
-        } as React.HTMLAttributes<HTMLElement>
-      );
+      return React.cloneElement(children, {
+        ref,
+        className: cn(classes, children.props.className),
+        ...props,
+      } as React.HTMLAttributes<HTMLElement>);
     }
 
     return (

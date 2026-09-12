@@ -19,12 +19,12 @@ expertise:
   - Epilepsy
   - Movement Disorders
   - Demyelinating Disease
-pullQuote: "After four decades in neurology, I have learned that the most important diagnosis is not the disease — it is the person sitting in front of you."
+pullQuote: 'After four decades in neurology, I have learned that the most important diagnosis is not the disease — it is the person sitting in front of you.'
 faqs:
-  - question: "What neurological conditions does Dr. Ajit Kumar Roy specialise in?"
+  - question: 'What neurological conditions does Dr. Ajit Kumar Roy specialise in?'
     answer: "Dr. Ajit Kumar Roy specialises in stroke management, epilepsy (including epilepsy surgery and vagus nerve stimulation), movement disorders such as Parkinson's disease and dystonia, demyelinating diseases including multiple sclerosis, nerve and muscle disorders, sleep disorders, fibromyalgia, vertigo, migraine, and dementia. With over 45 years of experience, he is one of the most senior neurologists in Bangalore."
-  - question: "Does Dr. Ajit Kumar Roy speak Bengali?"
-    answer: "Yes, Dr. Ajit Kumar Roy is fluent in English, Bengali, Hindi, Kannada, and Telugu. His multilingual ability enables him to effectively communicate with patients from diverse backgrounds, including Bengali-speaking patients from Bangladesh and West Bengal seeking neurological care in Bangalore."
+  - question: 'Does Dr. Ajit Kumar Roy speak Bengali?'
+    answer: 'Yes, Dr. Ajit Kumar Roy is fluent in English, Bengali, Hindi, Kannada, and Telugu. His multilingual ability enables him to effectively communicate with patients from diverse backgrounds, including Bengali-speaking patients from Bangladesh and West Bengal seeking neurological care in Bangalore.'
 ---
 
 ## About the Doctor

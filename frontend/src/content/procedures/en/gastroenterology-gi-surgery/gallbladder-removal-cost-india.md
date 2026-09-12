@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Gallbladder Removal (Cholecystectomy)"
-seoHeadline: "Gallbladder Removal (Cholecystectomy) Cost in India for International Patients"
+name: 'Gallbladder Removal (Cholecystectomy)'
+seoHeadline: 'Gallbladder Removal (Cholecystectomy) Cost in India for International Patients'
 parentTreatmentSlug: gastroenterology-gi-surgery
-summary: "Gallbladder removal (cholecystectomy) in India costs between $2,000 and $5,000, delivering savings of up to 90% compared to Western countries. The procedure removes a diseased gallbladder to resolve gallstones and prevent recurrent pain and complications."
-description: "Gallbladder removal (cholecystectomy) in India from $2,000–$5,000 at accredited Bangalore hospitals. Save up to 90% versus US/UK prices."
-fromPrice: "$2,000"
-toPrice: "$5,000"
-duration: "1-2 weeks"
-hospitalStay: "1-3 days"
-recoveryTime: "1-2 weeks"
+summary: 'Gallbladder removal (cholecystectomy) in India costs between $2,000 and $5,000, delivering savings of up to 90% compared to Western countries. The procedure removes a diseased gallbladder to resolve gallstones and prevent recurrent pain and complications.'
+description: 'Gallbladder removal (cholecystectomy) in India from $2,000–$5,000 at accredited Bangalore hospitals. Save up to 90% versus US/UK prices.'
+fromPrice: '$2,000'
+toPrice: '$5,000'
+duration: '1-2 weeks'
+hospitalStay: '1-3 days'
+recoveryTime: '1-2 weeks'
 eligibility:
-  - "Symptomatic gallstones causing recurrent biliary colic, nausea, or bloating after meals"
-  - "Acute cholecystitis or gallbladder inflammation requiring timely surgical removal"
-  - "Gallstone pancreatitis or common bile duct stones after endoscopic clearance"
-  - "Large gallstones greater than 2 cm or gallbladder polyps greater than 1 cm"
-  - "General fitness for general anaesthesia and laparoscopic surgery"
+  - 'Symptomatic gallstones causing recurrent biliary colic, nausea, or bloating after meals'
+  - 'Acute cholecystitis or gallbladder inflammation requiring timely surgical removal'
+  - 'Gallstone pancreatitis or common bile duct stones after endoscopic clearance'
+  - 'Large gallstones greater than 2 cm or gallbladder polyps greater than 1 cm'
+  - 'General fitness for general anaesthesia and laparoscopic surgery'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implants/mesh where applicable"
-  - "Pre-operative diagnostics (blood tests, ultrasound, CT)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants/mesh where applicable'
+  - 'Pre-operative diagnostics (blood tests, ultrasound, CT)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge medications"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge medications'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-3 days"
-    description: "Post-operative monitoring, pain management, and early mobilisation; laparoscopic patients are often walking the same evening and discharged within 24-48 hours."
-  - phase: "Bangalore recovery"
-    duration: "3-5 days"
-    description: "Wound review, gradual return to normal diet, light walking, and a follow-up ultrasound to confirm everything is healing well before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 1-2"
-    description: "Resume light daily activities, avoid heavy lifting, and follow a low-fat diet while your digestive system adjusts to life without a gallbladder."
-  - phase: "Full recovery"
-    duration: "1-2 weeks"
-    description: "Most patients return to work and normal activities within 1-2 weeks after laparoscopic surgery; complete internal healing continues for several more weeks."
+  - phase: 'Hospital stay'
+    duration: '1-3 days'
+    description: 'Post-operative monitoring, pain management, and early mobilisation; laparoscopic patients are often walking the same evening and discharged within 24-48 hours.'
+  - phase: 'Bangalore recovery'
+    duration: '3-5 days'
+    description: 'Wound review, gradual return to normal diet, light walking, and a follow-up ultrasound to confirm everything is healing well before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 1-2'
+    description: 'Resume light daily activities, avoid heavy lifting, and follow a low-fat diet while your digestive system adjusts to life without a gallbladder.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks'
+    description: 'Most patients return to work and normal activities within 1-2 weeks after laparoscopic surgery; complete internal healing continues for several more weeks.'
 risks:
-  - "Bleeding from the liver bed or cystic artery requiring transfusion or re-operation"
-  - "Bile duct injury, a rare but serious complication that may require further surgery"
-  - "Infection at the port sites or within the abdomen requiring antibiotics"
-  - "Bile leakage from the cystic duct stump requiring endoscopic stenting or drainage"
-  - "Post-cholecystectomy syndrome with persistent bloating or indigestion in some patients"
+  - 'Bleeding from the liver bed or cystic artery requiring transfusion or re-operation'
+  - 'Bile duct injury, a rare but serious complication that may require further surgery'
+  - 'Infection at the port sites or within the abdomen requiring antibiotics'
+  - 'Bile leakage from the cystic duct stump requiring endoscopic stenting or drainage'
+  - 'Post-cholecystectomy syndrome with persistent bloating or indigestion in some patients'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,15 +58,15 @@ relatedDoctorSlugs:
   - dr-jayanth-reddy
 
 relatedProcedureSlugs:
-  - "hernia-repair-surgery-cost-india"
-  - "bariatric-surgery-cost-india"
+  - 'hernia-repair-surgery-cost-india'
+  - 'bariatric-surgery-cost-india'
 faqs:
-  - question: "Is gallbladder removal done laparoscopically or open?"
-    answer: "Over 90% of gallbladder removals are performed laparoscopically through four small incisions, which means less pain, smaller scars, and a faster recovery. Open surgery is reserved for complex cases with severe inflammation, scarring, or anatomical difficulties. Your surgeon will decide the best approach based on your ultrasound and overall health."
-  - question: "Can I live normally without a gallbladder?"
-    answer: "Yes, absolutely. Your liver continues to produce bile to digest fats; without the gallbladder, bile flows directly into the intestine. Most people return to a normal diet within a few weeks. Some patients notice looser stools after fatty meals in the first few months, but this usually settles as the body adapts."
-  - question: "When can I fly home after gallbladder surgery?"
-    answer: "Most international patients are cleared to fly 5-7 days after uncomplicated laparoscopic cholecystectomy, once wound healing is satisfactory and a fitness-to-fly certificate is issued. Your surgeon will confirm you are eating well, pain is controlled, and there are no signs of complications before clearing you to travel."
+  - question: 'Is gallbladder removal done laparoscopically or open?'
+    answer: 'Over 90% of gallbladder removals are performed laparoscopically through four small incisions, which means less pain, smaller scars, and a faster recovery. Open surgery is reserved for complex cases with severe inflammation, scarring, or anatomical difficulties. Your surgeon will decide the best approach based on your ultrasound and overall health.'
+  - question: 'Can I live normally without a gallbladder?'
+    answer: 'Yes, absolutely. Your liver continues to produce bile to digest fats; without the gallbladder, bile flows directly into the intestine. Most people return to a normal diet within a few weeks. Some patients notice looser stools after fatty meals in the first few months, but this usually settles as the body adapts.'
+  - question: 'When can I fly home after gallbladder surgery?'
+    answer: 'Most international patients are cleared to fly 5-7 days after uncomplicated laparoscopic cholecystectomy, once wound healing is satisfactory and a fitness-to-fly certificate is issued. Your surgeon will confirm you are eating well, pain is controlled, and there are no signs of complications before clearing you to travel.'
 ---
 
 ## Overview
@@ -151,13 +151,13 @@ If your symptoms are mild and infrequent, your doctor may suggest a period of ob
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $5,000 | Baseline |
-| USA | $15,000 – $30,000 | ~7.5x higher |
-| UK | £6,000 – £12,000 | ~4.0x higher |
-| Singapore | $10,000 – $18,000 | ~4.5x higher |
-| Thailand | $6,000 – $10,000 | ~2.8x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,000 – $5,000   | Baseline     |
+| USA               | $15,000 – $30,000 | ~7.5x higher |
+| UK                | £6,000 – £12,000  | ~4.0x higher |
+| Singapore         | $10,000 – $18,000 | ~4.5x higher |
+| Thailand          | $6,000 – $10,000  | ~2.8x higher |
 
 If you are looking at these numbers and wondering whether the lower cost means lower quality, the answer is no. Bangalore's accredited hospitals use the same laparoscopic equipment, surgical techniques, and safety protocols as top hospitals in the US and UK. Many surgeons here have trained at prestigious international institutions. The cost difference comes down to favourable exchange rates, lower staff and infrastructure costs, and the high volume of procedures performed.
 

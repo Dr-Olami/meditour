@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Stem Cell Therapy for Neurological Conditions"
-seoHeadline: "Stem Cell Therapy for Neurological Conditions Cost in India for International Patients"
+name: 'Stem Cell Therapy for Neurological Conditions'
+seoHeadline: 'Stem Cell Therapy for Neurological Conditions Cost in India for International Patients'
 parentTreatmentSlug: stem-cell-treatment
 summary: "Stem cell therapy for neurological conditions in India costs between $8,000 and $25,000 at select Bangalore centres. An emerging, investigational therapy offered under regulated clinical protocols for conditions such as spinal cord injury, cerebral palsy, stroke recovery and Parkinson's disease. Patients must understand the experimental nature and limited evidence base before proceeding."
-description: "Stem cell therapy for neurological conditions in India from $8,000–$25,000 at Bangalore centres. Investigational therapy with limited evidence — understand risks and eligibility."
-fromPrice: "$8,000"
-toPrice: "$25,000"
-duration: "2-4 weeks"
-hospitalStay: "3-7 days"
-recoveryTime: "3-6 months"
+description: 'Stem cell therapy for neurological conditions in India from $8,000–$25,000 at Bangalore centres. Investigational therapy with limited evidence — understand risks and eligibility.'
+fromPrice: '$8,000'
+toPrice: '$25,000'
+duration: '2-4 weeks'
+hospitalStay: '3-7 days'
+recoveryTime: '3-6 months'
 eligibility:
-  - "Patients with chronic neurological conditions where standard therapies have been exhausted or offer limited benefit"
-  - "Adequate general health to tolerate cell harvesting and administration procedures"
-  - "Realistic expectations and informed understanding that this is an investigational, non-FDA-approved therapy"
-  - "No active infection, sepsis or uncontrolled systemic illness at the time of treatment"
-  - "Willingness to participate in a structured protocol with follow-up assessments and outcome reporting"
+  - 'Patients with chronic neurological conditions where standard therapies have been exhausted or offer limited benefit'
+  - 'Adequate general health to tolerate cell harvesting and administration procedures'
+  - 'Realistic expectations and informed understanding that this is an investigational, non-FDA-approved therapy'
+  - 'No active infection, sepsis or uncontrolled systemic illness at the time of treatment'
+  - 'Willingness to participate in a structured protocol with follow-up assessments and outcome reporting'
 costInclusions:
-  - "Stem cell harvesting and processing in a GMP-certified laboratory"
-  - "Cell administration procedure (intrathecal, intravenous or intramuscular)"
-  - "Hospital room charges for the inpatient stay"
-  - "Neurologist and treating physician fees"
-  - "Pre-treatment diagnostics and imaging (MRI, blood tests)"
-  - "Medications during the hospital stay"
-  - "Airport pickup and drop"
+  - 'Stem cell harvesting and processing in a GMP-certified laboratory'
+  - 'Cell administration procedure (intrathecal, intravenous or intramuscular)'
+  - 'Hospital room charges for the inpatient stay'
+  - 'Neurologist and treating physician fees'
+  - 'Pre-treatment diagnostics and imaging (MRI, blood tests)'
+  - 'Medications during the hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term rehabilitation and physiotherapy after discharge"
-  - "Personal expenses and meals for attendants"
-  - "Repeat treatment cycles (often recommended at additional cost)"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term rehabilitation and physiotherapy after discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Repeat treatment cycles (often recommended at additional cost)'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-7 days"
-    description: "Cell harvesting, processing and administration under medical supervision with monitoring for immediate adverse reactions."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Outpatient observation, initial rehabilitation assessment and clearance to travel home after confirming no acute complications."
-  - phase: "Return home"
-    duration: "Week 3-8"
-    description: "Gradual resumption of activity with continued physiotherapy and regular communication with the treating team."
-  - phase: "Assessment period"
-    duration: "3-6 months"
-    description: "Functional assessments to evaluate any response to therapy, with the understanding that improvements are not guaranteed."
+  - phase: 'Hospital stay'
+    duration: '3-7 days'
+    description: 'Cell harvesting, processing and administration under medical supervision with monitoring for immediate adverse reactions.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Outpatient observation, initial rehabilitation assessment and clearance to travel home after confirming no acute complications.'
+  - phase: 'Return home'
+    duration: 'Week 3-8'
+    description: 'Gradual resumption of activity with continued physiotherapy and regular communication with the treating team.'
+  - phase: 'Assessment period'
+    duration: '3-6 months'
+    description: 'Functional assessments to evaluate any response to therapy, with the understanding that improvements are not guaranteed.'
 risks:
-  - "Lack of proven efficacy — the therapy is investigational and benefits are not guaranteed"
-  - "Injection-site reactions, transient fever or headache after cell administration"
-  - "Risk of infection from the harvesting or administration procedure"
-  - "Potential for immune reactions or, in rare cases, tumour formation from transplanted cells"
-  - "Financial cost with uncertain return on investment, as repeat cycles may be recommended"
+  - 'Lack of proven efficacy — the therapy is investigational and benefits are not guaranteed'
+  - 'Injection-site reactions, transient fever or headache after cell administration'
+  - 'Risk of infection from the harvesting or administration procedure'
+  - 'Potential for immune reactions or, in rare cases, tumour formation from transplanted cells'
+  - 'Financial cost with uncertain return on investment, as repeat cycles may be recommended'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-bidisha-banerjee
 
 relatedProcedureSlugs:
-  - "stem-cell-therapy-orthopedics-cost-india"
-  - "deep-brain-stimulation-cost-india"
-  - "spinal-fusion-surgery-cost-india"
+  - 'stem-cell-therapy-orthopedics-cost-india'
+  - 'deep-brain-stimulation-cost-india'
+  - 'spinal-fusion-surgery-cost-india'
 faqs:
-  - question: "Is stem cell therapy for neurological conditions FDA-approved?"
-    answer: "No. Stem cell therapy for most neurological conditions is not FDA-approved and is considered investigational. Evidence is limited to small clinical studies and case reports. Patients should fully understand the experimental nature before proceeding and should not expect guaranteed improvements."
-  - question: "How much does stem cell therapy for neurological conditions cost in India?"
-    answer: "The cost ranges from $8,000 to $25,000 depending on the condition being treated, the type of stem cells used, the number of administration sessions and the length of hospital stay. This is significantly lower than comparable investigational protocols in Western countries."
-  - question: "What conditions are treated with stem cell therapy?"
+  - question: 'Is stem cell therapy for neurological conditions FDA-approved?'
+    answer: 'No. Stem cell therapy for most neurological conditions is not FDA-approved and is considered investigational. Evidence is limited to small clinical studies and case reports. Patients should fully understand the experimental nature before proceeding and should not expect guaranteed improvements.'
+  - question: 'How much does stem cell therapy for neurological conditions cost in India?'
+    answer: 'The cost ranges from $8,000 to $25,000 depending on the condition being treated, the type of stem cells used, the number of administration sessions and the length of hospital stay. This is significantly lower than comparable investigational protocols in Western countries.'
+  - question: 'What conditions are treated with stem cell therapy?'
     answer: "Investigational protocols exist for spinal cord injury, cerebral palsy, stroke recovery, Parkinson's disease, multiple sclerosis and amyotrophic lateral sclerosis (ALS). However, none of these applications are established as standard care, and patients should view this as an adjunct to conventional rehabilitation rather than a cure."
 ---
+
 ## Overview
 
 If you or a loved one is living with a chronic neurological condition, you may have heard about stem cell therapy as a potential option. It is completely understandable to want to explore every avenue when standard treatments have reached their limits. However, it is essential that you approach this therapy with realistic expectations and a clear understanding of its experimental nature.
@@ -143,13 +144,13 @@ You should discuss all available alternatives with both your local neurologist a
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $8,000 – $25,000 | Baseline |
+| Country               | Approximate Cost  | vs India     |
+| --------------------- | ----------------- | ------------ |
+| India (Bangalore)     | $8,000 – $25,000  | Baseline     |
 | USA (investigational) | $25,000 – $50,000 | ~2.5x higher |
-| Germany | $20,000 – $40,000 | ~1.8x higher |
-| Thailand | $10,000 – $30,000 | ~1.2x higher |
-| Mexico | $12,000 – $35,000 | ~1.4x higher |
+| Germany               | $20,000 – $40,000 | ~1.8x higher |
+| Thailand              | $10,000 – $30,000 | ~1.2x higher |
+| Mexico                | $12,000 – $35,000 | ~1.4x higher |
 
 The cost varies based on the condition being treated, the cell source (autologous vs donor), the number of administration sessions and the length of hospital stay. Single-session intrathecal protocols for cerebral palsy tend to be at the lower end, while multi-session protocols for spinal cord injury or stereotactic brain delivery are at the higher end. Even at the higher end, the cost is significantly lower than comparable investigational programmes in Western countries — though it is important to remember that lower cost does not change the experimental status of the therapy.
 

@@ -106,9 +106,7 @@ describe('mergeFaqs', () => {
     // Reason: matching question (case-insensitive) replaces the auto answer;
     // non-matching auto FAQs are preserved, so total is still 4.
     expect(merged).toHaveLength(4);
-    const specialty = merged.find((f) =>
-      f.question.toLowerCase().includes('conditions does'),
-    );
+    const specialty = merged.find((f) => f.question.toLowerCase().includes('conditions does'));
     expect(specialty?.answer).toBe(overrideAnswer);
   });
 });

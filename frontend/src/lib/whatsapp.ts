@@ -29,7 +29,10 @@ export function getWhatsAppNumber(): string {
 export function getInquiryLink(): string {
   const number = getWhatsAppNumber();
   if (!number) return '';
-  return buildWhatsAppLink(number, 'Hi Khan Meditour, I would like to know more about your medical tourism services.');
+  return buildWhatsAppLink(
+    number,
+    'Hi Khan Meditour, I would like to know more about your medical tourism services.'
+  );
 }
 
 /**

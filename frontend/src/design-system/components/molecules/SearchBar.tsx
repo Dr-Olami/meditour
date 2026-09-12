@@ -4,8 +4,10 @@ import { Input } from '../atoms/Input';
 import { Button } from '../atoms/Button';
 import { Icon } from '../atoms/Icon';
 
-export interface SearchBarProps
-  extends Omit<React.FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> {
+export interface SearchBarProps extends Omit<
+  React.FormHTMLAttributes<HTMLFormElement>,
+  'onSubmit'
+> {
   placeholder?: string;
   onSearch?: (value: string) => void;
 }

@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Kidney Stone Removal (PCNL)"
-seoHeadline: "Kidney Stone Removal (PCNL) Cost in India for International Patients"
+name: 'Kidney Stone Removal (PCNL)'
+seoHeadline: 'Kidney Stone Removal (PCNL) Cost in India for International Patients'
 parentTreatmentSlug: urology
-summary: "Percutaneous Nephrolithotomy (PCNL) in India costs between $2,000 and $5,000, offering savings of up to 80% compared to Western countries. This minimally invasive procedure removes large kidney stones through a small keyhole incision in the back using a nephroscope, without any open surgery."
-description: "Kidney Stone Removal (PCNL) in India from $2,000–$5,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert urologists."
-fromPrice: "$2,000"
-toPrice: "$5,000"
-duration: "1-2 weeks"
-hospitalStay: "2-4 days"
-recoveryTime: "2-4 weeks"
+summary: 'Percutaneous Nephrolithotomy (PCNL) in India costs between $2,000 and $5,000, offering savings of up to 80% compared to Western countries. This minimally invasive procedure removes large kidney stones through a small keyhole incision in the back using a nephroscope, without any open surgery.'
+description: 'Kidney Stone Removal (PCNL) in India from $2,000–$5,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert urologists.'
+fromPrice: '$2,000'
+toPrice: '$5,000'
+duration: '1-2 weeks'
+hospitalStay: '2-4 days'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Large kidney stones over 2 centimetres that are unlikely to pass spontaneously or break with shock wave lithotripsy"
+  - 'Large kidney stones over 2 centimetres that are unlikely to pass spontaneously or break with shock wave lithotripsy'
   - "Staghorn calculi occupying a significant portion of the kidney's collecting system"
-  - "Stones causing obstruction with hydronephrosis, recurrent infection, or progressive kidney damage"
-  - "Stones that have failed less invasive treatments such as ESWL or ureteroscopy"
-  - "Anatomically favourable kidney for percutaneous access with safe tract to the stone"
+  - 'Stones causing obstruction with hydronephrosis, recurrent infection, or progressive kidney damage'
+  - 'Stones that have failed less invasive treatments such as ESWL or ureteroscopy'
+  - 'Anatomically favourable kidney for percutaneous access with safe tract to the stone'
 costInclusions:
-  - "Urologist and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs including nephroscope and lithotripter usage"
-  - "Pre-operative diagnostics (blood tests, CT scan, urine culture, kidney function tests)"
-  - "Post-operative care during hospital stay including nephrostomy tube management"
-  - "Operating room and recovery room charges"
-  - "Airport pickup and drop"
+  - 'Urologist and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs including nephroscope and lithotripter usage'
+  - 'Pre-operative diagnostics (blood tests, CT scan, urine culture, kidney function tests)'
+  - 'Post-operative care during hospital stay including nephrostomy tube management'
+  - 'Operating room and recovery room charges'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-4 days"
-    description: "The nephrostomy tube is monitored for drainage and bleeding, the urinary catheter remains in place, and early mobilisation begins once pain control is achieved and haematuria settles."
-  - phase: "Bangalore recovery"
-    duration: "3-7 days"
-    description: "Nephrostomy tube removal once drainage is clear, followed by monitoring for fever and bleeding; a follow-up imaging study is performed to confirm stone clearance before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual resumption of light activities, increased fluid intake, and avoidance of heavy lifting or straining; mild haematuria and flank discomfort are common and typically resolve over several weeks."
-  - phase: "Full recovery"
-    duration: "2-4 weeks"
-    description: "Most patients return to work and normal activities within 2 to 4 weeks; complete healing of the nephrostomy tract and full resolution of symptoms may take up to 6 weeks."
+  - phase: 'Hospital stay'
+    duration: '2-4 days'
+    description: 'The nephrostomy tube is monitored for drainage and bleeding, the urinary catheter remains in place, and early mobilisation begins once pain control is achieved and haematuria settles.'
+  - phase: 'Bangalore recovery'
+    duration: '3-7 days'
+    description: 'Nephrostomy tube removal once drainage is clear, followed by monitoring for fever and bleeding; a follow-up imaging study is performed to confirm stone clearance before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual resumption of light activities, increased fluid intake, and avoidance of heavy lifting or straining; mild haematuria and flank discomfort are common and typically resolve over several weeks.'
+  - phase: 'Full recovery'
+    duration: '2-4 weeks'
+    description: 'Most patients return to work and normal activities within 2 to 4 weeks; complete healing of the nephrostomy tract and full resolution of symptoms may take up to 6 weeks.'
 risks:
-  - "Bleeding from the kidney requiring transfusion, occurring in a small percentage of cases"
-  - "Fever or infection including transient bacteraemia, managed with antibiotics"
-  - "Injury to surrounding organs such as the colon, liver, spleen, or pleura, which is rare"
-  - "Residual stone fragments requiring a second-look procedure or adjunctive ESWL"
-  - "Ureteric stricture or ureteric injury from stent placement"
+  - 'Bleeding from the kidney requiring transfusion, occurring in a small percentage of cases'
+  - 'Fever or infection including transient bacteraemia, managed with antibiotics'
+  - 'Injury to surrounding organs such as the colon, liver, spleen, or pleura, which is rare'
+  - 'Residual stone fragments requiring a second-look procedure or adjunctive ESWL'
+  - 'Ureteric stricture or ureteric injury from stent placement'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -59,13 +59,13 @@ relatedDoctorSlugs:
   - dr-uday-bhaskar-m
 
 relatedProcedureSlugs:
-  - "prostate-surgery-cost-india"
+  - 'prostate-surgery-cost-india'
 faqs:
-  - question: "What is the difference between PCNL and shock wave lithotripsy (ESWL)?"
-    answer: "PCNL involves making a small keyhole incision in the back to pass a nephroscope directly into the kidney and physically remove large stones, while ESWL uses shock waves generated outside the body to break stones into smaller fragments that pass in the urine. PCNL is far more effective for stones over 2 centimetres, with clearance rates above 90% in a single session, whereas ESWL is best suited for smaller stones under 1.5 centimetres. Your urologist will recommend the best technique based on your stone size, location, and hardness."
-  - question: "Will I have a tube coming out of my back after PCNL?"
-    answer: "Yes, most patients have a nephrostomy tube — a small drainage tube placed through the back into the kidney — for 1 to 3 days after PCNL. This tube allows urine and any blood to drain while the kidney heals and helps control bleeding. Some surgeons use a tubeless technique for selected patients with minimal bleeding, where the tract is sealed without leaving a tube. Your urologist will decide the best approach based on your intra-operative findings."
-  - question: "Can kidney stones come back after PCNL?"
+  - question: 'What is the difference between PCNL and shock wave lithotripsy (ESWL)?'
+    answer: 'PCNL involves making a small keyhole incision in the back to pass a nephroscope directly into the kidney and physically remove large stones, while ESWL uses shock waves generated outside the body to break stones into smaller fragments that pass in the urine. PCNL is far more effective for stones over 2 centimetres, with clearance rates above 90% in a single session, whereas ESWL is best suited for smaller stones under 1.5 centimetres. Your urologist will recommend the best technique based on your stone size, location, and hardness.'
+  - question: 'Will I have a tube coming out of my back after PCNL?'
+    answer: 'Yes, most patients have a nephrostomy tube — a small drainage tube placed through the back into the kidney — for 1 to 3 days after PCNL. This tube allows urine and any blood to drain while the kidney heals and helps control bleeding. Some surgeons use a tubeless technique for selected patients with minimal bleeding, where the tract is sealed without leaving a tube. Your urologist will decide the best approach based on your intra-operative findings.'
+  - question: 'Can kidney stones come back after PCNL?'
     answer: "Yes, kidney stones can recur even after successful removal. Without preventive measures, approximately 50% of patients will form a new stone within 5 to 10 years. Your urologist will analyse the removed stone's composition and may recommend dietary changes, increased fluid intake, and medications to reduce your risk of recurrence. Regular follow-up with imaging is important to catch any new stones early when they are easier to treat."
 ---
 
@@ -143,13 +143,13 @@ For very large or complex staghorn stones that fill the entire kidney, open or l
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $5,000 | Baseline |
-| USA | $12,000 – $25,000 | ~5x higher |
-| UK | £5,000 – £10,000 | ~3x higher |
-| Singapore | $6,000 – $12,000 | ~2.4x higher |
-| Thailand | $4,000 – $8,000 | ~1.6x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,000 – $5,000   | Baseline     |
+| USA               | $12,000 – $25,000 | ~5x higher   |
+| UK                | £5,000 – £10,000  | ~3x higher   |
+| Singapore         | $6,000 – $12,000  | ~2.4x higher |
+| Thailand          | $4,000 – $8,000   | ~1.6x higher |
 
 The price range within India reflects the size and number of your stones, the specific technique used (standard PCNL versus Mini-PCNL), the choice of hospital and urologist, and whether any additional procedures such as ureteric stenting or second-look nephroscopy are needed. Even if you require the most advanced Mini-PCNL system or laser lithotripsy, your total cost in Bangalore will typically be less than a third of the US price. These savings come from favourable exchange rates, lower labour costs, and high procedural volumes — not from any compromise in equipment quality or surgical expertise.
 

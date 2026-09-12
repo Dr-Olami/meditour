@@ -10,8 +10,7 @@ export interface ServiceCard {
   contactHref: string;
 }
 
-export interface ServiceCardsSectionProps
-  extends React.HTMLAttributes<HTMLElement> {
+export interface ServiceCardsSectionProps extends React.HTMLAttributes<HTMLElement> {
   topCard: ServiceCard;
   bottomCards: [ServiceCard, ServiceCard];
   bottomWideCard?: ServiceCard;
@@ -60,22 +59,39 @@ const ServiceCardContent = ({
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
 
       {/* Content */}
-      <div className="relative flex flex-1 flex-col justify-end p-6 md:justify-between md:p-8" data-anim="stagger-children">
-        <div
-          className={cn(
-            'flex flex-col justify-end md:flex-1 md:justify-start'
-          )}
-        >
-          <h3 className="font-display text-2xl font-extrabold text-white md:text-5xl" data-anim="headline-reveal">
+      <div
+        className="relative flex flex-1 flex-col justify-end p-6 md:justify-between md:p-8"
+        data-anim="stagger-children"
+      >
+        <div className={cn('flex flex-col justify-end md:flex-1 md:justify-start')}>
+          <h3
+            className="font-display text-2xl font-extrabold text-white md:text-5xl"
+            data-anim="headline-reveal"
+          >
             {card.title}
           </h3>
-          <p className="mt-2 max-w-md text-sm font-medium text-white/80 md:text-xl" data-anim="fade-in-up">
+          <p
+            className="mt-2 max-w-md text-sm font-medium text-white/80 md:text-xl"
+            data-anim="fade-in-up"
+          >
             {card.subtitle}
           </p>
         </div>
 
-        <div className={cn('mt-4 md:mt-auto flex gap-3 sm:gap-4', variant === 'wide' ? 'w-full justify-center sm:flex-wrap' : 'w-full justify-center sm:flex-wrap')} data-anim="fade-in-up">
-          <Button asChild variant="primary" className={variant === 'wide' ? wideCardButtonClass : cardButtonClass}>
+        <div
+          className={cn(
+            'mt-4 flex gap-3 sm:gap-4 md:mt-auto',
+            variant === 'wide'
+              ? 'w-full justify-center sm:flex-wrap'
+              : 'w-full justify-center sm:flex-wrap'
+          )}
+          data-anim="fade-in-up"
+        >
+          <Button
+            asChild
+            variant="primary"
+            className={variant === 'wide' ? wideCardButtonClass : cardButtonClass}
+          >
             <a href={card.exploreHref}>{exploreLabel}</a>
           </Button>
           <Button
@@ -98,10 +114,8 @@ const ServiceCardContent = ({
  * Service cards section: a wide top card, two side-by-side middle cards,
  * and an optional wide bottom card.
  */
-const ServiceCardsSection = React.forwardRef<
-  HTMLElement,
-  ServiceCardsSectionProps
->((
+const ServiceCardsSection = React.forwardRef<HTMLElement, ServiceCardsSectionProps>(
+  (
     {
       className,
       topCard,
@@ -114,11 +128,7 @@ const ServiceCardsSection = React.forwardRef<
     ref
   ) => {
     return (
-      <section
-        className={cn('bg-cream-100 pt-8 pb-20', className)}
-        ref={ref}
-        {...props}
-      >
+      <section className={cn('bg-cream-100 pb-20 pt-8', className)} ref={ref} {...props}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2" data-anim="stagger-cards">
             <ServiceCardContent
@@ -151,7 +161,8 @@ const ServiceCardsSection = React.forwardRef<
         </div>
       </section>
     );
-  });
+  }
+);
 
 ServiceCardsSection.displayName = 'ServiceCardsSection';
 

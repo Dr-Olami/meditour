@@ -19,10 +19,10 @@ languages:
   - Konkani
 expertise:
   - Robotic Spine Surgery
-  - "Non-operative and operative treatment of neck & back pain"
+  - 'Non-operative and operative treatment of neck & back pain'
   - Various injection techniques for spinal disorders
   - Microscopic and Endoscopic Procedures
-  - "Minimally Invasive Spinal Stabilization, Posterior and Transforaminal Lumbar Interbody Fusion (PLIF / TLIF)"
+  - 'Minimally Invasive Spinal Stabilization, Posterior and Transforaminal Lumbar Interbody Fusion (PLIF / TLIF)'
   - Artificial Disc Replacement
   - Complex Cervical Spine Surgeries
   - Vertebroplasty and Kyphoplasty for Osteoporotic fractures
@@ -33,10 +33,10 @@ expertise:
   - Surgeries for Spinal Cord / Column Tumors
 pullQuote: "The spine is the pillar of human dignity. When I restore someone's ability to stand straight, I am not just fixing bone — I am giving back their self-respect."
 faqs:
-  - question: "Is Dr. S Vidyadhara experienced in robotic spine surgery?"
-    answer: "Yes, Dr. S Vidyadhara is a globally acclaimed pioneer in robotic spine surgery and computer-navigated spinal procedures. He has performed over 50 successful robotic spinal surgeries in a single month, setting a record at Manipal Hospital. He is the Chairman & HOD of Spine Surgery and Co-Chairman of the Medical Advisory Board, with international training from the University of Hong Kong."
-  - question: "What spinal conditions does Dr. S Vidyadhara treat?"
-    answer: "Dr. S Vidyadhara treats a wide range of spinal conditions including scoliosis and spinal deformities, cervical spine disorders, herniated discs, spinal tumours, osteoporotic vertebral fractures, degenerative disc disease, and complex spinal reconstruction cases. He specialises in minimally invasive spine surgery, artificial disc replacement, vertebroplasty, kyphoplasty, and advanced fusion procedures including PLIF and TLIF."
+  - question: 'Is Dr. S Vidyadhara experienced in robotic spine surgery?'
+    answer: 'Yes, Dr. S Vidyadhara is a globally acclaimed pioneer in robotic spine surgery and computer-navigated spinal procedures. He has performed over 50 successful robotic spinal surgeries in a single month, setting a record at Manipal Hospital. He is the Chairman & HOD of Spine Surgery and Co-Chairman of the Medical Advisory Board, with international training from the University of Hong Kong.'
+  - question: 'What spinal conditions does Dr. S Vidyadhara treat?'
+    answer: 'Dr. S Vidyadhara treats a wide range of spinal conditions including scoliosis and spinal deformities, cervical spine disorders, herniated discs, spinal tumours, osteoporotic vertebral fractures, degenerative disc disease, and complex spinal reconstruction cases. He specialises in minimally invasive spine surgery, artificial disc replacement, vertebroplasty, kyphoplasty, and advanced fusion procedures including PLIF and TLIF.'
 ---
 
 ## About the Doctor
@@ -81,19 +81,19 @@ Fluent in English, Kannada, Hindi, Bengali, Tamil, Telugu, Malayalam, Tulu, and 
 
 ## Research Publications
 
-- Randomized clinical study to compare the accuracy of navigated and non-navigated thoracic pedicle screw insertion in difficult deformity correction surgeries. S Rajasekaran, S Vidyadhara, Ramesh P, Shetty AP. *Spine* (Phila Pa 1976). 2007; 32: E56-64.
+- Randomized clinical study to compare the accuracy of navigated and non-navigated thoracic pedicle screw insertion in difficult deformity correction surgeries. S Rajasekaran, S Vidyadhara, Ramesh P, Shetty AP. _Spine_ (Phila Pa 1976). 2007; 32: E56-64.
 
-- Iso-C3D fluoroscopy based navigation in direct screw fixation of Hangman's fracture – A case report. S Rajasekaran, S Vidyadhara, Shetty AP. *J Spinal Disorders and Techniques* 2007; 20(8): 616-9.
+- Iso-C3D fluoroscopy based navigation in direct screw fixation of Hangman's fracture – A case report. S Rajasekaran, S Vidyadhara, Shetty AP. _J Spinal Disorders and Techniques_ 2007; 20(8): 616-9.
 
-- Coupling between sagittal and frontal plane deformity correction in idiopathic thoracic scoliosis and its relationship with post-operative sagittal alignment. Luk KDK, S Vidyadhara et al. *Spine* (Phila Pa 1976). 2010; 35(11): 1158-64.
+- Coupling between sagittal and frontal plane deformity correction in idiopathic thoracic scoliosis and its relationship with post-operative sagittal alignment. Luk KDK, S Vidyadhara et al. _Spine_ (Phila Pa 1976). 2010; 35(11): 1158-64.
 
-- Intra-operative Iso-C3D C-arm Navigation for pedicle screw instrumentation of Hangman's fracture. S Rajasekaran, S Vidyadhara et al. *J Orthop Surg* 2007 Apr; 15(1): 73-77.
+- Intra-operative Iso-C3D C-arm Navigation for pedicle screw instrumentation of Hangman's fracture. S Rajasekaran, S Vidyadhara et al. _J Orthop Surg_ 2007 Apr; 15(1): 73-77.
 
-- ISSLS Prize Winner: A Study of Effects of In Vivo Mechanical Forces on Human Lumbar Discs With Scoliotic Disc as a Biological Model. Rajasekaran S, S Vidyadhara, et al. *Spine* (Phila Pa 1976). 2010; 35 (21): 1930-43.
+- ISSLS Prize Winner: A Study of Effects of In Vivo Mechanical Forces on Human Lumbar Discs With Scoliotic Disc as a Biological Model. Rajasekaran S, S Vidyadhara, et al. _Spine_ (Phila Pa 1976). 2010; 35 (21): 1930-43.
 
-- Predictability of supine radiographs for determining an in-brace correction for adolescent idiopathic scoliosis. JPY Cheung, KKL Yiu, S Vidyadhara et al. *Spine* (Phila Pa 1976). 2018; 43 (14), 971-976.
+- Predictability of supine radiographs for determining an in-brace correction for adolescent idiopathic scoliosis. JPY Cheung, KKL Yiu, S Vidyadhara et al. _Spine_ (Phila Pa 1976). 2018; 43 (14), 971-976.
 
-- Rationale in the Management of 4-Level Lumbar Spondylolyses with or Without Instability and/or Spondylolisthesis. S Vidyadhara. *Spine* 2014; 39 (12): E734-E738.
+- Rationale in the Management of 4-Level Lumbar Spondylolyses with or Without Instability and/or Spondylolisthesis. S Vidyadhara. _Spine_ 2014; 39 (12): E734-E738.
 
 ## Talks & Publications
 

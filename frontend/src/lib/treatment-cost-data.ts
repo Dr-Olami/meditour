@@ -26,7 +26,7 @@ export interface TreatmentCostData {
 
 /** Lookup keyed by treatment slug. */
 export const TREATMENT_COST_DATA: Record<string, TreatmentCostData> = {
-  'cardiology': {
+  cardiology: {
     usRange: { from: '$40,000', to: '$150,000' },
     savings: '~85–90%',
     breakdown: [
@@ -86,7 +86,7 @@ export const TREATMENT_COST_DATA: Record<string, TreatmentCostData> = {
       { label: 'Implants & consumables', percent: 15 },
     ],
   },
-  'neurology': {
+  neurology: {
     usRange: { from: '$20,000', to: '$100,000' },
     savings: '~85–88%',
     breakdown: [
@@ -126,7 +126,7 @@ export const TREATMENT_COST_DATA: Record<string, TreatmentCostData> = {
       { label: 'Consumables & medications', percent: 15 },
     ],
   },
-  'urology': {
+  urology: {
     usRange: { from: '$10,000', to: '$40,000' },
     savings: '~80–85%',
     breakdown: [
@@ -136,7 +136,7 @@ export const TREATMENT_COST_DATA: Record<string, TreatmentCostData> = {
       { label: 'Consumables & medications', percent: 12 },
     ],
   },
-  'ophthalmology': {
+  ophthalmology: {
     usRange: { from: '$5,000', to: '$15,000' },
     savings: '~75–80%',
     breakdown: [

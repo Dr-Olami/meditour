@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Yemeni Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Sanaa to India for treatment: medical visa requirements, flight routes, cost comparisons in Yemeni Rials, and choosing the right hospital for Yemeni families."
+excerpt: 'Travelling from Sanaa to India for treatment: medical visa requirements, flight routes, cost comparisons in Yemeni Rials, and choosing the right hospital for Yemeni families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-29
@@ -32,13 +32,13 @@ Yemeni families increasingly travel to India for cardiac surgery, orthopedics, c
 
 Heart surgery cost India vs Yemen is the comparison most families start with. Indicative package prices (at roughly YER 250 per US dollar):
 
-| Treatment | India (USD) | Approx. YER | Jordan | Egypt |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ﷼1.1M–3M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | ﷼625K–2M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | ﷼750K–6.25M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | ﷼1M–3M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | ﷼875K–1.75M | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. YER | Jordan | Egypt      |
+| -------------------- | ------------- | ----------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | ﷼1.1M–3M    | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | ﷼625K–2M    | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | ﷼750K–6.25M | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | ﷼1M–3M      | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | ﷼875K–1.75M | Higher | Far higher |
 
 Cardiac care is a leading reason Yemeni patients travel — bypass and valve procedures at JCI-accredited Indian hospitals come in well below comparable private pricing in Jordan or Egypt, with Arabic-speaking coordinators supporting the family throughout.
 

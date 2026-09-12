@@ -37,13 +37,13 @@ The Gulf has excellent hospitals — but for many elective and major procedures,
 
 Cardiac surgery cost India vs Dubai is the comparison most GCC families start with. Indicative Bangalore package prices:
 
-| Treatment | India (USD) | Singapore | Typical Gulf private |
-| --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | $35,000–50,000 | Significantly higher |
-| Orthopedics (knee/hip) | $2,500–8,000 | $18,000–35,000 | Higher |
-| Cancer treatment | $3,000–25,000 | $40,000–120,000 | Higher |
-| Cosmetic surgery | $2,000–10,000 | — | Higher (Turkey comparable) |
-| IVF (per cycle) | $3,500–7,000 | $12,000–20,000 | Higher |
+| Treatment              | India (USD)   | Singapore       | Typical Gulf private       |
+| ---------------------- | ------------- | --------------- | -------------------------- |
+| Cardiac surgery        | $4,500–12,000 | $35,000–50,000  | Significantly higher       |
+| Orthopedics (knee/hip) | $2,500–8,000  | $18,000–35,000  | Higher                     |
+| Cancer treatment       | $3,000–25,000 | $40,000–120,000 | Higher                     |
+| Cosmetic surgery       | $2,000–10,000 | —               | Higher (Turkey comparable) |
+| IVF (per cycle)        | $3,500–7,000  | $12,000–20,000  | Higher                     |
 
 Orthopedic treatment in India for UAE patients is among the most requested routes — joint replacement with implant choice explained in Arabic or English, followed by structured rehab. Cosmetic surgery and dental work are also popular for shorter trips.
 

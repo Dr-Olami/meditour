@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 
-export interface RadioProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 

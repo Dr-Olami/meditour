@@ -24,8 +24,7 @@ const pullQuoteTone = cva(
 );
 
 export interface PullQuoteProps
-  extends React.HTMLAttributes<HTMLQuoteElement>,
-    VariantProps<typeof pullQuoteTone> {
+  extends React.HTMLAttributes<HTMLQuoteElement>, VariantProps<typeof pullQuoteTone> {
   /** The quote body — typically a patient-care philosophy sentence. */
   quote: string;
   /** Optional attribution rendered beneath the quote. */
@@ -44,11 +43,7 @@ const PullQuote = React.forwardRef<HTMLQuoteElement, PullQuoteProps>(
   ({ className, quote, attribution, tone, ...props }, ref) => {
     if (!quote) return null;
     return (
-      <blockquote
-        className={cn(pullQuoteTone({ tone }), className)}
-        ref={ref}
-        {...props}
-      >
+      <blockquote className={cn(pullQuoteTone({ tone }), className)} ref={ref} {...props}>
         <span aria-hidden="true" className="select-none text-violet-500">
           &ldquo;
         </span>

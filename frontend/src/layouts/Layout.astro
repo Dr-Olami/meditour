@@ -22,11 +22,20 @@ interface Props {
   bnAlternate?: boolean;
 }
 
-const { title, description, locale = 'en', image, type = 'website', jsonLd, bnAlternate = true } = Astro.props;
+const {
+  title,
+  description,
+  locale = 'en',
+  image,
+  type = 'website',
+  jsonLd,
+  bnAlternate = true,
+} = Astro.props;
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const siteName = locale === 'bn' ? 'খান মেডিট্যুর' : 'Khan Meditour';
-const defaultImage = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop';
+const defaultImage =
+  'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop';
 const ogImage = image && (image.startsWith('http') ? image : `${siteUrl}${image}`);
 
 function alternateHref(targetLocale: string): string {
@@ -44,11 +53,7 @@ const fallbackSchema = medicalBusiness({
   url: siteUrl,
   description,
 });
-const schemaPayloads = jsonLd
-  ? Array.isArray(jsonLd)
-    ? jsonLd
-    : [jsonLd]
-  : [fallbackSchema];
+const schemaPayloads = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [fallbackSchema];
 ---
 
 <!doctype html>
@@ -88,9 +93,11 @@ const schemaPayloads = jsonLd
     <meta name="twitter:description" content={description || 'Khan Meditour'} />
     <meta name="twitter:image" content={ogImage || defaultImage} />
 
-    {schemaPayloads.map((payload) => (
-      <script type="application/ld+json" set:html={JSON.stringify(payload)} />
-    ))}
+    {
+      schemaPayloads.map((payload) => (
+        <script type="application/ld+json" set:html={JSON.stringify(payload)} />
+      ))
+    }
 
     <title>{title}</title>
   </head>

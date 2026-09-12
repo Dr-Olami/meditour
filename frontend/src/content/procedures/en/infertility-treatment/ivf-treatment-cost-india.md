@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "IVF Treatment (In Vitro Fertilization)"
-seoHeadline: "IVF Treatment Cost in India for International Patients"
+name: 'IVF Treatment (In Vitro Fertilization)'
+seoHeadline: 'IVF Treatment Cost in India for International Patients'
 parentTreatmentSlug: infertility-treatment
-summary: "IVF Treatment in India costs between $1,500 and $4,000 per cycle, offering international patients savings of up to 80% compared to Western countries. The procedure involves fertilising eggs with sperm outside the body and transferring the resulting embryo into the uterus to achieve pregnancy."
-description: "IVF Treatment in India from $1,500–$4,000 per cycle with JCI-accredited fertility clinics in Bangalore. Save up to 80% versus US/UK prices."
-fromPrice: "$1,500"
-toPrice: "$4,000"
-duration: "4-6 weeks per cycle"
-hospitalStay: "Day-care / outpatient"
-recoveryTime: "1-2 weeks between embryo transfer and pregnancy test"
+summary: 'IVF Treatment in India costs between $1,500 and $4,000 per cycle, offering international patients savings of up to 80% compared to Western countries. The procedure involves fertilising eggs with sperm outside the body and transferring the resulting embryo into the uterus to achieve pregnancy.'
+description: 'IVF Treatment in India from $1,500–$4,000 per cycle with JCI-accredited fertility clinics in Bangalore. Save up to 80% versus US/UK prices.'
+fromPrice: '$1,500'
+toPrice: '$4,000'
+duration: '4-6 weeks per cycle'
+hospitalStay: 'Day-care / outpatient'
+recoveryTime: '1-2 weeks between embryo transfer and pregnancy test'
 eligibility:
-  - "Blocked or damaged fallopian tubes preventing natural fertilisation"
-  - "Male factor infertility including low sperm count or motility"
-  - "Unexplained infertility after at least 12 months of trying to conceive"
-  - "Women over 35 with diminished ovarian reserve or repeated IUI failures"
-  - "Couples with endometriosis or polycystic ovary syndrome (PCOS) not responding to ovulation induction"
+  - 'Blocked or damaged fallopian tubes preventing natural fertilisation'
+  - 'Male factor infertility including low sperm count or motility'
+  - 'Unexplained infertility after at least 12 months of trying to conceive'
+  - 'Women over 35 with diminished ovarian reserve or repeated IUI failures'
+  - 'Couples with endometriosis or polycystic ovary syndrome (PCOS) not responding to ovulation induction'
 costInclusions:
-  - "Fertility specialist consultation fees"
-  - "Hospital/clinic room charges (where applicable)"
-  - "Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)"
-  - "Medications and hormones (as per protocol)"
-  - "Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)"
-  - "Lab and embryology charges"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Fertility specialist consultation fees'
+  - 'Hospital/clinic room charges (where applicable)'
+  - 'Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)'
+  - 'Medications and hormones (as per protocol)'
+  - 'Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)'
+  - 'Lab and embryology charges'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital/clinic stay"
-  - "Additional IVF cycles if first cycle is unsuccessful"
-  - "Personal expenses and meals for attendants"
-  - "Donor eggs/sperm or surrogate compensation (where separately applicable)"
+  - 'International flights'
+  - 'Accommodation outside hospital/clinic stay'
+  - 'Additional IVF cycles if first cycle is unsuccessful'
+  - 'Personal expenses and meals for attendants'
+  - 'Donor eggs/sperm or surrogate compensation (where separately applicable)'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "4-6 weeks per cycle"
-    description: "Ovarian stimulation with daily hormone injections, frequent ultrasound and blood monitoring, egg retrieval under sedation, and embryo transfer as a day-care procedure."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Luteal-phase support with progesterone, monitoring for early signs of ovarian hyperstimulation, and a blood pregnancy test (beta-hCG) approximately 10-14 days after embryo transfer."
-  - phase: "Return home"
-    duration: "Week 2-3"
-    description: "Once pregnancy is confirmed and early scan shows a gestational sac, patients are cleared to fly home with a medical fitness certificate and a detailed antenatal care plan."
-  - phase: "Full recovery"
-    duration: "1-2 weeks between embryo transfer and pregnancy test"
-    description: "Complete hormonal recovery after a non-conceiving cycle typically takes 4-6 weeks before a subsequent cycle can be considered; ongoing antenatal care continues if pregnancy is achieved."
+  - phase: 'Treatment period'
+    duration: '4-6 weeks per cycle'
+    description: 'Ovarian stimulation with daily hormone injections, frequent ultrasound and blood monitoring, egg retrieval under sedation, and embryo transfer as a day-care procedure.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Luteal-phase support with progesterone, monitoring for early signs of ovarian hyperstimulation, and a blood pregnancy test (beta-hCG) approximately 10-14 days after embryo transfer.'
+  - phase: 'Return home'
+    duration: 'Week 2-3'
+    description: 'Once pregnancy is confirmed and early scan shows a gestational sac, patients are cleared to fly home with a medical fitness certificate and a detailed antenatal care plan.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks between embryo transfer and pregnancy test'
+    description: 'Complete hormonal recovery after a non-conceiving cycle typically takes 4-6 weeks before a subsequent cycle can be considered; ongoing antenatal care continues if pregnancy is achieved.'
 risks:
-  - "Ovarian hyperstimulation syndrome (OHSS) causing abdominal pain, bloating, and fluid accumulation"
-  - "Multiple pregnancy (twins or triplets) increasing the risk of preterm delivery and complications"
-  - "Ectopic pregnancy requiring medical or surgical intervention"
-  - "Ovarian torsion or bleeding following egg retrieval"
-  - "Emotional and psychological stress associated with cycle failure or repeated attempts"
+  - 'Ovarian hyperstimulation syndrome (OHSS) causing abdominal pain, bloating, and fluid accumulation'
+  - 'Multiple pregnancy (twins or triplets) increasing the risk of preterm delivery and complications'
+  - 'Ectopic pregnancy requiring medical or surgical intervention'
+  - 'Ovarian torsion or bleeding following egg retrieval'
+  - 'Emotional and psychological stress associated with cycle failure or repeated attempts'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-rashmi-patil
 
 relatedProcedureSlugs:
-  - "icsi-treatment-cost-india"
-  - "iui-treatment-cost-india"
-  - "egg-freezing-cost-india"
+  - 'icsi-treatment-cost-india'
+  - 'iui-treatment-cost-india'
+  - 'egg-freezing-cost-india'
 faqs:
-  - question: "How many IVF cycles are typically needed to achieve pregnancy?"
-    answer: "Success rates per cycle average 40-50% for women under 35 and decline with age. Most couples achieve pregnancy within 2-3 cycles, but individual outcomes depend on ovarian reserve, egg quality, and underlying fertility factors."
-  - question: "Is the quality of embryology labs in Bangalore comparable to Western clinics?"
-    answer: "Yes. Leading Bangalore fertility centres operate ISO-certified embryology labs with time-lapse incubators, laser-assisted hatching, and vitrification technology identical to those used in the US and UK, with comparable clinical pregnancy rates."
-  - question: "Can I freeze extra embryos for future use?"
-    answer: "Yes. Surplus good-quality embryos can be vitrified and stored for up to 5-10 years. Frozen embryo transfer cycles are simpler and less expensive, and Khan Meditour can coordinate storage and future transfers."
+  - question: 'How many IVF cycles are typically needed to achieve pregnancy?'
+    answer: 'Success rates per cycle average 40-50% for women under 35 and decline with age. Most couples achieve pregnancy within 2-3 cycles, but individual outcomes depend on ovarian reserve, egg quality, and underlying fertility factors.'
+  - question: 'Is the quality of embryology labs in Bangalore comparable to Western clinics?'
+    answer: 'Yes. Leading Bangalore fertility centres operate ISO-certified embryology labs with time-lapse incubators, laser-assisted hatching, and vitrification technology identical to those used in the US and UK, with comparable clinical pregnancy rates.'
+  - question: 'Can I freeze extra embryos for future use?'
+    answer: 'Yes. Surplus good-quality embryos can be vitrified and stored for up to 5-10 years. Frozen embryo transfer cycles are simpler and less expensive, and Khan Meditour can coordinate storage and future transfers.'
 ---
+
 ## Overview
 
 If you've been trying to have a baby and it's just not happening, you may be feeling frustrated, heartbroken, or even guilty. These feelings are completely normal, and you are not alone. Millions of couples around the world face the same struggle, and IVF has helped many of them become parents.
@@ -140,15 +141,16 @@ If your cycle wasn't successful, schedule a follow-up consultation with your Ban
 Before committing to IVF, you and your doctor should consider whether a less invasive option might work for you. Intrauterine insemination (IUI) places washed sperm directly into your uterus during ovulation, costing only $300 to $800 per cycle in Bangalore. IUI is a reasonable first option for mild male factor infertility or unexplained infertility of short duration, with success rates of 10 to 20 percent per cycle. Most specialists recommend trying 3 to 6 IUI cycles before moving to IVF.
 
 ICSI is a variation of IVF used when male factor infertility is severe. Egg freezing is an option if you wish to preserve your fertility for the future. If you have diminished ovarian reserve, particularly if you're over 42, donor egg IVF may offer a more realistic path to parenthood. For couples where the female partner cannot carry a pregnancy, surrogacy may be an option, though Indian law restricts surrogacy to Indian citizens under the Surrogacy (Regulation) Act 2021. Khan Meditour's specialists can provide personalised guidance on which pathway offers the best balance of success probability, cost, and time for your situation.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,500 – $4,000 | Baseline |
-| USA | $12,000 – $20,000 | ~5.7x higher |
-| UK | £5,000 – £8,000 | ~3.0x higher |
-| Singapore | $8,000 – $12,000 | ~4.3x higher |
-| Thailand | $4,500 – $7,000 | ~2.1x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $1,500 – $4,000   | Baseline     |
+| USA               | $12,000 – $20,000 | ~5.7x higher |
+| UK                | £5,000 – £8,000   | ~3.0x higher |
+| Singapore         | $8,000 – $12,000  | ~4.3x higher |
+| Thailand          | $4,500 – $7,000   | ~2.1x higher |
 
 You might be wondering why IVF in India costs so much less. The cost difference comes from lower infrastructure, staffing, and medication costs in India, not from any reduction in quality. Bangalore's clinics use the same stimulation hormones, embryology consumables, and laboratory equipment as top-tier Western centres. The variation within the Indian price range reflects your specific needs: the stimulation protocol, whether ICSI is required, additional procedures like PGT-A genetic testing, and whether donor eggs or sperm are needed. Even at the upper end, the savings are dramatic, and if your first cycle isn't successful, a second or third cycle remains financially within reach.
 

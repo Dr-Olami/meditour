@@ -18,12 +18,12 @@ expertise:
   - Renal Transplantation
   - Reconstructive Urology
   - Robotic Surgery in Urology
-pullQuote: "The best surgery is the one the patient recovers from fastest. Robotics lets me remove the cancer while preserving the life that follows."
+pullQuote: 'The best surgery is the one the patient recovers from fastest. Robotics lets me remove the cancer while preserving the life that follows.'
 faqs:
   - question: "What is Dr. Deepak Dubey's expertise in robotic urological surgery?"
-    answer: "Dr. Deepak Dubey is a distinguished robotic urological surgeon with over 25 years of experience. He specialises in robotic procedures for kidney, bladder, and prostate cancers, advanced laparoscopic urological surgeries, and renal transplant surgeries. He holds the FRCS (Urology) from the Intercollegiate Speciality Board of the Royal College of Surgeons, UK, and serves as Director of Renal Transplantation Services (South Region)."
-  - question: "Does Dr. Deepak Dubey perform kidney transplants?"
-    answer: "Yes, Dr. Deepak Dubey is the Director of Renal Transplantation Services (South Region) at Manipal Hospital Old Airport Road. He has extensive experience in kidney transplantation, including living-donor and deceased-donor transplants. He has successfully performed kidney transplants on complex cases including COVID-19 survivors, and is recognised for his compassionate, patient-centred approach to renal care."
+    answer: 'Dr. Deepak Dubey is a distinguished robotic urological surgeon with over 25 years of experience. He specialises in robotic procedures for kidney, bladder, and prostate cancers, advanced laparoscopic urological surgeries, and renal transplant surgeries. He holds the FRCS (Urology) from the Intercollegiate Speciality Board of the Royal College of Surgeons, UK, and serves as Director of Renal Transplantation Services (South Region).'
+  - question: 'Does Dr. Deepak Dubey perform kidney transplants?'
+    answer: 'Yes, Dr. Deepak Dubey is the Director of Renal Transplantation Services (South Region) at Manipal Hospital Old Airport Road. He has extensive experience in kidney transplantation, including living-donor and deceased-donor transplants. He has successfully performed kidney transplants on complex cases including COVID-19 survivors, and is recognised for his compassionate, patient-centred approach to renal care.'
 ---
 
 ## About the Doctor

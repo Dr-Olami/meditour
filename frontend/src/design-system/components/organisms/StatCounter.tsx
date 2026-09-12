@@ -8,8 +8,7 @@ export interface StatData {
   description?: string;
 }
 
-export interface StatCounterProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface StatCounterProps extends React.HTMLAttributes<HTMLDivElement> {
   stats: StatData[];
 }
 
@@ -19,14 +18,7 @@ export interface StatCounterProps
 const StatCounter = React.forwardRef<HTMLDivElement, StatCounterProps>(
   ({ className, stats, ...props }, ref) => {
     return (
-      <div
-        className={cn(
-          'grid grid-cols-2 gap-8 md:grid-cols-4',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
+      <div className={cn('grid grid-cols-2 gap-8 md:grid-cols-4', className)} ref={ref} {...props}>
         {stats.map((stat) => (
           <Stat
             key={stat.label}

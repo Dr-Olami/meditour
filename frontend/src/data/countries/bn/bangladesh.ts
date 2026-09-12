@@ -56,20 +56,46 @@ const bangladeshBn: CountryMetadata = {
   costSavingsVsLocal: '৬০–৮০%',
   costComparisonCountries: ['সিঙ্গাপুর', 'থাইল্যান্ড', 'মালয়েশিয়া'],
   treatmentCosts: withLocalCurrency(baseTreatmentCosts, (usd) =>
-    usd.replace(/\$([\d,]+)–\$?([\d,]+)/g, (_, lo, hi) => `৳${(Number(lo.replace(/,/g, '')) * 110).toLocaleString()}–${(Number(hi.replace(/,/g, '')) * 110).toLocaleString()}`),
+    usd.replace(
+      /\$([\d,]+)–\$?([\d,]+)/g,
+      (_, lo, hi) =>
+        `৳${(Number(lo.replace(/,/g, '')) * 110).toLocaleString()}–${(Number(hi.replace(/,/g, '')) * 110).toLocaleString()}`
+    )
   ),
 
   languages: ['বাংলা', 'ইংরেজি'],
   religiousMajority: 'muslim',
-  culturalConsiderations: ['হালাল খাবার পাওয়া যায়', 'নামাজের ব্যবস্থা', 'পরিবারের থাকার ব্যবস্থা'],
+  culturalConsiderations: [
+    'হালাল খাবার পাওয়া যায়',
+    'নামাজের ব্যবস্থা',
+    'পরিবারের থাকার ব্যবস্থা',
+  ],
 
   patientsTreated: 5000,
   establishedYear: 2018,
 
   recommendedCities: [
-    { name: 'কলকাতা', flightTime: 'ঢাকা থেকে ১ ঘণ্টা', directFlights: true, airlines: ['বিমান বাংলাদেশ', 'IndiGo', 'Air India'], specialties: ['কার্ডিয়াক', 'অনকোলজি', 'নিউরোসার্জারি'] },
-    { name: 'ব্যাঙ্গালোর', flightTime: 'ঢাকা থেকে ৩ ঘণ্টা', directFlights: true, airlines: ['বিমান বাংলাদেশ', 'IndiGo'], specialties: ['ট্রান্সপ্লান্ট', 'কার্ডিয়াক', 'অর্থোপেডিক্স', 'ক্যান্সার'] },
-    { name: 'চেন্নাই', flightTime: 'ঢাকা থেকে ৩ ঘণ্টা', directFlights: true, airlines: ['IndiGo', 'SriLankan Airlines'], specialties: ['কার্ডিয়াক', 'অনকোলজি', 'অর্থোপেডিক্স'] },
+    {
+      name: 'কলকাতা',
+      flightTime: 'ঢাকা থেকে ১ ঘণ্টা',
+      directFlights: true,
+      airlines: ['বিমান বাংলাদেশ', 'IndiGo', 'Air India'],
+      specialties: ['কার্ডিয়াক', 'অনকোলজি', 'নিউরোসার্জারি'],
+    },
+    {
+      name: 'ব্যাঙ্গালোর',
+      flightTime: 'ঢাকা থেকে ৩ ঘণ্টা',
+      directFlights: true,
+      airlines: ['বিমান বাংলাদেশ', 'IndiGo'],
+      specialties: ['ট্রান্সপ্লান্ট', 'কার্ডিয়াক', 'অর্থোপেডিক্স', 'ক্যান্সার'],
+    },
+    {
+      name: 'চেন্নাই',
+      flightTime: 'ঢাকা থেকে ৩ ঘণ্টা',
+      directFlights: true,
+      airlines: ['IndiGo', 'SriLankan Airlines'],
+      specialties: ['কার্ডিয়াক', 'অনকোলজি', 'অর্থোপেডিক্স'],
+    },
   ],
 
   // Reason: visa step titles/descriptions are translated; the process itself
@@ -98,9 +124,12 @@ const bangladeshBn: CountryMetadata = {
   ],
 
   heroTitle: 'বাংলাদেশি রোগীদের জন্য ভারতে বিশ্বমানের চিকিৎসা',
-  heroSubtitle: 'ঢাকা থেকে সরাসরি ফ্লাইট। বাংলাভাষী কোঅর্ডিনেটর। চিকিৎসায় ৬০–৮০% সাশ্রয়। ৫,০০০+ পরিবারের আস্থা।',
-  metaDescription: 'বাংলাদেশি রোগীদের জন্য ভারতে সাশ্রয়ী চিকিৎসা। কার্ডিয়াক, অর্থোপেডিক, ক্যান্সার চিকিৎসায় ৬০–৮০% সাশ্রয়, ভিসা সহায়তা, বাংলাভাষী কর্মী ও JCI হাসপাতাল। বিনামূল্যে পরামর্শ।',
-  introParagraph: 'ঢাকা, চট্টগ্রাম ও সিলেট থেকে রোগীরা ভারতে ক্যান্সার চিকিৎসা, কার্ডিয়াক সার্জারি, ট্রান্সপ্লান্ট ও অর্থোপেডিক্সের জন্য যান — বাংলা বা ইংরেজি সহায়তা, কাছের মেট্রো অপশন, মেডিকেল ভিসা সহায়তা এবং প্রতিযোগিতামূলক প্যাকেজ মূল্যে।',
+  heroSubtitle:
+    'ঢাকা থেকে সরাসরি ফ্লাইট। বাংলাভাষী কোঅর্ডিনেটর। চিকিৎসায় ৬০–৮০% সাশ্রয়। ৫,০০০+ পরিবারের আস্থা।',
+  metaDescription:
+    'বাংলাদেশি রোগীদের জন্য ভারতে সাশ্রয়ী চিকিৎসা। কার্ডিয়াক, অর্থোপেডিক, ক্যান্সার চিকিৎসায় ৬০–৮০% সাশ্রয়, ভিসা সহায়তা, বাংলাভাষী কর্মী ও JCI হাসপাতাল। বিনামূল্যে পরামর্শ।',
+  introParagraph:
+    'ঢাকা, চট্টগ্রাম ও সিলেট থেকে রোগীরা ভারতে ক্যান্সার চিকিৎসা, কার্ডিয়াক সার্জারি, ট্রান্সপ্লান্ট ও অর্থোপেডিক্সের জন্য যান — বাংলা বা ইংরেজি সহায়তা, কাছের মেট্রো অপশন, মেডিকেল ভিসা সহায়তা এবং প্রতিযোগিতামূলক প্যাকেজ মূল্যে।',
 
   currency: { code: 'BDT', symbol: '৳', exchangeRate: 110, name: 'বাংলাদেশি টাকা' },
 };

@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Ethiopian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Addis Ababa to India for treatment: medical visa requirements, direct Ethiopian Airlines routes, cost comparisons in Ethiopian Birr, and choosing the right hospital for Ethiopian families."
+excerpt: 'Travelling from Addis Ababa to India for treatment: medical visa requirements, direct Ethiopian Airlines routes, cost comparisons in Ethiopian Birr, and choosing the right hospital for Ethiopian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-26
@@ -32,13 +32,13 @@ Ethiopian patients travel to India for cardiac surgery, orthopedics, cancer care
 
 Heart surgery cost India vs Ethiopia is the comparison most families start with. Indicative package prices (at roughly 128 Br per US dollar):
 
-| Treatment | India (USD) | Approx. ETB | South Africa | Thailand |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | Br 576K–1.5M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | Br 320K–1M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | Br 384K–3.2M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | Br 512K–1.5M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | Br 448K–896K | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. ETB  | South Africa | Thailand   |
+| -------------------- | ------------- | ------------ | ------------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | Br 576K–1.5M | Higher       | Far higher |
+| Knee/hip replacement | $2,500–8,000  | Br 320K–1M   | Higher       | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | Br 384K–3.2M | Higher       | Far higher |
+| Spine surgery        | $4,000–12,000 | Br 512K–1.5M | Higher       | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | Br 448K–896K | Higher       | Far higher |
 
 Cardiac surgery in India for Ethiopian patients is a well-travelled route — bypass and valve procedures at JCI-accredited centres, with direct Ethiopian Airlines flights making follow-up visits straightforward.
 

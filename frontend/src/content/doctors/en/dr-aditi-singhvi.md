@@ -11,21 +11,21 @@ languages:
   - English
   - Kannada
 expertise:
-  - "Heart Failure & Transplantation Medicine"
-  - "Heart Failure & Transplant Cardiology"
+  - 'Heart Failure & Transplantation Medicine'
+  - 'Heart Failure & Transplant Cardiology'
   - Advanced Cardio-Pulmonary Therapeutics
   - Mechanical Heart Devices (LVAD)
   - Cardiac Transplantation
-pullQuote: "Every heart failure patient deserves not just a treatment plan, but a partner who walks every step of their journey back to strength."
+pullQuote: 'Every heart failure patient deserves not just a treatment plan, but a partner who walks every step of their journey back to strength.'
 faqs:
-  - question: "Is Dr. Aditi Singhvi experienced in heart failure and transplant cardiology?"
-    answer: "Yes, Dr. Aditi Singhvi completed her residency in Internal Medicine from Wayne State University, USA, followed by a fellowship in Cardiology from the University of Connecticut, USA. She also completed a fellowship in Advanced Heart Failure and Transplant Cardiology from Houston Methodist DeBakey Heart & Vascular Center, one of the largest transplant centers in the USA. She worked as an Advanced Heart Failure and Transplant Cardiologist at Mount Sinai Hospital, New York, and is currently a Consultant at Narayana Institute of Cardiac Sciences, Bangalore."
-  - question: "What types of heart failure treatments does Dr. Aditi Singhvi provide?"
-    answer: "Dr. Aditi Singhvi specializes in heart failure and transplant cardiology, advanced cardio-pulmonary therapeutics, mechanical heart devices (LVAD), and cardiac transplantation. She helped build the Narayana Health Heart Failure, LVAD, and Heart Transplant Care Center. Her expertise includes management of advanced heart failure, post-heart transplant care, and mechanical circulatory support devices."
-  - question: "Is Dr. Aditi Singhvi one of the best heart failure specialists in Bangalore?"
-    answer: "Yes, Dr. Aditi Singhvi is a highly qualified Consultant and Clinical Lead for Adult Heart Failure and Transplant at Narayana Institute of Cardiac Sciences. She trained at premier US institutions including Houston Methodist DeBakey Heart & Vascular Center and Mount Sinai Hospital, New York. She is a Fellow of the American College of Cardiology and a member of the International Society of Heart and Lung Transplantation, with several peer-reviewed publications and recognition for top publications in the Journal of Heart and Lung Transplantation."
-  - question: "What is the cost of heart failure treatment with Dr. Aditi Singhvi in Bangalore?"
-    answer: "Cardiac care costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Aditi Singhvi practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained heart failure specialists and advanced transplant facilities."
+  - question: 'Is Dr. Aditi Singhvi experienced in heart failure and transplant cardiology?'
+    answer: 'Yes, Dr. Aditi Singhvi completed her residency in Internal Medicine from Wayne State University, USA, followed by a fellowship in Cardiology from the University of Connecticut, USA. She also completed a fellowship in Advanced Heart Failure and Transplant Cardiology from Houston Methodist DeBakey Heart & Vascular Center, one of the largest transplant centers in the USA. She worked as an Advanced Heart Failure and Transplant Cardiologist at Mount Sinai Hospital, New York, and is currently a Consultant at Narayana Institute of Cardiac Sciences, Bangalore.'
+  - question: 'What types of heart failure treatments does Dr. Aditi Singhvi provide?'
+    answer: 'Dr. Aditi Singhvi specializes in heart failure and transplant cardiology, advanced cardio-pulmonary therapeutics, mechanical heart devices (LVAD), and cardiac transplantation. She helped build the Narayana Health Heart Failure, LVAD, and Heart Transplant Care Center. Her expertise includes management of advanced heart failure, post-heart transplant care, and mechanical circulatory support devices.'
+  - question: 'Is Dr. Aditi Singhvi one of the best heart failure specialists in Bangalore?'
+    answer: 'Yes, Dr. Aditi Singhvi is a highly qualified Consultant and Clinical Lead for Adult Heart Failure and Transplant at Narayana Institute of Cardiac Sciences. She trained at premier US institutions including Houston Methodist DeBakey Heart & Vascular Center and Mount Sinai Hospital, New York. She is a Fellow of the American College of Cardiology and a member of the International Society of Heart and Lung Transplantation, with several peer-reviewed publications and recognition for top publications in the Journal of Heart and Lung Transplantation.'
+  - question: 'What is the cost of heart failure treatment with Dr. Aditi Singhvi in Bangalore?'
+    answer: 'Cardiac care costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Aditi Singhvi practices at Narayana Institute of Cardiac Sciences, which is renowned for providing high-quality cardiac care at affordable costs. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained heart failure specialists and advanced transplant facilities.'
 ---
 
 ## About the Doctor

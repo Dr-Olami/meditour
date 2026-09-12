@@ -9,24 +9,20 @@ import { cn } from '../../../lib/utils';
  * and drag-to-scroll on desktop. Children are expected to be images or badge
  * cards passed via the `items` render prop or as children.
  */
-const marqueeTrack = cva(
-  'flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-2',
-  {
-    variants: {
-      tone: {
-        light: '',
-        dark: '',
-      },
+const marqueeTrack = cva('flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-2', {
+  variants: {
+    tone: {
+      light: '',
+      dark: '',
     },
-    defaultVariants: {
-      tone: 'light',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    tone: 'light',
+  },
+});
 
 export interface MarqueeStripProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof marqueeTrack> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof marqueeTrack> {
   /** Items to render in the strip. Each is wrapped in a snap-start cell. */
   items?: React.ReactNode[];
   /** Surface tone — `light` for cream sections, `dark` for ink bands. */
@@ -54,10 +50,7 @@ const MarqueeStrip = React.forwardRef<HTMLDivElement, MarqueeStripProps>(
         <div className={cn(marqueeTrack({ tone }))}>
           {hasItems
             ? items.map((item, index) => (
-                <div
-                  key={index}
-                  className="shrink-0 snap-start"
-                >
+                <div key={index} className="shrink-0 snap-start">
                   {item}
                 </div>
               ))

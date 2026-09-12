@@ -56,11 +56,7 @@ function convertSingle(usd: string, exchangeRate: number, symbol: string): strin
  * convertUsdToLocal('$4,500', 110, '৳')  // '৳495,000'
  * convertUsdToLocal('$4,500–$12,000', 110, '৳')  // '৳495,000–৳1,320,000'
  */
-export function convertUsdToLocal(
-  usdPrice: string,
-  exchangeRate: number,
-  symbol: string,
-): string {
+export function convertUsdToLocal(usdPrice: string, exchangeRate: number, symbol: string): string {
   // Reason: country data uses en-dash (–) but some procedure files may use
   // hyphen (-) or em-dash (—). Normalize all dash variants before splitting.
   const normalized = usdPrice.replace(/—|–|-/g, '–');
@@ -86,7 +82,7 @@ export function formatWithLocal(
   usdPrice: string,
   exchangeRate: number,
   symbol: string,
-  currencyCode: string,
+  currencyCode: string
 ): string {
   const local = convertUsdToLocal(usdPrice, exchangeRate, symbol);
   return `${usdPrice} (≈ ${local} ${currencyCode})`;

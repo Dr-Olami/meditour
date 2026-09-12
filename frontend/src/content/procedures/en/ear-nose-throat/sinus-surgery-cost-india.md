@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Sinus Surgery (FESS)"
-seoHeadline: "Sinus Surgery (FESS) Cost in India for International Patients"
+name: 'Sinus Surgery (FESS)'
+seoHeadline: 'Sinus Surgery (FESS) Cost in India for International Patients'
 parentTreatmentSlug: ear-nose-throat
-summary: "Functional endoscopic sinus surgery (FESS) in India costs between $1,500 and $5,000, offering savings of up to 80% compared to Western countries. The minimally invasive procedure uses high-definition endoscopes to open blocked sinus passages, remove polyps, and restore natural drainage for patients with chronic sinusitis unresponsive to medical treatment."
-description: "Functional endoscopic sinus surgery (FESS) in India from $1,500–$5,000 at accredited Bangalore hospitals. Minimally invasive endoscopic treatment for chronic sinusitis and nasal polyps."
-fromPrice: "$1,500"
-toPrice: "$5,000"
-duration: "1-3 hours"
-hospitalStay: "0-1 days"
-recoveryTime: "1-2 weeks"
+summary: 'Functional endoscopic sinus surgery (FESS) in India costs between $1,500 and $5,000, offering savings of up to 80% compared to Western countries. The minimally invasive procedure uses high-definition endoscopes to open blocked sinus passages, remove polyps, and restore natural drainage for patients with chronic sinusitis unresponsive to medical treatment.'
+description: 'Functional endoscopic sinus surgery (FESS) in India from $1,500–$5,000 at accredited Bangalore hospitals. Minimally invasive endoscopic treatment for chronic sinusitis and nasal polyps.'
+fromPrice: '$1,500'
+toPrice: '$5,000'
+duration: '1-3 hours'
+hospitalStay: '0-1 days'
+recoveryTime: '1-2 weeks'
 eligibility:
-  - "Chronic rhinosinusitis persisting beyond 12 weeks despite maximal medical therapy including antibiotics and topical steroids"
-  - "Nasal polyps causing nasal obstruction, loss of smell, or recurrent sinus infections"
-  - "Recurrent acute sinusitis with four or more episodes per year confirmed by imaging"
-  - "Anatomical sinus obstruction such as deviated septum, concha bullosa, or Haller cells contributing to disease"
-  - "Fungal sinusitis or mucocele requiring surgical drainage and clearance"
+  - 'Chronic rhinosinusitis persisting beyond 12 weeks despite maximal medical therapy including antibiotics and topical steroids'
+  - 'Nasal polyps causing nasal obstruction, loss of smell, or recurrent sinus infections'
+  - 'Recurrent acute sinusitis with four or more episodes per year confirmed by imaging'
+  - 'Anatomical sinus obstruction such as deviated septum, concha bullosa, or Haller cells contributing to disease'
+  - 'Fungal sinusitis or mucocele requiring surgical drainage and clearance'
 costInclusions:
-  - "ENT surgeon and anaesthesiologist fees"
-  - "Hospital room charges (day-care or overnight stay)"
-  - "Surgery/procedure costs including endoscopic equipment"
-  - "Pre-operative diagnostics (CT scan paranasal sinuses, nasal endoscopy, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Initial post-operative nasal cleaning and debridement"
-  - "Airport pickup and drop"
+  - 'ENT surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (day-care or overnight stay)'
+  - 'Surgery/procedure costs including endoscopic equipment'
+  - 'Pre-operative diagnostics (CT scan paranasal sinuses, nasal endoscopy, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Initial post-operative nasal cleaning and debridement'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term nasal irrigation supplies and topical medications"
-  - "Allergy testing and immunotherapy if required"
-  - "Revision surgery for recurrent disease in future years"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term nasal irrigation supplies and topical medications'
+  - 'Allergy testing and immunotherapy if required'
+  - 'Revision surgery for recurrent disease in future years'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "0-1 days"
-    description: "Most FESS procedures are day-care or overnight stays. Nasal packing or splints may be in place, and you are monitored for bleeding before discharge."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Nasal packing is removed within 1-2 days. Follow-up endoscopic cleaning is performed. Nasal congestion and mild discomfort gradually subside."
-  - phase: "Return home"
-    duration: "Week 2-3"
-    description: "Gradual return to daily activities. Saline irrigation protocol continues. Most patients return to work within 7-10 days of surgery."
-  - phase: "Full recovery"
-    duration: "4-6 weeks"
-    description: "Complete healing of sinus mucosa. Ongoing saline rinses and topical steroid sprays maintain sinus health and prevent recurrence."
+  - phase: 'Hospital stay'
+    duration: '0-1 days'
+    description: 'Most FESS procedures are day-care or overnight stays. Nasal packing or splints may be in place, and you are monitored for bleeding before discharge.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Nasal packing is removed within 1-2 days. Follow-up endoscopic cleaning is performed. Nasal congestion and mild discomfort gradually subside.'
+  - phase: 'Return home'
+    duration: 'Week 2-3'
+    description: 'Gradual return to daily activities. Saline irrigation protocol continues. Most patients return to work within 7-10 days of surgery.'
+  - phase: 'Full recovery'
+    duration: '4-6 weeks'
+    description: 'Complete healing of sinus mucosa. Ongoing saline rinses and topical steroid sprays maintain sinus health and prevent recurrence.'
 risks:
-  - "Bleeding from the surgical site requiring nasal packing or rarely transfusion"
-  - "Infection of the sinuses or surgical site requiring antibiotic treatment"
-  - "Damage to surrounding structures including orbit, eye muscles, or optic nerve"
-  - "Cerebrospinal fluid leak due to breach of the skull base requiring repair"
-  - "Recurrence of nasal polyps or chronic sinus disease requiring revision surgery"
+  - 'Bleeding from the surgical site requiring nasal packing or rarely transfusion'
+  - 'Infection of the sinuses or surgical site requiring antibiotic treatment'
+  - 'Damage to surrounding structures including orbit, eye muscles, or optic nerve'
+  - 'Cerebrospinal fluid leak due to breach of the skull base requiring repair'
+  - 'Recurrence of nasal polyps or chronic sinus disease requiring revision surgery'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -57,14 +57,14 @@ relatedDoctorSlugs:
   - dr-sunil-narayan-dutt
 
 relatedProcedureSlugs:
-  - "cochlear-implant-cost-india"
+  - 'cochlear-implant-cost-india'
 faqs:
-  - question: "How much does sinus surgery (FESS) cost in India compared to the USA?"
-    answer: "Functional endoscopic sinus surgery in India costs $1,500–$5,000, while in the USA it ranges from $10,000–$30,000 including surgeon fees, hospital stay, and anaesthesia. The cost in India includes high-definition endoscopic equipment and experienced ENT surgeons, offering savings of approximately 80%."
-  - question: "Is sinus surgery painful?"
-    answer: "FESS is performed under general anaesthesia, so you will not feel any pain during the procedure. After surgery, you may experience mild discomfort, nasal congestion, and pressure for a few days, which is managed with prescribed pain medication and saline irrigation. Most patients report the recovery is more uncomfortable than painful."
-  - question: "Will my sinusitis come back after surgery?"
-    answer: "FESS has a success rate of 80-90% for chronic sinusitis when combined with appropriate post-operative medical management. However, nasal polyps can recur, particularly in patients with asthma or aspirin sensitivity. Ongoing use of saline rinses, topical steroid sprays, and regular follow-up endoscopic cleaning significantly reduces the risk of recurrence."
+  - question: 'How much does sinus surgery (FESS) cost in India compared to the USA?'
+    answer: 'Functional endoscopic sinus surgery in India costs $1,500–$5,000, while in the USA it ranges from $10,000–$30,000 including surgeon fees, hospital stay, and anaesthesia. The cost in India includes high-definition endoscopic equipment and experienced ENT surgeons, offering savings of approximately 80%.'
+  - question: 'Is sinus surgery painful?'
+    answer: 'FESS is performed under general anaesthesia, so you will not feel any pain during the procedure. After surgery, you may experience mild discomfort, nasal congestion, and pressure for a few days, which is managed with prescribed pain medication and saline irrigation. Most patients report the recovery is more uncomfortable than painful.'
+  - question: 'Will my sinusitis come back after surgery?'
+    answer: 'FESS has a success rate of 80-90% for chronic sinusitis when combined with appropriate post-operative medical management. However, nasal polyps can recur, particularly in patients with asthma or aspirin sensitivity. Ongoing use of saline rinses, topical steroid sprays, and regular follow-up endoscopic cleaning significantly reduces the risk of recurrence.'
 ---
 
 ## Overview
@@ -139,13 +139,13 @@ If your primary problem is a deviated septum rather than sinus disease, a septop
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,500 – $5,000 | Baseline |
-| USA | $10,000 – $30,000 | ~6.5x higher |
-| UK | £7,000 – £20,000 | ~4.4x higher |
-| Singapore | $7,000 – $18,000 | ~4.0x higher |
-| Thailand | $4,000 – $10,000 | ~2.3x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $1,500 – $5,000   | Baseline     |
+| USA               | $10,000 – $30,000 | ~6.5x higher |
+| UK                | £7,000 – £20,000  | ~4.4x higher |
+| Singapore         | $7,000 – $18,000  | ~4.0x higher |
+| Thailand          | $4,000 – $10,000  | ~2.3x higher |
 
 The price range within India reflects the extent of surgery (limited FESS versus extensive bilateral FESS with septoplasty), the hospital and surgeon you select, and whether image-guided navigation is used. Even with the most extensive sinus surgery at a top-tier hospital, your total cost in Bangalore will typically be less than a third of the US price. These savings come from favourable exchange rates, lower labour costs, and high surgical volumes — not from any compromise in equipment quality or surgical technique.
 

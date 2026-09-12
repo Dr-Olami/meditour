@@ -12,13 +12,13 @@ languages:
   - Hindi
   - Kannada
 faqs:
-  - question: "Who is Dr. Naveen Rao?"
+  - question: 'Who is Dr. Naveen Rao?'
     answer: "Dr. Naveen Rao is a distinguished Plastic and Cosmetic Surgeon based at Apollo Hospitals Bannerghatta Road, Bangalore, with over 19 years of experience. He holds MBBS, MS, MCh, and a Fellowship in Cosmetic Surgery, with advanced training from KEM Hospital Mumbai, the Ethicon Institute in Germany, and international tutorials conducted by Dr Thomas Biggs (USA). He is one of India's leading registered cosmetic plastic surgeons."
-  - question: "Why do patients choose Dr. Naveen Rao?"
-    answer: "Patients choose Dr. Naveen Rao for his extensive international training in cosmetic plastic surgery, including endoscopic plastic surgery from Germany and 100 hours of ISAPS-recognised aesthetic surgery tutorials from the USA. He is one of the few surgeons to offer post-bariatric surgery body contouring and uses computer-assisted imaging to discuss likely surgical outcomes with patients. He treats international patients at a JCI-accredited Apollo hospital and is fluent in English, Hindi, and Kannada."
+  - question: 'Why do patients choose Dr. Naveen Rao?'
+    answer: 'Patients choose Dr. Naveen Rao for his extensive international training in cosmetic plastic surgery, including endoscopic plastic surgery from Germany and 100 hours of ISAPS-recognised aesthetic surgery tutorials from the USA. He is one of the few surgeons to offer post-bariatric surgery body contouring and uses computer-assisted imaging to discuss likely surgical outcomes with patients. He treats international patients at a JCI-accredited Apollo hospital and is fluent in English, Hindi, and Kannada.'
   - question: "What are Dr. Naveen Rao's medical qualifications?"
-    answer: "Dr. Naveen Rao holds MBBS, MS, and MCh degrees, along with a Fellowship in Cosmetic Surgery. He received his superspeciality plastic surgery training from KEM Hospital, Mumbai, followed by advanced cosmetic surgery training from renowned international surgeons. He also completed endoscopic plastic surgery training at the Ethicon Institute in Germany under Prof Alfred C Berger and Dr A Krause-Bergman."
-  - question: "How can I book an appointment with Dr. Naveen Rao?"
+    answer: 'Dr. Naveen Rao holds MBBS, MS, and MCh degrees, along with a Fellowship in Cosmetic Surgery. He received his superspeciality plastic surgery training from KEM Hospital, Mumbai, followed by advanced cosmetic surgery training from renowned international surgeons. He also completed endoscopic plastic surgery training at the Ethicon Institute in Germany under Prof Alfred C Berger and Dr A Krause-Bergman.'
+  - question: 'How can I book an appointment with Dr. Naveen Rao?'
     answer: "You can book an appointment with Dr. Naveen Rao at Apollo Hospitals Bannerghatta Road, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

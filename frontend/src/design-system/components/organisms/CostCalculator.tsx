@@ -67,7 +67,7 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
       if (!number || !selected) return '';
       return buildWhatsAppLink(
         number,
-        `Hi Khan Meditour, I checked the estimate for ${selected.name} (range ${selected.fromPrice}–${selected.toPrice}) and would like an exact quote for my case.`,
+        `Hi Khan Meditour, I checked the estimate for ${selected.name} (range ${selected.fromPrice}–${selected.toPrice}) and would like an exact quote for my case.`
       );
     }, [selected]);
 
@@ -107,9 +107,7 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
 
             {/* Prompt when nothing is selected */}
             {!selected && (
-              <p className="mt-6 text-sm leading-relaxed text-ink/50">
-                {labels.selectPrompt}
-              </p>
+              <p className="text-ink/50 mt-6 text-sm leading-relaxed">{labels.selectPrompt}</p>
             )}
 
             {/* Quick treatment list for mobile tapping */}
@@ -119,7 +117,7 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                   <button
                     key={t.slug}
                     onClick={() => setSelectedSlug(t.slug)}
-                    className="rounded-full border border-cream-300 bg-white px-3 py-1.5 text-xs font-medium text-ink/70 hover:border-violet-600 hover:text-violet-600"
+                    className="text-ink/70 rounded-full border border-cream-300 bg-white px-3 py-1.5 text-xs font-medium hover:border-violet-600 hover:text-violet-600"
                   >
                     {t.name}
                   </button>
@@ -137,10 +135,8 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                   {labels.yourEstimate}
                 </p>
                 <div className="mt-2 flex items-center gap-2">
-                  <h3 className="font-display text-xl font-bold text-ink">
-                    {selected.name}
-                  </h3>
-                  <span className="text-xs text-ink/40">· {labels.planningRange}</span>
+                  <h3 className="font-display text-xl font-bold text-ink">{selected.name}</h3>
+                  <span className="text-ink/40 text-xs">· {labels.planningRange}</span>
                   <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[0.65rem] font-semibold text-green-700">
                     &#10003; {labels.verified}
                   </span>
@@ -149,11 +145,11 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                 {/* Details table */}
                 <dl className="mt-6 divide-y divide-cream-300">
                   <div className="flex items-center justify-between py-2.5">
-                    <dt className="text-sm text-ink/50">{labels.treatment}</dt>
+                    <dt className="text-ink/50 text-sm">{labels.treatment}</dt>
                     <dd className="text-sm font-medium text-ink">{selected.name}</dd>
                   </div>
                   <div className="flex items-center justify-between py-2.5">
-                    <dt className="text-sm text-ink/50">{labels.indiaRange}</dt>
+                    <dt className="text-ink/50 text-sm">{labels.indiaRange}</dt>
                     <dd className="text-sm font-semibold text-ink">
                       {selected.fromPrice}–{selected.toPrice}
                     </dd>
@@ -161,27 +157,25 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                   {extra && (
                     <>
                       <div className="flex items-center justify-between py-2.5">
-                        <dt className="text-sm text-ink/50">{labels.usRange}</dt>
-                        <dd className="text-sm text-ink/70">
+                        <dt className="text-ink/50 text-sm">{labels.usRange}</dt>
+                        <dd className="text-ink/70 text-sm">
                           {extra.usRange.from}–{extra.usRange.to}
                         </dd>
                       </div>
                       <div className="flex items-center justify-between py-2.5">
-                        <dt className="text-sm text-ink/50">{labels.indicativeSavings}</dt>
-                        <dd className="text-sm font-semibold text-violet-600">
-                          {extra.savings}
-                        </dd>
+                        <dt className="text-ink/50 text-sm">{labels.indicativeSavings}</dt>
+                        <dd className="text-sm font-semibold text-violet-600">{extra.savings}</dd>
                       </div>
                     </>
                   )}
                   {selected.category && (
                     <div className="flex items-center justify-between py-2.5">
-                      <dt className="text-sm text-ink/50">{labels.category}</dt>
+                      <dt className="text-ink/50 text-sm">{labels.category}</dt>
                       <dd className="text-sm font-medium text-ink">{selected.category}</dd>
                     </div>
                   )}
                   <div className="flex items-center justify-between py-2.5">
-                    <dt className="text-sm text-ink/50">{labels.quoteWindow}</dt>
+                    <dt className="text-ink/50 text-sm">{labels.quoteWindow}</dt>
                     <dd className="text-sm font-medium text-ink">{labels.quoteWindowValue}</dd>
                   </div>
                 </dl>
@@ -193,8 +187,8 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                     <dl className="mt-3 space-y-2.5">
                       {breakdownRows.map((row) => (
                         <div key={row.label} className="flex items-center justify-between">
-                          <dt className="text-sm text-ink/70">{row.label}</dt>
-                          <dd className="text-sm font-medium text-ink/80">
+                          <dt className="text-ink/70 text-sm">{row.label}</dt>
+                          <dd className="text-ink/80 text-sm font-medium">
                             {row.from}–{row.to}
                           </dd>
                         </div>
@@ -208,25 +202,21 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                   href={quoteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-card bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink/90"
+                  className="hover:bg-ink/90 mt-6 inline-flex w-full items-center justify-center gap-2 rounded-card bg-ink px-6 py-3 text-sm font-semibold text-white"
                 >
                   {labels.getExactQuote}
                 </a>
               </div>
             ) : (
               <div className="flex h-full min-h-[200px] items-center justify-center">
-                <p className="text-center text-sm text-ink/40">
-                  {labels.selectPrompt}
-                </p>
+                <p className="text-ink/40 text-center text-sm">{labels.selectPrompt}</p>
               </div>
             )}
           </div>
         </div>
 
         {/* Disclaimer — always visible */}
-        <p className="mt-6 text-xs leading-relaxed text-ink/50">
-          {labels.disclaimer}
-        </p>
+        <p className="text-ink/50 mt-6 text-xs leading-relaxed">{labels.disclaimer}</p>
       </div>
     );
   }

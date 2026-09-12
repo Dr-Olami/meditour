@@ -24,7 +24,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: { hospital: SAMPLE_HOSPITAL, viewLabel: 'View hospital', locale: 'en' },
-  decorators: [(S) => <div className="w-80"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-80">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const WithoutImage: Story = {
@@ -33,14 +39,37 @@ export const WithoutImage: Story = {
     viewLabel: 'View hospital',
     locale: 'en',
   },
-  decorators: [(S) => <div className="w-80"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-80">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const Grid: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-6">
-      {[SAMPLE_HOSPITAL, { ...SAMPLE_HOSPITAL, slug: 'fortis-hospital-bannerghatta', name: 'Fortis Hospital, Bannerghatta Road, Bangalore' }, { ...SAMPLE_HOSPITAL, slug: 'sparsh-hospital-hennur', name: 'SPARSH Hospital, Hennur, Bangalore' }].map((hospital) => (
-        <HospitalCard key={hospital.slug} hospital={hospital} viewLabel="View hospital" locale="en" />
+      {[
+        SAMPLE_HOSPITAL,
+        {
+          ...SAMPLE_HOSPITAL,
+          slug: 'fortis-hospital-bannerghatta',
+          name: 'Fortis Hospital, Bannerghatta Road, Bangalore',
+        },
+        {
+          ...SAMPLE_HOSPITAL,
+          slug: 'sparsh-hospital-hennur',
+          name: 'SPARSH Hospital, Hennur, Bangalore',
+        },
+      ].map((hospital) => (
+        <HospitalCard
+          key={hospital.slug}
+          hospital={hospital}
+          viewLabel="View hospital"
+          locale="en"
+        />
       ))}
     </div>
   ),

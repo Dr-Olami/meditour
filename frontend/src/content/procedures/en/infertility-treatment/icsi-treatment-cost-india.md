@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "ICSI Treatment"
-seoHeadline: "ICSI Treatment Cost in India for International Patients"
+name: 'ICSI Treatment'
+seoHeadline: 'ICSI Treatment Cost in India for International Patients'
 parentTreatmentSlug: infertility-treatment
-summary: "ICSI (Intracytoplasmic Sperm Injection) is an advanced IVF technique where a single healthy sperm is injected directly into the egg to aid fertilisation. The cost of ICSI treatment in India ranges from $2,000 to $5,000 per cycle, offering significant savings for international patients compared to Western countries."
-description: "Affordable ICSI treatment in Bangalore, India for international patients. Costs from $2,000 to $5,000 per cycle with expert fertility specialists."
-fromPrice: "$2,000"
-toPrice: "$5,000"
-duration: "4-6 weeks per cycle"
-hospitalStay: "Day-care / outpatient"
-recoveryTime: "1-2 weeks between embryo transfer and pregnancy test"
+summary: 'ICSI (Intracytoplasmic Sperm Injection) is an advanced IVF technique where a single healthy sperm is injected directly into the egg to aid fertilisation. The cost of ICSI treatment in India ranges from $2,000 to $5,000 per cycle, offering significant savings for international patients compared to Western countries.'
+description: 'Affordable ICSI treatment in Bangalore, India for international patients. Costs from $2,000 to $5,000 per cycle with expert fertility specialists.'
+fromPrice: '$2,000'
+toPrice: '$5,000'
+duration: '4-6 weeks per cycle'
+hospitalStay: 'Day-care / outpatient'
+recoveryTime: '1-2 weeks between embryo transfer and pregnancy test'
 eligibility:
-  - "Couples with male-factor infertility (low sperm count, poor motility, or abnormal morphology)"
-  - "Women under 45 years of age with adequate ovarian reserve"
-  - "Patients who have had failed conventional IVF fertilisation"
-  - "Individuals using frozen or surgically retrieved sperm"
-  - "Couples seeking assisted reproduction with a viable egg supply"
+  - 'Couples with male-factor infertility (low sperm count, poor motility, or abnormal morphology)'
+  - 'Women under 45 years of age with adequate ovarian reserve'
+  - 'Patients who have had failed conventional IVF fertilisation'
+  - 'Individuals using frozen or surgically retrieved sperm'
+  - 'Couples seeking assisted reproduction with a viable egg supply'
 costInclusions:
-  - "Fertility specialist consultation fees"
-  - "Hospital/clinic room charges (where applicable)"
-  - "Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)"
-  - "Medications and hormones (as per protocol)"
-  - "Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)"
-  - "Lab and embryology charges"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Fertility specialist consultation fees'
+  - 'Hospital/clinic room charges (where applicable)'
+  - 'Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)'
+  - 'Medications and hormones (as per protocol)'
+  - 'Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)'
+  - 'Lab and embryology charges'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital/clinic stay"
-  - "Additional IVF cycles if first cycle is unsuccessful"
-  - "Personal expenses and meals for attendants"
-  - "Donor eggs/sperm or surrogate compensation (where separately applicable)"
+  - 'International flights'
+  - 'Accommodation outside hospital/clinic stay'
+  - 'Additional IVF cycles if first cycle is unsuccessful'
+  - 'Personal expenses and meals for attendants'
+  - 'Donor eggs/sperm or surrogate compensation (where separately applicable)'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "4-6 weeks per cycle"
-    description: "Ovarian stimulation, egg retrieval, ICSI fertilisation in the embryology lab, and embryo transfer."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-transfer monitoring and blood tests to confirm implantation before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 2-3"
-    description: "Gradual recovery with light activity and avoidance of strenuous exercise after embryo transfer."
-  - phase: "Full recovery"
-    duration: "1-2 weeks between embryo transfer and pregnancy test"
-    description: "Complete hormonal stabilisation and confirmation of pregnancy outcome via beta-hCG blood test."
+  - phase: 'Treatment period'
+    duration: '4-6 weeks per cycle'
+    description: 'Ovarian stimulation, egg retrieval, ICSI fertilisation in the embryology lab, and embryo transfer.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-transfer monitoring and blood tests to confirm implantation before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 2-3'
+    description: 'Gradual recovery with light activity and avoidance of strenuous exercise after embryo transfer.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks between embryo transfer and pregnancy test'
+    description: 'Complete hormonal stabilisation and confirmation of pregnancy outcome via beta-hCG blood test.'
 risks:
-  - "Ovarian Hyperstimulation Syndrome (OHSS) from fertility hormones"
-  - "Multiple pregnancy (twins or more) if multiple embryos are transferred"
-  - "Egg retrieval complications such as infection or bleeding"
-  - "Fertilisation failure despite ICSI technique"
-  - "Ectopic pregnancy or miscarriage"
+  - 'Ovarian Hyperstimulation Syndrome (OHSS) from fertility hormones'
+  - 'Multiple pregnancy (twins or more) if multiple embryos are transferred'
+  - 'Egg retrieval complications such as infection or bleeding'
+  - 'Fertilisation failure despite ICSI technique'
+  - 'Ectopic pregnancy or miscarriage'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-rashmi-patil
 
 relatedProcedureSlugs:
-  - "ivf-treatment-cost-india"
-  - "iui-treatment-cost-india"
-  - "egg-freezing-cost-india"
+  - 'ivf-treatment-cost-india'
+  - 'iui-treatment-cost-india'
+  - 'egg-freezing-cost-india'
 faqs:
-  - question: "How is ICSI different from conventional IVF?"
-    answer: "In conventional IVF, eggs and sperm are mixed in a dish and fertilisation occurs naturally. In ICSI, a single selected sperm is injected directly into the egg, making it ideal for male-factor infertility where natural fertilisation may not occur."
-  - question: "What is the success rate of ICSI in India?"
-    answer: "ICSI success rates in leading Bangalore clinics range from 40% to 60% per cycle for women under 35, declining with age. Your fertility specialist will provide a personalised prognosis based on your ovarian reserve and semen parameters."
-  - question: "Can international patients undergo ICSI treatment in India?"
-    answer: "Yes. International patients can travel to Bangalore for ICSI treatment. Clinics provide coordinated care including consultations, treatment scheduling, and post-transfer monitoring to fit within a typical 4-6 week stay."
+  - question: 'How is ICSI different from conventional IVF?'
+    answer: 'In conventional IVF, eggs and sperm are mixed in a dish and fertilisation occurs naturally. In ICSI, a single selected sperm is injected directly into the egg, making it ideal for male-factor infertility where natural fertilisation may not occur.'
+  - question: 'What is the success rate of ICSI in India?'
+    answer: 'ICSI success rates in leading Bangalore clinics range from 40% to 60% per cycle for women under 35, declining with age. Your fertility specialist will provide a personalised prognosis based on your ovarian reserve and semen parameters.'
+  - question: 'Can international patients undergo ICSI treatment in India?'
+    answer: 'Yes. International patients can travel to Bangalore for ICSI treatment. Clinics provide coordinated care including consultations, treatment scheduling, and post-transfer monitoring to fit within a typical 4-6 week stay.'
 ---
+
 ## Overview
 
 If you and your partner have been trying to conceive and have been told that male-factor infertility is making it difficult, you may be feeling frustrated, embarrassed or even guilty. These feelings are completely natural — but please know that male-factor infertility is incredibly common, and it is not anyone's fault. ICSI (Intracytoplasmic Sperm Injection) was developed specifically to overcome these challenges, and it has helped millions of couples worldwide become parents. You are not alone on this journey.
@@ -123,13 +124,13 @@ For international patients, clinics recommend staying in Bangalore for 1–2 wee
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $5,000 | Baseline |
-| USA | $15,000 – $25,000 | ~5.7x higher |
-| UK | £10,000 – £15,000 | ~3.6x higher |
-| Singapore | $12,000 – $18,000 | ~4.3x higher |
-| Thailand | $5,000 – $8,000 | ~1.9x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,000 – $5,000   | Baseline     |
+| USA               | $15,000 – $25,000 | ~5.7x higher |
+| UK                | £10,000 – £15,000 | ~3.6x higher |
+| Singapore         | $12,000 – $18,000 | ~4.3x higher |
+| Thailand          | $5,000 – $8,000   | ~1.9x higher |
 
 The cost disparity is striking. An ICSI cycle in Bangalore, including medications, laboratory fees and embryo transfer, typically costs less than a third of the equivalent procedure in the United States. Even after adding international airfare and accommodation for a 4–6 week stay, the total expenditure remains substantially lower.
 

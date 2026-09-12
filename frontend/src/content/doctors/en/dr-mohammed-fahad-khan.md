@@ -15,24 +15,24 @@ languages:
   - French
 expertise:
   - Glomerular Disease
-  - "Kidney Transplantation (Evaluation, Post-Transplant Management, Transplant Immunology)"
-  - "Dialysis (Haemodialysis, Peritoneal Dialysis, CRRT)"
+  - 'Kidney Transplantation (Evaluation, Post-Transplant Management, Transplant Immunology)'
+  - 'Dialysis (Haemodialysis, Peritoneal Dialysis, CRRT)'
   - Acute and Chronic Kidney Disease
   - Kidney Stone Disease
   - Diabetic Kidney Disease
   - Electrolyte Disorders
   - Resistant Hypertension
   - Vascular Access Procedures
-pullQuote: "Kidney disease silently steals quality of life long before it threatens life itself. My mission is to intervene early enough to change that trajectory."
+pullQuote: 'Kidney disease silently steals quality of life long before it threatens life itself. My mission is to intervene early enough to change that trajectory.'
 faqs:
-  - question: "What conditions does Dr. Mohammed Fahad Khan treat?"
-    answer: "Dr. Mohammed Fahad Khan specialises in the diagnosis and management of acute kidney injury, chronic kidney disease, glomerular diseases, diabetic kidney disease, kidney stone disease, electrolyte disorders, resistant hypertension, dialysis care, vascular access procedures, and kidney transplantation. He has particular expertise in kidney transplant evaluation, post-transplant management, transplant immunology, recurrent and de novo glomerular diseases after transplantation, and advanced dialysis modalities including continuous renal replacement therapy (CRRT)."
-  - question: "How can I book a consultation with Dr. Mohammed Fahad Khan?"
-    answer: "You can book a consultation with Dr. Mohammed Fahad Khan through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients."
-  - question: "Why do patients visit Dr. Mohammed Fahad Khan?"
-    answer: "Patients visit Dr. Mohammed Fahad Khan, a leading Consultant in Nephrology & Transplant Physician at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Mohammed Fahad Khan is a trusted choice for exceptional medical support in kidney disease management, dialysis care, and renal transplantation."
-  - question: "What should I bring to my first appointment with Dr. Mohammed Fahad Khan?"
-    answer: "For your first appointment with Dr. Mohammed Fahad Khan, please bring any relevant medical records, previous blood test reports (kidney function tests, electrolyte panels), urine analysis reports, kidney biopsy or pathology reports, dialysis records if applicable, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior transplant evaluation or surgical reports."
+  - question: 'What conditions does Dr. Mohammed Fahad Khan treat?'
+    answer: 'Dr. Mohammed Fahad Khan specialises in the diagnosis and management of acute kidney injury, chronic kidney disease, glomerular diseases, diabetic kidney disease, kidney stone disease, electrolyte disorders, resistant hypertension, dialysis care, vascular access procedures, and kidney transplantation. He has particular expertise in kidney transplant evaluation, post-transplant management, transplant immunology, recurrent and de novo glomerular diseases after transplantation, and advanced dialysis modalities including continuous renal replacement therapy (CRRT).'
+  - question: 'How can I book a consultation with Dr. Mohammed Fahad Khan?'
+    answer: 'You can book a consultation with Dr. Mohammed Fahad Khan through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients.'
+  - question: 'Why do patients visit Dr. Mohammed Fahad Khan?'
+    answer: 'Patients visit Dr. Mohammed Fahad Khan, a leading Consultant in Nephrology & Transplant Physician at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Mohammed Fahad Khan is a trusted choice for exceptional medical support in kidney disease management, dialysis care, and renal transplantation.'
+  - question: 'What should I bring to my first appointment with Dr. Mohammed Fahad Khan?'
+    answer: 'For your first appointment with Dr. Mohammed Fahad Khan, please bring any relevant medical records, previous blood test reports (kidney function tests, electrolyte panels), urine analysis reports, kidney biopsy or pathology reports, dialysis records if applicable, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior transplant evaluation or surgical reports.'
 ---
 
 ## About the Doctor

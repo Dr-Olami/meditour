@@ -12,15 +12,15 @@ languages:
   - Hindi
   - Kannada
 faqs:
-  - question: "Who is Dr. Anil Kamath?"
+  - question: 'Who is Dr. Anil Kamath?'
     answer: "Dr. Anil Kamath is an experienced senior surgical oncologist in Bangalore with 19 years of experience. He holds MBBS, MS in General Surgery, and MCh in Surgical Oncology. He has successfully performed more than 2000 cancer surgeries on both national and international patients with excellent outcomes. He was awarded the prestigious UICC fellowship at the Washington Cancer Centre and is a recipient of the 'Rising Star Award' for the oncology category by the Times of India."
-  - question: "Why do patients choose Dr. Anil Kamath?"
+  - question: 'Why do patients choose Dr. Anil Kamath?'
     answer: "Patients choose Dr. Anil Kamath for his extensive experience of 19 years in surgical oncology, his track record of over 2000 successful cancer surgeries on national and international patients, and his excellent surgical outcomes. He is a UICC fellowship recipient, a 'Rising Star Award' winner by the Times of India, and serves as a clinical and academic adviser, making him a trusted choice for cancer surgical treatment."
   - question: "What are Dr. Anil Kamath's medical qualifications?"
-    answer: "Dr. Anil Kamath holds MBBS, MS in General Surgery, and MCh in Surgical Oncology. He was awarded the prestigious UICC fellowship at the Washington Cancer Centre and has many papers and publications to his credit."
-  - question: "How many years of experience does Dr. Anil Kamath have?"
-    answer: "Dr. Anil Kamath has 19+ years of experience in surgical oncology. In that time, he has successfully performed more than 2000 cancer surgeries on both national and international patients with excellent outcomes."
-  - question: "How can I book an appointment with Dr. Anil Kamath?"
+    answer: 'Dr. Anil Kamath holds MBBS, MS in General Surgery, and MCh in Surgical Oncology. He was awarded the prestigious UICC fellowship at the Washington Cancer Centre and has many papers and publications to his credit.'
+  - question: 'How many years of experience does Dr. Anil Kamath have?'
+    answer: 'Dr. Anil Kamath has 19+ years of experience in surgical oncology. In that time, he has successfully performed more than 2000 cancer surgeries on both national and international patients with excellent outcomes.'
+  - question: 'How can I book an appointment with Dr. Anil Kamath?'
     answer: "You can book an appointment with Dr. Anil Kamath at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

@@ -13,26 +13,26 @@ languages:
   - Hindi
   - Bengali
 expertise:
-  - "**Paediatric Neurology** in acute and ambulatory settings"
-  - "**Epilepsy** — evaluation and management of first seizure, epilepsy, refractory epilepsy; dietary therapies (ketogenic diet, modified Atkins diet, low glycaemic index diet)"
-  - "**Headache disorders** — diagnosis and management"
-  - "**Neurodevelopmental disorders** — cerebral palsy, developmental delays, ADHD, autism spectrum, learning disability; multidisciplinary evaluation and management"
-  - "**Demyelinating/immune-mediated disorders** — ADEM, optic neuritis, acute transverse myelitis, multiphasic ADEM, NMOSD, MS, autoimmune encephalitis, opsoclonus-myoclonus ataxia syndrome; diagnosis using MRI, electrophysiology, CSF analysis and antibodies; immunotherapy — acute and long-term care"
-  - "**Neurometabolic disorders** — diagnosis and management, metabolic screening, confirmatory testing, supportive and specific treatment with medicines and special diet"
-  - "**Neurogenetic disorders** — clinical evaluation, diagnosis in liaison with genetics and neuroradiology"
-  - "**Neuromuscular disorders** — clinical evaluation, diagnostic confirmation, medical treatment, physical rehabilitation, genetic counselling"
-  - "**Stroke** — evaluation and management"
-  - "**Neonatal Neurology** — treatment of neonatal seizures, interpretation of neonatal EEG, assessment and follow-up of high-risk newborns"
-  - "**Neuroinfections** — diagnostic evaluation with CSF and neuroimaging, standard treatment and follow-up"
+  - '**Paediatric Neurology** in acute and ambulatory settings'
+  - '**Epilepsy** — evaluation and management of first seizure, epilepsy, refractory epilepsy; dietary therapies (ketogenic diet, modified Atkins diet, low glycaemic index diet)'
+  - '**Headache disorders** — diagnosis and management'
+  - '**Neurodevelopmental disorders** — cerebral palsy, developmental delays, ADHD, autism spectrum, learning disability; multidisciplinary evaluation and management'
+  - '**Demyelinating/immune-mediated disorders** — ADEM, optic neuritis, acute transverse myelitis, multiphasic ADEM, NMOSD, MS, autoimmune encephalitis, opsoclonus-myoclonus ataxia syndrome; diagnosis using MRI, electrophysiology, CSF analysis and antibodies; immunotherapy — acute and long-term care'
+  - '**Neurometabolic disorders** — diagnosis and management, metabolic screening, confirmatory testing, supportive and specific treatment with medicines and special diet'
+  - '**Neurogenetic disorders** — clinical evaluation, diagnosis in liaison with genetics and neuroradiology'
+  - '**Neuromuscular disorders** — clinical evaluation, diagnostic confirmation, medical treatment, physical rehabilitation, genetic counselling'
+  - '**Stroke** — evaluation and management'
+  - '**Neonatal Neurology** — treatment of neonatal seizures, interpretation of neonatal EEG, assessment and follow-up of high-risk newborns'
+  - '**Neuroinfections** — diagnostic evaluation with CSF and neuroimaging, standard treatment and follow-up'
 pullQuote: "A child's brain is remarkably resilient. When we intervene early and precisely, we give them a lifetime they might otherwise never have had."
 faqs:
-  - question: "What conditions does Dr. Bidisha Banerjee treat?"
-    answer: "Dr. Bidisha Banerjee specialises in paediatric neurology in acute and ambulatory settings, including epilepsy (evaluation, management, and dietary therapies such as ketogenic diet), headache disorders, neurodevelopmental disorders (cerebral palsy, developmental delays, ADHD, autism spectrum, learning disabilities), demyelinating and immune-mediated disorders (ADEM, optic neuritis, transverse myelitis, NMOSD, MS, autoimmune encephalitis), neurometabolic disorders, neurogenetic disorders, neuromuscular disorders, paediatric stroke, neonatal neurology, and neuroinfections. She also provides paediatric electrophysiology services including EEG, video EEG, EMG/nerve conduction studies, VEP, and BERA."
-  - question: "How can I book a consultation with Dr. Bidisha Banerjee?"
-    answer: "You can book a consultation with Dr. Bidisha Banerjee through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients."
-  - question: "Why do patients visit Dr. Bidisha Banerjee?"
-    answer: "Patients visit Dr. Bidisha Banerjee, a leading Consultant in Paediatric Neurology at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Bidisha Banerjee is a trusted choice for exceptional medical support in paediatric neurological disorders including epilepsy, neurodevelopmental conditions, neurometabolic diseases, and neuromuscular disorders."
-  - question: "What should I bring to my first appointment with Dr. Bidisha Banerjee?"
+  - question: 'What conditions does Dr. Bidisha Banerjee treat?'
+    answer: 'Dr. Bidisha Banerjee specialises in paediatric neurology in acute and ambulatory settings, including epilepsy (evaluation, management, and dietary therapies such as ketogenic diet), headache disorders, neurodevelopmental disorders (cerebral palsy, developmental delays, ADHD, autism spectrum, learning disabilities), demyelinating and immune-mediated disorders (ADEM, optic neuritis, transverse myelitis, NMOSD, MS, autoimmune encephalitis), neurometabolic disorders, neurogenetic disorders, neuromuscular disorders, paediatric stroke, neonatal neurology, and neuroinfections. She also provides paediatric electrophysiology services including EEG, video EEG, EMG/nerve conduction studies, VEP, and BERA.'
+  - question: 'How can I book a consultation with Dr. Bidisha Banerjee?'
+    answer: 'You can book a consultation with Dr. Bidisha Banerjee through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients.'
+  - question: 'Why do patients visit Dr. Bidisha Banerjee?'
+    answer: 'Patients visit Dr. Bidisha Banerjee, a leading Consultant in Paediatric Neurology at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Bidisha Banerjee is a trusted choice for exceptional medical support in paediatric neurological disorders including epilepsy, neurodevelopmental conditions, neurometabolic diseases, and neuromuscular disorders.'
+  - question: 'What should I bring to my first appointment with Dr. Bidisha Banerjee?'
     answer: "For your child's first appointment with Dr. Bidisha Banerjee, please bring any relevant medical records, previous MRI/CT scans and reports, EEG reports if available, developmental assessment reports, school reports if applicable, a list of current medications and seizure diary if applicable, birth and developmental history documents, referral letters from your paediatrician, and your child's identification documents. International patients should also carry their passport, visa, and any prior neurological evaluation reports."
 ---
 

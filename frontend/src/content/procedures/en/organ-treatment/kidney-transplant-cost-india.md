@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Kidney Transplant"
-seoHeadline: "Kidney Transplant Cost in India for International Patients"
+name: 'Kidney Transplant'
+seoHeadline: 'Kidney Transplant Cost in India for International Patients'
 parentTreatmentSlug: organ-treatment
 summary: "Kidney transplant surgery in India costs between $15,000 and $40,000, offering international patients savings of up to 90% compared to Western countries. Bangalore's leading transplant centres provide world-class surgical expertise, advanced ICU facilities, and comprehensive post-transplant care."
-description: "Affordable kidney transplant surgery in Bangalore, India ranging from $15,000 to $40,000 with top transplant surgeons and JCI-accredited hospitals."
-fromPrice: "$15,000"
-toPrice: "$40,000"
-duration: "4-8 weeks"
-hospitalStay: "2-3 weeks"
-recoveryTime: "3-6 months"
+description: 'Affordable kidney transplant surgery in Bangalore, India ranging from $15,000 to $40,000 with top transplant surgeons and JCI-accredited hospitals.'
+fromPrice: '$15,000'
+toPrice: '$40,000'
+duration: '4-8 weeks'
+hospitalStay: '2-3 weeks'
+recoveryTime: '3-6 months'
 eligibility:
-  - "End-stage renal disease (ESRD) confirmed by nephrologist"
-  - "A living donor who is a close relative (as per Indian organ transplant regulations)"
-  - "Donor and recipient blood group compatibility"
-  - "No active infections or uncontrolled malignancies"
-  - "Realistic psychosocial and financial ability to comply with post-transplant care"
+  - 'End-stage renal disease (ESRD) confirmed by nephrologist'
+  - 'A living donor who is a close relative (as per Indian organ transplant regulations)'
+  - 'Donor and recipient blood group compatibility'
+  - 'No active infections or uncontrolled malignancies'
+  - 'Realistic psychosocial and financial ability to comply with post-transplant care'
 costInclusions:
-  - "Transplant surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery and transplant costs"
-  - "Donor workup and evaluation (where applicable)"
-  - "Immunosuppressive medications during hospital stay"
-  - "Pre-transplant diagnostics (blood tests, imaging, tissue typing)"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Transplant surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery and transplant costs'
+  - 'Donor workup and evaluation (where applicable)'
+  - 'Immunosuppressive medications during hospital stay'
+  - 'Pre-transplant diagnostics (blood tests, imaging, tissue typing)'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-3 weeks"
-    description: "Recipient is monitored in the ICU immediately after surgery, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Regular follow-up appointments, blood tests, and imaging to monitor kidney function and detect early signs of rejection or infection before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 4-8"
-    description: "Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule and dietary restrictions under guidance from the home-country physician."
-  - phase: "Full recovery"
-    duration: "3-6 months"
-    description: "Complete healing of the surgical site, stabilisation of kidney function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring."
+  - phase: 'Hospital stay'
+    duration: '2-3 weeks'
+    description: 'Recipient is monitored in the ICU immediately after surgery, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Regular follow-up appointments, blood tests, and imaging to monitor kidney function and detect early signs of rejection or infection before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 4-8'
+    description: 'Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule and dietary restrictions under guidance from the home-country physician.'
+  - phase: 'Full recovery'
+    duration: '3-6 months'
+    description: 'Complete healing of the surgical site, stabilisation of kidney function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring.'
 risks:
-  - "Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy"
-  - "Surgical complications including bleeding, vascular thrombosis, or urine leakage"
-  - "Infections due to immunosuppression, including opportunistic infections"
-  - "Ureteral stricture requiring endoscopic or surgical intervention"
-  - "Recurrence of underlying kidney disease in the transplanted organ"
+  - 'Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy'
+  - 'Surgical complications including bleeding, vascular thrombosis, or urine leakage'
+  - 'Infections due to immunosuppression, including opportunistic infections'
+  - 'Ureteral stricture requiring endoscopic or surgical intervention'
+  - 'Recurrence of underlying kidney disease in the transplanted organ'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -61,18 +61,19 @@ relatedDoctorSlugs:
   - dr-vishwanath-s
 
 relatedProcedureSlugs:
-  - "liver-transplant-cost-india"
-  - "lung-transplant-cost-india"
+  - 'liver-transplant-cost-india'
+  - 'lung-transplant-cost-india'
 faqs:
-  - question: "Can an international patient get a kidney transplant in India without a living donor?"
+  - question: 'Can an international patient get a kidney transplant in India without a living donor?'
     answer: "No. Under Indian organ transplant regulations, foreign patients are generally eligible only for living-donor kidney transplants, where the donor must be a close relative. Deceased-donor organs are prioritised for Indian citizens. You will need to bring a compatible living donor and provide documented proof of relationship, which is reviewed by the hospital's transplant authorisation committee and government authorities."
-  - question: "How long do I need to stay in India after a kidney transplant?"
-    answer: "Most patients should plan for a total stay of 4 to 8 weeks in India. This includes the hospital stay of 2 to 3 weeks followed by a recovery period in Bangalore for close monitoring, follow-up blood tests, and clearance from the transplant team before it is safe to fly home."
-  - question: "What is the success rate of kidney transplants in Bangalore hospitals?"
+  - question: 'How long do I need to stay in India after a kidney transplant?'
+    answer: 'Most patients should plan for a total stay of 4 to 8 weeks in India. This includes the hospital stay of 2 to 3 weeks followed by a recovery period in Bangalore for close monitoring, follow-up blood tests, and clearance from the transplant team before it is safe to fly home.'
+  - question: 'What is the success rate of kidney transplants in Bangalore hospitals?'
     answer: "Leading transplant centres in Bangalore report one-year graft survival rates of 95-98% and patient survival rates of 96-99%, which are comparable to international benchmarks. Outcomes depend on the patient's overall health, the quality of the donor organ, and strict adherence to post-transplant medication and follow-up."
-  - question: "Will I need to take medications for life after a kidney transplant?"
-    answer: "Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted kidney. The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan."
+  - question: 'Will I need to take medications for life after a kidney transplant?'
+    answer: 'Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted kidney. The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan.'
 ---
+
 ## Overview
 
 If you or someone you love is facing kidney failure, you already know how exhausting dialysis can be — the hours spent hooked up to a machine, the crushing fatigue, the constant restrictions on what you can eat and drink. A kidney transplant could free you from dialysis and give you back a normal life. Instead of spending your days in a clinic, you could be back at work, travelling, enjoying meals with your family, and waking up feeling rested for the first time in years.
@@ -154,15 +155,16 @@ Before deciding on a transplant, talk openly with your nephrologist about all yo
 If you are not ready for a transplant — or if you do not have a compatible living donor — dialysis remains a viable option. Both haemodialysis (done at a clinic) and peritoneal dialysis (done at home) can keep you alive and reasonably well indefinitely. Dialysis does not offer the same quality of life or long-term survival benefit as a successful transplant, but it is a lifeline while you explore other options.
 
 A kidney transplant is generally the right choice when your kidney disease has progressed to the point where dialysis is needed or imminent, and the benefits of transplant outweigh the risks. This is not a decision you have to make alone — talk it through with your family, your nephrologist, and the transplant team.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $15,000 – $40,000 | Baseline |
-| USA | $330,000 – $400,000 | ~12.3x higher |
-| UK | £70,000 – £120,000 | ~5.1x higher |
-| Singapore | $80,000 – $120,000 | ~4.4x higher |
-| Thailand | $40,000 – $60,000 | ~1.8x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $15,000 – $40,000   | Baseline      |
+| USA               | $330,000 – $400,000 | ~12.3x higher |
+| UK                | £70,000 – £120,000  | ~5.1x higher  |
+| Singapore         | $80,000 – $120,000  | ~4.4x higher  |
+| Thailand          | $40,000 – $60,000   | ~1.8x higher  |
 
 You might be wondering: if the surgery is so much cheaper in India, is the quality lower? The answer is no. The cost difference comes down to structural factors — lower staffing costs, lower administrative overhead, and a favourable exchange rate. Bangalore's top hospitals are JCI-accredited, meeting the same international safety and quality benchmarks as leading hospitals in the West. Their surgeons perform hundreds of transplants a year and report survival rates that match top global centres.
 

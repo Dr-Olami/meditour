@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Cataract Surgery"
-seoHeadline: "Cataract Surgery Cost in India for International Patients"
+name: 'Cataract Surgery'
+seoHeadline: 'Cataract Surgery Cost in India for International Patients'
 parentTreatmentSlug: ophthalmology
-summary: "Cataract surgery in India costs between $500 and $2,000 per eye, offering savings of up to 90% compared to Western countries. The procedure replaces the clouded natural lens with an artificial intraocular lens using advanced phacoemulsification or femtosecond laser-assisted techniques."
-description: "Cataract surgery in India from $500–$2,000 per eye at accredited Bangalore hospitals. Save up to 90% versus US/UK prices with premium IOL options."
-fromPrice: "$500"
-toPrice: "$2,000"
-duration: "30-45 minutes"
-hospitalStay: "Day care (no overnight stay)"
-recoveryTime: "1-4 weeks"
+summary: 'Cataract surgery in India costs between $500 and $2,000 per eye, offering savings of up to 90% compared to Western countries. The procedure replaces the clouded natural lens with an artificial intraocular lens using advanced phacoemulsification or femtosecond laser-assisted techniques.'
+description: 'Cataract surgery in India from $500–$2,000 per eye at accredited Bangalore hospitals. Save up to 90% versus US/UK prices with premium IOL options.'
+fromPrice: '$500'
+toPrice: '$2,000'
+duration: '30-45 minutes'
+hospitalStay: 'Day care (no overnight stay)'
+recoveryTime: '1-4 weeks'
 eligibility:
-  - "Confirmed cataract diagnosis with visual acuity reduction interfering with daily activities"
-  - "Adequate ocular health with no active infection, severe dry eye, or uncontrolled glaucoma"
-  - "Realistic expectations about visual outcomes based on retinal health and coexisting eye conditions"
-  - "Systemic conditions such as diabetes or hypertension under control before surgery"
-  - "Willingness to comply with post-operative eye drop regimen and follow-up appointments"
+  - 'Confirmed cataract diagnosis with visual acuity reduction interfering with daily activities'
+  - 'Adequate ocular health with no active infection, severe dry eye, or uncontrolled glaucoma'
+  - 'Realistic expectations about visual outcomes based on retinal health and coexisting eye conditions'
+  - 'Systemic conditions such as diabetes or hypertension under control before surgery'
+  - 'Willingness to comply with post-operative eye drop regimen and follow-up appointments'
 costInclusions:
-  - "Ophthalmologist consultation and surgical fees"
-  - "Intraocular lens (IOL) implant — standard monofocal included"
-  - "Operating room and day-care facility charges"
-  - "Pre-operative diagnostics (biometry, OCT, corneal topography, blood tests)"
-  - "Post-operative eye drops and medications during stay"
-  - "First follow-up review before departure"
-  - "Airport pickup and drop"
+  - 'Ophthalmologist consultation and surgical fees'
+  - 'Intraocular lens (IOL) implant — standard monofocal included'
+  - 'Operating room and day-care facility charges'
+  - 'Pre-operative diagnostics (biometry, OCT, corneal topography, blood tests)'
+  - 'Post-operative eye drops and medications during stay'
+  - 'First follow-up review before departure'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Premium IOL upgrades (toric, multifocal, accommodating lenses)"
-  - "Treatment of coexisting eye conditions (glaucoma, retinal disease)"
-  - "Long-term glasses or contact lens prescriptions post-surgery"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Premium IOL upgrades (toric, multifocal, accommodating lenses)'
+  - 'Treatment of coexisting eye conditions (glaucoma, retinal disease)'
+  - 'Long-term glasses or contact lens prescriptions post-surgery'
 recoveryTimeline:
-  - phase: "Same-day discharge"
-    duration: "A few hours"
-    description: "You leave the hospital the same day with a protective eye shield. Vision is typically blurry initially and improves over the first 24–48 hours."
-  - phase: "Bangalore recovery"
-    duration: "3-7 days"
-    description: "Follow-up review at 1–3 days to check healing, IOL position, and intraocular pressure. Eye drops are continued and activity restrictions apply."
-  - phase: "Return home"
-    duration: "Week 1-4"
-    description: "Gradual visual improvement continues; eye drops are tapered over 2–4 weeks. Avoid rubbing the eye, heavy lifting, and swimming."
-  - phase: "Full recovery"
-    duration: "4-8 weeks"
-    description: "Stable vision achieved; prescription for reading or distance glasses may be finalised. Complete healing of the incision occurs."
+  - phase: 'Same-day discharge'
+    duration: 'A few hours'
+    description: 'You leave the hospital the same day with a protective eye shield. Vision is typically blurry initially and improves over the first 24–48 hours.'
+  - phase: 'Bangalore recovery'
+    duration: '3-7 days'
+    description: 'Follow-up review at 1–3 days to check healing, IOL position, and intraocular pressure. Eye drops are continued and activity restrictions apply.'
+  - phase: 'Return home'
+    duration: 'Week 1-4'
+    description: 'Gradual visual improvement continues; eye drops are tapered over 2–4 weeks. Avoid rubbing the eye, heavy lifting, and swimming.'
+  - phase: 'Full recovery'
+    duration: '4-8 weeks'
+    description: 'Stable vision achieved; prescription for reading or distance glasses may be finalised. Complete healing of the incision occurs.'
 risks:
-  - "Posterior capsule opacity (secondary cataract) developing in up to 20% of patients, treatable with a quick YAG laser capsulotomy"
-  - "Intraocular infection (endophthalmitis) — rare but serious, occurring in less than 0.1% of cases"
-  - "Cystoid macular oedema causing temporary visual blurring, usually resolving with anti-inflammatory drops"
-  - "Intraocular lens dislocation or decentration requiring a secondary corrective procedure"
-  - "Refractive surprise — residual prescription requiring glasses or enhancement with LASIK or PRK"
+  - 'Posterior capsule opacity (secondary cataract) developing in up to 20% of patients, treatable with a quick YAG laser capsulotomy'
+  - 'Intraocular infection (endophthalmitis) — rare but serious, occurring in less than 0.1% of cases'
+  - 'Cystoid macular oedema causing temporary visual blurring, usually resolving with anti-inflammatory drops'
+  - 'Intraocular lens dislocation or decentration requiring a secondary corrective procedure'
+  - 'Refractive surprise — residual prescription requiring glasses or enhancement with LASIK or PRK'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -57,14 +57,14 @@ relatedDoctorSlugs:
   - dr-sharon-d-souza
 
 relatedProcedureSlugs:
-  - "lasik-eye-surgery-cost-india"
+  - 'lasik-eye-surgery-cost-india'
 faqs:
-  - question: "How much does cataract surgery cost in India?"
-    answer: "Cataract surgery in India costs between $500 and $2,000 per eye. The lower end covers standard monofocal IOLs with phacoemulsification, while the higher end includes premium lenses such as toric or multifocal IOLs and femtosecond laser-assisted surgery. Even at the premium end, the cost is a fraction of US or UK prices."
-  - question: "Which type of intraocular lens is best for me?"
-    answer: "Monofocal IOLs provide clear vision at one distance and are included in the base package. Toric IOLs correct astigmatism, multifocal IOLs reduce dependence on glasses for near and far, and accommodating IOLs shift focus like a young natural lens. Your ophthalmologist will recommend the best option based on your lifestyle, astigmatism, and retinal health."
-  - question: "How soon after surgery will I see clearly?"
-    answer: "Most patients notice improved vision within 24–48 hours, with significant clarity by the end of the first week. Full stabilisation of vision and final glasses prescription typically takes 4–8 weeks. Following the eye drop regimen and attending follow-up appointments is essential for optimal healing."
+  - question: 'How much does cataract surgery cost in India?'
+    answer: 'Cataract surgery in India costs between $500 and $2,000 per eye. The lower end covers standard monofocal IOLs with phacoemulsification, while the higher end includes premium lenses such as toric or multifocal IOLs and femtosecond laser-assisted surgery. Even at the premium end, the cost is a fraction of US or UK prices.'
+  - question: 'Which type of intraocular lens is best for me?'
+    answer: 'Monofocal IOLs provide clear vision at one distance and are included in the base package. Toric IOLs correct astigmatism, multifocal IOLs reduce dependence on glasses for near and far, and accommodating IOLs shift focus like a young natural lens. Your ophthalmologist will recommend the best option based on your lifestyle, astigmatism, and retinal health.'
+  - question: 'How soon after surgery will I see clearly?'
+    answer: 'Most patients notice improved vision within 24–48 hours, with significant clarity by the end of the first week. Full stabilisation of vision and final glasses prescription typically takes 4–8 weeks. Following the eye drop regimen and attending follow-up appointments is essential for optimal healing.'
 ---
 
 ## Overview
@@ -137,13 +137,13 @@ For patients who have both a cataract and significant refractive error (short-si
 
 ## Cost Comparison
 
-| Country | Approximate Cost (per eye) | vs India |
-|---------|---------------------------|----------|
-| India (Bangalore) | $500 – $2,000 | Baseline |
-| USA | $3,500 – $7,000 | ~5.3x higher |
-| UK | £2,500 – £4,500 | ~5.0x higher |
-| Singapore | $3,000 – $5,500 | ~4.4x higher |
-| Thailand | $1,500 – $3,500 | ~2.2x higher |
+| Country           | Approximate Cost (per eye) | vs India     |
+| ----------------- | -------------------------- | ------------ |
+| India (Bangalore) | $500 – $2,000              | Baseline     |
+| USA               | $3,500 – $7,000            | ~5.3x higher |
+| UK                | £2,500 – £4,500            | ~5.0x higher |
+| Singapore         | $3,000 – $5,500            | ~4.4x higher |
+| Thailand          | $1,500 – $3,500            | ~2.2x higher |
 
 The price range within India reflects the type of IOL chosen, whether femtosecond laser assistance is used, and the specific hospital and surgeon. Standard monofocal IOL surgery with phacoemulsification sits at the lower end, while premium toric or multifocal lenses with laser assistance are at the higher end. Even with the most advanced technology and premium lenses, your total cost in Bangalore will typically be less than a quarter of the US price for a comparable procedure.
 

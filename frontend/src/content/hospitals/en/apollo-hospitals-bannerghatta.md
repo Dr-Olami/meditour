@@ -13,12 +13,12 @@ gallery:
 structuredAmenities:
   - category: international
     highlights:
-      - name: "24/7 international patient lounge"
-        description: "Dedicated desk serving 500+ overseas consultations monthly with Arabic, Russian and Bengali coordinators on call."
-      - name: "Visa assistance desk"
-        description: "Medical visa invitation letters and FR registration support coordinated end-to-end by the international team."
-      - name: "Post-operative follow-up"
-        description: "Teleconsultation and report review after you return home, in your language, for up to 6 months."
+      - name: '24/7 international patient lounge'
+        description: 'Dedicated desk serving 500+ overseas consultations monthly with Arabic, Russian and Bengali coordinators on call.'
+      - name: 'Visa assistance desk'
+        description: 'Medical visa invitation letters and FR registration support coordinated end-to-end by the international team.'
+      - name: 'Post-operative follow-up'
+        description: 'Teleconsultation and report review after you return home, in your language, for up to 6 months.'
     items:
       - Airport pickup & drop
       - Interpreter services (Arabic, Russian, Bengali, French)
@@ -27,10 +27,10 @@ structuredAmenities:
       - Medical records transfer
   - category: clinical
     highlights:
-      - name: "CyberKnife radiosurgery suite"
-        description: "The only Bangalore hospital offering CyberKnife M6 â€” painless, frameless radiosurgery for brain and spine tumours."
-      - name: "Da Vinci Xi robotic surgery"
-        description: "Multi-speciality robotic programme across urology, oncology, cardiac, and transplant surgery."
+      - name: 'CyberKnife radiosurgery suite'
+        description: 'The only Bangalore hospital offering CyberKnife M6 â€” painless, frameless radiosurgery for brain and spine tumours.'
+      - name: 'Da Vinci Xi robotic surgery'
+        description: 'Multi-speciality robotic programme across urology, oncology, cardiac, and transplant surgery.'
     items:
       - 24/7 pharmacy
       - NABL-accredited diagnostic lab
@@ -39,8 +39,8 @@ structuredAmenities:
       - 24/7 emergency & trauma care
   - category: comfort
     highlights:
-      - name: "International cuisine menu"
-        description: "Halal, vegetarian, and regional cuisine (Bangladeshi, Middle Eastern, African) prepared on request."
+      - name: 'International cuisine menu'
+        description: 'Halal, vegetarian, and regional cuisine (Bangladeshi, Middle Eastern, African) prepared on request.'
     items:
       - Prayer room
       - Family waiting lounge
@@ -72,71 +72,71 @@ mapEmbedUrl: https://www.google.com/maps?q=Apollo+Hospitals+Bannerghatta+Road+Ba
 latitude: 12.896128
 longitude: 77.598534
 outcomes:
-  - value: "70,000+"
-    label: "International patients treated"
-    qualifier: "cumulative"
-  - value: "500+"
-    label: "International consultations per month"
-    qualifier: "as of 2024"
-  - value: "700+"
-    label: "Daily outpatient visits"
-    qualifier: "as of 2024"
+  - value: '70,000+'
+    label: 'International patients treated'
+    qualifier: 'cumulative'
+  - value: '500+'
+    label: 'International consultations per month'
+    qualifier: 'as of 2024'
+  - value: '700+'
+    label: 'Daily outpatient visits'
+    qualifier: 'as of 2024'
 procedureCosts:
-  - procedure: "Coronary Artery Bypass Grafting (CABG)"
-    fromPrice: "$4,500"
-    toPrice: "$12,000"
-    href: "/treatments/cardiology/heart-bypass-surgery-cabg-cost-india"
-  - procedure: "Angioplasty & Stent Placement"
-    fromPrice: "$2,500"
-    toPrice: "$6,000"
-    href: "/treatments/cardiology/angioplasty-stent-placement-cost-india"
-  - procedure: "Total Knee Replacement"
-    fromPrice: "$3,500"
-    toPrice: "$7,000"
-    href: "/treatments/orthopedics-surgery/total-knee-replacement-cost-india"
-  - procedure: "Total Hip Replacement"
-    fromPrice: "$4,000"
-    toPrice: "$8,000"
-    href: "/treatments/orthopedics-surgery/total-hip-replacement-cost-india"
-  - procedure: "Breast Cancer Treatment"
-    fromPrice: "$5,000"
-    toPrice: "$20,000"
-    note: "varies by stage and therapy combination"
-    href: "/treatments/cancer-treatment/breast-cancer-treatment-cost-india"
-  - procedure: "Liver Transplant"
-    fromPrice: "$25,000"
-    toPrice: "$60,000"
-    href: "/treatments/organ-treatment/liver-transplant-cost-india"
-  - procedure: "Kidney Transplant"
-    fromPrice: "$15,000"
-    toPrice: "$40,000"
-    href: "/treatments/organ-treatment/kidney-transplant-cost-india"
-  - procedure: "IVF Treatment"
-    fromPrice: "$1,500"
-    toPrice: "$4,000"
-    note: "per cycle"
-    href: "/treatments/infertility-treatment/ivf-treatment-cost-india"
+  - procedure: 'Coronary Artery Bypass Grafting (CABG)'
+    fromPrice: '$4,500'
+    toPrice: '$12,000'
+    href: '/treatments/cardiology/heart-bypass-surgery-cabg-cost-india'
+  - procedure: 'Angioplasty & Stent Placement'
+    fromPrice: '$2,500'
+    toPrice: '$6,000'
+    href: '/treatments/cardiology/angioplasty-stent-placement-cost-india'
+  - procedure: 'Total Knee Replacement'
+    fromPrice: '$3,500'
+    toPrice: '$7,000'
+    href: '/treatments/orthopedics-surgery/total-knee-replacement-cost-india'
+  - procedure: 'Total Hip Replacement'
+    fromPrice: '$4,000'
+    toPrice: '$8,000'
+    href: '/treatments/orthopedics-surgery/total-hip-replacement-cost-india'
+  - procedure: 'Breast Cancer Treatment'
+    fromPrice: '$5,000'
+    toPrice: '$20,000'
+    note: 'varies by stage and therapy combination'
+    href: '/treatments/cancer-treatment/breast-cancer-treatment-cost-india'
+  - procedure: 'Liver Transplant'
+    fromPrice: '$25,000'
+    toPrice: '$60,000'
+    href: '/treatments/organ-treatment/liver-transplant-cost-india'
+  - procedure: 'Kidney Transplant'
+    fromPrice: '$15,000'
+    toPrice: '$40,000'
+    href: '/treatments/organ-treatment/kidney-transplant-cost-india'
+  - procedure: 'IVF Treatment'
+    fromPrice: '$1,500'
+    toPrice: '$4,000'
+    note: 'per cycle'
+    href: '/treatments/infertility-treatment/ivf-treatment-cost-india'
 faqs:
-  - question: "Is Apollo Hospitals Bannerghatta accredited by international bodies?"
-    answer: "Yes, Apollo Hospitals Bannerghatta Road is accredited by the Joint Commission International (JCI) — the global gold standard for healthcare quality — and the National Accreditation Board for Hospitals & Healthcare Providers (NABH). These accreditations ensure adherence to the highest international protocols in patient safety, clinical excellence and infection control."
-  - question: "Does Apollo Hospitals Bannerghatta have an international patient desk?"
-    answer: "Yes, Apollo Hospitals Bannerghatta has a dedicated international patient desk with Arabic, Russian and Bengali coordinators. Services include visa assistance, airport pickup, interpreter services, foreign currency exchange, international cuisine, SIM card assistance, post-operative follow-up and medical records transfer."
-  - question: "What organ transplants are performed at Apollo Hospitals Bannerghatta?"
-    answer: "Apollo Hospitals Bannerghatta performs kidney, liver and corneal transplants through its dedicated organ transplant programme. The hospital also offers robotic surgery across multiple specialities including urology, oncology and gynaecology, and has a comprehensive bariatric surgery programme."
-  - question: "How long will I need to stay in Bangalore for my treatment?"
-    answer: "Typical stays vary by procedure: angioplasty 2-3 days, CABG 7-10 days, knee/hip replacement 10-14 days, oncology surgery 7-14 days, and transplant 3-6 weeks including pre-operative workup and post-operative recovery. Your treating doctor will confirm the exact duration after reviewing your case."
-  - question: "What languages are spoken at the international patient desk?"
+  - question: 'Is Apollo Hospitals Bannerghatta accredited by international bodies?'
+    answer: 'Yes, Apollo Hospitals Bannerghatta Road is accredited by the Joint Commission International (JCI) — the global gold standard for healthcare quality — and the National Accreditation Board for Hospitals & Healthcare Providers (NABH). These accreditations ensure adherence to the highest international protocols in patient safety, clinical excellence and infection control.'
+  - question: 'Does Apollo Hospitals Bannerghatta have an international patient desk?'
+    answer: 'Yes, Apollo Hospitals Bannerghatta has a dedicated international patient desk with Arabic, Russian and Bengali coordinators. Services include visa assistance, airport pickup, interpreter services, foreign currency exchange, international cuisine, SIM card assistance, post-operative follow-up and medical records transfer.'
+  - question: 'What organ transplants are performed at Apollo Hospitals Bannerghatta?'
+    answer: 'Apollo Hospitals Bannerghatta performs kidney, liver and corneal transplants through its dedicated organ transplant programme. The hospital also offers robotic surgery across multiple specialities including urology, oncology and gynaecology, and has a comprehensive bariatric surgery programme.'
+  - question: 'How long will I need to stay in Bangalore for my treatment?'
+    answer: 'Typical stays vary by procedure: angioplasty 2-3 days, CABG 7-10 days, knee/hip replacement 10-14 days, oncology surgery 7-14 days, and transplant 3-6 weeks including pre-operative workup and post-operative recovery. Your treating doctor will confirm the exact duration after reviewing your case.'
+  - question: 'What languages are spoken at the international patient desk?'
     answer: "Apollo Bannerghatta's international patient desk has coordinators fluent in Arabic, Russian and Bengali, with English-speaking staff available throughout. Interpreter services for additional languages including Swahili and French can be arranged on request."
-  - question: "What is included in the international patient package?"
+  - question: 'What is included in the international patient package?'
     answer: "The package typically includes consultation, diagnostic tests, surgery/procedure, hospital stay, surgeon and anaesthetist fees, implant costs (where applicable), airport pickup, accommodation assistance for one companion, SIM card, foreign currency exchange support, and post-operative teleconsultation. Customised packages are tailored to each patient's treatment plan."
-  - question: "What payment methods and currencies does Apollo Bannerghatta accept?"
-    answer: "Apollo Bannerghatta accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard, Amex), bank wire transfers, and UPI for domestic payments. The international patient desk assists with foreign currency exchange and provides cost estimates in USD, GBP, AED, and BDT for international patients. Detailed billing is provided for insurance claims."
-  - question: "What diagnostic and imaging facilities are available on-site?"
-    answer: "Apollo Bannerghatta has a full-service diagnostic wing including 3T MRI, multi-slice CT scan, PET-CT, digital X-ray, mammography, ultrasound, 2D echocardiography, cardiac catheterisation laboratories, and a NABL-accredited pathology laboratory. Most diagnostics are completed on-site, reducing the need for external referrals and speeding up treatment planning."
-  - question: "What infection control measures are in place?"
-    answer: "As a JCI and NABH accredited hospital, Apollo Bannerghatta follows stringent infection control protocols including mandatory hand hygiene programmes, HEPA-filtered operation theatres, dedicated isolation rooms, antibiotic stewardship policies, surgical site infection surveillance, and regular staff training. Infection rates are monitored and benchmarked against international standards."
-  - question: "Can I use international health insurance or get a second opinion before travelling?"
-    answer: "Yes. Apollo Bannerghatta works with several international insurance providers and TPA partners. The international patient desk can coordinate pre-authorisation and direct billing where agreements exist. Khan Meditour can also arrange a remote second opinion from Apollo specialists before you travel — share your medical records and reports for review, and you will receive a written opinion and treatment plan within 48-72 hours."
+  - question: 'What payment methods and currencies does Apollo Bannerghatta accept?'
+    answer: 'Apollo Bannerghatta accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard, Amex), bank wire transfers, and UPI for domestic payments. The international patient desk assists with foreign currency exchange and provides cost estimates in USD, GBP, AED, and BDT for international patients. Detailed billing is provided for insurance claims.'
+  - question: 'What diagnostic and imaging facilities are available on-site?'
+    answer: 'Apollo Bannerghatta has a full-service diagnostic wing including 3T MRI, multi-slice CT scan, PET-CT, digital X-ray, mammography, ultrasound, 2D echocardiography, cardiac catheterisation laboratories, and a NABL-accredited pathology laboratory. Most diagnostics are completed on-site, reducing the need for external referrals and speeding up treatment planning.'
+  - question: 'What infection control measures are in place?'
+    answer: 'As a JCI and NABH accredited hospital, Apollo Bannerghatta follows stringent infection control protocols including mandatory hand hygiene programmes, HEPA-filtered operation theatres, dedicated isolation rooms, antibiotic stewardship policies, surgical site infection surveillance, and regular staff training. Infection rates are monitored and benchmarked against international standards.'
+  - question: 'Can I use international health insurance or get a second opinion before travelling?'
+    answer: 'Yes. Apollo Bannerghatta works with several international insurance providers and TPA partners. The international patient desk can coordinate pre-authorisation and direct billing where agreements exist. Khan Meditour can also arrange a remote second opinion from Apollo specialists before you travel — share your medical records and reports for review, and you will receive a written opinion and treatment plan within 48-72 hours.'
 ---
 
 ## Overview
@@ -158,6 +158,7 @@ The Apollo Heart Institute at Bannerghatta Road offers comprehensive cardiac car
 Explore [cardiology treatments and costs →](/treatments/cardiology)
 
 **Key procedures:**
+
 - [Coronary artery bypass grafting (CABG)](/treatments/cardiology/heart-bypass-surgery-cabg-cost-india)
 - [Angioplasty and stent placement](/treatments/cardiology/angioplasty-stent-placement-cost-india)
 - [Heart valve repair and replacement](/treatments/cardiology/heart-valve-replacement-repair-cost-india)
@@ -172,6 +173,7 @@ The cancer care unit provides the full spectrum of treatment modalities — medi
 Explore [cancer treatment treatments and costs →](/treatments/cancer-treatment)
 
 **Key procedures:**
+
 - CyberKnife robotic radiosurgery
 - Intensity-Modulated Radiation Therapy (IMRT)
 - [Chemotherapy](/treatments/cancer-treatment/chemotherapy-cost-india) and [targeted therapy](/treatments/cancer-treatment/targeted-therapy-cost-india)
@@ -186,6 +188,7 @@ The orthopaedics department specialises in joint replacement surgeries (hip, kne
 Explore [orthopedics surgery treatments and costs →](/treatments/orthopedics-surgery)
 
 **Key procedures:**
+
 - Total [hip](/treatments/orthopedics-surgery/total-hip-replacement-cost-india), [knee](/treatments/orthopedics-surgery/total-knee-replacement-cost-india) and [shoulder](/treatments/orthopedics-surgery/shoulder-replacement-cost-india) replacement
 - Robotic-assisted surgery (Da Vinci)
 - [Arthroscopy](/treatments/orthopedics-surgery/arthroscopy-cost-india) and [sports injury](/treatments/orthopedics-surgery/sports-injury-treatment-cost-india) repair
@@ -199,6 +202,7 @@ Apollo Hospitals Bannerghatta Road runs a comprehensive transplant programme cov
 Explore [organ treatment treatments and costs →](/treatments/organ-treatment)
 
 **Key procedures:**
+
 - [Kidney transplant](/treatments/organ-treatment/kidney-transplant-cost-india)
 - [Liver transplant](/treatments/organ-treatment/liver-transplant-cost-india)
 - [Heart transplant](/treatments/cardiology/heart-transplant-cost-india)
@@ -213,6 +217,7 @@ The neurosciences institute brings together neurology, neurosurgery, stroke mana
 Explore [neuro and spine surgery treatments and costs →](/treatments/neuro-and-spine-surgery)
 
 **Key procedures:**
+
 - [Brain tumour surgery](/treatments/neuro-and-spine-surgery/brain-tumor-surgery-cost-india)
 - [Spine surgery (cervical, lumbar)](/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india)
 - [Stroke management and intervention](/treatments/neurology/stroke-treatment-cost-india)
@@ -250,6 +255,7 @@ The hospital handles 500+ international patient consultations monthly (as of 202
 ## Why International Patients Choose Apollo Hospitals Bannerghatta
 
 ### Patients from Bangladesh
+
 - **Bengali-speaking coordinators** available for seamless communication
 - Direct flights from Dhaka to Bangalore (Kempegowda International Airport)
 - Comprehensive **cardiac, oncology, and transplant** programmes aligned with high-demand treatments for Bangladeshi patients
@@ -257,6 +263,7 @@ The hospital handles 500+ international patient consultations monthly (as of 202
 - Affordable package pricing with BDT-friendly payment options
 
 ### Patients from the Middle East (GCC)
+
 - **Arabic-speaking coordinators** and halal meal options
 - Prayer room and culturally sensitive care
 - Strong **oncology (CyberKnife), cardiac, and robotic surgery** programmes suited to GCC patient preferences
@@ -264,6 +271,7 @@ The hospital handles 500+ international patient consultations monthly (as of 202
 - International patient lounge with dedicated waiting area for families
 
 ### Patients from Africa
+
 - **English-speaking coordinators** and interpreter services for Swahili and French upon request
 - High-volume **cardiac surgery and organ transplant** programmes with proven outcomes
 - Affordable treatment packages compared to Western destinations
@@ -282,19 +290,23 @@ The hospital handles 500+ international patient consultations monthly (as of 202
 **Address:** 154/11, Bannerghatta Road, Opp. IIM, Panduranga Nagar, Bangalore - 560076
 
 ### By Air
+
 - **Kempegowda International Airport (BLR):** ~45 km | ~60-90 minutes by taxi depending on traffic
 - Airport pickup can be arranged through the international patient desk
 - Ride-hailing (Uber/Ola) and prepaid airport taxis are readily available
 
 ### By Metro
+
 - **Nearest station:** Banashankari (Green Line) — ~6 km from the hospital
 - Auto-rickshaws and taxis are available outside the metro station for the final leg
 
 ### By Road
+
 - Located on Bannerghatta Road, opposite IIM Bangalore
 - Easily accessible via Outer Ring Road and NICE Road
 - Ample parking available on-site for patients and visitors
 
 ### Nearby Landmarks
+
 - Opposite Indian Institute of Management (IIM) Bangalore
 - Close to Panduranga Nagar and BGS Health & Education Campus

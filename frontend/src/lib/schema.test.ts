@@ -1,5 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { medicalBusiness, physician, hospital, medicalProcedure, blogPosting, breadcrumbs, medicalWebPage } from './schema';
+import {
+  medicalBusiness,
+  physician,
+  hospital,
+  medicalProcedure,
+  blogPosting,
+  breadcrumbs,
+  medicalWebPage,
+} from './schema';
 
 describe('schema.org helpers', () => {
   it('medicalBusiness omits address for a facilitator', () => {
@@ -31,7 +39,9 @@ describe('schema.org helpers', () => {
     });
     expect(json['@type']).toBe('Physician');
     expect((json.worksFor as Record<string, unknown>)['@type']).toBe('Hospital');
-    expect((json.worksFor as Record<string, unknown>).name).toBe('Apollo Hospitals, Bannerghatta Road, Bangalore');
+    expect((json.worksFor as Record<string, unknown>).name).toBe(
+      'Apollo Hospitals, Bannerghatta Road, Bangalore'
+    );
   });
 
   it('hospital includes address and accreditations', () => {
@@ -63,7 +73,9 @@ describe('schema.org helpers', () => {
       establishedYear: 2007,
       specialities: ['Cardiac Sciences', 'Oncology'],
     });
-    expect((json.address as Record<string, string>).streetAddress).toBe('154/11, Bannerghatta Road, Bangalore - 560076');
+    expect((json.address as Record<string, string>).streetAddress).toBe(
+      '154/11, Bannerghatta Road, Bangalore - 560076'
+    );
     expect(json.telephone).toBe('+91-80-2630 4050');
     expect(json.email).toBe('info@apollohospitals.com');
     expect(json.sameAs).toEqual(['https://www.apollohospitals.com']);

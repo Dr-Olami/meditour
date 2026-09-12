@@ -53,23 +53,48 @@ const cameroon: CountryMetadata = {
 
   languages: ['French', 'English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'French interpreters'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'French interpreters',
+  ],
 
   patientsTreated: 250,
   establishedYear: 2021,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '11 hours from Douala (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '10 hours from Douala (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '12 hours from Douala (1–2 stops)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '11 hours from Douala (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '10 hours from Douala (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '12 hours from Douala (1–2 stops)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Cameroonian Patients',
-  heroSubtitle: 'Flights from Douala and Yaoundé. French and English support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Cameroonian patients. French/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Douala, Yaoundé, and Bamenda travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with French and English language support, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Douala and Yaoundé. French and English support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Cameroonian patients. French/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Douala, Yaoundé, and Bamenda travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with French and English language support, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'XAF', symbol: 'FCFA', exchangeRate: 600, name: 'Central African CFA Franc' },
 };
@@ -126,23 +151,48 @@ const rwanda: CountryMetadata = {
 
   languages: ['Kinyarwanda', 'French', 'English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'French interpreters'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'French interpreters',
+  ],
 
   patientsTreated: 200,
   establishedYear: 2021,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '8 hours from Kigali (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '7 hours from Kigali (1 stop)', directFlights: false, airlines: ['Kenya Airways (via Nairobi)', 'RwandAir (via Dubai)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '8 hours from Kigali (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'RwandAir (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '8 hours from Kigali (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '7 hours from Kigali (1 stop)',
+      directFlights: false,
+      airlines: ['Kenya Airways (via Nairobi)', 'RwandAir (via Dubai)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '8 hours from Kigali (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'RwandAir (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Rwandan Patients',
-  heroSubtitle: 'Flights from Kigali. Kinyarwanda, French, and English support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Rwandan patients. Kinyarwanda/French/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Kigali and across Rwanda travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Kinyarwanda, French, and English language support, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Kigali. Kinyarwanda, French, and English support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Rwandan patients. Kinyarwanda/French/English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Kigali and across Rwanda travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Kinyarwanda, French, and English language support, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'RWF', symbol: 'FRw', exchangeRate: 1380, name: 'Rwandan Franc' },
 };
@@ -199,23 +249,49 @@ const sudan: CountryMetadata = {
 
   languages: ['Arabic', 'English'],
   religiousMajority: 'muslim',
-  culturalConsiderations: ['Halal food', 'Prayer rooms', 'Arabic interpreters', 'Female doctors on request'],
+  culturalConsiderations: [
+    'Halal food',
+    'Prayer rooms',
+    'Arabic interpreters',
+    'Female doctors on request',
+  ],
 
   patientsTreated: 400,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '7 hours from Khartoum (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '6 hours from Khartoum (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '7 hours from Khartoum (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '7 hours from Khartoum (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '6 hours from Khartoum (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '7 hours from Khartoum (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Sudanese Patients',
-  heroSubtitle: 'Flights from Khartoum. Arabic and English support. Halal facilities. Save 60–80% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Sudanese patients. Arabic/English support, halal food, save 60–80% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Khartoum and Omdurman travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Arabic and English language support, halal food, prayer facilities, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Khartoum. Arabic and English support. Halal facilities. Save 60–80% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Sudanese patients. Arabic/English support, halal food, save 60–80% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Khartoum and Omdurman travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with Arabic and English language support, halal food, prayer facilities, and JCI-accredited hospitals.',
 
   currency: { code: 'SDG', symbol: '£', exchangeRate: 600, name: 'Sudanese Pound' },
 };
@@ -272,23 +348,48 @@ const uganda: CountryMetadata = {
 
   languages: ['English', 'Swahili'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'African cuisine options'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'African cuisine options',
+  ],
 
   patientsTreated: 300,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '8 hours from Entebbe (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '7 hours from Entebbe (1 stop)', directFlights: false, airlines: ['Kenya Airways (via Nairobi)', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '8 hours from Entebbe (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '8 hours from Entebbe (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '7 hours from Entebbe (1 stop)',
+      directFlights: false,
+      airlines: ['Kenya Airways (via Nairobi)', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '8 hours from Entebbe (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Ugandan Patients',
-  heroSubtitle: 'Flights from Entebbe. English and Swahili support. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Ugandan patients. English/Swahili support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Kampala and Entebbe travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English and Swahili language support, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Entebbe. English and Swahili support. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Ugandan patients. English/Swahili support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Kampala and Entebbe travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English and Swahili language support, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'UGX', symbol: 'USh', exchangeRate: 3800, name: 'Ugandan Shilling' },
 };
@@ -345,31 +446,50 @@ const zimbabwe: CountryMetadata = {
 
   languages: ['English', 'Shona', 'Ndebele'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Christian chapel access', 'Halal food available', 'African cuisine options'],
+  culturalConsiderations: [
+    'Christian chapel access',
+    'Halal food available',
+    'African cuisine options',
+  ],
 
   patientsTreated: 200,
   establishedYear: 2021,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '10 hours from Harare (1–2 stops)', directFlights: false, airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '9 hours from Harare (1 stop)', directFlights: false, airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '10 hours from Harare (1–2 stops)', directFlights: false, airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '10 hours from Harare (1–2 stops)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Kenya Airways (via Nairobi)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '9 hours from Harare (1 stop)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '10 hours from Harare (1–2 stops)',
+      directFlights: false,
+      airlines: ['Ethiopian Airlines', 'Emirates (via Dubai)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Zimbabwean Patients',
-  heroSubtitle: 'Flights from Harare and Bulawayo. English-speaking coordinators. Save 50–70% on world-class treatments.',
-  metaDescription: 'Affordable medical treatment in India for Zimbabwean patients. English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Harare, Bulawayo, and Mutare travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Harare and Bulawayo. English-speaking coordinators. Save 50–70% on world-class treatments.',
+  metaDescription:
+    'Affordable medical treatment in India for Zimbabwean patients. English support, save 50–70% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Harare, Bulawayo, and Mutare travel to India for cardiac surgery, cancer treatment, orthopedics, kidney transplants, and IVF — with English-speaking coordinators, visa assistance, and JCI-accredited hospitals.',
 
   currency: { code: 'ZWL', symbol: 'Z$', exchangeRate: 13, name: 'Zimbabwean Gold (ZiG)' },
 };
 
-export const africaCountriesPart2: CountryMetadata[] = [
-  cameroon,
-  rwanda,
-  sudan,
-  uganda,
-  zimbabwe,
-];
+export const africaCountriesPart2: CountryMetadata[] = [cameroon, rwanda, sudan, uganda, zimbabwe];

@@ -57,7 +57,7 @@ export const baseTreatmentCosts: CountryMetadata['treatmentCosts'] = {
     savingsPercent: '~75% less',
     alternatives: { Thailand: '$3,000–15,000', Turkey: '$2,500–12,000' },
   },
-  'ophthalmology': {
+  ophthalmology: {
     indiaUSD: '$300–2,500',
     localCurrency: '',
     usaCost: '$2,000–6,000',
@@ -114,8 +114,7 @@ export const visaOnArrivalSteps: CountryMetadata['visaSteps'] = [
   },
   {
     title: 'Travel & admission',
-    description:
-      'We coordinate flight guidance, airport pickup, and hospital admission in India.',
+    description: 'We coordinate flight guidance, airport pickup, and hospital admission in India.',
   },
 ];
 
@@ -140,8 +139,7 @@ export const visaFreeSteps: CountryMetadata['visaSteps'] = [
   },
   {
     title: 'Travel & admission',
-    description:
-      'We coordinate flight guidance, airport pickup, and hospital admission in India.',
+    description: 'We coordinate flight guidance, airport pickup, and hospital admission in India.',
   },
 ];
 
@@ -155,7 +153,7 @@ export const visaFreeSteps: CountryMetadata['visaSteps'] = [
  */
 export function withLocalCurrency(
   costs: CountryMetadata['treatmentCosts'],
-  formatPrice: (usdRange: string) => string,
+  formatPrice: (usdRange: string) => string
 ): CountryMetadata['treatmentCosts'] {
   const result: CountryMetadata['treatmentCosts'] = {};
   for (const [key, value] of Object.entries(costs)) {

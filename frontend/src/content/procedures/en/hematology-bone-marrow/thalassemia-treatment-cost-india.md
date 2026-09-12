@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Thalassemia Treatment"
-seoHeadline: "Thalassemia Treatment Cost in India for International Patients"
+name: 'Thalassemia Treatment'
+seoHeadline: 'Thalassemia Treatment Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Thalassemia treatment in India costs between $5,000 and $45,000, covering transfusion programmes, iron chelation and curative bone marrow transplant options. Leading Bangalore hospitals offer comprehensive thalassemia management for international patients at a fraction of Western costs."
-description: "Affordable thalassemia treatment in India from $5,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$5,000"
-toPrice: "$45,000"
-duration: "4-12 weeks"
-hospitalStay: "4-6 weeks"
-recoveryTime: "3-12 months"
+summary: 'Thalassemia treatment in India costs between $5,000 and $45,000, covering transfusion programmes, iron chelation and curative bone marrow transplant options. Leading Bangalore hospitals offer comprehensive thalassemia management for international patients at a fraction of Western costs.'
+description: 'Affordable thalassemia treatment in India from $5,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$5,000'
+toPrice: '$45,000'
+duration: '4-12 weeks'
+hospitalStay: '4-6 weeks'
+recoveryTime: '3-12 months'
 eligibility:
-  - "Patients with confirmed thalassemia major or thalassemia intermedia requiring regular transfusions"
-  - "Children and adults with transfusion-dependent thalassemia eligible for curative stem cell transplant"
-  - "Availability of an HLA-matched sibling or unrelated donor for transplant candidates"
-  - "Adequate organ function (cardiac, hepatic and renal) to tolerate conditioning chemotherapy"
-  - "No severe iron-overload-related organ damage that precludes transplant"
+  - 'Patients with confirmed thalassemia major or thalassemia intermedia requiring regular transfusions'
+  - 'Children and adults with transfusion-dependent thalassemia eligible for curative stem cell transplant'
+  - 'Availability of an HLA-matched sibling or unrelated donor for transplant candidates'
+  - 'Adequate organ function (cardiac, hepatic and renal) to tolerate conditioning chemotherapy'
+  - 'No severe iron-overload-related organ damage that precludes transplant'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Outpatient follow-up with blood counts, infection surveillance and iron-overload assessment before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "3-12 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and iron status."
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Outpatient follow-up with blood counts, infection surveillance and iron-overload assessment before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '3-12 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and iron status.'
 risks:
-  - "Graft rejection or graft failure"
-  - "Graft-versus-host disease in allogeneic transplants"
-  - "Severe infections due to prolonged immunosuppression"
-  - "Iron-overload complications affecting heart and liver"
-  - "Long-term endocrine and fertility complications"
+  - 'Graft rejection or graft failure'
+  - 'Graft-versus-host disease in allogeneic transplants'
+  - 'Severe infections due to prolonged immunosuppression'
+  - 'Iron-overload complications affecting heart and liver'
+  - 'Long-term endocrine and fertility complications'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-neema-bhat
 
 relatedProcedureSlugs:
-  - "bone-marrow-transplant-cost-india"
-  - "allogeneic-stem-cell-transplant-cost-india"
+  - 'bone-marrow-transplant-cost-india'
+  - 'allogeneic-stem-cell-transplant-cost-india'
 faqs:
-  - question: "How much does thalassemia treatment cost in India?"
-    answer: "Thalassemia treatment in India costs between $5,000 and $45,000 depending on the modality — regular transfusion and chelation programmes sit at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end."
-  - question: "Can thalassemia be cured with a bone marrow transplant in Bangalore?"
-    answer: "Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for thalassemia major, and Bangalore transplant centres report disease-free survival rates of 80–90% in well-chelated paediatric patients with matched sibling donors."
-  - question: "How long do I need to stay in India for thalassemia treatment?"
-    answer: "For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does thalassemia treatment cost in India?'
+    answer: 'Thalassemia treatment in India costs between $5,000 and $45,000 depending on the modality — regular transfusion and chelation programmes sit at the lower end, while a curative bone marrow transplant with donor matching sits at the higher end.'
+  - question: 'Can thalassemia be cured with a bone marrow transplant in Bangalore?'
+    answer: 'Yes. An HLA-matched allogeneic bone marrow transplant is the only established curative therapy for thalassemia major, and Bangalore transplant centres report disease-free survival rates of 80–90% in well-chelated paediatric patients with matched sibling donors.'
+  - question: 'How long do I need to stay in India for thalassemia treatment?'
+    answer: 'For a curative transplant, patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 If your child or someone you love has thalassemia, you already know the rhythm it imposes on life — the regular hospital visits for blood transfusions, the daily chelation medications, the fatigue, the worry about what the future holds. You may be wondering whether there is a way to break free from this cycle. There is. A bone marrow transplant can offer a cure, and Bangalore has become one of the world's leading centres for this procedure.
@@ -125,15 +126,16 @@ You should report any fever, rash, jaundice or persistent fatigue immediately, a
 If you are not a candidate for transplant, or while you await a donor, optimised medical management remains the standard of care. Regular transfusion programmes combined with effective iron chelation (deferasirox, deferiprone or deferoxamine) can maintain good quality of life and prevent organ damage when started early and adhered to consistently. Luspatercept, a newer agent that improves red blood cell maturation, may reduce your transfusion burden.
 
 Gene therapy is an emerging alternative that uses your own genetically modified stem cells, eliminating the need for a donor, but it is currently available only through clinical trials and at very high cost in Western centres. You should discuss all options with your Bangalore haematology team, who can provide a balanced recommendation based on your disease severity, donor availability, age and organ function.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $5,000 – $45,000 | Baseline |
-| USA | $150,000 – $400,000 | ~11.0x higher |
-| UK | £80,000 – £250,000 | ~6.6x higher |
-| Singapore | $40,000 – $120,000 | ~3.2x higher |
-| Thailand | $25,000 – $70,000 | ~1.9x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $5,000 – $45,000    | Baseline      |
+| USA               | $150,000 – $400,000 | ~11.0x higher |
+| UK                | £80,000 – £250,000  | ~6.6x higher  |
+| Singapore         | $40,000 – $120,000  | ~3.2x higher  |
+| Thailand          | $25,000 – $70,000   | ~1.9x higher  |
 
 The cost range reflects the spectrum of care. A year of transfusion and chelation therapy starts at around $5,000, while a full curative transplant with donor workup, conditioning and a month-long hospital stay reaches $45,000. Even at the upper end, this is roughly an eleventh of the US price. The savings come from lower infrastructure costs, pharmaceutical pricing and professional fees — not from any reduction in clinical standards. Bangalore hospitals use internationally validated transplant protocols and the same chelation agents available worldwide.
 

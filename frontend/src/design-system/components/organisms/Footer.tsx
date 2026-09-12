@@ -28,7 +28,19 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
  */
 const Footer = React.forwardRef<HTMLElement, FooterProps>(
   (
-    { className, brand, legalLinks, conciergeLabel, conciergePrefix, conciergeSuffix, copyright, address, popularLinksTitle, popularLinks, ...props },
+    {
+      className,
+      brand,
+      legalLinks,
+      conciergeLabel,
+      conciergePrefix,
+      conciergeSuffix,
+      copyright,
+      address,
+      popularLinksTitle,
+      popularLinks,
+      ...props
+    },
     ref
   ) => {
     const number = getWhatsAppNumber();
@@ -36,10 +48,12 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
     const whatsappHref = phone
       ? buildWhatsAppLink(number, 'Thank you for contacting us. How may we assist you today?')
       : '';
-    const safeLegalLinks = legalLinks?.length ? legalLinks : [
-      { label: 'Terms & Conditions', href: '/terms' },
-      { label: 'Policies', href: '/privacy' },
-    ];
+    const safeLegalLinks = legalLinks?.length
+      ? legalLinks
+      : [
+          { label: 'Terms & Conditions', href: '/terms' },
+          { label: 'Policies', href: '/privacy' },
+        ];
 
     // Reason: Separate the last 2 links (Terms & Policies) into their own
     // section so the main nav links stay clean in 2 balanced columns.
@@ -48,14 +62,14 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
 
     return (
       <footer
-        className={cn('bg-ink text-gray-500 overflow-hidden', className)}
+        className={cn('overflow-hidden bg-ink text-gray-500', className)}
         ref={ref}
         {...props}
       >
         {/* Inner container: holds everything except the bleeding wordmark */}
         <div className="container">
           {/* Nav links — 2 columns: left col + right col (pushed to right edge) */}
-          <div className="border-t border-cream-100/15 py-8">
+          <div className="border-cream-100/15 border-t py-8">
             <div className="flex flex-row justify-between gap-4">
               {/* Left column — first half of links */}
               <ul className="flex flex-col gap-3">
@@ -71,7 +85,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
                 ))}
               </ul>
               {/* Right column — second half of links, aligned to right edge */}
-              <ul className="flex flex-col gap-3 items-end text-right">
+              <ul className="flex flex-col items-end gap-3 text-right">
                 {navLinks.slice(5).map((link) => (
                   <li key={link.href}>
                     <a
@@ -88,7 +102,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
 
           {/* Popular quick-links */}
           {popularLinks && popularLinks.length > 0 && (
-            <div className="border-t border-cream-100/15 py-8">
+            <div className="border-cream-100/15 border-t py-8">
               {popularLinksTitle && (
                 <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-600">
                   {popularLinksTitle}
@@ -111,7 +125,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
 
           {/* Concierge / emergency line */}
           {phone && (
-            <div className="border-t border-cream-100/15 py-8">
+            <div className="border-cream-100/15 border-t py-8">
               <p className="text-sm">
                 <span className="text-base">{conciergePrefix}</span>{' '}
                 <strong className="text-sm font-semibold">{conciergeLabel}</strong>{' '}
@@ -128,7 +142,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
 
           {/* Policy links — Terms & Conditions, Policies */}
           {policyLinks.length > 0 && (
-            <div className="border-t border-cream-100/15 py-6">
+            <div className="border-cream-100/15 border-t py-6">
               <ul className="flex flex-wrap gap-6">
                 {policyLinks.map((link) => (
                   <li key={link.href}>
@@ -145,23 +159,23 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
           )}
 
           {/* Brand + copyright */}
-          <div className="border-t border-cream-100/15 py-12 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div className="border-cream-100/15 flex flex-col gap-8 border-t py-12 sm:flex-row sm:items-end sm:justify-between">
             <div className="flex flex-col gap-2">
               <a
                 href="/"
-                className="text-sm font-display font-bold text-gray-500 no-underline transition-none hover:text-gray-500"
+                className="font-display text-sm font-bold text-gray-500 no-underline transition-none hover:text-gray-500"
               >
                 {brand}
               </a>
-              {address && <p className="text-xs text-gray-500 whitespace-pre-line">{address}</p>}
+              {address && <p className="whitespace-pre-line text-xs text-gray-500">{address}</p>}
             </div>
             <p className="text-xs">{copyright}</p>
           </div>
         </div>
 
         {/* Giant wordmark bleed row */}
-        <div className="select-none overflow-hidden px-4 pt-4 pb-6 sm:px-8" aria-hidden="true">
-          <p className="font-display text-[clamp(3rem,13vw,11rem)] font-bold leading-none tracking-tighter text-cream-100 whitespace-nowrap text-center">
+        <div className="select-none overflow-hidden px-4 pb-6 pt-4 sm:px-8" aria-hidden="true">
+          <p className="whitespace-nowrap text-center font-display text-[clamp(3rem,13vw,11rem)] font-bold leading-none tracking-tighter text-cream-100">
             {brand}
           </p>
         </div>

@@ -2,9 +2,7 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const FUNCTIONS_DIR = fileURLToPath(
-  new URL('../.vercel/output/functions', import.meta.url),
-);
+const FUNCTIONS_DIR = fileURLToPath(new URL('../.vercel/output/functions', import.meta.url));
 
 async function patchRuntimes() {
   let entries;

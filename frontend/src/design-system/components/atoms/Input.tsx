@@ -25,8 +25,7 @@ const inputVariants = cva(
 );
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
-    VariantProps<typeof inputVariants> {}
+  extends React.InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof inputVariants> {}
 
 /**
  * Text input atom.
@@ -34,11 +33,7 @@ export interface InputProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, state, inputSize, ...props }, ref) => {
     return (
-      <input
-        className={cn(inputVariants({ state, inputSize }), className)}
-        ref={ref}
-        {...props}
-      />
+      <input className={cn(inputVariants({ state, inputSize }), className)} ref={ref} {...props} />
     );
   }
 );

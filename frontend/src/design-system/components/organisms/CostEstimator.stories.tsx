@@ -30,9 +30,16 @@ export const Default: Story = {
     treatments: TREATMENTS,
     accommodations: ACCOMMODATIONS,
     quoteCta: 'Get a personalized quote',
-    disclaimer: 'Estimated totals are indicative and exclude flights, visas, and unforeseen medical costs.',
+    disclaimer:
+      'Estimated totals are indicative and exclude flights, visas, and unforeseen medical costs.',
   },
-  decorators: [(S) => <div className="max-w-2xl"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-2xl">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const WithQuoteHref: Story = {
@@ -40,5 +47,11 @@ export const WithQuoteHref: Story = {
     ...Default.args,
     fallbackQuoteHref: 'https://wa.me/8801611892986',
   },
-  decorators: [(S) => <div className="max-w-2xl"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="max-w-2xl">
+        <S />
+      </div>
+    ),
+  ],
 };

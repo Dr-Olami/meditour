@@ -17,18 +17,18 @@ languages:
   - Tamil
 expertise:
   - Hip and Knee Primary and Revision Joint Replacement
-  - "Shoulder & Elbow Replacement surgery"
-  - "Arthroscopy surgery of Knee & Hip (Ligament reconstruction, ACL/PCL/MCL, PLC, MPFL)"
+  - 'Shoulder & Elbow Replacement surgery'
+  - 'Arthroscopy surgery of Knee & Hip (Ligament reconstruction, ACL/PCL/MCL, PLC, MPFL)'
   - Meniscal surgeries
-  - "Cartilage repair including stem cell, OATS, ACI therapy"
+  - 'Cartilage repair including stem cell, OATS, ACI therapy'
   - Sports and Adult Reconstruction
   - Complex trauma surgeries
-pullQuote: "Every joint I replace is a promise that pain will not define the next chapter of your life. Robotics lets me keep that promise with millimetre precision."
+pullQuote: 'Every joint I replace is a promise that pain will not define the next chapter of your life. Robotics lets me keep that promise with millimetre precision.'
 faqs:
-  - question: "How many joint replacement surgeries has Dr. Sunil G Kini performed?"
-    answer: "Dr. Sunil G Kini has performed over 12,000 orthopaedic surgeries, including more than 5,000 joint replacement procedures and 3,000 arthroscopic (keyhole) surgeries. With over 22 years of experience and international fellowships in London, Sydney, Germany, and Singapore, he is one of the few surgeons in Karnataka performing hip arthroscopy and robotic hip and knee replacement."
-  - question: "Does Dr. Sunil G Kini perform robotic joint replacement?"
-    answer: "Yes, Dr. Sunil G Kini specialises in robotic and conventional hip and knee replacement surgery, including revision joint replacement. He also performs shoulder and elbow replacement, hip and knee arthroscopy, ligament reconstruction, cartilage restoration procedures, and sports injury management. He is a core faculty member training other surgeons in arthroscopy and joint replacement techniques."
+  - question: 'How many joint replacement surgeries has Dr. Sunil G Kini performed?'
+    answer: 'Dr. Sunil G Kini has performed over 12,000 orthopaedic surgeries, including more than 5,000 joint replacement procedures and 3,000 arthroscopic (keyhole) surgeries. With over 22 years of experience and international fellowships in London, Sydney, Germany, and Singapore, he is one of the few surgeons in Karnataka performing hip arthroscopy and robotic hip and knee replacement.'
+  - question: 'Does Dr. Sunil G Kini perform robotic joint replacement?'
+    answer: 'Yes, Dr. Sunil G Kini specialises in robotic and conventional hip and knee replacement surgery, including revision joint replacement. He also performs shoulder and elbow replacement, hip and knee arthroscopy, ligament reconstruction, cartilage restoration procedures, and sports injury management. He is a core faculty member training other surgeons in arthroscopy and joint replacement techniques.'
 ---
 
 ## About the Doctor

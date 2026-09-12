@@ -12,15 +12,15 @@ languages:
   - Hindi
   - Kannada
 faqs:
-  - question: "Who is Dr. Sunil Narayan Dutt?"
-    answer: "Dr. Sunil Narayan Dutt is a highly experienced ENT Specialist based in Bangalore, Karnataka, with 30 years of practice. He holds MS (ENT), DNB (ORL), DLO, RCS, FRCS ED, FRCS (ORL-HNS), and a PhD. He is a Senior Consultant & Cochlear Implant Surgeon at Apollo Hospitals and a Faculty Mentor for South Asia for Cochlear Implants, Bone Anchored Hearing Aids, and Balloon Sinuplasty. He performed the first pediatric cochlear implant in Bangalore in 2003 and has over 80 cochlear implants to his credit."
-  - question: "Is an Ear-Nose-Throat (ENT) Specialist and an Otorhinolaryngologist different?"
-    answer: "No, an ENT Specialist and an Otorhinolaryngologist are the same. Both terms refer to a medical doctor who specializes in the diagnosis and treatment of disorders of the ear, nose, throat, and related structures of the head and neck. Dr. Sunil Narayan Dutt is both an ENT Specialist and an Otorhinolaryngologist with 30+ years of experience."
-  - question: "Do I need a referral to see an ENT specialist?"
+  - question: 'Who is Dr. Sunil Narayan Dutt?'
+    answer: 'Dr. Sunil Narayan Dutt is a highly experienced ENT Specialist based in Bangalore, Karnataka, with 30 years of practice. He holds MS (ENT), DNB (ORL), DLO, RCS, FRCS ED, FRCS (ORL-HNS), and a PhD. He is a Senior Consultant & Cochlear Implant Surgeon at Apollo Hospitals and a Faculty Mentor for South Asia for Cochlear Implants, Bone Anchored Hearing Aids, and Balloon Sinuplasty. He performed the first pediatric cochlear implant in Bangalore in 2003 and has over 80 cochlear implants to his credit.'
+  - question: 'Is an Ear-Nose-Throat (ENT) Specialist and an Otorhinolaryngologist different?'
+    answer: 'No, an ENT Specialist and an Otorhinolaryngologist are the same. Both terms refer to a medical doctor who specializes in the diagnosis and treatment of disorders of the ear, nose, throat, and related structures of the head and neck. Dr. Sunil Narayan Dutt is both an ENT Specialist and an Otorhinolaryngologist with 30+ years of experience.'
+  - question: 'Do I need a referral to see an ENT specialist?'
     answer: "No, you do not need a referral to see Dr. Sunil Narayan Dutt. You can book an appointment directly through our platform using the 'Request appointment' button on his profile page. Our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
   - question: "What are Dr. Sunil Narayan Dutt's special interests?"
     answer: "Dr. Sunil Narayan Dutt's special interests include cochlear implantation, bone anchored hearing aid implantation (BAHA), endoscopic FESS surgery, balloon sinuplasty, snoring and sleep apnea management, and neuro-otology. He is a Faculty Mentor for South Asia for Cochlear Implants, BAHA, and Balloon Sinuplasty."
-  - question: "How can I book an appointment with Dr. Sunil Narayan Dutt?"
+  - question: 'How can I book an appointment with Dr. Sunil Narayan Dutt?'
     answer: "You can book an appointment with Dr. Sunil Narayan Dutt at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

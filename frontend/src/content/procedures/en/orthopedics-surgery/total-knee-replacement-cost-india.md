@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Total Knee Replacement"
-seoHeadline: "Total Knee Replacement Cost in India for International Patients"
+name: 'Total Knee Replacement'
+seoHeadline: 'Total Knee Replacement Cost in India for International Patients'
 parentTreatmentSlug: orthopedics-surgery
-summary: "Total Knee Replacement in India costs between $3,500 and $7,000, offering international patients savings of up to 80% compared to Western countries. The procedure replaces damaged knee joint surfaces with metal and plastic components to relieve pain and restore mobility."
-description: "Total Knee Replacement surgery in India from $3,500–$7,000 with JCI-accredited hospitals in Bangalore. Save up to 80% versus US/UK prices."
-fromPrice: "$3,500"
-toPrice: "$7,000"
-duration: "1-2 weeks"
-hospitalStay: "3-5 days"
-recoveryTime: "6-12 weeks"
+summary: 'Total Knee Replacement in India costs between $3,500 and $7,000, offering international patients savings of up to 80% compared to Western countries. The procedure replaces damaged knee joint surfaces with metal and plastic components to relieve pain and restore mobility.'
+description: 'Total Knee Replacement surgery in India from $3,500–$7,000 with JCI-accredited hospitals in Bangalore. Save up to 80% versus US/UK prices.'
+fromPrice: '$3,500'
+toPrice: '$7,000'
+duration: '1-2 weeks'
+hospitalStay: '3-5 days'
+recoveryTime: '6-12 weeks'
 eligibility:
-  - "Severe osteoarthritis or rheumatoid arthritis of the knee with cartilage loss"
-  - "Chronic knee pain not relieved by conservative treatments (medication, physiotherapy, injections)"
-  - "Significant loss of knee function affecting daily activities and quality of life"
-  - "Knee deformity (bowleg or knock-knee) that impairs walking"
-  - "Good general health to tolerate anaesthesia and post-operative rehabilitation"
+  - 'Severe osteoarthritis or rheumatoid arthritis of the knee with cartilage loss'
+  - 'Chronic knee pain not relieved by conservative treatments (medication, physiotherapy, injections)'
+  - 'Significant loss of knee function affecting daily activities and quality of life'
+  - 'Knee deformity (bowleg or knock-knee) that impairs walking'
+  - 'Good general health to tolerate anaesthesia and post-operative rehabilitation'
 costInclusions:
-  - "Orthopaedic surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implant (joint prosthesis where applicable)"
-  - "Pre-operative diagnostics (X-ray, MRI, blood tests)"
-  - "Post-operative care and physiotherapy during hospital stay"
-  - "Airport pickup and drop"
+  - 'Orthopaedic surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implant (joint prosthesis where applicable)'
+  - 'Pre-operative diagnostics (X-ray, MRI, blood tests)'
+  - 'Post-operative care and physiotherapy during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy post-discharge (typically 6-12 weeks)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy post-discharge (typically 6-12 weeks)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-5 days"
-    description: "Pain management, wound care, and assisted mobilisation begin on day one with a continuous passive motion machine and standing exercises."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Daily supervised physiotherapy to achieve 90-degree knee flexion, stair climbing, and independent walking with a walker or cane; follow-up wound review before departure."
-  - phase: "Return home"
-    duration: "Week 3-6"
-    description: "Continue home exercise programme, gradually transition from walker to unaided walking, and resume light household activities."
-  - phase: "Full recovery"
-    duration: "6-12 weeks"
-    description: "Complete soft-tissue healing and restored range of motion; most patients resume normal activities including low-impact sports and driving."
+  - phase: 'Hospital stay'
+    duration: '3-5 days'
+    description: 'Pain management, wound care, and assisted mobilisation begin on day one with a continuous passive motion machine and standing exercises.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Daily supervised physiotherapy to achieve 90-degree knee flexion, stair climbing, and independent walking with a walker or cane; follow-up wound review before departure.'
+  - phase: 'Return home'
+    duration: 'Week 3-6'
+    description: 'Continue home exercise programme, gradually transition from walker to unaided walking, and resume light household activities.'
+  - phase: 'Full recovery'
+    duration: '6-12 weeks'
+    description: 'Complete soft-tissue healing and restored range of motion; most patients resume normal activities including low-impact sports and driving.'
 risks:
-  - "Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis"
-  - "Surgical site or deep joint infection potentially requiring revision surgery"
-  - "Implant loosening or wear over time necessitating future revision"
-  - "Stiffness or reduced range of motion requiring manipulation under anaesthesia"
-  - "Nerve or blood vessel injury around the operative site"
+  - 'Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis'
+  - 'Surgical site or deep joint infection potentially requiring revision surgery'
+  - 'Implant loosening or wear over time necessitating future revision'
+  - 'Stiffness or reduced range of motion requiring manipulation under anaesthesia'
+  - 'Nerve or blood vessel injury around the operative site'
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-manish-samson
 
 relatedProcedureSlugs:
-  - "total-hip-replacement-cost-india"
-  - "arthroscopy-cost-india"
+  - 'total-hip-replacement-cost-india'
+  - 'arthroscopy-cost-india'
 faqs:
-  - question: "How long do knee implants typically last?"
-    answer: "Modern knee implants have a 15-20 year lifespan in 90% of patients. Longevity depends on activity level, body weight, and implant alignment. High-impact activities should be avoided to extend implant life."
-  - question: "When can I fly home after total knee replacement?"
-    answer: "Most international patients are cleared to fly 10-14 days after surgery, once wound healing is satisfactory and knee flexion reaches around 90 degrees. A medical fitness-to-fly certificate is provided before departure."
-  - question: "Is the implant quality the same as in Western hospitals?"
+  - question: 'How long do knee implants typically last?'
+    answer: 'Modern knee implants have a 15-20 year lifespan in 90% of patients. Longevity depends on activity level, body weight, and implant alignment. High-impact activities should be avoided to extend implant life.'
+  - question: 'When can I fly home after total knee replacement?'
+    answer: 'Most international patients are cleared to fly 10-14 days after surgery, once wound healing is satisfactory and knee flexion reaches around 90 degrees. A medical fitness-to-fly certificate is provided before departure.'
+  - question: 'Is the implant quality the same as in Western hospitals?'
     answer: "Yes. Bangalore hospitals use FDA-approved implants from the same global manufacturers (Zimmer Biomet, Stryker, DePuy) used in the US and UK. Implant brand and model can be selected based on your surgeon's recommendation."
 ---
+
 ## Overview
 
 If you're reading this, you've probably been living with knee pain for months or even years. Simple things like walking to the shops, climbing stairs, or sleeping through the night have become difficult. You may have tried painkillers, physiotherapy, and injections, only to find the relief was temporary. You're likely wondering if knee replacement surgery is the right choice—and whether travelling to India for it is safe and worth it.
@@ -139,15 +140,16 @@ Before committing to total knee replacement, it's worth exploring whether less i
 If your arthritis is limited to just one part of your knee (typically the inner side), a partial (unicompartmental) knee replacement may be an option. This preserves the undamaged portions of your knee, meaning a smaller incision, faster recovery, and more natural knee movement. However, it's only suitable for a specific pattern of arthritis with intact ligaments—your surgeon will tell you if you qualify.
 
 Arthroscopic procedures like meniscal trimming or cartilage clean-up can address specific problems within the knee, but they aren't effective for end-stage arthritis. Once arthritis is widespread and advanced, total knee replacement remains the most reliable and durable solution for lasting pain relief and restored mobility. Your Bangalore surgeon will give you an honest assessment of all your options so you can make the decision that's right for you.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $3,500 – $7,000 | Baseline |
-| USA | $45,000 – $70,000 | ~11.0x higher |
-| UK | £11,000 – £15,000 | ~3.1x higher |
-| Singapore | $18,000 – $25,000 | ~4.1x higher |
-| Thailand | $9,000 – $14,000 | ~2.2x higher |
+| Country           | Approximate Cost  | vs India      |
+| ----------------- | ----------------- | ------------- |
+| India (Bangalore) | $3,500 – $7,000   | Baseline      |
+| USA               | $45,000 – $70,000 | ~11.0x higher |
+| UK                | £11,000 – £15,000 | ~3.1x higher  |
+| Singapore         | $18,000 – $25,000 | ~4.1x higher  |
+| Thailand          | $9,000 – $14,000  | ~2.2x higher  |
 
 You might be wondering: if the implants are the same, why is India so much cheaper? The answer is that the cost difference comes down to surgeon fees, hospital overheads, and administrative costs—not the quality of your implant or your surgery. Bangalore hospitals use identical FDA-approved implants from manufacturers such as Zimmer Biomet, Stryker, and DePuy. The price range within Bangalore ($3,500–$7,000) reflects factors such as the implant brand you choose, whether robotic-assisted surgery is used, your hospital room category, and whether you're having one or both knees replaced.
 
@@ -167,4 +169,3 @@ You'll travel to Bangalore on a Medical Visa, and the e-Medical Visa is availabl
 When you land at Kempegowda International Airport, a dedicated driver will meet you for a private transfer to the hospital. A bilingual coordinator will accompany you through registration and your pre-operative assessments. We recommend arriving 2-3 days before your surgery date to complete diagnostics and consultations, and planning a 10-14 day stay in Bangalore for your surgery and initial rehabilitation before flying home.
 
 **What should you pack?** Bring comfortable, loose-fitting clothes that are easy to put on, supportive shoes, and all your medical records organised in a folder—previous X-rays, MRI scans, blood test results, and a list of medications you take. If you use a walking aid at home, bring it. And yes, your family member or companion can absolutely stay with you; Bangalore has a wide range of accommodation near major hospitals, from serviced apartments to budget and mid-range hotels, many offering special medical-tourism rates arranged through Khan Meditour.
-

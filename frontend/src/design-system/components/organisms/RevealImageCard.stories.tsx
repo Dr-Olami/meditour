@@ -21,7 +21,13 @@ export const Default: Story = {
     label: 'Advanced MRI',
     caption: '3T Siemens Magnetom — full-body imaging',
   },
-  decorators: [(S) => <div className="w-80"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-80">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const WithLink: Story = {
@@ -32,7 +38,13 @@ export const WithLink: Story = {
     caption: 'ISO-certified operating theatres',
     href: '#equipment',
   },
-  decorators: [(S) => <div className="w-80"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-80">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const ImageOnly: Story = {
@@ -40,5 +52,11 @@ export const ImageOnly: Story = {
     src: 'https://images.unsplash.com/photo-1584982751601-97ddc0e79954?w=600&q=80',
     alt: 'Hospital corridor',
   },
-  decorators: [(S) => <div className="w-80"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-80">
+        <S />
+      </div>
+    ),
+  ],
 };

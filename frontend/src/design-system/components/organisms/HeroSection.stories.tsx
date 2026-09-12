@@ -18,7 +18,8 @@ export const Default: Story = {
   args: {
     eyebrow: 'World-class medical care',
     headline: 'Your health journey starts here.',
-    subheadline: 'Expert doctors, world-class facilities, and seamless care coordination — all from Bangladesh.',
+    subheadline:
+      'Expert doctors, world-class facilities, and seamless care coordination — all from Bangladesh.',
     primaryCta: { label: 'Book a Consultation', href: '#contact' },
   },
 };

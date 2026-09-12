@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Sri Lankan Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Colombo to India for treatment: medical visa requirements, flight routes, cost comparisons in Sri Lankan Rupees, and choosing the right hospital for Sri Lankan families."
+excerpt: 'Travelling from Colombo to India for treatment: medical visa requirements, flight routes, cost comparisons in Sri Lankan Rupees, and choosing the right hospital for Sri Lankan families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-28
@@ -32,13 +32,13 @@ Sri Lankan families have travelled to India for cardiac surgery, orthopedics, ca
 
 Heart surgery cost India vs Sri Lanka is the comparison most families start with. Indicative package prices (at roughly रू298 per US dollar):
 
-| Treatment | India (USD) | Approx. LKR | Singapore | Thailand |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | रू1,341,000–3,576,000 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | रू745,000–2,384,000 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | रू894,000–7,450,000 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | रू1,192,000–3,576,000 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | रू1,043,000–2,086,000 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. LKR           | Singapore | Thailand   |
+| -------------------- | ------------- | --------------------- | --------- | ---------- |
+| Cardiac surgery      | $4,500–12,000 | रू1,341,000–3,576,000 | Higher    | Far higher |
+| Knee/hip replacement | $2,500–8,000  | रू745,000–2,384,000   | Higher    | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | रू894,000–7,450,000   | Higher    | Far higher |
+| Spine surgery        | $4,000–12,000 | रू1,192,000–3,576,000 | Higher    | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | रू1,043,000–2,086,000 | Higher    | Far higher |
 
 Transplant procedures are a growing route for Sri Lankan patients — dedicated programmes in Chennai and Bangalore handle the full referral, admission and follow-up pathway with international coordinators.
 

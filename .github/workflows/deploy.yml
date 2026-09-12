@@ -16,9 +16,8 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             set -e
-            export PATH="/usr/local/bin:/usr/bin:/bin:$HOME/.nvm/versions/node/*/bin:$PATH"
-            source ~/.bashrc 2>/dev/null || true
-            source ~/.profile 2>/dev/null || true
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             echo "=== Deploying khanmeditour.com ==="
             echo "Node: $(which node)"
             echo "npm: $(which npm)"

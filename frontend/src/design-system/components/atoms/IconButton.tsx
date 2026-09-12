@@ -2,8 +2,7 @@ import * as React from 'react';
 import { cn } from '../../../lib/utils';
 import { Icon, type IconProps } from './Icon';
 
-export interface IconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IconProps['name'];
   label: string;
   size?: number;

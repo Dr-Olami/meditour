@@ -26,7 +26,7 @@ const EquipmentCarousel = React.forwardRef<HTMLDivElement, EquipmentCarouselProp
             {title}
           </h2>
         )}
-        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 scrollbar-none">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
           {items.map((item, i) => (
             <div
               key={i}
@@ -39,7 +39,7 @@ const EquipmentCarousel = React.forwardRef<HTMLDivElement, EquipmentCarouselProp
                 className="aspect-[4/3] w-full object-cover"
               />
               {item.label && (
-                <p className="px-4 py-3 text-sm font-medium text-ink/70">{item.label}</p>
+                <p className="text-ink/70 px-4 py-3 text-sm font-medium">{item.label}</p>
               )}
             </div>
           ))}

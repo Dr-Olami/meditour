@@ -27,6 +27,7 @@ So Phase 2's job is: **make it effortless to go from "browsing a treatment/docto
 ## Feature Breakdown
 
 ### 2.1 Cost Estimator — wire to real data
+
 Current `CostEstimator` (`@/design-system/components/organisms/CostEstimator.tsx`) takes `treatments: CostEstimatorOption[]` and `accommodations: CostEstimatorOption[]` as props with a `cost: number` field — it's UI-complete but fed by nothing real.
 
 - Source `treatments` options from the Phase 1 `treatments` content collection (`fromPrice` field), not a hardcoded array.
@@ -38,6 +39,7 @@ Current `CostEstimator` (`@/design-system/components/organisms/CostEstimator.tsx
 - **Decision needed:** which of (a)/(b) is primary — see Open Questions.
 
 ### 2.2 Medical Report Intake (new) — v1: WhatsApp/Email handoff, no in-app storage
+
 Maps directly to Step 1 ("Share Your Medical Reports... via WhatsApp or email... Don't have reports yet? No problem").
 
 - **Decided:** no file-upload/storage infra this phase. `LeadForm` submission surfaces a clear next step instead: "Please send your reports via WhatsApp or email — we'll confirm receipt within a few hours." with both a `mailto:khan@meditour.com` link and a contextual WhatsApp deep link (see 2.4) pre-filled with the patient's name/treatment so the coordinator has context when the files arrive.
@@ -46,6 +48,7 @@ Maps directly to Step 1 ("Share Your Medical Reports... via WhatsApp or email...
 - **Deferred to a future phase** (not Phase 2, not yet scheduled): direct in-app file upload with presigned storage (S3/Cloudflare R2/Supabase Storage) + `reportUrls?: string[]` on the lead payload. Revisit once WhatsApp/email volume becomes an operational bottleneck for the team.
 
 ### 2.3 Lead Form enhancements
+
 `LeadForm` (`@/design-system/components/organisms/LeadForm.tsx`) already has name/email/phone/treatment/message + zod validation + CRM submit. Extend for this phase:
 
 - Add optional pre-fill props: `defaultTreatment?: string`, `defaultDoctor?: string`, `defaultMessage?: string` — so the form can be launched from a Doctor page ("Request appointment with Dr. X"), a Treatment page, or the Cost Estimator with context already filled in.
@@ -54,6 +57,7 @@ Maps directly to Step 1 ("Share Your Medical Reports... via WhatsApp or email...
 - Success state should set clear expectations tied to Step 2, **and** repeat the report-sharing instruction from 2.2 (WhatsApp/email links) so patients know exactly what to do next: "We'll review your case and connect you with a specialist within 24–48 hours. Please send your reports via WhatsApp or email if you haven't already."
 
 ### 2.4 WhatsApp Integration — beyond static deep links
+
 Current `lib/whatsapp.ts` only builds a single generic inquiry link. Extend:
 
 - `getDoctorInquiryLink(doctorName: string)`, `getTreatmentInquiryLink(treatmentName: string)`, `getEstimateInquiryLink(treatment, estimatedTotal)` — parameterized pre-filled messages so every CTA across Doctor/Hospital/Treatment/Estimator pages produces a contextual WhatsApp message instead of one generic string.
@@ -63,7 +67,9 @@ Current `lib/whatsapp.ts` only builds a single generic inquiry link. Extend:
 - **Deferred (separate task, not yet scheduled):** retrofit `pages/doctors/[slug].astro` and `pages/treatments/[slug].astro` (+ `bn/` equivalents) to render their WhatsApp CTA via the shared `WhatsAppCTA` component (with `context={{ type: 'doctor'|'treatment', ... }}`) instead of a raw `<a>` styled to match the black-outline `Button` look. **Note:** `WhatsAppCTA`'s `button` variant is a fixed solid-green WhatsApp pill with icon — visually different from the current black-outline CTA on those pages, so this is a deliberate design decision, not a bug fix. Either accept the new look, or add an `outline` visual variant to `WhatsAppCTA` first so the swap is style-neutral.
 
 ### 2.5 CRM payload completeness
+
 Extend `leadSchema`/`submitLead` (`lib/crm.ts`) to carry the richer context now available:
+
 ```ts
 {
   name, email, phone, country, treatment, message, source, // existing
@@ -75,6 +81,7 @@ Extend `leadSchema`/`submitLead` (`lib/crm.ts`) to carry the richer context now 
   preferredContactMethod?: 'whatsapp' | 'email' | 'call',
 }
 ```
+
 - `source` should be set automatically per entry point (`'cost-estimator'`, `'doctor-page'`, `'treatment-page'`, `'general-contact'`) instead of the current default `'website'` for all cases — needed for the team to know which funnel step generated the lead.
 
 ---
@@ -82,23 +89,29 @@ Extend `leadSchema`/`submitLead` (`lib/crm.ts`) to carry the richer context now 
 ## Build Order (sequential)
 
 ### Step 1 — Extend `lib/crm.ts`
+
 - Add new schema fields (2.5), update `submitLead` if payload shape changes, add per-entry-point `source` values.
 
 ### Step 2 — Extend `lib/whatsapp.ts`
+
 - Add parameterized message builders (2.4).
 
 ### Step 3 — Wire `CostEstimator` to real data
+
 - Treatments from content collection, accommodation tiers, disclaimer copy, CTA behavior decided in 2.1.
 
 ### Step 4 — Extend `LeadForm`
+
 - Pre-fill props, `country`/`preferredContactMethod` fields, "no reports yet" toggle + symptoms textarea, updated success copy with WhatsApp/email report-sharing instructions.
 
 ### Step 5 — Wire contextual CTAs across pages
+
 - Doctor detail page → `LeadForm` pre-filled with doctor + WhatsApp deep link mentioning the doctor.
 - Treatment detail page → same pattern with treatment context.
 - Cost Estimator → CTA per decision in 2.1.
 
 ### Step 6 — QA the full funnel
+
 - Manual test: Treatment page → Estimator → Lead Form (pre-filled) → submit with/without reports → CRM receives full payload → WhatsApp/email report-sharing instructions display correctly → WhatsApp fallback works if CRM endpoint fails (existing `submitLead` catch already returns a WhatsApp-suggesting message — verify this still reads correctly with new fields).
 
 ---
@@ -112,6 +125,7 @@ Extend `leadSchema`/`submitLead` (`lib/crm.ts`) to carry the richer context now 
 ---
 
 ## Definition of Done (Phase 2)
+
 - [ ] `CostEstimator` uses real treatment pricing from the Phase 1 content collection; accommodation tiers have real (or clearly-labeled placeholder) pricing; disclaimer copy present.
 - [ ] `LeadForm` "no reports yet" toggle + symptoms textarea shipped; WhatsApp/email report-sharing instructions shown post-submit (no in-app storage this phase — deferred per 2.2).
 - [ ] `LeadForm` accepts pre-fill context (doctor/treatment/estimate) and captures `country` + `preferredContactMethod`.

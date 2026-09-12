@@ -43,7 +43,7 @@ export const ALL_COUNTRIES: CountryMetadata[] = [
 
 /** Country metadata keyed by slug for O(1) lookup. */
 const COUNTRIES_BY_SLUG: Record<string, CountryMetadata> = Object.fromEntries(
-  ALL_COUNTRIES.map((country) => [country.slug, country]),
+  ALL_COUNTRIES.map((country) => [country.slug, country])
 );
 
 /**
@@ -192,14 +192,14 @@ export function formatFlightTimeShort(flightTime: string): string {
  */
 export function getTreatmentCategory(slug: string): string {
   const categoryMap: Record<string, string> = {
-    'cardiology': 'Cardiology',
+    cardiology: 'Cardiology',
     'cancer-treatment': 'Oncology',
     'orthopedics-surgery': 'Orthopedics',
     'organ-treatment': 'Transplant',
     'infertility-treatment': 'Fertility',
     'neuro-and-spine-surgery': 'Neurosurgery',
     'cosmetic-surgery': 'Cosmetic',
-    'ophthalmology': 'Ophthalmology',
+    ophthalmology: 'Ophthalmology',
     'dental-treatment': 'Dental',
     'bariatric-surgery': 'Bariatric',
   };
@@ -214,14 +214,14 @@ export function getTreatmentCategory(slug: string): string {
  */
 export function getTreatmentName(slug: string): string {
   const nameMap: Record<string, string> = {
-    'cardiology': 'Heart Surgery',
+    cardiology: 'Heart Surgery',
     'cancer-treatment': 'Cancer Treatment',
     'orthopedics-surgery': 'Knee/Hip Replacement',
     'organ-treatment': 'Kidney Transplant',
     'infertility-treatment': 'IVF Treatment',
     'neuro-and-spine-surgery': 'Spine Surgery',
     'cosmetic-surgery': 'Cosmetic Surgery',
-    'ophthalmology': 'Eye Surgery',
+    ophthalmology: 'Eye Surgery',
     'dental-treatment': 'Dental Implants',
     'bariatric-surgery': 'Weight Loss Surgery',
   };
@@ -241,7 +241,10 @@ export function getTreatmentName(slug: string): string {
  * @param siteName - Site name for the suffix.
  * @returns Title tag string (55–60 chars target).
  */
-export function getSeoTitle(countryData: CountryMetadata, siteName: string = 'Khan Meditour'): string {
+export function getSeoTitle(
+  countryData: CountryMetadata,
+  siteName: string = 'Khan Meditour'
+): string {
   // Try the compact pattern first
   const compact = `Medical Treatment in India for ${countryData.nationality} | ${siteName}`;
   if (compact.length <= 60) return compact;
@@ -350,11 +353,16 @@ export function getCountryOgImage(countryData: CountryMetadata): string {
  */
 export function getRegionalHeroImage(region: Region): string {
   const regionalImages: Record<Region, string> = {
-    'south-asia': 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&auto=format&fit=crop&q=80',
-    'middle-east': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
-    africa: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80',
-    western: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80',
-    'central-asia': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
+    'south-asia':
+      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&auto=format&fit=crop&q=80',
+    'middle-east':
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
+    africa:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80',
+    western:
+      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80',
+    'central-asia':
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&auto=format&fit=crop&q=80',
   };
   return regionalImages[region];
 }

@@ -20,16 +20,16 @@ expertise:
   - Endoscopic Anterior Skull Base Surgery
   - Robotic Head and Neck Surgery
   - Minimally Invasive Head and Neck Surgery
-pullQuote: "Head and neck cancer threatens not just life, but voice, expression, and identity. My job is to remove the cancer while preserving the person."
+pullQuote: 'Head and neck cancer threatens not just life, but voice, expression, and identity. My job is to remove the cancer while preserving the person.'
 faqs:
-  - question: "Is Dr. Vidya Bhushan experienced in head and neck cancer surgery?"
-    answer: "Yes, Dr. Vidya Bhushan R is an experienced Head & Neck Oncosurgeon at SPARSH Hospital, Hennur Road, Bangalore. Since joining Mazumdar Shaw Cancer Centre in 2017, he has performed over 1,500 advanced head and neck cancer resections and reconstructions, including minimally invasive, robotic, and endoscopic skull base procedures. He is recognised as one of the best oncologists in Bangalore for head and neck cancer."
-  - question: "What types of cancer does Dr. Vidya Bhushan treat?"
-    answer: "Dr. Vidya Bhushan specialises in head and neck cancer surgery, including resection of head and neck cancers, reconstruction of surgical defects, lateral skull base surgery, endoscopic anterior skull base surgery, and robotic head and neck surgery. His focused expertise covers the full spectrum of head and neck oncology with advanced reconstructive techniques."
-  - question: "Does Dr. Vidya Bhushan perform robotic and endoscopic skull base surgery?"
-    answer: "Yes, Dr. Vidya Bhushan is trained in robotic head and neck surgery and endoscopic skull base surgery. He completed a UICC Fellowship in Endoscopic Skull Base Surgery in Varese, Italy, and regularly performs minimally invasive, robotic, and endoscopic skull base procedures for head and neck cancer patients."
-  - question: "What is the cost of head and neck cancer surgery with Dr. Vidya Bhushan in Bangalore?"
-    answer: "Cancer treatment costs in Bangalore range from $3,000 to $15,000 depending on the procedure and stage. Dr. Vidya Bhushan practices at SPARSH Hospital, Hennur Road, which offers comprehensive oncology care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced surgical oncologists."
+  - question: 'Is Dr. Vidya Bhushan experienced in head and neck cancer surgery?'
+    answer: 'Yes, Dr. Vidya Bhushan R is an experienced Head & Neck Oncosurgeon at SPARSH Hospital, Hennur Road, Bangalore. Since joining Mazumdar Shaw Cancer Centre in 2017, he has performed over 1,500 advanced head and neck cancer resections and reconstructions, including minimally invasive, robotic, and endoscopic skull base procedures. He is recognised as one of the best oncologists in Bangalore for head and neck cancer.'
+  - question: 'What types of cancer does Dr. Vidya Bhushan treat?'
+    answer: 'Dr. Vidya Bhushan specialises in head and neck cancer surgery, including resection of head and neck cancers, reconstruction of surgical defects, lateral skull base surgery, endoscopic anterior skull base surgery, and robotic head and neck surgery. His focused expertise covers the full spectrum of head and neck oncology with advanced reconstructive techniques.'
+  - question: 'Does Dr. Vidya Bhushan perform robotic and endoscopic skull base surgery?'
+    answer: 'Yes, Dr. Vidya Bhushan is trained in robotic head and neck surgery and endoscopic skull base surgery. He completed a UICC Fellowship in Endoscopic Skull Base Surgery in Varese, Italy, and regularly performs minimally invasive, robotic, and endoscopic skull base procedures for head and neck cancer patients.'
+  - question: 'What is the cost of head and neck cancer surgery with Dr. Vidya Bhushan in Bangalore?'
+    answer: 'Cancer treatment costs in Bangalore range from $3,000 to $15,000 depending on the procedure and stage. Dr. Vidya Bhushan practices at SPARSH Hospital, Hennur Road, which offers comprehensive oncology care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced surgical oncologists.'
 ---
 
 ## About the Doctor

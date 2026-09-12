@@ -26,7 +26,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: { doctor: SAMPLE_DOCTOR, bookLabel: 'Book Now', whatsappLabel: 'WhatsApp' },
-  decorators: [(S) => <div className="w-[36rem] max-w-full"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-[36rem] max-w-full">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const WithPhoto: Story = {
@@ -35,7 +41,13 @@ export const WithPhoto: Story = {
     bookLabel: 'Book Now',
     whatsappLabel: 'WhatsApp',
   },
-  decorators: [(S) => <div className="w-[36rem] max-w-full"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-[36rem] max-w-full">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const NoWhatsApp: Story = {
@@ -43,7 +55,13 @@ export const NoWhatsApp: Story = {
     doctor: { ...SAMPLE_DOCTOR, whatsappHref: undefined },
     bookLabel: 'Book Now',
   },
-  decorators: [(S) => <div className="w-[36rem] max-w-full"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-[36rem] max-w-full">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const Minimal: Story = {
@@ -51,7 +69,13 @@ export const Minimal: Story = {
     doctor: { name: 'Dr. Karim', specialty: 'Orthopedics' },
     bookLabel: 'Book Now',
   },
-  decorators: [(S) => <div className="w-[36rem] max-w-full"><S /></div>],
+  decorators: [
+    (S) => (
+      <div className="w-[36rem] max-w-full">
+        <S />
+      </div>
+    ),
+  ],
 };
 
 export const Grid: Story = {

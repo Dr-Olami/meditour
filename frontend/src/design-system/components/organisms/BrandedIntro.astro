@@ -90,13 +90,7 @@ const wipeMs = INTRO_TIMINGS.wipe;
     line-height: 1;
     /* Bright-shine black: glossy vertical gradient from #000 to a near-black
        sheen, giving the ink a polished, light-catching look on white. */
-    background: linear-gradient(
-      180deg,
-      #000000 0%,
-      #2a2a2a 45%,
-      #000000 55%,
-      #1a1a1a 100%
-    );
+    background: linear-gradient(180deg, #000000 0%, #2a2a2a 45%, #000000 55%, #1a1a1a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -141,8 +135,7 @@ const wipeMs = INTRO_TIMINGS.wipe;
     if (!root) return;
 
     var reduced =
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var storageKey = root.getAttribute('data-storage-key') || 'khan:branded-intro-seen';
 
     var seen = false;

@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Dialysis"
-seoHeadline: "Dialysis Cost in India for International Patients"
+name: 'Dialysis'
+seoHeadline: 'Dialysis Cost in India for International Patients'
 parentTreatmentSlug: nephrology-kidney-care
 summary: "Dialysis in India costs between $50 and $150 per session, offering international patients savings of up to 80% compared to Western countries. Bangalore's leading nephrology centres provide both haemodialysis and peritoneal dialysis with world-class technology, experienced nephrologists, and comprehensive supportive care."
-description: "Affordable dialysis treatment in Bangalore, India ranging from $50 to $150 per session with top nephrologists and JCI-accredited hospitals."
-fromPrice: "$50"
-toPrice: "$150"
-duration: "1-4 weeks"
-hospitalStay: "0-1 days"
-recoveryTime: "Same day"
+description: 'Affordable dialysis treatment in Bangalore, India ranging from $50 to $150 per session with top nephrologists and JCI-accredited hospitals.'
+fromPrice: '$50'
+toPrice: '$150'
+duration: '1-4 weeks'
+hospitalStay: '0-1 days'
+recoveryTime: 'Same day'
 eligibility:
-  - "End-stage renal disease (ESRD) patients requiring renal replacement therapy"
-  - "Acute kidney injury patients needing temporary dialysis support"
-  - "Patients awaiting kidney transplant who need bridging dialysis"
-  - "Individuals with severe chronic kidney disease (Stage 4-5) not yet transplanted"
-  - "Patients medically suitable for either haemodialysis or peritoneal dialysis"
+  - 'End-stage renal disease (ESRD) patients requiring renal replacement therapy'
+  - 'Acute kidney injury patients needing temporary dialysis support'
+  - 'Patients awaiting kidney transplant who need bridging dialysis'
+  - 'Individuals with severe chronic kidney disease (Stage 4-5) not yet transplanted'
+  - 'Patients medically suitable for either haemodialysis or peritoneal dialysis'
 costInclusions:
-  - "Nephrologist consultation and supervision fees"
-  - "Dialysis session charges (per session)"
-  - "Dialysis consumables (dialyser, tubing, dialysate solution)"
-  - "Routine blood tests during treatment period"
-  - "Vascular access management and care"
-  - "Dietitian consultation and dietary planning"
-  - "Airport pickup and drop"
+  - 'Nephrologist consultation and supervision fees'
+  - 'Dialysis session charges (per session)'
+  - 'Dialysis consumables (dialyser, tubing, dialysate solution)'
+  - 'Routine blood tests during treatment period'
+  - 'Vascular access management and care'
+  - 'Dietitian consultation and dietary planning'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term dialysis medications (EPO, phosphate binders, vitamin D analogues)"
-  - "Personal expenses and meals for attendants"
-  - "Permanent vascular access creation surgery (AV fistula or graft)"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term dialysis medications (EPO, phosphate binders, vitamin D analogues)'
+  - 'Personal expenses and meals for attendants'
+  - 'Permanent vascular access creation surgery (AV fistula or graft)'
 recoveryTimeline:
-  - phase: "Each dialysis session"
-    duration: "4-5 hours"
-    description: "Haemodialysis session lasts approximately 4 hours during which blood is filtered through the dialyser. Patients remain seated or reclining and can read, watch television, or rest during the session."
-  - phase: "Post-session recovery"
-    duration: "1-2 hours"
-    description: "After each session, patients are monitored for blood pressure stability and access site integrity. Most patients feel fatigued briefly but can resume normal activities the same day."
-  - phase: "Treatment period in Bangalore"
-    duration: "1-4 weeks"
-    description: "International patients typically undergo 2-3 sessions per week during their stay. Regular blood tests monitor adequacy of dialysis and adjust the prescription as needed."
-  - phase: "Ongoing maintenance"
-    duration: "Lifelong or until transplant"
-    description: "Dialysis is an ongoing treatment. Patients continue sessions in their home country or return periodically. Peritoneal dialysis patients can manage independently at home after training."
+  - phase: 'Each dialysis session'
+    duration: '4-5 hours'
+    description: 'Haemodialysis session lasts approximately 4 hours during which blood is filtered through the dialyser. Patients remain seated or reclining and can read, watch television, or rest during the session.'
+  - phase: 'Post-session recovery'
+    duration: '1-2 hours'
+    description: 'After each session, patients are monitored for blood pressure stability and access site integrity. Most patients feel fatigued briefly but can resume normal activities the same day.'
+  - phase: 'Treatment period in Bangalore'
+    duration: '1-4 weeks'
+    description: 'International patients typically undergo 2-3 sessions per week during their stay. Regular blood tests monitor adequacy of dialysis and adjust the prescription as needed.'
+  - phase: 'Ongoing maintenance'
+    duration: 'Lifelong or until transplant'
+    description: 'Dialysis is an ongoing treatment. Patients continue sessions in their home country or return periodically. Peritoneal dialysis patients can manage independently at home after training.'
 risks:
-  - "Low blood pressure (hypotension) during or after dialysis sessions"
-  - "Infection at vascular access site or peritonitis in peritoneal dialysis"
-  - "Muscle cramps, headaches, and fatigue during or after sessions"
-  - "Vascular access complications including stenosis, thrombosis, or aneurysm formation"
-  - "Long-term complications such as anaemia, bone disease, and cardiovascular issues"
+  - 'Low blood pressure (hypotension) during or after dialysis sessions'
+  - 'Infection at vascular access site or peritonitis in peritoneal dialysis'
+  - 'Muscle cramps, headaches, and fatigue during or after sessions'
+  - 'Vascular access complications including stenosis, thrombosis, or aneurysm formation'
+  - 'Long-term complications such as anaemia, bone disease, and cardiovascular issues'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,18 +60,19 @@ relatedDoctorSlugs:
   - dr-akhila-vasanth-hassan
 
 relatedProcedureSlugs:
-  - "kidney-stone-treatment-cost-india"
-  - "kidney-transplant-cost-india"
+  - 'kidney-stone-treatment-cost-india'
+  - 'kidney-transplant-cost-india'
 faqs:
-  - question: "How much does a single dialysis session cost in India?"
-    answer: "A single haemodialysis session in India typically costs between $50 and $150, depending on the hospital, the type of dialyser used, and whether it is a standard or high-flux session. This is significantly lower than the $300-$500 per session charged in the United States or $200-$350 in the UK."
-  - question: "Can international patients get dialysis in India while waiting for a kidney transplant?"
-    answer: "Yes. Many international patients undergo dialysis in Bangalore while preparing for or awaiting a kidney transplant. Hospitals coordinate your dialysis schedule with your transplant evaluation, ensuring seamless continuity of care. You will need recent medical records and a referral from your home nephrologist."
-  - question: "What is the difference between haemodialysis and peritoneal dialysis?"
-    answer: "Haemodialysis filters blood through an external machine at a clinic, typically three times per week for about four hours per session. Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter and is done at home daily, either manually (CAPD) or with a machine overnight (APD). Your nephrologist will recommend the best option based on your medical condition and lifestyle."
-  - question: "How many dialysis sessions will I need during my stay in Bangalore?"
-    answer: "Most patients on maintenance haemodialysis require three sessions per week. If you are staying for two weeks, you would typically need six sessions. Your nephrologist will determine the exact frequency and duration based on your blood test results, body weight, and residual kidney function."
+  - question: 'How much does a single dialysis session cost in India?'
+    answer: 'A single haemodialysis session in India typically costs between $50 and $150, depending on the hospital, the type of dialyser used, and whether it is a standard or high-flux session. This is significantly lower than the $300-$500 per session charged in the United States or $200-$350 in the UK.'
+  - question: 'Can international patients get dialysis in India while waiting for a kidney transplant?'
+    answer: 'Yes. Many international patients undergo dialysis in Bangalore while preparing for or awaiting a kidney transplant. Hospitals coordinate your dialysis schedule with your transplant evaluation, ensuring seamless continuity of care. You will need recent medical records and a referral from your home nephrologist.'
+  - question: 'What is the difference between haemodialysis and peritoneal dialysis?'
+    answer: 'Haemodialysis filters blood through an external machine at a clinic, typically three times per week for about four hours per session. Peritoneal dialysis uses the lining of your abdomen (peritoneum) as a natural filter and is done at home daily, either manually (CAPD) or with a machine overnight (APD). Your nephrologist will recommend the best option based on your medical condition and lifestyle.'
+  - question: 'How many dialysis sessions will I need during my stay in Bangalore?'
+    answer: 'Most patients on maintenance haemodialysis require three sessions per week. If you are staying for two weeks, you would typically need six sessions. Your nephrologist will determine the exact frequency and duration based on your blood test results, body weight, and residual kidney function.'
 ---
+
 ## Overview
 
 If your kidneys can no longer filter waste products and excess fluid from your blood, dialysis becomes a lifeline — a treatment that does the work your kidneys can no longer do. Whether you are facing end-stage renal disease (ESRD), acute kidney injury, or you are waiting for a kidney transplant, dialysis keeps you alive and functioning. But the cost of dialysis in many countries is staggering, often running into hundreds of dollars per session, which can quickly become an unbearable financial burden for patients and families.
@@ -156,13 +157,13 @@ If you have early-stage chronic kidney disease (Stage 3-4), aggressive managemen
 
 ## Cost Comparison
 
-| Country | Approximate Cost per Session | vs India |
-|---------|------------------------------|----------|
-| India (Bangalore) | $50 – $150 | Baseline |
-| USA | $300 – $500 | ~3.5x higher |
-| UK | $200 – $350 | ~2.5x higher |
-| Singapore | $250 – $400 | ~3.0x higher |
-| Thailand | $80 – $180 | ~1.3x higher |
+| Country           | Approximate Cost per Session | vs India     |
+| ----------------- | ---------------------------- | ------------ |
+| India (Bangalore) | $50 – $150                   | Baseline     |
+| USA               | $300 – $500                  | ~3.5x higher |
+| UK                | $200 – $350                  | ~2.5x higher |
+| Singapore         | $250 – $400                  | ~3.0x higher |
+| Thailand          | $80 – $180                   | ~1.3x higher |
 
 For a patient needing three sessions per week, the annual cost difference is enormous. In the United States, a year of haemodialysis can cost $45,000-$75,000 in out-of-pocket session charges alone. In Bangalore, the same treatment costs approximately $7,800-$23,400 per year. Even after factoring in travel and accommodation costs for periodic visits, the savings are substantial. The quality of dialysis in Bangalore's accredited hospitals matches international standards, with the same high-flux dialysers, water treatment systems, and infection control protocols used in Western centres.
 

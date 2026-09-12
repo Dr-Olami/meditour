@@ -51,9 +51,7 @@ const FloatingConsultCTA = React.forwardRef<HTMLDivElement, FloatingConsultCTAPr
             <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl">
               {headline}
             </h2>
-            {subtext && (
-              <p className="mt-2 text-white/70">{subtext}</p>
-            )}
+            {subtext && <p className="mt-2 text-white/70">{subtext}</p>}
           </div>
 
           <div className="flex shrink-0 flex-wrap gap-3">

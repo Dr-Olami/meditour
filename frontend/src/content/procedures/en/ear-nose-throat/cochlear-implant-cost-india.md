@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Cochlear Implant"
-seoHeadline: "Cochlear Implant Cost in India for International Patients"
+name: 'Cochlear Implant'
+seoHeadline: 'Cochlear Implant Cost in India for International Patients'
 parentTreatmentSlug: ear-nose-throat
-summary: "Cochlear implant surgery in India costs between $10,000 and $25,000, offering savings of up to 70% compared to Western countries. The procedure implants an electronic device that bypasses damaged hair cells in the inner ear to restore hearing in patients with severe to profound sensorineural hearing loss."
-description: "Cochlear Implant surgery in India from $10,000–$25,000 at accredited Bangalore hospitals. Restore hearing with advanced devices from Cochlear, MED-EL, and Advanced Bionics."
-fromPrice: "$10,000"
-toPrice: "$25,000"
-duration: "2-3 hours"
-hospitalStay: "1-2 days"
-recoveryTime: "4-6 weeks"
+summary: 'Cochlear implant surgery in India costs between $10,000 and $25,000, offering savings of up to 70% compared to Western countries. The procedure implants an electronic device that bypasses damaged hair cells in the inner ear to restore hearing in patients with severe to profound sensorineural hearing loss.'
+description: 'Cochlear Implant surgery in India from $10,000–$25,000 at accredited Bangalore hospitals. Restore hearing with advanced devices from Cochlear, MED-EL, and Advanced Bionics.'
+fromPrice: '$10,000'
+toPrice: '$25,000'
+duration: '2-3 hours'
+hospitalStay: '1-2 days'
+recoveryTime: '4-6 weeks'
 eligibility:
-  - "Severe to profound sensorineural hearing loss in both ears with limited benefit from conventional hearing aids"
-  - "Intact auditory nerve function confirmed through imaging and electrophysiological testing"
-  - "Children as young as 12 months with congenital hearing loss, or adults with post-lingual deafness"
-  - "Realistic expectations about hearing outcomes and commitment to long-term auditory rehabilitation"
-  - "No medical contraindications to surgery such as active middle ear infection or cochlear ossification"
+  - 'Severe to profound sensorineural hearing loss in both ears with limited benefit from conventional hearing aids'
+  - 'Intact auditory nerve function confirmed through imaging and electrophysiological testing'
+  - 'Children as young as 12 months with congenital hearing loss, or adults with post-lingual deafness'
+  - 'Realistic expectations about hearing outcomes and commitment to long-term auditory rehabilitation'
+  - 'No medical contraindications to surgery such as active middle ear infection or cochlear ossification'
 costInclusions:
-  - "ENT surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Cochlear implant device (internal and external components)"
-  - "Pre-operative diagnostics (audiometry, CT/MRI temporal bone, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Initial device activation and mapping session"
-  - "Airport pickup and drop"
+  - 'ENT surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Cochlear implant device (internal and external components)'
+  - 'Pre-operative diagnostics (audiometry, CT/MRI temporal bone, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Initial device activation and mapping session'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term auditory rehabilitation and speech therapy sessions"
-  - "Replacement batteries and external processor accessories"
-  - "Upgrade of external sound processor in future years"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term auditory rehabilitation and speech therapy sessions'
+  - 'Replacement batteries and external processor accessories'
+  - 'Upgrade of external sound processor in future years'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-2 days"
-    description: "Post-surgical monitoring, head bandage management, pain control, and wound care observation before discharge."
-  - phase: "Bangalore recovery"
-    duration: "2-3 weeks"
-    description: "Incision healing and resolution of swelling; the internal implant site settles before the external processor can be activated."
-  - phase: "Device activation"
-    duration: "3-4 weeks post-surgery"
-    description: "External sound processor is fitted and switched on; initial mapping sessions begin to programme electrode settings."
-  - phase: "Full recovery"
-    duration: "4-6 weeks"
-    description: "Surgical site fully healed; ongoing auditory rehabilitation and regular mapping adjustments continue for months."
+  - phase: 'Hospital stay'
+    duration: '1-2 days'
+    description: 'Post-surgical monitoring, head bandage management, pain control, and wound care observation before discharge.'
+  - phase: 'Bangalore recovery'
+    duration: '2-3 weeks'
+    description: 'Incision healing and resolution of swelling; the internal implant site settles before the external processor can be activated.'
+  - phase: 'Device activation'
+    duration: '3-4 weeks post-surgery'
+    description: 'External sound processor is fitted and switched on; initial mapping sessions begin to programme electrode settings.'
+  - phase: 'Full recovery'
+    duration: '4-6 weeks'
+    description: 'Surgical site fully healed; ongoing auditory rehabilitation and regular mapping adjustments continue for months.'
 risks:
-  - "Surgical site infection or wound breakdown requiring antibiotic treatment"
-  - "Facial nerve weakness or paralysis due to nerve proximity during surgery"
-  - "Tinnitus worsening or new onset of vertigo and balance disturbances"
-  - "Device failure or migration requiring revision surgery"
-  - "Cerebrospinal fluid leak or meningitis risk requiring vaccination and monitoring"
+  - 'Surgical site infection or wound breakdown requiring antibiotic treatment'
+  - 'Facial nerve weakness or paralysis due to nerve proximity during surgery'
+  - 'Tinnitus worsening or new onset of vertigo and balance disturbances'
+  - 'Device failure or migration requiring revision surgery'
+  - 'Cerebrospinal fluid leak or meningitis risk requiring vaccination and monitoring'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,15 +58,16 @@ relatedDoctorSlugs:
   - dr-sunil-narayan-dutt
 
 relatedProcedureSlugs:
-  - "sinus-surgery-cost-india"
+  - 'sinus-surgery-cost-india'
 faqs:
-  - question: "How much does a cochlear implant cost in India compared to the USA?"
-    answer: "Cochlear implant surgery in India costs $10,000–$25,000, while in the USA it ranges from $50,000–$100,000 including the device, surgery, and hospital stay. The cost in India includes premium implant devices from Cochlear, MED-EL, or Advanced Bionics, offering savings of approximately 70-80%."
-  - question: "When is the external sound processor switched on after surgery?"
-    answer: "The external sound processor is typically activated 3 to 4 weeks after surgery, once the surgical incision has healed and swelling has subsided. This waiting period allows the internal implant to settle properly. The first mapping session programmes the electrode settings based on your responses."
-  - question: "Can both ears be implanted at the same time?"
-    answer: "Yes, bilateral cochlear implantation can be performed in a single surgery or staged procedures. Simultaneous bilateral implantation is increasingly common, especially in children, as it provides better sound localisation and speech understanding in noisy environments. Your surgeon will recommend the best approach."
+  - question: 'How much does a cochlear implant cost in India compared to the USA?'
+    answer: 'Cochlear implant surgery in India costs $10,000–$25,000, while in the USA it ranges from $50,000–$100,000 including the device, surgery, and hospital stay. The cost in India includes premium implant devices from Cochlear, MED-EL, or Advanced Bionics, offering savings of approximately 70-80%.'
+  - question: 'When is the external sound processor switched on after surgery?'
+    answer: 'The external sound processor is typically activated 3 to 4 weeks after surgery, once the surgical incision has healed and swelling has subsided. This waiting period allows the internal implant to settle properly. The first mapping session programmes the electrode settings based on your responses.'
+  - question: 'Can both ears be implanted at the same time?'
+    answer: 'Yes, bilateral cochlear implantation can be performed in a single surgery or staged procedures. Simultaneous bilateral implantation is increasingly common, especially in children, as it provides better sound localisation and speech understanding in noisy environments. Your surgeon will recommend the best approach.'
 ---
+
 ## Overview
 
 If you or your child has been diagnosed with severe to profound sensorineural hearing loss and conventional hearing aids no longer provide meaningful benefit, you are likely exploring every available option. Being told that hearing aids are no longer enough can feel overwhelming, especially when the path forward involves surgery and a device you may not fully understand. The encouraging news is that cochlear implants have transformed the lives of hundreds of thousands of people worldwide, and the technology available in India is identical to what you would find in the most advanced Western hospitals.
@@ -139,13 +140,13 @@ For people with single-sided deafness, where one ear has profound hearing loss b
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $10,000 – $25,000 | Baseline |
-| USA | $50,000 – $100,000 | ~4.5x higher |
-| UK | £30,000 – £45,000 | ~3.5x higher |
-| Singapore | $28,000 – $45,000 | ~2.3x higher |
-| Thailand | $18,000 – $30,000 | ~1.5x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $10,000 – $25,000  | Baseline     |
+| USA               | $50,000 – $100,000 | ~4.5x higher |
+| UK                | £30,000 – £45,000  | ~3.5x higher |
+| Singapore         | $28,000 – $45,000  | ~2.3x higher |
+| Thailand          | $18,000 – $30,000  | ~1.5x higher |
 
 The price range within India reflects the specific implant device chosen (entry-level versus premium models from Cochlear, MED-EL, or Advanced Bionics), whether one or both ears are implanted, the complexity of your case, and the hospital and surgeon you select. Even with a top-tier implant device and bilateral implantation, your total cost in Bangalore will typically be less than half the US price. These savings come from favourable exchange rates, lower labour costs, and high surgical volumes—not from any compromise in implant quality or surgical technique.
 

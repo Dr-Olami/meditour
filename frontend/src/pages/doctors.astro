@@ -15,10 +15,7 @@ const t = getTranslations('en');
 
 const navLinks = getNavLinks('en');
 
-const [doctorEntries, hospitalEntries] = await Promise.all([
-  getDoctors('en'),
-  getHospitals('en'),
-]);
+const [doctorEntries, hospitalEntries] = await Promise.all([getDoctors('en'), getHospitals('en')]);
 
 const doctors: Doctor[] = doctorEntries.map((entry) => {
   const hospital = resolveHospital(entry.data.hospitalId, hospitalEntries);
@@ -36,11 +33,7 @@ const doctors: Doctor[] = doctorEntries.map((entry) => {
 });
 ---
 
-<Layout
-  title={`${t.doctors.title} — ${t.site.name}`}
-  description={t.doctors.subtitle}
-  locale="en"
->
+<Layout title={`${t.doctors.title} — ${t.site.name}`} description={t.doctors.subtitle} locale="en">
   <Navbar
     brand={t.site.name}
     links={navLinks}

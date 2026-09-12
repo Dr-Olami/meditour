@@ -16,12 +16,12 @@ gallery:
 structuredAmenities:
   - category: international
     highlights:
-      - name: "Full-service international patient wing"
-        description: "Dedicated international lounge with coordinators managing 40+ specialities â€” the first JCI-accredited hospital in Karnataka (since 2006)."
-      - name: "Multilingual coordinators"
-        description: "Coordinators fluent in Arabic, Bengali, and French handle visa, travel, and hospital logistics end-to-end."
-      - name: "Accommodation assistance"
-        description: "Partnered guest houses and serviced apartments within 10 minutes of campus for long-stay transplant and cancer patients."
+      - name: 'Full-service international patient wing'
+        description: 'Dedicated international lounge with coordinators managing 40+ specialities â€” the first JCI-accredited hospital in Karnataka (since 2006).'
+      - name: 'Multilingual coordinators'
+        description: 'Coordinators fluent in Arabic, Bengali, and French handle visa, travel, and hospital logistics end-to-end.'
+      - name: 'Accommodation assistance'
+        description: 'Partnered guest houses and serviced apartments within 10 minutes of campus for long-stay transplant and cancer patients.'
     items:
       - Airport pickup & drop
       - Visa assistance
@@ -30,10 +30,10 @@ structuredAmenities:
       - Medical records transfer
   - category: clinical
     highlights:
-      - name: "Mazor X robotic spine surgery"
-        description: "First Mazor X robotic spine system in South India â€” sub-millimetre accuracy for spinal fusion and scoliosis correction."
-      - name: "Robotic cancer surgery (6,000+ cases)"
-        description: "Pioneered robotic cancer surgery in Karnataka (2009) â€” the largest robotic oncology programme in the state."
+      - name: 'Mazor X robotic spine surgery'
+        description: 'First Mazor X robotic spine system in South India â€” sub-millimetre accuracy for spinal fusion and scoliosis correction.'
+      - name: 'Robotic cancer surgery (6,000+ cases)'
+        description: 'Pioneered robotic cancer surgery in Karnataka (2009) â€” the largest robotic oncology programme in the state.'
     items:
       - 24/7 pharmacy
       - NABL-accredited diagnostic lab
@@ -43,8 +43,8 @@ structuredAmenities:
       - 24/7 emergency services
   - category: comfort
     highlights:
-      - name: "Prayer room & multi-faith chapel"
-        description: "Dedicated prayer facilities for Muslim, Christian, Hindu, and other faiths â€” with Friday prayer arrangements for international patients."
+      - name: 'Prayer room & multi-faith chapel'
+        description: 'Dedicated prayer facilities for Muslim, Christian, Hindu, and other faiths â€” with Friday prayer arrangements for international patients.'
     items:
       - International cuisine on request
       - Family waiting lounge
@@ -76,66 +76,66 @@ mapEmbedUrl: https://www.google.com/maps?q=Manipal+Hospital+Old+Airport+Road+Ban
 latitude: 12.9587
 longitude: 77.6491
 outcomes:
-  - value: "3 million+"
-    label: "Patients treated annually"
-    qualifier: "Manipal network, 2024"
-  - value: "1,700+"
-    label: "Doctors across network"
-    qualifier: "as of 2024"
-  - value: "144"
-    label: "ICU beds"
-    qualifier: ""
+  - value: '3 million+'
+    label: 'Patients treated annually'
+    qualifier: 'Manipal network, 2024'
+  - value: '1,700+'
+    label: 'Doctors across network'
+    qualifier: 'as of 2024'
+  - value: '144'
+    label: 'ICU beds'
+    qualifier: ''
 procedureCosts:
-  - procedure: "Spinal Fusion Surgery"
-    fromPrice: "$5,000"
-    toPrice: "$15,000"
-    href: "/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india"
-  - procedure: "Brain Tumor Surgery"
-    fromPrice: "$6,000"
-    toPrice: "$20,000"
-    href: "/treatments/neuro-and-spine-surgery/brain-tumor-surgery-cost-india"
-  - procedure: "Total Knee Replacement"
-    fromPrice: "$3,500"
-    toPrice: "$7,000"
-    href: "/treatments/orthopedics-surgery/total-knee-replacement-cost-india"
-  - procedure: "Total Hip Replacement"
-    fromPrice: "$4,000"
-    toPrice: "$8,000"
-    href: "/treatments/orthopedics-surgery/total-hip-replacement-cost-india"
-  - procedure: "Kidney Transplant"
-    fromPrice: "$15,000"
-    toPrice: "$40,000"
-    href: "/treatments/organ-treatment/kidney-transplant-cost-india"
-  - procedure: "Coronary Artery Bypass Grafting (CABG)"
-    fromPrice: "$4,500"
-    toPrice: "$12,000"
-    href: "/treatments/cardiology/heart-bypass-surgery-cabg-cost-india"
-  - procedure: "IVF Treatment"
-    fromPrice: "$1,500"
-    toPrice: "$4,000"
-    note: "per cycle"
-    href: "/treatments/infertility-treatment/ivf-treatment-cost-india"
+  - procedure: 'Spinal Fusion Surgery'
+    fromPrice: '$5,000'
+    toPrice: '$15,000'
+    href: '/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india'
+  - procedure: 'Brain Tumor Surgery'
+    fromPrice: '$6,000'
+    toPrice: '$20,000'
+    href: '/treatments/neuro-and-spine-surgery/brain-tumor-surgery-cost-india'
+  - procedure: 'Total Knee Replacement'
+    fromPrice: '$3,500'
+    toPrice: '$7,000'
+    href: '/treatments/orthopedics-surgery/total-knee-replacement-cost-india'
+  - procedure: 'Total Hip Replacement'
+    fromPrice: '$4,000'
+    toPrice: '$8,000'
+    href: '/treatments/orthopedics-surgery/total-hip-replacement-cost-india'
+  - procedure: 'Kidney Transplant'
+    fromPrice: '$15,000'
+    toPrice: '$40,000'
+    href: '/treatments/organ-treatment/kidney-transplant-cost-india'
+  - procedure: 'Coronary Artery Bypass Grafting (CABG)'
+    fromPrice: '$4,500'
+    toPrice: '$12,000'
+    href: '/treatments/cardiology/heart-bypass-surgery-cabg-cost-india'
+  - procedure: 'IVF Treatment'
+    fromPrice: '$1,500'
+    toPrice: '$4,000'
+    note: 'per cycle'
+    href: '/treatments/infertility-treatment/ivf-treatment-cost-india'
 faqs:
-  - question: "Is Manipal Hospital Old Airport Road JCI accredited?"
-    answer: "Yes, Manipal Hospital Old Airport Road has been JCI-accredited since 2006 — the first JCI-accredited hospital in Karnataka. It also holds NABH and NABL accreditations, as well as AAHRPP accreditation for human research protection. It was the first Indian multi-superspeciality hospital to attain ISO 9001:2000 certification (since upgraded to ISO 9001:2015). Established in 1991, it is a 600-bed quaternary care facility."
-  - question: "What is Manipal Hospital Old Airport Road known for?"
-    answer: "Manipal Hospital Old Airport Road is known for its expertise in urology and nephrology (including robotic urological surgery and renal transplantation), gastroenterology and hepatology, cardiology, oncology, neurology and neurosurgery, orthopaedics and joint replacement (including robotic spine surgery), bariatric surgery, and organ transplant (kidney and liver)."
-  - question: "Does Manipal Hospital Old Airport Road have international patient services?"
-    answer: "Yes, Manipal Hospital Old Airport Road has a full-service international patient wing offering multilingual coordinators, visa assistance, airport pickup, teleconsultation, foreign currency exchange, accommodation assistance, pharmacy services and 24/7 emergency services. The hospital is easily accessible from Kempegowda International Airport."
-  - question: "How long will I need to stay in Bangalore for my treatment?"
-    answer: "Typical stays vary by procedure: kidney transplant 3-6 weeks, liver transplant 6-8 weeks, angioplasty 2-3 days, CABG 7-10 days, knee/hip replacement 10-14 days, oncology surgery 7-14 days, and bariatric surgery 5-7 days. Your treating doctor will confirm the exact duration after reviewing your case."
-  - question: "What languages are spoken at the international patient desk?"
+  - question: 'Is Manipal Hospital Old Airport Road JCI accredited?'
+    answer: 'Yes, Manipal Hospital Old Airport Road has been JCI-accredited since 2006 — the first JCI-accredited hospital in Karnataka. It also holds NABH and NABL accreditations, as well as AAHRPP accreditation for human research protection. It was the first Indian multi-superspeciality hospital to attain ISO 9001:2000 certification (since upgraded to ISO 9001:2015). Established in 1991, it is a 600-bed quaternary care facility.'
+  - question: 'What is Manipal Hospital Old Airport Road known for?'
+    answer: 'Manipal Hospital Old Airport Road is known for its expertise in urology and nephrology (including robotic urological surgery and renal transplantation), gastroenterology and hepatology, cardiology, oncology, neurology and neurosurgery, orthopaedics and joint replacement (including robotic spine surgery), bariatric surgery, and organ transplant (kidney and liver).'
+  - question: 'Does Manipal Hospital Old Airport Road have international patient services?'
+    answer: 'Yes, Manipal Hospital Old Airport Road has a full-service international patient wing offering multilingual coordinators, visa assistance, airport pickup, teleconsultation, foreign currency exchange, accommodation assistance, pharmacy services and 24/7 emergency services. The hospital is easily accessible from Kempegowda International Airport.'
+  - question: 'How long will I need to stay in Bangalore for my treatment?'
+    answer: 'Typical stays vary by procedure: kidney transplant 3-6 weeks, liver transplant 6-8 weeks, angioplasty 2-3 days, CABG 7-10 days, knee/hip replacement 10-14 days, oncology surgery 7-14 days, and bariatric surgery 5-7 days. Your treating doctor will confirm the exact duration after reviewing your case.'
+  - question: 'What languages are spoken at the international patient desk?'
     answer: "Manipal Old Airport Road's international patient wing has multilingual coordinators. English is spoken throughout, with Bengali and Arabic coordinators available. Interpreter services for additional languages including Swahili and French can be arranged on request."
-  - question: "What is included in the international patient package?"
+  - question: 'What is included in the international patient package?'
     answer: "The package typically includes consultation, diagnostic tests, surgery/procedure, hospital stay, surgeon and anaesthetist fees, implant costs (where applicable), airport pickup, accommodation assistance for one companion, foreign currency exchange support, teleconsultation, and post-operative follow-up. Customised packages are tailored to each patient's treatment plan."
-  - question: "What payment methods and currencies does Manipal Old Airport Road accept?"
-    answer: "Manipal Old Airport Road accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard, Amex), bank wire transfers, and UPI. The international patient wing assists with foreign currency exchange and provides cost estimates in USD, AED, and BDT. The hospital offers transparent, itemised billing to support international insurance claims."
-  - question: "What diagnostic and imaging facilities are available on-site?"
-    answer: "Manipal Old Airport Road has a full-service diagnostic centre including 3T MRI, multi-slice CT scan, PET-CT, digital mammography, ultrasound, 2D echocardiography, cardiac catheterisation laboratories, endoscopy and colonoscopy suites, and a NABL-accredited pathology laboratory. Advanced neuro-imaging and intra-operative monitoring support complex neurosurgical and spinal procedures."
-  - question: "What infection control measures are in place?"
-    answer: "As the first JCI-accredited hospital in Karnataka (since 2006), with NABH, NABL, and AAHRPP accreditation, Manipal Old Airport Road follows comprehensive infection control protocols. These include HEPA-filtered laminar airflow operation theatres, dedicated transplant ICUs with isolation facilities, hand hygiene compliance programmes, antibiotic stewardship, surgical site infection surveillance, and regular quality audits aligned with international standards."
-  - question: "Can I use international health insurance or get a second opinion before travelling?"
-    answer: "Yes. Manipal Old Airport Road works with several international insurance providers and TPA partners. The international patient wing coordinates pre-authorisation and direct billing where agreements exist. Khan Meditour can arrange a remote second opinion from Manipal specialists — share your medical records and reports for review, and you will receive a written opinion and treatment plan within 48-72 hours."
+  - question: 'What payment methods and currencies does Manipal Old Airport Road accept?'
+    answer: 'Manipal Old Airport Road accepts cash (INR and major foreign currencies), credit/debit cards (Visa, Mastercard, Amex), bank wire transfers, and UPI. The international patient wing assists with foreign currency exchange and provides cost estimates in USD, AED, and BDT. The hospital offers transparent, itemised billing to support international insurance claims.'
+  - question: 'What diagnostic and imaging facilities are available on-site?'
+    answer: 'Manipal Old Airport Road has a full-service diagnostic centre including 3T MRI, multi-slice CT scan, PET-CT, digital mammography, ultrasound, 2D echocardiography, cardiac catheterisation laboratories, endoscopy and colonoscopy suites, and a NABL-accredited pathology laboratory. Advanced neuro-imaging and intra-operative monitoring support complex neurosurgical and spinal procedures.'
+  - question: 'What infection control measures are in place?'
+    answer: 'As the first JCI-accredited hospital in Karnataka (since 2006), with NABH, NABL, and AAHRPP accreditation, Manipal Old Airport Road follows comprehensive infection control protocols. These include HEPA-filtered laminar airflow operation theatres, dedicated transplant ICUs with isolation facilities, hand hygiene compliance programmes, antibiotic stewardship, surgical site infection surveillance, and regular quality audits aligned with international standards.'
+  - question: 'Can I use international health insurance or get a second opinion before travelling?'
+    answer: 'Yes. Manipal Old Airport Road works with several international insurance providers and TPA partners. The international patient wing coordinates pre-authorisation and direct billing where agreements exist. Khan Meditour can arrange a remote second opinion from Manipal specialists — share your medical records and reports for review, and you will receive a written opinion and treatment plan within 48-72 hours.'
 ---
 
 ## Overview
@@ -157,6 +157,7 @@ The cardiac sciences department offers comprehensive heart care including interv
 Explore [cardiology treatments and costs →](/treatments/cardiology)
 
 **Key procedures:**
+
 - [Coronary artery bypass grafting (CABG)](/treatments/cardiology/heart-bypass-surgery-cabg-cost-india)
 - [Angioplasty and stent placement](/treatments/cardiology/angioplasty-stent-placement-cost-india)
 - [Heart valve repair and replacement](/treatments/cardiology/heart-valve-replacement-repair-cost-india)
@@ -171,6 +172,7 @@ Manipal Old Airport Road is renowned for its urology and nephrology programmes, 
 Explore [urology treatments and costs →](/treatments/urology)
 
 **Key procedures:**
+
 - [Kidney transplant](/treatments/organ-treatment/kidney-transplant-cost-india)
 - Robotic urological surgery
 - [Kidney stone management (PCNL, RIRS, ESWL)](/treatments/nephrology-kidney-care/kidney-stone-treatment-cost-india)
@@ -185,6 +187,7 @@ The gastroenterology department provides diagnostic and therapeutic endoscopy, l
 Explore [gastroenterology gi surgery treatments and costs →](/treatments/gastroenterology-gi-surgery)
 
 **Key procedures:**
+
 - [Liver transplant](/treatments/organ-treatment/liver-transplant-cost-india)
 - Diagnostic and therapeutic endoscopy
 - Hepatobiliary surgery
@@ -199,6 +202,7 @@ The cancer care unit offers medical oncology, surgical oncology, radiation oncol
 Explore [cancer treatment treatments and costs →](/treatments/cancer-treatment)
 
 **Key procedures:**
+
 - [Chemotherapy](/treatments/cancer-treatment/chemotherapy-cost-india) and [targeted therapy](/treatments/cancer-treatment/targeted-therapy-cost-india)
 - [Radiation therapy (LINAC)](/treatments/cancer-treatment/radiation-therapy-cost-india)
 - [Surgical oncology (breast, lung, gastrointestinal)](/treatments/cancer-treatment/cancer-surgery-cost-india)
@@ -213,6 +217,7 @@ The neurosciences team specialises in stroke management, brain tumour surgery, s
 Explore [neuro and spine surgery treatments and costs →](/treatments/neuro-and-spine-surgery)
 
 **Key procedures:**
+
 - [Brain tumour surgery](/treatments/neuro-and-spine-surgery/brain-tumor-surgery-cost-india)
 - [Spine surgery (cervical, lumbar)](/treatments/neuro-and-spine-surgery/spinal-fusion-surgery-cost-india)
 - [Stroke management and intervention](/treatments/neurology/stroke-treatment-cost-india)
@@ -227,6 +232,7 @@ The orthopaedics department is known for joint replacement procedures (hip, knee
 Explore [orthopedics surgery treatments and costs →](/treatments/orthopedics-surgery)
 
 **Key procedures:**
+
 - Total [hip](/treatments/orthopedics-surgery/total-hip-replacement-cost-india), [knee](/treatments/orthopedics-surgery/total-knee-replacement-cost-india) and [shoulder](/treatments/orthopedics-surgery/shoulder-replacement-cost-india) replacement
 - Robotic spine surgery
 - [Arthroscopy](/treatments/orthopedics-surgery/arthroscopy-cost-india) and [sports injury](/treatments/orthopedics-surgery/sports-injury-treatment-cost-india) repair
@@ -241,6 +247,7 @@ Manipal Old Airport Road runs comprehensive kidney and liver transplant programm
 Explore [organ treatment treatments and costs →](/treatments/organ-treatment)
 
 **Key procedures:**
+
 - [Kidney transplant](/treatments/organ-treatment/kidney-transplant-cost-india)
 - [Liver transplant](/treatments/organ-treatment/liver-transplant-cost-india)
 - Pre-transplant evaluation and donor workup
@@ -283,6 +290,7 @@ The hospital serves patients from over **30 countries** and has a dedicated team
 ## Why International Patients Choose Manipal Hospital Old Airport Road
 
 ### Patients from Bangladesh
+
 - **Bengali-speaking coordinators** available for seamless communication
 - Direct flights from Dhaka to Bangalore (Kempegowda International Airport)
 - Renowned **urology, nephrology, and kidney transplant** programmes aligned with high-demand treatments for Bangladeshi patients
@@ -290,6 +298,7 @@ The hospital serves patients from over **30 countries** and has a dedicated team
 - Visa assistance and medical visa invitation letters provided
 
 ### Patients from the Middle East (GCC)
+
 - **Arabic-speaking coordinators** upon request and international cuisine including halal options
 - Prayer room facility for patients and families
 - Strong **cardiac, oncology, and robotic surgery** programmes suited to GCC patient preferences
@@ -297,6 +306,7 @@ The hospital serves patients from over **30 countries** and has a dedicated team
 - Direct connectivity from Dubai, Riyadh, Doha, and Muscat to Bangalore
 
 ### Patients from Africa
+
 - **English-speaking coordinators** and interpreter services for Swahili and French upon request
 - Established **kidney and liver transplant** programmes with experienced surgical teams
 - Affordable treatment packages compared to Western destinations
@@ -319,19 +329,23 @@ The hospital serves patients from over **30 countries** and has a dedicated team
 **Address:** 98, HAL Old Airport Road, Kodihalli, Bangalore - 560017
 
 ### By Air
+
 - **Kempegowda International Airport (BLR):** ~41 km | ~60-70 minutes by taxi depending on traffic
 - Airport pickup can be arranged through the international patient wing
 - Ride-hailing (Uber/Ola) and prepaid airport taxis are readily available
 
 ### By Metro
+
 - **Nearest station:** Indiranagar / Swami Vivekananda Road (Purple Line) — ~3-4 km from the hospital
 - Auto-rickshaws and taxis are available outside the metro station for the final leg
 
 ### By Road
+
 - Located on HAL Old Airport Road in Kodihalli
 - Easily accessible via Outer Ring Road and Old Airport Road
 - Ample parking available on-site for patients and visitors
 
 ### Nearby Landmarks
+
 - Close to HAL (Hindustan Aeronautics Limited) campus
 - Near Indiranagar and Kodihalli residential areas

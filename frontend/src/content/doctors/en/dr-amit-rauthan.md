@@ -14,14 +14,14 @@ expertise:
   - Immunotherapy in Cancer management
   - Targeted therapies in cancer Molecular Oncology and Personalized cancer treatment
   - Integration of chemotherapy and biological therapies
-  - "Management of hematological malignancies and solid organ cancers like lung cancer, breast cancer, gastrointestinal cancers, gynaecologic, and head & neck cancers"
+  - 'Management of hematological malignancies and solid organ cancers like lung cancer, breast cancer, gastrointestinal cancers, gynaecologic, and head & neck cancers'
   - Blood and Marrow Transplant (BMT) / Stem cell transplantation
-pullQuote: "Cancer is no longer the end of a story. With immunotherapy and precision medicine, it is increasingly the beginning of a new one."
+pullQuote: 'Cancer is no longer the end of a story. With immunotherapy and precision medicine, it is increasingly the beginning of a new one.'
 faqs:
   - question: "What is Dr. Amit Rauthan's expertise in immunotherapy?"
-    answer: "Dr. Amit Rauthan is a pioneer in immunotherapy and targeted therapies in India, with over 20 years of experience in medical oncology. He is the HOD & Consultant for Medical Oncology, Immunotherapy and Precision Medicine at Manipal Hospital. He has vast experience with immunotherapy in clinical practice and has contributed significantly to the field of immuno-oncology in India, serving as a principal investigator in multiple oncology clinical trials."
-  - question: "What types of cancer does Dr. Amit Rauthan treat?"
-    answer: "Dr. Amit Rauthan treats haematological malignancies and solid organ cancers including lung cancer, breast cancer, gastrointestinal cancers, gynaecological cancers, and head and neck cancers. He specialises in the integration of chemotherapy with biological therapies, targeted therapies in molecular oncology, personalised cancer treatment, and blood and marrow transplant (BMT) / stem cell transplantation."
+    answer: 'Dr. Amit Rauthan is a pioneer in immunotherapy and targeted therapies in India, with over 20 years of experience in medical oncology. He is the HOD & Consultant for Medical Oncology, Immunotherapy and Precision Medicine at Manipal Hospital. He has vast experience with immunotherapy in clinical practice and has contributed significantly to the field of immuno-oncology in India, serving as a principal investigator in multiple oncology clinical trials.'
+  - question: 'What types of cancer does Dr. Amit Rauthan treat?'
+    answer: 'Dr. Amit Rauthan treats haematological malignancies and solid organ cancers including lung cancer, breast cancer, gastrointestinal cancers, gynaecological cancers, and head and neck cancers. He specialises in the integration of chemotherapy with biological therapies, targeted therapies in molecular oncology, personalised cancer treatment, and blood and marrow transplant (BMT) / stem cell transplantation.'
 ---
 
 ## About the Doctor

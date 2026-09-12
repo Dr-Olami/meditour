@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Epilepsy Treatment"
-seoHeadline: "Epilepsy Treatment Cost in India for International Patients"
+name: 'Epilepsy Treatment'
+seoHeadline: 'Epilepsy Treatment Cost in India for International Patients'
 parentTreatmentSlug: neurology
 summary: "Epilepsy treatment in India costs $3,000–$12,000 for a comprehensive programme including diagnostic evaluation, anti-seizure medications, and surgery for drug-resistant cases. Bangalore's accredited hospitals offer advanced EEG monitoring, epilepsy surgery, and vagus nerve stimulation at savings of up to 90% compared to Western countries."
-description: "Comprehensive epilepsy treatment in India from $3,000–$12,000 at accredited Bangalore hospitals. Diagnostic workup, medication protocols, and surgery for drug-resistant epilepsy."
-fromPrice: "$3,000"
-toPrice: "$12,000"
-duration: "1-4 weeks (evaluation), ongoing management"
-hospitalStay: "2-7 days (surgical cases)"
-recoveryTime: "2-8 weeks"
+description: 'Comprehensive epilepsy treatment in India from $3,000–$12,000 at accredited Bangalore hospitals. Diagnostic workup, medication protocols, and surgery for drug-resistant epilepsy.'
+fromPrice: '$3,000'
+toPrice: '$12,000'
+duration: '1-4 weeks (evaluation), ongoing management'
+hospitalStay: '2-7 days (surgical cases)'
+recoveryTime: '2-8 weeks'
 eligibility:
-  - "Confirmed epilepsy diagnosis with documented recurrent seizures"
-  - "Failed adequate trial of at least two anti-seizure medications for drug-resistant cases"
-  - "Seizure focus localisable on EEG, MRI, or other neuroimaging studies"
-  - "Adequate overall health to tolerate medication adjustments or surgical intervention"
-  - "Realistic treatment goals established by the multidisciplinary epilepsy team"
+  - 'Confirmed epilepsy diagnosis with documented recurrent seizures'
+  - 'Failed adequate trial of at least two anti-seizure medications for drug-resistant cases'
+  - 'Seizure focus localisable on EEG, MRI, or other neuroimaging studies'
+  - 'Adequate overall health to tolerate medication adjustments or surgical intervention'
+  - 'Realistic treatment goals established by the multidisciplinary epilepsy team'
 costInclusions:
-  - "Neurologist and epileptologist consultation fees"
-  - "Diagnostic workup (EEG, video-EEG monitoring, MRI brain, blood tests)"
-  - "Anti-seizure medication costs during hospital stay"
-  - "Hospital room charges (where applicable)"
-  - "Surgical procedure costs (for drug-resistant epilepsy surgery)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Neurologist and epileptologist consultation fees'
+  - 'Diagnostic workup (EEG, video-EEG monitoring, MRI brain, blood tests)'
+  - 'Anti-seizure medication costs during hospital stay'
+  - 'Hospital room charges (where applicable)'
+  - 'Surgical procedure costs (for drug-resistant epilepsy surgery)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term anti-seizure medication post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term anti-seizure medication post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Diagnostic evaluation"
-    duration: "1-2 weeks"
-    description: "Comprehensive workup including prolonged video-EEG monitoring, high-resolution MRI brain, neuropsychological assessment, and medication review to characterise seizure type and localise the epileptic focus."
-  - phase: "Treatment initiation"
-    duration: "1-2 weeks"
-    description: "Anti-seizure medication optimisation or surgical planning; for surgical cases, pre-operative anaesthesia assessment and final multidisciplinary review."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-treatment assessment of seizure control, medication tolerance, and side effect management before transitioning to long-term management."
-  - phase: "Full recovery"
-    duration: "2-8 weeks"
-    description: "Gradual recovery from surgical effects where applicable; long-term anti-seizure medication continued at home with remote follow-up and periodic return visits."
+  - phase: 'Diagnostic evaluation'
+    duration: '1-2 weeks'
+    description: 'Comprehensive workup including prolonged video-EEG monitoring, high-resolution MRI brain, neuropsychological assessment, and medication review to characterise seizure type and localise the epileptic focus.'
+  - phase: 'Treatment initiation'
+    duration: '1-2 weeks'
+    description: 'Anti-seizure medication optimisation or surgical planning; for surgical cases, pre-operative anaesthesia assessment and final multidisciplinary review.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-treatment assessment of seizure control, medication tolerance, and side effect management before transitioning to long-term management.'
+  - phase: 'Full recovery'
+    duration: '2-8 weeks'
+    description: 'Gradual recovery from surgical effects where applicable; long-term anti-seizure medication continued at home with remote follow-up and periodic return visits.'
 risks:
-  - "Medication side effects including drowsiness, dizziness, mood changes, and allergic reactions"
-  - "Inadequate seizure control requiring medication adjustments or combination therapy"
-  - "Surgical risks including infection, bleeding, or neurological deficits (for epilepsy surgery)"
-  - "Cognitive or memory changes following temporal lobe surgery"
-  - "Seizure recurrence despite treatment requiring long-term management and lifestyle modifications"
+  - 'Medication side effects including drowsiness, dizziness, mood changes, and allergic reactions'
+  - 'Inadequate seizure control requiring medication adjustments or combination therapy'
+  - 'Surgical risks including infection, bleeding, or neurological deficits (for epilepsy surgery)'
+  - 'Cognitive or memory changes following temporal lobe surgery'
+  - 'Seizure recurrence despite treatment requiring long-term management and lifestyle modifications'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,15 +58,15 @@ relatedDoctorSlugs:
   - dr-nithin-kumar-n
 
 relatedProcedureSlugs:
-  - "stroke-treatment-cost-india"
-  - "deep-brain-stimulation-cost-india"
+  - 'stroke-treatment-cost-india'
+  - 'deep-brain-stimulation-cost-india'
 faqs:
-  - question: "What treatment options are available for epilepsy in India?"
+  - question: 'What treatment options are available for epilepsy in India?'
     answer: "Bangalore hospitals offer the full spectrum of epilepsy treatment including anti-seizure medications (first-line and newer agents), ketogenic diet therapy, vagus nerve stimulation (VNS), and epilepsy surgery (temporal lobectomy, lesionectomy, corpus callosotomy). For drug-resistant epilepsy, a comprehensive evaluation including video-EEG monitoring and high-resolution MRI is performed to determine surgical candidacy. The treatment plan is personalised based on seizure type, frequency, and the patient's overall health."
-  - question: "How do I know if I am a candidate for epilepsy surgery?"
-    answer: "Epilepsy surgery is considered when seizures are not controlled by at least two appropriately chosen and tolerated anti-seizure medications. The evaluation includes prolonged video-EEG monitoring to record seizures, a high-resolution MRI brain to identify structural abnormalities, neuropsychological testing, and sometimes PET or SPECT imaging. If a single seizure focus is identified and is safely accessible, surgery may offer a significant chance of seizure freedom."
-  - question: "How long does epilepsy treatment take in India?"
-    answer: "The diagnostic evaluation typically takes 1-2 weeks, including video-EEG monitoring and imaging. Medication optimisation can be managed over 1-2 weeks. For surgical cases, the hospital stay is 5-7 days with a total Bangalore stay of 2-4 weeks. Long-term anti-seizure medication is continued at home with periodic follow-up, and Khan Meditour can arrange remote consultations with your Bangalore epilepsy team."
+  - question: 'How do I know if I am a candidate for epilepsy surgery?'
+    answer: 'Epilepsy surgery is considered when seizures are not controlled by at least two appropriately chosen and tolerated anti-seizure medications. The evaluation includes prolonged video-EEG monitoring to record seizures, a high-resolution MRI brain to identify structural abnormalities, neuropsychological testing, and sometimes PET or SPECT imaging. If a single seizure focus is identified and is safely accessible, surgery may offer a significant chance of seizure freedom.'
+  - question: 'How long does epilepsy treatment take in India?'
+    answer: 'The diagnostic evaluation typically takes 1-2 weeks, including video-EEG monitoring and imaging. Medication optimisation can be managed over 1-2 weeks. For surgical cases, the hospital stay is 5-7 days with a total Bangalore stay of 2-4 weeks. Long-term anti-seizure medication is continued at home with periodic follow-up, and Khan Meditour can arrange remote consultations with your Bangalore epilepsy team.'
 ---
 
 ## Overview
@@ -105,11 +105,11 @@ Epilepsy treatment is not a single procedure — it is a comprehensive programme
 
 **For drug-resistant epilepsy**, the treatment pathway involves advanced evaluation and one of several approaches:
 
-*Epilepsy surgery* is the most definitive treatment for drug-resistant focal epilepsy. The most common procedure is a **temporal lobectomy** — removing the portion of the temporal lobe where seizures originate. Other procedures include **lesionectomy** (removing a structural abnormality such as a tumour or scar), **corpus callosotomy** (severing the connection between brain hemispheres to prevent seizure spread in generalised epilepsy), and **hemispherectomy** (for severe cases affecting one entire hemisphere). Surgery is performed under general anaesthesia and typically takes 3-5 hours.
+_Epilepsy surgery_ is the most definitive treatment for drug-resistant focal epilepsy. The most common procedure is a **temporal lobectomy** — removing the portion of the temporal lobe where seizures originate. Other procedures include **lesionectomy** (removing a structural abnormality such as a tumour or scar), **corpus callosotomy** (severing the connection between brain hemispheres to prevent seizure spread in generalised epilepsy), and **hemispherectomy** (for severe cases affecting one entire hemisphere). Surgery is performed under general anaesthesia and typically takes 3-5 hours.
 
-*Vagus nerve stimulation (VNS)* involves implanting a small device under the skin in your chest, connected to a wire that delivers regular electrical pulses to your vagus nerve in the neck. This does not cure epilepsy but can reduce seizure frequency by 30-50% in many patients. The implantation is a relatively minor surgical procedure taking about 1-2 hours.
+_Vagus nerve stimulation (VNS)_ involves implanting a small device under the skin in your chest, connected to a wire that delivers regular electrical pulses to your vagus nerve in the neck. This does not cure epilepsy but can reduce seizure frequency by 30-50% in many patients. The implantation is a relatively minor surgical procedure taking about 1-2 hours.
 
-*Ketogenic diet therapy* is primarily used for children with drug-resistant epilepsy, particularly certain genetic and metabolic epilepsy syndromes. This high-fat, low-carbohydrate diet alters brain metabolism in ways that can reduce seizures. It requires careful supervision by a dietitian and neurologist.
+_Ketogenic diet therapy_ is primarily used for children with drug-resistant epilepsy, particularly certain genetic and metabolic epilepsy syndromes. This high-fat, low-carbohydrate diet alters brain metabolism in ways that can reduce seizures. It requires careful supervision by a dietitian and neurologist.
 
 ## What Happens During the Procedure
 
@@ -163,13 +163,13 @@ For patients who are not surgical candidates, **neurostimulation therapies** bey
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $3,000 – $12,000 | Baseline |
-| USA | $25,000 – $150,000 | ~12.5x higher |
-| UK | £15,000 – £80,000 | ~8.3x higher |
-| Singapore | $18,000 – $60,000 | ~5.0x higher |
-| Thailand | $10,000 – $35,000 | ~2.9x higher |
+| Country           | Approximate Cost   | vs India      |
+| ----------------- | ------------------ | ------------- |
+| India (Bangalore) | $3,000 – $12,000   | Baseline      |
+| USA               | $25,000 – $150,000 | ~12.5x higher |
+| UK                | £15,000 – £80,000  | ~8.3x higher  |
+| Singapore         | $18,000 – $60,000  | ~5.0x higher  |
+| Thailand          | $10,000 – $35,000  | ~2.9x higher  |
 
 If you are wondering whether lower cost means lower quality, the answer is no. Bangalore's accredited hospitals use the same diagnostic equipment, anti-seizure medications, and surgical techniques as top hospitals in the US and UK. Many epileptologists and neurosurgeons here have trained at institutions like the Cleveland Clinic, Mayo Clinic, and the National Hospital for Neurology in London. The cost difference comes down to favourable exchange rates, lower staff and infrastructure costs, and high case volume.
 

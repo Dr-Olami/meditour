@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Neurology
-seoHeadline: "Neurology & Brain Care in India for International Patients"
+seoHeadline: 'Neurology & Brain Care in India for International Patients'
 category: Neurology
 description: Comprehensive diagnosis and management of adult neurological disorders including stroke, epilepsy, movement disorders, multiple sclerosis, migraine, dementia, and sleep disorders.
 fromPrice: '$1,500'
@@ -30,57 +30,57 @@ hospitalStay: '1-7 days'
 recoveryTime: 'Varies by condition'
 image: /images/treatments-cards/neurology.webp
 faqs:
-  - question: "What is the cost of neurology treatment in Bangalore?"
-    answer: "Neurology treatment costs in Bangalore range from $1,500 to $12,000 depending on the condition, diagnostic requirements, and treatment plan. This includes consultations, EEG, imaging studies, and ongoing management. Compared to Western countries where costs can exceed $20,000-$60,000, Bangalore offers 60-80% savings with access to internationally trained neurologists and advanced diagnostic facilities."
-  - question: "What treatments are available for stroke at these hospitals?"
-    answer: "Our partner hospitals provide comprehensive stroke care including acute stroke management (thrombolysis, thrombectomy), stroke rehabilitation, secondary stroke prevention, and long-term follow-up. The stroke teams include neurologists, neurointerventional specialists, and rehabilitation therapists. Imaging facilities include 3 Tesla MRI and 128-slice CT for rapid diagnosis and treatment planning."
-  - question: "Can epilepsy be treated without surgery?"
-    answer: "Yes, most epilepsy cases are managed with anti-epileptic medications. For refractory epilepsy, treatment options include combination drug therapy, vagus nerve stimulation (VNS), and dietary modifications. Epilepsy surgery is considered only for drug-resistant cases where the seizure focus can be precisely localised. Our neurology team provides comprehensive epilepsy evaluation including long-term video EEG monitoring."
-  - question: "What movement disorders are treated?"
+  - question: 'What is the cost of neurology treatment in Bangalore?'
+    answer: 'Neurology treatment costs in Bangalore range from $1,500 to $12,000 depending on the condition, diagnostic requirements, and treatment plan. This includes consultations, EEG, imaging studies, and ongoing management. Compared to Western countries where costs can exceed $20,000-$60,000, Bangalore offers 60-80% savings with access to internationally trained neurologists and advanced diagnostic facilities.'
+  - question: 'What treatments are available for stroke at these hospitals?'
+    answer: 'Our partner hospitals provide comprehensive stroke care including acute stroke management (thrombolysis, thrombectomy), stroke rehabilitation, secondary stroke prevention, and long-term follow-up. The stroke teams include neurologists, neurointerventional specialists, and rehabilitation therapists. Imaging facilities include 3 Tesla MRI and 128-slice CT for rapid diagnosis and treatment planning.'
+  - question: 'Can epilepsy be treated without surgery?'
+    answer: 'Yes, most epilepsy cases are managed with anti-epileptic medications. For refractory epilepsy, treatment options include combination drug therapy, vagus nerve stimulation (VNS), and dietary modifications. Epilepsy surgery is considered only for drug-resistant cases where the seizure focus can be precisely localised. Our neurology team provides comprehensive epilepsy evaluation including long-term video EEG monitoring.'
+  - question: 'What movement disorders are treated?'
     answer: "Our neurology team manages the full spectrum of movement disorders including Parkinson's disease, essential tremor, dystonia, Huntington's disease, Tourette syndrome, and ataxia. Treatment options include medication management, botulinum toxin injections for dystonia, deep brain stimulation (DBS) evaluation, and physical rehabilitation."
-summary: "Neurology treatment in Bangalore offers comprehensive diagnosis and management of adult neurological disorders including stroke, epilepsy, movement disorders, multiple sclerosis, migraine, and dementia at JCI-accredited hospitals. Costs range from $1,500 to $12,000, providing 60-80% savings compared to Western countries."
+summary: 'Neurology treatment in Bangalore offers comprehensive diagnosis and management of adult neurological disorders including stroke, epilepsy, movement disorders, multiple sclerosis, migraine, and dementia at JCI-accredited hospitals. Costs range from $1,500 to $12,000, providing 60-80% savings compared to Western countries.'
 eligibility:
-  - "Patients with diagnosed or suspected neurological disorders requiring specialist evaluation"
-  - "Individuals with stroke, epilepsy, movement disorders, or demyelinating diseases needing management"
-  - "Patients requiring advanced neuroimaging, EEG, or neurophysiology studies"
-  - "Those with drug-resistant conditions needing specialised treatment such as VNS or DBS evaluation"
-  - "International patients seeking comprehensive neurology care with follow-up support"
+  - 'Patients with diagnosed or suspected neurological disorders requiring specialist evaluation'
+  - 'Individuals with stroke, epilepsy, movement disorders, or demyelinating diseases needing management'
+  - 'Patients requiring advanced neuroimaging, EEG, or neurophysiology studies'
+  - 'Those with drug-resistant conditions needing specialised treatment such as VNS or DBS evaluation'
+  - 'International patients seeking comprehensive neurology care with follow-up support'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-7 days"
-    description: "Inpatient evaluation, diagnostic workup, acute treatment, and stabilisation under neurology specialist care"
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultations, medication titration, and initial rehabilitation including physiotherapy and cognitive therapy"
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual return to daily activities with teleconsultation support and ongoing medication management"
-  - phase: "Full recovery"
-    duration: "Varies by condition"
-    description: "Complete symptom management, optimised treatment plan, and resumption of normal activities with long-term follow-up"
+  - phase: 'Hospital stay'
+    duration: '1-7 days'
+    description: 'Inpatient evaluation, diagnostic workup, acute treatment, and stabilisation under neurology specialist care'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultations, medication titration, and initial rehabilitation including physiotherapy and cognitive therapy'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual return to daily activities with teleconsultation support and ongoing medication management'
+  - phase: 'Full recovery'
+    duration: 'Varies by condition'
+    description: 'Complete symptom management, optimised treatment plan, and resumption of normal activities with long-term follow-up'
 risks:
-  - "Adverse drug reactions to anti-epileptic or immunosuppressive medications"
-  - "Disease progression despite optimal medical management"
-  - "Complications from procedures such as VNS implantation or botulinum toxin injections"
-  - "Stroke recurrence or secondary complications in stroke patients"
-  - "Cognitive decline in progressive neurodegenerative conditions"
+  - 'Adverse drug reactions to anti-epileptic or immunosuppressive medications'
+  - 'Disease progression despite optimal medical management'
+  - 'Complications from procedures such as VNS implantation or botulinum toxin injections'
+  - 'Stroke recurrence or secondary complications in stroke patients'
+  - 'Cognitive decline in progressive neurodegenerative conditions'
 relatedTreatmentSlugs:
-  - "paediatric-neurology"
-  - "neuro-and-spine-surgery"
+  - 'paediatric-neurology'
+  - 'neuro-and-spine-surgery'
 ---
 
 ## Overview
@@ -161,13 +161,13 @@ Our partner hospitals are equipped with **advanced neuroimaging** (3 Tesla MRI, 
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Neurology Treatment) | vs India |
-|---------|---------------------------------------|----------|
-| India (Bangalore) | $1,500 – $12,000 | Baseline |
-| USA | $10,000 – $60,000 | ~5.2× higher |
-| UK | £8,000 – £30,000 | ~2.8× higher |
-| Singapore | $6,000 – $25,000 | ~2.3× higher |
-| Thailand | $4,000 – $15,000 | ~1.4× higher |
+| Country           | Approximate Cost (Neurology Treatment) | vs India     |
+| ----------------- | -------------------------------------- | ------------ |
+| India (Bangalore) | $1,500 – $12,000                       | Baseline     |
+| USA               | $10,000 – $60,000                      | ~5.2× higher |
+| UK                | £8,000 – £30,000                       | ~2.8× higher |
+| Singapore         | $6,000 – $25,000                       | ~2.3× higher |
+| Thailand          | $4,000 – $15,000                       | ~1.4× higher |
 
 ## Why Choose Bangalore for Neurology Care?
 

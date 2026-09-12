@@ -364,7 +364,8 @@ describe('getSeoDescription', () => {
   });
 
   it('trims long descriptions to <= 160 chars', () => {
-    const long = 'This is a very long description that exceeds the one hundred and sixty character limit for SEO meta descriptions and needs to be trimmed down to fit properly.';
+    const long =
+      'This is a very long description that exceeds the one hundred and sixty character limit for SEO meta descriptions and needs to be trimmed down to fit properly.';
     const result = getSeoDescription(long);
     expect(result.length).toBeLessThanOrEqual(160);
   });

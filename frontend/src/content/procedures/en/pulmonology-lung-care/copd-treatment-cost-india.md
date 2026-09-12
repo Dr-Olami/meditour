@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "COPD Treatment"
-seoHeadline: "COPD Treatment Cost in India for International Patients"
+name: 'COPD Treatment'
+seoHeadline: 'COPD Treatment Cost in India for International Patients'
 parentTreatmentSlug: pulmonology-lung-care
-summary: "Comprehensive COPD treatment in India costs between $800 and $4,000, offering savings of up to 80% compared to Western countries. The treatment programme includes diagnostic workup, personalised medication management, inhaler technique training, pulmonary rehabilitation, and exacerbation prevention to improve lung function and quality of life."
-description: "COPD Treatment in India from $800–$4,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert pulmonologists."
-fromPrice: "$800"
-toPrice: "$4,000"
-duration: "1-2 weeks"
-hospitalStay: "Outpatient"
-recoveryTime: "2-4 weeks"
+summary: 'Comprehensive COPD treatment in India costs between $800 and $4,000, offering savings of up to 80% compared to Western countries. The treatment programme includes diagnostic workup, personalised medication management, inhaler technique training, pulmonary rehabilitation, and exacerbation prevention to improve lung function and quality of life.'
+description: 'COPD Treatment in India from $800–$4,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices with expert pulmonologists.'
+fromPrice: '$800'
+toPrice: '$4,000'
+duration: '1-2 weeks'
+hospitalStay: 'Outpatient'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Confirmed diagnosis of COPD or chronic breathlessness with a smoking history requiring specialist evaluation"
-  - "Poorly controlled COPD despite current medication regimen with frequent exacerbations"
-  - "Severe or very severe COPD (GOLD Stage III or IV) needing advanced therapy assessment"
-  - "Patients with chronic respiratory failure requiring long-term oxygen therapy evaluation"
-  - "Frequent COPD exacerbations requiring comprehensive prevention and management strategy"
+  - 'Confirmed diagnosis of COPD or chronic breathlessness with a smoking history requiring specialist evaluation'
+  - 'Poorly controlled COPD despite current medication regimen with frequent exacerbations'
+  - 'Severe or very severe COPD (GOLD Stage III or IV) needing advanced therapy assessment'
+  - 'Patients with chronic respiratory failure requiring long-term oxygen therapy evaluation'
+  - 'Frequent COPD exacerbations requiring comprehensive prevention and management strategy'
 costInclusions:
-  - "Pulmonologist consultations and specialist fees"
-  - "Comprehensive pulmonary function testing (spirometry, lung volumes, diffusion capacity)"
-  - "Arterial blood gas analysis and oxygen saturation assessment"
-  - "Chest X-ray and CT scan of the chest where indicated"
-  - "Medications (bronchodilators, inhaled corticosteroids, antibiotics, oxygen therapy)"
-  - "Inhaler technique training and personalised COPD action plan"
-  - "Pulmonary rehabilitation sessions"
-  - "Airport pickup and drop"
+  - 'Pulmonologist consultations and specialist fees'
+  - 'Comprehensive pulmonary function testing (spirometry, lung volumes, diffusion capacity)'
+  - 'Arterial blood gas analysis and oxygen saturation assessment'
+  - 'Chest X-ray and CT scan of the chest where indicated'
+  - 'Medications (bronchodilators, inhaled corticosteroids, antibiotics, oxygen therapy)'
+  - 'Inhaler technique training and personalised COPD action plan'
+  - 'Pulmonary rehabilitation sessions'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital visits"
-  - "Long-term medication refills after returning home"
-  - "Personal expenses and meals for attendants"
-  - "Treatment of unrelated medical conditions discovered during workup"
+  - 'International flights'
+  - 'Accommodation outside hospital visits'
+  - 'Long-term medication refills after returning home'
+  - 'Personal expenses and meals for attendants'
+  - 'Treatment of unrelated medical conditions discovered during workup'
 recoveryTimeline:
-  - phase: "Diagnostic workup"
-    duration: "2-3 days"
-    description: "Comprehensive pulmonary function testing, arterial blood gas analysis, imaging, and specialist consultation to confirm COPD severity and phenotype."
-  - phase: "Treatment initiation"
-    duration: "3-5 days"
-    description: "Personalised medication regimen started, inhaler technique training, and COPD action plan developed with the pulmonology team."
-  - phase: "Stabilisation"
-    duration: "1-2 weeks"
-    description: "Monitoring of symptom response, medication titration, and pulmonary rehabilitation sessions to optimise lung function and exercise tolerance."
-  - phase: "Long-term control"
-    duration: "Ongoing"
-    description: "Maintenance therapy continued at home with regular follow-up, smoking cessation support, and adherence to the personalised COPD action plan."
+  - phase: 'Diagnostic workup'
+    duration: '2-3 days'
+    description: 'Comprehensive pulmonary function testing, arterial blood gas analysis, imaging, and specialist consultation to confirm COPD severity and phenotype.'
+  - phase: 'Treatment initiation'
+    duration: '3-5 days'
+    description: 'Personalised medication regimen started, inhaler technique training, and COPD action plan developed with the pulmonology team.'
+  - phase: 'Stabilisation'
+    duration: '1-2 weeks'
+    description: 'Monitoring of symptom response, medication titration, and pulmonary rehabilitation sessions to optimise lung function and exercise tolerance.'
+  - phase: 'Long-term control'
+    duration: 'Ongoing'
+    description: 'Maintenance therapy continued at home with regular follow-up, smoking cessation support, and adherence to the personalised COPD action plan.'
 risks:
-  - "Medication side effects such as oral thrush from inhaled corticosteroids or palpitations from bronchodilators"
-  - "Acute COPD exacerbation requiring emergency treatment despite optimised therapy"
-  - "Progressive decline in lung function despite best medical management"
-  - "Corticosteroid-related complications with frequent systemic use during exacerbations"
-  - "Oxygen therapy-related risks including carbon dioxide retention in severe COPD"
+  - 'Medication side effects such as oral thrush from inhaled corticosteroids or palpitations from bronchodilators'
+  - 'Acute COPD exacerbation requiring emergency treatment despite optimised therapy'
+  - 'Progressive decline in lung function despite best medical management'
+  - 'Corticosteroid-related complications with frequent systemic use during exacerbations'
+  - 'Oxygen therapy-related risks including carbon dioxide retention in severe COPD'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -57,14 +57,14 @@ relatedHospitalSlugs:
 relatedDoctorSlugs: []
 
 relatedProcedureSlugs:
-  - "asthma-treatment-cost-india"
+  - 'asthma-treatment-cost-india'
 faqs:
-  - question: "Can COPD be completely cured with treatment in India?"
-    answer: "COPD cannot be completely cured as the structural damage to the lungs is largely irreversible, but it can be very effectively managed to slow disease progression, reduce exacerbations, and improve quality of life. With proper medication, pulmonary rehabilitation, smoking cessation, and oxygen therapy where needed, most patients experience significant improvement in breathlessness, exercise tolerance, and daily functioning. The goal of treatment is to maximise your remaining lung function and prevent further deterioration."
-  - question: "Will I need to take inhalers for the rest of my life?"
-    answer: "Yes, most patients with moderate to severe COPD require long-term maintenance inhalers—typically a combination of long-acting bronchodilators (LAMA and LABA) and inhaled corticosteroids where indicated—to keep airways open and reduce inflammation. These medications are essential for preventing exacerbations and maintaining lung function. Your pulmonologist will regularly review and adjust your treatment based on your symptoms and lung function tests. Stopping maintenance therapy abruptly can lead to a rapid deterioration."
-  - question: "Is long-term oxygen therapy available and affordable in India?"
-    answer: "Yes, long-term oxygen therapy (LTOT) is available at leading Bangalore hospitals for patients with severe COPD and chronic respiratory failure. Both stationary concentrators and portable oxygen solutions can be arranged, and your pulmonologist will determine the appropriate flow rate and duration based on arterial blood gas analysis. The cost of oxygen equipment and consumables in India is significantly lower than in Western countries, making long-term management more affordable for international patients."
+  - question: 'Can COPD be completely cured with treatment in India?'
+    answer: 'COPD cannot be completely cured as the structural damage to the lungs is largely irreversible, but it can be very effectively managed to slow disease progression, reduce exacerbations, and improve quality of life. With proper medication, pulmonary rehabilitation, smoking cessation, and oxygen therapy where needed, most patients experience significant improvement in breathlessness, exercise tolerance, and daily functioning. The goal of treatment is to maximise your remaining lung function and prevent further deterioration.'
+  - question: 'Will I need to take inhalers for the rest of my life?'
+    answer: 'Yes, most patients with moderate to severe COPD require long-term maintenance inhalers—typically a combination of long-acting bronchodilators (LAMA and LABA) and inhaled corticosteroids where indicated—to keep airways open and reduce inflammation. These medications are essential for preventing exacerbations and maintaining lung function. Your pulmonologist will regularly review and adjust your treatment based on your symptoms and lung function tests. Stopping maintenance therapy abruptly can lead to a rapid deterioration.'
+  - question: 'Is long-term oxygen therapy available and affordable in India?'
+    answer: 'Yes, long-term oxygen therapy (LTOT) is available at leading Bangalore hospitals for patients with severe COPD and chronic respiratory failure. Both stationary concentrators and portable oxygen solutions can be arranged, and your pulmonologist will determine the appropriate flow rate and duration based on arterial blood gas analysis. The cost of oxygen equipment and consumables in India is significantly lower than in Western countries, making long-term management more affordable for international patients.'
 ---
 
 ## Overview
@@ -141,13 +141,13 @@ If your diagnosis is uncertain—particularly if symptoms are more consistent wi
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $800 – $4,000 | Baseline |
-| USA | $5,000 – $20,000 | ~6x higher |
-| UK | £2,000 – £8,000 | ~3.5x higher |
-| Singapore | $3,500 – $12,000 | ~3x higher |
-| Thailand | $2,000 – $7,000 | ~1.8x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $800 – $4,000    | Baseline     |
+| USA               | $5,000 – $20,000 | ~6x higher   |
+| UK                | £2,000 – £8,000  | ~3.5x higher |
+| Singapore         | $3,500 – $12,000 | ~3x higher   |
+| Thailand          | $2,000 – $7,000  | ~1.8x higher |
 
 The price range within India reflects the complexity of your COPD, the extent of diagnostic testing required, whether long-term oxygen therapy is indicated, and the specific hospital and pulmonologist you choose. Even if you require advanced triple therapy or long-term oxygen for severe COPD, your total cost in Bangalore will typically be a fraction of the US price. These savings come from favourable exchange rates and lower operational costs—not from any compromise in medication quality or clinical expertise.
 

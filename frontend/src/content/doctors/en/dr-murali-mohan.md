@@ -17,21 +17,21 @@ expertise:
   - Craniovertebral (CV) Junction Disorders
   - Spine Surgery
   - Complex Spinal Deformity Surgery including Scoliosis
-  - "Head & Neck Junction Surgery"
+  - 'Head & Neck Junction Surgery'
   - Stereotactic Neurosurgery
   - Minimally Invasive Neurosurgical Techniques
   - Neuro-navigation
   - Medical Innovation and Device Development
 pullQuote: "The brain and spine carry everything a person is. When I operate, I am not just removing a tumour — I am protecting a person's ability to be themselves."
 faqs:
-  - question: "Is Dr. Murali Mohan experienced in brain tumour surgery?"
-    answer: "Yes, Dr. Murali Mohan S is a leading neurosurgeon with experience in over 8,000 neurosurgical procedures. He specialises in brain tumour surgery, skull base procedures, craniovertebral junction disorders, and spinal deformity correction. He is recognised as one of the most experienced neurosurgeons in Bangalore, known for his precision-driven surgical care and advanced treatment approach."
-  - question: "What spinal conditions does Dr. Murali Mohan treat?"
-    answer: "Dr. Murali Mohan treats a wide range of spinal conditions including complex spinal deformities, scoliosis, craniovertebral junction disorders, degenerative spine diseases, spinal tumours, and disc disorders. He is expert in minimally invasive neurosurgical techniques, complex spine surgeries, and spinal deformity correction including scoliosis surgery."
-  - question: "Does Dr. Murali Mohan perform skull base surgery?"
+  - question: 'Is Dr. Murali Mohan experienced in brain tumour surgery?'
+    answer: 'Yes, Dr. Murali Mohan S is a leading neurosurgeon with experience in over 8,000 neurosurgical procedures. He specialises in brain tumour surgery, skull base procedures, craniovertebral junction disorders, and spinal deformity correction. He is recognised as one of the most experienced neurosurgeons in Bangalore, known for his precision-driven surgical care and advanced treatment approach.'
+  - question: 'What spinal conditions does Dr. Murali Mohan treat?'
+    answer: 'Dr. Murali Mohan treats a wide range of spinal conditions including complex spinal deformities, scoliosis, craniovertebral junction disorders, degenerative spine diseases, spinal tumours, and disc disorders. He is expert in minimally invasive neurosurgical techniques, complex spine surgeries, and spinal deformity correction including scoliosis surgery.'
+  - question: 'Does Dr. Murali Mohan perform skull base surgery?'
     answer: "Yes, skull base surgery is one of Dr. Murali Mohan's primary areas of expertise. He has extensive experience in skull base and craniovertebral junction (CV junction) surgeries, including the development of a staging system for skull base fungal granuloma that was presented at a national conference and later published."
-  - question: "What is the cost of neurosurgery consultation with Dr. Murali Mohan in Bangalore?"
-    answer: "Neurosurgery consultation and treatment costs in Bangalore range from $4,000 to $12,000 depending on the procedure. Dr. Murali Mohan practices at SPARSH Hospital, Hennur Road, which offers comprehensive neurosciences care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained neurosurgeons."
+  - question: 'What is the cost of neurosurgery consultation with Dr. Murali Mohan in Bangalore?'
+    answer: 'Neurosurgery consultation and treatment costs in Bangalore range from $4,000 to $12,000 depending on the procedure. Dr. Murali Mohan practices at SPARSH Hospital, Hennur Road, which offers comprehensive neurosciences care with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained neurosurgeons.'
 ---
 
 ## About the Doctor

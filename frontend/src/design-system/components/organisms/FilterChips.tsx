@@ -87,7 +87,7 @@ function MarqueeRow({
       <div
         ref={trackRef}
         className={cn(
-          'flex w-max gap-2 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]',
+          'flex w-max gap-2 focus-within:[animation-play-state:paused] hover:[animation-play-state:paused]',
           direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
         )}
         style={{ animationDuration: `${duration}s` }}

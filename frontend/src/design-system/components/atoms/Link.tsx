@@ -21,8 +21,7 @@ const linkVariants = cva('transition-colors focus-visible:outline-none', {
 });
 
 export interface LinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof linkVariants> {}
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof linkVariants> {}
 
 /**
  * Styled anchor link.
@@ -30,11 +29,7 @@ export interface LinkProps
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   ({ className, variant, underline, children, ...props }, ref) => {
     return (
-      <a
-        className={cn(linkVariants({ variant, underline }), className)}
-        ref={ref}
-        {...props}
-      >
+      <a className={cn(linkVariants({ variant, underline }), className)} ref={ref} {...props}>
         {children}
       </a>
     );

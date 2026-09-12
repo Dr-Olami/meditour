@@ -18,23 +18,14 @@ const tagVariants = cva(
 );
 
 export interface TagProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof tagVariants> {}
+  extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof tagVariants> {}
 
 /**
  * Categorization tag atom.
  */
-const Tag = React.forwardRef<HTMLSpanElement, TagProps>(
-  ({ className, variant, ...props }, ref) => {
-    return (
-      <span
-        className={cn(tagVariants({ variant }), className)}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+const Tag = React.forwardRef<HTMLSpanElement, TagProps>(({ className, variant, ...props }, ref) => {
+  return <span className={cn(tagVariants({ variant }), className)} ref={ref} {...props} />;
+});
 Tag.displayName = 'Tag';
 
 export { Tag, tagVariants };

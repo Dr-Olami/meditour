@@ -32,13 +32,13 @@ Every year, thousands of Bangladeshi families travel to India for treatment that
 
 The heart surgery cost in India for Bangladeshi patients is the single most-searched topic among families planning this trip. Here is how typical Bangalore package prices compare (indicative ranges; final quotes follow medical review of your reports):
 
-| Treatment | India (USD) | Approx. BDT | Singapore | Thailand |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ৳4.95L–13.2L | $35,000–50,000 | $15,000–25,000 |
-| Cancer treatment | $3,000–25,000 | ৳3.3L–27.5L | $40,000–120,000 | $12,000–60,000 |
-| Knee replacement | $2,500–8,000 | ৳2.75L–8.8L | $18,000–35,000 | $8,000–18,000 |
-| Liver/kidney transplant | $25,000–40,000 | ৳27.5L–44L | $200,000–350,000 | — |
-| IVF (per cycle) | $3,500–7,000 | ৳3.85L–7.7L | $12,000–20,000 | $6,000–12,000 |
+| Treatment               | India (USD)    | Approx. BDT  | Singapore        | Thailand       |
+| ----------------------- | -------------- | ------------ | ---------------- | -------------- |
+| Cardiac surgery         | $4,500–12,000  | ৳4.95L–13.2L | $35,000–50,000   | $15,000–25,000 |
+| Cancer treatment        | $3,000–25,000  | ৳3.3L–27.5L  | $40,000–120,000  | $12,000–60,000 |
+| Knee replacement        | $2,500–8,000   | ৳2.75L–8.8L  | $18,000–35,000   | $8,000–18,000  |
+| Liver/kidney transplant | $25,000–40,000 | ৳27.5L–44L   | $200,000–350,000 | —              |
+| IVF (per cycle)         | $3,500–7,000   | ৳3.85L–7.7L  | $12,000–20,000   | $6,000–12,000  |
 
 At roughly ৳110 per US dollar, even the upper end of Indian package pricing is a fraction of what the same procedure costs in Singapore — which is why India vs Singapore medical cost comparisons almost always favour India for Bangladeshi families. Knee replacement in Bangalore from Bangladesh is a particularly common route, with direct Dhaka–Bangalore flights and rehab support in both cities.
 
@@ -73,7 +73,7 @@ When comparing hospitals, look for JCI or NABH accreditation, a dedicated intern
 
 ## A family's experience
 
-Adeeba Irshad from Bangladesh travelled for maternity care with Khan Meditour and later shared: *"Khan Meditour never felt like a hospital. The team cared for me and my baby with so much warmth."* Not every journey is maternity — most are cardiac, cancer or orthopedic cases — but the support pattern is the same: reports reviewed before travel, a coordinator who speaks your language, and airport-to-admission logistics handled end to end.
+Adeeba Irshad from Bangladesh travelled for maternity care with Khan Meditour and later shared: _"Khan Meditour never felt like a hospital. The team cared for me and my baby with so much warmth."_ Not every journey is maternity — most are cardiac, cancer or orthopedic cases — but the support pattern is the same: reports reviewed before travel, a coordinator who speaks your language, and airport-to-admission logistics handled end to end.
 
 ## How to get started
 

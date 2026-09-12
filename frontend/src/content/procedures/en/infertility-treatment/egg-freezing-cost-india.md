@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Egg Freezing"
-seoHeadline: "Egg Freezing Cost in India for International Patients"
+name: 'Egg Freezing'
+seoHeadline: 'Egg Freezing Cost in India for International Patients'
 parentTreatmentSlug: infertility-treatment
 summary: "Egg freezing (oocyte cryopreservation) is a fertility preservation technique where a woman's eggs are retrieved, frozen, and stored for future use. The cost of egg freezing in India ranges from $1,500 to $3,500 per cycle, offering an affordable option for international patients seeking to preserve their fertility."
-description: "Affordable egg freezing in Bangalore, India for international patients. Costs from $1,500 to $3,500 per cycle with advanced vitrification technology."
-fromPrice: "$1,500"
-toPrice: "$3,500"
-duration: "2-4 weeks per cycle"
-hospitalStay: "Day-care / outpatient"
-recoveryTime: "1-2 weeks for hormonal recovery after egg retrieval"
+description: 'Affordable egg freezing in Bangalore, India for international patients. Costs from $1,500 to $3,500 per cycle with advanced vitrification technology.'
+fromPrice: '$1,500'
+toPrice: '$3,500'
+duration: '2-4 weeks per cycle'
+hospitalStay: 'Day-care / outpatient'
+recoveryTime: '1-2 weeks for hormonal recovery after egg retrieval'
 eligibility:
-  - "Women aged 25-40 seeking to preserve fertility for personal or medical reasons"
-  - "Patients undergoing cancer treatment that may affect ovarian function"
-  - "Women with a family history of early menopause or diminished ovarian reserve"
-  - "Individuals planning to delay childbearing for career or personal reasons"
-  - "Women with adequate ovarian reserve confirmed by AMH testing and antral follicle count"
+  - 'Women aged 25-40 seeking to preserve fertility for personal or medical reasons'
+  - 'Patients undergoing cancer treatment that may affect ovarian function'
+  - 'Women with a family history of early menopause or diminished ovarian reserve'
+  - 'Individuals planning to delay childbearing for career or personal reasons'
+  - 'Women with adequate ovarian reserve confirmed by AMH testing and antral follicle count'
 costInclusions:
-  - "Fertility specialist consultation fees"
-  - "Hospital/clinic room charges (where applicable)"
-  - "Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)"
-  - "Medications and hormones (as per protocol)"
-  - "Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)"
-  - "Lab and embryology charges"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Fertility specialist consultation fees'
+  - 'Hospital/clinic room charges (where applicable)'
+  - 'Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)'
+  - 'Medications and hormones (as per protocol)'
+  - 'Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)'
+  - 'Lab and embryology charges'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital/clinic stay"
-  - "Additional IVF cycles if first cycle is unsuccessful"
-  - "Personal expenses and meals for attendants"
-  - "Donor eggs/sperm or surrogate compensation (where separately applicable)"
+  - 'International flights'
+  - 'Accommodation outside hospital/clinic stay'
+  - 'Additional IVF cycles if first cycle is unsuccessful'
+  - 'Personal expenses and meals for attendants'
+  - 'Donor eggs/sperm or surrogate compensation (where separately applicable)'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "2-4 weeks per cycle"
-    description: "Ovarian stimulation, follicular monitoring, and ultrasound-guided egg retrieval followed by vitrification."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-retrieval monitoring to ensure ovarian recovery before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 1-2"
-    description: "Gradual return to normal activities with avoidance of strenuous exercise post-retrieval."
-  - phase: "Full recovery"
-    duration: "1-2 weeks for hormonal recovery after egg retrieval"
-    description: "Complete hormonal stabilisation and resolution of any mild post-retrieval symptoms."
+  - phase: 'Treatment period'
+    duration: '2-4 weeks per cycle'
+    description: 'Ovarian stimulation, follicular monitoring, and ultrasound-guided egg retrieval followed by vitrification.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-retrieval monitoring to ensure ovarian recovery before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 1-2'
+    description: 'Gradual return to normal activities with avoidance of strenuous exercise post-retrieval.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks for hormonal recovery after egg retrieval'
+    description: 'Complete hormonal stabilisation and resolution of any mild post-retrieval symptoms.'
 risks:
-  - "Ovarian Hyperstimulation Syndrome (OHSS) from stimulation hormones"
-  - "Egg retrieval complications such as bleeding, infection, or ovarian torsion"
-  - "Insufficient number of eggs retrieved despite stimulation"
-  - "Reduced egg viability after thawing, though vitrification survival rates exceed 90%"
-  - "No guarantee of future pregnancy success with frozen eggs"
+  - 'Ovarian Hyperstimulation Syndrome (OHSS) from stimulation hormones'
+  - 'Egg retrieval complications such as bleeding, infection, or ovarian torsion'
+  - 'Insufficient number of eggs retrieved despite stimulation'
+  - 'Reduced egg viability after thawing, though vitrification survival rates exceed 90%'
+  - 'No guarantee of future pregnancy success with frozen eggs'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-rashmi-patil
 
 relatedProcedureSlugs:
-  - "ivf-treatment-cost-india"
-  - "icsi-treatment-cost-india"
-  - "iui-treatment-cost-india"
+  - 'ivf-treatment-cost-india'
+  - 'icsi-treatment-cost-india'
+  - 'iui-treatment-cost-india'
 faqs:
-  - question: "How long can frozen eggs be stored?"
-    answer: "Frozen eggs can be stored indefinitely using vitrification technology. Studies show no significant decline in egg viability over time, though most clinics recommend using them within 10 years. Annual storage fees typically apply."
-  - question: "How many eggs should I freeze for a good chance of pregnancy?"
-    answer: "Fertility specialists generally recommend freezing 10-15 mature eggs for a reasonable chance of one live birth, though the ideal number varies with age. Women over 35 may need more eggs to achieve similar success rates."
-  - question: "What is the survival rate of eggs after freezing and thawing?"
-    answer: "With modern vitrification techniques, egg survival rates after thawing exceed 90%. Vitrification prevents ice crystal formation, preserving the structural integrity of the oocyte. Pregnancy rates using previously frozen eggs are comparable to fresh egg IVF cycles."
+  - question: 'How long can frozen eggs be stored?'
+    answer: 'Frozen eggs can be stored indefinitely using vitrification technology. Studies show no significant decline in egg viability over time, though most clinics recommend using them within 10 years. Annual storage fees typically apply.'
+  - question: 'How many eggs should I freeze for a good chance of pregnancy?'
+    answer: 'Fertility specialists generally recommend freezing 10-15 mature eggs for a reasonable chance of one live birth, though the ideal number varies with age. Women over 35 may need more eggs to achieve similar success rates.'
+  - question: 'What is the survival rate of eggs after freezing and thawing?'
+    answer: 'With modern vitrification techniques, egg survival rates after thawing exceed 90%. Vitrification prevents ice crystal formation, preserving the structural integrity of the oocyte. Pregnancy rates using previously frozen eggs are comparable to fresh egg IVF cycles.'
 ---
+
 ## Overview
 
 If you are considering egg freezing, you are likely thinking ahead — perhaps you want to focus on your career right now, or you have not yet found the right partner, or you are facing a medical treatment that could affect your fertility. Whatever your reason, you are making a thoughtful decision to preserve your options for the future. It is completely natural to feel a mix of hope and uncertainty, but the technology behind egg freezing has advanced enormously, and Bangalore's fertility clinics have helped thousands of women take control of their reproductive timeline.
@@ -121,13 +122,13 @@ Most patients feel fully recovered within one to two weeks. A follow-up ultrasou
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,500 – $3,500 | Baseline |
-| USA | $8,000 – $15,000 | ~4.6x higher |
-| UK | £5,000 – £8,000 | ~2.6x higher |
-| Singapore | $6,000 – $10,000 | ~3.2x higher |
-| Thailand | $3,000 – $6,000 | ~1.8x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $1,500 – $3,500  | Baseline     |
+| USA               | $8,000 – $15,000 | ~4.6x higher |
+| UK                | £5,000 – £8,000  | ~2.6x higher |
+| Singapore         | $6,000 – $10,000 | ~3.2x higher |
+| Thailand          | $3,000 – $6,000  | ~1.8x higher |
 
 The cost advantage is substantial. Even when factoring in international flights, accommodation and a companion's stay, the total outlay for a cycle in Bangalore is often less than half the price of the same procedure in the United States or the United Kingdom. Annual storage fees in India typically range from $200 to $500, making long-term storage a financially viable option.
 

@@ -95,14 +95,10 @@ function runFadeInUp(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="fade-in-up"]').forEach((el) => {
     tweens.push(
-      gsap.fromTo(
-        el,
-        fadeInUp.from,
-        {
-          ...fadeInUp.to,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(el, fadeInUp.from, {
+        ...fadeInUp.to,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -112,14 +108,10 @@ function runScrollReveal(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="scroll-reveal"]').forEach((el) => {
     tweens.push(
-      gsap.fromTo(
-        el,
-        scrollReveal.from,
-        {
-          ...scrollReveal.to,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(el, scrollReveal.from, {
+        ...scrollReveal.to,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -133,14 +125,10 @@ function runStaggerChildren(scope: HTMLElement): gsap.core.Tween[] {
     ) as HTMLElement[];
     if (children.length === 0) return;
     tweens.push(
-      gsap.fromTo(
-        children,
-        staggerChildren.from,
-        {
-          ...staggerChildren.to,
-          scrollTrigger: { trigger: container, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(children, staggerChildren.from, {
+        ...staggerChildren.to,
+        scrollTrigger: { trigger: container, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -154,14 +142,10 @@ function runStaggerCards(scope: HTMLElement): gsap.core.Tween[] {
     ) as HTMLElement[];
     if (cards.length === 0) return;
     tweens.push(
-      gsap.fromTo(
-        cards,
-        staggerCards.from,
-        {
-          ...staggerCards.to,
-          scrollTrigger: { trigger: grid, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(cards, staggerCards.from, {
+        ...staggerCards.to,
+        scrollTrigger: { trigger: grid, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -172,7 +156,9 @@ function runCounterUp(scope: HTMLElement): gsap.core.Tween[] {
   scope.querySelectorAll<HTMLElement>('[data-anim~="counter-up"]').forEach((el) => {
     const explicit = el.getAttribute('data-counter-target');
     const target =
-      explicit != null && explicit !== '' ? Number(explicit) : parseCounterTarget(el.textContent ?? '');
+      explicit != null && explicit !== ''
+        ? Number(explicit)
+        : parseCounterTarget(el.textContent ?? '');
     if (target == null) return;
 
     const suffix = el.textContent?.replace(/[0-9,\s]/g, '').trim() ?? '';
@@ -215,14 +201,10 @@ function runTimelineDraw(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="timeline-draw"]').forEach((el) => {
     tweens.push(
-      gsap.fromTo(
-        el,
-        timelineDraw.from,
-        {
-          ...timelineDraw.to,
-          scrollTrigger: { trigger: el, start: 'top 80%', once: true },
-        }
-      )
+      gsap.fromTo(el, timelineDraw.from, {
+        ...timelineDraw.to,
+        scrollTrigger: { trigger: el, start: 'top 80%', once: true },
+      })
     );
   });
   return tweens;
@@ -234,14 +216,10 @@ function runHeadlineReveal(scope: HTMLElement): gsap.core.Tween[] {
     if (!el.textContent?.trim()) return;
     const words = splitWords(el);
     tweens.push(
-      gsap.fromTo(
-        words,
-        headlineReveal.from,
-        {
-          ...headlineReveal.to,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(words, headlineReveal.from, {
+        ...headlineReveal.to,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -251,14 +229,10 @@ function runMaskReveal(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="mask-reveal"]').forEach((el) => {
     tweens.push(
-      gsap.fromTo(
-        el,
-        maskReveal.from,
-        {
-          ...maskReveal.to,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(el, maskReveal.from, {
+        ...maskReveal.to,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -268,14 +242,10 @@ function runImageScaleIn(scope: HTMLElement): gsap.core.Tween[] {
   const tweens: gsap.core.Tween[] = [];
   scope.querySelectorAll<HTMLElement>('[data-anim~="image-scale-in"]').forEach((el) => {
     tweens.push(
-      gsap.fromTo(
-        el,
-        imageScaleIn.from,
-        {
-          ...imageScaleIn.to,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      )
+      gsap.fromTo(el, imageScaleIn.from, {
+        ...imageScaleIn.to,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      })
     );
   });
   return tweens;
@@ -304,8 +274,8 @@ function runTiltCard(scope: HTMLElement): (() => void)[] {
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -10;
-      const rotateY = ((x / rect.width) - 0.5) * 10;
+      const rotateX = (y / rect.height - 0.5) * -10;
+      const rotateY = (x / rect.width - 0.5) * 10;
       gsap.to(card, {
         rotateX,
         rotateY,

@@ -44,7 +44,7 @@ export function BlogFilterList({
             'rounded-pill px-4 py-1.5 text-sm font-medium transition-colors',
             selectedTag === null
               ? 'bg-ink text-white'
-              : 'border border-cream-300 bg-cream-100 text-ink/70 hover:bg-cream-200'
+              : 'text-ink/70 border border-cream-300 bg-cream-100 hover:bg-cream-200'
           )}
         >
           {allLabel}
@@ -60,7 +60,7 @@ export function BlogFilterList({
               'rounded-pill px-4 py-1.5 text-sm font-medium transition-colors',
               selectedTag === tag
                 ? 'bg-ink text-white'
-                : 'border border-cream-300 bg-cream-100 text-ink/70 hover:bg-cream-200'
+                : 'text-ink/70 border border-cream-300 bg-cream-100 hover:bg-cream-200'
             )}
           >
             {tag}
@@ -69,7 +69,7 @@ export function BlogFilterList({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-12 text-center text-ink/60">No posts match the selected tag.</p>
+        <p className="text-ink/60 py-12 text-center">No posts match the selected tag.</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((post) => (

@@ -18,29 +18,38 @@ const isDark = tone === 'dark';
 ---
 
 <nav aria-label="Breadcrumb" class:list={['flex flex-wrap items-center gap-2 text-sm', className]}>
-  {items.map((item, index) => {
-    const isLast = index === items.length - 1;
-    return (
-      <span class="flex items-center gap-2">
-        {index > 0 && (
-          <Icon name="chevron-right" size={14} className={isDark ? 'text-cream-100/40' : 'text-ink/40'} />
-        )}
-        {item.href && !isLast ? (
-          <a
-            href={item.href}
-            class:list={[
-              'font-medium transition-colors',
-              isDark ? 'text-cream-100/60 hover:text-cream-100' : 'text-ink/60 hover:text-ink',
-            ]}
-          >
-            {item.label}
-          </a>
-        ) : (
-          <span class:list={['font-medium', isDark ? 'text-cream-100' : 'text-ink']} aria-current="page">
-            {item.label}
-          </span>
-        )}
-      </span>
-    );
-  })}
+  {
+    items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <span class="flex items-center gap-2">
+          {index > 0 && (
+            <Icon
+              name="chevron-right"
+              size={14}
+              className={isDark ? 'text-cream-100/40' : 'text-ink/40'}
+            />
+          )}
+          {item.href && !isLast ? (
+            <a
+              href={item.href}
+              class:list={[
+                'font-medium transition-colors',
+                isDark ? 'text-cream-100/60 hover:text-cream-100' : 'text-ink/60 hover:text-ink',
+              ]}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span
+              class:list={['font-medium', isDark ? 'text-cream-100' : 'text-ink']}
+              aria-current="page"
+            >
+              {item.label}
+            </span>
+          )}
+        </span>
+      );
+    })
+  }
 </nav>

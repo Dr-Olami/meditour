@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Cosmetic Surgery
-seoHeadline: "Cosmetic & Plastic Surgery in India for International Patients"
+seoHeadline: 'Cosmetic & Plastic Surgery in India for International Patients'
 category: Aesthetic
 description: Board-certified plastic surgeons offer rhinoplasty, liposuction, hair restoration, tummy tuck and non-surgical aesthetic treatments.
 fromPrice: '$2,000'
@@ -28,55 +28,55 @@ hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'
 image: /images/treatments-cards/cosmetic-surgery.webp
 faqs:
-  - question: "Are the cosmetic surgeons board-certified?"
-    answer: "Yes, all cosmetic surgery procedures at our partner hospitals are performed by board-certified plastic surgeons with extensive training in aesthetic and reconstructive surgery. Many have international training and fellowships. The surgeons work in accredited operating theatres with strict safety protocols and comprehensive pre-operative evaluation."
-  - question: "Is FUE hair transplant available?"
-    answer: "Yes, Follicular Unit Extraction (FUE) hair transplant is available along with FUT and DHI (Direct Hair Implantation) techniques. FUE involves individual follicular unit extraction without a linear scar, making it ideal for patients who prefer shorter hair. Results are natural-looking and visible after 6-12 months with graft survival rates exceeding 90%."
-  - question: "What is the recovery time for rhinoplasty?"
-    answer: "Recovery from rhinoplasty typically takes 1-2 weeks for initial healing, with splint removal at 7-10 days. Most patients return to work within 2 weeks. Final results become visible after 6-12 months as swelling subsides completely. Both open and closed techniques are available depending on the complexity of the reshaping required."
-summary: "Cosmetic surgery in Bangalore is performed by board-certified plastic surgeons offering rhinoplasty, liposuction, hair transplant, tummy tuck and non-surgical aesthetic treatments at JCI-accredited facilities. Costs range from $2,000 to $10,000, providing 60-80% savings compared to Western countries with natural-looking results."
+  - question: 'Are the cosmetic surgeons board-certified?'
+    answer: 'Yes, all cosmetic surgery procedures at our partner hospitals are performed by board-certified plastic surgeons with extensive training in aesthetic and reconstructive surgery. Many have international training and fellowships. The surgeons work in accredited operating theatres with strict safety protocols and comprehensive pre-operative evaluation.'
+  - question: 'Is FUE hair transplant available?'
+    answer: 'Yes, Follicular Unit Extraction (FUE) hair transplant is available along with FUT and DHI (Direct Hair Implantation) techniques. FUE involves individual follicular unit extraction without a linear scar, making it ideal for patients who prefer shorter hair. Results are natural-looking and visible after 6-12 months with graft survival rates exceeding 90%.'
+  - question: 'What is the recovery time for rhinoplasty?'
+    answer: 'Recovery from rhinoplasty typically takes 1-2 weeks for initial healing, with splint removal at 7-10 days. Most patients return to work within 2 weeks. Final results become visible after 6-12 months as swelling subsides completely. Both open and closed techniques are available depending on the complexity of the reshaping required.'
+summary: 'Cosmetic surgery in Bangalore is performed by board-certified plastic surgeons offering rhinoplasty, liposuction, hair transplant, tummy tuck and non-surgical aesthetic treatments at JCI-accredited facilities. Costs range from $2,000 to $10,000, providing 60-80% savings compared to Western countries with natural-looking results.'
 eligibility:
-  - "Patients in good general health seeking aesthetic or reconstructive procedures"
-  - "Individuals with realistic expectations about surgical outcomes"
-  - "Patients requiring rhinoplasty, liposuction, hair transplant, or body contouring procedures"
-  - "Those who have completed pre-operative evaluation and medical clearance"
-  - "Non-smokers or those willing to cease smoking before and after surgery"
+  - 'Patients in good general health seeking aesthetic or reconstructive procedures'
+  - 'Individuals with realistic expectations about surgical outcomes'
+  - 'Patients requiring rhinoplasty, liposuction, hair transplant, or body contouring procedures'
+  - 'Those who have completed pre-operative evaluation and medical clearance'
+  - 'Non-smokers or those willing to cease smoking before and after surgery'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "0-3 days"
-    description: "Post-operative monitoring, wound care, pain management, and initial assessment of surgical results"
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultations, suture or splint removal, scar management initiation, and healing assessment"
-  - phase: "Return home"
-    duration: "Week 1-3"
-    description: "Gradual return to daily activities with compression garment wear and teleconsultation support"
-  - phase: "Full recovery"
-    duration: "1-4 weeks"
-    description: "Complete initial healing with final results visible after 6-12 months as swelling subsides"
+  - phase: 'Hospital stay'
+    duration: '0-3 days'
+    description: 'Post-operative monitoring, wound care, pain management, and initial assessment of surgical results'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultations, suture or splint removal, scar management initiation, and healing assessment'
+  - phase: 'Return home'
+    duration: 'Week 1-3'
+    description: 'Gradual return to daily activities with compression garment wear and teleconsultation support'
+  - phase: 'Full recovery'
+    duration: '1-4 weeks'
+    description: 'Complete initial healing with final results visible after 6-12 months as swelling subsides'
 risks:
-  - "Infection at incision sites requiring antibiotic treatment"
-  - "Scarring or keloid formation despite meticulous surgical technique"
-  - "Asymmetry or suboptimal aesthetic outcome requiring revision surgery"
-  - "Haematoma or seroma formation requiring drainage"
-  - "Anaesthesia-related complications in patients with underlying health conditions"
+  - 'Infection at incision sites requiring antibiotic treatment'
+  - 'Scarring or keloid formation despite meticulous surgical technique'
+  - 'Asymmetry or suboptimal aesthetic outcome requiring revision surgery'
+  - 'Haematoma or seroma formation requiring drainage'
+  - 'Anaesthesia-related complications in patients with underlying health conditions'
 relatedTreatmentSlugs:
-  - "bariatric-weight-loss"
-  - "dermatology"
+  - 'bariatric-weight-loss'
+  - 'dermatology'
 ---
 
 ## Overview
@@ -134,13 +134,13 @@ Surgical removal of excess skin and fat from the abdomen with tightening of abdo
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Cosmetic Surgery) | vs India |
-|---------|--------------------------------------|----------|
-| India (Bangalore) | $2,000 – $10,000 | Baseline |
-| USA | $8,000 – $30,000 | ~3.2× higher |
-| UK | £6,000 – £20,000 | ~2.2× higher |
-| Thailand | $3,000 – $15,000 | ~1.5× higher |
-| Turkey | $2,500 – $12,000 | ~1.2× higher |
+| Country           | Approximate Cost (Cosmetic Surgery) | vs India     |
+| ----------------- | ----------------------------------- | ------------ |
+| India (Bangalore) | $2,000 – $10,000                    | Baseline     |
+| USA               | $8,000 – $30,000                    | ~3.2× higher |
+| UK                | £6,000 – £20,000                    | ~2.2× higher |
+| Thailand          | $3,000 – $15,000                    | ~1.5× higher |
+| Turkey            | $2,500 – $12,000                    | ~1.2× higher |
 
 ## Why Choose Bangalore for Cosmetic Surgery?
 

@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Hematology & Bone Marrow Transplant
-seoHeadline: "Hematology & Bone Marrow Transplant in India for International Patients"
+seoHeadline: 'Hematology & Bone Marrow Transplant in India for International Patients'
 category: Hematology
 description: Bone marrow and stem cell transplant, leukemia, lymphoma, myeloma, thalassemia, sickle cell disease, aplastic anemia and CAR-T therapy at specialised Indian hematology centres.
 fromPrice: '$15,000'
@@ -26,59 +26,59 @@ hospitalStay: '4-6 weeks'
 recoveryTime: '3-12 months'
 image: /images/treatments-cards/hematology-bone-marrow.webp
 faqs:
-  - question: "What is the success rate of bone marrow transplants at your partner hospitals in India?"
-    answer: "Our partner hospitals perform over 300 bone marrow transplants annually with success rates of 70-90% for autologous transplants and 60-80% for allogeneic transplants, depending on disease type, stage and donor match. Outcomes are benchmarked against international registries (CIBMTR) and continuously audited for quality."
-  - question: "Can international patients find a bone marrow donor match in India?"
-    answer: "Yes. Our partner hospitals access local donor registries, perform HLA typing for family members, and coordinate with international registries (BMDW, NMDP) when needed. Haploidentical (half-matched) transplants are also offered for patients without a fully matched donor, which is especially valuable for patients from regions with smaller donor registries."
-  - question: "Is CAR-T cell therapy available for international patients in India?"
-    answer: "Yes. CAR-T cell therapy is available for relapsed/refractory B-cell acute lymphoblastic leukemia (ALL), diffuse large B-cell lymphoma (DLBCL) and multiple myeloma. Both imported commercial CAR-T products and locally manufactured products (under clinical trial protocols) are offered, with dedicated cellular therapy units and long-term follow-up."
-  - question: "Can children with thalassemia or sickle cell disease get a cure through transplant in India?"
-    answer: "Yes. Bone marrow transplant is the only established curative treatment for thalassemia major and sickle cell disease. Our partner hospitals have dedicated paediatric BMT programmes with experienced paediatric haematologists, low transplant-related mortality for matched-sibling donor transplants, and structured long-term follow-up for children."
-  - question: "What is the cost of a bone marrow transplant in India compared to Western countries?"
-    answer: "Autologous BMT in India costs approximately $15,000-$25,000 and allogeneic BMT $25,000-$55,000, compared with $200,000-$500,000 in the USA or £150,000-£300,000 in the UK — a saving of 70-85% without compromising on quality, donor matching or post-transplant care."
-summary: "Bone marrow transplant and hematology care in Bangalore treats blood cancers and inherited blood disorders at JCI-accredited BMT units with CAR-T therapy and haploidentical transplant options. Costs range from $15,000 to $55,000, offering 70-85% savings compared to Western countries."
+  - question: 'What is the success rate of bone marrow transplants at your partner hospitals in India?'
+    answer: 'Our partner hospitals perform over 300 bone marrow transplants annually with success rates of 70-90% for autologous transplants and 60-80% for allogeneic transplants, depending on disease type, stage and donor match. Outcomes are benchmarked against international registries (CIBMTR) and continuously audited for quality.'
+  - question: 'Can international patients find a bone marrow donor match in India?'
+    answer: 'Yes. Our partner hospitals access local donor registries, perform HLA typing for family members, and coordinate with international registries (BMDW, NMDP) when needed. Haploidentical (half-matched) transplants are also offered for patients without a fully matched donor, which is especially valuable for patients from regions with smaller donor registries.'
+  - question: 'Is CAR-T cell therapy available for international patients in India?'
+    answer: 'Yes. CAR-T cell therapy is available for relapsed/refractory B-cell acute lymphoblastic leukemia (ALL), diffuse large B-cell lymphoma (DLBCL) and multiple myeloma. Both imported commercial CAR-T products and locally manufactured products (under clinical trial protocols) are offered, with dedicated cellular therapy units and long-term follow-up.'
+  - question: 'Can children with thalassemia or sickle cell disease get a cure through transplant in India?'
+    answer: 'Yes. Bone marrow transplant is the only established curative treatment for thalassemia major and sickle cell disease. Our partner hospitals have dedicated paediatric BMT programmes with experienced paediatric haematologists, low transplant-related mortality for matched-sibling donor transplants, and structured long-term follow-up for children.'
+  - question: 'What is the cost of a bone marrow transplant in India compared to Western countries?'
+    answer: 'Autologous BMT in India costs approximately $15,000-$25,000 and allogeneic BMT $25,000-$55,000, compared with $200,000-$500,000 in the USA or £150,000-£300,000 in the UK — a saving of 70-85% without compromising on quality, donor matching or post-transplant care.'
+summary: 'Bone marrow transplant and hematology care in Bangalore treats blood cancers and inherited blood disorders at JCI-accredited BMT units with CAR-T therapy and haploidentical transplant options. Costs range from $15,000 to $55,000, offering 70-85% savings compared to Western countries.'
 eligibility:
-  - "Confirmed diagnosis of a blood cancer or inherited blood disorder requiring transplant or specialized hematology care"
-  - "Suitable donor identified or eligible for haploidentical (half-matched) transplant"
-  - "Adequate organ function and fitness for conditioning chemotherapy"
-  - "Disease in a treatable stage (remission or controlled disease preferred for transplant)"
-  - "Ability to stay in Bangalore for 4-6 weeks inpatient plus initial follow-up"
+  - 'Confirmed diagnosis of a blood cancer or inherited blood disorder requiring transplant or specialized hematology care'
+  - 'Suitable donor identified or eligible for haploidentical (half-matched) transplant'
+  - 'Adequate organ function and fitness for conditioning chemotherapy'
+  - 'Disease in a treatable stage (remission or controlled disease preferred for transplant)'
+  - 'Ability to stay in Bangalore for 4-6 weeks inpatient plus initial follow-up'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy, stem cell infusion, and monitoring for engraftment and early complications in a HEPA-filtered BMT unit"
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Post-discharge monitoring for engraftment, infection prevention, and initial immune recovery with close blood count surveillance"
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual return to daily activities with continued infection precautions and tele-medicine follow-up"
-  - phase: "Full recovery"
-    duration: "3-12 months"
-    description: "Complete immune reconstitution, resumption of normal activities, and long-term survivorship monitoring"
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy, stem cell infusion, and monitoring for engraftment and early complications in a HEPA-filtered BMT unit'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Post-discharge monitoring for engraftment, infection prevention, and initial immune recovery with close blood count surveillance'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual return to daily activities with continued infection precautions and tele-medicine follow-up'
+  - phase: 'Full recovery'
+    duration: '3-12 months'
+    description: 'Complete immune reconstitution, resumption of normal activities, and long-term survivorship monitoring'
 risks:
-  - "Graft-versus-host disease (GVHD) in allogeneic transplants"
-  - "Infection during the neutropenic phase and first 100 days post-transplant"
-  - "Graft failure or rejection of donor stem cells"
-  - "Organ toxicity from conditioning chemotherapy (liver, lung, kidney)"
-  - "Delayed immune reconstitution increasing long-term infection risk"
+  - 'Graft-versus-host disease (GVHD) in allogeneic transplants'
+  - 'Infection during the neutropenic phase and first 100 days post-transplant'
+  - 'Graft failure or rejection of donor stem cells'
+  - 'Organ toxicity from conditioning chemotherapy (liver, lung, kidney)'
+  - 'Delayed immune reconstitution increasing long-term infection risk'
 relatedTreatmentSlugs:
-  - "cancer-treatment"
-  - "organ-treatment"
+  - 'cancer-treatment'
+  - 'organ-treatment'
 ---
 
 ## Overview
@@ -181,13 +181,13 @@ Two treatment pathways based on age, severity and donor availability:
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Bone Marrow Transplant) | vs India |
-|---------|-------------------------------------------|----------|
-| India (Bangalore) | $15,000 – $55,000 | Baseline |
-| USA | $200,000 – $500,000 | ~10× higher |
-| UK | £150,000 – £300,000 | ~6.4× higher |
-| Singapore | $120,000 – $250,000 | ~5.3× higher |
-| Thailand | $80,000 – $180,000 | ~3.7× higher |
+| Country           | Approximate Cost (Bone Marrow Transplant) | vs India     |
+| ----------------- | ----------------------------------------- | ------------ |
+| India (Bangalore) | $15,000 – $55,000                         | Baseline     |
+| USA               | $200,000 – $500,000                       | ~10× higher  |
+| UK                | £150,000 – £300,000                       | ~6.4× higher |
+| Singapore         | $120,000 – $250,000                       | ~5.3× higher |
+| Thailand          | $80,000 – $180,000                        | ~3.7× higher |
 
 ## Why Choose Bangalore for Hematology & BMT?
 

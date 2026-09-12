@@ -51,13 +51,13 @@ const BlogCard = React.forwardRef<HTMLAnchorElement, BlogCardProps>(
           )}
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-ink/50">
+          <p className="text-ink/50 mb-2 text-xs font-medium uppercase tracking-wider">
             {post.date}
           </p>
           <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-ink group-hover:text-ink-strong">
             {post.title}
           </h3>
-          <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-ink/60">
+          <p className="text-ink/60 mb-4 line-clamp-3 flex-1 text-sm leading-relaxed">
             {post.excerpt}
           </p>
           <span className="text-sm font-semibold text-ink group-hover:underline">

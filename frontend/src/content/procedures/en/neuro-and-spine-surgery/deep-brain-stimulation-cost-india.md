@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Deep Brain Stimulation (DBS)"
-seoHeadline: "Deep Brain Stimulation (DBS) Cost in India for International Patients"
+name: 'Deep Brain Stimulation (DBS)'
+seoHeadline: 'Deep Brain Stimulation (DBS) Cost in India for International Patients'
 parentTreatmentSlug: neuro-and-spine-surgery
 summary: "Deep Brain Stimulation (DBS) surgery in India costs between $15,000 and $35,000, offering international patients access to advanced neuromodulation therapy for Parkinson's disease, essential tremor, and dystonia. Bangalore's leading neurosurgery centres provide expert DBS implantation using Medtronic and Boston Scientific devices, with comprehensive programming and follow-up care."
 description: "Affordable Deep Brain Stimulation (DBS) surgery in India starting at $15,000. Compare costs, recovery timeline, and top neurosurgery hospitals in Bangalore for Parkinson's, essential tremor, and dystonia."
-fromPrice: "$15,000"
-toPrice: "$35,000"
-duration: "4-6 weeks"
-hospitalStay: "5-10 days"
-recoveryTime: "4-8 weeks"
+fromPrice: '$15,000'
+toPrice: '$35,000'
+duration: '4-6 weeks'
+hospitalStay: '5-10 days'
+recoveryTime: '4-8 weeks'
 eligibility:
   - "Confirmed diagnosis of Parkinson's disease, essential tremor, or dystonia by a neurologist"
-  - "Inadequate symptom control despite optimised medication therapy or disabling medication side effects"
+  - 'Inadequate symptom control despite optimised medication therapy or disabling medication side effects'
   - "Significant improvement in symptoms during a levodopa challenge test (for Parkinson's patients)"
-  - "No severe cognitive impairment or untreated psychiatric conditions"
-  - "Realistic expectations about symptom improvement and commitment to long-term follow-up and programming"
+  - 'No severe cognitive impairment or untreated psychiatric conditions'
+  - 'Realistic expectations about symptom improvement and commitment to long-term follow-up and programming'
 costInclusions:
-  - "Neurosurgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants and hardware (where applicable — screws, cages, DBS device)"
-  - "Pre-operative diagnostics (MRI, CT, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Neurosurgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants and hardware (where applicable — screws, cages, DBS device)'
+  - 'Pre-operative diagnostics (MRI, CT, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy/neuro-rehab post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy/neuro-rehab post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "5-10 days"
-    description: "Recovery from electrode implantation and pulse generator placement, with wound care, pain management, and initial neurological assessment."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Stitch removal, initial DBS programming session, and medication adjustment under the supervision of a movement disorder specialist."
-  - phase: "Return home"
-    duration: "Week 3-4"
+  - phase: 'Hospital stay'
+    duration: '5-10 days'
+    description: 'Recovery from electrode implantation and pulse generator placement, with wound care, pain management, and initial neurological assessment.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Stitch removal, initial DBS programming session, and medication adjustment under the supervision of a movement disorder specialist.'
+  - phase: 'Return home'
+    duration: 'Week 3-4'
     description: "Continued gradual recovery with remote programming support and coordination with the patient's home-country neurologist for ongoing care."
-  - phase: "Full recovery"
-    duration: "4-8 weeks"
-    description: "Optimised DBS settings achieved through multiple programming sessions, with significant symptom improvement and reduced medication requirements."
+  - phase: 'Full recovery'
+    duration: '4-8 weeks'
+    description: 'Optimised DBS settings achieved through multiple programming sessions, with significant symptom improvement and reduced medication requirements.'
 risks:
-  - "Infection of the DBS hardware or surgical site requiring device removal"
-  - "Bleeding or haematoma in the brain during electrode placement"
-  - "Hardware complications such as lead fracture, migration, or battery failure"
-  - "Side effects from stimulation including paraesthesia, mood changes, or motor disturbances"
-  - "Worsening of speech, balance, or cognition in some patients"
+  - 'Infection of the DBS hardware or surgical site requiring device removal'
+  - 'Bleeding or haematoma in the brain during electrode placement'
+  - 'Hardware complications such as lead fracture, migration, or battery failure'
+  - 'Side effects from stimulation including paraesthesia, mood changes, or motor disturbances'
+  - 'Worsening of speech, balance, or cognition in some patients'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-murali-mohan
 
 relatedProcedureSlugs:
-  - "brain-tumor-surgery-cost-india"
-  - "spinal-fusion-surgery-cost-india"
+  - 'brain-tumor-surgery-cost-india'
+  - 'spinal-fusion-surgery-cost-india'
 faqs:
-  - question: "How much does Deep Brain Stimulation (DBS) surgery cost in India?"
-    answer: "DBS surgery in India costs between $15,000 and $35,000 depending on the device manufacturer (Medtronic, Boston Scientific, or Abbott), the number of leads implanted, and the length of hospital stay. This is roughly 75% lower than in the USA."
-  - question: "Which conditions can be treated with DBS?"
+  - question: 'How much does Deep Brain Stimulation (DBS) surgery cost in India?'
+    answer: 'DBS surgery in India costs between $15,000 and $35,000 depending on the device manufacturer (Medtronic, Boston Scientific, or Abbott), the number of leads implanted, and the length of hospital stay. This is roughly 75% lower than in the USA.'
+  - question: 'Which conditions can be treated with DBS?'
     answer: "DBS is primarily used for Parkinson's disease, essential tremor, and dystonia. It is also being explored for epilepsy, obsessive-compulsive disorder, and other neurological conditions in selected cases."
-  - question: "How long does the DBS battery last and when is it replaced?"
+  - question: 'How long does the DBS battery last and when is it replaced?'
     answer: "The implantable pulse generator battery typically lasts 3-5 years for non-rechargeable devices and up to 15-25 years for rechargeable models. Battery replacement is a minor day-surgery procedure that can be performed in India or the patient's home country."
 ---
+
 ## Overview
 
 If you or a loved one is living with Parkinson's disease, essential tremor or dystonia, you know how deeply these conditions can affect daily life. The tremor that makes it impossible to hold a cup of tea. The rigidity that turns a simple walk into a struggle. The involuntary movements that draw stares from strangers. If medications are no longer controlling your symptoms — or if the side effects have become nearly as disabling as the disease itself — you may be wondering whether there is another option. Deep Brain Stimulation (DBS) is not a cure, but for the right patient, it can be genuinely life-changing.
@@ -137,15 +138,16 @@ You are typically advised to have follow-up programming sessions every 3–6 mon
 Before proceeding with DBS, you should ensure that all reasonable medication options have been explored. For Parkinson's disease, this includes optimising levodopa dosing, adding adjuncts such as MAO-B inhibitors, COMT inhibitors or dopamine agonists, and considering advanced delivery methods such as levodopa-carbidopa intestinal gel (LCIG) or apomorphine infusion.
 
 For essential tremor, medication options include propranolol, primidone, gabapentin and topiramate, as well as botulinum toxin injections. Focused ultrasound thalamotomy (MRgFUS) is a newer non-invasive alternative that uses focused sound waves to create a lesion in the thalamus, providing tremor reduction without an implanted device — though it is irreversible and typically unilateral. For dystonia, treatment alternatives include botulinum toxin injections, oral medications and intrathecal baclofen pumps. Khan Meditour can arrange consultations with the movement disorder team in Bangalore to discuss all available options.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $15,000 – $35,000 | Baseline |
-| USA | $60,000 – $150,000 | ~4.2x higher |
-| UK | £30,000 – £70,000 | ~4.2x higher |
-| Singapore | $40,000 – $80,000 | ~2.4x higher |
-| Thailand | $25,000 – $50,000 | ~1.5x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $15,000 – $35,000  | Baseline     |
+| USA               | $60,000 – $150,000 | ~4.2x higher |
+| UK                | £30,000 – £70,000  | ~4.2x higher |
+| Singapore         | $40,000 – $80,000  | ~2.4x higher |
+| Thailand          | $25,000 – $50,000  | ~1.5x higher |
 
 The cost variation within India is driven by the device manufacturer chosen, the number of leads implanted (unilateral versus bilateral) and the length of your hospital and programming stay. A bilateral STN-DBS with a rechargeable pulse generator will be at the higher end, while a unilateral thalamic DBS for essential tremor with a non-rechargeable device will be at the lower end. Even at the upper end, the cost is approximately 75% lower than in the USA or UK.
 

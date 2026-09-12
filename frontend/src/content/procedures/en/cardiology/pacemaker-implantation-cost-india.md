@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Pacemaker Implantation"
-seoHeadline: "Pacemaker Implantation Cost in India for International Patients"
+name: 'Pacemaker Implantation'
+seoHeadline: 'Pacemaker Implantation Cost in India for International Patients'
 parentTreatmentSlug: cardiology
-summary: "Pacemaker implantation in India costs between $3,000 and $7,000, offering savings of up to 80% compared to Western countries. The procedure implants a small electronic device under the skin to regulate slow or irregular heartbeats and restore a normal heart rhythm."
-description: "Pacemaker Implantation in India from $3,000–$7,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices."
-fromPrice: "$3,000"
-toPrice: "$7,000"
-duration: "1-2 weeks"
-hospitalStay: "1-3 days"
-recoveryTime: "2-4 weeks"
+summary: 'Pacemaker implantation in India costs between $3,000 and $7,000, offering savings of up to 80% compared to Western countries. The procedure implants a small electronic device under the skin to regulate slow or irregular heartbeats and restore a normal heart rhythm.'
+description: 'Pacemaker Implantation in India from $3,000–$7,000 at accredited Bangalore hospitals. Save up to 80% versus US/UK prices.'
+fromPrice: '$3,000'
+toPrice: '$7,000'
+duration: '1-2 weeks'
+hospitalStay: '1-3 days'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Symptomatic bradycardia (slow heart rate) causing dizziness, fatigue, or syncope"
-  - "High-grade atrioventricular (AV) block including complete heart block"
-  - "Sick sinus syndrome with symptomatic pauses or chronotropic incompetence"
-  - "Atrial fibrillation with slow ventricular response requiring rate support"
-  - "Syncope of suspected cardiac origin with documented conduction abnormality on monitoring"
+  - 'Symptomatic bradycardia (slow heart rate) causing dizziness, fatigue, or syncope'
+  - 'High-grade atrioventricular (AV) block including complete heart block'
+  - 'Sick sinus syndrome with symptomatic pauses or chronotropic incompetence'
+  - 'Atrial fibrillation with slow ventricular response requiring rate support'
+  - 'Syncope of suspected cardiac origin with documented conduction abnormality on monitoring'
 costInclusions:
-  - "Cardiac surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants (stents, valves, pacemaker where applicable)"
-  - "Pre-operative diagnostics (angiogram, echo, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Cardiac surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants (stents, valves, pacemaker where applicable)'
+  - 'Pre-operative diagnostics (angiogram, echo, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Cardiac rehabilitation program post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Cardiac rehabilitation program post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-3 days"
-    description: "Monitoring in the cardiac care unit, device interrogation to confirm proper pacing function, and observation of the pocket site for bleeding or haematoma."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Wound review, pacemaker interrogation and programming optimisation, and activity guidance before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Continue arm movement restrictions on the implant side, attend wound check, and schedule a pacemaker check with your local cardiologist."
-  - phase: "Full recovery"
-    duration: "2-4 weeks"
-    description: "Wound healing is complete and most patients resume normal activities; lifelong pacemaker surveillance is required at regular intervals."
+  - phase: 'Hospital stay'
+    duration: '1-3 days'
+    description: 'Monitoring in the cardiac care unit, device interrogation to confirm proper pacing function, and observation of the pocket site for bleeding or haematoma.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Wound review, pacemaker interrogation and programming optimisation, and activity guidance before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Continue arm movement restrictions on the implant side, attend wound check, and schedule a pacemaker check with your local cardiologist.'
+  - phase: 'Full recovery'
+    duration: '2-4 weeks'
+    description: 'Wound healing is complete and most patients resume normal activities; lifelong pacemaker surveillance is required at regular intervals.'
 risks:
-  - "Pacemaker pocket infection requiring antibiotics and possible device extraction"
-  - "Lead dislodgement or fracture requiring repositioning or replacement"
-  - "Pneumothorax (collapsed lung) from subclavian vein access requiring chest drain"
-  - "Bleeding or haematoma at the pacemaker pocket site"
-  - "Device malfunction or premature battery depletion requiring generator change"
+  - 'Pacemaker pocket infection requiring antibiotics and possible device extraction'
+  - 'Lead dislodgement or fracture requiring repositioning or replacement'
+  - 'Pneumothorax (collapsed lung) from subclavian vein access requiring chest drain'
+  - 'Bleeding or haematoma at the pacemaker pocket site'
+  - 'Device malfunction or premature battery depletion requiring generator change'
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-mahadev-swamy-b
 
 relatedProcedureSlugs:
-  - "angioplasty-stent-placement-cost-india"
-  - "heart-bypass-surgery-cabg-cost-india"
+  - 'angioplasty-stent-placement-cost-india'
+  - 'heart-bypass-surgery-cabg-cost-india'
 faqs:
-  - question: "How long does a pacemaker battery last?"
-    answer: "Pacemaker batteries typically last 6-10 years depending on the device type, pacing dependency, and programming settings. When the battery approaches end of life, a generator change procedure is performed under local anaesthesia to replace the pacemaker box while keeping the existing leads in place."
-  - question: "Can I use electronic devices with a pacemaker?"
-    answer: "Modern pacemakers are well shielded against everyday electronic devices including mobile phones, microwaves, and computers. You should keep mobile phones at least 15cm from the device and avoid strong electromagnetic fields such as MRI scanners (unless your device is MRI-conditional), arc welding equipment, and high-voltage power lines."
-  - question: "What is the difference between single-chamber and dual-chamber pacemakers?"
-    answer: "Single-chamber pacemakers have one lead placed in either the right atrium or right ventricle, suitable for patients with isolated sinus node or AV node disease. Dual-chamber pacemakers have leads in both the atrium and ventricle, providing more physiological pacing that maintains atrioventricular synchrony. Your cardiologist will recommend the appropriate type based on your conduction disease."
+  - question: 'How long does a pacemaker battery last?'
+    answer: 'Pacemaker batteries typically last 6-10 years depending on the device type, pacing dependency, and programming settings. When the battery approaches end of life, a generator change procedure is performed under local anaesthesia to replace the pacemaker box while keeping the existing leads in place.'
+  - question: 'Can I use electronic devices with a pacemaker?'
+    answer: 'Modern pacemakers are well shielded against everyday electronic devices including mobile phones, microwaves, and computers. You should keep mobile phones at least 15cm from the device and avoid strong electromagnetic fields such as MRI scanners (unless your device is MRI-conditional), arc welding equipment, and high-voltage power lines.'
+  - question: 'What is the difference between single-chamber and dual-chamber pacemakers?'
+    answer: 'Single-chamber pacemakers have one lead placed in either the right atrium or right ventricle, suitable for patients with isolated sinus node or AV node disease. Dual-chamber pacemakers have leads in both the atrium and ventricle, providing more physiological pacing that maintains atrioventricular synchrony. Your cardiologist will recommend the appropriate type based on your conduction disease.'
 ---
+
 ## Overview
 
 If you have been experiencing dizzy spells, unexplained fatigue, or episodes of fainting, and your doctor has told you that your heart rate is too slow, you may be feeling frightened and confused. You are probably wondering what is wrong with your heart's electrical system and whether a pacemaker will really help. Take a breath — a pacemaker is one of the most reliable and life-changing devices in modern medicine. It is small, it is safe, and it can give you back the energy and stability that slow heart rhythms have taken away.
@@ -137,15 +138,16 @@ Remote monitoring, if available with your device, enables automatic transmission
 If your bradycardia is caused by medications such as beta-blockers or calcium channel blockers, adjusting or discontinuing the offending drug may resolve the problem without a pacemaker. Reversible causes such as electrolyte disturbances, hypothyroidism or transient ischaemia should be excluded before committing to a permanent device.
 
 If you have heart failure and conduction disease, cardiac resynchronisation therapy (CRT) with a biventricular pacemaker may be more appropriate than a conventional device. If you are at risk of life-threatening ventricular arrhythmias, an implantable cardioverter-defibrillator (ICD) provides both pacing and shock therapy. Your Bangalore electrophysiologist will evaluate your specific condition and recommend the most suitable device.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $3,000 – $7,000 | Baseline |
-| USA | $20,000 – $50,000 | ~7.0x higher |
-| UK | £8,000 – £15,000 | ~3.0x higher |
-| Singapore | $12,000 – $20,000 | ~3.2x higher |
-| Thailand | $6,000 – $11,000 | ~1.7x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $3,000 – $7,000   | Baseline     |
+| USA               | $20,000 – $50,000 | ~7.0x higher |
+| UK                | £8,000 – £15,000  | ~3.0x higher |
+| Singapore         | $12,000 – $20,000 | ~3.2x higher |
+| Thailand          | $6,000 – $11,000  | ~1.7x higher |
 
 The cost variation reflects the device type chosen. Single-chamber pacemakers sit at the lower end, while dual-chamber and MRI-conditional devices with advanced features reach the upper end. The package typically includes the device, leads, implantation procedure, hospital stay and pre-operative diagnostics. Even with a premium dual-chamber MRI-conditional device, your total cost in Bangalore remains significantly below the price of a basic single-chamber system in the United States.
 
@@ -163,4 +165,3 @@ The cost variation reflects the device type chosen. Single-chamber pacemakers si
 You will travel to Bangalore on a Medical Visa (e-Medical Visa available for citizens of 160+ countries), typically granted within 48–72 hours. The visa is valid for up to one year with triple entry, allowing follow-up visits for device checks if needed. Khan Meditour assists with the visa invitation letter, hospital scheduling and ground logistics.
 
 You will be received at Kempegowda International Airport by a private driver and transferred to the hospital. We recommend arriving 2–3 days before the procedure to complete pre-operative electrocardiography, Holter monitoring review, echocardiography and electrophysiology consultation. Plan a 7–10 day stay in Bangalore for the procedure, hospital stay and device programming before flying home with a fitness-to-fly certificate.
-

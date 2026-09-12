@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Canadian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Toronto to India for treatment: medical visa requirements, flight routes, cost comparisons in Canadian dollars, and choosing the right hospital for Canadian families."
+excerpt: 'Travelling from Toronto to India for treatment: medical visa requirements, flight routes, cost comparisons in Canadian dollars, and choosing the right hospital for Canadian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-26
@@ -32,13 +32,13 @@ Patients from Canada increasingly travel to India for medical treatment, seeking
 
 For Canadian families facing long provincial wait times or high private costs south of the border, the savings are significant. Indicative package prices (at roughly 1.36 CAD per US dollar):
 
-| Treatment | India (USD) | Approx. CAD | Canada | USA |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | C$6,120–16,320 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | C$3,400–10,880 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | C$4,080–34,000 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | C$5,440–16,320 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | C$4,760–9,520 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. CAD    | Canada | USA        |
+| -------------------- | ------------- | -------------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | C$6,120–16,320 | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | C$3,400–10,880 | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | C$4,080–34,000 | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | C$5,440–16,320 | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | C$4,760–9,520  | Higher | Far higher |
 
 Knee and hip replacement is among the most common procedures Canadian patients travel for, with package prices often a fraction of US private surgery costs and far shorter waits than provincial queues.
 

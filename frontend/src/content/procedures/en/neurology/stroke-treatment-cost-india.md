@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Stroke Treatment"
-seoHeadline: "Stroke Treatment Cost in India for International Patients"
+name: 'Stroke Treatment'
+seoHeadline: 'Stroke Treatment Cost in India for International Patients'
 parentTreatmentSlug: neurology
 summary: "Stroke treatment in India costs $5,000–$20,000 for a comprehensive programme including emergency intervention, diagnostic imaging, acute medical management, and rehabilitation. Bangalore's accredited hospitals offer advanced thrombolysis, mechanical thrombectomy, neurocritical care, and stroke rehabilitation at savings of up to 90% compared to Western countries."
-description: "Comprehensive stroke treatment in India from $5,000–$20,000 at accredited Bangalore hospitals. Emergency thrombolysis, thrombectomy, neurocritical care, and stroke rehabilitation."
-fromPrice: "$5,000"
-toPrice: "$20,000"
-duration: "2-6 weeks (acute care and rehabilitation)"
-hospitalStay: "5-14 days (acute phase)"
-recoveryTime: "3-12 months"
+description: 'Comprehensive stroke treatment in India from $5,000–$20,000 at accredited Bangalore hospitals. Emergency thrombolysis, thrombectomy, neurocritical care, and stroke rehabilitation.'
+fromPrice: '$5,000'
+toPrice: '$20,000'
+duration: '2-6 weeks (acute care and rehabilitation)'
+hospitalStay: '5-14 days (acute phase)'
+recoveryTime: '3-12 months'
 eligibility:
-  - "Confirmed stroke diagnosis (ischaemic or haemorrhagic) with neuroimaging evidence"
-  - "Acute presentation within therapeutic window for thrombolysis or thrombectomy"
-  - "Stable cardiovascular status to tolerate acute interventions and rehabilitation"
-  - "Adequate overall health to participate in neurorehabilitation programme"
-  - "Realistic recovery goals established by the multidisciplinary stroke team"
+  - 'Confirmed stroke diagnosis (ischaemic or haemorrhagic) with neuroimaging evidence'
+  - 'Acute presentation within therapeutic window for thrombolysis or thrombectomy'
+  - 'Stable cardiovascular status to tolerate acute interventions and rehabilitation'
+  - 'Adequate overall health to participate in neurorehabilitation programme'
+  - 'Realistic recovery goals established by the multidisciplinary stroke team'
 costInclusions:
-  - "Neurologist and stroke specialist consultation fees"
-  - "Diagnostic workup (CT brain, MRI brain, CT angiography, carotid Doppler, blood tests)"
-  - "Emergency interventions (intravenous thrombolysis, mechanical thrombectomy where indicated)"
-  - "Neurocritical care or stroke unit charges during hospital stay"
-  - "Inpatient rehabilitation (physiotherapy, occupational therapy, speech therapy)"
-  - "Medication costs during hospital stay (antiplatelets, anticoagulants, antihypertensives)"
-  - "Airport pickup and drop"
+  - 'Neurologist and stroke specialist consultation fees'
+  - 'Diagnostic workup (CT brain, MRI brain, CT angiography, carotid Doppler, blood tests)'
+  - 'Emergency interventions (intravenous thrombolysis, mechanical thrombectomy where indicated)'
+  - 'Neurocritical care or stroke unit charges during hospital stay'
+  - 'Inpatient rehabilitation (physiotherapy, occupational therapy, speech therapy)'
+  - 'Medication costs during hospital stay (antiplatelets, anticoagulants, antihypertensives)'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term medication costs post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term medication costs post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Acute stabilisation"
-    duration: "3-7 days"
-    description: "Emergency evaluation, neuroimaging, acute intervention (thrombolysis or thrombectomy if eligible), and stabilisation in the stroke unit or neurocritical care with continuous monitoring of neurological status and vital signs."
-  - phase: "Inpatient rehabilitation"
-    duration: "1-3 weeks"
-    description: "Structured multidisciplinary rehabilitation including physiotherapy, occupational therapy, speech and language therapy, and swallowing assessment to begin functional recovery while still in hospital."
-  - phase: "Bangalore outpatient rehabilitation"
-    duration: "1-3 weeks"
-    description: "Continued intensive rehabilitation as an outpatient, with progress assessment, medication optimisation, and secondary stroke prevention planning before transitioning to home-based care."
-  - phase: "Full recovery"
-    duration: "3-12 months"
-    description: "Gradual neurological and functional recovery continuing at home with local rehabilitation, medication adherence, lifestyle modifications, and periodic return visits or remote follow-up."
+  - phase: 'Acute stabilisation'
+    duration: '3-7 days'
+    description: 'Emergency evaluation, neuroimaging, acute intervention (thrombolysis or thrombectomy if eligible), and stabilisation in the stroke unit or neurocritical care with continuous monitoring of neurological status and vital signs.'
+  - phase: 'Inpatient rehabilitation'
+    duration: '1-3 weeks'
+    description: 'Structured multidisciplinary rehabilitation including physiotherapy, occupational therapy, speech and language therapy, and swallowing assessment to begin functional recovery while still in hospital.'
+  - phase: 'Bangalore outpatient rehabilitation'
+    duration: '1-3 weeks'
+    description: 'Continued intensive rehabilitation as an outpatient, with progress assessment, medication optimisation, and secondary stroke prevention planning before transitioning to home-based care.'
+  - phase: 'Full recovery'
+    duration: '3-12 months'
+    description: 'Gradual neurological and functional recovery continuing at home with local rehabilitation, medication adherence, lifestyle modifications, and periodic return visits or remote follow-up.'
 risks:
-  - "Recurrent stroke despite treatment requiring ongoing medical management"
-  - "Complications from thrombolysis including bleeding, particularly intracranial haemorrhage"
-  - "Neurological deficits persisting after treatment including weakness, speech difficulties, or cognitive impairment"
-  - "Post-stroke complications including pneumonia, deep vein thrombosis, pressure ulcers, or contractures"
-  - "Medication side effects from antiplatelets, anticoagulants, or antihypertensives"
+  - 'Recurrent stroke despite treatment requiring ongoing medical management'
+  - 'Complications from thrombolysis including bleeding, particularly intracranial haemorrhage'
+  - 'Neurological deficits persisting after treatment including weakness, speech difficulties, or cognitive impairment'
+  - 'Post-stroke complications including pneumonia, deep vein thrombosis, pressure ulcers, or contractures'
+  - 'Medication side effects from antiplatelets, anticoagulants, or antihypertensives'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,15 +58,15 @@ relatedDoctorSlugs:
   - dr-nithin-kumar-n
 
 relatedProcedureSlugs:
-  - "epilepsy-treatment-cost-india"
-  - "deep-brain-stimulation-cost-india"
+  - 'epilepsy-treatment-cost-india'
+  - 'deep-brain-stimulation-cost-india'
 faqs:
-  - question: "What treatment options are available for stroke in India?"
-    answer: "Bangalore hospitals offer the full spectrum of stroke treatment including intravenous thrombolysis (clot-busting medication) for ischaemic stroke presented within the therapeutic window, mechanical thrombectomy for large vessel occlusion, neurocritical care for haemorrhagic stroke, and comprehensive stroke rehabilitation. The treatment plan is personalised based on stroke type, location, severity, and time of onset. Secondary prevention including antiplatelet therapy, anticoagulation, blood pressure management, and lifestyle modification is an integral part of the programme."
-  - question: "How long does stroke treatment and rehabilitation take in India?"
-    answer: "The acute hospital stay typically ranges from 5 to 14 days depending on stroke severity and whether interventions like thrombolysis or thrombectomy were performed. Inpatient rehabilitation continues for 1 to 3 weeks, followed by outpatient rehabilitation. The total Bangalore stay is usually 3 to 6 weeks. Long-term rehabilitation continues at home, and Khan Meditour can arrange remote consultations with your Bangalore stroke team for ongoing guidance."
-  - question: "Can I travel to India after having a stroke for rehabilitation?"
-    answer: "Yes, many international patients travel to Bangalore for stroke rehabilitation after the acute phase has stabilised. A comprehensive assessment is performed on arrival to determine your rehabilitation needs. If you are still in the acute phase, emergency evacuation protocols can be discussed. Khan Meditour assists with medical visa arrangements, airport transfers with medical support, and accommodation for family members during your rehabilitation stay."
+  - question: 'What treatment options are available for stroke in India?'
+    answer: 'Bangalore hospitals offer the full spectrum of stroke treatment including intravenous thrombolysis (clot-busting medication) for ischaemic stroke presented within the therapeutic window, mechanical thrombectomy for large vessel occlusion, neurocritical care for haemorrhagic stroke, and comprehensive stroke rehabilitation. The treatment plan is personalised based on stroke type, location, severity, and time of onset. Secondary prevention including antiplatelet therapy, anticoagulation, blood pressure management, and lifestyle modification is an integral part of the programme.'
+  - question: 'How long does stroke treatment and rehabilitation take in India?'
+    answer: 'The acute hospital stay typically ranges from 5 to 14 days depending on stroke severity and whether interventions like thrombolysis or thrombectomy were performed. Inpatient rehabilitation continues for 1 to 3 weeks, followed by outpatient rehabilitation. The total Bangalore stay is usually 3 to 6 weeks. Long-term rehabilitation continues at home, and Khan Meditour can arrange remote consultations with your Bangalore stroke team for ongoing guidance.'
+  - question: 'Can I travel to India after having a stroke for rehabilitation?'
+    answer: 'Yes, many international patients travel to Bangalore for stroke rehabilitation after the acute phase has stabilised. A comprehensive assessment is performed on arrival to determine your rehabilitation needs. If you are still in the acute phase, emergency evacuation protocols can be discussed. Khan Meditour assists with medical visa arrangements, airport transfers with medical support, and accommodation for family members during your rehabilitation stay.'
 ---
 
 ## Overview
@@ -105,19 +105,19 @@ Stroke treatment is not a single procedure — it is a comprehensive programme s
 
 **For acute ischaemic stroke**, the treatment pathway depends on the time since symptom onset and the location of the blockage:
 
-*Intravenous thrombolysis* involves administering a clot-busting medication called alteplase (tPA) or tenecteplase through an IV line. This dissolves the clot and restores blood flow. It is most effective within 4.5 hours of symptom onset and can significantly reduce disability if administered promptly. The medication is infused over one hour, with close neurological and vital sign monitoring throughout.
+_Intravenous thrombolysis_ involves administering a clot-busting medication called alteplase (tPA) or tenecteplase through an IV line. This dissolves the clot and restores blood flow. It is most effective within 4.5 hours of symptom onset and can significantly reduce disability if administered promptly. The medication is infused over one hour, with close neurological and vital sign monitoring throughout.
 
-*Mechanical thrombectomy* is an endovascular procedure for large vessel occlusion in the anterior circulation. An interventional neuroradiologist threads a catheter through an artery in the groin up to the blocked brain artery, then uses a stent retriever or aspiration device to physically remove the clot. This can be performed up to 24 hours after symptom onset in selected patients with favourable imaging profiles. The procedure is performed under sedation or general anaesthesia and typically takes 30 to 90 minutes.
+_Mechanical thrombectomy_ is an endovascular procedure for large vessel occlusion in the anterior circulation. An interventional neuroradiologist threads a catheter through an artery in the groin up to the blocked brain artery, then uses a stent retriever or aspiration device to physically remove the clot. This can be performed up to 24 hours after symptom onset in selected patients with favourable imaging profiles. The procedure is performed under sedation or general anaesthesia and typically takes 30 to 90 minutes.
 
 **For acute haemorrhagic stroke**, treatment focuses on controlling blood pressure, reducing intracranial pressure, and addressing the source of bleeding. For ruptured aneurysms, **endovascular coil embolisation** or **surgical clipping** may be performed. For large haematomas causing pressure on the brain, **surgical decompression** or **haematoma evacuation** may be necessary.
 
 **For stroke rehabilitation**, the programme is delivered by a multidisciplinary team and typically includes:
 
-*Physiotherapy* focuses on restoring mobility, strength, balance, and coordination. Sessions are tailored to your specific deficits — hemiparesis (weakness on one side), gait disturbance, or balance problems. Techniques include progressive exercise, gait training, constraint-induced movement therapy, and functional electrical stimulation.
+_Physiotherapy_ focuses on restoring mobility, strength, balance, and coordination. Sessions are tailored to your specific deficits — hemiparesis (weakness on one side), gait disturbance, or balance problems. Techniques include progressive exercise, gait training, constraint-induced movement therapy, and functional electrical stimulation.
 
-*Occupational therapy* focuses on restoring the ability to perform activities of daily living — dressing, eating, bathing, and using the toilet. Therapists work on fine motor skills, cognitive rehabilitation, and the use of adaptive equipment where needed.
+_Occupational therapy_ focuses on restoring the ability to perform activities of daily living — dressing, eating, bathing, and using the toilet. Therapists work on fine motor skills, cognitive rehabilitation, and the use of adaptive equipment where needed.
 
-*Speech and language therapy* addresses communication difficulties (aphasia) and swallowing problems (dysphagia), common after stroke. Therapy includes exercises to improve articulation, comprehension, reading, and writing, as well as swallowing assessments and dietary modifications.
+_Speech and language therapy_ addresses communication difficulties (aphasia) and swallowing problems (dysphagia), common after stroke. Therapy includes exercises to improve articulation, comprehension, reading, and writing, as well as swallowing assessments and dietary modifications.
 
 ## What Happens During the Procedure
 
@@ -169,13 +169,13 @@ For rehabilitation, **home-based therapy programmes** guided by your local rehab
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $5,000 – $20,000 | Baseline |
-| USA | $30,000 – $120,000 | ~6.0x higher |
-| UK | £18,000 – £70,000 | ~5.0x higher |
-| Singapore | $20,000 – $60,000 | ~3.0x higher |
-| Thailand | $12,000 – $40,000 | ~2.0x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $5,000 – $20,000   | Baseline     |
+| USA               | $30,000 – $120,000 | ~6.0x higher |
+| UK                | £18,000 – £70,000  | ~5.0x higher |
+| Singapore         | $20,000 – $60,000  | ~3.0x higher |
+| Thailand          | $12,000 – $40,000  | ~2.0x higher |
 
 If you are wondering whether lower cost means lower quality, the answer is no. Bangalore's accredited hospitals use the same diagnostic equipment, thrombolytic medications, endovascular devices, and rehabilitation protocols as top hospitals in the US and UK. Many stroke neurologists and interventional neuroradiologists here have trained at institutions like Massachusetts General Hospital, the Cleveland Clinic, and the National Hospital for Neurology in London. The cost difference comes down to favourable exchange rates, lower staff and infrastructure costs, and high case volume.
 

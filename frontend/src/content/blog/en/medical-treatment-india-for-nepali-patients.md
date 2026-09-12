@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Nepali Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Kathmandu to India for treatment: visa-free entry requirements, flight routes, cost comparisons in Nepali Rupees, and choosing the right hospital for Nepali families."
+excerpt: 'Travelling from Kathmandu to India for treatment: visa-free entry requirements, flight routes, cost comparisons in Nepali Rupees, and choosing the right hospital for Nepali families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-27
@@ -32,13 +32,13 @@ Nepali families have travelled to India for cardiac surgery, orthopedics, cancer
 
 Heart surgery cost India vs Nepal is the comparison most families start with. Indicative package prices (at roughly रू133 per US dollar):
 
-| Treatment | India (USD) | Approx. NPR | Thailand | Singapore |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | रू598,500–1,596,000 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | रू332,500–1,064,000 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | रू399,000–3,325,000 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | रू532,000–1,596,000 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | रू465,500–931,000 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. NPR         | Thailand | Singapore  |
+| -------------------- | ------------- | ------------------- | -------- | ---------- |
+| Cardiac surgery      | $4,500–12,000 | रू598,500–1,596,000 | Higher   | Far higher |
+| Knee/hip replacement | $2,500–8,000  | रू332,500–1,064,000 | Higher   | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | रू399,000–3,325,000 | Higher   | Far higher |
+| Spine surgery        | $4,000–12,000 | रू532,000–1,596,000 | Higher   | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | रू465,500–931,000   | Higher   | Far higher |
 
 Neurosurgery is a growing route for Nepali patients — advanced spinal and brain procedures are available at Delhi and Bangalore centres with dedicated international coordinators.
 

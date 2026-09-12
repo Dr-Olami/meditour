@@ -31,13 +31,13 @@ Phase 3 is being shipped on Astro Content Collections (Markdown/JSON in-repo). T
 
 ## Hosting options compared
 
-| Platform | Payload hosting | Approx. monthly cost | Notes |
-|---|---|---|---|
-| **Railway** | 1–2 services + Postgres | $20–$60 | Easiest Git-based deploy; good DX; scales vertically |
-| **Render** | Web service + Postgres | $20–$55 | Similar to Railway, slightly slower cold starts |
-| **Fly.io** | 1 VM + 1 Postgres cluster | $10–$40 | More control, requires more infra knowledge |
-| **DigitalOcean App Platform / Droplet** | Node app + managed Postgres | $25–$80 | Predictable pricing, more manual setup |
-| **Vercel/Netlify (Payload serverless)** | Not recommended | — | Payload's admin panel and file uploads don't fit serverless constraints well |
+| Platform                                | Payload hosting             | Approx. monthly cost | Notes                                                                        |
+| --------------------------------------- | --------------------------- | -------------------- | ---------------------------------------------------------------------------- |
+| **Railway**                             | 1–2 services + Postgres     | $20–$60              | Easiest Git-based deploy; good DX; scales vertically                         |
+| **Render**                              | Web service + Postgres      | $20–$55              | Similar to Railway, slightly slower cold starts                              |
+| **Fly.io**                              | 1 VM + 1 Postgres cluster   | $10–$40              | More control, requires more infra knowledge                                  |
+| **DigitalOcean App Platform / Droplet** | Node app + managed Postgres | $25–$80              | Predictable pricing, more manual setup                                       |
+| **Vercel/Netlify (Payload serverless)** | Not recommended             | —                    | Payload's admin panel and file uploads don't fit serverless constraints well |
 
 **Recommendation:** Start with **Railway** for the lowest-friction path. Move to Fly.io or a DO droplet if cost or compliance (patient-data) requires more control later.
 

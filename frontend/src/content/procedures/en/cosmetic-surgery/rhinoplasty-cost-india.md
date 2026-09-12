@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Rhinoplasty (Nose Surgery)"
-seoHeadline: "Rhinoplasty (Nose Surgery) Cost in India for International Patients"
+name: 'Rhinoplasty (Nose Surgery)'
+seoHeadline: 'Rhinoplasty (Nose Surgery) Cost in India for International Patients'
 parentTreatmentSlug: cosmetic-surgery
-summary: "Rhinoplasty in India costs between $1,500 and $5,000, offering international patients savings of up to 70% compared to Western countries. The procedure is performed by board-certified plastic surgeons in JCI-accredited hospitals in Bangalore with a typical stay of 1-2 weeks."
-description: "Affordable rhinoplasty (nose surgery) in India for medical tourists. Compare costs, recovery timeline, and top cosmetic surgeons in Bangalore."
-fromPrice: "$1,500"
-toPrice: "$5,000"
-duration: "1-2 weeks"
-hospitalStay: "1-3 days"
-recoveryTime: "2-6 weeks"
+summary: 'Rhinoplasty in India costs between $1,500 and $5,000, offering international patients savings of up to 70% compared to Western countries. The procedure is performed by board-certified plastic surgeons in JCI-accredited hospitals in Bangalore with a typical stay of 1-2 weeks.'
+description: 'Affordable rhinoplasty (nose surgery) in India for medical tourists. Compare costs, recovery timeline, and top cosmetic surgeons in Bangalore.'
+fromPrice: '$1,500'
+toPrice: '$5,000'
+duration: '1-2 weeks'
+hospitalStay: '1-3 days'
+recoveryTime: '2-6 weeks'
 eligibility:
-  - "Adults over 18 years with fully developed nasal structure"
-  - "Good overall health with no active infections or chronic nasal conditions"
-  - "Realistic expectations about the aesthetic and functional outcomes"
-  - "Non-smokers or willing to stop smoking 4-6 weeks before and after surgery"
-  - "Patients seeking correction of nasal shape, size, or breathing function"
+  - 'Adults over 18 years with fully developed nasal structure'
+  - 'Good overall health with no active infections or chronic nasal conditions'
+  - 'Realistic expectations about the aesthetic and functional outcomes'
+  - 'Non-smokers or willing to stop smoking 4-6 weeks before and after surgery'
+  - 'Patients seeking correction of nasal shape, size, or breathing function'
 costInclusions:
-  - "Plastic/cosmetic surgeon fees"
-  - "Hospital/clinic room charges"
-  - "Surgery/procedure costs"
-  - "Implants (where applicable — breast implants)"
-  - "Anaesthesia charges"
-  - "Pre-operative diagnostics (blood tests, imaging)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Plastic/cosmetic surgeon fees'
+  - 'Hospital/clinic room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants (where applicable — breast implants)'
+  - 'Anaesthesia charges'
+  - 'Pre-operative diagnostics (blood tests, imaging)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge medications and compression garments"
-  - "Personal expenses and meals for attendants"
-  - "Revision surgery if needed (separate package)"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge medications and compression garments'
+  - 'Personal expenses and meals for attendants'
+  - 'Revision surgery if needed (separate package)'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-3 days"
-    description: "Monitoring in the hospital, nasal splint application, pain management, and initial swelling control under medical supervision."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultation with the surgeon, splint removal around day 7-10, monitoring of healing, and clearance for travel."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual reduction in swelling and bruising, return to light daily activities, avoiding strenuous exercise and contact sports."
-  - phase: "Full recovery"
-    duration: "2-6 weeks"
-    description: "Most swelling subsides by 6 weeks, with final shape and results becoming visible over 6-12 months as residual swelling resolves."
+  - phase: 'Hospital stay'
+    duration: '1-3 days'
+    description: 'Monitoring in the hospital, nasal splint application, pain management, and initial swelling control under medical supervision.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultation with the surgeon, splint removal around day 7-10, monitoring of healing, and clearance for travel.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual reduction in swelling and bruising, return to light daily activities, avoiding strenuous exercise and contact sports.'
+  - phase: 'Full recovery'
+    duration: '2-6 weeks'
+    description: 'Most swelling subsides by 6 weeks, with final shape and results becoming visible over 6-12 months as residual swelling resolves.'
 risks:
-  - "Infection at incision sites or within nasal cavity"
-  - "Persistent swelling or bruising lasting several weeks"
-  - "Asymmetry or unsatisfactory aesthetic result requiring revision surgery"
-  - "Breathing difficulties due to internal nasal structure changes"
-  - "Adverse reaction to anaesthesia"
+  - 'Infection at incision sites or within nasal cavity'
+  - 'Persistent swelling or bruising lasting several weeks'
+  - 'Asymmetry or unsatisfactory aesthetic result requiring revision surgery'
+  - 'Breathing difficulties due to internal nasal structure changes'
+  - 'Adverse reaction to anaesthesia'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,18 +58,19 @@ relatedDoctorSlugs:
   - dr-naveen-rao
 
 relatedProcedureSlugs:
-  - "liposuction-cost-india"
-  - "tummy-tuck-cost-india"
+  - 'liposuction-cost-india'
+  - 'tummy-tuck-cost-india'
 faqs:
-  - question: "How much does rhinoplasty cost in India compared to the USA?"
-    answer: "Rhinoplasty in India costs $1,500–$5,000, while in the USA it ranges from $8,000–$15,000. International patients can save approximately 70% on the total procedure cost, including travel and accommodation."
-  - question: "Will I need a visa to travel to India for rhinoplasty?"
+  - question: 'How much does rhinoplasty cost in India compared to the USA?'
+    answer: 'Rhinoplasty in India costs $1,500–$5,000, while in the USA it ranges from $8,000–$15,000. International patients can save approximately 70% on the total procedure cost, including travel and accommodation.'
+  - question: 'Will I need a visa to travel to India for rhinoplasty?'
     answer: "Yes, international patients require a Medical Visa (e-Medical Visa) to travel to India for treatment. The visa is typically valid for 60 days and can be applied for online with the hospital's medical invitation letter."
-  - question: "How long do I need to stay in Bangalore after rhinoplasty?"
-    answer: "Most patients stay 1-2 weeks in Bangalore. The nasal splint is removed after 7-10 days, and the surgeon will assess healing before clearing you for travel. Staying longer allows for better monitoring of initial recovery."
-  - question: "Can rhinoplasty also fix breathing problems?"
-    answer: "Yes, functional rhinoplasty can correct a deviated septum and other structural issues that impair breathing. This is often combined with cosmetic reshaping in a single procedure."
+  - question: 'How long do I need to stay in Bangalore after rhinoplasty?'
+    answer: 'Most patients stay 1-2 weeks in Bangalore. The nasal splint is removed after 7-10 days, and the surgeon will assess healing before clearing you for travel. Staying longer allows for better monitoring of initial recovery.'
+  - question: 'Can rhinoplasty also fix breathing problems?'
+    answer: 'Yes, functional rhinoplasty can correct a deviated septum and other structural issues that impair breathing. This is often combined with cosmetic reshaping in a single procedure.'
 ---
+
 ## Overview
 
 If you've been thinking about changing the shape of your nose — whether it's something that's bothered you for years or the result of an injury — you probably have lots of questions about what the surgery involves. Rhinoplasty, often called a "nose job," is one of the most common cosmetic procedures in the world, and it can do much more than change how you look. It can also fix breathing problems caused by a deviated septum or nasal trauma.
@@ -159,15 +160,16 @@ If your main concern is breathing difficulty rather than appearance, **septoplas
 If you have mild nasal imperfections and feel hesitant about surgery, thread lifting or radiofrequency treatments can offer subtle tip refinement, though their effectiveness is limited.
 
 The best way to decide is to have a consultation with a qualified surgeon in Bangalore. They'll assess your anatomy, listen to your goals, and help you choose the approach that's right for you.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,500 – $5,000 | Baseline |
-| USA | $8,000 – $15,000 | ~3.5x higher |
-| UK | £4,000 – £8,000 | ~1.8x higher |
-| Singapore | $5,000 – $10,000 | ~2.3x higher |
-| Thailand | $2,500 – $6,000 | ~1.3x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $1,500 – $5,000  | Baseline     |
+| USA               | $8,000 – $15,000 | ~3.5x higher |
+| UK                | £4,000 – £8,000  | ~1.8x higher |
+| Singapore         | $5,000 – $10,000 | ~2.3x higher |
+| Thailand          | $2,500 – $6,000  | ~1.3x higher |
 
 You might be looking at these numbers and wondering, "If it's so much cheaper, is the quality lower?" That's a fair concern, but the answer is no. The lower cost in India comes down to lower surgeon fees, reduced hospital overheads, and a favourable exchange rate — not lower standards. Bangalore's accredited hospitals follow the same safety and quality protocols as top Western facilities.
 

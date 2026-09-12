@@ -6,12 +6,12 @@ This document tracks the Unsplash images currently used as placeholders for coun
 
 These are defined in `frontend/src/data/countries/index.ts` → `getRegionalHeroImage()`
 
-| Region | Unsplash ID | Preview URL |
-|---|---|---|
-| South Asia | `photo-1579684385127-1ef15d508118` | https://unsplash.com/photos/1579684385127-1ef15d508118 |
-| Middle East | `photo-1576091160550-2173dba999ef` | https://unsplash.com/photos/1576091160550-2173dba999ef |
-| Africa | `photo-1576091160399-112ba8d25d1d` | https://unsplash.com/photos/1576091160399-112ba8d25d1d |
-| Western | `photo-1519494026892-80bbd2d6fd0d` | https://unsplash.com/photos/1519494026892-80bbd2d6fd0d |
+| Region       | Unsplash ID                        | Preview URL                                            |
+| ------------ | ---------------------------------- | ------------------------------------------------------ |
+| South Asia   | `photo-1579684385127-1ef15d508118` | https://unsplash.com/photos/1579684385127-1ef15d508118 |
+| Middle East  | `photo-1576091160550-2173dba999ef` | https://unsplash.com/photos/1576091160550-2173dba999ef |
+| Africa       | `photo-1576091160399-112ba8d25d1d` | https://unsplash.com/photos/1576091160399-112ba8d25d1d |
+| Western      | `photo-1519494026892-80bbd2d6fd0d` | https://unsplash.com/photos/1519494026892-80bbd2d6fd0d |
 | Central Asia | `photo-1576091160550-2173dba999ef` | https://unsplash.com/photos/1576091160550-2173dba999ef |
 
 ## Country Card Images (OG Images)
@@ -30,16 +30,18 @@ When ready to use local images:
    - Ensure proper attribution per Unsplash license
 
 2. **Convert to WebP:**
+
    ```bash
    cd frontend/public/images/heroes
    cwebp -q 80 south-asia.jpg -o south-asia.webp
    ```
 
 3. **Update helper functions:**
+
    ```typescript
    // Change from:
    'South Asia': 'https://images.unsplash.com/photo-...',
-   
+
    // To:
    'South Asia': '/images/heroes/south-asia.webp',
    ```
@@ -71,6 +73,7 @@ For better medical tourism relevance, consider these Unsplash searches:
 ## License Compliance
 
 All Unsplash images are free to use under the Unsplash License:
+
 - ✅ Free for commercial use
 - ✅ No attribution required (but appreciated)
 - ❌ Don't compile into a competing service

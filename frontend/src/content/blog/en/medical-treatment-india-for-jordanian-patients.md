@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Jordanian Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Amman to India for treatment: medical visa requirements, flight routes, cost comparisons in Jordanian Dinars, and choosing the right hospital for Jordanian families."
+excerpt: 'Travelling from Amman to India for treatment: medical visa requirements, flight routes, cost comparisons in Jordanian Dinars, and choosing the right hospital for Jordanian families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-28
@@ -32,13 +32,13 @@ Jordanian families increasingly travel to India for cardiac surgery, orthopedics
 
 Heart surgery cost India vs Jordan is the comparison most families start with. Indicative package prices (at roughly JOD 0.71 per US dollar):
 
-| Treatment | India (USD) | Approx. JOD | Turkey | Germany |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | د.ا3,195–8,520 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | د.ا1,775–5,680 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | د.ا2,130–17,750 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | د.ا2,840–8,520 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | د.ا2,485–4,970 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. JOD     | Turkey | Germany    |
+| -------------------- | ------------- | --------------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | د.ا3,195–8,520  | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | د.ا1,775–5,680  | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | د.ا2,130–17,750 | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | د.ا2,840–8,520  | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | د.ا2,485–4,970  | Higher | Far higher |
 
 Cardiac care is a leading reason Jordanian patients travel — bypass and valve procedures at JCI-accredited Indian hospitals come in well below comparable private pricing in Turkey or Germany, with Arabic-speaking coordinators supporting the family throughout.
 

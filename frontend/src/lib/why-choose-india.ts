@@ -34,7 +34,7 @@ export function generateWhyChooseIndia(
   procedureName: string,
   fromPrice: string,
   toPrice: string,
-  country: CountryMetadata,
+  country: CountryMetadata
 ): WhyChooseSection {
   const nat = country.nationality;
   const natLower = nat.toLowerCase();
@@ -81,9 +81,10 @@ export function generateWhyChooseIndia(
   // 4. Communication and cultural comfort
   // Reason: Use country-specific language and cultural data.
   const langList = languages.length > 0 ? languages.join(', ') : 'English';
-  const culturalList = cultural.length > 0
-    ? cultural.slice(0, 3).join(', ').toLowerCase()
-    : 'international patient services';
+  const culturalList =
+    cultural.length > 0
+      ? cultural.slice(0, 3).join(', ').toLowerCase()
+      : 'international patient services';
   subsections.push({
     heading: 'Communication and cultural comfort',
     body: `Indian hospitals serve patients from diverse backgrounds. Staff commonly speak ${langList}, and hospitals provide ${culturalList}. International patient coordinators guide ${natLower} patients through every step — from registration to discharge — ensuring clear communication and cultural sensitivity throughout your ${procLower} journey.`,
@@ -115,7 +116,7 @@ export function generateWhyChooseIndiaBn(
   procedureName: string,
   fromPrice: string,
   toPrice: string,
-  country: CountryMetadata,
+  country: CountryMetadata
 ): WhyChooseSection {
   const nat = country.nationality;
   const savings = country.costSavingsVsLocal;
@@ -155,9 +156,8 @@ export function generateWhyChooseIndiaBn(
 
   // 4. যোগাযোগ ও সাংস্কৃতিক স্বাচ্ছন্দ্য
   const langList = languages.length > 0 ? languages.join(', ') : 'ইংরেজি';
-  const culturalList = cultural.length > 0
-    ? cultural.slice(0, 3).join(', ')
-    : 'আন্তর্জাতিক রোগী সেবা';
+  const culturalList =
+    cultural.length > 0 ? cultural.slice(0, 3).join(', ') : 'আন্তর্জাতিক রোগী সেবা';
   subsections.push({
     heading: 'যোগাযোগ ও সাংস্কৃতিক স্বাচ্ছন্দ্য',
     body: `ভারতের হাসপাতালগুলি বিভিন্ন পটভূমির রোগীদের সেবা দেয়। স্টাফরা সাধারণত ${langList} বলেন এবং হাসপাতালে ${culturalList} সুবিধা রয়েছে। আন্তর্জাতিক রোগী কো-অর্ডিনেটর প্রতিটি ধাপে ${nat} রোগীদের গাইড করেন — ভর্তি থেকে ছাড়পত্র পর্যন্ত — যাতে আপনার ${procedureName} যাত্রা সহজ ও নির্ঝঞ্ঝাট হয়।`,

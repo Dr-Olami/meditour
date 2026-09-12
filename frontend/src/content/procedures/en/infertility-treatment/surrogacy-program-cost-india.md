@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Surrogacy Program"
-seoHeadline: "Surrogacy Program Cost in India for International Patients"
+name: 'Surrogacy Program'
+seoHeadline: 'Surrogacy Program Cost in India for International Patients'
 parentTreatmentSlug: infertility-treatment
-summary: "Surrogacy is an arrangement where a woman carries a pregnancy for intended parents who cannot conceive or carry a child themselves. The cost of a surrogacy program in India ranges from $10,000 to $25,000. However, under the Surrogacy (Regulation) Act 2021, commercial surrogacy is prohibited and only altruistic surrogacy is permitted for Indian citizens; international surrogacy is heavily restricted."
-description: "Surrogacy program costs in India from $10,000 to $25,000. Note: regulated under the Surrogacy (Regulation) Act 2021 with restrictions on international surrogacy."
-fromPrice: "$10,000"
-toPrice: "$25,000"
-duration: "12-18 months (including legal and medical processes)"
-hospitalStay: "Inpatient for delivery; outpatient for IVF procedures"
-recoveryTime: "6-8 weeks postpartum for the surrogate; intended parents recover per IVF protocol"
+summary: 'Surrogacy is an arrangement where a woman carries a pregnancy for intended parents who cannot conceive or carry a child themselves. The cost of a surrogacy program in India ranges from $10,000 to $25,000. However, under the Surrogacy (Regulation) Act 2021, commercial surrogacy is prohibited and only altruistic surrogacy is permitted for Indian citizens; international surrogacy is heavily restricted.'
+description: 'Surrogacy program costs in India from $10,000 to $25,000. Note: regulated under the Surrogacy (Regulation) Act 2021 with restrictions on international surrogacy.'
+fromPrice: '$10,000'
+toPrice: '$25,000'
+duration: '12-18 months (including legal and medical processes)'
+hospitalStay: 'Inpatient for delivery; outpatient for IVF procedures'
+recoveryTime: '6-8 weeks postpartum for the surrogate; intended parents recover per IVF protocol'
 eligibility:
-  - "Indian citizen couples with a proven medical indication requiring surrogacy (as per the Surrogacy Act 2021)"
-  - "Couples married for at least 5 years with at least one Indian partner"
-  - "Women unable to carry a pregnancy due to uterine absence, severe uterine damage, or repeated IVF failure"
-  - "Intended parents within the age limits prescribed by law (wife 25-50 years, husband 26-55 years)"
-  - "Couples who have exhausted other fertility treatment options with documented medical evidence"
+  - 'Indian citizen couples with a proven medical indication requiring surrogacy (as per the Surrogacy Act 2021)'
+  - 'Couples married for at least 5 years with at least one Indian partner'
+  - 'Women unable to carry a pregnancy due to uterine absence, severe uterine damage, or repeated IVF failure'
+  - 'Intended parents within the age limits prescribed by law (wife 25-50 years, husband 26-55 years)'
+  - 'Couples who have exhausted other fertility treatment options with documented medical evidence'
 costInclusions:
-  - "Fertility specialist consultation fees"
-  - "Hospital/clinic room charges (where applicable)"
-  - "Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)"
-  - "Medications and hormones (as per protocol)"
-  - "Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)"
-  - "Lab and embryology charges"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Fertility specialist consultation fees'
+  - 'Hospital/clinic room charges (where applicable)'
+  - 'Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)'
+  - 'Medications and hormones (as per protocol)'
+  - 'Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)'
+  - 'Lab and embryology charges'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital/clinic stay"
-  - "Additional IVF cycles if first cycle is unsuccessful"
-  - "Personal expenses and meals for attendants"
-  - "Donor eggs/sperm or surrogate compensation (where separately applicable)"
+  - 'International flights'
+  - 'Accommodation outside hospital/clinic stay'
+  - 'Additional IVF cycles if first cycle is unsuccessful'
+  - 'Personal expenses and meals for attendants'
+  - 'Donor eggs/sperm or surrogate compensation (where separately applicable)'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "12-18 months (including legal and medical processes)"
-    description: "Legal clearances, surrogate selection, IVF with embryo transfer, and pregnancy monitoring until delivery."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Initial IVF procedures, embryo transfer, and early pregnancy confirmation before return home."
-  - phase: "Return home"
-    duration: "Month 1-9"
+  - phase: 'Treatment period'
+    duration: '12-18 months (including legal and medical processes)'
+    description: 'Legal clearances, surrogate selection, IVF with embryo transfer, and pregnancy monitoring until delivery.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Initial IVF procedures, embryo transfer, and early pregnancy confirmation before return home.'
+  - phase: 'Return home'
+    duration: 'Month 1-9'
     description: "Remote monitoring of surrogate's pregnancy with periodic visits to Bangalore for key scans."
-  - phase: "Full recovery"
-    duration: "6-8 weeks postpartum for the surrogate; intended parents recover per IVF protocol"
-    description: "Post-delivery recovery of the surrogate and handover of the baby to intended parents as per legal agreement."
+  - phase: 'Full recovery'
+    duration: '6-8 weeks postpartum for the surrogate; intended parents recover per IVF protocol'
+    description: 'Post-delivery recovery of the surrogate and handover of the baby to intended parents as per legal agreement.'
 risks:
-  - "Legal complications due to evolving surrogacy regulations in India"
-  - "IVF failure requiring multiple embryo transfer attempts"
-  - "Pregnancy complications for the surrogate (pre-eclampsia, gestational diabetes, preterm labour)"
-  - "Disputes over parentage or custody rights"
-  - "Emotional and psychological stress for all parties involved"
+  - 'Legal complications due to evolving surrogacy regulations in India'
+  - 'IVF failure requiring multiple embryo transfer attempts'
+  - 'Pregnancy complications for the surrogate (pre-eclampsia, gestational diabetes, preterm labour)'
+  - 'Disputes over parentage or custody rights'
+  - 'Emotional and psychological stress for all parties involved'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-rashmi-patil
 
 relatedProcedureSlugs:
-  - "ivf-treatment-cost-india"
-  - "icsi-treatment-cost-india"
-  - "egg-freezing-cost-india"
+  - 'ivf-treatment-cost-india'
+  - 'icsi-treatment-cost-india'
+  - 'egg-freezing-cost-india'
 faqs:
-  - question: "Is surrogacy legal for international patients in India?"
-    answer: "Under the Surrogacy (Regulation) Act 2021, commercial surrogacy is banned in India and only altruistic surrogacy is permitted for Indian citizen couples. Foreign nationals and OCI cardholders are not permitted to pursue surrogacy in India. International patients should consult legal experts and consider alternative destinations or treatment options."
-  - question: "What is the difference between altruistic and commercial surrogacy?"
-    answer: "Altruistic surrogacy involves a surrogate who receives no financial compensation except for medical and pregnancy-related expenses. Commercial surrogacy involves payment to the surrogate beyond expenses. India now permits only altruistic surrogacy under strict regulatory oversight."
-  - question: "Who is eligible for surrogacy under Indian law?"
-    answer: "Only Indian citizen couples who have been married for at least 5 years, have a certified medical indication for surrogacy, and fall within prescribed age limits (wife 25-50, husband 26-55) are eligible. The surrogate must be a close relative, married with at least one child of her own, and an altruistic surrogate."
+  - question: 'Is surrogacy legal for international patients in India?'
+    answer: 'Under the Surrogacy (Regulation) Act 2021, commercial surrogacy is banned in India and only altruistic surrogacy is permitted for Indian citizen couples. Foreign nationals and OCI cardholders are not permitted to pursue surrogacy in India. International patients should consult legal experts and consider alternative destinations or treatment options.'
+  - question: 'What is the difference between altruistic and commercial surrogacy?'
+    answer: 'Altruistic surrogacy involves a surrogate who receives no financial compensation except for medical and pregnancy-related expenses. Commercial surrogacy involves payment to the surrogate beyond expenses. India now permits only altruistic surrogacy under strict regulatory oversight.'
+  - question: 'Who is eligible for surrogacy under Indian law?'
+    answer: 'Only Indian citizen couples who have been married for at least 5 years, have a certified medical indication for surrogacy, and fall within prescribed age limits (wife 25-50, husband 26-55) are eligible. The surrogate must be a close relative, married with at least one child of her own, and an altruistic surrogate.'
 ---
+
 ## Overview
 
 If you've arrived on this page, you're likely carrying a heavy emotional weight — the longing for a child, combined with the reality that carrying a pregnancy yourself isn't possible or safe. We understand how painful that journey can be, and we want to give you honest, compassionate guidance about what surrogacy in India looks like today.
@@ -150,15 +151,16 @@ If you are an international patient unable to pursue surrogacy in India, please 
 Other family-building options you might consider include IVF or ICSI using your own eggs and sperm, donor egg IVF, embryo donation, or adoption. Each path has its own emotional and practical considerations, and there is no single "right" answer — only the answer that's right for you and your family.
 
 Here's a practical option many international patients don't realise: Indian fertility clinics can support you with the IVF and embryo creation component at a fraction of Western costs. You can create your embryos in Bangalore and then have them shipped to a permitted surrogacy jurisdiction abroad. This hybrid approach can significantly reduce your overall costs while still giving you access to excellent embryology care.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $10,000 – $25,000 | Baseline |
-| USA | $100,000 – $150,000 | ~7.1x higher |
-| UK | £30,000 – £50,000 | ~2.3x higher |
-| Singapore | $50,000 – $80,000 | ~3.7x higher |
-| Thailand | $30,000 – $50,000 | ~2.3x higher |
+| Country           | Approximate Cost    | vs India     |
+| ----------------- | ------------------- | ------------ |
+| India (Bangalore) | $10,000 – $25,000   | Baseline     |
+| USA               | $100,000 – $150,000 | ~7.1x higher |
+| UK                | £30,000 – £50,000   | ~2.3x higher |
+| Singapore         | $50,000 – $80,000   | ~3.7x higher |
+| Thailand          | $30,000 – $50,000   | ~2.3x higher |
 
 The cost figures for India apply only to eligible Indian citizen couples pursuing altruistic surrogacy under the Surrogacy Act 2021. If you are an international patient, surrogacy in India is not legally available to you, and you would need to look at alternative destinations where commercial surrogacy is permitted for foreigners — where costs will be substantially higher.
 

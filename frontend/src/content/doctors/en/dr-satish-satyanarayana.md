@@ -13,15 +13,15 @@ languages:
   - Telugu
   - Kannada
 faqs:
-  - question: "Who is Dr. Satish Satyanarayana?"
-    answer: "Dr. Satish Satyanarayana is a highly experienced neurosurgeon based in Bangalore, Karnataka, with 35 years of experience. He holds MBBS, MCh in Neurosurgery, and DNB in Neurosurgery, along with a Fellowship in Neurosurgery from LSUHSC. He is a Senior Consultant and Clinical & Academic Advisor in the Department of Neurosurgery at Apollo Hospitals, specializing in skull base surgery, complex spine surgery, cerebrovascular surgery, and microsurgery of brain tumors and vascular lesions."
-  - question: "Why do patients choose Dr. Satish Satyanarayana?"
-    answer: "Patients choose Dr. Satish Satyanarayana for his 35+ years of experience in neurosurgery, his expertise in complex brain and spine tumors, minimally access brain and spine surgery, cerebrovascular surgery, skull base surgery, and pediatric neurosurgery. He has served as Associate Professor of Neurosurgery at NIMHANS and has 25+ national and international publications. He was awarded 8 gold medals in MBBS from Bangalore University."
+  - question: 'Who is Dr. Satish Satyanarayana?'
+    answer: 'Dr. Satish Satyanarayana is a highly experienced neurosurgeon based in Bangalore, Karnataka, with 35 years of experience. He holds MBBS, MCh in Neurosurgery, and DNB in Neurosurgery, along with a Fellowship in Neurosurgery from LSUHSC. He is a Senior Consultant and Clinical & Academic Advisor in the Department of Neurosurgery at Apollo Hospitals, specializing in skull base surgery, complex spine surgery, cerebrovascular surgery, and microsurgery of brain tumors and vascular lesions.'
+  - question: 'Why do patients choose Dr. Satish Satyanarayana?'
+    answer: 'Patients choose Dr. Satish Satyanarayana for his 35+ years of experience in neurosurgery, his expertise in complex brain and spine tumors, minimally access brain and spine surgery, cerebrovascular surgery, skull base surgery, and pediatric neurosurgery. He has served as Associate Professor of Neurosurgery at NIMHANS and has 25+ national and international publications. He was awarded 8 gold medals in MBBS from Bangalore University.'
   - question: "What are Dr. Satish Satyanarayana's medical qualifications?"
-    answer: "Dr. Satish Satyanarayana holds MBBS, MCh in Neurosurgery, DNB in Neurosurgery, and a Fellowship in Neurosurgery from LSU Health Sciences Center (New Orleans, USA). He has 29 years of post-MCh experience."
-  - question: "What conditions does Dr. Satish Satyanarayana treat?"
-    answer: "Dr. Satish Satyanarayana treats a wide range of neurological conditions including brain tumors, Moyamoya disease, craniosynostosis, epilepsy (including in children), multiple sclerosis, peripheral neuropathy, scoliosis, seizures, skull fractures, extradural hematoma, lumbar disc issues, lumbar spinal stenosis, lumbago, Gaucher disease, and metachromatic leukodystrophy."
-  - question: "How can I book an appointment with Dr. Satish Satyanarayana?"
+    answer: 'Dr. Satish Satyanarayana holds MBBS, MCh in Neurosurgery, DNB in Neurosurgery, and a Fellowship in Neurosurgery from LSU Health Sciences Center (New Orleans, USA). He has 29 years of post-MCh experience.'
+  - question: 'What conditions does Dr. Satish Satyanarayana treat?'
+    answer: 'Dr. Satish Satyanarayana treats a wide range of neurological conditions including brain tumors, Moyamoya disease, craniosynostosis, epilepsy (including in children), multiple sclerosis, peripheral neuropathy, scoliosis, seizures, skull fractures, extradural hematoma, lumbar disc issues, lumbar spinal stenosis, lumbago, Gaucher disease, and metachromatic leukodystrophy.'
+  - question: 'How can I book an appointment with Dr. Satish Satyanarayana?'
     answer: "You can book an appointment with Dr. Satish Satyanarayana at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

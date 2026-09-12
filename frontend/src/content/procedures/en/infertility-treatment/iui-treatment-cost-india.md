@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "IUI Treatment"
-seoHeadline: "IUI Treatment Cost in India for International Patients"
+name: 'IUI Treatment'
+seoHeadline: 'IUI Treatment Cost in India for International Patients'
 parentTreatmentSlug: infertility-treatment
-summary: "IUI (Intrauterine Insemination) is a fertility treatment where washed, concentrated sperm is placed directly into the uterus during ovulation to increase the chances of conception. The cost of IUI treatment in India ranges from $300 to $800 per cycle, making it one of the most affordable assisted reproduction options for international patients."
-description: "Affordable IUI treatment in Bangalore, India for international patients. Costs from $300 to $800 per cycle with experienced fertility specialists."
-fromPrice: "$300"
-toPrice: "$800"
-duration: "2-4 weeks per cycle"
-hospitalStay: "Outpatient"
-recoveryTime: "1-2 days, with pregnancy test after 2 weeks"
+summary: 'IUI (Intrauterine Insemination) is a fertility treatment where washed, concentrated sperm is placed directly into the uterus during ovulation to increase the chances of conception. The cost of IUI treatment in India ranges from $300 to $800 per cycle, making it one of the most affordable assisted reproduction options for international patients.'
+description: 'Affordable IUI treatment in Bangalore, India for international patients. Costs from $300 to $800 per cycle with experienced fertility specialists.'
+fromPrice: '$300'
+toPrice: '$800'
+duration: '2-4 weeks per cycle'
+hospitalStay: 'Outpatient'
+recoveryTime: '1-2 days, with pregnancy test after 2 weeks'
 eligibility:
-  - "Couples with mild male-factor infertility (slightly reduced sperm count or motility)"
-  - "Women with at least one patent (open) fallopian tube"
-  - "Patients with unexplained infertility seeking a first-line treatment"
-  - "Women under 40 years of age with regular ovulatory cycles"
-  - "Couples using donor sperm for insemination"
+  - 'Couples with mild male-factor infertility (slightly reduced sperm count or motility)'
+  - 'Women with at least one patent (open) fallopian tube'
+  - 'Patients with unexplained infertility seeking a first-line treatment'
+  - 'Women under 40 years of age with regular ovulatory cycles'
+  - 'Couples using donor sperm for insemination'
 costInclusions:
-  - "Fertility specialist consultation fees"
-  - "Hospital/clinic room charges (where applicable)"
-  - "Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)"
-  - "Medications and hormones (as per protocol)"
-  - "Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)"
-  - "Lab and embryology charges"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Fertility specialist consultation fees'
+  - 'Hospital/clinic room charges (where applicable)'
+  - 'Procedure costs (IVF/ICSI/IUI/surrogacy/egg freezing)'
+  - 'Medications and hormones (as per protocol)'
+  - 'Pre-treatment diagnostics (blood tests, ultrasound, semen analysis)'
+  - 'Lab and embryology charges'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital/clinic stay"
-  - "Additional IVF cycles if first cycle is unsuccessful"
-  - "Personal expenses and meals for attendants"
-  - "Donor eggs/sperm or surrogate compensation (where separately applicable)"
+  - 'International flights'
+  - 'Accommodation outside hospital/clinic stay'
+  - 'Additional IVF cycles if first cycle is unsuccessful'
+  - 'Personal expenses and meals for attendants'
+  - 'Donor eggs/sperm or surrogate compensation (where separately applicable)'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "2-4 weeks per cycle"
-    description: "Ovarian stimulation (if prescribed), follicular monitoring, and timed insemination during ovulation."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-insemination rest and follow-up before clearance to travel home."
-  - phase: "Return home"
-    duration: "Week 1-2"
-    description: "Gradual return to normal activities with avoidance of strenuous exercise."
-  - phase: "Full recovery"
-    duration: "1-2 days, with pregnancy test after 2 weeks"
-    description: "Complete recovery from the procedure with confirmation of pregnancy via blood test at 14 days post-insemination."
+  - phase: 'Treatment period'
+    duration: '2-4 weeks per cycle'
+    description: 'Ovarian stimulation (if prescribed), follicular monitoring, and timed insemination during ovulation.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-insemination rest and follow-up before clearance to travel home.'
+  - phase: 'Return home'
+    duration: 'Week 1-2'
+    description: 'Gradual return to normal activities with avoidance of strenuous exercise.'
+  - phase: 'Full recovery'
+    duration: '1-2 days, with pregnancy test after 2 weeks'
+    description: 'Complete recovery from the procedure with confirmation of pregnancy via blood test at 14 days post-insemination.'
 risks:
-  - "Multiple pregnancy (twins) if ovarian stimulation produces multiple follicles"
-  - "Ovarian Hyperstimulation Syndrome (OHSS) in stimulated cycles"
-  - "Infection or cramping following the insemination procedure"
-  - "Failure to conceive, requiring repeated cycles or escalation to IVF"
-  - "Ectopic pregnancy in rare cases"
+  - 'Multiple pregnancy (twins) if ovarian stimulation produces multiple follicles'
+  - 'Ovarian Hyperstimulation Syndrome (OHSS) in stimulated cycles'
+  - 'Infection or cramping following the insemination procedure'
+  - 'Failure to conceive, requiring repeated cycles or escalation to IVF'
+  - 'Ectopic pregnancy in rare cases'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,17 +58,18 @@ relatedDoctorSlugs:
   - dr-rashmi-patil
 
 relatedProcedureSlugs:
-  - "ivf-treatment-cost-india"
-  - "icsi-treatment-cost-india"
-  - "egg-freezing-cost-india"
+  - 'ivf-treatment-cost-india'
+  - 'icsi-treatment-cost-india'
+  - 'egg-freezing-cost-india'
 faqs:
-  - question: "How many IUI cycles should I try before moving to IVF?"
+  - question: 'How many IUI cycles should I try before moving to IVF?'
     answer: "Most fertility specialists recommend 3-6 IUI cycles before considering IVF, depending on the underlying cause of infertility and the woman's age. Success rates per cycle are typically 10-20%, and cumulative rates improve over multiple attempts."
-  - question: "Is IUI painful?"
-    answer: "IUI is generally not painful and is often compared to a Pap smear. The procedure takes only a few minutes, and most patients experience only mild cramping. No anaesthesia is required, and patients can resume normal activities immediately afterwards."
-  - question: "Can international patients combine IUI treatment with a short trip to India?"
-    answer: "Yes. IUI is an outpatient procedure requiring only a 2-4 week stay. Bangalore fertility clinics can coordinate monitoring and timing to accommodate international travel schedules, making it a convenient option for medical tourists."
+  - question: 'Is IUI painful?'
+    answer: 'IUI is generally not painful and is often compared to a Pap smear. The procedure takes only a few minutes, and most patients experience only mild cramping. No anaesthesia is required, and patients can resume normal activities immediately afterwards.'
+  - question: 'Can international patients combine IUI treatment with a short trip to India?'
+    answer: 'Yes. IUI is an outpatient procedure requiring only a 2-4 week stay. Bangalore fertility clinics can coordinate monitoring and timing to accommodate international travel schedules, making it a convenient option for medical tourists.'
 ---
+
 ## Overview
 
 If you have been trying to conceive for a while and are exploring your options, IUI is often the first fertility treatment your specialist will recommend. It is natural to feel a mix of hope and apprehension — you may be wondering whether it will work, whether it will hurt, and how it fits into your broader fertility journey. The good news is that IUI is simple, minimally invasive and far more affordable than IVF, making it an excellent starting point for many couples.
@@ -126,15 +127,16 @@ After returning home, you will await the results of the 14-day pregnancy blood t
 ## Alternatives to Consider
 
 If IUI is unsuccessful or not medically appropriate, IVF and ICSI offer higher success rates by fertilising eggs outside the body and transferring embryos directly into the uterus. For women with ovulatory dysfunction, ovulation induction with timed intercourse may be attempted before IUI. Donor sperm IUI is an option for single women or couples with severe male-factor infertility, while donor egg IVF may be considered for women with diminished ovarian reserve. Your fertility specialist will guide you through these options based on your specific circumstances.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $300 – $800 | Baseline |
-| USA | $1,500 – $3,000 | ~4.1x higher |
-| UK | £1,000 – £2,000 | ~2.7x higher |
-| Singapore | $1,200 – $2,500 | ~3.4x higher |
-| Thailand | $600 – $1,200 | ~1.6x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $300 – $800      | Baseline     |
+| USA               | $1,500 – $3,000  | ~4.1x higher |
+| UK                | £1,000 – £2,000  | ~2.7x higher |
+| Singapore         | $1,200 – $2,500  | ~3.4x higher |
+| Thailand          | $600 – $1,200    | ~1.6x higher |
 
 The cost advantage is significant, particularly if you require multiple cycles. Even after accounting for international flights, accommodation and a companion's stay, the total expense of several IUI cycles in Bangalore often remains lower than a single cycle in the United States or the United Kingdom. Medications, laboratory charges and specialist consultations are typically included in package pricing, giving you predictable costs without hidden fees.
 

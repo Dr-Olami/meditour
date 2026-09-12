@@ -18,7 +18,7 @@ export const ALL_BN_COUNTRIES: CountryMetadata[] = [bangladeshBn];
 
 /** Bengali country metadata keyed by slug for O(1) lookup. */
 const BN_COUNTRIES_BY_SLUG: Record<string, CountryMetadata> = Object.fromEntries(
-  ALL_BN_COUNTRIES.map((country) => [country.slug, country]),
+  ALL_BN_COUNTRIES.map((country) => [country.slug, country])
 );
 
 /**

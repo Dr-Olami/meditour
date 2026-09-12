@@ -45,9 +45,7 @@ describe('StepCards', () => {
 
   it('exposes carousel semantics on the scroll region', () => {
     render(<StepCards steps={STEPS} tone="light" />);
-    expect(
-      screen.getByRole('region', { name: 'Steps' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'Steps' })).toBeInTheDocument();
     expect(screen.getAllByRole('group')).toHaveLength(STEPS.length);
   });
 

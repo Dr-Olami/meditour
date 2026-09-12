@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Iraqi Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Baghdad to India for treatment: medical visa requirements, flight routes, cost comparisons in Iraqi Dinars, and choosing the right hospital for Iraqi families."
+excerpt: 'Travelling from Baghdad to India for treatment: medical visa requirements, flight routes, cost comparisons in Iraqi Dinars, and choosing the right hospital for Iraqi families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-27
@@ -32,13 +32,13 @@ Iraqi families increasingly travel to India for cardiac surgery, orthopedics, ca
 
 Heart surgery cost India vs Iraq is the comparison most families start with. Indicative package prices (at roughly IQD 1,310 per US dollar):
 
-| Treatment | India (USD) | Approx. IQD | Turkey | Jordan |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ع.د5.9M–15.7M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | ع.د3.3M–10.5M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | ع.د3.9M–32.8M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | ع.د5.2M–15.7M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | ع.د4.6M–9.2M | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. IQD   | Turkey | Jordan     |
+| -------------------- | ------------- | ------------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | ع.د5.9M–15.7M | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | ع.د3.3M–10.5M | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | ع.د3.9M–32.8M | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | ع.د5.2M–15.7M | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | ع.د4.6M–9.2M  | Higher | Far higher |
 
 Orthopedic treatment is a leading reason Iraqi patients travel — knee and hip replacements at JCI-accredited Indian hospitals come in well below comparable private pricing in Turkey or Jordan, with Arabic and Kurdish-speaking coordinators supporting the family throughout.
 

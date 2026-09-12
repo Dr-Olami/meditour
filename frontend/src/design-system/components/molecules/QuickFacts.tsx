@@ -24,20 +24,17 @@ const quickFactsTone = cva('flex flex-wrap gap-3', {
 /**
  * Visual register for an individual fact chip, keyed to the container tone.
  */
-const factChipTone = cva(
-  'inline-flex items-center gap-2.5 rounded-card px-4 py-2.5',
-  {
-    variants: {
-      tone: {
-        light: 'border border-cream-300 bg-cream-100',
-        dark: 'border border-cream-100/15 bg-cream-100/5',
-      },
+const factChipTone = cva('inline-flex items-center gap-2.5 rounded-card px-4 py-2.5', {
+  variants: {
+    tone: {
+      light: 'border border-cream-300 bg-cream-100',
+      dark: 'border border-cream-100/15 bg-cream-100/5',
     },
-    defaultVariants: {
-      tone: 'light',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    tone: 'light',
+  },
+});
 
 /**
  * Visual register for the icon inside a fact chip, keyed to the container tone.
@@ -94,8 +91,7 @@ export interface QuickFactItem {
 }
 
 export interface QuickFactsProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof quickFactsTone> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof quickFactsTone> {
   /** Facts to render as icon chips. */
   facts: QuickFactItem[];
   /** Surface tone — `light` for cream sections, `dark` for ink bands. */
@@ -113,16 +109,9 @@ const QuickFacts = React.forwardRef<HTMLDivElement, QuickFactsProps>(
   ({ className, facts, tone, ...props }, ref) => {
     if (!facts || facts.length === 0) return null;
     return (
-      <div
-        className={cn(quickFactsTone({ tone }), className)}
-        ref={ref}
-        {...props}
-      >
+      <div className={cn(quickFactsTone({ tone }), className)} ref={ref} {...props}>
         {facts.map((fact, index) => (
-          <div
-            key={`${fact.label}-${index}`}
-            className={cn(factChipTone({ tone }))}
-          >
+          <div key={`${fact.label}-${index}`} className={cn(factChipTone({ tone }))}>
             <Icon name={fact.icon} size={18} className={cn(factIconTone({ tone }))} />
             <div className="flex flex-col">
               <span className={cn(factLabelTone({ tone }))}>{fact.label}</span>

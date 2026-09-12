@@ -65,17 +65,38 @@ const uae: CountryMetadata = {
   establishedYear: 2017,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '3.5 hours from Dubai', directFlights: true, airlines: ['Emirates', 'IndiGo', 'Air India'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '3 hours from Dubai', directFlights: true, airlines: ['Emirates', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Chennai', flightTime: '4 hours from Dubai', directFlights: true, airlines: ['Emirates', 'IndiGo'], specialties: ['Cardiac', 'Orthopedics', 'Cancer'] },
+    {
+      name: 'Bangalore',
+      flightTime: '3.5 hours from Dubai',
+      directFlights: true,
+      airlines: ['Emirates', 'IndiGo', 'Air India'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '3 hours from Dubai',
+      directFlights: true,
+      airlines: ['Emirates', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Chennai',
+      flightTime: '4 hours from Dubai',
+      directFlights: true,
+      airlines: ['Emirates', 'IndiGo'],
+      specialties: ['Cardiac', 'Orthopedics', 'Cancer'],
+    },
   ],
 
   visaSteps: visaOnArrivalSteps,
 
   heroTitle: 'Premium Healthcare in India for UAE Patients',
-  heroSubtitle: 'Direct flights from Dubai. JCI-accredited hospitals. Arabic support. Halal facilities. Save 40–60% vs Western destinations.',
-  metaDescription: 'Premium medical treatment in India for UAE patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cosmetic procedures.',
-  introParagraph: 'Patients from Dubai, Abu Dhabi, and Sharjah choose India for cardiac surgery, orthopedics, cancer care, and cosmetic procedures — with JCI-accredited hospitals, Arabic-speaking coordinators, halal food, and prayer facilities.',
+  heroSubtitle:
+    'Direct flights from Dubai. JCI-accredited hospitals. Arabic support. Halal facilities. Save 40–60% vs Western destinations.',
+  metaDescription:
+    'Premium medical treatment in India for UAE patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cosmetic procedures.',
+  introParagraph:
+    'Patients from Dubai, Abu Dhabi, and Sharjah choose India for cardiac surgery, orthopedics, cancer care, and cosmetic procedures — with JCI-accredited hospitals, Arabic-speaking coordinators, halal food, and prayer facilities.',
 
   currency: { code: 'AED', symbol: 'د.إ', exchangeRate: 3.67, name: 'UAE Dirham' },
 };
@@ -132,23 +153,50 @@ const saudiArabia: CountryMetadata = {
 
   languages: ['Arabic', 'English'],
   religiousMajority: 'muslim',
-  culturalConsiderations: ['Halal food', 'Prayer rooms', 'Family suites', 'Arabic interpreters', 'Gender-segregated waiting areas'],
+  culturalConsiderations: [
+    'Halal food',
+    'Prayer rooms',
+    'Family suites',
+    'Arabic interpreters',
+    'Gender-segregated waiting areas',
+  ],
 
   patientsTreated: 2800,
   establishedYear: 2017,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '5 hours from Riyadh', directFlights: true, airlines: ['Saudia', 'IndiGo', 'Air India'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '4.5 hours from Riyadh', directFlights: true, airlines: ['Saudia', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Hyderabad', flightTime: '4.5 hours from Riyadh', directFlights: true, airlines: ['Saudia', 'IndiGo'], specialties: ['Cardiac', 'Orthopedics', 'General surgery'] },
+    {
+      name: 'Bangalore',
+      flightTime: '5 hours from Riyadh',
+      directFlights: true,
+      airlines: ['Saudia', 'IndiGo', 'Air India'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '4.5 hours from Riyadh',
+      directFlights: true,
+      airlines: ['Saudia', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Hyderabad',
+      flightTime: '4.5 hours from Riyadh',
+      directFlights: true,
+      airlines: ['Saudia', 'IndiGo'],
+      specialties: ['Cardiac', 'Orthopedics', 'General surgery'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'World-Class Healthcare in India for Saudi Patients',
-  heroSubtitle: 'Direct flights from Riyadh. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Germany and USA.',
-  metaDescription: 'Premium medical treatment in India for Saudi patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
-  introParagraph: 'Patients from Riyadh, Jeddah, and Dammam choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, halal food, and prayer facilities.',
+  heroSubtitle:
+    'Direct flights from Riyadh. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Germany and USA.',
+  metaDescription:
+    'Premium medical treatment in India for Saudi patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
+  introParagraph:
+    'Patients from Riyadh, Jeddah, and Dammam choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, halal food, and prayer facilities.',
 
   currency: { code: 'SAR', symbol: 'ر.س', exchangeRate: 3.75, name: 'Saudi Riyal' },
 };
@@ -211,17 +259,38 @@ const kuwait: CountryMetadata = {
   establishedYear: 2018,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '4.5 hours from Kuwait City', directFlights: true, airlines: ['Kuwait Airways', 'IndiGo'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '4 hours from Kuwait City', directFlights: true, airlines: ['Kuwait Airways', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Chennai', flightTime: '5 hours from Kuwait City', directFlights: true, airlines: ['Kuwait Airways', 'IndiGo'], specialties: ['Cardiac', 'Orthopedics', 'Cancer'] },
+    {
+      name: 'Bangalore',
+      flightTime: '4.5 hours from Kuwait City',
+      directFlights: true,
+      airlines: ['Kuwait Airways', 'IndiGo'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '4 hours from Kuwait City',
+      directFlights: true,
+      airlines: ['Kuwait Airways', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Chennai',
+      flightTime: '5 hours from Kuwait City',
+      directFlights: true,
+      airlines: ['Kuwait Airways', 'IndiGo'],
+      specialties: ['Cardiac', 'Orthopedics', 'Cancer'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Premium Healthcare in India for Kuwaiti Patients',
-  heroSubtitle: 'Direct flights from Kuwait City. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Europe.',
-  metaDescription: 'Premium medical treatment in India for Kuwaiti patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
-  introParagraph: 'Patients from Kuwait City choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
+  heroSubtitle:
+    'Direct flights from Kuwait City. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Europe.',
+  metaDescription:
+    'Premium medical treatment in India for Kuwaiti patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
+  introParagraph:
+    'Patients from Kuwait City choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
 
   currency: { code: 'KWD', symbol: 'د.ك', exchangeRate: 0.31, name: 'Kuwaiti Dinar' },
 };
@@ -284,17 +353,38 @@ const qatar: CountryMetadata = {
   establishedYear: 2018,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '4 hours from Doha', directFlights: true, airlines: ['Qatar Airways', 'IndiGo'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '3.5 hours from Doha', directFlights: true, airlines: ['Qatar Airways', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Kochi', flightTime: '4 hours from Doha', directFlights: true, airlines: ['Qatar Airways', 'IndiGo'], specialties: ['Cardiac', 'General surgery', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '4 hours from Doha',
+      directFlights: true,
+      airlines: ['Qatar Airways', 'IndiGo'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '3.5 hours from Doha',
+      directFlights: true,
+      airlines: ['Qatar Airways', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Kochi',
+      flightTime: '4 hours from Doha',
+      directFlights: true,
+      airlines: ['Qatar Airways', 'IndiGo'],
+      specialties: ['Cardiac', 'General surgery', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Premium Healthcare in India for Qatari Patients',
-  heroSubtitle: 'Direct flights from Doha. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Europe.',
-  metaDescription: 'Premium medical treatment in India for Qatari patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
-  introParagraph: 'Patients from Doha choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
+  heroSubtitle:
+    'Direct flights from Doha. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs Europe.',
+  metaDescription:
+    'Premium medical treatment in India for Qatari patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
+  introParagraph:
+    'Patients from Doha choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
 
   currency: { code: 'QAR', symbol: 'ر.ق', exchangeRate: 3.64, name: 'Qatari Riyal' },
 };
@@ -357,17 +447,38 @@ const oman: CountryMetadata = {
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '3.5 hours from Muscat', directFlights: true, airlines: ['Oman Air', 'IndiGo'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '3 hours from Muscat', directFlights: true, airlines: ['Oman Air', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Kochi', flightTime: '3.5 hours from Muscat', directFlights: true, airlines: ['Oman Air', 'IndiGo'], specialties: ['Cardiac', 'General surgery', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '3.5 hours from Muscat',
+      directFlights: true,
+      airlines: ['Oman Air', 'IndiGo'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '3 hours from Muscat',
+      directFlights: true,
+      airlines: ['Oman Air', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Kochi',
+      flightTime: '3.5 hours from Muscat',
+      directFlights: true,
+      airlines: ['Oman Air', 'IndiGo'],
+      specialties: ['Cardiac', 'General surgery', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Premium Healthcare in India for Omani Patients',
-  heroSubtitle: 'Direct flights from Muscat. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs UAE and Europe.',
-  metaDescription: 'Premium medical treatment in India for Omani patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
-  introParagraph: 'Patients from Muscat and Salalah choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
+  heroSubtitle:
+    'Direct flights from Muscat. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs UAE and Europe.',
+  metaDescription:
+    'Premium medical treatment in India for Omani patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
+  introParagraph:
+    'Patients from Muscat and Salalah choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
 
   currency: { code: 'OMR', symbol: 'ر.ع.', exchangeRate: 0.39, name: 'Omani Rial' },
 };
@@ -430,17 +541,38 @@ const bahrain: CountryMetadata = {
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '4 hours from Manama', directFlights: true, airlines: ['Gulf Air', 'IndiGo'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '3.5 hours from Manama', directFlights: true, airlines: ['Gulf Air', 'Air India'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Kochi', flightTime: '4 hours from Manama', directFlights: true, airlines: ['Gulf Air', 'IndiGo'], specialties: ['Cardiac', 'General surgery', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '4 hours from Manama',
+      directFlights: true,
+      airlines: ['Gulf Air', 'IndiGo'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '3.5 hours from Manama',
+      directFlights: true,
+      airlines: ['Gulf Air', 'Air India'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Kochi',
+      flightTime: '4 hours from Manama',
+      directFlights: true,
+      airlines: ['Gulf Air', 'IndiGo'],
+      specialties: ['Cardiac', 'General surgery', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Premium Healthcare in India for Bahraini Patients',
-  heroSubtitle: 'Direct flights from Manama. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs UAE and Europe.',
-  metaDescription: 'Premium medical treatment in India for Bahraini patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
-  introParagraph: 'Patients from Manama choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
+  heroSubtitle:
+    'Direct flights from Manama. JCI-accredited hospitals. Arabic support. Halal facilities. Save 50–70% vs UAE and Europe.',
+  metaDescription:
+    'Premium medical treatment in India for Bahraini patients. JCI hospitals, Arabic-speaking staff, halal food, prayer facilities. Save on cardiac, orthopedic, cancer care.',
+  introParagraph:
+    'Patients from Manama choose India for cardiac surgery, orthopedics, cancer care, and transplants — with JCI-accredited hospitals, Arabic-speaking coordinators, and halal facilities.',
 
   currency: { code: 'BHD', symbol: '.د.ب', exchangeRate: 0.38, name: 'Bahraini Dinar' },
 };

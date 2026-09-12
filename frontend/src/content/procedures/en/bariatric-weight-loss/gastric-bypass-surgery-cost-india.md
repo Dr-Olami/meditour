@@ -1,56 +1,56 @@
 ﻿---
 locale: en
-name: "Gastric Bypass Surgery"
-seoHeadline: "Gastric Bypass Surgery Cost in India for International Patients"
+name: 'Gastric Bypass Surgery'
+seoHeadline: 'Gastric Bypass Surgery Cost in India for International Patients'
 parentTreatmentSlug: bariatric-weight-loss
-summary: "Gastric bypass surgery in India costs between $4,000 and $10,000, offering international patients savings of up to 70% compared to Western countries. The procedure is performed laparoscopically by experienced bariatric surgeons in JCI-accredited hospitals in Bangalore with a typical stay of 2-3 weeks."
-description: "Affordable gastric bypass (Roux-en-Y) surgery in India for medical tourists. Compare costs, recovery timeline, eligibility, and top bariatric surgeons in Bangalore."
-fromPrice: "$4,000"
-toPrice: "$10,000"
-duration: "2-4 hours"
-hospitalStay: "3-4 days"
-recoveryTime: "4-6 weeks"
+summary: 'Gastric bypass surgery in India costs between $4,000 and $10,000, offering international patients savings of up to 70% compared to Western countries. The procedure is performed laparoscopically by experienced bariatric surgeons in JCI-accredited hospitals in Bangalore with a typical stay of 2-3 weeks.'
+description: 'Affordable gastric bypass (Roux-en-Y) surgery in India for medical tourists. Compare costs, recovery timeline, eligibility, and top bariatric surgeons in Bangalore.'
+fromPrice: '$4,000'
+toPrice: '$10,000'
+duration: '2-4 hours'
+hospitalStay: '3-4 days'
+recoveryTime: '4-6 weeks'
 eligibility:
-  - "Patients with a BMI of 40 or higher (morbid obesity) without comorbidities"
-  - "Patients with a BMI of 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension or sleep apnoea"
-  - "Individuals who have failed sustained weight loss through diet, exercise and medication for at least 6-12 months"
-  - "Patients who pass psychological screening and nutritional assessment by the bariatric team"
-  - "Non-smokers or those willing to quit smoking for at least 4 weeks before and after surgery"
+  - 'Patients with a BMI of 40 or higher (morbid obesity) without comorbidities'
+  - 'Patients with a BMI of 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension or sleep apnoea'
+  - 'Individuals who have failed sustained weight loss through diet, exercise and medication for at least 6-12 months'
+  - 'Patients who pass psychological screening and nutritional assessment by the bariatric team'
+  - 'Non-smokers or those willing to quit smoking for at least 4 weeks before and after surgery'
 costInclusions:
-  - "Bariatric surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs including laparoscopic equipment"
-  - "Pre-operative diagnostics (blood tests, endoscopy, cardiac evaluation)"
-  - "Anaesthesia charges"
-  - "Post-operative care during hospital stay"
-  - "Dietitian consultation and nutritional counselling"
-  - "Airport pickup and drop"
+  - 'Bariatric surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs including laparoscopic equipment'
+  - 'Pre-operative diagnostics (blood tests, endoscopy, cardiac evaluation)'
+  - 'Anaesthesia charges'
+  - 'Post-operative care during hospital stay'
+  - 'Dietitian consultation and nutritional counselling'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge medications and vitamin supplements"
-  - "Personal expenses and meals for attendants"
-  - "Revisional surgery if needed (separate package)"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge medications and vitamin supplements'
+  - 'Personal expenses and meals for attendants'
+  - 'Revisional surgery if needed (separate package)'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-4 days"
-    description: "Post-operative monitoring, pain management, early mobilisation, and staged liquid diet initiation under nursing supervision."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Dietary progression from clear liquids to soft foods, wound review, nutritional counselling, supplementation initiation, and clearance for international travel."
-  - phase: "Return home"
-    duration: "Week 3-6"
-    description: "Gradual return to daily activities, continued dietary progression to solid foods, vitamin and mineral supplementation protocol, and avoidance of heavy lifting."
-  - phase: "Full recovery"
-    duration: "4-6 weeks"
-    description: "Complete wound healing, resumption of normal activities including exercise, stabilisation of eating patterns, and commencement of long-term weight monitoring."
+  - phase: 'Hospital stay'
+    duration: '3-4 days'
+    description: 'Post-operative monitoring, pain management, early mobilisation, and staged liquid diet initiation under nursing supervision.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Dietary progression from clear liquids to soft foods, wound review, nutritional counselling, supplementation initiation, and clearance for international travel.'
+  - phase: 'Return home'
+    duration: 'Week 3-6'
+    description: 'Gradual return to daily activities, continued dietary progression to solid foods, vitamin and mineral supplementation protocol, and avoidance of heavy lifting.'
+  - phase: 'Full recovery'
+    duration: '4-6 weeks'
+    description: 'Complete wound healing, resumption of normal activities including exercise, stabilisation of eating patterns, and commencement of long-term weight monitoring.'
 risks:
-  - "Anastomotic leak at the stomach or intestinal connection requiring re-operation"
-  - "Nutritional deficiencies (vitamin B12, iron, calcium, vitamin D) due to malabsorption requiring lifelong supplementation"
-  - "Dumping syndrome causing nausea, sweating and diarrhoea after eating sugary foods"
-  - "Deep vein thrombosis or pulmonary embolism due to reduced mobility post-surgery"
-  - "Internal bleeding or infection at surgical sites requiring intervention"
+  - 'Anastomotic leak at the stomach or intestinal connection requiring re-operation'
+  - 'Nutritional deficiencies (vitamin B12, iron, calcium, vitamin D) due to malabsorption requiring lifelong supplementation'
+  - 'Dumping syndrome causing nausea, sweating and diarrhoea after eating sugary foods'
+  - 'Deep vein thrombosis or pulmonary embolism due to reduced mobility post-surgery'
+  - 'Internal bleeding or infection at surgical sites requiring intervention'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - fortis-hospital-bannerghatta
@@ -60,17 +60,18 @@ relatedDoctorSlugs:
   - dr-sumit-talwar
 
 relatedProcedureSlugs:
-  - "gastric-sleeve-surgery-cost-india"
+  - 'gastric-sleeve-surgery-cost-india'
 faqs:
-  - question: "How much does gastric bypass surgery cost in India compared to the USA?"
-    answer: "Gastric bypass surgery in India costs $4,000–$10,000, while in the USA it ranges from $15,000–$30,000. International patients can save approximately 70-75% on the total procedure cost, including hospital stay, surgeon fees and pre-operative diagnostics."
-  - question: "Is gastric bypass surgery performed laparoscopically in Bangalore?"
-    answer: "Yes, gastric bypass is performed laparoscopically (keyhole surgery) at our partner hospitals in Bangalore. This approach uses small incisions, resulting in minimal scarring, reduced post-operative pain, shorter hospital stay and faster recovery compared to open surgery."
-  - question: "How much weight can I expect to lose after gastric bypass?"
-    answer: "Most patients lose 60-80% of their excess body weight within 12-18 months after gastric bypass surgery. Weight loss is most rapid in the first six months and gradually stabilises. Long-term success depends on adherence to dietary guidelines, regular exercise and ongoing follow-up."
-  - question: "Will I need to take supplements after gastric bypass surgery?"
-    answer: "Yes, lifelong vitamin and mineral supplementation is required after gastric bypass due to reduced nutrient absorption. This typically includes multivitamins, calcium, iron, vitamin B12 injections and vitamin D. The bariatric team provides personalised supplementation protocols and monitors levels through regular blood tests."
+  - question: 'How much does gastric bypass surgery cost in India compared to the USA?'
+    answer: 'Gastric bypass surgery in India costs $4,000–$10,000, while in the USA it ranges from $15,000–$30,000. International patients can save approximately 70-75% on the total procedure cost, including hospital stay, surgeon fees and pre-operative diagnostics.'
+  - question: 'Is gastric bypass surgery performed laparoscopically in Bangalore?'
+    answer: 'Yes, gastric bypass is performed laparoscopically (keyhole surgery) at our partner hospitals in Bangalore. This approach uses small incisions, resulting in minimal scarring, reduced post-operative pain, shorter hospital stay and faster recovery compared to open surgery.'
+  - question: 'How much weight can I expect to lose after gastric bypass?'
+    answer: 'Most patients lose 60-80% of their excess body weight within 12-18 months after gastric bypass surgery. Weight loss is most rapid in the first six months and gradually stabilises. Long-term success depends on adherence to dietary guidelines, regular exercise and ongoing follow-up.'
+  - question: 'Will I need to take supplements after gastric bypass surgery?'
+    answer: 'Yes, lifelong vitamin and mineral supplementation is required after gastric bypass due to reduced nutrient absorption. This typically includes multivitamins, calcium, iron, vitamin B12 injections and vitamin D. The bariatric team provides personalised supplementation protocols and monitors levels through regular blood tests.'
 ---
+
 ## Overview
 
 If you have been struggling with severe obesity and related health conditions — and diet, exercise and medication have not produced lasting results — you may be considering gastric bypass surgery as a path toward meaningful, long-term weight loss. It is completely understandable to want a solution that addresses not just the number on the scale but the broader impact that obesity has on your health, your confidence and your quality of life.
@@ -149,13 +150,13 @@ Revisional bariatric surgery is available for patients who have experienced inad
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $4,000 – $10,000 | Baseline |
-| USA | $15,000 – $30,000 | ~3x higher |
-| UK | £10,000 – £20,000 | ~2.2x higher |
-| Singapore | $12,000 – $22,000 | ~2.5x higher |
-| Thailand | $8,000 – $15,000 | ~1.5x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $4,000 – $10,000  | Baseline     |
+| USA               | $15,000 – $30,000 | ~3x higher   |
+| UK                | £10,000 – £20,000 | ~2.2x higher |
+| Singapore         | $12,000 – $22,000 | ~2.5x higher |
+| Thailand          | $8,000 – $15,000  | ~1.5x higher |
 
 The final cost depends on your BMI, the complexity of the procedure, the surgeon's experience, the hospital category and the length of hospital stay. Patients with a higher BMI or those requiring additional procedures may fall at the higher end of the range. Even when you factor in international flights, a 2-3 week stay in Bangalore and all medical expenses, the total cost rarely exceeds half of what the same procedure would cost in the USA or UK. Khan Meditour provides all-inclusive packages with transparent, itemised pricing so there are no unexpected charges.
 

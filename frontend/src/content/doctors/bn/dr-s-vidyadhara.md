@@ -22,7 +22,7 @@ expertise:
   - ঘাড় ও পিঠের ব্যথার অ-অপারেটিভ এবং অপারেটিভ চিকিৎসা
   - স্পাইনাল ব্যাধির জন্য বিভিন্ন ইনজেকশন কৌশল
   - মাইক্রোস্কোপিক ও এন্ডোস্কোপিক প্রক্রিয়া
-  - "ন্যূনতম ইনভেসিভ স্পাইনাল স্ট্যাবিলাইজেশন, PLIF / TLIF"
+  - 'ন্যূনতম ইনভেসিভ স্পাইনাল স্ট্যাবিলাইজেশন, PLIF / TLIF'
   - কৃত্রিম ডিস্ক প্রতিস্থাপন
   - জটিল সার্ভিক্যাল স্পাইন সার্জারি
   - অস্টিওপোরোটিক ফ্র্যাকচারের জন্য ভার্টেব্রোপ্লাস্টি ও কাইফোপ্লাস্টি
@@ -31,12 +31,12 @@ expertise:
   - কাইফোসিসের জন্য স্পাইনাল অস্টিওটমি
   - স্পাইনাল কলাম পুনর্গঠন – পশ্চাৎ / অগ্র
   - স্পাইনাল কর্ড / কলাম টিউমার সার্জারি
-pullQuote: "মেরুদণ্ড হলো মানব মর্যাদার স্তম্ভ। আমি যখন কাউকে সোজা দাঁড়ানোর ক্ষমতা ফিরিয়ে দিই, আমি শুধু হাড় ঠিক করছি না — আমি তাদের আত্মসম্মান ফিরিয়ে দিচ্ছি।"
+pullQuote: 'মেরুদণ্ড হলো মানব মর্যাদার স্তম্ভ। আমি যখন কাউকে সোজা দাঁড়ানোর ক্ষমতা ফিরিয়ে দিই, আমি শুধু হাড় ঠিক করছি না — আমি তাদের আত্মসম্মান ফিরিয়ে দিচ্ছি।'
 faqs:
-  - question: "ডা. এস বিদ্যাধর কি রোবোটিক স্পাইন সার্জারিতে অভিজ্ঞ?"
-    answer: "হ্যাঁ, ডা. এস বিদ্যাধর রোবোটিক স্পাইন সার্জারি এবং কম্পিউটার-নেভিগেটেড স্পাইনাল প্রক্রিয়ায় বিশ্বব্যাপী স্বীকৃত অগ্রগামী। তিনি এক মাসে ৫০টিরও বেশি সফল রোবোটিক স্পাইনাল সার্জারি সম্পাদন করে মণিপাল হাসপাতালে রেকর্ড স্থাপন করেছেন। তিনি স্পাইন সার্জারি বিভাগের চেয়ারম্যান ও এইচওডি এবং মেডিকেল অ্যাডভাইজরি বোর্ডের সহ-চেয়ারম্যান, হংকং বিশ্ববিদ্যালয় থেকে আন্তর্জাতিক প্রশিক্ষণপ্রাপ্ত।"
-  - question: "ডা. এস বিদ্যাধর কোন স্পাইনাল অবস্থার চিকিৎসা করেন?"
-    answer: "ডা. এস বিদ্যাধর স্কোলিওসিস এবং স্পাইনাল ডিফর্মিটি, সার্ভিকাল স্পাইন ডিসঅর্ডার, হার্নিয়েটেড ডিস্ক, স্পাইনাল টিউমার, অস্টিওপরোটিক ভার্টিব্রাল ফ্র্যাকচার, ডিজেনারেটিভ ডিস্ক ডিজিজ এবং জটিল স্পাইনাল রিকনস্ট্রাকশন কেস সহ বিস্তৃত স্পাইনাল অবস্থার চিকিৎসা করেন। তিনি ন্যূনতম ইনভেসিভ স্পাইন সার্জারি, আর্টিফিশিয়াল ডিস্ক রিপ্লেসমেন্ট, ভার্টিব্রোপ্লাস্টি, কাইফোপ্লাস্টি এবং PLIF ও TLIF সহ উন্নত ফিউশন প্রক্রিয়ায় বিশেষজ্ঞ।"
+  - question: 'ডা. এস বিদ্যাধর কি রোবোটিক স্পাইন সার্জারিতে অভিজ্ঞ?'
+    answer: 'হ্যাঁ, ডা. এস বিদ্যাধর রোবোটিক স্পাইন সার্জারি এবং কম্পিউটার-নেভিগেটেড স্পাইনাল প্রক্রিয়ায় বিশ্বব্যাপী স্বীকৃত অগ্রগামী। তিনি এক মাসে ৫০টিরও বেশি সফল রোবোটিক স্পাইনাল সার্জারি সম্পাদন করে মণিপাল হাসপাতালে রেকর্ড স্থাপন করেছেন। তিনি স্পাইন সার্জারি বিভাগের চেয়ারম্যান ও এইচওডি এবং মেডিকেল অ্যাডভাইজরি বোর্ডের সহ-চেয়ারম্যান, হংকং বিশ্ববিদ্যালয় থেকে আন্তর্জাতিক প্রশিক্ষণপ্রাপ্ত।'
+  - question: 'ডা. এস বিদ্যাধর কোন স্পাইনাল অবস্থার চিকিৎসা করেন?'
+    answer: 'ডা. এস বিদ্যাধর স্কোলিওসিস এবং স্পাইনাল ডিফর্মিটি, সার্ভিকাল স্পাইন ডিসঅর্ডার, হার্নিয়েটেড ডিস্ক, স্পাইনাল টিউমার, অস্টিওপরোটিক ভার্টিব্রাল ফ্র্যাকচার, ডিজেনারেটিভ ডিস্ক ডিজিজ এবং জটিল স্পাইনাল রিকনস্ট্রাকশন কেস সহ বিস্তৃত স্পাইনাল অবস্থার চিকিৎসা করেন। তিনি ন্যূনতম ইনভেসিভ স্পাইন সার্জারি, আর্টিফিশিয়াল ডিস্ক রিপ্লেসমেন্ট, ভার্টিব্রোপ্লাস্টি, কাইফোপ্লাস্টি এবং PLIF ও TLIF সহ উন্নত ফিউশন প্রক্রিয়ায় বিশেষজ্ঞ।'
 ---
 
 ## ডাক্তার সম্পর্কে
@@ -77,15 +77,15 @@ faqs:
 
 ## গবেষণা প্রকাশনা
 
-- Randomized clinical study to compare the accuracy of navigated and non-navigated thoracic pedicle screw insertion. S Rajasekaran, S Vidyadhara, et al. *Spine* 2007; 32: E56-64.
+- Randomized clinical study to compare the accuracy of navigated and non-navigated thoracic pedicle screw insertion. S Rajasekaran, S Vidyadhara, et al. _Spine_ 2007; 32: E56-64.
 
-- Iso-C3D fluoroscopy based navigation in direct screw fixation of Hangman's fracture. S Rajasekaran, S Vidyadhara, Shetty AP. *J Spinal Disorders and Techniques* 2007; 20(8): 616-9.
+- Iso-C3D fluoroscopy based navigation in direct screw fixation of Hangman's fracture. S Rajasekaran, S Vidyadhara, Shetty AP. _J Spinal Disorders and Techniques_ 2007; 20(8): 616-9.
 
-- Coupling between sagittal and frontal plane deformity correction in idiopathic thoracic scoliosis. Luk KDK, S Vidyadhara et al. *Spine* 2010; 35(11): 1158-64.
+- Coupling between sagittal and frontal plane deformity correction in idiopathic thoracic scoliosis. Luk KDK, S Vidyadhara et al. _Spine_ 2010; 35(11): 1158-64.
 
-- ISSLS Prize Winner: A Study of Effects of In Vivo Mechanical Forces on Human Lumbar Discs. Rajasekaran S, S Vidyadhara, et al. *Spine* 2010; 35(21): 1930-43.
+- ISSLS Prize Winner: A Study of Effects of In Vivo Mechanical Forces on Human Lumbar Discs. Rajasekaran S, S Vidyadhara, et al. _Spine_ 2010; 35(21): 1930-43.
 
-- Rationale in the Management of 4-Level Lumbar Spondylolyses. S Vidyadhara. *Spine* 2014; 39(12): E734-E738.
+- Rationale in the Management of 4-Level Lumbar Spondylolyses. S Vidyadhara. _Spine_ 2014; 39(12): E734-E738.
 
 ## আলোচনা ও প্রকাশনা
 

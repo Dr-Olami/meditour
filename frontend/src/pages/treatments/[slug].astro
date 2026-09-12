@@ -17,7 +17,16 @@ import { resolvePublicImage } from '../../lib/images';
 import { getTranslations } from '../../lib/i18n';
 import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
-import { getTreatments, getDoctors, getHospitals, getProceduresByCategory, resolveRelatedDoctors, resolveHospital, resolveRelatedHospitals, entrySlug } from '../../lib/content';
+import {
+  getTreatments,
+  getDoctors,
+  getHospitals,
+  getProceduresByCategory,
+  resolveRelatedDoctors,
+  resolveHospital,
+  resolveRelatedHospitals,
+  entrySlug,
+} from '../../lib/content';
 import { medicalProcedure, breadcrumbs, faqPage, medicalWebPage } from '../../lib/schema';
 import { getTreatmentInquiryLink, getDoctorInquiryLink } from '../../lib/whatsapp';
 import { generateTreatmentFaqs, mergeFaqs } from '../../lib/faq-generator';
@@ -50,7 +59,10 @@ export async function getStaticPaths() {
         whatsappHref: getDoctorInquiryLink(d.data.name) || undefined,
       };
     });
-    const relatedHospitals = resolveRelatedHospitals(entry.data.relatedHospitalSlugs, hospitals).map((h) => ({
+    const relatedHospitals = resolveRelatedHospitals(
+      entry.data.relatedHospitalSlugs,
+      hospitals
+    ).map((h) => ({
       name: h.data.name,
       city: h.data.city,
       image: h.data.image,
@@ -58,7 +70,13 @@ export async function getStaticPaths() {
     }));
     return {
       params: { slug },
-      props: { treatment: entry.data, related, relatedHospitals, entry, heroImage: resolvePublicImage(`images/treatments/${slug}`) },
+      props: {
+        treatment: entry.data,
+        related,
+        relatedHospitals,
+        entry,
+        heroImage: resolvePublicImage(`images/treatments/${slug}`),
+      },
     };
   });
 }
@@ -126,9 +144,10 @@ const categoryProcedures = await getProceduresByCategory('en', slug);
 // ── Editorial data shaping ────────────────────────────────────────────
 // QuickFacts: pull key facts out of the sidebar dl into hero icon chips.
 // Price shows a range when both fromPrice and toPrice are available.
-const priceValue = treatment.fromPrice && treatment.toPrice
-  ? `${treatment.fromPrice} – ${treatment.toPrice}`
-  : treatment.fromPrice;
+const priceValue =
+  treatment.fromPrice && treatment.toPrice
+    ? `${treatment.fromPrice} – ${treatment.toPrice}`
+    : treatment.fromPrice;
 
 const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name, {
   costRange: priceValue,
@@ -136,10 +155,36 @@ const treatmentWhatsAppHref = getTreatmentInquiryLink(treatment.name, {
 });
 
 const quickFacts: QuickFactItem[] = [
-  ...(treatment.duration ? [{ icon: 'clock' as const, label: t.treatments.detail.durationLabel, value: treatment.duration }] : []),
-  ...(treatment.hospitalStay ? [{ icon: 'building' as const, label: t.treatments.detail.stayLabel, value: treatment.hospitalStay }] : []),
-  ...(treatment.recoveryTime ? [{ icon: 'heart-pulse' as const, label: t.treatments.detail.recoveryLabel, value: treatment.recoveryTime }] : []),
-  ...(priceValue ? [{ icon: 'tag' as const, label: t.treatments.detail.priceLabel, value: priceValue }] : []),
+  ...(treatment.duration
+    ? [
+        {
+          icon: 'clock' as const,
+          label: t.treatments.detail.durationLabel,
+          value: treatment.duration,
+        },
+      ]
+    : []),
+  ...(treatment.hospitalStay
+    ? [
+        {
+          icon: 'building' as const,
+          label: t.treatments.detail.stayLabel,
+          value: treatment.hospitalStay,
+        },
+      ]
+    : []),
+  ...(treatment.recoveryTime
+    ? [
+        {
+          icon: 'heart-pulse' as const,
+          label: t.treatments.detail.recoveryLabel,
+          value: treatment.recoveryTime,
+        },
+      ]
+    : []),
+  ...(priceValue
+    ? [{ icon: 'tag' as const, label: t.treatments.detail.priceLabel, value: priceValue }]
+    : []),
 ];
 
 // Category hue — per-category glow tinting for the hero band.
@@ -152,10 +197,22 @@ const stepCards: StepCardItem[] = (treatment.procedures ?? []).map((procedure) =
 
 // StepTimeline: patient journey — fixed 4-step arc.
 const journeySteps: Step[] = [
-  { title: t.treatments.detail.journeyStep1Title, description: t.treatments.detail.journeyStep1Desc },
-  { title: t.treatments.detail.journeyStep2Title, description: t.treatments.detail.journeyStep2Desc },
-  { title: t.treatments.detail.journeyStep3Title, description: t.treatments.detail.journeyStep3Desc },
-  { title: t.treatments.detail.journeyStep4Title, description: t.treatments.detail.journeyStep4Desc },
+  {
+    title: t.treatments.detail.journeyStep1Title,
+    description: t.treatments.detail.journeyStep1Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep2Title,
+    description: t.treatments.detail.journeyStep2Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep3Title,
+    description: t.treatments.detail.journeyStep3Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep4Title,
+    description: t.treatments.detail.journeyStep4Desc,
+  },
 ];
 
 // Related treatments — resolve slugs to entries for cross-linking.
@@ -190,8 +247,8 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
   />
 
   <main>
-
-  {/* ── DARK HERO — category-tinted ink band with QuickFacts ───────────
+    {
+      /* ── DARK HERO — category-tinted ink band with QuickFacts ───────────
       IMAGE SLOT (optional background): editorial treatment hero —
       modern operating theatre / consultation scene, shallow depth of
       field, warm neutral tones with subtle violet accent light.
@@ -202,210 +259,100 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
       faces looking at camera, 16:9"
       Export: /images/treatments/<slug>.webp or .jpg (1600×900, <150KB) —
       auto-detected at build time by resolveTreatmentHero(); the page falls
-      back to the ink + glow hero until the file exists. */}
-  <section class="relative overflow-hidden bg-ink text-cream-100">
-    {/* Card image as hero background (all breakpoints) */}
-    {treatment.image && (
-      <>
-        <img
-          src={treatment.image}
-          alt=""
-          class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          loading="eager"
-          fetchpriority="high"
-          data-anim="mask-reveal"
+      back to the ink + glow hero until the file exists. */
+    }
+    <section class="relative overflow-hidden bg-ink text-cream-100">
+      {/* Card image as hero background (all breakpoints) */}
+      {
+        treatment.image && (
+          <>
+            <img
+              src={treatment.image}
+              alt=""
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              aria-hidden="true"
+              loading="eager"
+              fetchpriority="high"
+              data-anim="mask-reveal"
+            />
+            <div
+              class="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+              style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)"
+            />
+          </>
+        )
+      }
+      <div
+        class={`pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-${hue.primary}/15 blur-3xl`}
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class={`pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-${hue.secondary}/10 blur-3xl`}
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[
+            { label: t.nav.home, href: '/' },
+            { label: t.treatments.title, href: '/treatments' },
+            { label: treatment.name },
+          ]}
+          tone="dark"
+          class="mb-10"
+          data-anim="fade-in-up"
         />
-        <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)" />
-      </>
-    )}
-    <div class={`pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-${hue.primary}/15 blur-3xl`} aria-hidden="true" />
-    <div class={`pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-${hue.secondary}/10 blur-3xl`} aria-hidden="true" />
 
-    <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
-      <Breadcrumb
-        items={[
-          { label: t.nav.home, href: '/' },
-          { label: t.treatments.title, href: '/treatments' },
-          { label: treatment.name },
-        ]}
-        tone="dark"
-        class="mb-10"
-        data-anim="fade-in-up"
-      />
+        <div data-anim="stagger-children">
+          {
+            treatment.category && (
+              <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+                {treatment.category}
+              </span>
+            )
+          }
+          <h1
+            class="mt-4 max-w-2xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]"
+            data-anim="headline-reveal"
+          >
+            {headline}
+          </h1>
+          <p
+            class="mt-5 max-w-2xl text-base leading-relaxed text-cream-100 sm:text-lg"
+            data-anim="fade-in-up"
+          >
+            {treatment.description}
+          </p>
 
-      <div data-anim="stagger-children">
-        {treatment.category && (
-          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
-            {treatment.category}
-          </span>
-        )}
-        <h1 class="mt-4 max-w-2xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]" data-anim="headline-reveal">
-          {headline}
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-cream-100 sm:text-lg" data-anim="fade-in-up">
-          {treatment.description}
-        </p>
+          {/* Cost badge — prominent price display in hero */}
+          {
+            priceValue && (
+              <div
+                class="mt-6 inline-flex items-baseline gap-2 rounded-card bg-white/10 px-5 py-3 backdrop-blur-sm"
+                data-anim="fade-in-up"
+              >
+                <span class="text-cream-100/70 text-sm">
+                  {t.treatments.detail.typicalCostLabel}
+                </span>
+                <span class="font-display text-2xl font-bold text-white">{priceValue}</span>
+              </div>
+            )
+          }
 
-        {/* Cost badge — prominent price display in hero */}
-        {priceValue && (
-          <div class="mt-6 inline-flex items-baseline gap-2 rounded-card bg-white/10 px-5 py-3 backdrop-blur-sm" data-anim="fade-in-up">
-            <span class="text-sm text-cream-100/70">{t.treatments.detail.typicalCostLabel}</span>
-            <span class="font-display text-2xl font-bold text-white">{priceValue}</span>
-          </div>
-        )}
+          {/* QuickFacts — key facts as scannable icon chips in the hero */}
+          {
+            quickFacts.length > 0 && (
+              <div class="mt-8" data-anim="fade-in-up">
+                <QuickFacts facts={quickFacts} tone="dark" />
+              </div>
+            )
+          }
 
-        {/* QuickFacts — key facts as scannable icon chips in the hero */}
-        {quickFacts.length > 0 && (
-          <div class="mt-8" data-anim="fade-in-up">
-            <QuickFacts facts={quickFacts} tone="dark" />
-          </div>
-        )}
-
-        {/* CTAs */}
-        <div class="mt-8 flex flex-wrap gap-4">
-          <LeadModalTrigger
-            client:load
-            label={t.doctors.detail.bookCta}
-            modalTitle={t.leadModal.title}
-            modalSubtitle={t.leadModal.subtitle}
-            closeLabel={t.leadModal.close}
-            source={LEAD_SOURCE.TREATMENT_PAGE}
-            defaultTreatment={treatment.name}
-            treatments={treatmentOptions}
-            className="rounded-card px-6 py-3"
-          />
-          <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
-            <Icon name="whatsapp" size={18} />
-            {t.treatments.detail.inquiryCta}
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* ── "IN SHORT" SUMMARY — AI-extractable callout ─────────────────── */}
-  {treatment.summary && (
-    <section class="container py-8" data-anim="fade-in-up">
-      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-        <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">{t.treatments.detail.inShortLabel}</p>
-        <p class="mt-2 text-lg leading-relaxed text-ink/80">{treatment.summary}</p>
-      </div>
-    </section>
-  )}
-
-  {/* ── "WHO IS THIS TREATMENT FOR?" — eligibility criteria ─────────── */}
-  {treatment.eligibility && treatment.eligibility.length > 0 && (
-    <section class="container pb-8" data-anim="fade-in-up">
-      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.whoIsThisFor}</h2>
-      <ul class="grid gap-3 md:grid-cols-2">
-        {treatment.eligibility.map((item) => (
-          <li class="flex items-start gap-2 text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  <section class="container py-16 md:py-20">
-    {/* ── MEET YOUR SPECIALISTS — related doctors above the prose ─────── */}
-    {related.length > 0 && (
-      <section class="mb-16" data-anim="fade-in-up">
-        <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.specialistsHeading}</h2>
-        <p class="mt-2 max-w-2xl text-ink/60">{t.treatments.detail.specialistsSummary}</p>
-        <div class="mt-8 grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
-          {related.map((doctor: Doctor) => (
-            <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
-          ))}
-        </div>
-      </section>
-    )}
-
-    {/* ── BODY + STICKY RAIL ────────────────────────────────────────────
-        minmax(0,1fr) + min-w-0: lets the StepCards mobile carousel shrink
-        below its max-content width instead of blowing out the page. */}
-    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
-      <div class="min-w-0">
-        {/* Procedures → StepCards numbered grid */}
-        {stepCards.length > 0 && (
-          <div class="mb-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.procedures}</h2>
-            <StepCards steps={stepCards} tone="light" client:visible />
-          </div>
-        )}
-
-        {/* ── PROCEDURE CARDS — links to dedicated procedure pages ──── */}
-        {categoryProcedures.length > 0 && (
-          <div class="mb-12" data-anim="fade-in-up">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.procedures.title}</h2>
-            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {categoryProcedures.map((p) => {
-                const pSlug = entrySlug(p).split('/').pop()!;
-                const pPrice = p.data.fromPrice && p.data.toPrice
-                  ? `${p.data.fromPrice} – ${p.data.toPrice}`
-                  : p.data.fromPrice;
-                return (
-                  <a href={`/treatments/${slug}/${pSlug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-5 transition-all hover:border-violet-300 hover:shadow-base">
-                    <p class="text-sm font-semibold text-ink">{p.data.name}</p>
-                    {p.data.summary && <p class="mt-2 text-xs text-ink/60 line-clamp-2">{p.data.summary}</p>}
-                    {pPrice && (
-                      <p class="mt-3 text-xs font-medium text-violet-600">{t.treatments.procedures.costInIndia}: {pPrice}</p>
-                    )}
-                    <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
-                      {t.treatments.procedures.learnMore}
-                      <Icon name="arrow-right" size={14} />
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Prose body */}
-        <div class="prose prose-ink prose-editorial mt-8 max-w-none" data-anim="scroll-reveal">
-          <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.treatments.detail.description}</h2>
-          <Content />
-        </div>
-
-        {/* Patient journey timeline */}
-        <div class="mt-16" data-anim="fade-in-up">
-          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.journeyHeading}</h2>
-          <StepTimeline steps={journeySteps} />
-        </div>
-
-        {/* Treating hospitals */}
-        {relatedHospitals.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.treatingHospitals}</h2>
-            <div class="grid gap-4 sm:grid-cols-2" data-anim="stagger-cards">
-              {relatedHospitals.map((h) => (
-                <a href={h.href} class="flex items-center gap-4 rounded-card border border-cream-300 bg-cream-100 p-4 transition-colors hover:border-cream-300/80 hover:bg-cream-200">
-                  {h.image && (
-                    <img src={h.image} alt={h.name} class="h-12 w-12 rounded-card object-cover" loading="lazy" />
-                  )}
-                  <div>
-                    <p class="text-sm font-semibold text-ink">{h.name}</p>
-                    <p class="text-xs text-ink/50">{h.city}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Sticky rail — booking + inquiry only (facts moved to hero) */}
-      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <div class="flex items-center gap-3">
-            <Icon name="whatsapp" size={20} class="text-violet-600" />
-            <p class="font-display text-lg font-semibold text-ink">{t.treatments.detail.inquiryCta}</p>
-          </div>
-          <p class="mt-3 text-sm text-ink/60">{t.treatments.detail.consultSummary}</p>
-          <div class="mt-5 flex flex-col gap-3">
+          {/* CTAs */}
+          <div class="mt-8 flex flex-wrap gap-4">
             <LeadModalTrigger
               client:load
               label={t.doctors.detail.bookCta}
@@ -415,119 +362,370 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
               source={LEAD_SOURCE.TREATMENT_PAGE}
               defaultTreatment={treatment.name}
               treatments={treatmentOptions}
-              full
               className="rounded-card px-6 py-3"
             />
-            <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
+            <a
+              href={treatmentWhatsAppHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+              data-anim="press-button"
+            >
               <Icon name="whatsapp" size={18} />
-              {t.doctors.detail.whatsappCta}
+              {t.treatments.detail.inquiryCta}
             </a>
           </div>
         </div>
-      </aside>
-    </div>
+      </div>
+    </section>
 
-    {/* ── FAQ ───────────────────────────────────────────────────────── */}
-    {faqs.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.faqTitle}</h2>
-        <FAQAccordion items={faqs} client:visible />
-      </section>
-    )}
+    {/* ── "IN SHORT" SUMMARY — AI-extractable callout ─────────────────── */}
+    {
+      treatment.summary && (
+        <section class="container py-8" data-anim="fade-in-up">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">
+              {t.treatments.detail.inShortLabel}
+            </p>
+            <p class="text-ink/80 mt-2 text-lg leading-relaxed">{treatment.summary}</p>
+          </div>
+        </section>
+      )
+    }
 
-    {/* ── RECOVERY TIMELINE — structured phase table ─────────────────── */}
-    {treatment.recoveryTimeline && treatment.recoveryTimeline.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.recoveryTimelineTitle}</h2>
-        <div class="overflow-hidden rounded-card border border-cream-300">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-ink text-white">
-              <tr>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryPhaseHeader}</th>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryDurationHeader}</th>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryExpectHeader}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {treatment.recoveryTimeline.map((row) => (
-                <tr class="border-t border-cream-300">
-                  <td class="px-4 py-3 font-semibold text-ink">{row.phase}</td>
-                  <td class="px-4 py-3 text-ink/70">{row.duration}</td>
-                  <td class="px-4 py-3 text-ink/70">{row.description}</td>
-                </tr>
+    {/* ── "WHO IS THIS TREATMENT FOR?" — eligibility criteria ─────────── */}
+    {
+      treatment.eligibility && treatment.eligibility.length > 0 && (
+        <section class="container pb-8" data-anim="fade-in-up">
+          <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+            {t.treatments.detail.whoIsThisFor}
+          </h2>
+          <ul class="grid gap-3 md:grid-cols-2">
+            {treatment.eligibility.map((item) => (
+              <li class="text-ink/70 flex items-start gap-2">
+                <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="container py-16 md:py-20">
+      {/* ── MEET YOUR SPECIALISTS — related doctors above the prose ─────── */}
+      {
+        related.length > 0 && (
+          <section class="mb-16" data-anim="fade-in-up">
+            <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.specialistsHeading}
+            </h2>
+            <p class="text-ink/60 mt-2 max-w-2xl">{t.treatments.detail.specialistsSummary}</p>
+            <div class="mt-8 grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
+              {related.map((doctor: Doctor) => (
+                <DoctorCard
+                  key={doctor.name}
+                  doctor={doctor}
+                  bookLabel={t.doctors.bookCta}
+                  whatsappLabel={t.doctors.detail.whatsappCta}
+                />
               ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    )}
-
-    {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
-    {(treatment.costInclusions || treatment.costExclusions) && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.costInclusionsTitle}</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          {treatment.costInclusions && treatment.costInclusions.length > 0 && (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costIncluded}</h3>
-              <ul class="space-y-2">
-                {treatment.costInclusions.map((item) => (
-                  <li class="flex items-start gap-2 text-sm text-ink/70">
-                    <Icon name="check" size={16} class="mt-0.5 shrink-0 text-green-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-          )}
-          {treatment.costExclusions && treatment.costExclusions.length > 0 && (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costNotIncluded}</h3>
-              <ul class="space-y-2">
-                {treatment.costExclusions.map((item) => (
-                  <li class="flex items-start gap-2 text-sm text-ink/70">
-                    <Icon name="x" size={16} class="mt-0.5 shrink-0 text-red-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          </section>
+        )
+      }
+
+      {
+        /* ── BODY + STICKY RAIL ────────────────────────────────────────────
+        minmax(0,1fr) + min-w-0: lets the StepCards mobile carousel shrink
+        below its max-content width instead of blowing out the page. */
+      }
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div class="min-w-0">
+          {/* Procedures → StepCards numbered grid */}
+          {
+            stepCards.length > 0 && (
+              <div class="mb-12" data-anim="fade-in-up">
+                <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.treatments.detail.procedures}
+                </h2>
+                <StepCards steps={stepCards} tone="light" client:visible />
+              </div>
+            )
+          }
+
+          {/* ── PROCEDURE CARDS — links to dedicated procedure pages ──── */}
+          {
+            categoryProcedures.length > 0 && (
+              <div class="mb-12" data-anim="fade-in-up">
+                <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+                  {t.treatments.procedures.title}
+                </h2>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {categoryProcedures.map((p) => {
+                    const pSlug = entrySlug(p).split('/').pop()!;
+                    const pPrice =
+                      p.data.fromPrice && p.data.toPrice
+                        ? `${p.data.fromPrice} – ${p.data.toPrice}`
+                        : p.data.fromPrice;
+                    return (
+                      <a
+                        href={`/treatments/${slug}/${pSlug}`}
+                        class="group rounded-card border border-cream-300 bg-cream-100 p-5 transition-all hover:border-violet-300 hover:shadow-base"
+                      >
+                        <p class="text-sm font-semibold text-ink">{p.data.name}</p>
+                        {p.data.summary && (
+                          <p class="text-ink/60 mt-2 line-clamp-2 text-xs">{p.data.summary}</p>
+                        )}
+                        {pPrice && (
+                          <p class="mt-3 text-xs font-medium text-violet-600">
+                            {t.treatments.procedures.costInIndia}: {pPrice}
+                          </p>
+                        )}
+                        <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
+                          {t.treatments.procedures.learnMore}
+                          <Icon name="arrow-right" size={14} />
+                        </span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            )
+          }
+
+          {/* Prose body */}
+          <div class="prose prose-ink prose-editorial mt-8 max-w-none" data-anim="scroll-reveal">
+            <h2 class="mb-3 font-display text-xl font-semibold text-ink">
+              {t.treatments.detail.description}
+            </h2>
+            <Content />
+          </div>
+
+          {/* Patient journey timeline */}
+          <div class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.journeyHeading}
+            </h2>
+            <StepTimeline steps={journeySteps} />
+          </div>
+
+          {/* Treating hospitals */}
+          {
+            relatedHospitals.length > 0 && (
+              <div class="mt-12" data-anim="fade-in-up">
+                <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+                  {t.treatments.detail.treatingHospitals}
+                </h2>
+                <div class="grid gap-4 sm:grid-cols-2" data-anim="stagger-cards">
+                  {relatedHospitals.map((h) => (
+                    <a
+                      href={h.href}
+                      class="hover:border-cream-300/80 flex items-center gap-4 rounded-card border border-cream-300 bg-cream-100 p-4 transition-colors hover:bg-cream-200"
+                    >
+                      {h.image && (
+                        <img
+                          src={h.image}
+                          alt={h.name}
+                          class="h-12 w-12 rounded-card object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                      <div>
+                        <p class="text-sm font-semibold text-ink">{h.name}</p>
+                        <p class="text-ink/50 text-xs">{h.city}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        </div>
+
+        {/* Sticky rail — booking + inquiry only (facts moved to hero) */}
+        <aside
+          class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"
+          data-anim="fade-in-up"
+        >
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <div class="flex items-center gap-3">
+              <Icon name="whatsapp" size={20} class="text-violet-600" />
+              <p class="font-display text-lg font-semibold text-ink">
+                {t.treatments.detail.inquiryCta}
+              </p>
             </div>
-          )}
-        </div>
-      </section>
-    )}
+            <p class="text-ink/60 mt-3 text-sm">{t.treatments.detail.consultSummary}</p>
+            <div class="mt-5 flex flex-col gap-3">
+              <LeadModalTrigger
+                client:load
+                label={t.doctors.detail.bookCta}
+                modalTitle={t.leadModal.title}
+                modalSubtitle={t.leadModal.subtitle}
+                closeLabel={t.leadModal.close}
+                source={LEAD_SOURCE.TREATMENT_PAGE}
+                defaultTreatment={treatment.name}
+                treatments={treatmentOptions}
+                full
+                className="rounded-card px-6 py-3"
+              />
+              <a
+                href={treatmentWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
+                data-anim="press-button"
+              >
+                <Icon name="whatsapp" size={18} />
+                {t.doctors.detail.whatsappCta}
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
 
-    {/* ── RELATED TREATMENTS — cross-linking ─────────────────────────── */}
-    {relatedTreatments.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.relatedTreatmentsTitle}</h2>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {relatedTreatments.map((rt) => (
-            <a href={`/treatments/${rt.slug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base">
-              <p class="text-sm font-semibold text-ink">{rt.name}</p>
-              {rt.fromPrice && <p class="mt-1 text-xs text-ink/50">{t.treatments.detail.fromPriceLabel} {rt.fromPrice}</p>}
-            </a>
-          ))}
-        </div>
-      </section>
-    )}
+      {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      {
+        faqs.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.faqTitle}
+            </h2>
+            <FAQAccordion items={faqs} client:visible />
+          </section>
+        )
+      }
 
-    {/* ── COUNTRY CROSS-LINKS — treatment for international patients ──── */}
-    {countryLinks.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.countryLinksTitle}</h2>
-        <div class="flex flex-wrap gap-3">
-          {countryLinks.map((c) => (
-            <a href={c.href} class="rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white">
-              {c.label}
-            </a>
-          ))}
-        </div>
-      </section>
-    )}
-  </section>
+      {/* ── RECOVERY TIMELINE — structured phase table ─────────────────── */}
+      {
+        treatment.recoveryTimeline && treatment.recoveryTimeline.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.recoveryTimelineTitle}
+            </h2>
+            <div class="overflow-hidden rounded-card border border-cream-300">
+              <table class="w-full text-left text-sm">
+                <thead class="bg-ink text-white">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryPhaseHeader}
+                    </th>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryDurationHeader}
+                    </th>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryExpectHeader}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {treatment.recoveryTimeline.map((row) => (
+                    <tr class="border-t border-cream-300">
+                      <td class="px-4 py-3 font-semibold text-ink">{row.phase}</td>
+                      <td class="text-ink/70 px-4 py-3">{row.duration}</td>
+                      <td class="text-ink/70 px-4 py-3">{row.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )
+      }
 
-  {/* ── MID-PAGE CTA — dark band closes the emotional peak ──────────
+      {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
+      {
+        (treatment.costInclusions || treatment.costExclusions) && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.costInclusionsTitle}
+            </h2>
+            <div class="grid gap-6 md:grid-cols-2">
+              {treatment.costInclusions && treatment.costInclusions.length > 0 && (
+                <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                  <h3 class="mb-4 font-display text-lg font-semibold text-ink">
+                    {t.treatments.detail.costIncluded}
+                  </h3>
+                  <ul class="space-y-2">
+                    {treatment.costInclusions.map((item) => (
+                      <li class="text-ink/70 flex items-start gap-2 text-sm">
+                        <Icon name="check" size={16} class="mt-0.5 shrink-0 text-green-600" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {treatment.costExclusions && treatment.costExclusions.length > 0 && (
+                <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                  <h3 class="mb-4 font-display text-lg font-semibold text-ink">
+                    {t.treatments.detail.costNotIncluded}
+                  </h3>
+                  <ul class="space-y-2">
+                    {treatment.costExclusions.map((item) => (
+                      <li class="text-ink/70 flex items-start gap-2 text-sm">
+                        <Icon name="x" size={16} class="mt-0.5 shrink-0 text-red-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── RELATED TREATMENTS — cross-linking ─────────────────────────── */}
+      {
+        relatedTreatments.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+              {t.treatments.detail.relatedTreatmentsTitle}
+            </h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {relatedTreatments.map((rt) => (
+                <a
+                  href={`/treatments/${rt.slug}`}
+                  class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+                >
+                  <p class="text-sm font-semibold text-ink">{rt.name}</p>
+                  {rt.fromPrice && (
+                    <p class="text-ink/50 mt-1 text-xs">
+                      {t.treatments.detail.fromPriceLabel} {rt.fromPrice}
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── COUNTRY CROSS-LINKS — treatment for international patients ──── */}
+      {
+        countryLinks.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+              {t.treatments.detail.countryLinksTitle}
+            </h2>
+            <div class="flex flex-wrap gap-3">
+              {countryLinks.map((c) => (
+                <a
+                  href={c.href}
+                  class="rounded-card border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
+                >
+                  {c.label}
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </section>
+
+    {
+      /* ── MID-PAGE CTA — dark band closes the emotional peak ──────────
       IMAGE SLOT (background): consultation moment — a specialist reviewing
       scans or a report with a patient, conveying expertise + reassurance.
       Generation prompt: "Cinematic editorial photograph, specialist doctor
@@ -539,39 +737,62 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
       Export: /images/patterns/treatment-page-cta.webp (1920×800, <150KB),
       render as absolute inset-0 object-cover with a bg-ink/70 overlay div.
       NOTE: distinct from doctor-page-cta.jpg so the journey doesn't repeat
-      the same photo across page types. Auto-detected at build time. */}
-  <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
-    {ctaImage && (
-      <>
-        <img src={ctaImage} alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover" aria-hidden="true" loading="lazy" />
-        <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
-      </>
-    )}
-    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-    <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-      <div>
-        <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">{t.treatments.detail.consultCta.replace('{{name}}', treatment.name)}</h2>
-        <p class="mt-2 max-w-xl text-cream-100/60">{t.treatments.detail.consultSummary}</p>
+      the same photo across page types. Auto-detected at build time. */
+    }
+    <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
+      {
+        ctaImage && (
+          <>
+            <img
+              src={ctaImage}
+              alt=""
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <div class="bg-ink/70 pointer-events-none absolute inset-0" aria-hidden="true" />
+          </>
+        )
+      }
+      <div
+        class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl"
+        aria-hidden="true"
+      >
       </div>
-      <div class="flex flex-wrap gap-3">
-        <LeadModalTrigger
-          client:load
-          label={t.doctors.detail.bookCta}
-          modalTitle={t.leadModal.title}
-          modalSubtitle={t.leadModal.subtitle}
-          closeLabel={t.leadModal.close}
-          source={LEAD_SOURCE.TREATMENT_PAGE}
-          defaultTreatment={treatment.name}
-          treatments={treatmentOptions}
-          className="rounded-card px-6 py-3"
-        />
-        <a href={treatmentWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
-          <Icon name="whatsapp" size={18} />
-          {t.doctors.detail.whatsappCta}
-        </a>
+      <div
+        class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">
+            {t.treatments.detail.consultCta.replace('{{name}}', treatment.name)}
+          </h2>
+          <p class="text-cream-100/60 mt-2 max-w-xl">{t.treatments.detail.consultSummary}</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <LeadModalTrigger
+            client:load
+            label={t.doctors.detail.bookCta}
+            modalTitle={t.leadModal.title}
+            modalSubtitle={t.leadModal.subtitle}
+            closeLabel={t.leadModal.close}
+            source={LEAD_SOURCE.TREATMENT_PAGE}
+            defaultTreatment={treatment.name}
+            treatments={treatmentOptions}
+            className="rounded-card px-6 py-3"
+          />
+          <a
+            href={treatmentWhatsAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+            data-anim="press-button"
+          >
+            <Icon name="whatsapp" size={18} />
+            {t.doctors.detail.whatsappCta}
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </main>
 
   {/* ── CONTACT / LEAD FORM ─────────────────────────────────────────── */}
@@ -579,7 +800,7 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
     <div class="container grid gap-12 lg:grid-cols-2">
       <div>
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
-        <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+        <p class="text-ink/60 mt-4 text-lg">{t.cta.subtitle}</p>
       </div>
       <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8">
         <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>

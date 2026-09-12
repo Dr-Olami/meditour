@@ -28,18 +28,24 @@ const StatementSection = React.forwardRef<HTMLElement, StatementSectionProps>(
 
     return (
       <section
-        className={cn('bg-ink py-20 px-6 text-cream-100', className)}
+        className={cn('bg-ink px-6 py-20 text-cream-100', className)}
         ref={combinedRef}
         data-anim="scroll-reveal"
         {...props}
       >
         <div className="container">
           {caption && (
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-cream-100/40" data-anim="fade-in-up">
+            <p
+              className="text-cream-100/40 mb-6 text-xs font-semibold uppercase tracking-[0.2em]"
+              data-anim="fade-in-up"
+            >
               {caption}
             </p>
           )}
-          <p className="font-display text-4xl font-bold leading-tight tracking-tight text-cream-100 md:text-6xl lg:text-7xl" data-anim="headline-reveal">
+          <p
+            className="font-display text-4xl font-bold leading-tight tracking-tight text-cream-100 md:text-6xl lg:text-7xl"
+            data-anim="headline-reveal"
+          >
             {statement}
           </p>
         </div>

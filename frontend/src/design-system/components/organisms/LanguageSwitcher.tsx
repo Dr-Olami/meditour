@@ -17,8 +17,7 @@ const LOCALES: { code: string; label: string; short: string }[] = [
 const LOCALE_CODES = LOCALES.map((l) => l.code);
 const LOCALE_PREFIX_RE = new RegExp(`^\\/(${LOCALE_CODES.join('|')})\\b`);
 
-export interface LanguageSwitcherProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface LanguageSwitcherProps extends React.HTMLAttributes<HTMLDivElement> {
   currentLocale: string;
   currentPath: string;
   /** Use short labels (e.g. "EN" instead of "English") — for compact spaces. */
@@ -85,15 +84,27 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
           aria-expanded={open}
           aria-label={`Language: ${current.label}`}
           className={cn(
-            'flex items-center gap-1.5 rounded-full border border-ink/20 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
+            'border-ink/20 flex items-center gap-1.5 rounded-full border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus',
             compact ? 'px-2.5 py-1 text-xs' : 'px-3 py-1.5 text-sm',
-            'bg-cream-100 text-ink hover:border-ink/40 hover:bg-cream-200',
+            'hover:border-ink/40 bg-cream-100 text-ink hover:bg-cream-200'
           )}
         >
           {/* Globe icon */}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+            className="shrink-0"
+          >
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
           <span>{compact ? current.short : current.label}</span>
           {/* Chevron */}
@@ -105,7 +116,13 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
             aria-hidden="true"
             className={cn('shrink-0 transition-transform duration-200', open && 'rotate-180')}
           >
-            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M3 4.5L6 7.5L9 4.5"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
@@ -132,16 +149,31 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
                       'flex items-center justify-between gap-2 px-3 py-2 text-sm no-underline transition-colors',
                       isActive
                         ? 'font-semibold text-ink'
-                        : 'text-text-secondary hover:bg-cream-200 hover:text-ink',
+                        : 'text-text-secondary hover:bg-cream-200 hover:text-ink'
                     )}
                   >
                     <span className="flex items-center gap-2">
-                      <span className="text-xs font-bold uppercase text-ink/40">{locale.short}</span>
+                      <span className="text-ink/40 text-xs font-bold uppercase">
+                        {locale.short}
+                      </span>
                       {locale.label}
                     </span>
                     {isActive && (
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="shrink-0 text-ink">
-                        <path d="M2 7.5L5.5 11L12 3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        aria-hidden="true"
+                        className="shrink-0 text-ink"
+                      >
+                        <path
+                          d="M2 7.5L5.5 11L12 3.5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     )}
                   </a>
@@ -152,7 +184,7 @@ const LanguageSwitcher = React.forwardRef<HTMLDivElement, LanguageSwitcherProps>
         )}
       </div>
     );
-  },
+  }
 );
 LanguageSwitcher.displayName = 'LanguageSwitcher';
 

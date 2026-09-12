@@ -13,13 +13,13 @@ languages:
   - Tulu
   - Hindi
 faqs:
-  - question: "Who is Dr. Mayur R Shetty?"
+  - question: 'Who is Dr. Mayur R Shetty?'
     answer: "Dr. Mayur R. Shetty is a well-known plastic and cosmetic surgeon in Bangalore with over 10 years of experience in aesthetic and reconstructive procedures. He practises at Manipal Hospital Old Airport Road as a Consultant – Plastic, Cosmetic & Reconstructive Surgery. He holds MBBS from Kasturba Medical College, Mangalore, MS in General Surgery from KIMS Bangalore, and MCh in Plastic Surgery from St John's Medical College & Hospital, Bangalore, with fellowship training in cosmetic surgery from Dubai and Delhi."
-  - question: "Why do patients choose Dr. Mayur R Shetty?"
-    answer: "Patients choose Dr. Shetty for his broad expertise spanning body contouring, facial rejuvenation, rhinoplasty, liposuction, breast augmentation, abdominoplasty, microvascular reconstruction, and hand surgery. He has fellowship training in cosmetic surgery from Cocoona Centre for Aesthetic Excellence, Dubai and RG Aesthetics, Delhi. He is a member of ISAPS, IAAPS, and KAPRAS, and is fluent in English, Kannada, Tulu, and Hindi. He is recognised as one of the best plastic and cosmetic surgeons in Bangalore."
+  - question: 'Why do patients choose Dr. Mayur R Shetty?'
+    answer: 'Patients choose Dr. Shetty for his broad expertise spanning body contouring, facial rejuvenation, rhinoplasty, liposuction, breast augmentation, abdominoplasty, microvascular reconstruction, and hand surgery. He has fellowship training in cosmetic surgery from Cocoona Centre for Aesthetic Excellence, Dubai and RG Aesthetics, Delhi. He is a member of ISAPS, IAAPS, and KAPRAS, and is fluent in English, Kannada, Tulu, and Hindi. He is recognised as one of the best plastic and cosmetic surgeons in Bangalore.'
   - question: "What are Dr. Mayur R Shetty's medical qualifications?"
     answer: "Dr. Shetty holds MBBS from Kasturba Medical College, Mangalore, MS in General Surgery from KIMS, Bangalore, and MCh in Plastic Surgery from St John's Medical College & Hospital, Bangalore. He has also completed Fellowship training in Cosmetic Surgery from Cocoona, Centre for Aesthetic Excellence, Dubai, and RG Aesthetics, Delhi, and a Postgraduate Programme in Hospital Administration from IIM Bangalore."
-  - question: "How can I book an appointment with Dr. Mayur R Shetty?"
+  - question: 'How can I book an appointment with Dr. Mayur R Shetty?'
     answer: "You can book an appointment with Dr. Mayur R Shetty at Manipal Hospital Old Airport Road, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

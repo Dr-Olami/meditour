@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Liver Transplant"
-seoHeadline: "Liver Transplant Cost in India for International Patients"
+name: 'Liver Transplant'
+seoHeadline: 'Liver Transplant Cost in India for International Patients'
 parentTreatmentSlug: organ-treatment
 summary: "Liver transplant surgery in India costs between $25,000 and $60,000, offering international patients savings of up to 85% compared to Western countries. Bangalore's leading transplant centres provide world-class surgical expertise, advanced ICU facilities, and comprehensive post-transplant care."
-description: "Affordable liver transplant surgery in Bangalore, India ranging from $25,000 to $60,000 with top transplant surgeons and JCI-accredited hospitals."
-fromPrice: "$25,000"
-toPrice: "$60,000"
-duration: "4-8 weeks"
-hospitalStay: "2-4 weeks"
-recoveryTime: "3-6 months"
+description: 'Affordable liver transplant surgery in Bangalore, India ranging from $25,000 to $60,000 with top transplant surgeons and JCI-accredited hospitals.'
+fromPrice: '$25,000'
+toPrice: '$60,000'
+duration: '4-8 weeks'
+hospitalStay: '2-4 weeks'
+recoveryTime: '3-6 months'
 eligibility:
-  - "End-stage liver disease or liver failure confirmed by hepatologist"
-  - "A living donor who is a close relative (as per Indian organ transplant regulations)"
-  - "Donor and recipient blood group compatibility"
-  - "No active infections or uncontrolled malignancies"
-  - "Realistic psychosocial and financial ability to comply with post-transplant care"
+  - 'End-stage liver disease or liver failure confirmed by hepatologist'
+  - 'A living donor who is a close relative (as per Indian organ transplant regulations)'
+  - 'Donor and recipient blood group compatibility'
+  - 'No active infections or uncontrolled malignancies'
+  - 'Realistic psychosocial and financial ability to comply with post-transplant care'
 costInclusions:
-  - "Transplant surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery and transplant costs"
-  - "Donor workup and evaluation (where applicable)"
-  - "Immunosuppressive medications during hospital stay"
-  - "Pre-transplant diagnostics (blood tests, imaging, tissue typing)"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Transplant surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery and transplant costs'
+  - 'Donor workup and evaluation (where applicable)'
+  - 'Immunosuppressive medications during hospital stay'
+  - 'Pre-transplant diagnostics (blood tests, imaging, tissue typing)'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "2-4 weeks"
-    description: "Recipient is monitored in the ICU immediately after surgery, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Regular follow-up appointments, blood tests, and imaging to monitor liver function and detect early signs of rejection or infection before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 4-8"
-    description: "Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule and dietary restrictions under guidance from the home-country physician."
-  - phase: "Full recovery"
-    duration: "3-6 months"
-    description: "Complete healing of the surgical site, stabilisation of liver function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring."
+  - phase: 'Hospital stay'
+    duration: '2-4 weeks'
+    description: 'Recipient is monitored in the ICU immediately after surgery, then transferred to a private room for continued monitoring, wound care, and initiation of immunosuppressive therapy.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Regular follow-up appointments, blood tests, and imaging to monitor liver function and detect early signs of rejection or infection before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 4-8'
+    description: 'Gradual resumption of light activity with strict adherence to immunosuppressive medication schedule and dietary restrictions under guidance from the home-country physician.'
+  - phase: 'Full recovery'
+    duration: '3-6 months'
+    description: 'Complete healing of the surgical site, stabilisation of liver function, and return to normal daily activities with lifelong immunosuppressive medication and periodic monitoring.'
 risks:
-  - "Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy"
-  - "Surgical complications including bleeding, bile duct leakage, or vascular thrombosis"
-  - "Infections due to immunosuppression, including opportunistic infections"
-  - "Biliary strictures requiring endoscopic or surgical intervention"
-  - "Recurrence of underlying liver disease in the transplanted organ"
+  - 'Organ rejection (acute or chronic) requiring adjustment of immunosuppressive therapy'
+  - 'Surgical complications including bleeding, bile duct leakage, or vascular thrombosis'
+  - 'Infections due to immunosuppression, including opportunistic infections'
+  - 'Biliary strictures requiring endoscopic or surgical intervention'
+  - 'Recurrence of underlying liver disease in the transplanted organ'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -59,18 +59,19 @@ relatedDoctorSlugs:
   - dr-k-hemanth-kumar
 
 relatedProcedureSlugs:
-  - "kidney-transplant-cost-india"
-  - "lung-transplant-cost-india"
+  - 'kidney-transplant-cost-india'
+  - 'lung-transplant-cost-india'
 faqs:
-  - question: "Can an international patient get a liver transplant in India without a living donor?"
+  - question: 'Can an international patient get a liver transplant in India without a living donor?'
     answer: "No. Under Indian organ transplant regulations, foreign patients are generally eligible only for living-donor liver transplants, where the donor must be a close relative. Deceased-donor organs are prioritised for Indian citizens. You will need to bring a compatible living donor and provide documented proof of relationship, which is reviewed by the hospital's transplant authorisation committee and government authorities."
-  - question: "How long do I need to stay in India after a liver transplant?"
-    answer: "Most patients should plan for a total stay of 4 to 8 weeks in India. This includes the hospital stay of 2 to 4 weeks followed by a recovery period in Bangalore for close monitoring, follow-up blood tests, and clearance from the transplant team before it is safe to fly home."
-  - question: "What is the success rate of liver transplants in Bangalore hospitals?"
+  - question: 'How long do I need to stay in India after a liver transplant?'
+    answer: 'Most patients should plan for a total stay of 4 to 8 weeks in India. This includes the hospital stay of 2 to 4 weeks followed by a recovery period in Bangalore for close monitoring, follow-up blood tests, and clearance from the transplant team before it is safe to fly home.'
+  - question: 'What is the success rate of liver transplants in Bangalore hospitals?'
     answer: "Leading transplant centres in Bangalore report one-year patient survival rates of 90-95% and graft survival rates of 88-92%, which are comparable to international benchmarks. Outcomes depend on the patient's overall health, the quality of the donor organ, and strict adherence to post-transplant medication and follow-up."
-  - question: "Will I need to take medications for life after a liver transplant?"
-    answer: "Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted liver. The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan."
+  - question: 'Will I need to take medications for life after a liver transplant?'
+    answer: 'Yes. Lifelong immunosuppressive medications are essential to prevent your body from rejecting the transplanted liver. The cost of these medications after discharge is not included in the package and should be budgeted for long-term. Your transplant team will provide a detailed prescription and monitoring plan.'
 ---
+
 ## Overview
 
 If you or someone you love has been told that a liver transplant may be the only path forward, you are likely feeling overwhelmed and exhausted by the journey so far. End-stage liver disease takes a heavy toll on your body and your emotions, and the thought of a major operation in another country can feel daunting. This guide is here to walk you through what a liver transplant in Bangalore really involves, so you can make decisions with clarity rather than fear.
@@ -152,15 +153,16 @@ Before pursuing a liver transplant, explore all other treatment options with you
 If you have portal hypertension complications such as variceal bleeding or refractory ascites, interventions such as endoscopic band ligation or transjugular intrahepatic portosystemic shunt (TIPS) may provide symptomatic relief without the need for a transplant.
 
 A liver transplant is generally reserved for situations where your liver disease has progressed to the point where other treatments can no longer sustain life or acceptable quality of life. The decision should be made jointly by you, your family, your hepatologist, and the transplant team.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $25,000 – $60,000 | Baseline |
-| USA | $575,000 – $700,000 | ~15.0x higher |
-| UK | £200,000 – £350,000 | ~6.5x higher |
-| Singapore | $180,000 – $250,000 | ~5.1x higher |
-| Thailand | $80,000 – $120,000 | ~2.4x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $25,000 – $60,000   | Baseline      |
+| USA               | $575,000 – $700,000 | ~15.0x higher |
+| UK                | £200,000 – £350,000 | ~6.5x higher  |
+| Singapore         | $180,000 – $250,000 | ~5.1x higher  |
+| Thailand          | $80,000 – $120,000  | ~2.4x higher  |
 
 The cost differences reflect structural factors rather than differences in clinical quality. Bangalore hospitals achieve the same surgical outcomes at a fraction of the cost because of lower staffing expenses, reduced administrative burden, and favourable currency exchange rates. Even when you account for international flights, accommodation, and the extended stay required for your recovery, the total expense remains dramatically lower than the procedure alone in most Western countries.
 

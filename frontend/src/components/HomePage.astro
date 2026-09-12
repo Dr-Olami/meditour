@@ -64,7 +64,16 @@ interface Props {
   faqs: { question: string; answer: string }[];
 }
 
-const { locale, treatments, treatmentProcedures = [], featuredDoctors, featuredHospitals, testimonials, countries, faqs } = Astro.props;
+const {
+  locale,
+  treatments,
+  treatmentProcedures = [],
+  featuredDoctors,
+  featuredHospitals,
+  testimonials,
+  countries,
+  faqs,
+} = Astro.props;
 const t = getTranslations(locale);
 const prefix = locale === 'bn' ? '/bn' : '';
 
@@ -94,10 +103,10 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   cta={{ label: t.nav.cta, href: '#contact' }}
   locale={locale}
   currentPath={Astro.url.pathname}
-    phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
-    callLabel={t.nav.call}
-    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
-    whatsappLabel={t.nav.whatsapp}
+  phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
+  callLabel={t.nav.call}
+  whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+  whatsappLabel={t.nav.whatsapp}
   client:load
 />
 
@@ -147,17 +156,23 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
 />
 
 <!-- Doctor showcase — headline + wide imagery -->
-<section class="bg-cream-100 pt-8 pb-20" data-anim="scroll-reveal">
+<section class="bg-cream-100 pb-20 pt-8" data-anim="scroll-reveal">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
     {/* Centered headline — two lines, second line emphasized */}
     <div class="text-center" data-anim="stagger-children">
-      <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-6xl" data-anim="fade-in-up">
+      <h2
+        class="font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-6xl"
+        data-anim="fade-in-up"
+      >
         <span class="block">{t.doctorShowcase.headlineLine1}</span>
         <span class="block text-ink">
           {t.doctorShowcase.headlineLine2}
         </span>
       </h2>
-      <p class="mt-6 text-base font-medium text-ink sm:mt-8 sm:text-xl md:mt-8 md:text-2xl" data-anim="fade-in-up">
+      <p
+        class="mt-6 text-base font-medium text-ink sm:mt-8 sm:text-xl md:mt-8 md:text-2xl"
+        data-anim="fade-in-up"
+      >
         <span class="block sm:inline">{t.doctorShowcase.subheadLine1a}</span>
         <span class="block sm:inline">{t.doctorShowcase.subheadLine1b}</span>
         <span class="block">{t.doctorShowcase.subheadLine2}</span>
@@ -176,7 +191,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
           width={1280}
           height={760}
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+        <div class="from-ink/80 via-ink/20 absolute inset-0 bg-gradient-to-t to-transparent"></div>
         {/* Bento CTA buttons — high contrast over imagery */}
         <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-4 p-6 md:p-10">
           <LeadModalTrigger
@@ -207,7 +222,9 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
 <!-- Stats bar -->
 <section id="stats" class="bg-cream-200 py-14" data-anim="scroll-reveal">
   <div class="container">
-    <h2 class="mb-10 text-center font-display text-2xl font-bold text-ink" data-anim="fade-in-up">{t.stats.title}</h2>
+    <h2 class="mb-10 text-center font-display text-2xl font-bold text-ink" data-anim="fade-in-up">
+      {t.stats.title}
+    </h2>
     <StatCounter stats={stats} />
   </div>
 </section>
@@ -216,7 +233,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
 <StatementSection
   statement={locale === 'bn'
     ? 'রোগীর যাত্রাটি কেবল চিকিৎসা নয় — এটি বিশ্বাস, যত্ন এবং সংযোগ।'
-    : 'A patient\'s journey is not just medical — it is trust, care, and connection.'}
+    : "A patient's journey is not just medical — it is trust, care, and connection."}
   caption={locale === 'bn' ? 'আমাদের দর্শন' : 'Our philosophy'}
 />
 
@@ -230,7 +247,12 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
 <!-- How it works -->
 <section id="steps" class="bg-cream-100 py-20" data-anim="scroll-reveal">
   <div class="container">
-    <h2 class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">{t.steps.title}</h2>
+    <h2
+      class="mb-12 text-center font-display text-3xl font-bold text-ink md:text-4xl"
+      data-anim="fade-in-up"
+    >
+      {t.steps.title}
+    </h2>
     <StepTimeline steps={t.steps.items} />
   </div>
 </section>
@@ -240,108 +262,142 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   <div class="container">
     <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
       <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.treatments.title}</h2>
-      <Link href={`${prefix}/treatments`} class="text-sm font-medium text-ink/60 hover:text-ink">{t.treatments.viewAll}</Link>
+      <Link href={`${prefix}/treatments`} class="text-ink/60 text-sm font-medium hover:text-ink"
+        >{t.treatments.viewAll}</Link
+      >
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
-      {treatments.slice(0, 3).map((treatment) => (
-        <TreatmentCard treatment={treatment} data-anim="card-hover" />
-      ))}
+      {
+        treatments
+          .slice(0, 3)
+          .map((treatment) => <TreatmentCard treatment={treatment} data-anim="card-hover" />)
+      }
     </div>
 
     {/* Procedure samples grouped by treatment */}
-    {treatmentProcedures.length > 0 && (
-      <div class="mt-12 space-y-10" data-anim="fade-in-up">
-        {treatmentProcedures.map((group) => (
-          group.procedures.length > 0 && (
-            <div>
-              <div class="mb-4 flex items-center gap-2">
-                <h3 class="font-display text-lg font-bold text-ink">{group.treatmentName}</h3>
-                <Link href={group.treatmentHref} class="text-xs font-medium text-violet-600 hover:underline">
-                  {locale === 'bn' ? 'সব দেখুন' : 'View all'}
-                </Link>
-              </div>
-              <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {group.procedures.map((proc) => {
-                  const price = proc.fromPrice && proc.toPrice
-                    ? `${proc.fromPrice} – ${proc.toPrice}`
-                    : proc.fromPrice;
-                  return (
-                    <a
-                      href={proc.href}
-                      class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+    {
+      treatmentProcedures.length > 0 && (
+        <div class="mt-12 space-y-10" data-anim="fade-in-up">
+          {treatmentProcedures.map(
+            (group) =>
+              group.procedures.length > 0 && (
+                <div>
+                  <div class="mb-4 flex items-center gap-2">
+                    <h3 class="font-display text-lg font-bold text-ink">{group.treatmentName}</h3>
+                    <Link
+                      href={group.treatmentHref}
+                      class="text-xs font-medium text-violet-600 hover:underline"
                     >
-                      <p class="text-sm font-semibold text-ink">{proc.name}</p>
-                      {proc.summary && (
-                        <p class="mt-1 text-xs text-ink/60 line-clamp-2">{proc.summary}</p>
-                      )}
-                      {price && (
-                        <p class="mt-2 text-xs font-medium text-violet-600">
-                          {locale === 'bn' ? 'খরচ' : 'Cost'}: {price}
-                        </p>
-                      )}
-                      <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
-                        {locale === 'bn' ? 'বিস্তারিত' : 'Learn more'}
-                        <Icon name="arrow-right" size={12} />
-                      </span>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          )
-        ))}
-      </div>
-    )}
+                      {locale === 'bn' ? 'সব দেখুন' : 'View all'}
+                    </Link>
+                  </div>
+                  <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    {group.procedures.map((proc) => {
+                      const price =
+                        proc.fromPrice && proc.toPrice
+                          ? `${proc.fromPrice} – ${proc.toPrice}`
+                          : proc.fromPrice;
+                      return (
+                        <a
+                          href={proc.href}
+                          class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+                        >
+                          <p class="text-sm font-semibold text-ink">{proc.name}</p>
+                          {proc.summary && (
+                            <p class="text-ink/60 mt-1 line-clamp-2 text-xs">{proc.summary}</p>
+                          )}
+                          {price && (
+                            <p class="mt-2 text-xs font-medium text-violet-600">
+                              {locale === 'bn' ? 'খরচ' : 'Cost'}: {price}
+                            </p>
+                          )}
+                          <span class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:underline">
+                            {locale === 'bn' ? 'বিস্তারিত' : 'Learn more'}
+                            <Icon name="arrow-right" size={12} />
+                          </span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              )
+          )}
+        </div>
+      )
+    }
   </div>
 </section>
 
 <!-- Doctors teaser -->
-{featuredDoctors.length > 0 && (
-  <section class="bg-cream-100 py-20" data-anim="scroll-reveal">
-    <div class="container">
-      <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
-        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{locale === 'bn' ? 'আমাদের বিশেষজ্ঞরা' : 'Meet our specialists'}</h2>
-        <Link href={`${prefix}/doctors`} class="text-sm font-medium text-ink/60 hover:text-ink">{locale === 'bn' ? 'সব বিশেষজ্ঞ দেখুন' : 'View all doctors'}</Link>
+{
+  featuredDoctors.length > 0 && (
+    <section class="bg-cream-100 py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            {locale === 'bn' ? 'আমাদের বিশেষজ্ঞরা' : 'Meet our specialists'}
+          </h2>
+          <Link href={`${prefix}/doctors`} class="text-ink/60 text-sm font-medium hover:text-ink">
+            {locale === 'bn' ? 'সব বিশেষজ্ঞ দেখুন' : 'View all doctors'}
+          </Link>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
+          {featuredDoctors.map((doctor) => (
+            <DoctorCard
+              key={doctor.name}
+              doctor={doctor}
+              bookLabel={t.doctors.bookCta}
+              whatsappLabel={t.doctors.detail.whatsappCta}
+            />
+          ))}
+        </div>
       </div>
-      <div class="grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
-        {featuredDoctors.map((doctor) => (
-          <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
-        ))}
-      </div>
-    </div>
-  </section>
-)}
+    </section>
+  )
+}
 
 <!-- Hospitals teaser -->
-{featuredHospitals.length > 0 && (
-  <section class="bg-cream-200 py-20" data-anim="scroll-reveal">
-    <div class="container">
-      <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
-        <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{locale === 'bn' ? 'আমাদের অংশীদার হাসপাতাল' : 'Our partner hospitals'}</h2>
-        <Link href={`${prefix}/hospitals`} class="text-sm font-medium text-ink/60 hover:text-ink">{locale === 'bn' ? 'সব হাসপাতাল দেখুন' : 'View all hospitals'}</Link>
+{
+  featuredHospitals.length > 0 && (
+    <section class="bg-cream-200 py-20" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="mb-10 flex items-end justify-between" data-anim="fade-in-up">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            {locale === 'bn' ? 'আমাদের অংশীদার হাসপাতাল' : 'Our partner hospitals'}
+          </h2>
+          <Link href={`${prefix}/hospitals`} class="text-ink/60 text-sm font-medium hover:text-ink">
+            {locale === 'bn' ? 'সব হাসপাতাল দেখুন' : 'View all hospitals'}
+          </Link>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
+          {featuredHospitals.map((hospital) => (
+            <HospitalCard
+              key={hospital.slug}
+              hospital={hospital}
+              viewLabel={t.hospitals.viewHospital}
+              locale={locale}
+            />
+          ))}
+        </div>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-anim="stagger-cards">
-        {featuredHospitals.map((hospital) => (
-          <HospitalCard key={hospital.slug} hospital={hospital} viewLabel={t.hospitals.viewHospital} locale={locale} />
-        ))}
-      </div>
-    </div>
-  </section>
-)}
+    </section>
+  )
+}
 
 <!-- Testimonials -->
 <section id="testimonials" class="bg-cream-100 py-20" data-anim="scroll-reveal">
-  <TestimonialCarousel
-    title={t.testimonials.title}
-    items={testimonials}
-    client:visible
-  />
+  <TestimonialCarousel title={t.testimonials.title} items={testimonials} client:visible />
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="bg-cream-200 py-20" data-anim="scroll-reveal">
   <div class="container max-w-3xl">
-    <h2 class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">{t.faq.title}</h2>
+    <h2
+      class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"
+      data-anim="fade-in-up"
+    >
+      {t.faq.title}
+    </h2>
     <FAQAccordion items={faq} />
   </div>
 </section>
@@ -358,8 +414,8 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   <div class="container grid gap-12 lg:grid-cols-2">
     <div data-anim="fade-in-up">
       <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
-      <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
-      <div class="mt-8 space-y-3 text-ink/60">
+      <p class="text-ink/60 mt-4 text-lg">{t.cta.subtitle}</p>
+      <div class="text-ink/60 mt-8 space-y-3">
         <p class="flex items-center gap-3">
           <Icon name="phone" size={20} />
           <Link href={`tel:+${phoneNumber}`}>+{phoneNumber}</Link>
@@ -370,11 +426,16 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
         </p>
         <p class="flex items-center gap-3">
           <Icon name="whatsapp" size={20} />
-          <WhatsAppCTA number={whatsappNumber} client:load>{locale === 'bn' ? 'হোয়াটসঅ্যাপ করুন' : 'WhatsApp us'}</WhatsAppCTA>
+          <WhatsAppCTA number={whatsappNumber} client:load
+            >{locale === 'bn' ? 'হোয়াটসঅ্যাপ করুন' : 'WhatsApp us'}</WhatsAppCTA
+          >
         </p>
       </div>
     </div>
-    <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
+    <div
+      class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8"
+      data-anim="fade-in-up"
+    >
       <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
       <LeadForm treatments={treatmentOptions} source={LEAD_SOURCE.GENERAL_CONTACT} client:visible />
     </div>

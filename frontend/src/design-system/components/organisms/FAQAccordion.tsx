@@ -12,8 +12,7 @@ export interface FAQItem {
   answerSuffix?: string;
 }
 
-export interface FAQAccordionProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface FAQAccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   items: FAQItem[];
   allowMultiple?: boolean;
 }
@@ -47,17 +46,16 @@ const FAQAccordion = React.forwardRef<HTMLDivElement, FAQAccordionProps>(
 
     return (
       <div
-        className={cn('divide-y divide-border-default rounded-xl border border-border-default', className)}
+        className={cn(
+          'divide-y divide-border-default rounded-xl border border-border-default',
+          className
+        )}
         ref={setRef}
         data-anim="faq-accordion"
         {...props}
       >
         {items.map((item, index) => (
-          <details
-            key={index}
-            name={allowMultiple ? undefined : 'faq'}
-            className="group"
-          >
+          <details key={index} name={allowMultiple ? undefined : 'faq'} className="group">
             <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-text-primary hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-border-focus">
               {/* Reason: wrap question in an h3 so search engines and AI systems
                   can identify FAQ questions as semantic headings, not just
@@ -79,9 +77,7 @@ const FAQAccordion = React.forwardRef<HTMLDivElement, FAQAccordionProps>(
                   ))}
                 </ul>
               )}
-              {item.answerSuffix && (
-                <p className="mt-3">{item.answerSuffix}</p>
-              )}
+              {item.answerSuffix && <p className="mt-3">{item.answerSuffix}</p>}
             </div>
           </details>
         ))}

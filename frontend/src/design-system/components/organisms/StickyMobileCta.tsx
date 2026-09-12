@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 
-export interface StickyMobileCtaProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface StickyMobileCtaProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Label for the primary CTA button (e.g. "Free consultation"). */
   primaryLabel: string;
   /** href for the primary CTA — usually an anchor to the lead form (#contact). */
@@ -29,7 +28,10 @@ export interface StickyMobileCtaProps
  * doesn't cover the hero CTAs on initial load.
  */
 const StickyMobileCta = React.forwardRef<HTMLDivElement, StickyMobileCtaProps>(
-  ({ className, primaryLabel, primaryHref, whatsappLabel, whatsappHref, appearAfter = 600 }, ref) => {
+  (
+    { className, primaryLabel, primaryHref, whatsappLabel, whatsappHref, appearAfter = 600 },
+    ref
+  ) => {
     const [visible, setVisible] = React.useState(false);
 
     React.useEffect(() => {
@@ -53,13 +55,13 @@ const StickyMobileCta = React.forwardRef<HTMLDivElement, StickyMobileCtaProps>(
           className
         )}
       >
-        <div className="border-t border-cream-300 bg-cream-100/95 px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+        <div className="bg-cream-100/95 border-t border-cream-300 px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] backdrop-blur-sm">
           <div className="mx-auto flex max-w-md items-center gap-3">
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-2 rounded-card border border-ink/15 bg-cream-200 px-4 py-3 text-sm font-semibold text-ink transition-colors active:bg-cream-300"
+              className="border-ink/15 flex flex-1 items-center justify-center gap-2 rounded-card border bg-cream-200 px-4 py-3 text-sm font-semibold text-ink transition-colors active:bg-cream-300"
             >
               <svg
                 className="h-4 w-4 shrink-0"
@@ -73,7 +75,7 @@ const StickyMobileCta = React.forwardRef<HTMLDivElement, StickyMobileCtaProps>(
             </a>
             <a
               href={primaryHref}
-              className="flex flex-1 items-center justify-center gap-2 rounded-card bg-ink px-4 py-3 text-sm font-semibold text-white transition-colors active:bg-ink/90"
+              className="active:bg-ink/90 flex flex-1 items-center justify-center gap-2 rounded-card bg-ink px-4 py-3 text-sm font-semibold text-white transition-colors"
             >
               {primaryLabel}
             </a>

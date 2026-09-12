@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Arthroscopy (Keyhole Surgery)"
-seoHeadline: "Arthroscopy Cost in India for International Patients"
+name: 'Arthroscopy (Keyhole Surgery)'
+seoHeadline: 'Arthroscopy Cost in India for International Patients'
 parentTreatmentSlug: orthopedics-surgery
-summary: "Arthroscopy in India costs between $2,000 and $5,000, offering international patients savings of up to 85% compared to Western countries. This minimally invasive keyhole procedure diagnoses and treats joint problems in the knee, shoulder, hip, or ankle using a small camera and specialised instruments."
-description: "Arthroscopy (keyhole surgery) in India from $2,000–$5,000 with JCI-accredited hospitals in Bangalore. Save up to 85% versus US/UK prices."
-fromPrice: "$2,000"
-toPrice: "$5,000"
-duration: "3-7 days"
-hospitalStay: "0-1 days"
-recoveryTime: "2-8 weeks"
+summary: 'Arthroscopy in India costs between $2,000 and $5,000, offering international patients savings of up to 85% compared to Western countries. This minimally invasive keyhole procedure diagnoses and treats joint problems in the knee, shoulder, hip, or ankle using a small camera and specialised instruments.'
+description: 'Arthroscopy (keyhole surgery) in India from $2,000–$5,000 with JCI-accredited hospitals in Bangalore. Save up to 85% versus US/UK prices.'
+fromPrice: '$2,000'
+toPrice: '$5,000'
+duration: '3-7 days'
+hospitalStay: '0-1 days'
+recoveryTime: '2-8 weeks'
 eligibility:
-  - "Joint pain, locking, or instability not relieved by conservative treatments (medication, physiotherapy, injections)"
-  - "Meniscal tear, ligament tear (e.g. ACL), or cartilage damage confirmed on MRI"
-  - "Shoulder impingement, rotator cuff tear, or labral tear requiring surgical intervention"
-  - "Loose bodies or synovial pathology within a joint"
-  - "Good general health to tolerate anaesthesia and post-operative rehabilitation"
+  - 'Joint pain, locking, or instability not relieved by conservative treatments (medication, physiotherapy, injections)'
+  - 'Meniscal tear, ligament tear (e.g. ACL), or cartilage damage confirmed on MRI'
+  - 'Shoulder impingement, rotator cuff tear, or labral tear requiring surgical intervention'
+  - 'Loose bodies or synovial pathology within a joint'
+  - 'Good general health to tolerate anaesthesia and post-operative rehabilitation'
 costInclusions:
-  - "Orthopaedic surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implant (joint prosthesis where applicable)"
-  - "Pre-operative diagnostics (X-ray, MRI, blood tests)"
-  - "Post-operative care and physiotherapy during hospital stay"
-  - "Airport pickup and drop"
+  - 'Orthopaedic surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implant (joint prosthesis where applicable)'
+  - 'Pre-operative diagnostics (X-ray, MRI, blood tests)'
+  - 'Post-operative care and physiotherapy during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy post-discharge (typically 6-12 weeks)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy post-discharge (typically 6-12 weeks)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "0-1 days"
-    description: "Most arthroscopic procedures are day-care or overnight stays. Pain management, wound inspection, and initial mobilisation begin within hours of surgery."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Supervised physiotherapy focuses on restoring range of motion and reducing swelling; follow-up wound review and assessment before departure."
-  - phase: "Return home"
-    duration: "Week 2-6"
-    description: "Progressive strengthening and sport-specific rehabilitation under a home exercise programme; gradual return to daily activities."
-  - phase: "Full recovery"
-    duration: "2-8 weeks"
-    description: "Complete joint function restored; most patients resume normal activities within 2-4 weeks for simple procedures and 6-8 weeks for ligament reconstruction."
+  - phase: 'Hospital stay'
+    duration: '0-1 days'
+    description: 'Most arthroscopic procedures are day-care or overnight stays. Pain management, wound inspection, and initial mobilisation begin within hours of surgery.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Supervised physiotherapy focuses on restoring range of motion and reducing swelling; follow-up wound review and assessment before departure.'
+  - phase: 'Return home'
+    duration: 'Week 2-6'
+    description: 'Progressive strengthening and sport-specific rehabilitation under a home exercise programme; gradual return to daily activities.'
+  - phase: 'Full recovery'
+    duration: '2-8 weeks'
+    description: 'Complete joint function restored; most patients resume normal activities within 2-4 weeks for simple procedures and 6-8 weeks for ligament reconstruction.'
 risks:
-  - "Surgical site infection or deep joint infection (septic arthritis)"
-  - "Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis"
-  - "Nerve or blood vessel injury near portal sites or within the joint"
-  - "Stiffness or arthrofibrosis requiring prolonged physiotherapy"
-  - "Incomplete resolution of symptoms requiring further surgery or reconstruction"
+  - 'Surgical site infection or deep joint infection (septic arthritis)'
+  - 'Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis'
+  - 'Nerve or blood vessel injury near portal sites or within the joint'
+  - 'Stiffness or arthrofibrosis requiring prolonged physiotherapy'
+  - 'Incomplete resolution of symptoms requiring further surgery or reconstruction'
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-sunil-g-kini
 
 relatedProcedureSlugs:
-  - "sports-injury-treatment-cost-india"
-  - "total-knee-replacement-cost-india"
+  - 'sports-injury-treatment-cost-india'
+  - 'total-knee-replacement-cost-india'
 faqs:
-  - question: "Is arthroscopy always a day-care procedure?"
-    answer: "Most simple arthroscopic procedures (e.g. meniscal trimming, loose body removal) are performed as day-care with same-day discharge. More complex procedures such as ACL reconstruction or rotator cuff repair may require an overnight stay. Your surgeon will advise based on the specific procedure."
-  - question: "When can I fly home after arthroscopy?"
-    answer: "For simple arthroscopic procedures, patients are typically cleared to fly 3-5 days after surgery. For ligament reconstructions or more complex repairs, 7-10 days is recommended. A medical fitness-to-fly certificate is provided before departure."
-  - question: "Will I need physiotherapy after arthroscopy?"
-    answer: "Yes. Physiotherapy is essential after arthroscopy to restore joint range of motion, strength, and function. The duration depends on the procedure—2-4 weeks for simple debridement and 6-12 weeks for ligament or tendon repair. A detailed home programme is provided at discharge."
+  - question: 'Is arthroscopy always a day-care procedure?'
+    answer: 'Most simple arthroscopic procedures (e.g. meniscal trimming, loose body removal) are performed as day-care with same-day discharge. More complex procedures such as ACL reconstruction or rotator cuff repair may require an overnight stay. Your surgeon will advise based on the specific procedure.'
+  - question: 'When can I fly home after arthroscopy?'
+    answer: 'For simple arthroscopic procedures, patients are typically cleared to fly 3-5 days after surgery. For ligament reconstructions or more complex repairs, 7-10 days is recommended. A medical fitness-to-fly certificate is provided before departure.'
+  - question: 'Will I need physiotherapy after arthroscopy?'
+    answer: 'Yes. Physiotherapy is essential after arthroscopy to restore joint range of motion, strength, and function. The duration depends on the procedure—2-4 weeks for simple debridement and 6-12 weeks for ligament or tendon repair. A detailed home programme is provided at discharge.'
 ---
+
 ## Overview
 
 If you are living with a joint that locks, clicks, gives way, or aches every time you move, you already know how much it can steal from your daily life. Simple things—walking up stairs, reaching overhead, sleeping without pain—can become a struggle. Arthroscopy, often called keyhole surgery, is a minimally invasive way to look directly inside your joint and fix the problem without a large cut. Because the surgeon works through incisions just a few millimetres wide, you experience far less tissue damage, smaller scars, less pain, and a noticeably faster return to the activities you love compared with traditional open surgery.
@@ -139,15 +140,16 @@ Before committing to arthroscopic surgery, it is worth exploring conservative al
 For certain conditions, bracing or orthotic devices may give you symptomatic relief, particularly if you are not a surgical candidate or wish to delay surgery. A functional knee brace can stabilise an ACL-deficient knee if your demands are low.
 
 However, when structural damage is confirmed on your imaging and conservative management has failed to give you adequate relief, arthroscopy remains the most effective minimally invasive solution. For advanced arthritis with diffuse cartilage loss, joint replacement rather than arthroscopy may be the more appropriate surgical option. Your surgeon will recommend the best approach based on your MRI findings, clinical examination, and your individual circumstances.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $5,000 | Baseline |
-| USA | $15,000 – $30,000 | ~6.4x higher |
-| UK | £4,000 – £8,000 | ~1.7x higher |
-| Singapore | $8,000 – $15,000 | ~3.3x higher |
-| Thailand | $4,000 – $8,000 | ~1.7x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,000 – $5,000   | Baseline     |
+| USA               | $15,000 – $30,000 | ~6.4x higher |
+| UK                | £4,000 – £8,000   | ~1.7x higher |
+| Singapore         | $8,000 – $15,000  | ~3.3x higher |
+| Thailand          | $4,000 – $8,000   | ~1.7x higher |
 
 The cost gap comes down to differences in surgeon fees, hospital overheads, and administrative costs—not the quality of the equipment or implants. Bangalore hospitals use the same high-definition arthroscopy systems and radiofrequency devices from global manufacturers that you would encounter in Western centres. The price range within Bangalore ($2,000–$5,000) reflects how complex your procedure is, which joint is involved, the type of implants or grafts required, and how long you stay in hospital. Khan Meditour gives you transparent, itemised cost estimates so you can compare options and choose the package that best fits your clinical needs and budget.
 
@@ -168,4 +170,3 @@ You will travel to Bangalore on a Medical Visa (e-Medical Visa available for cit
 When you land at Kempegowda International Airport, a dedicated driver meets you for a private transfer to the hospital. A bilingual coordinator accompanies you through registration and your pre-operative assessments. For simple arthroscopic procedures, we recommend arriving 2 days before surgery and planning a 5-7 day stay in Bangalore. For ligament reconstructions or more complex repairs, a 7-10 day stay is advisable so you can complete adequate initial rehabilitation before flying home.
 
 Bangalore offers a wide range of accommodation options near major hospitals, from serviced apartments to budget and mid-range hotels, many offering special medical-tourism rates arranged through Khan Meditour. Your coordinators can also arrange local transportation for follow-up visits, pharmacy runs, and sightseeing once you are medically cleared.
-

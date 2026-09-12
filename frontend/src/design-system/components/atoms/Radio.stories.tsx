@@ -14,5 +14,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { label: 'Economy class', name: 'class' } };
-export const Checked: Story = { args: { label: 'Business class', name: 'class', defaultChecked: true } };
-export const Disabled: Story = { args: { label: 'First class (unavailable)', name: 'class', disabled: true } };
+export const Checked: Story = {
+  args: { label: 'Business class', name: 'class', defaultChecked: true },
+};
+export const Disabled: Story = {
+  args: { label: 'First class (unavailable)', name: 'class', disabled: true },
+};

@@ -7,7 +7,17 @@ const meta: Meta<typeof IconButton> = {
   argTypes: {
     icon: {
       control: 'select',
-      options: ['chevron-down', 'chevron-right', 'chevron-left', 'menu', 'close', 'phone', 'mail', 'star', 'check'],
+      options: [
+        'chevron-down',
+        'chevron-right',
+        'chevron-left',
+        'menu',
+        'close',
+        'phone',
+        'mail',
+        'star',
+        'check',
+      ],
     },
     label: { control: 'text' },
     size: { control: 'number' },

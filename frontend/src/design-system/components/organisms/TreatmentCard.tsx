@@ -13,8 +13,7 @@ export interface Treatment {
   image?: string;
 }
 
-export interface TreatmentCardProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface TreatmentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   treatment: Treatment;
   fromLabel?: string;
 }

@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Pediatric Heart Surgery"
-seoHeadline: "Pediatric Heart Surgery Cost in India for International Patients"
+name: 'Pediatric Heart Surgery'
+seoHeadline: 'Pediatric Heart Surgery Cost in India for International Patients'
 parentTreatmentSlug: cardiology
-summary: "Pediatric heart surgery in India costs between $8,000 and $20,000, delivering savings of up to 90% compared to Western countries. The procedures repair complex congenital heart defects in infants and children, including tetralogy of Fallot, transposition of the great arteries, and single-ventricle conditions."
-description: "Pediatric Heart Surgery in India from $8,000–$20,000 at accredited Bangalore hospitals. Save up to 90% versus US/UK prices."
-fromPrice: "$8,000"
-toPrice: "$20,000"
-duration: "3-5 weeks"
-hospitalStay: "7-14 days"
-recoveryTime: "6-12 weeks"
+summary: 'Pediatric heart surgery in India costs between $8,000 and $20,000, delivering savings of up to 90% compared to Western countries. The procedures repair complex congenital heart defects in infants and children, including tetralogy of Fallot, transposition of the great arteries, and single-ventricle conditions.'
+description: 'Pediatric Heart Surgery in India from $8,000–$20,000 at accredited Bangalore hospitals. Save up to 90% versus US/UK prices.'
+fromPrice: '$8,000'
+toPrice: '$20,000'
+duration: '3-5 weeks'
+hospitalStay: '7-14 days'
+recoveryTime: '6-12 weeks'
 eligibility:
-  - "Infants and children with congenital heart defects requiring surgical correction"
-  - "Complex conditions including tetralogy of Fallot, transposition of the great arteries, or single-ventricle physiology"
-  - "Failure to thrive or recurrent respiratory infections related to congenital heart disease"
-  - "Cyanotic heart disease requiring early surgical intervention to improve oxygenation"
-  - "Adequate weight and overall condition for cardiopulmonary bypass and surgical correction"
+  - 'Infants and children with congenital heart defects requiring surgical correction'
+  - 'Complex conditions including tetralogy of Fallot, transposition of the great arteries, or single-ventricle physiology'
+  - 'Failure to thrive or recurrent respiratory infections related to congenital heart disease'
+  - 'Cyanotic heart disease requiring early surgical intervention to improve oxygenation'
+  - 'Adequate weight and overall condition for cardiopulmonary bypass and surgical correction'
 costInclusions:
-  - "Cardiac surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants (stents, valves, pacemaker where applicable)"
-  - "Pre-operative diagnostics (angiogram, echo, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Cardiac surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants (stents, valves, pacemaker where applicable)'
+  - 'Pre-operative diagnostics (angiogram, echo, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Cardiac rehabilitation program post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Cardiac rehabilitation program post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "7-14 days"
-    description: "Post-operative paediatric ICU monitoring with ventilator support as needed, gradual weaning from inotropes, chest tube removal, and echocardiographic assessment of surgical result."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Continued monitoring, feeding establishment, wound review, and repeat echocardiography to confirm cardiac function before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 3-8"
-    description: "Continue wound care, establish feeding and growth patterns, and schedule a follow-up appointment with your paediatric cardiologist at home."
-  - phase: "Full recovery"
-    duration: "6-12 weeks"
-    description: "Complete surgical recovery with improved cardiac function; lifelong paediatric and adult congenital cardiology surveillance is essential."
+  - phase: 'Hospital stay'
+    duration: '7-14 days'
+    description: 'Post-operative paediatric ICU monitoring with ventilator support as needed, gradual weaning from inotropes, chest tube removal, and echocardiographic assessment of surgical result.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Continued monitoring, feeding establishment, wound review, and repeat echocardiography to confirm cardiac function before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 3-8'
+    description: 'Continue wound care, establish feeding and growth patterns, and schedule a follow-up appointment with your paediatric cardiologist at home.'
+  - phase: 'Full recovery'
+    duration: '6-12 weeks'
+    description: 'Complete surgical recovery with improved cardiac function; lifelong paediatric and adult congenital cardiology surveillance is essential.'
 risks:
-  - "Low cardiac output syndrome requiring inotropic support or ECMO in the early post-operative period"
-  - "Residual or recurrent cardiac lesions requiring future catheter or surgical intervention"
-  - "Arrhythmias including heart block requiring temporary or permanent pacemaker"
-  - "Bleeding requiring re-exploration or blood transfusion"
-  - "Neurological complications including seizures or developmental concerns related to cardiopulmonary bypass"
+  - 'Low cardiac output syndrome requiring inotropic support or ECMO in the early post-operative period'
+  - 'Residual or recurrent cardiac lesions requiring future catheter or surgical intervention'
+  - 'Arrhythmias including heart block requiring temporary or permanent pacemaker'
+  - 'Bleeding requiring re-exploration or blood transfusion'
+  - 'Neurological complications including seizures or developmental concerns related to cardiopulmonary bypass'
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-varun-shetty
 
 relatedProcedureSlugs:
-  - "asd-vsd-closure-surgery-cost-india"
-  - "heart-bypass-surgery-cabg-cost-india"
+  - 'asd-vsd-closure-surgery-cost-india'
+  - 'heart-bypass-surgery-cabg-cost-india'
 faqs:
-  - question: "At what age can congenital heart defects be surgically corrected?"
-    answer: "Many complex congenital heart defects are corrected in the neonatal period (first 28 days of life) or early infancy, including transposition of the great arteries (arterial switch at 2-4 weeks) and hypoplastic left heart syndrome (Norwood in the first week). Simpler defects such as ASDs may be repaired at 3-5 years. The timing depends on the specific defect, symptoms, and surgical strategy."
-  - question: "What is the success rate of pediatric heart surgery in Bangalore?"
+  - question: 'At what age can congenital heart defects be surgically corrected?'
+    answer: 'Many complex congenital heart defects are corrected in the neonatal period (first 28 days of life) or early infancy, including transposition of the great arteries (arterial switch at 2-4 weeks) and hypoplastic left heart syndrome (Norwood in the first week). Simpler defects such as ASDs may be repaired at 3-5 years. The timing depends on the specific defect, symptoms, and surgical strategy.'
+  - question: 'What is the success rate of pediatric heart surgery in Bangalore?'
     answer: "Bangalore's leading paediatric cardiac centres achieve surgical success rates of 95-98% for common congenital heart procedures, comparable to international benchmarks. Outcomes depend on the complexity of the defect, the child's weight and condition, and the timing of surgery. Your surgeon will discuss expected outcomes specific to your child's diagnosis."
-  - question: "Can parents stay with their child during the hospital stay?"
+  - question: 'Can parents stay with their child during the hospital stay?'
     answer: "Yes. Most hospitals in Bangalore provide family-friendly facilities with parent accommodation near the paediatric ICU. Parents are encouraged to be present and involved in their child's care to the extent possible, and dedicated paediatric cardiac coordinators support families throughout the hospital stay."
 ---
+
 ## Overview
 
 As a parent, learning that your child has a congenital heart defect is one of the most frightening moments you can face. Your child's safety is your top priority, and you want the very best surgical care available. Pediatric heart surgery corrects congenital heart defects (CHDs) that are present from birth, ranging from relatively simple conditions such as atrial and ventricular septal defects to complex single-ventricle physiology requiring staged surgical reconstruction. Congenital heart disease affects approximately 8-10 per 1,000 live births, and many defects require surgical intervention in infancy or early childhood to ensure normal growth, development, and life expectancy.
@@ -123,15 +124,16 @@ After you return home, schedule a follow-up appointment with your paediatric car
 ## Alternatives to Consider
 
 In some cases, congenital heart defects can be treated with catheter-based procedures rather than open surgery. For example, atrial septal defects and certain valve problems may be repaired with devices inserted through a blood vessel, avoiding the need for a surgical incision and cardiopulmonary bypass. Your heart team in Bangalore will evaluate whether your child is a candidate for a catheter approach or whether surgery remains the safest and most effective option. In rare cases, a hybrid procedure combining both techniques may be recommended.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $8,000 – $20,000 | Baseline |
-| USA | $100,000 – $250,000 | ~12.5x higher |
-| UK | £30,000 – £60,000 | ~4.2x higher |
-| Singapore | $30,000 – $60,000 | ~3.2x higher |
-| Thailand | $18,000 – $35,000 | ~1.9x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $8,000 – $20,000    | Baseline      |
+| USA               | $100,000 – $250,000 | ~12.5x higher |
+| UK                | £30,000 – £60,000   | ~4.2x higher  |
+| Singapore         | $30,000 – $60,000   | ~3.2x higher  |
+| Thailand          | $18,000 – $35,000   | ~1.9x higher  |
 
 Many parents are surprised to learn that the same surgical techniques, the same imported implants, and the same international safety protocols are used in Bangalore as in Western hospitals, yet the cost is a fraction of what you would pay at home. The lower cost reflects favourable exchange rates and lower operating costs in India, not a compromise in quality. For families travelling from Bangladesh, the Gulf, or African nations, the savings often make the difference between accessing life-saving surgery and going without treatment entirely.
 
@@ -150,4 +152,3 @@ Many parents are surprised to learn that the same surgical techniques, the same 
 International families travel to Bangalore on Medical Visas (e-Medical Visa available for citizens of 160+ countries), typically granted within 48-72 hours. Both parents and the child receive medical visas, and Khan Meditour assists with the visa invitation letter from the treating hospital, appointment scheduling, and the complete ground logistics chain including family accommodation near the hospital.
 
 Families are received at Kempegowda International Airport by a private driver and transferred to the hospital. We recommend arriving 4-5 days before surgery to complete pre-operative echocardiography, cardiac catheterisation (if needed), and paediatric cardiology and anaesthesia evaluations. Plan a 3-5 week stay in Bangalore for surgery, paediatric ICU and ward recovery, and follow-up assessment before flying home with a fitness-to-fly certificate for your child. Pack comfortable clothes for yourself and your child, bring all previous medical records and imaging on a CD or USB drive, and carry enough of any medications your child currently takes.
-

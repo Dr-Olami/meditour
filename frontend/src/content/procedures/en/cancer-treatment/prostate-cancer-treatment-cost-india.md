@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Prostate Cancer Treatment"
-seoHeadline: "Prostate Cancer Treatment Cost in India for International Patients"
+name: 'Prostate Cancer Treatment'
+seoHeadline: 'Prostate Cancer Treatment Cost in India for International Patients'
 parentTreatmentSlug: cancer-treatment
-summary: "Prostate cancer treatment in India costs $5,000–$18,000 for a complete course, offering savings of up to 90% compared to Western countries. Treatment includes surgery, radiation, hormone therapy, and targeted therapy delivered by expert oncologists in JCI-accredited hospitals."
-description: "Comprehensive prostate cancer treatment in India starting at $5,000 for international patients. Compare costs, understand inclusions, and plan your medical trip."
-fromPrice: "$5,000"
-toPrice: "$18,000"
-duration: "1-6 months"
-hospitalStay: "2-5 days"
-recoveryTime: "4-8 weeks"
+summary: 'Prostate cancer treatment in India costs $5,000–$18,000 for a complete course, offering savings of up to 90% compared to Western countries. Treatment includes surgery, radiation, hormone therapy, and targeted therapy delivered by expert oncologists in JCI-accredited hospitals.'
+description: 'Comprehensive prostate cancer treatment in India starting at $5,000 for international patients. Compare costs, understand inclusions, and plan your medical trip.'
+fromPrice: '$5,000'
+toPrice: '$18,000'
+duration: '1-6 months'
+hospitalStay: '2-5 days'
+recoveryTime: '4-8 weeks'
 eligibility:
-  - "Confirmed prostate cancer diagnosis through prostate biopsy and histopathology"
-  - "Gleason score, PSA level, and clinical staging determined for risk stratification"
-  - "Adequate overall health to tolerate the planned treatment approach"
-  - "Life expectancy of at least 10 years for curative-intent treatment"
-  - "Realistic treatment goals established by the multidisciplinary uro-oncology team"
+  - 'Confirmed prostate cancer diagnosis through prostate biopsy and histopathology'
+  - 'Gleason score, PSA level, and clinical staging determined for risk stratification'
+  - 'Adequate overall health to tolerate the planned treatment approach'
+  - 'Life expectancy of at least 10 years for curative-intent treatment'
+  - 'Realistic treatment goals established by the multidisciplinary uro-oncology team'
 costInclusions:
-  - "Oncologist consultation fees"
-  - "Chemotherapy/radiation/medication costs"
-  - "Hospital room charges (where applicable)"
-  - "Pre-treatment diagnostics (biopsy, imaging, blood tests)"
-  - "Supportive medications (anti-nausea, growth factors)"
-  - "Post-treatment monitoring during stay"
-  - "Airport pickup and drop"
+  - 'Oncologist consultation fees'
+  - 'Chemotherapy/radiation/medication costs'
+  - 'Hospital room charges (where applicable)'
+  - 'Pre-treatment diagnostics (biopsy, imaging, blood tests)'
+  - 'Supportive medications (anti-nausea, growth factors)'
+  - 'Post-treatment monitoring during stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term maintenance therapy post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term maintenance therapy post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Treatment period"
-    duration: "1-6 months"
-    description: "Treatment which may include robotic prostatectomy, radiation therapy (IMRT/IGRT or brachytherapy), hormone therapy, or a combination, sequenced based on risk category and patient preference."
-  - phase: "Bangalore monitoring"
-    duration: "1-2 weeks"
-    description: "Post-treatment assessment of urinary function, wound healing, and treatment response before transitioning to follow-up or maintenance therapy."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Gradual recovery of urinary continence and energy; hormone therapy may be continued at home with periodic PSA monitoring."
-  - phase: "Full recovery"
-    duration: "4-8 weeks"
-    description: "Complete recovery from treatment effects; long-term PSA surveillance and follow-up imaging as advised by uro-oncologist."
+  - phase: 'Treatment period'
+    duration: '1-6 months'
+    description: 'Treatment which may include robotic prostatectomy, radiation therapy (IMRT/IGRT or brachytherapy), hormone therapy, or a combination, sequenced based on risk category and patient preference.'
+  - phase: 'Bangalore monitoring'
+    duration: '1-2 weeks'
+    description: 'Post-treatment assessment of urinary function, wound healing, and treatment response before transitioning to follow-up or maintenance therapy.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Gradual recovery of urinary continence and energy; hormone therapy may be continued at home with periodic PSA monitoring.'
+  - phase: 'Full recovery'
+    duration: '4-8 weeks'
+    description: 'Complete recovery from treatment effects; long-term PSA surveillance and follow-up imaging as advised by uro-oncologist.'
 risks:
-  - "Urinary incontinence following surgery, which is usually temporary but may persist"
-  - "Erectile dysfunction after surgery or radiation therapy"
-  - "Radiation cystitis or proctitis causing urinary or bowel symptoms"
-  - "Hormone therapy side effects including hot flashes, bone density loss, and fatigue"
-  - "Risk of urethral stricture or bladder neck contracture after surgical procedures"
+  - 'Urinary incontinence following surgery, which is usually temporary but may persist'
+  - 'Erectile dysfunction after surgery or radiation therapy'
+  - 'Radiation cystitis or proctitis causing urinary or bowel symptoms'
+  - 'Hormone therapy side effects including hot flashes, bone density loss, and fatigue'
+  - 'Risk of urethral stricture or bladder neck contracture after surgical procedures'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-anil-kamath
 
 relatedProcedureSlugs:
-  - "cancer-surgery-cost-india"
-  - "radiation-therapy-cost-india"
+  - 'cancer-surgery-cost-india'
+  - 'radiation-therapy-cost-india'
 faqs:
-  - question: "What treatment options are available for prostate cancer in India?"
-    answer: "Bangalore hospitals offer the full spectrum of prostate cancer treatment including robotic-assisted radical prostatectomy, open surgery, radiation therapy (IMRT, IGRT, VMAT), brachytherapy (internal radiation), hormone therapy (androgen deprivation therapy), chemotherapy for advanced cases, and active surveillance for low-risk disease. The treatment plan is personalised based on risk category, PSA level, Gleason score, and patient preference."
-  - question: "Is robotic surgery available for prostate cancer in Bangalore?"
-    answer: "Yes. Several hospitals in Bangalore are equipped with the da Vinci surgical system for robotic-assisted radical prostatectomy. Robotic surgery offers superior precision for nerve-sparing and sphincter-sparing techniques, resulting in better urinary continence recovery and preservation of erectile function compared to traditional open surgery. It also involves smaller incisions, less blood loss, and shorter hospital stays."
-  - question: "What is brachytherapy and is it available in India?"
-    answer: "Brachytherapy is a form of internal radiation therapy where radioactive seeds are permanently implanted directly into the prostate gland to deliver targeted radiation to the tumour. It is available in Bangalore hospitals and is an excellent option for low to intermediate-risk localised prostate cancer. It can be used alone or combined with external beam radiation therapy for higher-risk cases."
+  - question: 'What treatment options are available for prostate cancer in India?'
+    answer: 'Bangalore hospitals offer the full spectrum of prostate cancer treatment including robotic-assisted radical prostatectomy, open surgery, radiation therapy (IMRT, IGRT, VMAT), brachytherapy (internal radiation), hormone therapy (androgen deprivation therapy), chemotherapy for advanced cases, and active surveillance for low-risk disease. The treatment plan is personalised based on risk category, PSA level, Gleason score, and patient preference.'
+  - question: 'Is robotic surgery available for prostate cancer in Bangalore?'
+    answer: 'Yes. Several hospitals in Bangalore are equipped with the da Vinci surgical system for robotic-assisted radical prostatectomy. Robotic surgery offers superior precision for nerve-sparing and sphincter-sparing techniques, resulting in better urinary continence recovery and preservation of erectile function compared to traditional open surgery. It also involves smaller incisions, less blood loss, and shorter hospital stays.'
+  - question: 'What is brachytherapy and is it available in India?'
+    answer: 'Brachytherapy is a form of internal radiation therapy where radioactive seeds are permanently implanted directly into the prostate gland to deliver targeted radiation to the tumour. It is available in Bangalore hospitals and is an excellent option for low to intermediate-risk localised prostate cancer. It can be used alone or combined with external beam radiation therapy for higher-risk cases.'
 ---
+
 ## Overview
 
 Hearing that you have prostate cancer can leave you with a swirl of emotions — fear, confusion, and perhaps embarrassment about discussing symptoms that feel deeply personal. You may be worried about what treatment will mean for your urinary function, your sexual function, and your daily life. These concerns are completely natural, and you should feel comfortable discussing them openly with your medical team. The good news is that prostate cancer is one of the most treatable cancers, especially when caught early, and Bangalore's uro-oncology teams are highly experienced in helping men navigate this journey.
@@ -131,15 +132,16 @@ Khan Meditour facilitates remote consultations with your Bangalore uro-oncology 
 ## Alternatives to Consider
 
 Focal therapy using high-intensity focused ultrasound (HIFU) or cryotherapy targets only the cancerous portion of your prostate, preserving surrounding tissue and reducing side effects. Clinical trials may offer access to novel therapies if you have exhausted standard options. For elderly patients with significant comorbidities and low-risk disease, watchful waiting with deferred hormone therapy is a reasonable strategy that avoids treatment burden while maintaining disease control. Your uro-oncology team will discuss all options with you.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $5,000 – $18,000 | Baseline |
-| USA | $50,000 – $180,000 | ~10.0x higher |
-| UK | £30,000 – £90,000 | ~5.2x higher |
-| Singapore | $25,000 – $70,000 | ~4.1x higher |
-| Thailand | $12,000 – $35,000 | ~2.0x higher |
+| Country           | Approximate Cost   | vs India      |
+| ----------------- | ------------------ | ------------- |
+| India (Bangalore) | $5,000 – $18,000   | Baseline      |
+| USA               | $50,000 – $180,000 | ~10.0x higher |
+| UK                | £30,000 – £90,000  | ~5.2x higher  |
+| Singapore         | $25,000 – $70,000  | ~4.1x higher  |
+| Thailand          | $12,000 – $35,000  | ~2.0x higher  |
 
 Costs vary based on your treatment modality and risk category. Robotic-assisted radical prostatectomy typically costs $7,000–$12,000. External beam radiation therapy over 5–8 weeks ranges from $5,000–$8,000. Brachytherapy costs approximately $6,000–$9,000. Hormone therapy injections cost $200–$500 per month, while advanced oral agents like abiraterone cost $800–$1,500 monthly — far below the $5,000–$8,000 charged in Western countries.
 

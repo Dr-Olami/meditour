@@ -45,7 +45,13 @@ const usa: CountryMetadata = {
   directFlights: false,
   visaType: 'e-visa',
   visaProcessingTime: '4–6 business days',
-  majorAirports: ['New York (JFK)', 'Los Angeles (LAX)', 'Chicago (ORD)', 'Houston (IAH)', 'San Francisco (SFO)'],
+  majorAirports: [
+    'New York (JFK)',
+    'Los Angeles (LAX)',
+    'Chicago (ORD)',
+    'Houston (IAH)',
+    'San Francisco (SFO)',
+  ],
 
   costSavingsVsLocal: '70–90%',
   costComparisonCountries: ['USA', 'Singapore', 'Thailand'],
@@ -53,23 +59,49 @@ const usa: CountryMetadata = {
 
   languages: ['English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Western cuisine available', 'Christian chapel access', 'Private rooms', 'International patient lounges'],
+  culturalConsiderations: [
+    'Western cuisine available',
+    'Christian chapel access',
+    'Private rooms',
+    'International patient lounges',
+  ],
 
   patientsTreated: 800,
   establishedYear: 2018,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '18 hours from NYC (1 stop)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)', 'Lufthansa (via Frankfurt)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '16 hours from NYC (1 stop)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '15 hours from NYC (1 stop)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '18 hours from NYC (1 stop)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)', 'Lufthansa (via Frankfurt)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '16 hours from NYC (1 stop)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '15 hours from NYC (1 stop)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'World-Class Healthcare in India for American Patients',
-  heroSubtitle: 'Save 70–90% vs US healthcare. JCI-accredited hospitals. English-speaking doctors. Premium international patient services.',
-  metaDescription: 'Affordable medical treatment in India for American patients. Save 70–90% on cardiac, orthopedic, cancer, IVF care at JCI-accredited hospitals. English-speaking staff. Free consultation.',
-  introParagraph: 'American patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 70–90% compared to US healthcare costs while receiving care at JCI-accredited hospitals with English-speaking doctors and premium international patient services.',
+  heroSubtitle:
+    'Save 70–90% vs US healthcare. JCI-accredited hospitals. English-speaking doctors. Premium international patient services.',
+  metaDescription:
+    'Affordable medical treatment in India for American patients. Save 70–90% on cardiac, orthopedic, cancer, IVF care at JCI-accredited hospitals. English-speaking staff. Free consultation.',
+  introParagraph:
+    'American patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 70–90% compared to US healthcare costs while receiving care at JCI-accredited hospitals with English-speaking doctors and premium international patient services.',
 
   currency: { code: 'USD', symbol: '$', exchangeRate: 1, name: 'US Dollar' },
 };
@@ -126,23 +158,54 @@ const uk: CountryMetadata = {
 
   languages: ['English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Western cuisine available', 'Christian chapel access', 'Private rooms', 'International patient lounges', 'Vegetarian options'],
+  culturalConsiderations: [
+    'Western cuisine available',
+    'Christian chapel access',
+    'Private rooms',
+    'International patient lounges',
+    'Vegetarian options',
+  ],
 
   patientsTreated: 600,
   establishedYear: 2018,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '9.5 hours from London (1 stop)', directFlights: false, airlines: ['British Airways (via Mumbai)', 'Emirates (via Dubai)', 'Lufthansa (via Frankfurt)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '8.5 hours from London', directFlights: true, airlines: ['British Airways', 'Air India', 'Virgin Atlantic'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '8 hours from London', directFlights: true, airlines: ['British Airways', 'Air India', 'Virgin Atlantic'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '9.5 hours from London (1 stop)',
+      directFlights: false,
+      airlines: [
+        'British Airways (via Mumbai)',
+        'Emirates (via Dubai)',
+        'Lufthansa (via Frankfurt)',
+      ],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '8.5 hours from London',
+      directFlights: true,
+      airlines: ['British Airways', 'Air India', 'Virgin Atlantic'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '8 hours from London',
+      directFlights: true,
+      airlines: ['British Airways', 'Air India', 'Virgin Atlantic'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'World-Class Healthcare in India for British Patients',
-  heroSubtitle: 'Save 60–80% vs UK private healthcare. Skip NHS waiting lists. JCI-accredited hospitals. Direct flights from London.',
-  metaDescription: 'Affordable medical treatment in India for UK patients. Save 60–80% on cardiac, orthopedic, cancer, IVF care. Skip NHS waiting lists. JCI hospitals, English-speaking staff. Free consultation.',
-  introParagraph: 'British patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 60–80% compared to UK private healthcare while avoiding NHS waiting lists, with direct flights from London and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Save 60–80% vs UK private healthcare. Skip NHS waiting lists. JCI-accredited hospitals. Direct flights from London.',
+  metaDescription:
+    'Affordable medical treatment in India for UK patients. Save 60–80% on cardiac, orthopedic, cancer, IVF care. Skip NHS waiting lists. JCI hospitals, English-speaking staff. Free consultation.',
+  introParagraph:
+    'British patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 60–80% compared to UK private healthcare while avoiding NHS waiting lists, with direct flights from London and JCI-accredited hospitals.',
 
   currency: { code: 'GBP', symbol: '£', exchangeRate: 0.79, name: 'British Pound' },
 };
@@ -199,23 +262,50 @@ const canada: CountryMetadata = {
 
   languages: ['English', 'French'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Western cuisine available', 'Christian chapel access', 'Private rooms', 'International patient lounges', 'French interpreters'],
+  culturalConsiderations: [
+    'Western cuisine available',
+    'Christian chapel access',
+    'Private rooms',
+    'International patient lounges',
+    'French interpreters',
+  ],
 
   patientsTreated: 400,
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '18 hours from Toronto (1–2 stops)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)', 'Air India (via London)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '16 hours from Toronto (1 stop)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Delhi', flightTime: '15 hours from Toronto (1 stop)', directFlights: false, airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
+    {
+      name: 'Bangalore',
+      flightTime: '18 hours from Toronto (1–2 stops)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)', 'Air India (via London)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '16 hours from Toronto (1 stop)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '15 hours from Toronto (1 stop)',
+      directFlights: false,
+      airlines: ['Emirates (via Dubai)', 'Lufthansa (via Frankfurt)'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'World-Class Healthcare in India for Canadian Patients',
-  heroSubtitle: 'Save 60–80% vs Canadian private healthcare. Skip provincial wait times. JCI-accredited hospitals. English and French support.',
-  metaDescription: 'Affordable medical treatment in India for Canadian patients. Save 60–80% on cardiac, orthopedic, cancer, IVF care. Skip wait times. JCI hospitals, English/French staff. Free consultation.',
-  introParagraph: 'Canadian patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 60–80% compared to Canadian private healthcare while avoiding provincial wait times, with JCI-accredited hospitals and English/French language support.',
+  heroSubtitle:
+    'Save 60–80% vs Canadian private healthcare. Skip provincial wait times. JCI-accredited hospitals. English and French support.',
+  metaDescription:
+    'Affordable medical treatment in India for Canadian patients. Save 60–80% on cardiac, orthopedic, cancer, IVF care. Skip wait times. JCI hospitals, English/French staff. Free consultation.',
+  introParagraph:
+    'Canadian patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 60–80% compared to Canadian private healthcare while avoiding provincial wait times, with JCI-accredited hospitals and English/French language support.',
 
   currency: { code: 'CAD', symbol: 'C$', exchangeRate: 1.36, name: 'Canadian Dollar' },
 };
@@ -272,23 +362,54 @@ const australia: CountryMetadata = {
 
   languages: ['English'],
   religiousMajority: 'christian',
-  culturalConsiderations: ['Western cuisine available', 'Christian chapel access', 'Private rooms', 'International patient lounges', 'Vegetarian options'],
+  culturalConsiderations: [
+    'Western cuisine available',
+    'Christian chapel access',
+    'Private rooms',
+    'International patient lounges',
+    'Vegetarian options',
+  ],
 
   patientsTreated: 300,
   establishedYear: 2019,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '13 hours from Sydney (1 stop)', directFlights: false, airlines: ['Singapore Airlines (via Singapore)', 'Malaysia Airlines (via KL)', 'Qatar Airways (via Doha)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Mumbai', flightTime: '12 hours from Sydney (1 stop)', directFlights: false, airlines: ['Singapore Airlines (via Singapore)', 'Qatar Airways (via Doha)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
-    { name: 'Chennai', flightTime: '12 hours from Sydney (1 stop)', directFlights: false, airlines: ['Singapore Airlines (via Singapore)', 'Malaysia Airlines (via KL)'], specialties: ['Cardiac', 'Orthopedics', 'Cancer'] },
+    {
+      name: 'Bangalore',
+      flightTime: '13 hours from Sydney (1 stop)',
+      directFlights: false,
+      airlines: [
+        'Singapore Airlines (via Singapore)',
+        'Malaysia Airlines (via KL)',
+        'Qatar Airways (via Doha)',
+      ],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '12 hours from Sydney (1 stop)',
+      directFlights: false,
+      airlines: ['Singapore Airlines (via Singapore)', 'Qatar Airways (via Doha)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
+    {
+      name: 'Chennai',
+      flightTime: '12 hours from Sydney (1 stop)',
+      directFlights: false,
+      airlines: ['Singapore Airlines (via Singapore)', 'Malaysia Airlines (via KL)'],
+      specialties: ['Cardiac', 'Orthopedics', 'Cancer'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'World-Class Healthcare in India for Australian Patients',
-  heroSubtitle: 'Save 50–70% vs Australian private healthcare. Skip Medicare wait times. JCI-accredited hospitals. English-speaking staff.',
-  metaDescription: 'Affordable medical treatment in India for Australian patients. Save 50–70% on cardiac, orthopedic, cancer, IVF care. Skip wait times. JCI hospitals, English-speaking staff. Free consultation.',
-  introParagraph: 'Australian patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 50–70% compared to Australian private healthcare while avoiding Medicare wait times, with JCI-accredited hospitals and English-speaking staff.',
+  heroSubtitle:
+    'Save 50–70% vs Australian private healthcare. Skip Medicare wait times. JCI-accredited hospitals. English-speaking staff.',
+  metaDescription:
+    'Affordable medical treatment in India for Australian patients. Save 50–70% on cardiac, orthopedic, cancer, IVF care. Skip wait times. JCI hospitals, English-speaking staff. Free consultation.',
+  introParagraph:
+    'Australian patients choose India for cardiac surgery, orthopedics, cancer treatment, IVF, and cosmetic procedures — saving 50–70% compared to Australian private healthcare while avoiding Medicare wait times, with JCI-accredited hospitals and English-speaking staff.',
 
   currency: { code: 'AUD', symbol: 'A$', exchangeRate: 1.52, name: 'Australian Dollar' },
 };
@@ -345,23 +466,49 @@ const kazakhstan: CountryMetadata = {
 
   languages: ['Kazakh', 'Russian', 'English'],
   religiousMajority: 'muslim',
-  culturalConsiderations: ['Halal food available', 'Prayer rooms', 'Russian interpreters', 'Female doctors on request'],
+  culturalConsiderations: [
+    'Halal food available',
+    'Prayer rooms',
+    'Russian interpreters',
+    'Female doctors on request',
+  ],
 
   patientsTreated: 300,
   establishedYear: 2020,
 
   recommendedCities: [
-    { name: 'Bangalore', flightTime: '6.5 hours from Almaty (1 stop)', directFlights: false, airlines: ['Air Astana (via Delhi)', 'IndiGo (via Delhi)'], specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'] },
-    { name: 'Delhi', flightTime: '5 hours from Almaty (1 stop)', directFlights: false, airlines: ['Air Astana', 'IndiGo'], specialties: ['Cardiac', 'Cancer', 'Orthopedics'] },
-    { name: 'Mumbai', flightTime: '6 hours from Almaty (1 stop)', directFlights: false, airlines: ['Air Astana (via Delhi)'], specialties: ['Cancer', 'Cardiac', 'Cosmetic'] },
+    {
+      name: 'Bangalore',
+      flightTime: '6.5 hours from Almaty (1 stop)',
+      directFlights: false,
+      airlines: ['Air Astana (via Delhi)', 'IndiGo (via Delhi)'],
+      specialties: ['Transplant', 'Cardiac', 'Orthopedics', 'Cancer'],
+    },
+    {
+      name: 'Delhi',
+      flightTime: '5 hours from Almaty (1 stop)',
+      directFlights: false,
+      airlines: ['Air Astana', 'IndiGo'],
+      specialties: ['Cardiac', 'Cancer', 'Orthopedics'],
+    },
+    {
+      name: 'Mumbai',
+      flightTime: '6 hours from Almaty (1 stop)',
+      directFlights: false,
+      airlines: ['Air Astana (via Delhi)'],
+      specialties: ['Cancer', 'Cardiac', 'Cosmetic'],
+    },
   ],
 
   visaSteps: standardVisaSteps,
 
   heroTitle: 'Advanced Healthcare in India for Kazakh Patients',
-  heroSubtitle: 'Flights from Almaty and Astana. Russian and Kazakh support. Halal facilities. Save 40–60% vs Turkey and South Korea.',
-  metaDescription: 'Affordable medical treatment in India for Kazakh patients. Russian/Kazakh support, halal food, save 40–60% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
-  introParagraph: 'Patients from Almaty, Astana, and Shymkent travel to India for cardiac surgery, cancer treatment, orthopedics, transplants, and IVF — with Russian and Kazakh language support, halal food, and JCI-accredited hospitals.',
+  heroSubtitle:
+    'Flights from Almaty and Astana. Russian and Kazakh support. Halal facilities. Save 40–60% vs Turkey and South Korea.',
+  metaDescription:
+    'Affordable medical treatment in India for Kazakh patients. Russian/Kazakh support, halal food, save 40–60% on cardiac, cancer, orthopedic care at JCI hospitals. Free consultation.',
+  introParagraph:
+    'Patients from Almaty, Astana, and Shymkent travel to India for cardiac surgery, cancer treatment, orthopedics, transplants, and IVF — with Russian and Kazakh language support, halal food, and JCI-accredited hospitals.',
 
   currency: { code: 'KZT', symbol: '₸', exchangeRate: 470, name: 'Kazakhstani Tenge' },
 };

@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Kidney Stone Treatment"
-seoHeadline: "Kidney Stone Treatment Cost in India for International Patients"
+name: 'Kidney Stone Treatment'
+seoHeadline: 'Kidney Stone Treatment Cost in India for International Patients'
 parentTreatmentSlug: nephrology-kidney-care
 summary: "Kidney stone treatment in India costs between $1,500 and $5,000, offering international patients savings of up to 80% compared to Western countries. Bangalore's leading urology and nephrology centres provide the full range of stone removal procedures including ESWL, ureteroscopy, PCNL, and RIRS with world-class technology and experienced specialists."
-description: "Affordable kidney stone treatment in Bangalore, India ranging from $1,500 to $5,000 with top urologists and JCI-accredited hospitals."
-fromPrice: "$1,500"
-toPrice: "$5,000"
-duration: "1-4 hours"
-hospitalStay: "0-3 days"
-recoveryTime: "1-2 weeks"
+description: 'Affordable kidney stone treatment in Bangalore, India ranging from $1,500 to $5,000 with top urologists and JCI-accredited hospitals.'
+fromPrice: '$1,500'
+toPrice: '$5,000'
+duration: '1-4 hours'
+hospitalStay: '0-3 days'
+recoveryTime: '1-2 weeks'
 eligibility:
-  - "Patients with symptomatic kidney stones causing pain, bleeding, or obstruction"
-  - "Individuals with stones larger than 6-7 mm unlikely to pass spontaneously"
-  - "Patients with recurrent kidney stones requiring metabolic evaluation and prevention"
-  - "Those with stones causing urinary tract infection or kidney damage"
-  - "Patients medically suitable for lithotripsy, endoscopic surgery, or percutaneous procedures"
+  - 'Patients with symptomatic kidney stones causing pain, bleeding, or obstruction'
+  - 'Individuals with stones larger than 6-7 mm unlikely to pass spontaneously'
+  - 'Patients with recurrent kidney stones requiring metabolic evaluation and prevention'
+  - 'Those with stones causing urinary tract infection or kidney damage'
+  - 'Patients medically suitable for lithotripsy, endoscopic surgery, or percutaneous procedures'
 costInclusions:
-  - "Urologist or nephrologist consultation fees"
-  - "Procedure charges (ESWL, URS, PCNL, or RIRS as applicable)"
-  - "Anaesthesia charges where applicable"
-  - "Operating room and equipment charges"
-  - "Hospital stay charges (where applicable)"
-  - "Routine blood tests and imaging during treatment"
-  - "Post-procedure medications during hospital stay"
-  - "Airport pickup and drop"
+  - 'Urologist or nephrologist consultation fees'
+  - 'Procedure charges (ESWL, URS, PCNL, or RIRS as applicable)'
+  - 'Anaesthesia charges where applicable'
+  - 'Operating room and equipment charges'
+  - 'Hospital stay charges (where applicable)'
+  - 'Routine blood tests and imaging during treatment'
+  - 'Post-procedure medications during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term preventive medications and supplements"
-  - "Personal expenses and meals for attendants"
-  - "Metabolic evaluation laboratory panel for recurrent stone formers"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term preventive medications and supplements'
+  - 'Personal expenses and meals for attendants'
+  - 'Metabolic evaluation laboratory panel for recurrent stone formers'
 recoveryTimeline:
-  - phase: "Procedure day"
-    duration: "1-4 hours"
-    description: "The stone removal procedure is performed under sedation or anaesthesia. ESWL is an outpatient procedure, while PCNL and URS may require a short hospital stay for monitoring."
-  - phase: "Immediate recovery"
-    duration: "1-3 days"
-    description: "Patients undergoing ESWL go home the same day. Those who had PCNL or URS with stent placement typically stay 1-3 days in hospital for pain management and monitoring."
-  - phase: "Fragment passage"
-    duration: "1-2 weeks"
-    description: "After ESWL or URS, stone fragments pass through the urine over the following days. Mild pain, blood in urine, and frequent urination are common during this period."
-  - phase: "Full recovery"
-    duration: "1-2 weeks"
-    description: "Most patients resume normal activities within a week. If a stent was placed, it is removed after 1-2 weeks. A follow-up imaging study confirms complete stone clearance."
+  - phase: 'Procedure day'
+    duration: '1-4 hours'
+    description: 'The stone removal procedure is performed under sedation or anaesthesia. ESWL is an outpatient procedure, while PCNL and URS may require a short hospital stay for monitoring.'
+  - phase: 'Immediate recovery'
+    duration: '1-3 days'
+    description: 'Patients undergoing ESWL go home the same day. Those who had PCNL or URS with stent placement typically stay 1-3 days in hospital for pain management and monitoring.'
+  - phase: 'Fragment passage'
+    duration: '1-2 weeks'
+    description: 'After ESWL or URS, stone fragments pass through the urine over the following days. Mild pain, blood in urine, and frequent urination are common during this period.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks'
+    description: 'Most patients resume normal activities within a week. If a stent was placed, it is removed after 1-2 weeks. A follow-up imaging study confirms complete stone clearance.'
 risks:
-  - "Bleeding during or after the procedure, particularly with PCNL"
-  - "Urinary tract infection requiring antibiotic treatment"
-  - "Incomplete stone fragmentation requiring a second procedure"
-  - "Ureteral injury or stricture formation after ureteroscopy"
-  - "Kidney damage or reduced function in rare cases of complex stones"
+  - 'Bleeding during or after the procedure, particularly with PCNL'
+  - 'Urinary tract infection requiring antibiotic treatment'
+  - 'Incomplete stone fragmentation requiring a second procedure'
+  - 'Ureteral injury or stricture formation after ureteroscopy'
+  - 'Kidney damage or reduced function in rare cases of complex stones'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -60,18 +60,19 @@ relatedDoctorSlugs:
   - dr-uday-bhaskar-m
 
 relatedProcedureSlugs:
-  - "dialysis-cost-india"
-  - "kidney-transplant-cost-india"
+  - 'dialysis-cost-india'
+  - 'kidney-transplant-cost-india'
 faqs:
-  - question: "How much does kidney stone treatment cost in India?"
-    answer: "Kidney stone treatment in India costs between $1,500 and $5,000 depending on the size, location, and number of stones, as well as the procedure required. ESWL (shock wave lithotripsy) is the least expensive at $1,500-$2,500, while PCNL (percutaneous nephrolithotomy) for large stones may cost $3,500-$5,000. This is 70-80% lower than costs in the USA or UK."
-  - question: "Which kidney stone treatment is best for me?"
-    answer: "The best treatment depends on the size, location, and composition of your stone. Stones under 10 mm in the kidney or upper ureter are often treated with ESWL. Stones in the lower ureter are best treated with ureteroscopy (URS). Large kidney stones over 2 cm usually require PCNL. Your urologist will recommend the most appropriate option after reviewing your CT scan."
-  - question: "Is kidney stone treatment painful?"
-    answer: "Most kidney stone treatments are performed under anaesthesia or sedation, so you will not feel pain during the procedure. Afterward, you may experience mild to moderate pain, blood in the urine, and a frequent urge to urinate as fragments pass. If a stent is placed, you may feel some discomfort until it is removed. Pain medication is provided to keep you comfortable."
-  - question: "How long do I need to stay in Bangalore for kidney stone treatment?"
-    answer: "Most patients need to stay in Bangalore for 5-7 days. This includes 1-2 days for pre-operative evaluation (CT scan, blood tests, consultation), the procedure itself, 1-3 days of hospital stay (for PCNL or URS), and 1-2 days of recovery before flying home. ESWL patients can often fly home within 2-3 days."
+  - question: 'How much does kidney stone treatment cost in India?'
+    answer: 'Kidney stone treatment in India costs between $1,500 and $5,000 depending on the size, location, and number of stones, as well as the procedure required. ESWL (shock wave lithotripsy) is the least expensive at $1,500-$2,500, while PCNL (percutaneous nephrolithotomy) for large stones may cost $3,500-$5,000. This is 70-80% lower than costs in the USA or UK.'
+  - question: 'Which kidney stone treatment is best for me?'
+    answer: 'The best treatment depends on the size, location, and composition of your stone. Stones under 10 mm in the kidney or upper ureter are often treated with ESWL. Stones in the lower ureter are best treated with ureteroscopy (URS). Large kidney stones over 2 cm usually require PCNL. Your urologist will recommend the most appropriate option after reviewing your CT scan.'
+  - question: 'Is kidney stone treatment painful?'
+    answer: 'Most kidney stone treatments are performed under anaesthesia or sedation, so you will not feel pain during the procedure. Afterward, you may experience mild to moderate pain, blood in the urine, and a frequent urge to urinate as fragments pass. If a stent is placed, you may feel some discomfort until it is removed. Pain medication is provided to keep you comfortable.'
+  - question: 'How long do I need to stay in Bangalore for kidney stone treatment?'
+    answer: 'Most patients need to stay in Bangalore for 5-7 days. This includes 1-2 days for pre-operative evaluation (CT scan, blood tests, consultation), the procedure itself, 1-3 days of hospital stay (for PCNL or URS), and 1-2 days of recovery before flying home. ESWL patients can often fly home within 2-3 days.'
 ---
+
 ## Overview
 
 Kidney stones are hard deposits of minerals and salts that form inside your kidneys. They can be as small as a grain of sand or as large as a golf ball, and when they move through your urinary tract, they can cause some of the most severe pain a person can experience. If you have a kidney stone that is too large to pass on its own, is causing persistent pain, blocking urine flow, or damaging your kidney, medical treatment becomes necessary.
@@ -170,13 +171,13 @@ Dietary and lifestyle modifications form the foundation of stone prevention rega
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,500 – $5,000 | Baseline |
-| USA | $10,000 – $30,000 | ~6.5x higher |
-| UK | $6,000 – $15,000 | ~3.5x higher |
-| Singapore | $5,000 – $12,000 | ~2.5x higher |
-| Thailand | $2,500 – $7,000 | ~1.4x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $1,500 – $5,000   | Baseline     |
+| USA               | $10,000 – $30,000 | ~6.5x higher |
+| UK                | $6,000 – $15,000  | ~3.5x higher |
+| Singapore         | $5,000 – $12,000  | ~2.5x higher |
+| Thailand          | $2,500 – $7,000   | ~1.4x higher |
 
 The cost variation within India depends on the type of procedure, the size and number of stones, and the hospital chosen. ESWL is the most affordable at $1,500-$2,500 per session. Ureteroscopy costs $2,000-$3,500. RIRS ranges from $3,000-$4,500. PCNL, being the most complex, costs $3,500-$5,000. Even at the upper end, you are paying up to 80% less than you would in the USA or UK for the same procedure using the same technology and comparable expertise. The cost difference reflects lower operating costs and a favourable exchange rate — not lower standards of care.
 

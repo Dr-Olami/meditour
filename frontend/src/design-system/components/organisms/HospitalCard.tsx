@@ -48,8 +48,16 @@ const HospitalCard = React.forwardRef<HTMLAnchorElement, HospitalCardProps>(
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-ink/30">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+            <div className="text-ink/30 flex h-full w-full items-center justify-center">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              >
                 <path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6" />
               </svg>
             </div>
@@ -58,10 +66,8 @@ const HospitalCard = React.forwardRef<HTMLAnchorElement, HospitalCardProps>(
 
         {/* Content */}
         <div className="flex flex-1 flex-col p-5">
-          <h3 className="font-display text-lg font-bold leading-tight text-ink">
-            {hospital.name}
-          </h3>
-          <p className="mt-1 text-sm text-ink/60">
+          <h3 className="font-display text-lg font-bold leading-tight text-ink">{hospital.name}</h3>
+          <p className="text-ink/60 mt-1 text-sm">
             {hospital.city}, {hospital.country}
           </p>
 
@@ -70,7 +76,7 @@ const HospitalCard = React.forwardRef<HTMLAnchorElement, HospitalCardProps>(
               {hospital.accreditations.map((badge) => (
                 <span
                   key={badge}
-                  className="inline-block rounded-full bg-cream-300 px-2.5 py-1 text-xs font-medium text-ink/70"
+                  className="text-ink/70 inline-block rounded-full bg-cream-300 px-2.5 py-1 text-xs font-medium"
                 >
                   {badge}
                 </span>
@@ -79,10 +85,22 @@ const HospitalCard = React.forwardRef<HTMLAnchorElement, HospitalCardProps>(
           )}
 
           {/* CTA */}
-          <span className="mt-5 inline-flex w-full items-center justify-between rounded-card bg-ink pl-5 pr-2 py-2 text-sm font-semibold text-white no-underline shadow-md">
+          <span className="mt-5 inline-flex w-full items-center justify-between rounded-card bg-ink py-2 pl-5 pr-2 text-sm font-semibold text-white no-underline shadow-md">
             <span>{viewLabel}</span>
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+            <span
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20"
+              aria-hidden="true"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </span>

@@ -12,26 +12,26 @@ languages:
   - Hindi
   - Kannada
 expertise:
-  - "Hematological Malignancies: Leukaemia (ALL, AML, CLL, CML), Lymphoma, Multiple Myeloma"
-  - "Bone Marrow Transplantation (MSD, MUD, Haploidentical-T cell deplete/replete & Autologous)"
-  - "CAR-T Cell Therapy & Cellular Therapies"
-  - "Thalassemia & Sickle Cell Disease"
-  - "Aplastic Anaemia, MDS & Myelofibrosis"
-  - "Haemophilia & Coagulation Disorders"
-  - "Immune Thrombocytopenia (ITP), TTP & Other Benign Haematological Disorders"
+  - 'Hematological Malignancies: Leukaemia (ALL, AML, CLL, CML), Lymphoma, Multiple Myeloma'
+  - 'Bone Marrow Transplantation (MSD, MUD, Haploidentical-T cell deplete/replete & Autologous)'
+  - 'CAR-T Cell Therapy & Cellular Therapies'
+  - 'Thalassemia & Sickle Cell Disease'
+  - 'Aplastic Anaemia, MDS & Myelofibrosis'
+  - 'Haemophilia & Coagulation Disorders'
+  - 'Immune Thrombocytopenia (ITP), TTP & Other Benign Haematological Disorders'
   - Primary Immunodeficiency Disorders
-  - "Paediatric Oncology: Neuroblastoma, Wilms Tumour, Osteosarcoma, Rhabdomyosarcoma, Hepatoblastoma, PNET, LCH"
-  - "Haematological & Oncological Emergencies"
-pullQuote: "A blood cancer diagnosis changes a family overnight. My promise is a treatment plan built around the person — not just the disease."
+  - 'Paediatric Oncology: Neuroblastoma, Wilms Tumour, Osteosarcoma, Rhabdomyosarcoma, Hepatoblastoma, PNET, LCH'
+  - 'Haematological & Oncological Emergencies'
+pullQuote: 'A blood cancer diagnosis changes a family overnight. My promise is a treatment plan built around the person — not just the disease.'
 faqs:
-  - question: "Is Dr. Sunil Udgire experienced in bone marrow transplantation?"
-    answer: "Yes, Dr. Sunil Udgire has over 15 years of expertise and has been involved in more than 500 bone marrow transplants, including matched sibling donor (MSD), matched unrelated donor (MUD), haploidentical, and autologous transplants. He has played a pivotal role in developing successful BMT programs at leading healthcare institutions and specialises in advanced stem cell transplantation and cellular therapies, including CAR-T Cell Therapy."
-  - question: "What conditions does Dr. Sunil Udgire treat?"
-    answer: "Dr. Sunil Udgire treats a wide range of conditions including hematological malignancies (leukaemia, lymphoma, multiple myeloma), thalassemia, sickle cell disease, aplastic anaemia, MDS, myelofibrosis, haemophilia, coagulation disorders, immune thrombocytopenia (ITP), primary immunodeficiency disorders, and paediatric cancers including neuroblastoma, Wilms tumour, osteosarcoma, rhabdomyosarcoma, hepatoblastoma, and Langerhans cell histiocytosis."
-  - question: "Does Dr. Sunil Udgire perform CAR-T cell therapy?"
+  - question: 'Is Dr. Sunil Udgire experienced in bone marrow transplantation?'
+    answer: 'Yes, Dr. Sunil Udgire has over 15 years of expertise and has been involved in more than 500 bone marrow transplants, including matched sibling donor (MSD), matched unrelated donor (MUD), haploidentical, and autologous transplants. He has played a pivotal role in developing successful BMT programs at leading healthcare institutions and specialises in advanced stem cell transplantation and cellular therapies, including CAR-T Cell Therapy.'
+  - question: 'What conditions does Dr. Sunil Udgire treat?'
+    answer: 'Dr. Sunil Udgire treats a wide range of conditions including hematological malignancies (leukaemia, lymphoma, multiple myeloma), thalassemia, sickle cell disease, aplastic anaemia, MDS, myelofibrosis, haemophilia, coagulation disorders, immune thrombocytopenia (ITP), primary immunodeficiency disorders, and paediatric cancers including neuroblastoma, Wilms tumour, osteosarcoma, rhabdomyosarcoma, hepatoblastoma, and Langerhans cell histiocytosis.'
+  - question: 'Does Dr. Sunil Udgire perform CAR-T cell therapy?'
     answer: "Yes, CAR-T cell therapy and cellular therapies are among Dr. Sunil Udgire's key areas of expertise. He has extensive experience in advanced stem cell transplantation and cellular therapies, making him one of the leading specialists in this cutting-edge treatment modality for blood cancers and immune disorders."
-  - question: "What is the cost of bone marrow transplant with Dr. Sunil Udgire in Bangalore?"
-    answer: "Cancer treatment and bone marrow transplant costs in Bangalore range from $3,000 to $15,000 depending on the procedure and condition. Dr. Sunil Udgire practices at SPARSH Hospital, Hennur Road, which offers comprehensive haematology and BMT services with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced BMT physicians."
+  - question: 'What is the cost of bone marrow transplant with Dr. Sunil Udgire in Bangalore?'
+    answer: 'Cancer treatment and bone marrow transplant costs in Bangalore range from $3,000 to $15,000 depending on the procedure and condition. Dr. Sunil Udgire practices at SPARSH Hospital, Hennur Road, which offers comprehensive haematology and BMT services with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced BMT physicians.'
 ---
 
 ## About the Doctor

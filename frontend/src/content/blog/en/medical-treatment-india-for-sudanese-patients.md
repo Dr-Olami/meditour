@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Sudanese Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Khartoum to India for treatment: medical visa requirements, flight routes, cost comparisons in Sudanese Pounds, and choosing the right hospital for Sudanese families."
+excerpt: 'Travelling from Khartoum to India for treatment: medical visa requirements, flight routes, cost comparisons in Sudanese Pounds, and choosing the right hospital for Sudanese families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-28
@@ -32,13 +32,13 @@ Sudanese patients travel to India for cardiac surgery, orthopedics, cancer care 
 
 Heart surgery cost India vs Sudan is the comparison most families start with. Indicative package prices (at roughly 600 £ per US dollar):
 
-| Treatment | India (USD) | Approx. SDG | Egypt | Jordan |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | £2.7M–7.2M | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | £1.5M–4.8M | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | £1.8M–15M | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | £2.4M–7.2M | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | £2.1M–4.2M | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. SDG | Egypt  | Jordan     |
+| -------------------- | ------------- | ----------- | ------ | ---------- |
+| Cardiac surgery      | $4,500–12,000 | £2.7M–7.2M  | Higher | Far higher |
+| Knee/hip replacement | $2,500–8,000  | £1.5M–4.8M  | Higher | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | £1.8M–15M   | Higher | Far higher |
+| Spine surgery        | $4,000–12,000 | £2.4M–7.2M  | Higher | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | £2.1M–4.2M  | Higher | Far higher |
 
 Cardiac surgery in India for Sudanese patients is a well-travelled route — bypass and valve procedures at JCI-accredited centres, with Arabic interpreters and Halal food available at major international patient departments.
 

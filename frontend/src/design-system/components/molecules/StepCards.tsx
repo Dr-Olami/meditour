@@ -103,8 +103,7 @@ export interface StepCardItem {
 const GAP_PX = 16;
 
 export interface StepCardsProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof stepCardsGrid> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof stepCardsGrid> {
   /** Steps to render as numbered cards. */
   steps: StepCardItem[];
   /** Surface tone — `light` for cream sections, `dark` for ink bands. */
@@ -176,9 +175,7 @@ const StepCards = React.forwardRef<HTMLDivElement, StepCardsProps>(
             >
               <span className={cn(stepNumberTone({ tone }))}>{index + 1}</span>
               <h3 className={cn(stepTitleTone({ tone }))}>{step.title}</h3>
-              {step.description && (
-                <p className={cn(stepDescTone({ tone }))}>{step.description}</p>
-              )}
+              {step.description && <p className={cn(stepDescTone({ tone }))}>{step.description}</p>}
             </div>
           ))}
         </div>
@@ -202,7 +199,7 @@ const StepCards = React.forwardRef<HTMLDivElement, StepCardsProps>(
                   'h-2.5 rounded-full transition-all duration-fast ease-out-expo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500',
                   i === activeIndex
                     ? 'w-6 bg-gradient-accent'
-                    : 'w-2.5 bg-cream-300 hover:bg-cream-400'
+                    : 'hover:bg-cream-400 w-2.5 bg-cream-300'
                 )}
               />
             ))}

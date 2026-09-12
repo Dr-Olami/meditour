@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for Afghan Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from Kabul to India for treatment: medical visa requirements, flight routes, cost comparisons in Afghani, and choosing the right hospital for Afghan families."
+excerpt: 'Travelling from Kabul to India for treatment: medical visa requirements, flight routes, cost comparisons in Afghani, and choosing the right hospital for Afghan families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-25
@@ -32,13 +32,13 @@ Afghan families have travelled to India for cardiac surgery, orthopedics, cancer
 
 Heart surgery cost India vs Afghanistan is the comparison most families start with. Indicative package prices (at roughly ؋71 per US dollar):
 
-| Treatment | India (USD) | Approx. AFN | Pakistan | Turkey |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | ؋319,500–852,000 | Higher | Far higher |
-| Knee/hip replacement | $2,500–8,000 | ؋177,500–568,000 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | ؋213,000–1,775,000 | Higher | Far higher |
-| Spine surgery | $4,000–12,000 | ؋284,000–852,000 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | ؋248,500–497,000 | Higher | Far higher |
+| Treatment            | India (USD)   | Approx. AFN        | Pakistan | Turkey     |
+| -------------------- | ------------- | ------------------ | -------- | ---------- |
+| Cardiac surgery      | $4,500–12,000 | ؋319,500–852,000   | Higher   | Far higher |
+| Knee/hip replacement | $2,500–8,000  | ؋177,500–568,000   | Higher   | $30,000+   |
+| Cancer treatment     | $3,000–25,000 | ؋213,000–1,775,000 | Higher   | Far higher |
+| Spine surgery        | $4,000–12,000 | ؋284,000–852,000   | Higher   | $50,000+   |
+| IVF (per cycle)      | $3,500–7,000  | ؋248,500–497,000   | Higher   | Far higher |
 
 Trauma and orthopedic reconstruction is a growing route for Afghan patients — conflict-related injuries and road accidents are treated at Indian centres with dedicated trauma and rehabilitation programmes.
 

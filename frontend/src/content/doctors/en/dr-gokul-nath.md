@@ -14,13 +14,13 @@ languages:
   - Telugu
   - Tamil
 faqs:
-  - question: "Who is Dr. Gokul Nath?"
-    answer: "Dr. Gokul Nath is a highly esteemed Nephrologist based in Bangalore, Karnataka, with an impressive 46 years of experience in the specialty. He holds multiple prestigious qualifications including MBBS, MD in General Medicine, DM, and DNB in Nephrology, with super specialization at CMC Vellore. He is a Fellow of the Royal College of Physicians (FRCP), London, and Fellow of the Indian Society of Nephrology (FISN). He currently serves as a Senior Consultant at Apollo Hospitals, Bangalore."
-  - question: "Why do patients choose Dr. Gokul Nath?"
+  - question: 'Who is Dr. Gokul Nath?'
+    answer: 'Dr. Gokul Nath is a highly esteemed Nephrologist based in Bangalore, Karnataka, with an impressive 46 years of experience in the specialty. He holds multiple prestigious qualifications including MBBS, MD in General Medicine, DM, and DNB in Nephrology, with super specialization at CMC Vellore. He is a Fellow of the Royal College of Physicians (FRCP), London, and Fellow of the Indian Society of Nephrology (FISN). He currently serves as a Senior Consultant at Apollo Hospitals, Bangalore.'
+  - question: 'Why do patients choose Dr. Gokul Nath?'
     answer: "Patients choose Dr. Gokul Nath for his unparalleled 46 years of experience in nephrology, his role in developing national treatment guidelines for Chronic Kidney Disease in India, and his extensive academic contributions including 182 published papers and 15 textbook chapters. He has received the prestigious VSM award from the President of India and the 'Dhronacharya' award for his commitment to training future nephrologists. He is fluent in English, Hindi, Kannada, Telugu, and Tamil, making him accessible to a diverse patient population."
   - question: "What are Dr. Gokul Nath's medical qualifications?"
-    answer: "Dr. Gokul Nath holds MBBS, MD in General Medicine, DM in Nephrology, DNB in Nephrology, Fellowship of the Indian Society of Nephrology (FISN), and Fellowship of the Royal College of Physicians (FRCP), London. He completed his super specialization at the renowned CMC Vellore."
-  - question: "How can I book an appointment with Dr. Gokul Nath?"
+    answer: 'Dr. Gokul Nath holds MBBS, MD in General Medicine, DM in Nephrology, DNB in Nephrology, Fellowship of the Indian Society of Nephrology (FISN), and Fellowship of the Royal College of Physicians (FRCP), London. He completed his super specialization at the renowned CMC Vellore.'
+  - question: 'How can I book an appointment with Dr. Gokul Nath?'
     answer: "You can book an appointment with Dr. Gokul Nath at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

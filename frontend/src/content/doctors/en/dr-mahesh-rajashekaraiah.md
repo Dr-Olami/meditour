@@ -14,22 +14,22 @@ languages:
 expertise:
   - Management of leukaemias and lymphomas
   - Autologous transplant for multiple myeloma (daycare basis)
-  - "Evaluation and management of haemoglobinopathies, including thalassemia and sickle cell disease"
+  - 'Evaluation and management of haemoglobinopathies, including thalassemia and sickle cell disease'
   - Complete care of bone marrow failure syndromes
   - Management of clots and bleeding problems
   - Immunodeficiency work-up
   - Stem cell transplantation
   - Bleeding disorders management
-pullQuote: "A bone marrow transplant is a bridge between despair and hope. When the graft takes, it is not just blood that is reborn — it is an entire future."
+pullQuote: 'A bone marrow transplant is a bridge between despair and hope. When the graft takes, it is not just blood that is reborn — it is an entire future.'
 faqs:
-  - question: "Is Dr. Mahesh Rajashekaraiah experienced in bone marrow transplantation?"
-    answer: "Yes, Dr. Mahesh Rajashekaraiah has been involved in over 500 bone marrow transplants. He holds advanced fellowship training in Leukaemia and Bone Marrow Transplantation from Vancouver General Hospital and BC Cancer Agency, Canada. He treats conditions such as thalassemia, aplastic anaemia, leukaemia, lymphoma, and multiple myeloma, with strong expertise in stem cell transplantation and bleeding disorders."
-  - question: "What conditions does Dr. Mahesh Rajashekaraiah treat?"
-    answer: "Dr. Mahesh Rajashekaraiah treats a wide range of haematological conditions including leukaemias, lymphomas, multiple myeloma, thalassemia, sickle cell disease, aplastic anaemia, bone marrow failure syndromes, bleeding disorders, clotting disorders, and immunodeficiency disorders. He also performs autologous transplants for multiple myeloma on a daycare basis."
-  - question: "Does Dr. Mahesh Rajashekaraiah perform autologous bone marrow transplants?"
-    answer: "Yes, Dr. Mahesh Rajashekaraiah performs autologous transplants for multiple myeloma on a daycare basis. His expertise spans all types of stem cell transplantation, supported by his fellowship training at Vancouver General Hospital and BC Cancer Agency, Canada, and his DM in Clinical Haematology from KEM Hospital, Mumbai."
-  - question: "What is the cost of haematology consultation with Dr. Mahesh Rajashekaraiah in Bangalore?"
-    answer: "Haematology consultation and bone marrow transplant costs in Bangalore range from $3,000 to $15,000 depending on the procedure and condition. Dr. Mahesh Rajashekaraiah practices at SPARSH Hospital, Hennur Road, which offers comprehensive haematology and BMT services with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained haematologists."
+  - question: 'Is Dr. Mahesh Rajashekaraiah experienced in bone marrow transplantation?'
+    answer: 'Yes, Dr. Mahesh Rajashekaraiah has been involved in over 500 bone marrow transplants. He holds advanced fellowship training in Leukaemia and Bone Marrow Transplantation from Vancouver General Hospital and BC Cancer Agency, Canada. He treats conditions such as thalassemia, aplastic anaemia, leukaemia, lymphoma, and multiple myeloma, with strong expertise in stem cell transplantation and bleeding disorders.'
+  - question: 'What conditions does Dr. Mahesh Rajashekaraiah treat?'
+    answer: 'Dr. Mahesh Rajashekaraiah treats a wide range of haematological conditions including leukaemias, lymphomas, multiple myeloma, thalassemia, sickle cell disease, aplastic anaemia, bone marrow failure syndromes, bleeding disorders, clotting disorders, and immunodeficiency disorders. He also performs autologous transplants for multiple myeloma on a daycare basis.'
+  - question: 'Does Dr. Mahesh Rajashekaraiah perform autologous bone marrow transplants?'
+    answer: 'Yes, Dr. Mahesh Rajashekaraiah performs autologous transplants for multiple myeloma on a daycare basis. His expertise spans all types of stem cell transplantation, supported by his fellowship training at Vancouver General Hospital and BC Cancer Agency, Canada, and his DM in Clinical Haematology from KEM Hospital, Mumbai.'
+  - question: 'What is the cost of haematology consultation with Dr. Mahesh Rajashekaraiah in Bangalore?'
+    answer: 'Haematology consultation and bone marrow transplant costs in Bangalore range from $3,000 to $15,000 depending on the procedure and condition. Dr. Mahesh Rajashekaraiah practices at SPARSH Hospital, Hennur Road, which offers comprehensive haematology and BMT services with advanced technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained haematologists.'
 ---
 
 ## About the Doctor

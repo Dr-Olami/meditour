@@ -1,7 +1,7 @@
 ---
 locale: en
 name: Urology
-seoHeadline: "Urology & Urological Surgery in India for International Patients"
+seoHeadline: 'Urology & Urological Surgery in India for International Patients'
 category: Urology
 description: Comprehensive urological care including kidney stone management, prostate surgery, robotic uro-oncology and male infertility.
 fromPrice: '$1,800'
@@ -27,55 +27,55 @@ hospitalStay: '1-5 days'
 recoveryTime: '1-4 weeks'
 image: /images/treatments-cards/urology.webp
 faqs:
-  - question: "Is robotic surgery available for prostate cancer?"
-    answer: "Yes, robotic-assisted radical prostatectomy is available using the da Vinci surgical system. Benefits include precision nerve-sparing for continence and potency preservation, minimal blood loss, smaller incisions, faster continence recovery, and shorter hospital stay compared to traditional open surgery. Hospital stay is typically 2-3 days."
-  - question: "What is the recovery time after kidney stone surgery?"
-    answer: "Recovery depends on the procedure. RIRS (flexible ureteroscopy with laser) is a day-care or overnight procedure with recovery in 1-2 days. PCNL (keyhole removal of large stones) requires 2-3 days hospital stay with recovery in 1 week. ESWL (shock wave lithotripsy) is an outpatient procedure with same-day return to normal activities."
-  - question: "Can kidney stones be treated without surgery?"
-    answer: "Yes, small kidney stones (under 5mm) can often pass naturally with increased fluid intake and pain management. ESWL (extracorporeal shock wave lithotripsy) is a non-invasive option that uses shock waves to fragment stones without any incision or anaesthesia. For larger stones, minimally invasive options like RIRS or PCNL are recommended."
-summary: "Urology care in Bangalore covers kidney stone management, laser prostate surgery, robotic radical prostatectomy, bladder tumour surgery and male infertility work-up at JCI-accredited hospitals with da Vinci robotic systems. Costs range from $1,800 to $6,000, offering 60-80% savings compared to Western countries."
+  - question: 'Is robotic surgery available for prostate cancer?'
+    answer: 'Yes, robotic-assisted radical prostatectomy is available using the da Vinci surgical system. Benefits include precision nerve-sparing for continence and potency preservation, minimal blood loss, smaller incisions, faster continence recovery, and shorter hospital stay compared to traditional open surgery. Hospital stay is typically 2-3 days.'
+  - question: 'What is the recovery time after kidney stone surgery?'
+    answer: 'Recovery depends on the procedure. RIRS (flexible ureteroscopy with laser) is a day-care or overnight procedure with recovery in 1-2 days. PCNL (keyhole removal of large stones) requires 2-3 days hospital stay with recovery in 1 week. ESWL (shock wave lithotripsy) is an outpatient procedure with same-day return to normal activities.'
+  - question: 'Can kidney stones be treated without surgery?'
+    answer: 'Yes, small kidney stones (under 5mm) can often pass naturally with increased fluid intake and pain management. ESWL (extracorporeal shock wave lithotripsy) is a non-invasive option that uses shock waves to fragment stones without any incision or anaesthesia. For larger stones, minimally invasive options like RIRS or PCNL are recommended.'
+summary: 'Urology care in Bangalore covers kidney stone management, laser prostate surgery, robotic radical prostatectomy, bladder tumour surgery and male infertility work-up at JCI-accredited hospitals with da Vinci robotic systems. Costs range from $1,800 to $6,000, offering 60-80% savings compared to Western countries.'
 eligibility:
-  - "Patients with kidney stones, BPH, prostate cancer, or bladder conditions requiring urological treatment"
-  - "Individuals medically fit for urological surgery as determined by pre-operative evaluation"
-  - "Patients requiring robotic or minimally invasive urological procedures"
-  - "Those with male infertility issues needing surgical evaluation and treatment"
-  - "International patients able to travel and stay for the required hospital and recovery period"
+  - 'Patients with kidney stones, BPH, prostate cancer, or bladder conditions requiring urological treatment'
+  - 'Individuals medically fit for urological surgery as determined by pre-operative evaluation'
+  - 'Patients requiring robotic or minimally invasive urological procedures'
+  - 'Those with male infertility issues needing surgical evaluation and treatment'
+  - 'International patients able to travel and stay for the required hospital and recovery period'
 costInclusions:
-  - "Surgeon and anaesthesiologist fees"
-  - "Hospital room charges"
-  - "Surgery/procedure costs"
-  - "Implants and medications (where applicable)"
-  - "Pre-operative diagnostics and tests"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and anaesthesiologist fees'
+  - 'Hospital room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants and medications (where applicable)'
+  - 'Pre-operative diagnostics and tests'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge physiotherapy (if needed)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge physiotherapy (if needed)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-5 days"
-    description: "Post-operative monitoring, catheter management, pain control, and early mobilisation depending on the procedure performed"
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultations, catheter removal, wound assessment, and continence rehabilitation initiation"
-  - phase: "Return home"
-    duration: "Week 1-3"
-    description: "Gradual return to daily activities with teleconsultation support and PSA monitoring where applicable"
-  - phase: "Full recovery"
-    duration: "1-4 weeks"
-    description: "Complete healing, resumption of normal urinary function, and final surgical outcome assessment"
+  - phase: 'Hospital stay'
+    duration: '1-5 days'
+    description: 'Post-operative monitoring, catheter management, pain control, and early mobilisation depending on the procedure performed'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultations, catheter removal, wound assessment, and continence rehabilitation initiation'
+  - phase: 'Return home'
+    duration: 'Week 1-3'
+    description: 'Gradual return to daily activities with teleconsultation support and PSA monitoring where applicable'
+  - phase: 'Full recovery'
+    duration: '1-4 weeks'
+    description: 'Complete healing, resumption of normal urinary function, and final surgical outcome assessment'
 risks:
-  - "Urinary tract infection requiring antibiotic treatment"
-  - "Bleeding during or after surgery requiring transfusion or re-intervention"
-  - "Ureteral or bladder injury during endoscopic procedures"
-  - "Incontinence or erectile dysfunction following prostate surgery"
-  - "Stone recurrence despite preventive measures and metabolic management"
+  - 'Urinary tract infection requiring antibiotic treatment'
+  - 'Bleeding during or after surgery requiring transfusion or re-intervention'
+  - 'Ureteral or bladder injury during endoscopic procedures'
+  - 'Incontinence or erectile dysfunction following prostate surgery'
+  - 'Stone recurrence despite preventive measures and metabolic management'
 relatedTreatmentSlugs:
-  - "nephrology-kidney-care"
-  - "oncology-cancer-care"
+  - 'nephrology-kidney-care'
+  - 'oncology-cancer-care'
 ---
 
 ## Overview
@@ -142,13 +142,13 @@ Robot-assisted surgical removal of the prostate for localised prostate cancer. B
 
 ## Cost Comparison
 
-| Country | Approximate Cost (Urology Procedures) | vs India |
-|---------|--------------------------------------|----------|
-| India (Bangalore) | $1,800 – $6,000 | Baseline |
-| USA | $15,000 – $40,000 | ~7.1× higher |
-| UK | £10,000 – £25,000 | ~4.5× higher |
-| Singapore | $10,000 – $25,000 | ~4.5× higher |
-| Thailand | $6,000 – $15,000 | ~2.7× higher |
+| Country           | Approximate Cost (Urology Procedures) | vs India     |
+| ----------------- | ------------------------------------- | ------------ |
+| India (Bangalore) | $1,800 – $6,000                       | Baseline     |
+| USA               | $15,000 – $40,000                     | ~7.1× higher |
+| UK                | £10,000 – £25,000                     | ~4.5× higher |
+| Singapore         | $10,000 – $25,000                     | ~4.5× higher |
+| Thailand          | $6,000 – $15,000                      | ~2.7× higher |
 
 ## Why Choose Bangalore for Urology Care?
 

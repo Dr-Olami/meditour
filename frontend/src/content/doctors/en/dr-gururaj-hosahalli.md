@@ -14,13 +14,13 @@ languages:
   - Telugu
   - Kannada
 faqs:
-  - question: "Who is Dr. Gururaj Hosahalli?"
-    answer: "Dr. Gururaj Hosahalli is a skilled and experienced Plastic, Reconstructive and Aesthetic Surgeon at SPARSH Hospital, Bangalore, with over 25 years of clinical experience. He holds MBBS, DLO (ENT), DNB in General Surgery, and DNB in Plastic Surgery from the prestigious Ganga Hospital, Coimbatore. His expertise spans reconstructive microsurgery, trauma reconstruction, diabetic foot care, hand surgery, limb salvage, and aesthetic procedures."
-  - question: "Why do patients choose Dr. Gururaj Hosahalli?"
-    answer: "Patients choose Dr. Gururaj for his meticulous surgical care with a strong focus on functional and aesthetic outcomes. His expertise covers head and neck reconstruction, maxillofacial trauma, hand and brachial plexus surgery, diabetic foot surgery, breast reconstruction, and a wide range of cosmetic procedures including gynaecomastia correction, liposuction, rhinoplasty, and burn contracture correction. He is fluent in English, Hindi, Tamil, Telugu, and Kannada."
+  - question: 'Who is Dr. Gururaj Hosahalli?'
+    answer: 'Dr. Gururaj Hosahalli is a skilled and experienced Plastic, Reconstructive and Aesthetic Surgeon at SPARSH Hospital, Bangalore, with over 25 years of clinical experience. He holds MBBS, DLO (ENT), DNB in General Surgery, and DNB in Plastic Surgery from the prestigious Ganga Hospital, Coimbatore. His expertise spans reconstructive microsurgery, trauma reconstruction, diabetic foot care, hand surgery, limb salvage, and aesthetic procedures.'
+  - question: 'Why do patients choose Dr. Gururaj Hosahalli?'
+    answer: 'Patients choose Dr. Gururaj for his meticulous surgical care with a strong focus on functional and aesthetic outcomes. His expertise covers head and neck reconstruction, maxillofacial trauma, hand and brachial plexus surgery, diabetic foot surgery, breast reconstruction, and a wide range of cosmetic procedures including gynaecomastia correction, liposuction, rhinoplasty, and burn contracture correction. He is fluent in English, Hindi, Tamil, Telugu, and Kannada.'
   - question: "What are Dr. Gururaj Hosahalli's medical qualifications?"
     answer: "Dr. Gururaj holds MBBS from JSS Medical College, DLO (ENT), DNB in General Surgery, and DNB in Plastic Surgery from Ganga Hospital, Coimbatore — one of India's leading centres for reconstructive and microsurgery."
-  - question: "How can I book an appointment with Dr. Gururaj Hosahalli?"
+  - question: 'How can I book an appointment with Dr. Gururaj Hosahalli?'
     answer: "You can book an appointment with Dr. Gururaj Hosahalli at SPARSH Hospital, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

@@ -1,56 +1,56 @@
 ---
 locale: en
-name: "Cerebral Palsy Treatment"
-seoHeadline: "Cerebral Palsy Treatment Cost in India for International Patients"
+name: 'Cerebral Palsy Treatment'
+seoHeadline: 'Cerebral Palsy Treatment Cost in India for International Patients'
 parentTreatmentSlug: paediatric-neurology
-summary: "Cerebral palsy treatment in India costs between $3,000 and $15,000, offering multidisciplinary care including physiotherapy, occupational therapy, speech therapy, medications, botulinum toxin injections, selective dorsal rhizotomy, and orthopedic surgery. Families save up to 80% compared to Western countries while accessing internationally trained paediatric neurologists and rehabilitation specialists in Bangalore."
-description: "Cerebral Palsy Treatment in India from $3,000–$15,000 at accredited Bangalore hospitals. Multidisciplinary care including therapy, medications, and surgery. Save up to 80% versus US/UK prices."
-fromPrice: "$3,000"
-toPrice: "$15,000"
-duration: "2-6 weeks (initial programme)"
-hospitalStay: "3-14 days (if surgery required)"
-recoveryTime: "3-12 months (ongoing rehabilitation)"
+summary: 'Cerebral palsy treatment in India costs between $3,000 and $15,000, offering multidisciplinary care including physiotherapy, occupational therapy, speech therapy, medications, botulinum toxin injections, selective dorsal rhizotomy, and orthopedic surgery. Families save up to 80% compared to Western countries while accessing internationally trained paediatric neurologists and rehabilitation specialists in Bangalore.'
+description: 'Cerebral Palsy Treatment in India from $3,000–$15,000 at accredited Bangalore hospitals. Multidisciplinary care including therapy, medications, and surgery. Save up to 80% versus US/UK prices.'
+fromPrice: '$3,000'
+toPrice: '$15,000'
+duration: '2-6 weeks (initial programme)'
+hospitalStay: '3-14 days (if surgery required)'
+recoveryTime: '3-12 months (ongoing rehabilitation)'
 eligibility:
-  - "Children diagnosed with cerebral palsy (spastic, dyskinetic, ataxic, or mixed type) requiring multidisciplinary management"
-  - "Patients with spasticity affecting mobility, posture, or daily activities that has not responded adequately to oral medications"
-  - "Children with muscle contractures, joint deformities, or hip subluxation requiring orthopedic surgical intervention"
-  - "Candidates for selective dorsal rhizotomy with spastic diplegia, good selective motor control, and adequate underlying strength"
-  - "Families seeking a comprehensive, coordinated rehabilitation programme combining therapy, medications, and surgical options"
+  - 'Children diagnosed with cerebral palsy (spastic, dyskinetic, ataxic, or mixed type) requiring multidisciplinary management'
+  - 'Patients with spasticity affecting mobility, posture, or daily activities that has not responded adequately to oral medications'
+  - 'Children with muscle contractures, joint deformities, or hip subluxation requiring orthopedic surgical intervention'
+  - 'Candidates for selective dorsal rhizotomy with spastic diplegia, good selective motor control, and adequate underlying strength'
+  - 'Families seeking a comprehensive, coordinated rehabilitation programme combining therapy, medications, and surgical options'
 costInclusions:
-  - "Paediatric neurologist and rehabilitation specialist consultations"
-  - "Multidisciplinary therapy sessions (physiotherapy, occupational therapy, speech therapy)"
-  - "Medications including botulinum toxin injections and oral antispasticity drugs"
-  - "Pre-treatment diagnostics (MRI brain, gait analysis, hip X-rays, blood tests)"
-  - "Surgical procedures where indicated (SDR, orthopedic surgery) including surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room if surgery required)"
-  - "Post-operative care and inpatient rehabilitation during hospital stay"
-  - "Airport pickup and drop"
+  - 'Paediatric neurologist and rehabilitation specialist consultations'
+  - 'Multidisciplinary therapy sessions (physiotherapy, occupational therapy, speech therapy)'
+  - 'Medications including botulinum toxin injections and oral antispasticity drugs'
+  - 'Pre-treatment diagnostics (MRI brain, gait analysis, hip X-rays, blood tests)'
+  - 'Surgical procedures where indicated (SDR, orthopedic surgery) including surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room if surgery required)'
+  - 'Post-operative care and inpatient rehabilitation during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term rehabilitation programme after returning home"
-  - "Personal expenses and meals for attendants"
-  - "Assistive devices and orthotics (wheelchairs, AFOs, walkers) unless specified"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term rehabilitation programme after returning home'
+  - 'Personal expenses and meals for attendants'
+  - 'Assistive devices and orthotics (wheelchairs, AFOs, walkers) unless specified'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Initial assessment and therapy programme"
-    duration: "2-4 weeks"
-    description: "Comprehensive multidisciplinary evaluation, initiation of therapy sessions, botulinum toxin injections if indicated, and development of a personalised home management plan."
-  - phase: "Surgical recovery (if SDR or orthopedic surgery performed)"
-    duration: "2-4 weeks inpatient"
-    description: "Post-operative ICU or ward monitoring, pain management, early mobilisation, and beginning of intensive inpatient rehabilitation under specialist supervision."
-  - phase: "Intensive rehabilitation"
-    duration: "3-6 months"
-    description: "Structured physiotherapy and occupational therapy programme focusing on strength, mobility, gait training, and functional independence, with regular progress reviews."
-  - phase: "Long-term management"
-    duration: "Ongoing"
-    description: "Continued therapy at home, periodic reassessment, orthotic management, and developmental monitoring coordinated with local healthcare providers."
+  - phase: 'Initial assessment and therapy programme'
+    duration: '2-4 weeks'
+    description: 'Comprehensive multidisciplinary evaluation, initiation of therapy sessions, botulinum toxin injections if indicated, and development of a personalised home management plan.'
+  - phase: 'Surgical recovery (if SDR or orthopedic surgery performed)'
+    duration: '2-4 weeks inpatient'
+    description: 'Post-operative ICU or ward monitoring, pain management, early mobilisation, and beginning of intensive inpatient rehabilitation under specialist supervision.'
+  - phase: 'Intensive rehabilitation'
+    duration: '3-6 months'
+    description: 'Structured physiotherapy and occupational therapy programme focusing on strength, mobility, gait training, and functional independence, with regular progress reviews.'
+  - phase: 'Long-term management'
+    duration: 'Ongoing'
+    description: 'Continued therapy at home, periodic reassessment, orthotic management, and developmental monitoring coordinated with local healthcare providers.'
 risks:
-  - "Incomplete resolution of spasticity requiring additional interventions or repeated botulinum toxin injections"
-  - "Surgical risks including infection, bleeding, or anaesthetic complications from SDR or orthopedic procedures"
-  - "Temporary weakness or sensory changes following selective dorsal rhizotomy during nerve root recovery"
-  - "Hip instability or dislocation progression despite management requiring future surgical intervention"
-  - "Developmental or communication challenges persisting despite therapy requiring long-term educational support"
+  - 'Incomplete resolution of spasticity requiring additional interventions or repeated botulinum toxin injections'
+  - 'Surgical risks including infection, bleeding, or anaesthetic complications from SDR or orthopedic procedures'
+  - 'Temporary weakness or sensory changes following selective dorsal rhizotomy during nerve root recovery'
+  - 'Hip instability or dislocation progression despite management requiring future surgical intervention'
+  - 'Developmental or communication challenges persisting despite therapy requiring long-term educational support'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - apollo-hospitals-bannerghatta
@@ -61,17 +61,18 @@ relatedDoctorSlugs:
 
 relatedProcedureSlugs: []
 faqs:
-  - question: "Is cerebral palsy curable with treatment in India?"
+  - question: 'Is cerebral palsy curable with treatment in India?'
     answer: "Cerebral palsy is not curable, as the underlying brain injury is permanent. However, treatment significantly improves quality of life, mobility, independence, and comfort. The goal of treatment is to maximise your child's functional abilities, manage spasticity and contractures, support development, and prevent complications. With early and consistent intervention, many children achieve substantial improvements in movement, communication, and daily living skills."
-  - question: "What is selective dorsal rhizotomy and when is it recommended?"
-    answer: "Selective dorsal rhizotomy (SDR) is a neurosurgical procedure that involves selectively cutting nerve rootlets in the spinal cord that contribute to spasticity in the legs. It is recommended for children with spastic diplegia who have good selective motor control, adequate underlying strength, and spasticity that significantly limits mobility. SDR can permanently reduce spasticity and improve gait, but it requires intensive post-operative rehabilitation for 6-12 months to achieve the best outcomes."
-  - question: "How long do we need to stay in Bangalore for cerebral palsy treatment?"
-    answer: "The duration depends on the treatment plan. For a therapy and botulinum toxin programme, a 2-4 week stay is typical. If selective dorsal rhizotomy or orthopedic surgery is performed, expect a 4-6 week stay covering surgery, inpatient recovery, and initial rehabilitation. Your paediatric neurologist will provide a personalised timeline after the initial assessment."
-  - question: "Will my child need continued therapy after returning home?"
-    answer: "Yes. Cerebral palsy management is lifelong, and continued therapy at home is essential to maintain and build on the gains achieved in Bangalore. Your team will provide a detailed home programme and recommend local therapists. Tele-consultation follow-up with your Bangalore neurology team is available to monitor progress and adjust the plan as your child grows."
-  - question: "How much does botulinum toxin injection cost in Bangalore?"
-    answer: "Botulinum toxin injections for spasticity management in Bangalore typically cost between $300 and $800 per session, depending on the number of muscles injected and the dose required. This is significantly lower than the $1,500-$3,000 per session charged in Western countries. Injections are usually repeated every 3-6 months as part of the overall management plan."
+  - question: 'What is selective dorsal rhizotomy and when is it recommended?'
+    answer: 'Selective dorsal rhizotomy (SDR) is a neurosurgical procedure that involves selectively cutting nerve rootlets in the spinal cord that contribute to spasticity in the legs. It is recommended for children with spastic diplegia who have good selective motor control, adequate underlying strength, and spasticity that significantly limits mobility. SDR can permanently reduce spasticity and improve gait, but it requires intensive post-operative rehabilitation for 6-12 months to achieve the best outcomes.'
+  - question: 'How long do we need to stay in Bangalore for cerebral palsy treatment?'
+    answer: 'The duration depends on the treatment plan. For a therapy and botulinum toxin programme, a 2-4 week stay is typical. If selective dorsal rhizotomy or orthopedic surgery is performed, expect a 4-6 week stay covering surgery, inpatient recovery, and initial rehabilitation. Your paediatric neurologist will provide a personalised timeline after the initial assessment.'
+  - question: 'Will my child need continued therapy after returning home?'
+    answer: 'Yes. Cerebral palsy management is lifelong, and continued therapy at home is essential to maintain and build on the gains achieved in Bangalore. Your team will provide a detailed home programme and recommend local therapists. Tele-consultation follow-up with your Bangalore neurology team is available to monitor progress and adjust the plan as your child grows.'
+  - question: 'How much does botulinum toxin injection cost in Bangalore?'
+    answer: 'Botulinum toxin injections for spasticity management in Bangalore typically cost between $300 and $800 per session, depending on the number of muscles injected and the dose required. This is significantly lower than the $1,500-$3,000 per session charged in Western countries. Injections are usually repeated every 3-6 months as part of the overall management plan.'
 ---
+
 ## Overview
 
 A cerebral palsy diagnosis for your child brings many questions about the future. Cerebral palsy is the most common motor disability of childhood, affecting roughly 2-3 per 1,000 live births worldwide. It is caused by damage to the developing brain, typically before or around birth, and affects muscle tone, movement, and posture. The brain injury itself is permanent, but with the right treatment, children with cerebral palsy can make remarkable progress in mobility, independence, and quality of life.
@@ -158,13 +159,13 @@ For families unable to travel for an extended period, a shorter initial assessme
 
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $3,000 – $15,000 | Baseline |
-| USA | $20,000 – $100,000 | ~6.7x higher |
-| UK | £15,000 – £60,000 | ~5x higher |
-| Singapore | $12,000 – $40,000 | ~2.9x higher |
-| Thailand | $8,000 – $25,000 | ~1.8x higher |
+| Country           | Approximate Cost   | vs India     |
+| ----------------- | ------------------ | ------------ |
+| India (Bangalore) | $3,000 – $15,000   | Baseline     |
+| USA               | $20,000 – $100,000 | ~6.7x higher |
+| UK                | £15,000 – £60,000  | ~5x higher   |
+| Singapore         | $12,000 – $40,000  | ~2.9x higher |
+| Thailand          | $8,000 – $25,000   | ~1.8x higher |
 
 The cost variation within India reflects the type and intensity of treatment. A therapy and botulinum toxin programme may cost $3,000-$6,000, while selective dorsal rhizotomy with inpatient rehabilitation may range from $8,000-$15,000. Orthopaedic multilevel surgery typically falls between $6,000 and $12,000. Even at the upper end, you are paying up to 80% less than you would in the USA or UK, with the same international safety protocols, internationally trained specialists, and modern rehabilitation facilities.
 

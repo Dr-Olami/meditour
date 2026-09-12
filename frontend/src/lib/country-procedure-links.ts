@@ -26,16 +26,30 @@ const TOP_COUNTRIES_EN = [
   { slug: 'ethiopia', name: 'Ethiopia', nationality: 'Ethiopian' },
 ];
 
-const TOP_COUNTRIES_BN = [
-  { slug: 'bangladesh', name: 'বাংলাদেশ', nationality: 'বাংলাদেশি' },
-];
+const TOP_COUNTRIES_BN = [{ slug: 'bangladesh', name: 'বাংলাদেশ', nationality: 'বাংলাদেশি' }];
 
 const TOP_PROCEDURES = [
-  { slug: 'heart-bypass-surgery-cabg-cost-india', name: 'Heart Bypass Surgery (CABG)', nameBn: 'হার্ট বাইপাস সার্জারি' },
+  {
+    slug: 'heart-bypass-surgery-cabg-cost-india',
+    name: 'Heart Bypass Surgery (CABG)',
+    nameBn: 'হার্ট বাইপাস সার্জারি',
+  },
   { slug: 'ivf-treatment-cost-india', name: 'IVF Treatment', nameBn: 'আইভিএফ ট্রিটমেন্ট' },
-  { slug: 'total-knee-replacement-cost-india', name: 'Knee Replacement', nameBn: 'হাঁটু প্রতিস্থাপন' },
-  { slug: 'bone-marrow-transplant-cost-india', name: 'Bone Marrow Transplant', nameBn: 'বোন ম্যারো ট্রান্সপ্লান্ট' },
-  { slug: 'kidney-transplant-cost-india', name: 'Kidney Transplant', nameBn: 'কিডনি ট্রান্সপ্লান্ট' },
+  {
+    slug: 'total-knee-replacement-cost-india',
+    name: 'Knee Replacement',
+    nameBn: 'হাঁটু প্রতিস্থাপন',
+  },
+  {
+    slug: 'bone-marrow-transplant-cost-india',
+    name: 'Bone Marrow Transplant',
+    nameBn: 'বোন ম্যারো ট্রান্সপ্লান্ট',
+  },
+  {
+    slug: 'kidney-transplant-cost-india',
+    name: 'Kidney Transplant',
+    nameBn: 'কিডনি ট্রান্সপ্লান্ট',
+  },
   { slug: 'chemotherapy-cost-india', name: 'Chemotherapy', nameBn: 'কেমোথেরাপি' },
 ];
 
@@ -58,7 +72,7 @@ export interface PopularLink {
  */
 export function getTopCountryProcedureLinks(
   locale: 'en' | 'bn' = 'en',
-  limit: number = 24,
+  limit: number = 24
 ): PopularLink[] {
   const countries = locale === 'bn' ? TOP_COUNTRIES_BN : TOP_COUNTRIES_EN;
   const prefix = locale === 'bn' ? '/bn' : '';

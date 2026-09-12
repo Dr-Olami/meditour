@@ -21,16 +21,16 @@ expertise:
   - Congenital heart disease corrections
   - Extracorporeal Life Support (ECLS)
   - Cardiac and renal transplants
-pullQuote: "I have held ten thousand hearts in my hands. Each one taught me that no surgery is routine when it is your child on that table."
+pullQuote: 'I have held ten thousand hearts in my hands. Each one taught me that no surgery is routine when it is your child on that table.'
 faqs:
-  - question: "Is Dr. Ravishankar Shetty experienced in cardiac surgery?"
+  - question: 'Is Dr. Ravishankar Shetty experienced in cardiac surgery?'
     answer: "Yes, Dr. Ravishankar Shetty has performed over 10,000 successful cardiac surgeries over his two-decade career, earning him the title of the best heart surgeon in Bangalore. He is most remembered as the cardiothoracic surgeon who performed Karnataka's first paediatric cardiac transplant. He has worked with renowned institutions like Narayana Hrudayalaya and Sathya Sai Institute of Higher Sciences."
-  - question: "What types of cardiac surgery does Dr. Ravishankar Shetty perform?"
-    answer: "Dr. Ravishankar Shetty performs minimally invasive cardiac surgery, aortic surgeries, valve repairs, off-pump and redo coronary artery bypass grafts (CABG), congenital heart disease corrections, extracorporeal life support (ECLS), and cardiac and renal transplants. He has pioneered innovative techniques such as minimally invasive cardiac surgeries and organ transplants."
+  - question: 'What types of cardiac surgery does Dr. Ravishankar Shetty perform?'
+    answer: 'Dr. Ravishankar Shetty performs minimally invasive cardiac surgery, aortic surgeries, valve repairs, off-pump and redo coronary artery bypass grafts (CABG), congenital heart disease corrections, extracorporeal life support (ECLS), and cardiac and renal transplants. He has pioneered innovative techniques such as minimally invasive cardiac surgeries and organ transplants.'
   - question: "Did Dr. Ravishankar Shetty perform Karnataka's first paediatric cardiac transplant?"
     answer: "Yes, Dr. Ravishankar Shetty performed Karnataka's first paediatric cardiac transplant, a landmark achievement that cemented his reputation as one of the best cardiothoracic surgeons in Bangalore. He was recognised by the Chief Minister of Kerala in 2016 for his contributions to thoracic organ transplants in India."
-  - question: "What is the cost of cardiac surgery with Dr. Ravishankar Shetty in Bangalore?"
-    answer: "Cardiac surgery and heart transplant costs in Bangalore range from $20,000 to $40,000 depending on the procedure and complexity. Dr. Ravishankar Shetty practices at SPARSH Hospital, Hennur Road, which offers comprehensive cardiac sciences with advanced surgical technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally recognised cardiac surgeons."
+  - question: 'What is the cost of cardiac surgery with Dr. Ravishankar Shetty in Bangalore?'
+    answer: 'Cardiac surgery and heart transplant costs in Bangalore range from $20,000 to $40,000 depending on the procedure and complexity. Dr. Ravishankar Shetty practices at SPARSH Hospital, Hennur Road, which offers comprehensive cardiac sciences with advanced surgical technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally recognised cardiac surgeons.'
 ---
 
 ## About the Doctor

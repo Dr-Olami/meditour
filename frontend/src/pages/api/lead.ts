@@ -34,10 +34,10 @@ export const POST: APIRoute = async ({ request }) => {
   const crmKey = import.meta.env.CRM_API_KEY;
 
   if (!crmUrl || !crmKey) {
-    return new Response(
-      JSON.stringify({ message: 'CRM not configured on server' }),
-      { status: 503, headers: { 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({ message: 'CRM not configured on server' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
   try {

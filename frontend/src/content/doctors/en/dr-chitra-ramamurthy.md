@@ -14,18 +14,18 @@ languages:
   - Tamil
   - Telugu
 faqs:
-  - question: "Who is Dr. Chitra Ramamurthy?"
-    answer: "Dr. Chitra Ramamurthy is an esteemed Infertility Specialist and Gynaecologist based in Bangalore, Karnataka, with an impressive experience spanning 40 years. She holds MBBS and MD in Obstetrics and Gynecology and serves as Senior Consultant & HOD of the OBG department at Apollo Hospital. She is known for her compassionate and understanding approach, particularly for patients seeking assistance with infertility issues."
-  - question: "Why do patients choose Dr. Chitra Ramamurthy?"
-    answer: "Patients choose Dr. Ramamurthy for her 40 years of expertise in infertility and reproductive medicine, her skillful management of complex infertility cases, and her commitment to staying updated with the latest advancements in reproductive technologies. She provides holistic support and guidance to individuals and couples facing the challenges of conception. She is fluent in English, Hindi, Kannada, Tamil, and Telugu, and has been recognised with the Gold Medalist Young Surgeon Award (1998) and Rotary Youngest Surgeon Award (1992)."
+  - question: 'Who is Dr. Chitra Ramamurthy?'
+    answer: 'Dr. Chitra Ramamurthy is an esteemed Infertility Specialist and Gynaecologist based in Bangalore, Karnataka, with an impressive experience spanning 40 years. She holds MBBS and MD in Obstetrics and Gynecology and serves as Senior Consultant & HOD of the OBG department at Apollo Hospital. She is known for her compassionate and understanding approach, particularly for patients seeking assistance with infertility issues.'
+  - question: 'Why do patients choose Dr. Chitra Ramamurthy?'
+    answer: 'Patients choose Dr. Ramamurthy for her 40 years of expertise in infertility and reproductive medicine, her skillful management of complex infertility cases, and her commitment to staying updated with the latest advancements in reproductive technologies. She provides holistic support and guidance to individuals and couples facing the challenges of conception. She is fluent in English, Hindi, Kannada, Tamil, and Telugu, and has been recognised with the Gold Medalist Young Surgeon Award (1998) and Rotary Youngest Surgeon Award (1992).'
   - question: "What are Dr. Chitra Ramamurthy's medical qualifications?"
-    answer: "Dr. Ramamurthy holds MBBS and MD in Obstetrics and Gynecology. She has served as Senior Consultant & HOD of the OBG department at Apollo Hospital (2006–present), retired as Professor from Bangalore Medical College (BMC), and has also worked as Senior Consultant at Sagar Apollo Hospital and Apollo Cradle."
-  - question: "How can I book an appointment with Dr. Chitra Ramamurthy?"
+    answer: 'Dr. Ramamurthy holds MBBS and MD in Obstetrics and Gynecology. She has served as Senior Consultant & HOD of the OBG department at Apollo Hospital (2006–present), retired as Professor from Bangalore Medical College (BMC), and has also worked as Senior Consultant at Sagar Apollo Hospital and Apollo Cradle.'
+  - question: 'How can I book an appointment with Dr. Chitra Ramamurthy?'
     answer: "You can book an appointment with Dr. Chitra Ramamurthy at Apollo Hospitals, Bangalore through our platform. Simply use the 'Request appointment' button on her profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
-  - question: "Who is a Gynaecologist?"
-    answer: "A Gynaecologist is a medical doctor who specialises in the health of the female reproductive system — including the diagnosis and treatment of disorders of the uterus, ovaries, fallopian tubes, cervix, vagina, and breasts. Dr. Chitra Ramamurthy, with 40 years of experience and an MD in Obstetrics & Gynecology, provides comprehensive gynaecological care ranging from menstrual disorders and PCOS to menopause management and gynaecological surgery."
-  - question: "What is the difference between a Gynaecologist and an Obstetrician?"
-    answer: "A Gynaecologist focuses on the female reproductive system and treats conditions such as infertility, PCOS, endometriosis, menstrual disorders, and menopause. An Obstetrician specialises in pregnancy, childbirth, and the postpartum period. Dr. Chitra Ramamurthy is trained in both fields (MD in Obstetrics & Gynecology), allowing her to provide complete care from preconception counselling and infertility treatment through pregnancy, delivery, and postnatal recovery."
+  - question: 'Who is a Gynaecologist?'
+    answer: 'A Gynaecologist is a medical doctor who specialises in the health of the female reproductive system — including the diagnosis and treatment of disorders of the uterus, ovaries, fallopian tubes, cervix, vagina, and breasts. Dr. Chitra Ramamurthy, with 40 years of experience and an MD in Obstetrics & Gynecology, provides comprehensive gynaecological care ranging from menstrual disorders and PCOS to menopause management and gynaecological surgery.'
+  - question: 'What is the difference between a Gynaecologist and an Obstetrician?'
+    answer: 'A Gynaecologist focuses on the female reproductive system and treats conditions such as infertility, PCOS, endometriosis, menstrual disorders, and menopause. An Obstetrician specialises in pregnancy, childbirth, and the postpartum period. Dr. Chitra Ramamurthy is trained in both fields (MD in Obstetrics & Gynecology), allowing her to provide complete care from preconception counselling and infertility treatment through pregnancy, delivery, and postnatal recovery.'
 ---
 
 ## About the Doctor

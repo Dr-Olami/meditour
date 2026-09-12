@@ -14,25 +14,25 @@ languages:
   - Telugu
   - Punjabi
 expertise:
-  - "Basic & Advanced Laparoscopic GI Surgery"
+  - 'Basic & Advanced Laparoscopic GI Surgery'
   - Gastrointestinal/HPB Onco Surgery
-  - "Surgery for Acute & Chronic Pancreatitis"
+  - 'Surgery for Acute & Chronic Pancreatitis'
   - Laparoscopic Pancreatic/Biliary Surgery
   - Management of Complex Biliary Strictures
   - Major Liver Resection Surgery
   - Laparoscopic Hernia/Reflux Surgery
-  - "Colo-Proctology — Cancers, Fissure, Piles, Fistula Surgery"
+  - 'Colo-Proctology — Cancers, Fissure, Piles, Fistula Surgery'
   - Video-Assisted Thoracoscopic Surgeries (VATS)
 pullQuote: "The abdomen holds the story of a patient's health. My job is to read that story carefully and intervene only when the body needs help to heal itself."
 faqs:
-  - question: "What conditions does Dr. K Hemanth Kumar treat?"
-    answer: "Dr. K Hemanth Kumar specialises in basic and advanced laparoscopic GI surgery, gastrointestinal/HPB onco surgery, surgery for acute and chronic pancreatitis, laparoscopic pancreatic and biliary surgery, management of complex biliary strictures, major liver resection surgery, laparoscopic hernia and reflux surgery, colo-proctology (including cancers, fissure, piles, and fistula surgery), and video-assisted thoracoscopic surgeries (VATS). He has over 15 years of experience in gastrointestinal and HPB onco surgery."
-  - question: "How can I book a consultation with Dr. K Hemanth Kumar?"
-    answer: "You can book a consultation with Dr. K Hemanth Kumar through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients."
-  - question: "Why do patients visit Dr. K Hemanth Kumar?"
-    answer: "Patients visit Dr. K Hemanth Kumar, a leading Consultant in Surgical Gastroenterology, GI Oncology & HPB and Robotic Surgery at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. K Hemanth Kumar is a trusted choice for exceptional medical support in gastrointestinal surgery, liver and pancreatic surgery, and GI oncology."
-  - question: "What should I bring to my first appointment with Dr. K Hemanth Kumar?"
-    answer: "For your first appointment with Dr. K Hemanth Kumar, please bring any relevant medical records, previous imaging studies (CT scans, MRI scans, ultrasound reports), endoscopy or colonoscopy reports, biopsy or pathology reports, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or treatment reports."
+  - question: 'What conditions does Dr. K Hemanth Kumar treat?'
+    answer: 'Dr. K Hemanth Kumar specialises in basic and advanced laparoscopic GI surgery, gastrointestinal/HPB onco surgery, surgery for acute and chronic pancreatitis, laparoscopic pancreatic and biliary surgery, management of complex biliary strictures, major liver resection surgery, laparoscopic hernia and reflux surgery, colo-proctology (including cancers, fissure, piles, and fistula surgery), and video-assisted thoracoscopic surgeries (VATS). He has over 15 years of experience in gastrointestinal and HPB onco surgery.'
+  - question: 'How can I book a consultation with Dr. K Hemanth Kumar?'
+    answer: 'You can book a consultation with Dr. K Hemanth Kumar through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients.'
+  - question: 'Why do patients visit Dr. K Hemanth Kumar?'
+    answer: 'Patients visit Dr. K Hemanth Kumar, a leading Consultant in Surgical Gastroenterology, GI Oncology & HPB and Robotic Surgery at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. K Hemanth Kumar is a trusted choice for exceptional medical support in gastrointestinal surgery, liver and pancreatic surgery, and GI oncology.'
+  - question: 'What should I bring to my first appointment with Dr. K Hemanth Kumar?'
+    answer: 'For your first appointment with Dr. K Hemanth Kumar, please bring any relevant medical records, previous imaging studies (CT scans, MRI scans, ultrasound reports), endoscopy or colonoscopy reports, biopsy or pathology reports, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or treatment reports.'
 ---
 
 ## About the Doctor

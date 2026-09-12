@@ -21,16 +21,16 @@ expertise:
   - Parkinsonism and Movement Disorders
   - Headache and Migraine Management
   - Neurological Clinical Diagnostics
-pullQuote: "Neurology is detective work. Every seizure, every headache, every tremor is a clue — and the patient is always the most important witness."
+pullQuote: 'Neurology is detective work. Every seizure, every headache, every tremor is a clue — and the patient is always the most important witness.'
 faqs:
-  - question: "Is Dr. Nithin Kumar experienced in stroke management?"
-    answer: "Yes, Dr. Nithin Kumar has over 23 years of experience in neurology and is recognised for performing the largest number of thrombolysis procedures for acute ischemic stroke patients at Fortis, Cunningham Road. His expertise includes comprehensive stroke management, epilepsy and seizure disorders, movement disorders, and headache management."
-  - question: "What neurological conditions does Dr. Nithin Kumar treat?"
-    answer: "Dr. Nithin Kumar treats a wide range of neurological conditions including stroke, epilepsy and seizure disorders, neuropathies and peripheral nerve conditions, Parkinsonism and movement disorders, headache and migraine, and performs neurological clinical diagnostics. He has over two decades of experience managing complex neurological disorders."
-  - question: "Is Dr. Nithin Kumar one of the best neurologists in Bangalore?"
-    answer: "Yes, Dr. Nithin Kumar is recognised among the most experienced neurologists in Bangalore, with over 23 years of experience. He initiated and led the Department of Neurology and DM program at Vydehi Institute. Patients value his patient-focused approach and expertise in epilepsy, stroke, movement disorders, headaches, and neuropathies."
-  - question: "What is the cost of neurology consultation with Dr. Nithin Kumar in Bangalore?"
-    answer: "Neurology consultation and treatment costs in Bangalore range from $1,500 to $12,000 depending on the procedure and condition. Dr. Nithin Kumar practices at SPARSH Hospital, Hennur Road, which offers comprehensive neurological care with advanced diagnostic technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced neurologists."
+  - question: 'Is Dr. Nithin Kumar experienced in stroke management?'
+    answer: 'Yes, Dr. Nithin Kumar has over 23 years of experience in neurology and is recognised for performing the largest number of thrombolysis procedures for acute ischemic stroke patients at Fortis, Cunningham Road. His expertise includes comprehensive stroke management, epilepsy and seizure disorders, movement disorders, and headache management.'
+  - question: 'What neurological conditions does Dr. Nithin Kumar treat?'
+    answer: 'Dr. Nithin Kumar treats a wide range of neurological conditions including stroke, epilepsy and seizure disorders, neuropathies and peripheral nerve conditions, Parkinsonism and movement disorders, headache and migraine, and performs neurological clinical diagnostics. He has over two decades of experience managing complex neurological disorders.'
+  - question: 'Is Dr. Nithin Kumar one of the best neurologists in Bangalore?'
+    answer: 'Yes, Dr. Nithin Kumar is recognised among the most experienced neurologists in Bangalore, with over 23 years of experience. He initiated and led the Department of Neurology and DM program at Vydehi Institute. Patients value his patient-focused approach and expertise in epilepsy, stroke, movement disorders, headaches, and neuropathies.'
+  - question: 'What is the cost of neurology consultation with Dr. Nithin Kumar in Bangalore?'
+    answer: 'Neurology consultation and treatment costs in Bangalore range from $1,500 to $12,000 depending on the procedure and condition. Dr. Nithin Kumar practices at SPARSH Hospital, Hennur Road, which offers comprehensive neurological care with advanced diagnostic technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to experienced neurologists.'
 ---
 
 ## About the Doctor

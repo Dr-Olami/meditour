@@ -15,24 +15,24 @@ languages:
   - Kannada
 expertise:
   - Primary Angioplasty
-  - "Complex Coronary Interventions (Left main, Bifurcations, CTO, Rotablation, Orbital atherectomy, IVL)"
+  - 'Complex Coronary Interventions (Left main, Bifurcations, CTO, Rotablation, Orbital atherectomy, IVL)'
   - IVUS and OCT imaging for precision angioplasty
   - Transcatheter Aortic Valve Replacement (TAVR/TAVI)
   - Alcohol Septal Ablation
   - ASD/VSD/PDA Device Closure
-  - "Implantation of Pacemakers, ICD & CRT devices"
+  - 'Implantation of Pacemakers, ICD & CRT devices'
   - Aortic Stent Grafting
   - Peripheral Angioplasty
-pullQuote: "A heart attack does not wait, and neither do I. Every minute saved in the cath lab is a lifetime gained for the family waiting outside."
+pullQuote: 'A heart attack does not wait, and neither do I. Every minute saved in the cath lab is a lifetime gained for the family waiting outside.'
 faqs:
-  - question: "Is Dr. Mahadev Swamy experienced in interventional cardiology?"
-    answer: "Yes, Dr. Mahadev Swamy B has over 13 years of rich experience in Interventional Cardiology. He is a Gold medalist in DM Cardiology from JIPMER, Puducherry, and a Fellow of the American College of Cardiology (FACC) and the Society for Cardiovascular Angiography and Interventions (FSCAI). He has performed over 10,000 cardiac catheterisation procedures including more than 2,000 major cardiac interventions with the highest success rate."
-  - question: "What cardiac procedures does Dr. Mahadev Swamy perform?"
-    answer: "Dr. Mahadev Swamy performs primary angioplasty, complex coronary interventions (left main, bifurcations, CTO, rotablation, orbital atherectomy, IVL), IVUS and OCT imaging for precision angioplasty, transcatheter aortic valve replacement (TAVR/TAVI), alcohol septal ablation, ASD/VSD/PDA device closure, pacemaker and ICD/CRT implantation, aortic stent grafting, and peripheral angioplasty."
-  - question: "Is Dr. Mahadev Swamy one of the best cardiologists in Bangalore?"
-    answer: "Yes, Dr. Mahadev Swamy B is recognised as a top cardiologist in Bangalore. He is a Gold medalist in DM Cardiology from JIPMER, a Fellow of the American College of Cardiology, and has held significant roles including Assistant Professor of Cardiology at Sri Jayadeva Institute of Cardiovascular Sciences & Research. He has also rendered service at the renowned Fortis Hospital, Cunningham Road, Bangalore."
-  - question: "What is the cost of cardiology consultation with Dr. Mahadev Swamy in Bangalore?"
-    answer: "Cardiology consultation and cardiac procedure costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Mahadev Swamy practices at SPARSH Hospital, Hennur Road, which offers comprehensive cardiac care with advanced interventional technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained cardiologists."
+  - question: 'Is Dr. Mahadev Swamy experienced in interventional cardiology?'
+    answer: 'Yes, Dr. Mahadev Swamy B has over 13 years of rich experience in Interventional Cardiology. He is a Gold medalist in DM Cardiology from JIPMER, Puducherry, and a Fellow of the American College of Cardiology (FACC) and the Society for Cardiovascular Angiography and Interventions (FSCAI). He has performed over 10,000 cardiac catheterisation procedures including more than 2,000 major cardiac interventions with the highest success rate.'
+  - question: 'What cardiac procedures does Dr. Mahadev Swamy perform?'
+    answer: 'Dr. Mahadev Swamy performs primary angioplasty, complex coronary interventions (left main, bifurcations, CTO, rotablation, orbital atherectomy, IVL), IVUS and OCT imaging for precision angioplasty, transcatheter aortic valve replacement (TAVR/TAVI), alcohol septal ablation, ASD/VSD/PDA device closure, pacemaker and ICD/CRT implantation, aortic stent grafting, and peripheral angioplasty.'
+  - question: 'Is Dr. Mahadev Swamy one of the best cardiologists in Bangalore?'
+    answer: 'Yes, Dr. Mahadev Swamy B is recognised as a top cardiologist in Bangalore. He is a Gold medalist in DM Cardiology from JIPMER, a Fellow of the American College of Cardiology, and has held significant roles including Assistant Professor of Cardiology at Sri Jayadeva Institute of Cardiovascular Sciences & Research. He has also rendered service at the renowned Fortis Hospital, Cunningham Road, Bangalore.'
+  - question: 'What is the cost of cardiology consultation with Dr. Mahadev Swamy in Bangalore?'
+    answer: 'Cardiology consultation and cardiac procedure costs in Bangalore range from $1,500 to $7,000 depending on the procedure and complexity. Dr. Mahadev Swamy practices at SPARSH Hospital, Hennur Road, which offers comprehensive cardiac care with advanced interventional technology. Compared to Western countries, Bangalore provides 60-80% cost savings with access to internationally trained cardiologists.'
 ---
 
 ## About the Doctor

@@ -1,55 +1,55 @@
 ---
 locale: en
-name: "Bone Marrow Transplant"
-seoHeadline: "Bone Marrow Transplant Cost in India for International Patients"
+name: 'Bone Marrow Transplant'
+seoHeadline: 'Bone Marrow Transplant Cost in India for International Patients'
 parentTreatmentSlug: hematology-bone-marrow
-summary: "Bone marrow transplant in India costs between $18,000 and $45,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform autologous and allogeneic transplants with high success rates."
-description: "Affordable bone marrow transplant in India from $18,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery."
-fromPrice: "$18,000"
-toPrice: "$45,000"
-duration: "4-8 weeks"
-hospitalStay: "4-6 weeks"
-recoveryTime: "6-12 months"
+summary: 'Bone marrow transplant in India costs between $18,000 and $45,000, offering international patients world-class haematology care at a fraction of Western prices. Leading Bangalore hospitals perform autologous and allogeneic transplants with high success rates.'
+description: 'Affordable bone marrow transplant in India from $18,000–$45,000 at JCI-accredited Bangalore hospitals. Compare costs, eligibility and recovery.'
+fromPrice: '$18,000'
+toPrice: '$45,000'
+duration: '4-8 weeks'
+hospitalStay: '4-6 weeks'
+recoveryTime: '6-12 months'
 eligibility:
-  - "Patients with confirmed haematological malignancies such as leukaemia, lymphoma or myeloma"
-  - "Individuals with non-malignant disorders including thalassemia, aplastic anaemia or sickle cell disease"
-  - "Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy"
-  - "Availability of a suitable donor for allogeneic transplant or remission status for autologous transplant"
-  - "No active uncontrolled infection at the time of admission"
+  - 'Patients with confirmed haematological malignancies such as leukaemia, lymphoma or myeloma'
+  - 'Individuals with non-malignant disorders including thalassemia, aplastic anaemia or sickle cell disease'
+  - 'Adequate cardiac, renal and hepatic function to tolerate conditioning chemotherapy'
+  - 'Availability of a suitable donor for allogeneic transplant or remission status for autologous transplant'
+  - 'No active uncontrolled infection at the time of admission'
 costInclusions:
-  - "Surgeon and haematologist fees"
-  - "Hospital room charges (private room)"
-  - "Procedure and transplant costs"
-  - "Donor workup and matching (where applicable)"
-  - "Medications and blood products"
-  - "Pre-transplant diagnostics and tests"
-  - "Post-transplant care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Surgeon and haematologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Procedure and transplant costs'
+  - 'Donor workup and matching (where applicable)'
+  - 'Medications and blood products'
+  - 'Pre-transplant diagnostics and tests'
+  - 'Post-transplant care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Long-term immunosuppressive medications post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Long-term immunosuppressive medications post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "4-6 weeks"
-    description: "Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs."
-  - phase: "Bangalore recovery"
-    duration: "2-4 weeks"
-    description: "Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel."
-  - phase: "Return home"
-    duration: "Week 6-10"
-    description: "Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country."
-  - phase: "Full recovery"
-    duration: "6-12 months"
-    description: "Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and relapse."
+  - phase: 'Hospital stay'
+    duration: '4-6 weeks'
+    description: 'Conditioning chemotherapy followed by stem cell infusion and intensive monitoring in a HEPA-filtered transplant unit until engraftment occurs.'
+  - phase: 'Bangalore recovery'
+    duration: '2-4 weeks'
+    description: 'Close outpatient follow-up with blood counts, infection surveillance and adjustment of immunosuppressive therapy before clearance to travel.'
+  - phase: 'Return home'
+    duration: 'Week 6-10'
+    description: 'Gradual resumption of light activity with continued medication adherence and weekly local haematology checks in the home country.'
+  - phase: 'Full recovery'
+    duration: '6-12 months'
+    description: 'Complete immune reconstitution and return to normal activities, with ongoing surveillance for graft-versus-host disease and relapse.'
 risks:
-  - "Graft-versus-host disease (allogeneic transplants)"
-  - "Severe infections due to prolonged immunosuppression"
-  - "Graft failure or rejection"
-  - "Organ toxicity from conditioning chemotherapy"
-  - "Long-term endocrine and fertility complications"
+  - 'Graft-versus-host disease (allogeneic transplants)'
+  - 'Severe infections due to prolonged immunosuppression'
+  - 'Graft failure or rejection'
+  - 'Organ toxicity from conditioning chemotherapy'
+  - 'Long-term endocrine and fertility complications'
 relatedHospitalSlugs:
   - fortis-hospital-bannerghatta
   - sparsh-hospital-hennur
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-sunil-udgire
 
 relatedProcedureSlugs:
-  - "allogeneic-stem-cell-transplant-cost-india"
-  - "autologous-stem-cell-transplant-cost-india"
+  - 'allogeneic-stem-cell-transplant-cost-india'
+  - 'autologous-stem-cell-transplant-cost-india'
 faqs:
-  - question: "How much does a bone marrow transplant cost in India?"
-    answer: "A bone marrow transplant in India typically costs between $18,000 and $45,000 depending on the type (autologous or allogeneic), donor matching requirements and the length of hospital stay required."
-  - question: "What is the success rate of bone marrow transplants in Bangalore hospitals?"
-    answer: "Leading Bangalore transplant centres report long-term survival rates of 60–90% depending on the underlying disease, donor match quality and patient condition, comparable to international benchmarks."
-  - question: "How long do I need to stay in India for a bone marrow transplant?"
-    answer: "Patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home."
+  - question: 'How much does a bone marrow transplant cost in India?'
+    answer: 'A bone marrow transplant in India typically costs between $18,000 and $45,000 depending on the type (autologous or allogeneic), donor matching requirements and the length of hospital stay required.'
+  - question: 'What is the success rate of bone marrow transplants in Bangalore hospitals?'
+    answer: 'Leading Bangalore transplant centres report long-term survival rates of 60–90% depending on the underlying disease, donor match quality and patient condition, comparable to international benchmarks.'
+  - question: 'How long do I need to stay in India for a bone marrow transplant?'
+    answer: 'Patients should plan for 6–10 weeks in India, including 4–6 weeks of hospitalisation followed by 2–4 weeks of outpatient monitoring before being cleared to fly home.'
 ---
+
 ## Overview
 
 If your doctor has recommended a bone marrow transplant, you may be feeling overwhelmed by the scale of what lies ahead. That's completely natural. This is one of the most intensive treatments in medicine, and it's normal to have a head full of questions — about what will happen to your body, how long you'll be away from home, and whether it will work.
@@ -141,15 +142,16 @@ If you're not a candidate for a transplant or don't have a suitable donor, there
 For non-malignant conditions such as thalassemia and sickle cell disease, lifelong transfusion and chelation therapy remains a viable option, though it doesn't offer a cure and carries long-term risks of iron overload and organ damage. Gene therapy is an emerging alternative that uses your own genetically modified stem cells, potentially eliminating the need for a donor and the risk of GVHD — though availability is still limited and costs are high.
 
 If you're older or have significant other health conditions, a reduced-intensity allogeneic transplant may offer a middle ground. The decision between transplant and alternative therapies should be made together with your treating haematologist.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $18,000 – $45,000 | Baseline |
-| USA | $300,000 – $800,000 | ~17.5x higher |
-| UK | £150,000 – £400,000 | ~8.7x higher |
-| Singapore | $80,000 – $200,000 | ~4.4x higher |
-| Thailand | $50,000 – $120,000 | ~2.7x higher |
+| Country           | Approximate Cost    | vs India      |
+| ----------------- | ------------------- | ------------- |
+| India (Bangalore) | $18,000 – $45,000   | Baseline      |
+| USA               | $300,000 – $800,000 | ~17.5x higher |
+| UK                | £150,000 – £400,000 | ~8.7x higher  |
+| Singapore         | $80,000 – $200,000  | ~4.4x higher  |
+| Thailand          | $50,000 – $120,000  | ~2.7x higher  |
 
 You're probably wondering why India is so much more affordable — and whether lower cost means lower quality. It doesn't. The cost differences come primarily from lower infrastructure and staffing costs, combined with locally manufactured generic medications and blood products. The doctors, technology and safety protocols are on par with international standards. Even when you factor in international flights, accommodation and your extended outpatient stay, the total expense remains a small fraction of what you'd pay in the West.
 

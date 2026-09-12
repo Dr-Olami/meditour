@@ -64,9 +64,7 @@ describe('WhyUsSection', () => {
   });
 
   it('applies col-span-2 to top 3 cards and col-span-3 to bottom 2 cards (edge case)', () => {
-    const { container } = render(
-      <WhyUsSection title="Why patients choose us" items={ITEMS} />
-    );
+    const { container } = render(<WhyUsSection title="Why patients choose us" items={ITEMS} />);
     const cardWrappers = container.querySelectorAll('[data-card]');
     expect(cardWrappers).toHaveLength(5);
     // Reason: top 3 cards are 1/3 width (col-span-2 in a 6-col grid),
@@ -79,9 +77,7 @@ describe('WhyUsSection', () => {
   });
 
   it('applies carousel snap classes on mobile for all cards (edge case)', () => {
-    const { container } = render(
-      <WhyUsSection title="Why patients choose us" items={ITEMS} />
-    );
+    const { container } = render(<WhyUsSection title="Why patients choose us" items={ITEMS} />);
     const cardWrappers = container.querySelectorAll('[data-card]');
     // Reason: on mobile, all cards are carousel slides with snap-center
     // and a fixed 85% width.

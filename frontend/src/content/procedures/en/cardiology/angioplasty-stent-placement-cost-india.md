@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Angioplasty & Stent Placement"
-seoHeadline: "Angioplasty & Stent Placement Cost in India for International Patients"
+name: 'Angioplasty & Stent Placement'
+seoHeadline: 'Angioplasty & Stent Placement Cost in India for International Patients'
 parentTreatmentSlug: cardiology
-summary: "Coronary angioplasty with stent placement in India costs between $2,500 and $6,000, offering savings of up to 85% compared to Western countries. The minimally invasive procedure opens blocked coronary arteries using a balloon catheter and implants a stent to keep the vessel open."
-description: "Angioplasty & Stent Placement in India from $2,500–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices."
-fromPrice: "$2,500"
-toPrice: "$6,000"
-duration: "1-2 weeks"
-hospitalStay: "1-3 days"
-recoveryTime: "1-2 weeks"
+summary: 'Coronary angioplasty with stent placement in India costs between $2,500 and $6,000, offering savings of up to 85% compared to Western countries. The minimally invasive procedure opens blocked coronary arteries using a balloon catheter and implants a stent to keep the vessel open.'
+description: 'Angioplasty & Stent Placement in India from $2,500–$6,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices.'
+fromPrice: '$2,500'
+toPrice: '$6,000'
+duration: '1-2 weeks'
+hospitalStay: '1-3 days'
+recoveryTime: '1-2 weeks'
 eligibility:
-  - "Single or multi-vessel coronary artery disease with significant stenosis amenable to stenting"
-  - "Acute coronary syndrome or unstable angina requiring urgent revascularisation"
-  - "In-stent restenosis or chronic total occlusion amenable to percutaneous intervention"
-  - "Adequate target vessel size (typically 2.5mm or greater) for stent deployment"
-  - "Suitable anatomy for catheter-based approach without need for surgical bypass"
+  - 'Single or multi-vessel coronary artery disease with significant stenosis amenable to stenting'
+  - 'Acute coronary syndrome or unstable angina requiring urgent revascularisation'
+  - 'In-stent restenosis or chronic total occlusion amenable to percutaneous intervention'
+  - 'Adequate target vessel size (typically 2.5mm or greater) for stent deployment'
+  - 'Suitable anatomy for catheter-based approach without need for surgical bypass'
 costInclusions:
-  - "Cardiac surgeon and anaesthesiologist fees"
-  - "Hospital room charges (ICU + private room)"
-  - "Surgery/procedure costs"
-  - "Implants (stents, valves, pacemaker where applicable)"
-  - "Pre-operative diagnostics (angiogram, echo, blood tests)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Cardiac surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (ICU + private room)'
+  - 'Surgery/procedure costs'
+  - 'Implants (stents, valves, pacemaker where applicable)'
+  - 'Pre-operative diagnostics (angiogram, echo, blood tests)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Cardiac rehabilitation program post-discharge"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Cardiac rehabilitation program post-discharge'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "1-3 days"
-    description: "Monitoring in the cardiac care unit or step-down unit; the femoral or radial access site is observed for bleeding, and dual antiplatelet therapy is initiated."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up review of access site, echocardiogram to assess cardiac function, and medication counselling before clearance to fly."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Continue dual antiplatelet therapy as prescribed, resume light activities, and attend a cardiac rehabilitation programme in your home country."
-  - phase: "Full recovery"
-    duration: "1-2 weeks"
-    description: "Most patients return to normal activities within one week; stent endothelialisation continues over 1-3 months under antiplatelet cover."
+  - phase: 'Hospital stay'
+    duration: '1-3 days'
+    description: 'Monitoring in the cardiac care unit or step-down unit; the femoral or radial access site is observed for bleeding, and dual antiplatelet therapy is initiated.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up review of access site, echocardiogram to assess cardiac function, and medication counselling before clearance to fly.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Continue dual antiplatelet therapy as prescribed, resume light activities, and attend a cardiac rehabilitation programme in your home country.'
+  - phase: 'Full recovery'
+    duration: '1-2 weeks'
+    description: 'Most patients return to normal activities within one week; stent endothelialisation continues over 1-3 months under antiplatelet cover.'
 risks:
-  - "Stent thrombosis (acute or subacute) requiring emergency repeat intervention"
-  - "Restenosis or re-narrowing at the stent site, more common with bare-metal stents"
-  - "Bleeding or haematoma at the catheter access site (groin or wrist)"
-  - "Contrast-induced nephropathy in patients with pre-existing kidney disease"
-  - "Coronary artery dissection or perforation requiring emergency bypass surgery"
+  - 'Stent thrombosis (acute or subacute) requiring emergency repeat intervention'
+  - 'Restenosis or re-narrowing at the stent site, more common with bare-metal stents'
+  - 'Bleeding or haematoma at the catheter access site (groin or wrist)'
+  - 'Contrast-induced nephropathy in patients with pre-existing kidney disease'
+  - 'Coronary artery dissection or perforation requiring emergency bypass surgery'
 relatedHospitalSlugs:
   - narayana-institute-cardiac-sciences
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-mahadev-swamy-b
 
 relatedProcedureSlugs:
-  - "heart-bypass-surgery-cabg-cost-india"
-  - "pacemaker-implantation-cost-india"
+  - 'heart-bypass-surgery-cabg-cost-india'
+  - 'pacemaker-implantation-cost-india'
 faqs:
-  - question: "What is the difference between bare-metal and drug-eluting stents?"
-    answer: "Drug-eluting stents (DES) are coated with medication that slowly releases to prevent scar tissue growth inside the stent, reducing restenosis rates to under 5%. Bare-metal stents (BMS) have higher restenosis rates (15-20%) but require a shorter duration of dual antiplatelet therapy. Most patients receive drug-eluting stents unless there is a specific reason to choose bare-metal."
-  - question: "How long do I need to take blood thinners after stent placement?"
-    answer: "Dual antiplatelet therapy (aspirin plus clopidogrel or ticagrelor) is typically prescribed for 6-12 months after drug-eluting stent placement, followed by lifelong aspirin. Your cardiologist will tailor the duration based on bleeding risk and clinical context. Never stop these medications without consulting your doctor."
-  - question: "Can multiple stents be placed in one procedure?"
-    answer: "Yes, multiple stents can be placed in different coronary arteries during a single catheterisation session. The number depends on the extent of disease and the complexity of the lesions. Your interventional cardiologist will determine the optimal strategy based on the angiogram findings."
+  - question: 'What is the difference between bare-metal and drug-eluting stents?'
+    answer: 'Drug-eluting stents (DES) are coated with medication that slowly releases to prevent scar tissue growth inside the stent, reducing restenosis rates to under 5%. Bare-metal stents (BMS) have higher restenosis rates (15-20%) but require a shorter duration of dual antiplatelet therapy. Most patients receive drug-eluting stents unless there is a specific reason to choose bare-metal.'
+  - question: 'How long do I need to take blood thinners after stent placement?'
+    answer: 'Dual antiplatelet therapy (aspirin plus clopidogrel or ticagrelor) is typically prescribed for 6-12 months after drug-eluting stent placement, followed by lifelong aspirin. Your cardiologist will tailor the duration based on bleeding risk and clinical context. Never stop these medications without consulting your doctor.'
+  - question: 'Can multiple stents be placed in one procedure?'
+    answer: 'Yes, multiple stents can be placed in different coronary arteries during a single catheterisation session. The number depends on the extent of disease and the complexity of the lesions. Your interventional cardiologist will determine the optimal strategy based on the angiogram findings.'
 ---
+
 ## Overview
 
 If you have just been told that one or more of your coronary arteries is narrowed or blocked, you are probably feeling a mix of fear, confusion, and urgency. Hearing words like "blocked artery" and "stent" for the first time is overwhelming. The good news is that coronary angioplasty—also called percutaneous coronary intervention (PCI)—is one of the most commonly performed and well-refined heart procedures in the world, and it does not involve open-heart surgery.
@@ -133,15 +134,16 @@ Seek immediate medical attention if you experience new or worsening chest pain, 
 If you have complex, multi-vessel coronary artery disease—especially if you have diabetes, left main disease, or diffuse lesions—coronary artery bypass grafting (CABG) may offer better long-term outcomes than angioplasty. Your cardiology team will weigh the risks and benefits of PCI versus CABG based on your coronary anatomy, overall health, and individual risk profile.
 
 If you have stable coronary artery disease with mild to moderate symptoms, optimal medical therapy (OMT) alone may be a reasonable first approach. Modern medications—including high-intensity statins, antiplatelet agents, beta-blockers, calcium channel blockers, and nitrates—can effectively control symptoms and reduce cardiac events in selected people. Angioplasty can then be reserved for those whose symptoms remain uncontrolled by medication.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,500 – $6,000 | Baseline |
-| USA | $30,000 – $60,000 | ~10.6x higher |
-| UK | £10,000 – £18,000 | ~4.3x higher |
-| Singapore | $13,000 – $22,000 | ~4.1x higher |
-| Thailand | $7,000 – $12,000 | ~2.2x higher |
+| Country           | Approximate Cost  | vs India      |
+| ----------------- | ----------------- | ------------- |
+| India (Bangalore) | $2,500 – $6,000   | Baseline      |
+| USA               | $30,000 – $60,000 | ~10.6x higher |
+| UK                | £10,000 – £18,000 | ~4.3x higher  |
+| Singapore         | $13,000 – $22,000 | ~4.1x higher  |
+| Thailand          | $7,000 – $12,000  | ~2.2x higher  |
 
 The price range within India reflects how many stents you need, the type of stent used (drug-eluting versus bare-metal), the complexity of your blockages, and the specific hospital and cardiologist you choose. Even if you require multiple drug-eluting stents from leading global manufacturers such as Abbott, Boston Scientific, or Medtronic, your total cost in Bangalore will typically be less than a quarter of the US price. These savings come from favourable exchange rates, lower labour costs, and high procedural volumes—not from any compromise in stent quality or technique.
 
@@ -160,4 +162,3 @@ The price range within India reflects how many stents you need, the type of sten
 You will travel to Bangalore on a Medical Visa, and an e-Medical Visa is available for citizens of over 160 countries, typically granted within 48 to 72 hours. The visa is valid for up to one year with triple entry. Khan Meditour will assist you with the visa invitation letter, hospital scheduling, and ground logistics, including airport transfers and accommodation for your family members.
 
 When you land at Kempegowda International Airport, a private driver will meet you and take you to your hospital or hotel. We recommend arriving two to three days before your procedure so you can complete pre-operative coronary angiography, blood tests, and a cardiology consultation without feeling rushed. Plan for a total stay of 7 to 10 days in Bangalore, covering the procedure, your hospital stay, and a follow-up review before you fly home with a fitness-to-fly certificate.
-

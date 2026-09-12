@@ -1,55 +1,55 @@
 ﻿---
 locale: en
-name: "Hair Transplant"
-seoHeadline: "Hair Transplant Cost in India for International Patients — FUE & FUT Restoration"
+name: 'Hair Transplant'
+seoHeadline: 'Hair Transplant Cost in India for International Patients — FUE & FUT Restoration'
 parentTreatmentSlug: cosmetic-surgery
-summary: "Hair transplant in India costs between $1,000 and $4,000, offering international patients savings of up to 80% compared to Western countries. Both FUE (Follicular Unit Extraction) and FUT (Follicular Unit Transplantation) techniques are performed by skilled surgeons in Bangalore with a typical stay of 1-2 weeks."
-description: "Affordable hair transplant in India for medical tourists. Compare FUE and FUT costs, recovery timeline, and top hair restoration surgeons in Bangalore."
-fromPrice: "$1,000"
-toPrice: "$4,000"
-duration: "1-2 weeks"
-hospitalStay: "Day-care"
-recoveryTime: "2-4 weeks"
+summary: 'Hair transplant in India costs between $1,000 and $4,000, offering international patients savings of up to 80% compared to Western countries. Both FUE (Follicular Unit Extraction) and FUT (Follicular Unit Transplantation) techniques are performed by skilled surgeons in Bangalore with a typical stay of 1-2 weeks.'
+description: 'Affordable hair transplant in India for medical tourists. Compare FUE and FUT costs, recovery timeline, and top hair restoration surgeons in Bangalore.'
+fromPrice: '$1,000'
+toPrice: '$4,000'
+duration: '1-2 weeks'
+hospitalStay: 'Day-care'
+recoveryTime: '2-4 weeks'
 eligibility:
-  - "Adults over 25 years with stable hair loss pattern (Norwood stage 3 or above)"
-  - "Sufficient donor hair density on the back and sides of the scalp"
-  - "Good overall health with no active scalp infections or conditions"
-  - "Realistic expectations about graft survival, timeline, and final density"
-  - "Non-smokers or willing to stop smoking for at least 2 weeks before and after the procedure"
+  - 'Adults over 25 years with stable hair loss pattern (Norwood stage 3 or above)'
+  - 'Sufficient donor hair density on the back and sides of the scalp'
+  - 'Good overall health with no active scalp infections or conditions'
+  - 'Realistic expectations about graft survival, timeline, and final density'
+  - 'Non-smokers or willing to stop smoking for at least 2 weeks before and after the procedure'
 costInclusions:
-  - "Plastic/cosmetic surgeon fees"
-  - "Hospital/clinic room charges"
-  - "Surgery/procedure costs"
-  - "Implants (where applicable — breast implants)"
-  - "Anaesthesia charges"
-  - "Pre-operative diagnostics (blood tests, imaging)"
-  - "Post-operative care during hospital stay"
-  - "Airport pickup and drop"
+  - 'Plastic/cosmetic surgeon fees'
+  - 'Hospital/clinic room charges'
+  - 'Surgery/procedure costs'
+  - 'Implants (where applicable — breast implants)'
+  - 'Anaesthesia charges'
+  - 'Pre-operative diagnostics (blood tests, imaging)'
+  - 'Post-operative care during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Post-discharge medications and compression garments"
-  - "Personal expenses and meals for attendants"
-  - "Revision surgery if needed (separate package)"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Post-discharge medications and compression garments'
+  - 'Personal expenses and meals for attendants'
+  - 'Revision surgery if needed (separate package)'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "Day-care"
-    description: "Hair transplant is a day-care procedure. Patients are monitored for 1-2 hours after the procedure, post-operative instructions are given, and discharge occurs the same day."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Follow-up consultation to assess graft healing, removal of bandages, monitoring of donor and recipient areas, and clearance for travel."
-  - phase: "Return home"
-    duration: "Week 2-4"
-    description: "Transplanted hair sheds (shock loss), donor area heals, mild swelling resolves, and normal daily activities resume. Scabbing clears within 2 weeks."
-  - phase: "Full recovery"
-    duration: "2-4 weeks"
-    description: "Surface healing completes within 4 weeks. New hair growth begins at 3-4 months, with final visible results at 12-18 months as transplanted follicles mature."
+  - phase: 'Hospital stay'
+    duration: 'Day-care'
+    description: 'Hair transplant is a day-care procedure. Patients are monitored for 1-2 hours after the procedure, post-operative instructions are given, and discharge occurs the same day.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Follow-up consultation to assess graft healing, removal of bandages, monitoring of donor and recipient areas, and clearance for travel.'
+  - phase: 'Return home'
+    duration: 'Week 2-4'
+    description: 'Transplanted hair sheds (shock loss), donor area heals, mild swelling resolves, and normal daily activities resume. Scabbing clears within 2 weeks.'
+  - phase: 'Full recovery'
+    duration: '2-4 weeks'
+    description: 'Surface healing completes within 4 weeks. New hair growth begins at 3-4 months, with final visible results at 12-18 months as transplanted follicles mature.'
 risks:
-  - "Infection of donor or recipient sites requiring antibiotic treatment"
-  - "Shock loss — temporary shedding of transplanted and surrounding hair"
-  - "Uneven or patchy hair growth requiring a second transplant session"
-  - "Scarring in the donor area, particularly with the FUT strip technique"
-  - "Bleeding or folliculitis (inflammation of hair follicles) in rare cases"
+  - 'Infection of donor or recipient sites requiring antibiotic treatment'
+  - 'Shock loss — temporary shedding of transplanted and surrounding hair'
+  - 'Uneven or patchy hair growth requiring a second transplant session'
+  - 'Scarring in the donor area, particularly with the FUT strip technique'
+  - 'Bleeding or folliculitis (inflammation of hair follicles) in rare cases'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -58,18 +58,19 @@ relatedDoctorSlugs:
   - dr-prashant-puranik
 
 relatedProcedureSlugs:
-  - "rhinoplasty-cost-india"
-  - "liposuction-cost-india"
+  - 'rhinoplasty-cost-india'
+  - 'liposuction-cost-india'
 faqs:
-  - question: "How much does a hair transplant cost in India compared to the USA?"
-    answer: "A hair transplant in India costs $1,000–$4,000, while in the USA it ranges from $4,000–$15,000 depending on the number of grafts and technique used. International patients can save approximately 70-80% on the total cost."
-  - question: "What is the difference between FUE and FUT hair transplant techniques?"
-    answer: "FUE (Follicular Unit Extraction) involves individually extracting follicular units using a micro-punch, leaving tiny dot scars with no visible linear scar. FUT (Follicular Unit Transplantation) involves removing a strip of scalp from the donor area and dissecting it into grafts, leaving a linear scar. FUE has a shorter recovery but FUT can yield more grafts in a single session."
-  - question: "How many grafts will I need for my hair transplant?"
-    answer: "The number of grafts depends on the extent of hair loss and the desired density. Typically, 1,500–3,000 grafts are needed for moderate hair loss, while 3,000–5,000 grafts may be required for advanced cases. Your surgeon will assess your needs during the consultation."
-  - question: "When will I see the final results of my hair transplant?"
-    answer: "Transplanted hair typically falls out within 2-4 weeks (shock loss). New growth begins at 3-4 months, with noticeable results by 6-9 months. Final results are visible at 12-18 months once all transplanted follicles have fully matured and grown."
+  - question: 'How much does a hair transplant cost in India compared to the USA?'
+    answer: 'A hair transplant in India costs $1,000–$4,000, while in the USA it ranges from $4,000–$15,000 depending on the number of grafts and technique used. International patients can save approximately 70-80% on the total cost.'
+  - question: 'What is the difference between FUE and FUT hair transplant techniques?'
+    answer: 'FUE (Follicular Unit Extraction) involves individually extracting follicular units using a micro-punch, leaving tiny dot scars with no visible linear scar. FUT (Follicular Unit Transplantation) involves removing a strip of scalp from the donor area and dissecting it into grafts, leaving a linear scar. FUE has a shorter recovery but FUT can yield more grafts in a single session.'
+  - question: 'How many grafts will I need for my hair transplant?'
+    answer: 'The number of grafts depends on the extent of hair loss and the desired density. Typically, 1,500–3,000 grafts are needed for moderate hair loss, while 3,000–5,000 grafts may be required for advanced cases. Your surgeon will assess your needs during the consultation.'
+  - question: 'When will I see the final results of my hair transplant?'
+    answer: 'Transplanted hair typically falls out within 2-4 weeks (shock loss). New growth begins at 3-4 months, with noticeable results by 6-9 months. Final results are visible at 12-18 months once all transplanted follicles have fully matured and grown.'
 ---
+
 ## Overview
 
 If you are reading this, chances are you have spent months — perhaps years — watching your hairline recede, your crown thin, or your confidence quietly erode with every glimpse in the mirror. Hair loss is deeply personal, and the decision to do something about it is rarely taken lightly. You may have tried shampoos, supplements, or medications without the result you hoped for, and you are now weighing whether a hair transplant is worth the journey to India. This guide is written to give you honest, practical answers so you can make an informed choice.
@@ -149,15 +150,16 @@ Before committing to surgery, consider whether non-surgical options might serve 
 Low-level laser therapy (LLLT) and platelet-rich plasma (PRP) injections can improve thickness and slow progression. LLLT uses red light to stimulate follicle activity; PRP involves injecting concentrated platelets from your own blood into your scalp. Both work best for mild to moderate thinning.
 
 If you are not a good candidate for a transplant — due to insufficient donor hair, diffuse thinning, or active scalp conditions — scalp micropigmentation (SMP) or high-quality hair systems are worth exploring. SMP creates the look of a closely shaved head using specialised scalp tattooing, while modern hair systems offer a natural appearance with regular maintenance. A consultation with a qualified hair restoration surgeon in Bangalore will help you determine the right path based on your degree of hair loss, your goals, and your comfort with risk.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $1,000 – $4,000 | Baseline |
-| USA | $4,000 – $15,000 | ~4.3x higher |
-| UK | £3,000 – £12,000 | ~3.4x higher |
-| Singapore | $3,000 – $10,000 | ~2.9x higher |
-| Thailand | $1,800 – $5,000 | ~1.5x higher |
+| Country           | Approximate Cost | vs India     |
+| ----------------- | ---------------- | ------------ |
+| India (Bangalore) | $1,000 – $4,000  | Baseline     |
+| USA               | $4,000 – $15,000 | ~4.3x higher |
+| UK                | £3,000 – £12,000 | ~3.4x higher |
+| Singapore         | $3,000 – $10,000 | ~2.9x higher |
+| Thailand          | $1,800 – $5,000  | ~1.5x higher |
 
 Your total cost is usually calculated per graft, at $0.50–$1.50 each, depending on the technique, your surgeon's experience, and the clinic's technology. Even after adding international flights and accommodation (typically $1,000–$2,500), the total remains far below what the procedure alone would cost in most Western countries. The package generally includes surgeon fees, clinic charges, anaesthesia, and post-operative care, so you know the full price before you travel.
 

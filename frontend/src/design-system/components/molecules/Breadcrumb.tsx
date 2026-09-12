@@ -8,8 +8,7 @@ export interface BreadcrumbItem {
   href?: string;
 }
 
-export interface BreadcrumbProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
+export interface BreadcrumbProps extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
   items: BreadcrumbItem[];
 }
 
@@ -25,9 +24,7 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
             const isLast = index === items.length - 1;
             return (
               <li key={item.label} className="flex items-center gap-2">
-                {index > 0 && (
-                  <Icon name="chevron-right" size={14} className="text-text-muted" />
-                )}
+                {index > 0 && <Icon name="chevron-right" size={14} className="text-text-muted" />}
                 {item.href && !isLast ? (
                   <Link href={item.href} underline="none">
                     {item.label}

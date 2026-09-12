@@ -2,20 +2,10 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '../../../lib/utils';
-import {
-  leadSchema,
-  type LeadPayload,
-  type LeadSource,
-  submitLead,
-} from '../../../lib/crm';
+import { leadSchema, type LeadPayload, type LeadSource, submitLead } from '../../../lib/crm';
 import { Button } from '../atoms/Button';
 import { Spinner } from '../atoms/Spinner';
-import {
-  FormInput,
-  FormTextarea,
-  FormSelect,
-  FormCheckbox,
-} from '../molecules/FormField';
+import { FormInput, FormTextarea, FormSelect, FormCheckbox } from '../molecules/FormField';
 import { buildWhatsAppLink } from '../../../lib/whatsapp';
 
 export interface LeadFormProps extends React.HTMLAttributes<HTMLFormElement> {
@@ -67,9 +57,7 @@ function buildDefaultMessage(
     parts.push(`I am interested in ${treatment}.`);
   }
   if (estimatedTotal !== undefined) {
-    parts.push(
-      `The estimated total I saw was $${estimatedTotal.toLocaleString()}.`
-    );
+    parts.push(`The estimated total I saw was $${estimatedTotal.toLocaleString()}.`);
   }
   return parts.length > 0 ? parts.join(' ') : '';
 }
@@ -95,8 +83,7 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
     ref
   ) => {
     const initialMessage =
-      defaultMessage ??
-      buildDefaultMessage(defaultDoctor, defaultTreatment, estimatedTotal);
+      defaultMessage ?? buildDefaultMessage(defaultDoctor, defaultTreatment, estimatedTotal);
 
     const {
       register,
@@ -264,12 +251,7 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
         <input type="hidden" {...register('doctorSlug')} />
         <input type="hidden" {...register('hospitalSlug')} />
         <input type="hidden" {...register('estimatedTotal')} />
-        <Button
-          type="submit"
-          size="lg"
-          className="w-full"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? <Spinner size={20} className="mr-2" /> : null}
           Send inquiry
         </Button>
@@ -278,9 +260,7 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
             role="alert"
             className={cn(
               'rounded-card p-4 text-center text-sm',
-              status.type === 'success'
-                ? 'bg-success/10 text-success'
-                : 'bg-error/10 text-error'
+              status.type === 'success' ? 'bg-success/10 text-success' : 'bg-error/10 text-error'
             )}
           >
             <p>{status.message}</p>

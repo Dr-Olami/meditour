@@ -14,17 +14,17 @@ languages:
   - Telugu
   - Tamil
 expertise:
-  - "Managing all patients with renal problems, including Dialysis and active transplant program"
+  - 'Managing all patients with renal problems, including Dialysis and active transplant program'
   - Special interest in Clinical Nephrology
   - Renal Transplantation
   - Hemodialysis
   - Multisystem problems and Paediatric Nephrology
-pullQuote: "Kidney transplant is a quiet miracle — a gift from one person that lets another live. After three decades, I am still humbled every time it works."
+pullQuote: 'Kidney transplant is a quiet miracle — a gift from one person that lets another live. After three decades, I am still humbled every time it works.'
 faqs:
-  - question: "What kidney conditions does Dr. Vishwanath S treat?"
-    answer: "Dr. Vishwanath S treats acute and chronic kidney disease, acute renal failure, polycystic kidney disease, and paediatric kidney problems. He has extensive experience in renal transplantation, swap transplant, paired exchange transplant, dual transplants (kidney-pancreas and kidney-liver), hemodialysis, and peritoneal dialysis (CAPD and CCPD). With over 29 years of experience, he is one of the most senior nephrologists in Bangalore."
-  - question: "Is Dr. Vishwanath S experienced in paediatric nephrology?"
-    answer: "Yes, Dr. Vishwanath S has a special interest in paediatric nephrology and is a Life Member of the Indian Academy of Paediatrics. He holds a DNB in Paediatrics in addition to his DNB in Nephrology, making him uniquely qualified to manage kidney problems in both adults and children. He has published research on kidney diseases in children and post-COVID kidney complications."
+  - question: 'What kidney conditions does Dr. Vishwanath S treat?'
+    answer: 'Dr. Vishwanath S treats acute and chronic kidney disease, acute renal failure, polycystic kidney disease, and paediatric kidney problems. He has extensive experience in renal transplantation, swap transplant, paired exchange transplant, dual transplants (kidney-pancreas and kidney-liver), hemodialysis, and peritoneal dialysis (CAPD and CCPD). With over 29 years of experience, he is one of the most senior nephrologists in Bangalore.'
+  - question: 'Is Dr. Vishwanath S experienced in paediatric nephrology?'
+    answer: 'Yes, Dr. Vishwanath S has a special interest in paediatric nephrology and is a Life Member of the Indian Academy of Paediatrics. He holds a DNB in Paediatrics in addition to his DNB in Nephrology, making him uniquely qualified to manage kidney problems in both adults and children. He has published research on kidney diseases in children and post-COVID kidney complications.'
 ---
 
 ## About the Doctor

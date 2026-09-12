@@ -7,8 +7,7 @@ export interface Step {
   duration?: string;
 }
 
-export interface StepTimelineProps
-  extends React.HTMLAttributes<HTMLOListElement> {
+export interface StepTimelineProps extends React.HTMLAttributes<HTMLOListElement> {
   steps: Step[];
 }
 
@@ -28,10 +27,7 @@ const StepTimeline = React.forwardRef<HTMLOListElement, StepTimelineProps>(
         {...props}
       >
         {steps.map((step, index) => (
-          <li
-            key={step.title}
-            className="relative pl-16 md:pl-0 md:text-center"
-          >
+          <li key={step.title} className="relative pl-16 md:pl-0 md:text-center">
             <span
               className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-lg font-bold text-cream-100 md:static md:mx-auto md:mb-4"
               aria-hidden="true"
@@ -41,7 +37,7 @@ const StepTimeline = React.forwardRef<HTMLOListElement, StepTimelineProps>(
             <h3 className="text-lg font-semibold">{step.title}</h3>
             <p className="text-sm text-text-secondary">{step.description}</p>
             {step.duration && (
-              <p className="mt-1 flex items-center justify-start gap-1 text-xs font-medium text-ink/60 md:justify-center">
+              <p className="text-ink/60 mt-1 flex items-center justify-start gap-1 text-xs font-medium md:justify-center">
                 <span aria-hidden="true">⏱</span>
                 {step.duration}
               </p>

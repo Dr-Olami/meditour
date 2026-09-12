@@ -1,54 +1,54 @@
 ﻿---
 locale: en
-name: "Total Hip Replacement"
-seoHeadline: "Total Hip Replacement Cost in India for International Patients"
+name: 'Total Hip Replacement'
+seoHeadline: 'Total Hip Replacement Cost in India for International Patients'
 parentTreatmentSlug: orthopedics-surgery
-summary: "Total Hip Replacement in India costs between $4,000 and $8,000, delivering savings of up to 85% compared to Western countries. The procedure replaces the damaged hip joint with a metal or ceramic ball and socket to eliminate pain and restore walking ability."
-description: "Total Hip Replacement surgery in India from $4,000–$8,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices."
-fromPrice: "$4,000"
-toPrice: "$8,000"
-duration: "1-2 weeks"
-hospitalStay: "3-5 days"
-recoveryTime: "6-12 weeks"
+summary: 'Total Hip Replacement in India costs between $4,000 and $8,000, delivering savings of up to 85% compared to Western countries. The procedure replaces the damaged hip joint with a metal or ceramic ball and socket to eliminate pain and restore walking ability.'
+description: 'Total Hip Replacement surgery in India from $4,000–$8,000 at accredited Bangalore hospitals. Save up to 85% versus US/UK prices.'
+fromPrice: '$4,000'
+toPrice: '$8,000'
+duration: '1-2 weeks'
+hospitalStay: '3-5 days'
+recoveryTime: '6-12 weeks'
 eligibility:
-  - "Severe osteoarthritis, rheumatoid arthritis, or avascular necrosis of the hip joint"
-  - "Persistent hip or groin pain unresponsive to medication, physiotherapy, or steroid injections"
-  - "Reduced hip mobility limiting daily activities such as walking, dressing, or climbing stairs"
-  - "Hip fracture or failed previous hip surgery requiring revision"
-  - "Adequate bone stock and general fitness for anaesthesia and rehabilitation"
+  - 'Severe osteoarthritis, rheumatoid arthritis, or avascular necrosis of the hip joint'
+  - 'Persistent hip or groin pain unresponsive to medication, physiotherapy, or steroid injections'
+  - 'Reduced hip mobility limiting daily activities such as walking, dressing, or climbing stairs'
+  - 'Hip fracture or failed previous hip surgery requiring revision'
+  - 'Adequate bone stock and general fitness for anaesthesia and rehabilitation'
 costInclusions:
-  - "Orthopaedic surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implant (joint prosthesis where applicable)"
-  - "Pre-operative diagnostics (X-ray, MRI, blood tests)"
-  - "Post-operative care and physiotherapy during hospital stay"
-  - "Airport pickup and drop"
+  - 'Orthopaedic surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implant (joint prosthesis where applicable)'
+  - 'Pre-operative diagnostics (X-ray, MRI, blood tests)'
+  - 'Post-operative care and physiotherapy during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy post-discharge (typically 6-12 weeks)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy post-discharge (typically 6-12 weeks)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "3-5 days"
-    description: "Pain control, wound care, and early mobilisation begin on day one; patients stand and walk with a walker under physiotherapist supervision within 24 hours."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Supervised physiotherapy focuses on safe transfers, gait training, and hip precautions; wound review and X-ray confirmation before discharge from Bangalore."
-  - phase: "Return home"
-    duration: "Week 3-6"
-    description: "Progression to a cane, driving (typically week 4-6 for right hip), and resumption of desk-based work; continue home strengthening exercises."
-  - phase: "Full recovery"
-    duration: "6-12 weeks"
-    description: "Soft-tissue healing complete with restored hip function; most patients walk unaided and return to low-impact activities such as swimming and cycling."
+  - phase: 'Hospital stay'
+    duration: '3-5 days'
+    description: 'Pain control, wound care, and early mobilisation begin on day one; patients stand and walk with a walker under physiotherapist supervision within 24 hours.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Supervised physiotherapy focuses on safe transfers, gait training, and hip precautions; wound review and X-ray confirmation before discharge from Bangalore.'
+  - phase: 'Return home'
+    duration: 'Week 3-6'
+    description: 'Progression to a cane, driving (typically week 4-6 for right hip), and resumption of desk-based work; continue home strengthening exercises.'
+  - phase: 'Full recovery'
+    duration: '6-12 weeks'
+    description: 'Soft-tissue healing complete with restored hip function; most patients walk unaided and return to low-impact activities such as swimming and cycling.'
 risks:
-  - "Dislocation of the new hip joint, particularly in the first 6-8 weeks post-surgery"
-  - "Deep vein thrombosis or pulmonary embolism requiring anticoagulation prophylaxis"
-  - "Infection at the surgical site or within the joint requiring antibiotics or revision"
-  - "Leg-length discrepancy that may require a shoe insert"
-  - "Implant loosening or wear over time, potentially needing revision surgery"
+  - 'Dislocation of the new hip joint, particularly in the first 6-8 weeks post-surgery'
+  - 'Deep vein thrombosis or pulmonary embolism requiring anticoagulation prophylaxis'
+  - 'Infection at the surgical site or within the joint requiring antibiotics or revision'
+  - 'Leg-length discrepancy that may require a shoe insert'
+  - 'Implant loosening or wear over time, potentially needing revision surgery'
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
@@ -60,16 +60,17 @@ relatedDoctorSlugs:
   - dr-samarth-arya
 
 relatedProcedureSlugs:
-  - "total-knee-replacement-cost-india"
-  - "shoulder-replacement-cost-india"
+  - 'total-knee-replacement-cost-india'
+  - 'shoulder-replacement-cost-india'
 faqs:
-  - question: "What hip precautions must I follow after surgery?"
+  - question: 'What hip precautions must I follow after surgery?'
     answer: "For 6-12 weeks you must avoid bending the hip beyond 90 degrees, crossing your legs, and turning the operated leg inward. These precautions reduce dislocation risk and are gradually relaxed as soft tissues heal. Your physiotherapist will provide a detailed do-and-don't list."
-  - question: "How soon can I walk after hip replacement?"
-    answer: "Most patients stand and walk with a walker within 24 hours of surgery. By discharge (day 3-5) you will walk independently with a walker, and most transition to a cane by week 3-4. Full unaided walking typically resumes by 6 weeks."
-  - question: "Can I have both hips replaced during the same trip?"
-    answer: "Bilateral hip replacement in a single trip is possible for medically fit patients, either simultaneously or staged 5-7 days apart. Your surgeon will assess suitability based on cardiac fitness, bone quality, and overall health. This can reduce total travel time and cost."
+  - question: 'How soon can I walk after hip replacement?'
+    answer: 'Most patients stand and walk with a walker within 24 hours of surgery. By discharge (day 3-5) you will walk independently with a walker, and most transition to a cane by week 3-4. Full unaided walking typically resumes by 6 weeks.'
+  - question: 'Can I have both hips replaced during the same trip?'
+    answer: 'Bilateral hip replacement in a single trip is possible for medically fit patients, either simultaneously or staged 5-7 days apart. Your surgeon will assess suitability based on cardiac fitness, bone quality, and overall health. This can reduce total travel time and cost.'
 ---
+
 ## Overview
 
 If you are reading this, you probably know the feeling all too well — that deep, grinding ache in your hip that greets you every morning, the wince when you try to put on your socks, the way you now think twice before walking to the corner shop. Living with a deteriorating hip joint reshapes your daily life in ways large and small, and it is completely understandable if you feel frustrated, anxious, or simply exhausted by it. Total Hip Replacement (THR) — sometimes called total hip arthroplasty — is one of the most dependable operations in modern orthopaedics, and for many people it marks the moment they get their life back.
@@ -137,15 +138,16 @@ If you experience increasing hip pain, swelling, redness, or a feeling of instab
 Before committing to hip replacement, it is worth exploring conservative options with your surgeon. These include anti-inflammatory medication, physiotherapy to strengthen the muscles around your hip, weight loss to reduce joint loading, and intra-articular steroid or hyaluronic acid injections for temporary pain relief.
 
 If you are younger with early-stage arthritis or focal cartilage damage, hip arthroscopy or hip preservation surgery may delay the need for a full replacement. Your Bangalore surgeon will give you an honest assessment of whether non-surgical management, preservation surgery, or total hip replacement is most appropriate for your specific condition and lifestyle — and they will not push you toward surgery if a simpler option could help you first.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $4,000 – $8,000 | Baseline |
-| USA | $40,000 – $65,000 | ~8.8x higher |
-| UK | £11,000 – £15,000 | ~2.8x higher |
-| Singapore | $16,000 – $24,000 | ~3.3x higher |
-| Thailand | $8,000 – $13,000 | ~1.8x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $4,000 – $8,000   | Baseline     |
+| USA               | $40,000 – $65,000 | ~8.8x higher |
+| UK                | £11,000 – £15,000 | ~2.8x higher |
+| Singapore         | $16,000 – $24,000 | ~3.3x higher |
+| Thailand          | $8,000 – $13,000  | ~1.8x higher |
 
 The variation within the Bangalore range reflects your implant choice, surgical approach, and hospital category. A cemented metal-on-polyethylene implant sits at the lower end, while latest-generation ceramic-on-ceramic bearings with an anterior approach fall at the upper end. Your package includes surgeon fees, anaesthesia, hospital stay, the implant itself, and pre-operative diagnostics. Even at the highest tier, you are paying less than one-tenth of the average US price — with identical implant brands and surgical techniques performed by fellowship-trained arthroplasty surgeons.
 
@@ -168,4 +170,3 @@ You will enter India on a Medical Visa — and an e-Medical Visa is available on
 A private driver will meet you at Kempegowda International Airport and transfer you directly to the hospital. We recommend arriving 2 to 3 days before your surgery date so you have time for pre-operative diagnostics and an anaesthesia evaluation without feeling rushed. Plan for a 10 to 14 day stay in Bangalore — covering your surgery, hospital stay, and initial rehabilitation. Before you fly home, you will receive a fitness-to-fly certificate at your final follow-up.
 
 For longer flights, consider booking a seat with extra legroom and requesting wheelchair assistance at transit airports. Your coordinator can help arrange these services and provide a medical letter for your airline confirming your post-operative status and fitness to travel.
-

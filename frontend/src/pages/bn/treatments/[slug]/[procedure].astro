@@ -61,13 +61,19 @@ export async function getStaticPaths() {
         whatsappHref: getDoctorInquiryLink(d.data.name) || undefined,
       };
     });
-    const relatedHospitals = resolveRelatedHospitals(entry.data.relatedHospitalSlugs, hospitals).map((h) => ({
+    const relatedHospitals = resolveRelatedHospitals(
+      entry.data.relatedHospitalSlugs,
+      hospitals
+    ).map((h) => ({
       name: h.data.name,
       city: h.data.city,
       image: h.data.image,
       href: `/bn/hospitals/${entrySlug(h)}`,
     }));
-    const relatedProcedures = resolveRelatedProcedures(entry.data.relatedProcedureSlugs, procedures).map((p) => ({
+    const relatedProcedures = resolveRelatedProcedures(
+      entry.data.relatedProcedureSlugs,
+      procedures
+    ).map((p) => ({
       name: p.data.name,
       slug: entrySlug(p).split('/').pop()!,
       parentSlug: p.data.parentTreatmentSlug,
@@ -133,15 +139,21 @@ const jsonLd = [
     { name: t.nav.home, url: new URL('/bn', Astro.url.origin).toString() },
     { name: t.treatments.title, url: new URL('/bn/treatments', Astro.url.origin).toString() },
     ...(parentTreatment
-      ? [{ name: parentTreatment.name, url: new URL(`/bn/treatments/${parentSlug}`, Astro.url.origin).toString() }]
+      ? [
+          {
+            name: parentTreatment.name,
+            url: new URL(`/bn/treatments/${parentSlug}`, Astro.url.origin).toString(),
+          },
+        ]
       : []),
     { name: procedure.name, url: pageUrl },
   ]),
 ];
 
-const priceValue = procedure.fromPrice && procedure.toPrice
-  ? `${procedure.fromPrice} – ${procedure.toPrice}`
-  : procedure.fromPrice;
+const priceValue =
+  procedure.fromPrice && procedure.toPrice
+    ? `${procedure.fromPrice} – ${procedure.toPrice}`
+    : procedure.fromPrice;
 
 const procedureWhatsAppHref = getProcedureInquiryLink(procedure.name, {
   costRange: priceValue,
@@ -163,19 +175,57 @@ const treatmentOptions = allTreatments.map((entry) => ({
 }));
 
 const quickFacts: QuickFactItem[] = [
-  ...(procedure.duration ? [{ icon: 'clock' as const, label: t.treatments.detail.durationLabel, value: procedure.duration }] : []),
-  ...(procedure.hospitalStay ? [{ icon: 'building' as const, label: t.treatments.detail.stayLabel, value: procedure.hospitalStay }] : []),
-  ...(procedure.recoveryTime ? [{ icon: 'heart-pulse' as const, label: t.treatments.detail.recoveryLabel, value: procedure.recoveryTime }] : []),
-  ...(priceValue ? [{ icon: 'tag' as const, label: t.treatments.detail.priceLabel, value: priceValue }] : []),
+  ...(procedure.duration
+    ? [
+        {
+          icon: 'clock' as const,
+          label: t.treatments.detail.durationLabel,
+          value: procedure.duration,
+        },
+      ]
+    : []),
+  ...(procedure.hospitalStay
+    ? [
+        {
+          icon: 'building' as const,
+          label: t.treatments.detail.stayLabel,
+          value: procedure.hospitalStay,
+        },
+      ]
+    : []),
+  ...(procedure.recoveryTime
+    ? [
+        {
+          icon: 'heart-pulse' as const,
+          label: t.treatments.detail.recoveryLabel,
+          value: procedure.recoveryTime,
+        },
+      ]
+    : []),
+  ...(priceValue
+    ? [{ icon: 'tag' as const, label: t.treatments.detail.priceLabel, value: priceValue }]
+    : []),
 ];
 
 const hue = getCategoryHue(parentTreatment?.category);
 
 const journeySteps: Step[] = [
-  { title: t.treatments.detail.journeyStep1Title, description: t.treatments.detail.journeyStep1Desc },
-  { title: t.treatments.detail.journeyStep2Title, description: t.treatments.detail.journeyStep2Desc },
-  { title: t.treatments.detail.journeyStep3Title, description: t.treatments.detail.journeyStep3Desc },
-  { title: t.treatments.detail.journeyStep4Title, description: t.treatments.detail.journeyStep4Desc },
+  {
+    title: t.treatments.detail.journeyStep1Title,
+    description: t.treatments.detail.journeyStep1Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep2Title,
+    description: t.treatments.detail.journeyStep2Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep3Title,
+    description: t.treatments.detail.journeyStep3Desc,
+  },
+  {
+    title: t.treatments.detail.journeyStep4Title,
+    description: t.treatments.detail.journeyStep4Desc,
+  },
 ];
 
 // Reason: Phase 1 BN country-procedure pages exist only for Bangladesh.
@@ -208,67 +258,609 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
   />
 
   <main>
+    {/* ── DARK HERO ──────────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-ink text-cream-100">
+      {
+        procedure.image && (
+          <>
+            <img
+              src={procedure.image}
+              alt=""
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              aria-hidden="true"
+              loading="eager"
+              fetchpriority="high"
+              data-anim="mask-reveal"
+            />
+            <div
+              class="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+              style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)"
+            />
+          </>
+        )
+      }
+      <div
+        class={`pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-${hue.primary}/15 blur-3xl`}
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class={`pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-${hue.secondary}/10 blur-3xl`}
+        aria-hidden="true"
+      >
+      </div>
 
-  {/* ── DARK HERO ──────────────────────────────────────────────────── */}
-  <section class="relative overflow-hidden bg-ink text-cream-100">
-    {procedure.image && (
-      <>
-        <img
-          src={procedure.image}
-          alt=""
-          class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          aria-hidden="true"
-          loading="eager"
-          fetchpriority="high"
-          data-anim="mask-reveal"
+      <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
+        <Breadcrumb
+          items={[
+            { label: t.nav.home, href: '/bn' },
+            { label: t.treatments.title, href: '/bn/treatments' },
+            ...(parentTreatment
+              ? [{ label: parentTreatment.name, href: `/bn/treatments/${parentSlug}` }]
+              : []),
+            { label: procedure.name },
+          ]}
+          tone="dark"
+          class="mb-10"
+          data-anim="fade-in-up"
         />
-        <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.62) 68%, rgba(20,51,82,0.55) 100%)" />
-      </>
-    )}
-    <div class={`pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-${hue.primary}/15 blur-3xl`} aria-hidden="true" />
-    <div class={`pointer-events-none absolute -bottom-48 -left-24 h-[26rem] w-[26rem] rounded-full bg-${hue.secondary}/10 blur-3xl`} aria-hidden="true" />
 
-    <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
-      <Breadcrumb
-        items={[
-          { label: t.nav.home, href: '/bn' },
-          { label: t.treatments.title, href: '/bn/treatments' },
-          ...(parentTreatment ? [{ label: parentTreatment.name, href: `/bn/treatments/${parentSlug}` }] : []),
-          { label: procedure.name },
-        ]}
-        tone="dark"
-        class="mb-10"
-        data-anim="fade-in-up"
-      />
+        <div data-anim="stagger-children">
+          {
+            parentTreatment?.category && (
+              <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
+                {parentTreatment.category}
+              </span>
+            )
+          }
+          <h1
+            class="mt-4 max-w-3xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]"
+            data-anim="headline-reveal"
+          >
+            {headline}
+          </h1>
+          <p
+            class="mt-5 max-w-2xl text-base leading-relaxed text-cream-100 sm:text-lg"
+            data-anim="fade-in-up"
+          >
+            {procedure.description}
+          </p>
 
-      <div data-anim="stagger-children">
-        {parentTreatment?.category && (
-          <span class="inline-block rounded-full bg-gradient-accent px-3 py-1 text-xs font-semibold text-white">
-            {parentTreatment.category}
-          </span>
-        )}
-        <h1 class="mt-4 max-w-3xl font-display text-[2.35rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]" data-anim="headline-reveal">
-          {headline}
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-cream-100 sm:text-lg" data-anim="fade-in-up">
-          {procedure.description}
-        </p>
+          {/* Cost badge */}
+          {
+            priceValue && (
+              <div
+                class="mt-6 inline-flex items-baseline gap-2 rounded-card bg-white/10 px-5 py-3 backdrop-blur-sm"
+                data-anim="fade-in-up"
+              >
+                <span class="text-cream-100/70 text-sm">
+                  {t.treatments.detail.typicalCostLabel}
+                </span>
+                <span class="font-display text-2xl font-bold text-white">{priceValue}</span>
+              </div>
+            )
+          }
 
-        {/* Cost badge */}
-        {priceValue && (
-          <div class="mt-6 inline-flex items-baseline gap-2 rounded-card bg-white/10 px-5 py-3 backdrop-blur-sm" data-anim="fade-in-up">
-            <span class="text-sm text-cream-100/70">{t.treatments.detail.typicalCostLabel}</span>
-            <span class="font-display text-2xl font-bold text-white">{priceValue}</span>
+          {
+            quickFacts.length > 0 && (
+              <div class="mt-8" data-anim="fade-in-up">
+                <QuickFacts facts={quickFacts} tone="dark" />
+              </div>
+            )
+          }
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <LeadModalTrigger
+              client:load
+              label={t.doctors.detail.bookCta}
+              modalTitle={t.leadModal.title}
+              modalSubtitle={t.leadModal.subtitle}
+              closeLabel={t.leadModal.close}
+              source={LEAD_SOURCE.TREATMENT_PAGE}
+              defaultTreatment={procedure.name}
+              treatments={treatmentOptions}
+              className="rounded-card px-6 py-3"
+            />
+            <a
+              href={procedureWhatsAppHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+              data-anim="press-button"
+            >
+              <Icon name="whatsapp" size={18} />
+              {t.treatments.detail.inquiryCta}
+            </a>
           </div>
-        )}
+        </div>
+      </div>
+    </section>
 
-        {quickFacts.length > 0 && (
-          <div class="mt-8" data-anim="fade-in-up">
-            <QuickFacts facts={quickFacts} tone="dark" />
+    {/* ── "IN SHORT" SUMMARY ─────────────────────────────────────────── */}
+    {
+      procedure.summary && (
+        <section class="container py-8" data-anim="fade-in-up">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">
+              {t.treatments.detail.inShortLabel}
+            </p>
+            <p class="text-ink/80 mt-2 text-lg leading-relaxed">{procedure.summary}</p>
           </div>
-        )}
+        </section>
+      )
+    }
 
-        <div class="mt-8 flex flex-wrap gap-4">
+    {/* ── "WHO IS THIS FOR?" ─────────────────────────────────────────── */}
+    {
+      procedure.eligibility && procedure.eligibility.length > 0 && (
+        <section class="container pb-8" data-anim="fade-in-up">
+          <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+            {t.treatments.detail.whoIsThisFor}
+          </h2>
+          <ul class="grid gap-3 md:grid-cols-2">
+            {procedure.eligibility.map((item) => (
+              <li class="text-ink/70 flex items-start gap-2">
+                <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="container py-16 md:py-20">
+      {/* ── RELATED DOCTORS ──────────────────────────────────────────── */}
+      {
+        related.length > 0 && (
+          <section class="mb-16" data-anim="fade-in-up">
+            <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.specialistsHeading}
+            </h2>
+            <p class="text-ink/60 mt-2 max-w-2xl">{t.treatments.detail.specialistsSummary}</p>
+            <div class="mt-8 grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
+              {related.map((doctor: Doctor) => (
+                <DoctorCard
+                  key={doctor.name}
+                  doctor={doctor}
+                  bookLabel={t.doctors.bookCta}
+                  whatsappLabel={t.doctors.detail.whatsappCta}
+                />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── BODY + STICKY RAIL ──────────────────────────────────────── */}
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div class="min-w-0">
+          <div class="prose prose-ink prose-editorial mt-8 max-w-none" data-anim="scroll-reveal">
+            <h2 class="mb-3 font-display text-xl font-semibold text-ink">
+              {t.treatments.detail.description}
+            </h2>
+            <Content />
+          </div>
+
+          <div class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.journeyHeading}
+            </h2>
+            <StepTimeline steps={journeySteps} />
+          </div>
+
+          {
+            relatedHospitals.length > 0 && (
+              <div class="mt-12" data-anim="fade-in-up">
+                <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+                  {t.treatments.detail.treatingHospitals}
+                </h2>
+                <div class="grid gap-4 sm:grid-cols-2" data-anim="stagger-cards">
+                  {relatedHospitals.map((h) => (
+                    <a
+                      href={h.href}
+                      class="hover:border-cream-300/80 flex items-center gap-4 rounded-card border border-cream-300 bg-cream-100 p-4 transition-colors hover:bg-cream-200"
+                    >
+                      {h.image && (
+                        <img
+                          src={h.image}
+                          alt={h.name}
+                          class="h-12 w-12 rounded-card object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                      <div>
+                        <p class="text-sm font-semibold text-ink">{h.name}</p>
+                        <p class="text-ink/50 text-xs">{h.city}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        </div>
+
+        <aside
+          class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"
+          data-anim="fade-in-up"
+        >
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+            <div class="flex items-center gap-3">
+              <Icon name="whatsapp" size={20} class="text-violet-600" />
+              <p class="font-display text-lg font-semibold text-ink">
+                {t.treatments.detail.inquiryCta}
+              </p>
+            </div>
+            <p class="text-ink/60 mt-3 text-sm">{t.treatments.detail.consultSummary}</p>
+            <div class="mt-5 flex flex-col gap-3">
+              <LeadModalTrigger
+                client:load
+                label={t.doctors.detail.bookCta}
+                modalTitle={t.leadModal.title}
+                modalSubtitle={t.leadModal.subtitle}
+                closeLabel={t.leadModal.close}
+                source={LEAD_SOURCE.TREATMENT_PAGE}
+                defaultTreatment={procedure.name}
+                treatments={treatmentOptions}
+                full
+                className="rounded-card px-6 py-3"
+              />
+              <a
+                href={procedureWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
+                data-anim="press-button"
+              >
+                <Icon name="whatsapp" size={18} />
+                {t.doctors.detail.whatsappCta}
+              </a>
+            </div>
+          </div>
+
+          {/* Back to parent treatment */}
+          {
+            parentTreatment && (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                <a
+                  href={`/bn/treatments/${parentSlug}`}
+                  class="flex items-center gap-2 text-sm font-semibold text-violet-600 hover:underline"
+                >
+                  <Icon name="arrow-left" size={16} />
+                  {t.treatments.procedures.backToTreatment.replace(
+                    '{{name}}',
+                    parentTreatment.name
+                  )}
+                </a>
+              </div>
+            )
+          }
+        </aside>
+      </div>
+
+      {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      {
+        faqs.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.faqTitle}
+            </h2>
+            <FAQAccordion items={faqs} client:visible />
+          </section>
+        )
+      }
+
+      {/* ── RECOVERY TIMELINE ─────────────────────────────────────────── */}
+      {
+        procedure.recoveryTimeline && procedure.recoveryTimeline.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.recoveryTimelineTitle}
+            </h2>
+            <div class="overflow-hidden rounded-card border border-cream-300">
+              <table class="w-full text-left text-sm">
+                <thead class="bg-ink text-white">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryPhaseHeader}
+                    </th>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryDurationHeader}
+                    </th>
+                    <th class="px-4 py-3 font-semibold">
+                      {t.treatments.detail.recoveryExpectHeader}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {procedure.recoveryTimeline.map((row) => (
+                    <tr class="border-t border-cream-300">
+                      <td class="px-4 py-3 font-semibold text-ink">{row.phase}</td>
+                      <td class="text-ink/70 px-4 py-3">{row.duration}</td>
+                      <td class="text-ink/70 px-4 py-3">{row.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── RISKS, COMPLICATIONS & MITIGATION ─────────────────────────── */}
+      {
+        procedure.risks && procedure.risks.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.risksTitle}
+            </h2>
+            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+              <ul class="space-y-3">
+                {procedure.risks.map((risk) => (
+                  <li class="text-ink/70 flex items-start gap-2 text-sm">
+                    <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+                    <span>{risk}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="text-ink/60 mt-5 border-t border-cream-300 pt-4 text-sm">
+                {t.treatments.detail.risksMitigationNote}
+              </p>
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
+      {
+        (procedure.costInclusions || procedure.costExclusions) && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+              {t.treatments.detail.costInclusionsTitle}
+            </h2>
+            <div class="grid gap-6 md:grid-cols-2">
+              {procedure.costInclusions && procedure.costInclusions.length > 0 && (
+                <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                  <h3 class="mb-4 font-display text-lg font-semibold text-ink">
+                    {t.treatments.detail.costIncluded}
+                  </h3>
+                  <ul class="space-y-2">
+                    {procedure.costInclusions.map((item) => (
+                      <li class="text-ink/70 flex items-start gap-2 text-sm">
+                        <Icon name="check" size={16} class="mt-0.5 shrink-0 text-green-600" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {procedure.costExclusions && procedure.costExclusions.length > 0 && (
+                <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+                  <h3 class="mb-4 font-display text-lg font-semibold text-ink">
+                    {t.treatments.detail.costNotIncluded}
+                  </h3>
+                  <ul class="space-y-2">
+                    {procedure.costExclusions.map((item) => (
+                      <li class="text-ink/70 flex items-start gap-2 text-sm">
+                        <Icon name="x" size={16} class="mt-0.5 shrink-0 text-red-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── HOW TO READ YOUR PACKAGE QUOTE ────────────────────────────── */}
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+          {t.treatments.detail.packageQuoteTitle}
+        </h2>
+        <p class="text-ink/60 mb-6 max-w-2xl">{t.treatments.detail.packageQuoteIntro}</p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem1Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem1Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem2Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem2Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem3Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem3Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem4Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem4Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem5Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem5Desc}</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <div class="flex items-start gap-3">
+              <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  {t.treatments.detail.packageQuoteItem6Label}
+                </p>
+                <p class="text-ink/60 mt-1 text-sm">{t.treatments.detail.packageQuoteItem6Desc}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DECISION FRAMEWORK ────────────────────────────────────────── */}
+      <section class="mt-16" data-anim="fade-in-up">
+        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+          {t.treatments.detail.decisionFrameworkTitle}
+        </h2>
+        <p class="text-ink/60 mb-6 max-w-2xl">{t.treatments.detail.decisionFrameworkIntro}</p>
+        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+          <ul class="space-y-3">
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem1}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem2}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem3}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem4}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem5}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem6}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem7}</span>
+            </li>
+            <li class="text-ink/70 flex items-start gap-2 text-sm">
+              <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
+              <span>{t.treatments.detail.decisionFrameworkItem8}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ── RELATED PROCEDURES ────────────────────────────────────────── */}
+      {
+        relatedProcedures.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+              {t.treatments.procedures.relatedProcedures}
+            </h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {relatedProcedures.map((rp) => (
+                <a
+                  href={`/bn/treatments/${rp.parentSlug}/${rp.slug}`}
+                  class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base"
+                >
+                  <p class="text-sm font-semibold text-ink">{rp.name}</p>
+                  {rp.fromPrice && (
+                    <p class="text-ink/50 mt-1 text-xs">
+                      {t.treatments.detail.fromPriceLabel} {rp.fromPrice}
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {/* ── COUNTRY CROSS-LINKS ───────────────────────────────────────── */}
+      {
+        countryLinks.length > 0 && (
+          <section class="mt-16" data-anim="fade-in-up">
+            <h2 class="mb-4 font-display text-xl font-semibold text-ink">
+              {t.treatments.detail.countryLinksTitle}
+            </h2>
+            <div class="flex flex-wrap gap-3">
+              {countryLinks.map((c) => (
+                <a
+                  href={c.href}
+                  class:list={[
+                    'rounded-card border px-4 py-2 text-sm font-medium transition-colors',
+                    c.isProcedureCountry
+                      ? 'border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-600 hover:text-white'
+                      : 'border-cream-300 bg-cream-100 text-ink hover:bg-ink hover:text-white',
+                  ]}
+                >
+                  {c.label}
+                  {c.isProcedureCountry && <span class="ml-1 text-xs opacity-70">→</span>}
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </section>
+
+    {/* ── MID-PAGE CTA ──────────────────────────────────────────────── */}
+    <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
+      {
+        ctaImage && (
+          <>
+            <img
+              src={ctaImage}
+              alt=""
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <div class="bg-ink/70 pointer-events-none absolute inset-0" aria-hidden="true" />
+          </>
+        )
+      }
+      <div
+        class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">
+            {t.treatments.detail.consultCta.replace('{{name}}', procedure.name)}
+          </h2>
+          <p class="text-cream-100/60 mt-2 max-w-xl">{t.treatments.detail.consultSummary}</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
           <LeadModalTrigger
             client:load
             label={t.doctors.detail.bookCta}
@@ -280,390 +872,19 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
             treatments={treatmentOptions}
             className="rounded-card px-6 py-3"
           />
-          <a href={procedureWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
+          <a
+            href={procedureWhatsAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-cream-100/30 inline-flex items-center justify-center gap-2 rounded-card border px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink"
+            data-anim="press-button"
+          >
             <Icon name="whatsapp" size={18} />
-            {t.treatments.detail.inquiryCta}
+            {t.doctors.detail.whatsappCta}
           </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  {/* ── "IN SHORT" SUMMARY ─────────────────────────────────────────── */}
-  {procedure.summary && (
-    <section class="container py-8" data-anim="fade-in-up">
-      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-        <p class="text-sm font-semibold uppercase tracking-wide text-violet-600">{t.treatments.detail.inShortLabel}</p>
-        <p class="mt-2 text-lg leading-relaxed text-ink/80">{procedure.summary}</p>
-      </div>
     </section>
-  )}
-
-  {/* ── "WHO IS THIS FOR?" ─────────────────────────────────────────── */}
-  {procedure.eligibility && procedure.eligibility.length > 0 && (
-    <section class="container pb-8" data-anim="fade-in-up">
-      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.whoIsThisFor}</h2>
-      <ul class="grid gap-3 md:grid-cols-2">
-        {procedure.eligibility.map((item) => (
-          <li class="flex items-start gap-2 text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  <section class="container py-16 md:py-20">
-    {/* ── RELATED DOCTORS ──────────────────────────────────────────── */}
-    {related.length > 0 && (
-      <section class="mb-16" data-anim="fade-in-up">
-        <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.specialistsHeading}</h2>
-        <p class="mt-2 max-w-2xl text-ink/60">{t.treatments.detail.specialistsSummary}</p>
-        <div class="mt-8 grid gap-6 lg:grid-cols-2" data-anim="stagger-cards">
-          {related.map((doctor: Doctor) => (
-            <DoctorCard key={doctor.name} doctor={doctor} bookLabel={t.doctors.bookCta} whatsappLabel={t.doctors.detail.whatsappCta} />
-          ))}
-        </div>
-      </section>
-    )}
-
-    {/* ── BODY + STICKY RAIL ──────────────────────────────────────── */}
-    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
-      <div class="min-w-0">
-        <div class="prose prose-ink prose-editorial mt-8 max-w-none" data-anim="scroll-reveal">
-          <h2 class="mb-3 font-display text-xl font-semibold text-ink">{t.treatments.detail.description}</h2>
-          <Content />
-        </div>
-
-        <div class="mt-16" data-anim="fade-in-up">
-          <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.journeyHeading}</h2>
-          <StepTimeline steps={journeySteps} />
-        </div>
-
-        {relatedHospitals.length > 0 && (
-          <div class="mt-12" data-anim="fade-in-up">
-            <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.treatingHospitals}</h2>
-            <div class="grid gap-4 sm:grid-cols-2" data-anim="stagger-cards">
-              {relatedHospitals.map((h) => (
-                <a href={h.href} class="flex items-center gap-4 rounded-card border border-cream-300 bg-cream-100 p-4 transition-colors hover:border-cream-300/80 hover:bg-cream-200">
-                  {h.image && (
-                    <img src={h.image} alt={h.name} class="h-12 w-12 rounded-card object-cover" loading="lazy" />
-                  )}
-                  <div>
-                    <p class="text-sm font-semibold text-ink">{h.name}</p>
-                    <p class="text-xs text-ink/50">{h.city}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto" data-anim="fade-in-up">
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <div class="flex items-center gap-3">
-            <Icon name="whatsapp" size={20} class="text-violet-600" />
-            <p class="font-display text-lg font-semibold text-ink">{t.treatments.detail.inquiryCta}</p>
-          </div>
-          <p class="mt-3 text-sm text-ink/60">{t.treatments.detail.consultSummary}</p>
-          <div class="mt-5 flex flex-col gap-3">
-            <LeadModalTrigger
-              client:load
-              label={t.doctors.detail.bookCta}
-              modalTitle={t.leadModal.title}
-              modalSubtitle={t.leadModal.subtitle}
-              closeLabel={t.leadModal.close}
-              source={LEAD_SOURCE.TREATMENT_PAGE}
-              defaultTreatment={procedure.name}
-              treatments={treatmentOptions}
-              full
-              className="rounded-card px-6 py-3"
-            />
-            <a href={procedureWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white" data-anim="press-button">
-              <Icon name="whatsapp" size={18} />
-              {t.doctors.detail.whatsappCta}
-            </a>
-          </div>
-        </div>
-
-        {/* Back to parent treatment */}
-        {parentTreatment && (
-          <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-            <a href={`/bn/treatments/${parentSlug}`} class="flex items-center gap-2 text-sm font-semibold text-violet-600 hover:underline">
-              <Icon name="arrow-left" size={16} />
-              {t.treatments.procedures.backToTreatment.replace('{{name}}', parentTreatment.name)}
-            </a>
-          </div>
-        )}
-      </aside>
-    </div>
-
-    {/* ── FAQ ───────────────────────────────────────────────────────── */}
-    {faqs.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.faqTitle}</h2>
-        <FAQAccordion items={faqs} client:visible />
-      </section>
-    )}
-
-    {/* ── RECOVERY TIMELINE ─────────────────────────────────────────── */}
-    {procedure.recoveryTimeline && procedure.recoveryTimeline.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.recoveryTimelineTitle}</h2>
-        <div class="overflow-hidden rounded-card border border-cream-300">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-ink text-white">
-              <tr>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryPhaseHeader}</th>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryDurationHeader}</th>
-                <th class="px-4 py-3 font-semibold">{t.treatments.detail.recoveryExpectHeader}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {procedure.recoveryTimeline.map((row) => (
-                <tr class="border-t border-cream-300">
-                  <td class="px-4 py-3 font-semibold text-ink">{row.phase}</td>
-                  <td class="px-4 py-3 text-ink/70">{row.duration}</td>
-                  <td class="px-4 py-3 text-ink/70">{row.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    )}
-
-    {/* ── RISKS, COMPLICATIONS & MITIGATION ─────────────────────────── */}
-    {procedure.risks && procedure.risks.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.risksTitle}</h2>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-          <ul class="space-y-3">
-            {procedure.risks.map((risk) => (
-              <li class="flex items-start gap-2 text-sm text-ink/70">
-                <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
-                <span>{risk}</span>
-              </li>
-            ))}
-          </ul>
-          <p class="mt-5 border-t border-cream-300 pt-4 text-sm text-ink/60">{t.treatments.detail.risksMitigationNote}</p>
-        </div>
-      </section>
-    )}
-
-    {/* ── COST INCLUSIONS / EXCLUSIONS ──────────────────────────────── */}
-    {(procedure.costInclusions || procedure.costExclusions) && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.costInclusionsTitle}</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          {procedure.costInclusions && procedure.costInclusions.length > 0 && (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costIncluded}</h3>
-              <ul class="space-y-2">
-                {procedure.costInclusions.map((item) => (
-                  <li class="flex items-start gap-2 text-sm text-ink/70">
-                    <Icon name="check" size={16} class="mt-0.5 shrink-0 text-green-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {procedure.costExclusions && procedure.costExclusions.length > 0 && (
-            <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-              <h3 class="mb-4 font-display text-lg font-semibold text-ink">{t.treatments.detail.costNotIncluded}</h3>
-              <ul class="space-y-2">
-                {procedure.costExclusions.map((item) => (
-                  <li class="flex items-start gap-2 text-sm text-ink/70">
-                    <Icon name="x" size={16} class="mt-0.5 shrink-0 text-red-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </section>
-    )}
-
-    {/* ── HOW TO READ YOUR PACKAGE QUOTE ────────────────────────────── */}
-    <section class="mt-16" data-anim="fade-in-up">
-      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.packageQuoteTitle}</h2>
-      <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.packageQuoteIntro}</p>
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem1Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem1Desc}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem2Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem2Desc}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem3Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem3Desc}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem4Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem4Desc}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="alert" size={18} class="mt-0.5 shrink-0 text-amber-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem5Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem5Desc}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
-          <div class="flex items-start gap-3">
-            <Icon name="check" size={18} class="mt-0.5 shrink-0 text-green-600" />
-            <div>
-              <p class="text-sm font-semibold text-ink">{t.treatments.detail.packageQuoteItem6Label}</p>
-              <p class="mt-1 text-sm text-ink/60">{t.treatments.detail.packageQuoteItem6Desc}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* ── DECISION FRAMEWORK ────────────────────────────────────────── */}
-    <section class="mt-16" data-anim="fade-in-up">
-      <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">{t.treatments.detail.decisionFrameworkTitle}</h2>
-      <p class="mb-6 max-w-2xl text-ink/60">{t.treatments.detail.decisionFrameworkIntro}</p>
-      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
-        <ul class="space-y-3">
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem1}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem2}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem3}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem4}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem5}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem6}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem7}</span>
-          </li>
-          <li class="flex items-start gap-2 text-sm text-ink/70">
-            <Icon name="check-circle" size={20} class="mt-0.5 shrink-0 text-violet-600" />
-            <span>{t.treatments.detail.decisionFrameworkItem8}</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    {/* ── RELATED PROCEDURES ────────────────────────────────────────── */}
-    {relatedProcedures.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.procedures.relatedProcedures}</h2>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {relatedProcedures.map((rp) => (
-            <a href={`/bn/treatments/${rp.parentSlug}/${rp.slug}`} class="group rounded-card border border-cream-300 bg-cream-100 p-4 transition-all hover:border-violet-300 hover:shadow-base">
-              <p class="text-sm font-semibold text-ink">{rp.name}</p>
-              {rp.fromPrice && <p class="mt-1 text-xs text-ink/50">{t.treatments.detail.fromPriceLabel} {rp.fromPrice}</p>}
-            </a>
-          ))}
-        </div>
-      </section>
-    )}
-
-    {/* ── COUNTRY CROSS-LINKS ───────────────────────────────────────── */}
-    {countryLinks.length > 0 && (
-      <section class="mt-16" data-anim="fade-in-up">
-        <h2 class="mb-4 font-display text-xl font-semibold text-ink">{t.treatments.detail.countryLinksTitle}</h2>
-        <div class="flex flex-wrap gap-3">
-          {countryLinks.map((c) => (
-            <a
-              href={c.href}
-              class:list={[
-                'rounded-card border px-4 py-2 text-sm font-medium transition-colors',
-                c.isProcedureCountry
-                  ? 'border-violet-300 bg-violet-50 text-violet-700 hover:bg-violet-600 hover:text-white'
-                  : 'border-cream-300 bg-cream-100 text-ink hover:bg-ink hover:text-white',
-              ]}
-            >
-              {c.label}
-              {c.isProcedureCountry && <span class="ml-1 text-xs opacity-70">→</span>}
-            </a>
-          ))}
-        </div>
-      </section>
-    )}
-  </section>
-
-  {/* ── MID-PAGE CTA ──────────────────────────────────────────────── */}
-  <section class="relative overflow-hidden bg-ink py-16 text-cream-100" data-anim="fade-in-up">
-    {ctaImage && (
-      <>
-        <img src={ctaImage} alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover" aria-hidden="true" loading="lazy" />
-        <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
-      </>
-    )}
-    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
-    <div class="container relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-      <div>
-        <h2 class="font-display text-2xl font-bold text-cream-100 md:text-3xl">{t.treatments.detail.consultCta.replace('{{name}}', procedure.name)}</h2>
-        <p class="mt-2 max-w-xl text-cream-100/60">{t.treatments.detail.consultSummary}</p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <LeadModalTrigger
-          client:load
-          label={t.doctors.detail.bookCta}
-          modalTitle={t.leadModal.title}
-          modalSubtitle={t.leadModal.subtitle}
-          closeLabel={t.leadModal.close}
-          source={LEAD_SOURCE.TREATMENT_PAGE}
-          defaultTreatment={procedure.name}
-          treatments={treatmentOptions}
-          className="rounded-card px-6 py-3"
-        />
-        <a href={procedureWhatsAppHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-card border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-100 hover:text-ink" data-anim="press-button">
-          <Icon name="whatsapp" size={18} />
-          {t.doctors.detail.whatsappCta}
-        </a>
-      </div>
-    </div>
-  </section>
   </main>
 
   {/* ── CONTACT / LEAD FORM ─────────────────────────────────────────── */}
@@ -671,7 +892,7 @@ const countryLinks = ALL_COUNTRIES.map((c) => ({
     <div class="container grid gap-12 lg:grid-cols-2">
       <div>
         <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">{t.cta.formTitle}</h2>
-        <p class="mt-4 text-lg text-ink/60">{t.cta.subtitle}</p>
+        <p class="text-ink/60 mt-4 text-lg">{t.cta.subtitle}</p>
       </div>
       <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8">
         <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>

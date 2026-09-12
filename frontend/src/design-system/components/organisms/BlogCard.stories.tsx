@@ -11,7 +11,8 @@ const meta: Meta<typeof BlogCard> = {
       title: 'Cost of Cardiac Care in India vs. Bangladesh, UAE & UK',
       excerpt:
         'A transparent look at angioplasty, bypass and valve surgery costs in India — and why patients save 40–70% without compromising quality.',
-      coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop',
+      coverImage:
+        'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop',
       date: '10 July 2026',
       tags: ['cardiology', 'cost-guide'],
     },

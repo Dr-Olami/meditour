@@ -14,21 +14,21 @@ languages:
   - Telugu
   - Tamil
 expertise:
-  - "Living Donor and Deceased Donor Liver Transplantation (including Paediatric, Split Liver, and ABO-incompatible)"
-  - "Complex Hepatobiliary Surgery (Extended Liver Resections, Ex-vivo and Ante-situm Liver Resections, Liver Resection for Hilar Cholangiocarcinoma, Gallbladder Cancer, Hepatocellular Carcinoma, and Intra-Hepatic Cholangiocarcinoma)"
-  - "Pancreatic Surgery (Pancreaticoduodenectomy with Vascular Resections, Distal Pancreatectomy)"
+  - 'Living Donor and Deceased Donor Liver Transplantation (including Paediatric, Split Liver, and ABO-incompatible)'
+  - 'Complex Hepatobiliary Surgery (Extended Liver Resections, Ex-vivo and Ante-situm Liver Resections, Liver Resection for Hilar Cholangiocarcinoma, Gallbladder Cancer, Hepatocellular Carcinoma, and Intra-Hepatic Cholangiocarcinoma)'
+  - 'Pancreatic Surgery (Pancreaticoduodenectomy with Vascular Resections, Distal Pancreatectomy)'
   - Laparoscopic and Robotic HPB Surgery
-  - "Simultaneous Pancreas & Kidney Transplant, Small Intestine and Multivisceral Transplant"
-pullQuote: "A liver transplant is not just a surgery — it is the moment a family gets a second chance. That responsibility drives every decision I make in the operating room."
+  - 'Simultaneous Pancreas & Kidney Transplant, Small Intestine and Multivisceral Transplant'
+pullQuote: 'A liver transplant is not just a surgery — it is the moment a family gets a second chance. That responsibility drives every decision I make in the operating room.'
 faqs:
-  - question: "What conditions does Dr. Jayanth Reddy treat?"
-    answer: "Dr. Jayanth Reddy specialises in living donor and deceased donor liver transplantation (including paediatric, split liver, and ABO-incompatible), complex hepatobiliary surgery (extended liver resections, ex-vivo and ante-situm liver resections, liver resection for hilar cholangiocarcinoma, gallbladder cancer, hepatocellular carcinoma, and intra-hepatic cholangiocarcinoma), pancreatic surgery (pancreaticoduodenectomy with vascular resections, distal pancreatectomy), laparoscopic and robotic HPB surgery, and simultaneous pancreas-kidney, small intestine, and multivisceral transplantation."
-  - question: "How can I book a consultation with Dr. Jayanth Reddy?"
-    answer: "You can book a consultation with Dr. Jayanth Reddy through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients."
-  - question: "Why do patients visit Dr. Jayanth Reddy?"
-    answer: "Patients visit Dr. Jayanth Reddy, a leading Lead Consultant in HPB & Liver and Pancreatic Transplant at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Jayanth Reddy is a trusted choice for exceptional medical support in liver transplantation, hepatobiliary surgery, and pancreatic surgery."
-  - question: "What should I bring to my first appointment with Dr. Jayanth Reddy?"
-    answer: "For your first appointment with Dr. Jayanth Reddy, please bring any relevant medical records, previous imaging studies (CT scans, MRI scans, ultrasound reports), liver biopsy or pathology reports, endoscopy reports, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or transplant evaluation reports."
+  - question: 'What conditions does Dr. Jayanth Reddy treat?'
+    answer: 'Dr. Jayanth Reddy specialises in living donor and deceased donor liver transplantation (including paediatric, split liver, and ABO-incompatible), complex hepatobiliary surgery (extended liver resections, ex-vivo and ante-situm liver resections, liver resection for hilar cholangiocarcinoma, gallbladder cancer, hepatocellular carcinoma, and intra-hepatic cholangiocarcinoma), pancreatic surgery (pancreaticoduodenectomy with vascular resections, distal pancreatectomy), laparoscopic and robotic HPB surgery, and simultaneous pancreas-kidney, small intestine, and multivisceral transplantation.'
+  - question: 'How can I book a consultation with Dr. Jayanth Reddy?'
+    answer: 'You can book a consultation with Dr. Jayanth Reddy through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients.'
+  - question: 'Why do patients visit Dr. Jayanth Reddy?'
+    answer: 'Patients visit Dr. Jayanth Reddy, a leading Lead Consultant in HPB & Liver and Pancreatic Transplant at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Jayanth Reddy is a trusted choice for exceptional medical support in liver transplantation, hepatobiliary surgery, and pancreatic surgery.'
+  - question: 'What should I bring to my first appointment with Dr. Jayanth Reddy?'
+    answer: 'For your first appointment with Dr. Jayanth Reddy, please bring any relevant medical records, previous imaging studies (CT scans, MRI scans, ultrasound reports), liver biopsy or pathology reports, endoscopy reports, a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or transplant evaluation reports.'
 ---
 
 ## About the Doctor

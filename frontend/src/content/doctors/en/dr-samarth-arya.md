@@ -14,20 +14,20 @@ languages:
   - Telugu
 expertise:
   - Robotic Joint Replacement
-  - "Primary, Complex and Revision Hip and Knee Replacement"
+  - 'Primary, Complex and Revision Hip and Knee Replacement'
   - Sports Orthopaedics and Arthroscopy
   - Complex Trauma
   - General Orthopaedics
 pullQuote: "A joint replacement is not the end of an active life — it is the beginning of a pain-free one. My goal is not just to replace a joint, but to restore a person's independence."
 faqs:
-  - question: "What conditions does Dr. Samarth Arya treat?"
+  - question: 'What conditions does Dr. Samarth Arya treat?'
     answer: "Dr. Samarth Arya specialises in robotic joint replacement, primary, complex and revision hip and knee replacement, sports orthopaedics and arthroscopy, complex trauma, and general orthopaedics. He is one of India's few Cambridge-certified surgeons in robotic hip and knee replacement and has performed over 1,000 robotic joint replacement surgeries using the MAKO Stryker robotic system."
-  - question: "How can I book a consultation with Dr. Samarth Arya?"
-    answer: "You can book a consultation with Dr. Samarth Arya through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients."
-  - question: "Why do patients visit Dr. Samarth Arya?"
-    answer: "Patients visit Dr. Samarth Arya, a leading Consultant - Orthopaedics Joint Replacement and Robotic Surgeon at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Samarth Arya is a trusted choice for exceptional medical support in robotic joint replacement, hip and knee arthroplasty, sports orthopaedics, and complex trauma."
-  - question: "What should I bring to my first appointment with Dr. Samarth Arya?"
-    answer: "For your first appointment with Dr. Samarth Arya, please bring any relevant medical records, previous imaging studies (X-rays, MRI scans, CT scans), a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or treatment reports related to their orthopaedic condition."
+  - question: 'How can I book a consultation with Dr. Samarth Arya?'
+    answer: 'You can book a consultation with Dr. Samarth Arya through Khan Meditour by contacting us via WhatsApp or the inquiry form on this page. Our team will coordinate your consultation at Manipal Hospital Old Airport Road, Bengaluru, and assist with travel, accommodation, and all logistical arrangements for international patients.'
+  - question: 'Why do patients visit Dr. Samarth Arya?'
+    answer: 'Patients visit Dr. Samarth Arya, a leading Consultant - Orthopaedics Joint Replacement and Robotic Surgeon at Manipal Hospitals Old Airport Road, Bengaluru, for expert care and advanced treatments. Known for accurate diagnoses and patient-centric care, Dr. Samarth Arya is a trusted choice for exceptional medical support in robotic joint replacement, hip and knee arthroplasty, sports orthopaedics, and complex trauma.'
+  - question: 'What should I bring to my first appointment with Dr. Samarth Arya?'
+    answer: 'For your first appointment with Dr. Samarth Arya, please bring any relevant medical records, previous imaging studies (X-rays, MRI scans, CT scans), a list of current medications, referral letters from your primary physician, and your identification documents. International patients should also carry their passport, visa, and any prior surgical or treatment reports related to their orthopaedic condition.'
 ---
 
 ## About the Doctor

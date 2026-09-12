@@ -1,7 +1,7 @@
 ---
 locale: en
 title: Medical Treatment in India for British Patients — Costs, Visa & Travel Guide
-excerpt: "Travelling from London to India for treatment: medical visa requirements, flight routes, cost comparisons in British pounds, and choosing the right hospital for British families."
+excerpt: 'Travelling from London to India for treatment: medical visa requirements, flight routes, cost comparisons in British pounds, and choosing the right hospital for British families.'
 coverImage: https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop
 author: Khan Meditour Team
 publishedAt: 2026-08-28
@@ -32,13 +32,13 @@ Patients from the United Kingdom increasingly travel to India for medical treatm
 
 For British families weighing private treatment abroad against extended NHS waiting lists, the savings are significant. Indicative package prices (at roughly 0.79 GBP per US dollar):
 
-| Treatment | India (USD) | Approx. GBP | UK | Germany |
-| --- | --- | --- | --- | --- |
-| Cardiac surgery | $4,500–12,000 | £3,555–9,480 | Higher | Higher |
-| Knee/hip replacement | $2,500–8,000 | £1,975–6,320 | Higher | $30,000+ |
-| Cancer treatment | $3,000–25,000 | £2,370–19,750 | Higher | Higher |
-| Spine surgery | $4,000–12,000 | £3,160–9,480 | Higher | $50,000+ |
-| IVF (per cycle) | $3,500–7,000 | £2,765–5,530 | Higher | Higher |
+| Treatment            | India (USD)   | Approx. GBP   | UK     | Germany  |
+| -------------------- | ------------- | ------------- | ------ | -------- |
+| Cardiac surgery      | $4,500–12,000 | £3,555–9,480  | Higher | Higher   |
+| Knee/hip replacement | $2,500–8,000  | £1,975–6,320  | Higher | $30,000+ |
+| Cancer treatment     | $3,000–25,000 | £2,370–19,750 | Higher | Higher   |
+| Spine surgery        | $4,000–12,000 | £3,160–9,480  | Higher | $50,000+ |
+| IVF (per cycle)      | $3,500–7,000  | £2,765–5,530  | Higher | Higher   |
 
 Knee and hip replacement is one of the most common procedures British patients travel for, with package prices often a fraction of UK private surgery costs and no months-long NHS queue.
 

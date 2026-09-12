@@ -2,11 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { ChipCloud } from '../../../../src/design-system/components/molecules/ChipCloud';
 
-const ITEMS = [
-  'Adult Cardiac Surgery',
-  'Coronary Artery Bypass Surgery',
-  'Valve Replacements',
-];
+const ITEMS = ['Adult Cardiac Surgery', 'Coronary Artery Bypass Surgery', 'Valve Replacements'];
 
 describe('ChipCloud', () => {
   it('renders every chip label as a scannable pill', () => {
@@ -32,7 +28,9 @@ describe('ChipCloud', () => {
   });
 
   it('renders nothing when items is undefined (failure case)', () => {
-    const { container } = render(<ChipCloud items={undefined as unknown as string[]} tone="light" />);
+    const { container } = render(
+      <ChipCloud items={undefined as unknown as string[]} tone="light" />
+    );
     expect(container.firstChild).toBeNull();
   });
 });

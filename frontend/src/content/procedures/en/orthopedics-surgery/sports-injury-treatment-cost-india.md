@@ -1,54 +1,54 @@
 ---
 locale: en
-name: "Sports Injury Treatment"
-seoHeadline: "Sports Injury Treatment Cost in India for International Patients"
+name: 'Sports Injury Treatment'
+seoHeadline: 'Sports Injury Treatment Cost in India for International Patients'
 parentTreatmentSlug: orthopedics-surgery
-summary: "Sports Injury Treatment in India costs between $2,000 and $8,000, offering international patients savings of up to 80% compared to Western countries. The treatment covers ligament tears, tendon injuries, cartilage damage, and fractures using conservative management, arthroscopic repair, or regenerative therapies."
-description: "Sports Injury Treatment in India from $2,000–$8,000 with JCI-accredited hospitals in Bangalore. Save up to 80% versus US/UK prices."
-fromPrice: "$2,000"
-toPrice: "$8,000"
-duration: "1-3 weeks"
-hospitalStay: "0-3 days"
-recoveryTime: "4-24 weeks"
+summary: 'Sports Injury Treatment in India costs between $2,000 and $8,000, offering international patients savings of up to 80% compared to Western countries. The treatment covers ligament tears, tendon injuries, cartilage damage, and fractures using conservative management, arthroscopic repair, or regenerative therapies.'
+description: 'Sports Injury Treatment in India from $2,000–$8,000 with JCI-accredited hospitals in Bangalore. Save up to 80% versus US/UK prices.'
+fromPrice: '$2,000'
+toPrice: '$8,000'
+duration: '1-3 weeks'
+hospitalStay: '0-3 days'
+recoveryTime: '4-24 weeks'
 eligibility:
-  - "Acute ligament tear (e.g. ACL, MCL, ankle ligament) confirmed on clinical examination and MRI"
-  - "Tendon injury (e.g. Achilles, rotator cuff, quadriceps) requiring surgical or non-surgical intervention"
-  - "Cartilage damage or meniscal tear causing pain, swelling, or mechanical locking of the joint"
-  - "Sports-related fracture or stress fracture needing fixation or protected rehabilitation"
-  - "Good general health and motivation to comply with a structured rehabilitation programme"
+  - 'Acute ligament tear (e.g. ACL, MCL, ankle ligament) confirmed on clinical examination and MRI'
+  - 'Tendon injury (e.g. Achilles, rotator cuff, quadriceps) requiring surgical or non-surgical intervention'
+  - 'Cartilage damage or meniscal tear causing pain, swelling, or mechanical locking of the joint'
+  - 'Sports-related fracture or stress fracture needing fixation or protected rehabilitation'
+  - 'Good general health and motivation to comply with a structured rehabilitation programme'
 costInclusions:
-  - "Orthopaedic surgeon and anaesthesiologist fees"
-  - "Hospital room charges (private room)"
-  - "Surgery/procedure costs"
-  - "Implant (joint prosthesis where applicable)"
-  - "Pre-operative diagnostics (X-ray, MRI, blood tests)"
-  - "Post-operative care and physiotherapy during hospital stay"
-  - "Airport pickup and drop"
+  - 'Orthopaedic surgeon and anaesthesiologist fees'
+  - 'Hospital room charges (private room)'
+  - 'Surgery/procedure costs'
+  - 'Implant (joint prosthesis where applicable)'
+  - 'Pre-operative diagnostics (X-ray, MRI, blood tests)'
+  - 'Post-operative care and physiotherapy during hospital stay'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Outpatient physiotherapy post-discharge (typically 6-12 weeks)"
-  - "Personal expenses and meals for attendants"
-  - "Unexpected ICU stay beyond package"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Outpatient physiotherapy post-discharge (typically 6-12 weeks)'
+  - 'Personal expenses and meals for attendants'
+  - 'Unexpected ICU stay beyond package'
 recoveryTimeline:
-  - phase: "Hospital stay"
-    duration: "0-3 days"
-    description: "Pain management, wound care, and initial immobilisation in a brace or splint. Early passive range-of-motion exercises begin as appropriate for the injury."
-  - phase: "Bangalore recovery"
-    duration: "1-2 weeks"
-    description: "Supervised physiotherapy focuses on reducing swelling, restoring range of motion, and protecting the repair; follow-up wound review before departure."
-  - phase: "Return home"
-    duration: "Week 2-12"
-    description: "Progressive strengthening, proprioception training, and sport-specific rehabilitation under a structured home programme; gradual return to training."
-  - phase: "Full recovery"
-    duration: "4-24 weeks"
-    description: "Complete return to sport-specific activities; timeline varies from 4-6 weeks for minor injuries to 6-9 months for ACL reconstruction."
+  - phase: 'Hospital stay'
+    duration: '0-3 days'
+    description: 'Pain management, wound care, and initial immobilisation in a brace or splint. Early passive range-of-motion exercises begin as appropriate for the injury.'
+  - phase: 'Bangalore recovery'
+    duration: '1-2 weeks'
+    description: 'Supervised physiotherapy focuses on reducing swelling, restoring range of motion, and protecting the repair; follow-up wound review before departure.'
+  - phase: 'Return home'
+    duration: 'Week 2-12'
+    description: 'Progressive strengthening, proprioception training, and sport-specific rehabilitation under a structured home programme; gradual return to training.'
+  - phase: 'Full recovery'
+    duration: '4-24 weeks'
+    description: 'Complete return to sport-specific activities; timeline varies from 4-6 weeks for minor injuries to 6-9 months for ACL reconstruction.'
 risks:
-  - "Surgical site infection or deep joint infection requiring antibiotics or revision"
-  - "Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis"
-  - "Graft failure or re-tear of repaired ligament or tendon requiring revision surgery"
-  - "Stiffness or arthrofibrosis requiring prolonged physiotherapy or manipulation"
-  - "Incomplete return to pre-injury sport level despite optimal treatment"
+  - 'Surgical site infection or deep joint infection requiring antibiotics or revision'
+  - 'Deep vein thrombosis or pulmonary embolism requiring blood-thinning prophylaxis'
+  - 'Graft failure or re-tear of repaired ligament or tendon requiring revision surgery'
+  - 'Stiffness or arthrofibrosis requiring prolonged physiotherapy or manipulation'
+  - 'Incomplete return to pre-injury sport level despite optimal treatment'
 relatedHospitalSlugs:
   - sparsh-hospital-hennur
   - apollo-hospitals-bannerghatta
@@ -58,16 +58,17 @@ relatedDoctorSlugs:
   - dr-manish-samson
 
 relatedProcedureSlugs:
-  - "arthroscopy-cost-india"
-  - "total-knee-replacement-cost-india"
+  - 'arthroscopy-cost-india'
+  - 'total-knee-replacement-cost-india'
 faqs:
-  - question: "What types of sports injuries are treated in Bangalore?"
-    answer: "Bangalore sports medicine centres treat the full range of sports injuries including ACL and PCL tears, meniscal tears, rotator cuff tears, Achilles tendon ruptures, ankle ligament sprains, tennis elbow, cartilage injuries (OATS, microfracture), stress fractures, and shoulder dislocations. Both surgical and non-surgical treatments are available."
-  - question: "When can I return to sport after treatment?"
-    answer: "Return-to-sport timelines vary by injury. Minor injuries such as ankle sprains or meniscal debridement allow return in 4-6 weeks. ACL reconstruction typically requires 6-9 months with a structured rehabilitation protocol. Your surgeon and physiotherapist will provide a sport-specific timeline at discharge."
-  - question: "Is PRP or stem cell therapy available for sports injuries?"
-    answer: "Yes. Bangalore hospitals offer platelet-rich plasma (PRP) injections and regenerative medicine options for tendon and cartilage injuries. These may be used alone or as adjuncts to surgery. Availability and suitability depend on your specific condition and will be discussed during consultation."
+  - question: 'What types of sports injuries are treated in Bangalore?'
+    answer: 'Bangalore sports medicine centres treat the full range of sports injuries including ACL and PCL tears, meniscal tears, rotator cuff tears, Achilles tendon ruptures, ankle ligament sprains, tennis elbow, cartilage injuries (OATS, microfracture), stress fractures, and shoulder dislocations. Both surgical and non-surgical treatments are available.'
+  - question: 'When can I return to sport after treatment?'
+    answer: 'Return-to-sport timelines vary by injury. Minor injuries such as ankle sprains or meniscal debridement allow return in 4-6 weeks. ACL reconstruction typically requires 6-9 months with a structured rehabilitation protocol. Your surgeon and physiotherapist will provide a sport-specific timeline at discharge.'
+  - question: 'Is PRP or stem cell therapy available for sports injuries?'
+    answer: 'Yes. Bangalore hospitals offer platelet-rich plasma (PRP) injections and regenerative medicine options for tendon and cartilage injuries. These may be used alone or as adjuncts to surgery. Availability and suitability depend on your specific condition and will be discussed during consultation.'
 ---
+
 ## Overview
 
 Whether you are a competitive athlete, a weekend warrior, or simply someone who loves staying active, a sports injury can feel devastating. One moment you are doing what you love, and the next you are facing weeks or months on the sidelines — wondering if you will ever get back to your sport. The frustration, the fear of losing fitness, and the uncertainty about recovery are all completely natural. The good news is that sports medicine has advanced enormously, and Bangalore's sports medicine centres have the expertise and technology to help you return to the activities you love.
@@ -133,15 +134,16 @@ A virtual follow-up is scheduled at 6 weeks and 3 months post-surgery to review 
 Not every sports injury requires surgery. Many ligament sprains, mild tendinopathies and small meniscal tears respond well to structured physiotherapy, bracing and activity modification. PRP injections offer a regenerative option for chronic tendon injuries and may delay or avoid surgery.
 
 If you have advanced joint arthritis rather than isolated soft-tissue injury, joint replacement may be more appropriate than arthroscopy. Your Bangalore surgeon will provide an unbiased recommendation based on your imaging, symptoms and functional goals, ensuring you pursue the treatment most likely to deliver a durable, active outcome.
+
 ## Cost Comparison
 
-| Country | Approximate Cost | vs India |
-|---------|------------------|----------|
-| India (Bangalore) | $2,000 – $8,000 | Baseline |
-| USA | $15,000 – $50,000 | ~6.5x higher |
-| UK | £5,000 – £15,000 | ~2.0x higher |
-| Singapore | $8,000 – $20,000 | ~2.8x higher |
-| Thailand | $4,000 – $12,000 | ~1.6x higher |
+| Country           | Approximate Cost  | vs India     |
+| ----------------- | ----------------- | ------------ |
+| India (Bangalore) | $2,000 – $8,000   | Baseline     |
+| USA               | $15,000 – $50,000 | ~6.5x higher |
+| UK                | £5,000 – £15,000  | ~2.0x higher |
+| Singapore         | $8,000 – $20,000  | ~2.8x higher |
+| Thailand          | $4,000 – $12,000  | ~1.6x higher |
 
 The wide cost range reflects the diversity of sports injury treatments. Conservative management with physiotherapy and injections sits at the lower end ($2,000–$4,000), while arthroscopic procedures such as ACL reconstruction or rotator cuff repair fall in the mid-to-upper range ($5,000–$8,000). The quoted package typically includes surgeon fees, hospital stay, implants and pre-operative imaging. Even at the upper end, Bangalore prices remain a fraction of US costs, with identical arthroscopic equipment and FDA-approved grafts used throughout.
 
@@ -159,4 +161,3 @@ The wide cost range reflects the diversity of sports injury treatments. Conserva
 You will travel to Bangalore on a Medical Visa (e-Medical Visa available for citizens of 160+ countries), typically granted within 48–72 hours. The visa is valid for up to one year with triple entry, allowing follow-up visits if needed. Khan Meditour assists with the visa invitation letter, hospital appointment scheduling and the entire ground logistics chain.
 
 Upon arrival at Kempegowda International Airport, you will be met by a dedicated driver for private transfer to the hospital. For non-surgical treatments, a 3–5 day stay may suffice. For surgical procedures such as ACL reconstruction, we recommend a 7–14 day stay in Bangalore to ensure adequate initial rehabilitation before flying home.
-

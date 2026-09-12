@@ -26,7 +26,10 @@ describe('HospitalCard', () => {
 
   it('renders the Bangla href when locale is bn', () => {
     render(<HospitalCard hospital={HOSPITAL} locale="bn" />);
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/bn/hospitals/apollo-hospitals-bannerghatta');
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'href',
+      '/bn/hospitals/apollo-hospitals-bannerghatta'
+    );
   });
 
   it('renders accreditation badges', () => {

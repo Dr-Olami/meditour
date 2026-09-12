@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { cn } from '../../../lib/utils';
 
-export interface MapEmbedProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface MapEmbedProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Google Maps embed URL (q=...&output=embed format). */
   src: string;
   /** Hospital name shown in the iframe title and alt text. */
@@ -33,8 +32,17 @@ export interface MapEmbedProps
  */
 const MapEmbed = React.forwardRef<HTMLDivElement, MapEmbedProps>(
   (
-    { className, src, name, address, openLabel = 'Open in Google Maps', latitude, longitude, ...props },
-    ref,
+    {
+      className,
+      src,
+      name,
+      address,
+      openLabel = 'Open in Google Maps',
+      latitude,
+      longitude,
+      ...props
+    },
+    ref
   ) => {
     const [loaded, setLoaded] = React.useState(false);
     const [imgError, setImgError] = React.useState(false);
@@ -55,7 +63,10 @@ const MapEmbed = React.forwardRef<HTMLDivElement, MapEmbedProps>(
     return (
       <div
         ref={ref}
-        className={cn('overflow-hidden rounded-card border border-cream-300 shadow-base', className)}
+        className={cn(
+          'overflow-hidden rounded-card border border-cream-300 shadow-base',
+          className
+        )}
         {...props}
       >
         {loaded ? (
@@ -99,7 +110,7 @@ const MapEmbed = React.forwardRef<HTMLDivElement, MapEmbedProps>(
             )}
 
             {/* Darkening overlay so the CTA button is readable on the map image */}
-            <div className="absolute inset-0 bg-ink/20 transition-colors group-hover:bg-ink/30" />
+            <div className="bg-ink/20 group-hover:bg-ink/30 absolute inset-0 transition-colors" />
 
             {/* Pin marker at center */}
             <svg
@@ -128,8 +139,8 @@ const MapEmbed = React.forwardRef<HTMLDivElement, MapEmbedProps>(
           </button>
         )}
         {address && (
-          <p className="border-t border-cream-200 px-5 py-3 text-sm text-ink/60">
-            <span className="font-medium text-ink/80">{address}</span>
+          <p className="text-ink/60 border-t border-cream-200 px-5 py-3 text-sm">
+            <span className="text-ink/80 font-medium">{address}</span>
             <a
               href={directUrl}
               target="_blank"
@@ -142,7 +153,7 @@ const MapEmbed = React.forwardRef<HTMLDivElement, MapEmbedProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 MapEmbed.displayName = 'MapEmbed';

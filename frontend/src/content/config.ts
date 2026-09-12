@@ -10,11 +10,37 @@ const localeSchema = z.enum(LOCALES);
  * 'global' indicates content relevant to all countries.
  */
 const COUNTRY_SLUGS = [
-  'afghanistan', 'australia', 'bahrain', 'bangladesh', 'cameroon',
-  'canada', 'egypt', 'ethiopia', 'ghana', 'iran', 'iraq', 'jordan',
-  'kazakhstan', 'kenya', 'kuwait', 'maldives', 'nepal', 'nigeria',
-  'oman', 'qatar', 'rwanda', 'saudi-arabia', 'sri-lanka', 'sudan',
-  'tanzania', 'uae', 'uganda', 'uk', 'usa', 'yemen', 'zimbabwe',
+  'afghanistan',
+  'australia',
+  'bahrain',
+  'bangladesh',
+  'cameroon',
+  'canada',
+  'egypt',
+  'ethiopia',
+  'ghana',
+  'iran',
+  'iraq',
+  'jordan',
+  'kazakhstan',
+  'kenya',
+  'kuwait',
+  'maldives',
+  'nepal',
+  'nigeria',
+  'oman',
+  'qatar',
+  'rwanda',
+  'saudi-arabia',
+  'sri-lanka',
+  'sudan',
+  'tanzania',
+  'uae',
+  'uganda',
+  'uk',
+  'usa',
+  'yemen',
+  'zimbabwe',
   'global',
 ] as const;
 
@@ -36,12 +62,14 @@ const doctors = defineCollection({
     expertise: z.array(z.string()).optional(),
     /** Patient-care philosophy sentence lifted from the bio; rendered as a pull quote. */
     pullQuote: z.string().optional(),
-    faqs: z.array(
-      z.object({
-        question: z.string().min(1),
-        answer: z.string().min(1),
-      })
-    ).optional(),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string().min(1),
+          answer: z.string().min(1),
+        })
+      )
+      .optional(),
   }),
 });
 
@@ -62,23 +90,27 @@ const hospitals = defineCollection({
      *  dump with categorized sub-sections (International Patient Services,
      *  Clinical Facilities, Patient & Family Comfort) where the top 2-3
      *  hospital-differentiating amenities get a short one-line description. */
-    structuredAmenities: z.array(
-      z.object({
-        /** Category label key — maps to i18n `hospitals.amenityCategories.{key}`. */
-        category: z.string().min(1),
-        /** Highlighted amenities with a short descriptive line explaining
-         *  why this amenity matters at this specific hospital. Rendered as
-         *  feature cards above the chip cloud for the category. */
-        highlights: z.array(
-          z.object({
-            name: z.string().min(1),
-            description: z.string().min(1),
-          })
-        ).optional(),
-        /** Remaining amenities in this category rendered as chips. */
-        items: z.array(z.string().min(1)).optional(),
-      })
-    ).optional(),
+    structuredAmenities: z
+      .array(
+        z.object({
+          /** Category label key — maps to i18n `hospitals.amenityCategories.{key}`. */
+          category: z.string().min(1),
+          /** Highlighted amenities with a short descriptive line explaining
+           *  why this amenity matters at this specific hospital. Rendered as
+           *  feature cards above the chip cloud for the category. */
+          highlights: z
+            .array(
+              z.object({
+                name: z.string().min(1),
+                description: z.string().min(1),
+              })
+            )
+            .optional(),
+          /** Remaining amenities in this category rendered as chips. */
+          items: z.array(z.string().min(1)).optional(),
+        })
+      )
+      .optional(),
     establishedYear: z.number().int().positive().optional(),
     bedCount: z.number().int().positive().optional(),
     specialities: z.array(z.string()).optional(),
@@ -98,34 +130,40 @@ const hospitals = defineCollection({
     /** Verified volume/outcome metrics rendered as a distinct "By the numbers" box.
      *  Each entry has a big value, a short label, and an optional qualifier
      *  (e.g. "as of 2024", "network-wide", "cumulative"). */
-    outcomes: z.array(
-      z.object({
-        value: z.string().min(1),
-        label: z.string().min(1),
-        qualifier: z.string().optional(),
-      })
-    ).optional(),
+    outcomes: z
+      .array(
+        z.object({
+          value: z.string().min(1),
+          label: z.string().min(1),
+          qualifier: z.string().optional(),
+        })
+      )
+      .optional(),
     /** Estimated procedure costs for international patients, shown as a
      *  transparent cost table. Prices are USD ranges and include hospital
      *  stay, surgeon fees, and standard implants where applicable.
      *  Actual costs vary by case complexity and individual patient needs. */
-    procedureCosts: z.array(
-      z.object({
-        procedure: z.string().min(1),
-        fromPrice: z.string().min(1),
-        toPrice: z.string().min(1),
-        /** Optional note (e.g. "excluding implants", "per cycle"). */
-        note: z.string().optional(),
-        /** Link to the full procedure cost page. */
-        href: z.string().optional(),
-      })
-    ).optional(),
-    faqs: z.array(
-      z.object({
-        question: z.string().min(1),
-        answer: z.string().min(1),
-      })
-    ).optional(),
+    procedureCosts: z
+      .array(
+        z.object({
+          procedure: z.string().min(1),
+          fromPrice: z.string().min(1),
+          toPrice: z.string().min(1),
+          /** Optional note (e.g. "excluding implants", "per cycle"). */
+          note: z.string().optional(),
+          /** Link to the full procedure cost page. */
+          href: z.string().optional(),
+        })
+      )
+      .optional(),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string().min(1),
+          answer: z.string().min(1),
+        })
+      )
+      .optional(),
   }),
 });
 
@@ -158,23 +196,27 @@ const treatments = defineCollection({
     /** Items not included in the cost estimate. */
     costExclusions: z.array(z.string()).optional(),
     /** Structured recovery timeline phases for the recovery table. */
-    recoveryTimeline: z.array(
-      z.object({
-        phase: z.string().min(1),
-        duration: z.string().min(1),
-        description: z.string().min(1),
-      })
-    ).optional(),
+    recoveryTimeline: z
+      .array(
+        z.object({
+          phase: z.string().min(1),
+          duration: z.string().min(1),
+          description: z.string().min(1),
+        })
+      )
+      .optional(),
     /** Procedure-specific risks for the safety section. */
     risks: z.array(z.string()).optional(),
     /** Slugs of related treatments for cross-linking. */
     relatedTreatmentSlugs: z.array(z.string()).optional(),
-    faqs: z.array(
-      z.object({
-        question: z.string().min(1),
-        answer: z.string().min(1),
-      })
-    ).optional(),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string().min(1),
+          answer: z.string().min(1),
+        })
+      )
+      .optional(),
   }),
 });
 
@@ -241,25 +283,29 @@ const procedures = defineCollection({
     /** Items not included in the cost estimate. */
     costExclusions: z.array(z.string()).optional(),
     /** Structured recovery timeline phases for the recovery table. */
-    recoveryTimeline: z.array(
-      z.object({
-        phase: z.string().min(1),
-        duration: z.string().min(1),
-        description: z.string().min(1),
-      })
-    ).optional(),
+    recoveryTimeline: z
+      .array(
+        z.object({
+          phase: z.string().min(1),
+          duration: z.string().min(1),
+          description: z.string().min(1),
+        })
+      )
+      .optional(),
     /** Procedure-specific risks for the safety section. */
     risks: z.array(z.string()).optional(),
     relatedDoctorSlugs: z.array(z.string()).optional(),
     relatedHospitalSlugs: z.array(z.string()).optional(),
     /** Slugs of related procedures (within the same category) for cross-linking. */
     relatedProcedureSlugs: z.array(z.string()).optional(),
-    faqs: z.array(
-      z.object({
-        question: z.string().min(1),
-        answer: z.string().min(1),
-      })
-    ).optional(),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string().min(1),
+          answer: z.string().min(1),
+        })
+      )
+      .optional(),
   }),
 });
 

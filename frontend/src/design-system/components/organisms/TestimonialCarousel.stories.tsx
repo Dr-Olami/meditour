@@ -5,14 +5,16 @@ const ITEMS = [
   {
     name: 'B. Shruthi & Arjun',
     location: 'India',
-    quote: 'From my appointments, giving birth and discharge, everything was planned, hassle-free, and smooth.',
+    quote:
+      'From my appointments, giving birth and discharge, everything was planned, hassle-free, and smooth.',
     image: 'https://picsum.photos/seed/shruthi/800/600',
     brandLabel: 'BIRTH',
   },
   {
     name: 'Ashwinipriya and Chandra Mohan',
     location: 'India',
-    quote: 'We had seen great healthcare in Sweden. Khan Meditour gave us that same sense of confidence and comfort.',
+    quote:
+      'We had seen great healthcare in Sweden. Khan Meditour gave us that same sense of confidence and comfort.',
     image: 'https://picsum.photos/seed/ashwini/800/600',
     video: 'https://example.com/video1.mp4',
     videoDuration: '1:01',
@@ -21,21 +23,24 @@ const ITEMS = [
   {
     name: 'Adeeba Irshad',
     location: 'Bangladesh',
-    quote: 'Khan Meditour never felt like a hospital. The team cared for me and my baby with so much warmth.',
+    quote:
+      'Khan Meditour never felt like a hospital. The team cared for me and my baby with so much warmth.',
     image: 'https://picsum.photos/seed/adeeba/800/600',
     brandLabel: 'BIRTH',
   },
   {
     name: 'Rahela Begum',
     location: 'United Kingdom',
-    quote: 'Having visa, accommodation, and hospital arrangements all handled under one roof was truly reassuring.',
+    quote:
+      'Having visa, accommodation, and hospital arrangements all handled under one roof was truly reassuring.',
     image: 'https://picsum.photos/seed/rahela/800/600',
     brandLabel: 'BIRTH',
   },
   {
     name: 'Mohammed Al-Rashid',
     location: 'United Arab Emirates',
-    quote: 'Excellent coordination and faster recovery than I expected. Highly recommended for medical travel.',
+    quote:
+      'Excellent coordination and faster recovery than I expected. Highly recommended for medical travel.',
     image: 'https://picsum.photos/seed/alrashid/800/600',
     brandLabel: 'CARDIAC',
   },

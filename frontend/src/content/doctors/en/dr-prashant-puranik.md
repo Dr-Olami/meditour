@@ -13,13 +13,13 @@ languages:
   - Hindi
   - Marathi
 faqs:
-  - question: "Who is Dr. Prashant Puranik?"
-    answer: "Dr. Prashant Puranik is a highly experienced plastic and reconstructive surgeon with over 18 years of specialised experience, practising at Manipal Hospital Old Airport Road and Kanakapura Road, Bangalore. He serves as Lead Consultant — Reconstructive Oncology & Microsurgery in the Department of Plastic, Reconstructive & Cosmetic Surgery. He holds MBBS, MS, MCh, and DNB in Plastic Surgery, along with fellowships in reconstructive oncology (Tata Memorial Hospital), breast surgery (UK), supermicrosurgery (Tokyo), and advanced microsurgical reconstruction (Taiwan)."
-  - question: "Why do patients choose Dr. Prashant Puranik?"
-    answer: "Patients choose Dr. Puranik for his extensive experience of over 5,000 surgical procedures spanning reconstructive oncology, microsurgical reconstruction, aesthetic and reconstructive breast surgery, facial plastic surgery, and body contouring. His advanced international training in supermicrosurgery (Tokyo) and microsurgical reconstruction (Taiwan) makes him one of the best plastic surgeons in Bangalore for complex reconstructive cases. He is fluent in Kannada, English, Hindi, and Marathi, and is recognised with awards such as the Kilner Essay Award at APSICON."
+  - question: 'Who is Dr. Prashant Puranik?'
+    answer: 'Dr. Prashant Puranik is a highly experienced plastic and reconstructive surgeon with over 18 years of specialised experience, practising at Manipal Hospital Old Airport Road and Kanakapura Road, Bangalore. He serves as Lead Consultant — Reconstructive Oncology & Microsurgery in the Department of Plastic, Reconstructive & Cosmetic Surgery. He holds MBBS, MS, MCh, and DNB in Plastic Surgery, along with fellowships in reconstructive oncology (Tata Memorial Hospital), breast surgery (UK), supermicrosurgery (Tokyo), and advanced microsurgical reconstruction (Taiwan).'
+  - question: 'Why do patients choose Dr. Prashant Puranik?'
+    answer: 'Patients choose Dr. Puranik for his extensive experience of over 5,000 surgical procedures spanning reconstructive oncology, microsurgical reconstruction, aesthetic and reconstructive breast surgery, facial plastic surgery, and body contouring. His advanced international training in supermicrosurgery (Tokyo) and microsurgical reconstruction (Taiwan) makes him one of the best plastic surgeons in Bangalore for complex reconstructive cases. He is fluent in Kannada, English, Hindi, and Marathi, and is recognised with awards such as the Kilner Essay Award at APSICON.'
   - question: "What are Dr. Prashant Puranik's medical qualifications?"
-    answer: "Dr. Puranik holds MBBS, MS in General Surgery, MCh and DNB in Plastic Surgery. He completed a Fellowship in Reconstructive Oncology from Tata Memorial Hospital, Mumbai, an ICRETT Fellowship in Breast Surgery in Chelmsford, UK, a Visiting Fellowship in Supermicrosurgery in Tokyo, Japan, and a Microsurgery Fellowship for Advanced Reconstruction in Taiwan."
-  - question: "How can I book an appointment with Dr. Prashant Puranik?"
+    answer: 'Dr. Puranik holds MBBS, MS in General Surgery, MCh and DNB in Plastic Surgery. He completed a Fellowship in Reconstructive Oncology from Tata Memorial Hospital, Mumbai, an ICRETT Fellowship in Breast Surgery in Chelmsford, UK, a Visiting Fellowship in Supermicrosurgery in Tokyo, Japan, and a Microsurgery Fellowship for Advanced Reconstruction in Taiwan.'
+  - question: 'How can I book an appointment with Dr. Prashant Puranik?'
     answer: "You can book an appointment with Dr. Prashant Puranik at Manipal Hospital Old Airport Road, Bangalore through our platform. Simply use the 'Request appointment' button on his profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

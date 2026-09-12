@@ -142,10 +142,7 @@ export function resolveHospital(
 /**
  * Return all doctors attached to a specific hospital.
  */
-export function getDoctorsAtHospital(
-  hospitalId: string,
-  doctors: DoctorEntry[]
-): DoctorEntry[] {
+export function getDoctorsAtHospital(hospitalId: string, doctors: DoctorEntry[]): DoctorEntry[] {
   return doctors.filter((d) => d.data.hospitalId === hospitalId).sort(byName);
 }
 
@@ -229,7 +226,9 @@ export async function getBlogPosts(locale: string): Promise<BlogEntry[]> {
   const all = await getCollection('blog');
   return all
     .filter(byLocale<BlogEntry>(locale))
-    .sort((a: BlogEntry, b: BlogEntry) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+    .sort(
+      (a: BlogEntry, b: BlogEntry) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+    );
 }
 
 /**
@@ -267,9 +266,7 @@ export async function getTestimonialsByCountry(
 ): Promise<TestimonialEntry[]> {
   const all = await getTestimonials(locale);
   return all.filter(
-    (entry) =>
-      entry.data.targetCountry === country ||
-      entry.data.targetCountry === 'global'
+    (entry) => entry.data.targetCountry === country || entry.data.targetCountry === 'global'
   );
 }
 
@@ -283,10 +280,7 @@ export async function getTestimonialsByCountry(
  * @param country - Country slug (e.g. 'bangladesh', 'uae', 'nigeria').
  * @returns Array of blog entries relevant to the country, sorted newest first.
  */
-export async function getBlogPostsByCountry(
-  locale: string,
-  country: string
-): Promise<BlogEntry[]> {
+export async function getBlogPostsByCountry(locale: string, country: string): Promise<BlogEntry[]> {
   const all = await getBlogPosts(locale);
   return all.filter(
     (entry) =>
@@ -364,9 +358,7 @@ export function getSimilarHospitals(
   const scored = hospitals
     .filter((h) => entrySlug(h) !== currentSlug)
     .map((h) => {
-      const shared = (h.data.specialities ?? []).filter((s) =>
-        currentSpecialities.has(s)
-      ).length;
+      const shared = (h.data.specialities ?? []).filter((s) => currentSpecialities.has(s)).length;
       return { entry: h, shared };
     })
     .sort((a, b) => {
@@ -421,8 +413,8 @@ export function getRelatedArticles(
   // while blog relatedTreatmentSlugs use treatment slugs (e.g. "cardiology").
   // We do a loose match: lowercase the speciality and check if the slug
   // contains it or vice-versa. This catches "cardiology" ↔ "Cardiac Sciences".
-  const specialityKeywords = (data.specialities ?? []).map((s) =>
-    s.toLowerCase().split(/[\s/&]+/)[0]
+  const specialityKeywords = (data.specialities ?? []).map(
+    (s) => s.toLowerCase().split(/[\s/&]+/)[0]
   );
 
   const scored = posts.map((post) => {

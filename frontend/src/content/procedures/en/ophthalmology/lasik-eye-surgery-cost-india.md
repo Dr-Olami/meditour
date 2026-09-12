@@ -1,56 +1,56 @@
 ---
 locale: en
-name: "LASIK Eye Surgery"
-seoHeadline: "LASIK Eye Surgery Cost in India for International Patients"
+name: 'LASIK Eye Surgery'
+seoHeadline: 'LASIK Eye Surgery Cost in India for International Patients'
 parentTreatmentSlug: ophthalmology
-summary: "LASIK eye surgery in India costs between $800 and $2,500 per eye, offering savings of up to 80% compared to Western countries. The procedure reshapes the cornea using an excimer laser to correct myopia, hyperopia, and astigmatism, with advanced options including bladeless femtosecond LASIK and SMILE."
-description: "LASIK eye surgery in India from $800–$2,500 per eye at accredited Bangalore eye centres. Save up to 80% versus US/UK prices with bladeless femtosecond and SMILE options."
-fromPrice: "$800"
-toPrice: "$2,500"
-duration: "10-15 minutes per eye"
-hospitalStay: "Day care (no overnight stay)"
-recoveryTime: "1-7 days"
+summary: 'LASIK eye surgery in India costs between $800 and $2,500 per eye, offering savings of up to 80% compared to Western countries. The procedure reshapes the cornea using an excimer laser to correct myopia, hyperopia, and astigmatism, with advanced options including bladeless femtosecond LASIK and SMILE.'
+description: 'LASIK eye surgery in India from $800–$2,500 per eye at accredited Bangalore eye centres. Save up to 80% versus US/UK prices with bladeless femtosecond and SMILE options.'
+fromPrice: '$800'
+toPrice: '$2,500'
+duration: '10-15 minutes per eye'
+hospitalStay: 'Day care (no overnight stay)'
+recoveryTime: '1-7 days'
 eligibility:
-  - "Stable refractive error for at least 12 months with no significant change in prescription"
-  - "Age 18 years or older with no untreated eye disease, active infection, or severe dry eye"
-  - "Adequate corneal thickness (typically 500 microns or more) confirmed by pachymetry"
-  - "Realistic expectations about visual outcomes and understanding that reading glasses may still be needed after age 40"
-  - "No autoimmune conditions, uncontrolled diabetes, or pregnancy at the time of surgery"
+  - 'Stable refractive error for at least 12 months with no significant change in prescription'
+  - 'Age 18 years or older with no untreated eye disease, active infection, or severe dry eye'
+  - 'Adequate corneal thickness (typically 500 microns or more) confirmed by pachymetry'
+  - 'Realistic expectations about visual outcomes and understanding that reading glasses may still be needed after age 40'
+  - 'No autoimmune conditions, uncontrolled diabetes, or pregnancy at the time of surgery'
 costInclusions:
-  - "Ophthalmologist consultation and surgical fees"
-  - "Excimer laser treatment with wavefront-guided or topography-guided customisation"
-  - "Femtosecond laser flap creation (where applicable) or SMILE lenticule extraction"
-  - "Operating room and day-care facility charges"
-  - "Pre-operative diagnostics (corneal topography, pachymetry, wavefront analysis, dry eye assessment)"
-  - "Post-operative eye drops and medications during stay"
-  - "First follow-up review before departure"
-  - "Airport pickup and drop"
+  - 'Ophthalmologist consultation and surgical fees'
+  - 'Excimer laser treatment with wavefront-guided or topography-guided customisation'
+  - 'Femtosecond laser flap creation (where applicable) or SMILE lenticule extraction'
+  - 'Operating room and day-care facility charges'
+  - 'Pre-operative diagnostics (corneal topography, pachymetry, wavefront analysis, dry eye assessment)'
+  - 'Post-operative eye drops and medications during stay'
+  - 'First follow-up review before departure'
+  - 'Airport pickup and drop'
 costExclusions:
-  - "International flights"
-  - "Accommodation outside hospital stay"
-  - "Premium upgrades such as topography-guided custom LASIK or SMILE beyond the base package"
-  - "Treatment of coexisting eye conditions (cataract, glaucoma, retinal disease)"
-  - "Long-term glasses or contact lens prescriptions post-surgery"
-  - "Enhancement or retreatment procedures required in the future"
+  - 'International flights'
+  - 'Accommodation outside hospital stay'
+  - 'Premium upgrades such as topography-guided custom LASIK or SMILE beyond the base package'
+  - 'Treatment of coexisting eye conditions (cataract, glaucoma, retinal disease)'
+  - 'Long-term glasses or contact lens prescriptions post-surgery'
+  - 'Enhancement or retreatment procedures required in the future'
 recoveryTimeline:
-  - phase: "Same-day discharge"
-    duration: "A few hours"
-    description: "You leave the eye centre the same day with protective goggles. Vision is typically hazy initially and begins to clear within the first few hours."
-  - phase: "Bangalore recovery"
-    duration: "3-7 days"
-    description: "Follow-up review at 1 day to check flap position, corneal healing, and visual acuity. Eye drops are continued and activity restrictions apply."
-  - phase: "Return home"
-    duration: "Week 1-4"
-    description: "Vision stabilises progressively; eye drops are tapered over 1-4 weeks. Avoid rubbing the eyes, swimming, and eye makeup."
-  - phase: "Full recovery"
-    duration: "1-3 months"
-    description: "Stable vision achieved; final visual outcome confirmed. Corneal healing completes and dry eye symptoms, if present, typically resolve."
+  - phase: 'Same-day discharge'
+    duration: 'A few hours'
+    description: 'You leave the eye centre the same day with protective goggles. Vision is typically hazy initially and begins to clear within the first few hours.'
+  - phase: 'Bangalore recovery'
+    duration: '3-7 days'
+    description: 'Follow-up review at 1 day to check flap position, corneal healing, and visual acuity. Eye drops are continued and activity restrictions apply.'
+  - phase: 'Return home'
+    duration: 'Week 1-4'
+    description: 'Vision stabilises progressively; eye drops are tapered over 1-4 weeks. Avoid rubbing the eyes, swimming, and eye makeup.'
+  - phase: 'Full recovery'
+    duration: '1-3 months'
+    description: 'Stable vision achieved; final visual outcome confirmed. Corneal healing completes and dry eye symptoms, if present, typically resolve.'
 risks:
-  - "Dry eye syndrome, which is common in the first few months and usually resolves with lubricating drops, though it can persist in some patients"
-  - "Visual disturbances such as glare, halos, or starbursts around lights at night, particularly in the early post-operative period"
-  - "Flap-related complications including displacement, folds, or inflammation (diffuse lamellar keratitis), more relevant with microkeratome or femtosecond LASIK than SMILE"
-  - "Under-correction or over-correction requiring an enhancement procedure, typically performed after 3-6 months of stable vision"
-  - "Corneal ectasia — a rare but serious weakening and bulging of the cornea, more likely in patients with thin or abnormal corneas"
+  - 'Dry eye syndrome, which is common in the first few months and usually resolves with lubricating drops, though it can persist in some patients'
+  - 'Visual disturbances such as glare, halos, or starbursts around lights at night, particularly in the early post-operative period'
+  - 'Flap-related complications including displacement, folds, or inflammation (diffuse lamellar keratitis), more relevant with microkeratome or femtosecond LASIK than SMILE'
+  - 'Under-correction or over-correction requiring an enhancement procedure, typically performed after 3-6 months of stable vision'
+  - 'Corneal ectasia — a rare but serious weakening and bulging of the cornea, more likely in patients with thin or abnormal corneas'
 relatedHospitalSlugs:
   - apollo-hospitals-bannerghatta
   - manipal-hospital-old-airport-road
@@ -59,14 +59,14 @@ relatedDoctorSlugs:
   - dr-sharon-d-souza
 
 relatedProcedureSlugs:
-  - "cataract-surgery-cost-india"
+  - 'cataract-surgery-cost-india'
 faqs:
-  - question: "How much does LASIK eye surgery cost in India?"
-    answer: "LASIK eye surgery in India costs between $800 and $2,500 per eye. The lower end covers standard bladeless femtosecond LASIK, while the higher end includes advanced options such as topography-guided custom LASIK or SMILE (Small Incision Lenticule Extraction). Even at the premium end, the cost is a fraction of US or UK prices."
-  - question: "Am I a suitable candidate for LASIK?"
-    answer: "Suitable candidates are aged 18 or older with a stable glasses prescription for at least 12 months, adequate corneal thickness (typically 500 microns or more), and no active eye disease, severe dry eye, or uncontrolled systemic condition. A comprehensive pre-operative assessment including corneal topography and pachymetry determines your eligibility."
-  - question: "How soon after LASIK will I see clearly?"
-    answer: "Most patients notice significantly improved vision within 24 hours, with functional vision by the next day. Vision continues to stabilise over the first week, and the final outcome is typically achieved within 1 to 3 months. Following the eye drop regimen and attending follow-up appointments is essential for optimal healing."
+  - question: 'How much does LASIK eye surgery cost in India?'
+    answer: 'LASIK eye surgery in India costs between $800 and $2,500 per eye. The lower end covers standard bladeless femtosecond LASIK, while the higher end includes advanced options such as topography-guided custom LASIK or SMILE (Small Incision Lenticule Extraction). Even at the premium end, the cost is a fraction of US or UK prices.'
+  - question: 'Am I a suitable candidate for LASIK?'
+    answer: 'Suitable candidates are aged 18 or older with a stable glasses prescription for at least 12 months, adequate corneal thickness (typically 500 microns or more), and no active eye disease, severe dry eye, or uncontrolled systemic condition. A comprehensive pre-operative assessment including corneal topography and pachymetry determines your eligibility.'
+  - question: 'How soon after LASIK will I see clearly?'
+    answer: 'Most patients notice significantly improved vision within 24 hours, with functional vision by the next day. Vision continues to stabilise over the first week, and the final outcome is typically achieved within 1 to 3 months. Following the eye drop regimen and attending follow-up appointments is essential for optimal healing.'
 ---
 
 ## Overview
@@ -139,13 +139,13 @@ For patients over 45 who are developing presbyopia, refractive lens exchange —
 
 ## Cost Comparison
 
-| Country | Approximate Cost (per eye) | vs India |
-|---------|---------------------------|----------|
-| India (Bangalore) | $800 – $2,500 | Baseline |
-| USA | $2,000 – $4,500 | ~2.5x higher |
-| UK | £1,500 – £3,500 | ~2.5x higher |
-| Singapore | $2,500 – $5,000 | ~2.4x higher |
-| Thailand | $1,500 – $3,500 | ~1.8x higher |
+| Country           | Approximate Cost (per eye) | vs India     |
+| ----------------- | -------------------------- | ------------ |
+| India (Bangalore) | $800 – $2,500              | Baseline     |
+| USA               | $2,000 – $4,500            | ~2.5x higher |
+| UK                | £1,500 – £3,500            | ~2.5x higher |
+| Singapore         | $2,500 – $5,000            | ~2.4x higher |
+| Thailand          | $1,500 – $3,500            | ~1.8x higher |
 
 The price range within India reflects the type of LASIK chosen, the laser platform used, and the specific hospital and surgeon. Standard bladeless femtosecond LASIK sits at the lower end, while topography-guided custom LASIK and SMILE are at the higher end. Even with the most advanced technology, your total cost in Bangalore will typically be less than half of the US price for a comparable procedure, with identical laser platforms and surgical techniques.
 

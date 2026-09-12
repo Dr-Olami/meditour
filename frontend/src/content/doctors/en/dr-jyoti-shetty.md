@@ -13,13 +13,13 @@ languages:
   - Hindi
   - Tulu
 faqs:
-  - question: "Who is Dr. Jyoti Shetty?"
-    answer: "Dr. Jyoti Shetty is a renowned ophthalmologist and the HOD & Consultant of Ophthalmology at Manipal Hospital Old Airport Road, Bangalore, specialising in cataract, refractive surgery, and glaucoma. She holds MBBS and MS in Ophthalmology, with fellowship training in anterior segment, cornea, glaucoma, and refractive surgery. She has international training in LASIK laser systems (Hong Kong), Phakic ICL (Munich, Germany), and paediatric glaucoma (Great Ormond Street Hospital, London)."
-  - question: "Why do patients choose Dr. Jyoti Shetty?"
+  - question: 'Who is Dr. Jyoti Shetty?'
+    answer: 'Dr. Jyoti Shetty is a renowned ophthalmologist and the HOD & Consultant of Ophthalmology at Manipal Hospital Old Airport Road, Bangalore, specialising in cataract, refractive surgery, and glaucoma. She holds MBBS and MS in Ophthalmology, with fellowship training in anterior segment, cornea, glaucoma, and refractive surgery. She has international training in LASIK laser systems (Hong Kong), Phakic ICL (Munich, Germany), and paediatric glaucoma (Great Ormond Street Hospital, London).'
+  - question: 'Why do patients choose Dr. Jyoti Shetty?'
     answer: "Patients choose Dr. Shetty for her broad expertise across cataract surgery with all types of foldable IOL implantations, refractive surgeries (PRK, microkeratome LASIK, femto LASIK, collagen cross-linking, phakic ICL), advanced glaucoma surgeries (trabeculotomy, trabeculectomy, glaucoma drainage devices), paediatric cataracts and squint surgeries, and complicated traumatic corneal repairs. She is a member of the American Academy of Ophthalmology, European Society of Cataract and Refractive Surgery, and has been featured as an 'Accomplished Ophthalmologist from Southern India' in the Ophthalmology Times. She is fluent in English, Kannada, Hindi, and Tulu."
   - question: "What are Dr. Jyoti Shetty's medical qualifications?"
-    answer: "Dr. Shetty holds MBBS and MS in Ophthalmology (topped the MS examination, University of Pune). She completed a Fellowship in Anterior Segment and Cornea, a Fellowship in Glaucoma, and in-house training in Refractive Surgery at Bangalore West Superspeciality Eye Hospital. She also received international training in LASIK laser systems (Hong Kong, 2003), Phakic ICL (Munich, Germany, 2003), and Paediatric Glaucoma (Great Ormond Street Hospital, London, 2008)."
-  - question: "How can I book an appointment with Dr. Jyoti Shetty?"
+    answer: 'Dr. Shetty holds MBBS and MS in Ophthalmology (topped the MS examination, University of Pune). She completed a Fellowship in Anterior Segment and Cornea, a Fellowship in Glaucoma, and in-house training in Refractive Surgery at Bangalore West Superspeciality Eye Hospital. She also received international training in LASIK laser systems (Hong Kong, 2003), Phakic ICL (Munich, Germany, 2003), and Paediatric Glaucoma (Great Ormond Street Hospital, London, 2008).'
+  - question: 'How can I book an appointment with Dr. Jyoti Shetty?'
     answer: "You can book an appointment with Dr. Jyoti Shetty at Manipal Hospital Old Airport Road, Bangalore through our platform. Simply use the 'Request appointment' button on her profile page, and our team will assist you with scheduling, travel arrangements, and any other requirements for your visit."
 ---
 

@@ -111,14 +111,9 @@ export function generateCountryFaqs(country: CountryMetadata): FAQItem[] {
  * @param manual - Manual FAQ items from `country.manualFaqs`.
  * @returns Merged FAQ array.
  */
-export function mergeCountryFaqs(
-  auto: FAQItem[],
-  manual?: CountryFAQItem[]
-): FAQItem[] {
+export function mergeCountryFaqs(auto: FAQItem[], manual?: CountryFAQItem[]): FAQItem[] {
   if (!manual?.length) return auto;
   const manualQuestions = new Set(manual.map((m) => m.question.toLowerCase()));
-  const filteredAuto = auto.filter(
-    (a) => !manualQuestions.has(a.question.toLowerCase())
-  );
+  const filteredAuto = auto.filter((a) => !manualQuestions.has(a.question.toLowerCase()));
   return [...filteredAuto, ...manual];
 }
