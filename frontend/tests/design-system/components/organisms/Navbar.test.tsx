@@ -8,11 +8,12 @@ const LINKS = [
   { label: 'Hospitals', href: '/hospitals' },
 ];
 
-const CTA = { label: 'Contact', href: '#contact' };
+const WHATSAPP_HREF = 'https://wa.me/8801611892986';
+const PHONE_NUMBER = '919606624861';
 
 describe('Navbar', () => {
   it('renders the brand and all nav links', () => {
-    render(<Navbar brand="Khan Meditour" links={LINKS} cta={CTA} />);
+    render(<Navbar brand="Khan Meditour" links={LINKS} />);
 
     expect(screen.getByLabelText('Khan Meditour')).toBeInTheDocument();
     expect(screen.getByText('Home')).toBeInTheDocument();
@@ -20,32 +21,48 @@ describe('Navbar', () => {
     expect(screen.getByText('Hospitals')).toBeInTheDocument();
   });
 
-  it('renders the CTA button', () => {
-    render(<Navbar brand="Khan Meditour" links={LINKS} cta={CTA} />);
+  it('renders the WhatsApp CTA button when whatsappHref is provided', () => {
+    render(
+      <Navbar
+        brand="Khan Meditour"
+        links={LINKS}
+        whatsappHref={WHATSAPP_HREF}
+        whatsappLabel="WhatsApp"
+      />
+    );
 
-    expect(screen.getByText('Contact')).toBeInTheDocument();
+    const waLink = screen.getByText('WhatsApp');
+    expect(waLink).toBeInTheDocument();
+    expect(waLink.closest('a')).toHaveAttribute('href', WHATSAPP_HREF);
   });
 
-  it('renders without a CTA when none is provided', () => {
+  it('renders the Call button when phoneNumber is provided', () => {
+    render(
+      <Navbar brand="Khan Meditour" links={LINKS} phoneNumber={PHONE_NUMBER} callLabel="Call" />
+    );
+
+    const callLink = screen.getByText('Call');
+    expect(callLink).toBeInTheDocument();
+    expect(callLink.closest('a')).toHaveAttribute('href', `tel:+${PHONE_NUMBER}`);
+  });
+
+  it('does not render the WhatsApp CTA when whatsappHref is omitted', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} />);
 
-    expect(screen.queryByText('Contact')).not.toBeInTheDocument();
+    expect(screen.queryByText('WhatsApp')).not.toBeInTheDocument();
   });
 
-  it('renders the language switcher when locale and currentPath are provided', () => {
+  it('renders the language switcher button when locale and currentPath are provided', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
-    // Reason: compact mode renders short labels (EN, বাং) with aria-labels
-    // for accessibility.
+    // Reason: compact mode renders the current locale's short label (EN) on the button.
     expect(screen.getByText('EN')).toBeInTheDocument();
-    expect(screen.getByText('বাং')).toBeInTheDocument();
   });
 
   it('does not render the language switcher when locale is omitted', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} currentPath="/" />);
 
     expect(screen.queryByText('EN')).not.toBeInTheDocument();
-    expect(screen.queryByText('বাং')).not.toBeInTheDocument();
   });
 
   it('does not render the language switcher when currentPath is omitted', () => {
@@ -54,27 +71,36 @@ describe('Navbar', () => {
     expect(screen.queryByText('EN')).not.toBeInTheDocument();
   });
 
-  it('marks the current locale as active in the switcher', () => {
+  it('marks the current locale as active in the switcher dropdown', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} locale="bn" currentPath="/bn" />);
 
-    const bnLink = screen.getByText('বাং').closest('a');
-    expect(bnLink).toHaveAttribute('aria-current', 'true');
+    // Reason: the switcher is a dropdown — open it to reveal the locale options.
+    const switcherButton = screen.getByLabelText('Language: বাংলা');
+    fireEvent.click(switcherButton);
+
+    // Reason: the active locale is marked with aria-selected on the <li> option.
+    // Use বাংলা (full label) which only appears in the dropdown, not the button.
+    const bnOption = screen.getByText('বাংলা').closest('li');
+    expect(bnOption).toHaveAttribute('aria-selected', 'true');
   });
 
-  it('always shows the switcher — no need to open the mobile menu', () => {
+  it('always shows the switcher button — no need to open the mobile menu', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
-    // Reason: the switcher is always visible in the navbar, not hidden inside
-    // the hamburger dropdown. It should be present before any click.
+    // Reason: the switcher button is always visible in the navbar, not hidden
+    // inside the hamburger dropdown.
     expect(screen.getByText('EN')).toBeInTheDocument();
-    expect(screen.getByText('বাং')).toBeInTheDocument();
   });
 
-  it('switcher links have accessible aria-labels with full language names', () => {
+  it('switcher dropdown options show full language names when opened', () => {
     render(<Navbar brand="Khan Meditour" links={LINKS} locale="en" currentPath="/" />);
 
-    expect(screen.getByLabelText('English')).toBeInTheDocument();
-    expect(screen.getByLabelText('বাংলা')).toBeInTheDocument();
+    // Reason: the full language names are only rendered when the dropdown is open.
+    const switcherButton = screen.getByLabelText('Language: English');
+    fireEvent.click(switcherButton);
+
+    expect(screen.getByText('English')).toBeInTheDocument();
+    expect(screen.getByText('বাংলা')).toBeInTheDocument();
   });
 
   it('uses localeFallbacks for untranslated pages instead of a 404 path', () => {
@@ -90,9 +116,15 @@ describe('Navbar', () => {
 
     // Reason: country pages are English-only for MVP — the Bengali toggle must
     // fall back to the Bengali homepage, not /bn/countries/bangladesh (a 404).
-    expect(screen.getByLabelText('বাংলা')).toHaveAttribute('href', '/bn');
+    const switcherButton = screen.getByLabelText('Language: English');
+    fireEvent.click(switcherButton);
+
+    expect(screen.getByText('বাংলা').closest('a')).toHaveAttribute('href', '/bn');
     // The English toggle still preserves the current path.
-    expect(screen.getByLabelText('English')).toHaveAttribute('href', '/countries/bangladesh');
+    expect(screen.getByText('English').closest('a')).toHaveAttribute(
+      'href',
+      '/countries/bangladesh'
+    );
   });
 
   it('preserves the path for translated locales when no fallback is given', () => {
@@ -105,8 +137,17 @@ describe('Navbar', () => {
       />
     );
 
-    expect(screen.getByLabelText('বাংলা')).toHaveAttribute('href', '/bn/treatments/cardiology');
-    expect(screen.getByLabelText('English')).toHaveAttribute('href', '/treatments/cardiology');
+    const switcherButton = screen.getByLabelText('Language: English');
+    fireEvent.click(switcherButton);
+
+    expect(screen.getByText('বাংলা').closest('a')).toHaveAttribute(
+      'href',
+      '/bn/treatments/cardiology'
+    );
+    expect(screen.getByText('English').closest('a')).toHaveAttribute(
+      'href',
+      '/treatments/cardiology'
+    );
   });
 
   it('toggles the mobile menu open and closed', () => {

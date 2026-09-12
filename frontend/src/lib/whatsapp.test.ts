@@ -22,20 +22,24 @@ describe('buildWhatsAppLink', () => {
 });
 
 describe('getWhatsAppNumber', () => {
-  it('returns an empty string when env var is missing', () => {
-    expect(getWhatsAppNumber()).toBe('');
+  it('returns the fallback number when env var is missing', () => {
+    expect(getWhatsAppNumber()).toBe('8801611892986');
   });
 });
 
 describe('getInquiryLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getInquiryLink()).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getInquiryLink();
+    expect(link).toContain('https://wa.me/8801611892986');
+    expect(link).toContain('medical%20tourism%20services');
   });
 });
 
 describe('getDoctorInquiryLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getDoctorInquiryLink('Dr. Sen')).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getDoctorInquiryLink('Dr. Sen');
+    expect(link).toContain('https://wa.me/8801611892986');
+    expect(link).toContain('Dr.%20Sen');
   });
 
   it('includes doctor name when number is configured', () => {
@@ -47,8 +51,10 @@ describe('getDoctorInquiryLink', () => {
 });
 
 describe('getTreatmentInquiryLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getTreatmentInquiryLink('Cardiac Surgery')).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getTreatmentInquiryLink('Cardiac Surgery');
+    expect(link).toContain('https://wa.me/8801611892986');
+    expect(link).toContain('Cardiac%20Surgery');
   });
 
   it('includes treatment name when number is configured', () => {
@@ -60,8 +66,11 @@ describe('getTreatmentInquiryLink', () => {
 });
 
 describe('getEstimateInquiryLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getEstimateInquiryLink('Cardiac Surgery', 4500)).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getEstimateInquiryLink('Cardiac Surgery', 4500);
+    expect(link).toContain('https://wa.me/8801611892986');
+    expect(link).toContain('Cardiac%20Surgery');
+    expect(link).toContain('%244%2C500');
   });
 
   it('includes treatment name and estimated total when number is configured', () => {
@@ -74,8 +83,10 @@ describe('getEstimateInquiryLink', () => {
 });
 
 describe('getSecondOpinionLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getSecondOpinionLink()).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getSecondOpinionLink();
+    expect(link).toContain('https://wa.me/8801611892986?text=');
+    expect(link).toContain('second%20opinion');
   });
 
   it('includes the second-opinion message when number is configured', () => {
@@ -125,8 +136,12 @@ describe('getContextualWhatsAppLink', () => {
     vi.unstubAllEnvs();
   });
 
-  it('returns empty string when no number is configured, regardless of context', () => {
-    expect(getContextualWhatsAppLink({ type: 'doctor', doctorName: 'Dr. Sen' })).toBe('');
-    expect(getContextualWhatsAppLink({ type: 'second-opinion' })).toBe('');
+  it('returns a valid link using the fallback number when no env var is configured, regardless of context', () => {
+    expect(getContextualWhatsAppLink({ type: 'doctor', doctorName: 'Dr. Sen' })).toContain(
+      'https://wa.me/8801611892986'
+    );
+    expect(getContextualWhatsAppLink({ type: 'second-opinion' })).toContain(
+      'https://wa.me/8801611892986'
+    );
   });
 });

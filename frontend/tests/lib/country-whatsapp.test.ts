@@ -2,8 +2,10 @@ import { describe, it, expect, vi } from 'vitest';
 import { getCountryInquiryLink } from '../../src/lib/whatsapp';
 
 describe('getCountryInquiryLink', () => {
-  it('returns empty string when no number is configured', () => {
-    expect(getCountryInquiryLink('Bangladesh', 'Bangladeshi')).toBe('');
+  it('returns a valid wa.me link using the fallback number when no env var is configured', () => {
+    const link = getCountryInquiryLink('Bangladesh', 'Bangladeshi');
+    expect(link).toContain('https://wa.me/8801611892986');
+    expect(link).toContain('Bangladesh');
   });
 
   it('includes country name in the pre-filled message', () => {
