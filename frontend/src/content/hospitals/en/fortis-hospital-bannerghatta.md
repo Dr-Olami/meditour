@@ -9,9 +9,9 @@ accreditations:
   - NABH
   - NABL
   - MTQUA Certified
-image: /images/hospitals/Fortis-Hospital-Bannerghatta-Road-Bangalore.png
+image: /images/hospitals/Fortis-Hospital-Bannerghatta-Road-Bangalore.webp
 gallery:
-  - /images/hospitals/Fortis-Hospital-Bannerghatta-Road-Bangalore.png
+  - /images/hospitals/Fortis-Hospital-Bannerghatta-Road-Bangalore.webp
 structuredAmenities:
   - category: international
     highlights:

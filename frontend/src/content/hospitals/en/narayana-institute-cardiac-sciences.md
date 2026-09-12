@@ -7,9 +7,9 @@ description: Narayana Institute of Cardiac Sciences (NICS) at Bommasandra is one
 accreditations:
   - JCI Accredited
   - NABH
-image: /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.png
+image: /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.webp
 gallery:
-  - /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.png
+  - /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.webp
 structuredAmenities:
   - category: international
     highlights:

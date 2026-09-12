@@ -24,7 +24,7 @@ relatedHospitalSlugs:
 duration: '২-৮ ঘন্টা'
 hospitalStay: '৩-১০ দিন'
 recoveryTime: '২-১২ সপ্তাহ'
-image: /images/treatments-cards/neuro-spine-surgery.jpg
+image: /images/treatments-cards/neuro-spine-surgery.webp
 faqs:
   - question: "ব্যাঙ্গালোরে ন্যূনতম ইনভেসিভ স্পাইন সার্জারি কি উপলব্ধ?"
     answer: "হ্যাঁ, আমাদের অংশীদার হাসপাতালগুলি মাইক্রোডিস্কেকটমি, এন্ডোস্কোপিক স্পাইন সার্জারি এবং পারকিউটেনিয়াস পেডিকল স্ক্রু ফিক্সেশন সহ ন্যূনতম ইনভেসিভ স্পাইন সার্জারি (MISS) অফার করে। এই কৌশলগুলি ছোট ইনসিশন, কম পেশি ক্ষতি, কম রক্তক্ষরণ এবং ঐতিহ্যবাহী সার্জারির তুলনায় দ্রুত পুনরুদ্ধার নিশ্চিত করে।"

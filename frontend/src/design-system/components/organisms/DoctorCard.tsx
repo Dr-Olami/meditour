@@ -56,6 +56,9 @@ const DoctorCard = React.forwardRef<HTMLElement, DoctorCardProps>(
               src={doctor.avatar}
               alt={imageAlt ?? doctor.name}
               loading="lazy"
+              decoding="async"
+              width={200}
+              height={208}
               className="absolute inset-0 h-full w-full object-cover object-top"
             />
           ) : (

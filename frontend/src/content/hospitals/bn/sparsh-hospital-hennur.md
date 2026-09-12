@@ -6,9 +6,9 @@ country: ভারত
 description: হেন্নুরে অবস্থিত স্পার্শ হাসপাতাল একটি ৩০০-শয্যাবিশিষ্ট কোয়ার্টারনারি কেয়ার মাল্টি-স্পেশালিটি কেন্দ্র, যা অর্থোপেডিক্স, কার্ডিয়াক সায়েন্স, অনকোলজি, নিউরোসায়েন্স এবং ট্রমা কেয়ারে বিশেষজ্ঞ। এটি ইএনটি, প্রসূতি এবং সাধারণ চিকিৎসায় রোগী-কেন্দ্রিক সেবা প্রদান করে।
 accreditations:
   - NABH
-image: /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.png
+image: /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.webp
 gallery:
-  - /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.png
+  - /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.webp
 structuredAmenities:
   - category: international
     highlights:

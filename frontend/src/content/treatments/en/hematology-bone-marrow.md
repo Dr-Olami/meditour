@@ -24,7 +24,7 @@ relatedHospitalSlugs:
 duration: '3-6 hours'
 hospitalStay: '4-6 weeks'
 recoveryTime: '3-12 months'
-image: /images/treatments-cards/hematology-bone-marrow.jpg
+image: /images/treatments-cards/hematology-bone-marrow.webp
 faqs:
   - question: "What is the success rate of bone marrow transplants at your partner hospitals in India?"
     answer: "Our partner hospitals perform over 300 bone marrow transplants annually with success rates of 70-90% for autologous transplants and 60-80% for allogeneic transplants, depending on disease type, stage and donor match. Outcomes are benchmarked against international registries (CIBMTR) and continuously audited for quality."

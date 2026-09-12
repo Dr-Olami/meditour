@@ -21,7 +21,7 @@ relatedHospitalSlugs:
 duration: '1-3 hours'
 hospitalStay: '2-4 days'
 recoveryTime: '2-4 weeks'
-image: /images/treatments-cards/bariatric-weight-loss.jpg
+image: /images/treatments-cards/bariatric-weight-loss.webp
 faqs:
   - question: "Am I eligible for bariatric surgery?"
     answer: "You may be eligible for bariatric surgery if your BMI is 35 or higher with obesity-related conditions such as type 2 diabetes, hypertension, or sleep apnoea, or if your BMI is 40 or higher without comorbidities. Eligibility is determined through a comprehensive evaluation including medical history, nutritional assessment, and psychological screening by the bariatric team."

@@ -24,7 +24,7 @@ relatedHospitalSlugs:
 duration: '2-8 hours'
 hospitalStay: '3-10 days'
 recoveryTime: '2-12 weeks'
-image: /images/treatments-cards/neuro-spine-surgery.jpg
+image: /images/treatments-cards/neuro-spine-surgery.webp
 faqs:
   - question: "Is minimally invasive spine surgery available in Bangalore?"
     answer: "Yes, our partner hospitals in Bangalore offer minimally invasive spine surgery (MISS) including microdiscectomy, endoscopic spine surgery, and percutaneous pedicle screw fixation. These techniques result in smaller incisions, less muscle damage, reduced blood loss, and faster recovery compared to traditional open spine surgery."

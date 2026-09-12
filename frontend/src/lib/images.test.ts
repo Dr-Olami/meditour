@@ -10,7 +10,7 @@ describe('resolvePublicImage', () => {
 
   it('falls back to jpg when no webp exists', () => {
     expect(resolvePublicImage('images/treatments/bariatric-weight-loss')).toBe(
-      '/images/treatments/bariatric-weight-loss.jpg'
+      '/images/treatments/bariatric-weight-loss.webp'
     );
   });
 

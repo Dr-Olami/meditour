@@ -5,7 +5,7 @@ specialty: Surgical Oncology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (General Surgery) | MCh (Surgical Oncology)
 experienceYears: 19
-avatar: /images/doctors/dr-anil-kamath.jpg
+avatar: /images/doctors/dr-anil-kamath.webp
 bio: Senior Consultant — Surgical Oncology, Apollo Hospitals, Bangalore
 languages:
   - English

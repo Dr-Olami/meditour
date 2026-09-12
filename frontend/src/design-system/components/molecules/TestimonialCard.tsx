@@ -43,6 +43,10 @@ const TestimonialCard = React.forwardRef<HTMLDivElement, TestimonialCardProps>(
               <img
                 src={item.image || FALLBACK_IMAGE}
                 alt={item.name}
+                loading="lazy"
+                decoding="async"
+                width={400}
+                height={300}
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-ink/10">
@@ -68,6 +72,10 @@ const TestimonialCard = React.forwardRef<HTMLDivElement, TestimonialCardProps>(
             <img
               src={item.image || FALLBACK_IMAGE}
               alt={item.name}
+              loading="lazy"
+              decoding="async"
+              width={400}
+              height={300}
               className="h-full w-full object-cover"
             />
           )}

@@ -5,7 +5,7 @@ specialty: Cardiac Sciences — Cardiology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MD (General Medicine) | DNB (Cardiology)
 experienceYears: 21
-avatar: /images/doctors/dr-girish-b-navasundi.jpg
+avatar: /images/doctors/dr-girish-b-navasundi.webp
 bio: Senior Consultant — Cardiology, Apollo Hospitals, Bangalore
 languages:
   - English

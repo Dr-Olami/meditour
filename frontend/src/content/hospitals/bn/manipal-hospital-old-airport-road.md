@@ -8,9 +8,9 @@ accreditations:
   - JCI স্বীকৃত
   - NABH
   - NABL
-image: /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.png
+image: /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.webp
 gallery:
-  - /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.png
+  - /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.webp
 structuredAmenities:
   - category: international
     highlights:

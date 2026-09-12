@@ -22,7 +22,7 @@ relatedHospitalSlugs:
 duration: '2-6 hours per session'
 hospitalStay: '1-3 days'
 recoveryTime: '2-12 weeks'
-image: /images/treatments/stem-cell-treatment.jpg
+image: /images/treatments/stem-cell-treatment.webp
 faqs:
   - question: "Are stem cell treatments safe and regulated?"
     answer: "Stem cell treatments at our partner hospitals are performed in GMP-certified cell processing laboratories with stringent quality control. The programmes follow international guidelines and regulatory compliance. Autologous stem cells (from the patient's own body) are used to minimise rejection risk. All treatments include comprehensive safety monitoring and long-term follow-up."

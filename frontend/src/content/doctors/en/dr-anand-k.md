@@ -5,7 +5,7 @@ specialty: Plastic Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MS | DNB | FRCSEd (UK) | FICS
 experienceYears: 30
-avatar: /images/doctors/dr-anand-k.jpeg
+avatar: /images/doctors/dr-anand-k.webp
 bio: Chief Consultant — Cosmetic, Plastic & Reconstructive Surgery, SPARSH Hospitals, Bangalore
 languages:
   - English

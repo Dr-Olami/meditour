@@ -62,40 +62,16 @@ interface Props {
   featuredHospitals: Hospital[];
   testimonials: TestimonialItem[];
   countries: CountryMetadata[];
+  faqs: { question: string; answer: string }[];
 }
 
-const { locale, treatments, treatmentProcedures = [], featuredDoctors, featuredHospitals, testimonials, countries } = Astro.props;
+const { locale, treatments, treatmentProcedures = [], featuredDoctors, featuredHospitals, testimonials, countries, faqs } = Astro.props;
 const t = getTranslations(locale);
 const prefix = locale === 'bn' ? '/bn' : '';
 
 const navLinks = getNavLinks(locale);
 
-const faq = [
-  {
-    question: locale === 'bn'
-      ? 'আমি কীভাবে খান মেডিট্যুর দিয়ে চিকিৎসা যাত্রা শুরু করব?'
-      : 'How do I start my medical journey with Khan Meditour?',
-    answer: locale === 'bn'
-      ? 'পরামর্শ ফর্ম পূরণ করুন অথবা WhatsApp-এ আমাদের বার্তা পাঠান। আমরা আপনার কেস রিভিউ করে ২৪ ঘন্টার মধ্যে সেরা হাসপাতাল ও ডাক্তার সুপারিশ করি।'
-      : 'Fill out the consultation form or message us on WhatsApp. We review your case and recommend the best hospital and doctor within 24 hours.',
-  },
-  {
-    question: locale === 'bn'
-      ? 'আমার মেডিকেল ডেটা গোপনীয় রাখা হয়?'
-      : 'Is my medical data kept private?',
-    answer: locale === 'bn'
-      ? 'হ্যাঁ। আমরা কঠোর ডেটা প্রোটেকশন অনুসরণ করি এবং কেবল আপনার অনুমোদিত হাসপাতাল ও বিশেষজ্ঞদের সাথে রিপোর্ট শেয়ার করি।'
-      : 'Yes. We follow strict data protection practices and only share reports with the hospitals and specialists you approve.',
-  },
-  {
-    question: locale === 'bn'
-      ? 'ভিসা ও থাকার ব্যবস্থায় আপনারা সাহায্য করেন?'
-      : 'Can you help with visas and accommodation?',
-    answer: locale === 'bn'
-      ? 'অবশ্যই। আমাদের প্যাকেজে ভিসা আমন্ত্রণ পত্র, এয়ারপোর্ট পিকআপ, হোটেল অপশন এবং স্থানীয় অনুবাদক অন্তর্ভুক্ত।'
-      : 'Absolutely. Our packages include visa invitation letters, airport pickup, hotel options and a local interpreter.',
-  },
-];
+const faq = faqs;
 
 const stats = [
   { value: '3,500+', label: t.stats.patients },
@@ -142,7 +118,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   topCard={{
     title: t.serviceCards.top.title,
     subtitle: t.serviceCards.top.subtitle,
-    image: '/images/treatments/cardiology.jpg',
+    image: '/images/treatments/cardiology.webp',
     exploreHref: `${prefix}/second-opinion`,
     contactHref: '#contact',
   }}
@@ -150,14 +126,14 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     {
       title: t.serviceCards.bottom[0].title,
       subtitle: t.serviceCards.bottom[0].subtitle,
-      image: '/images/treatments/infertility-treatment.jpg',
+      image: '/images/treatments/infertility-treatment.webp',
       exploreHref: `${prefix}/treatments/infertility-treatment`,
       contactHref: '#contact',
     },
     {
       title: t.serviceCards.bottom[1].title,
       subtitle: t.serviceCards.bottom[1].subtitle,
-      image: '/images/treatments/organ-treatment.jpg',
+      image: '/images/treatments/organ-treatment.webp',
       exploreHref: `${prefix}/treatments/organ-treatment`,
       contactHref: '#contact',
     },
@@ -165,7 +141,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   bottomWideCard={{
     title: t.serviceCards.bottomWide.title,
     subtitle: t.serviceCards.bottomWide.subtitle,
-    image: '/images/treatments/cancer-treatment.jpg',
+    image: '/images/treatments/cancer-treatment.webp',
     exploreHref: `${prefix}/treatments/cancer-treatment`,
     contactHref: '#contact',
   }}
@@ -193,16 +169,19 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     <div class="mt-12 overflow-hidden rounded-card shadow-base" data-anim="fade-in-up">
       <div class="relative h-[480px] md:h-[640px] lg:h-[760px]">
         <img
-          src="/images/patterns/doctor-showcase.jpg"
+          src="/images/patterns/doctor-showcase.webp"
           alt={t.doctorShowcase.headlineLine1 + ' ' + t.doctorShowcase.headlineLine2}
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
+          decoding="async"
+          width={1280}
+          height={760}
         />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
         {/* Bento CTA buttons — high contrast over imagery */}
         <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-4 p-6 md:p-10">
           <LeadModalTrigger
-            client:load
+            client:visible
             label={t.doctorShowcase.bookNow}
             modalTitle={t.leadModal.title}
             modalSubtitle={t.leadModal.subtitle}
@@ -356,7 +335,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
   <TestimonialCarousel
     title={t.testimonials.title}
     items={testimonials}
-    client:load
+    client:visible
   />
 </section>
 
@@ -398,7 +377,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'khan@meditour.com'
     </div>
     <div class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8" data-anim="fade-in-up">
       <h3 class="mb-6 font-display text-xl font-semibold text-ink">{t.cta.formTitle}</h3>
-      <LeadForm treatments={treatmentOptions} source={LEAD_SOURCE.GENERAL_CONTACT} client:load />
+      <LeadForm treatments={treatmentOptions} source={LEAD_SOURCE.GENERAL_CONTACT} client:visible />
     </div>
   </div>
 </section>

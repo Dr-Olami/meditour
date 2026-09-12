@@ -5,7 +5,7 @@ specialty: ENT
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MS (ENT) | DNB (ORL) | DLO | RCS (Eng) | FRCS ED | FRCS (ORL-HNS) | PhD | Clinical Fellowship in Otology/Neurotology
 experienceYears: 30
-avatar: /images/doctors/dr-sunil-narayan-dutt.png
+avatar: /images/doctors/dr-sunil-narayan-dutt.webp
 bio: Senior Consultant & Cochlear Implant Surgeon, Apollo Hospitals, Bangalore
 languages:
   - English

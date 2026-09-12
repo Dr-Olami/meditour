@@ -40,6 +40,9 @@ const TreatmentCard = React.forwardRef<HTMLDivElement, TreatmentCardProps>(
               src={treatment.image}
               alt={treatment.name}
               loading="lazy"
+              decoding="async"
+              width={320}
+              height={200}
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {treatment.tags && treatment.tags.length > 0 && (

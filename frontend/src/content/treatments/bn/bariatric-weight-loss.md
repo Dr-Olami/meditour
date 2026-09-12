@@ -21,7 +21,7 @@ relatedHospitalSlugs:
 duration: '১-৩ ঘন্টা'
 hospitalStay: '২-৪ দিন'
 recoveryTime: '২-৪ সপ্তাহ'
-image: /images/treatments-cards/bariatric-weight-loss.jpg
+image: /images/treatments-cards/bariatric-weight-loss.webp
 faqs:
   - question: "আমি কি ব্যারিয়াট্রিক সার্জারির জন্য যোগ্য?"
     answer: "আপনার BMI ৩৫ বা তার বেশি এবং টাইপ ২ ডায়াবেটিস, উচ্চ রক্তচাপ বা স্লিপ অ্যাপনিয়ার মতো সম্পর্কিত অবস্থা থাকলে, অথবা আপনার BMI ৪০ বা তার বেশি হলে আপনি ব্যারিয়াট্রিক সার্জারির জন্য যোগ্য হতে পারেন। যোগ্যতা মেডিকেল ইতিহাস, পুষ্টিগত মূল্যায়ন এবং মনোবৈজ্ঞানিক স্ক্রিনিং সহ সমন্বিত মূল্যায়নের মাধ্যমে নির্ধারিত হয়।"

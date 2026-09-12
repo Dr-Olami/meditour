@@ -24,7 +24,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '1-7 days'
 recoveryTime: 'Varies by condition'
-image: /images/treatments-cards/paediatric-neurology.jpg
+image: /images/treatments-cards/paediatric-neurology.webp
 faqs:
   - question: "What is the cost of paediatric neurology treatment in Bangalore?"
     answer: "Paediatric neurology treatment costs in Bangalore range from $2,000 to $15,000 depending on the condition, diagnostic requirements, and treatment plan. This includes consultations, EEG, imaging studies, and ongoing management. Compared to Western countries where costs can exceed $30,000-$80,000, Bangalore offers 60-80% savings with access to internationally trained paediatric neurologists and advanced diagnostic facilities."

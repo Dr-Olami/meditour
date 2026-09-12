@@ -8,7 +8,7 @@ import { cn } from '../../../lib/utils';
  * `light` — cream page sections; ink numerals on a cream card.
  * `dark`  — ink hero bands; cream numerals on an ink band.
  */
-const statBandTone = cva('grid gap-8 sm:grid-cols-3', {
+const statBandTone = cva('grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-6', {
   variants: {
     tone: {
       light: '',
@@ -90,7 +90,7 @@ const StatBand = React.forwardRef<HTMLDivElement, StatBandProps>(
             className={cn(statCellTone({ tone }))}
           >
             <dt className={cn(statLabelTone({ tone }))}>{stat.label}</dt>
-            <dd className="mt-1 font-display text-3xl font-bold md:text-4xl">
+            <dd className="mt-1 font-display text-2xl font-bold md:text-3xl lg:text-4xl">
               {stat.value}
               {stat.suffix && (
                 <span className="text-violet-500">{stat.suffix}</span>

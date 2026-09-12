@@ -10,9 +10,9 @@ accreditations:
   - NABL
   - AAHRPP
   - ISO 9001:2015
-image: /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.png
+image: /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.webp
 gallery:
-  - /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.png
+  - /images/hospitals/Manipal-Hospital-Old-Airport-Road-Bangalore-India.webp
 structuredAmenities:
   - category: international
     highlights:

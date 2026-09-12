@@ -34,10 +34,12 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
   const handleMouseEnter = () => {
     const video = videoRef.current;
     if (video) {
-      // Reason: CSS group-hover can blur the video but cannot trigger
-      // video.play() — that requires a JS call. Restart from the beginning
-      // so each hover shows the full clip.
+      // Reason: with preload="none" the video may not have loaded yet.
+      // Calling load() ensures it starts fetching, then play() kicks in
+      // once enough data is buffered. Restart from the beginning so each
+      // hover shows the full clip.
       video.currentTime = 0;
+      video.load();
       void video.play().catch(() => {
         // Reason: play() can reject if the browser blocks autoplay or the
         // video isn't ready; silently ignore — the blur effect still works.
@@ -69,7 +71,7 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           aria-hidden="true"
         />
       ) : (
@@ -79,6 +81,8 @@ function WhyUsCard({ item }: { item: WhyUsItem }) {
           alt={item.title}
           loading="lazy"
           decoding="async"
+          width={400}
+          height={460}
         />
       )}
 

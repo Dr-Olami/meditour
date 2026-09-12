@@ -5,7 +5,7 @@ specialty: Haematology & Bone Marrow Transplantation
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MD | DM (Clinical Haematology) | Fellowship in Leukemia/BMT
 experienceYears: 20
-avatar: /images/doctors/dr-chandrakala-s.jpg
+avatar: /images/doctors/dr-chandrakala-s.webp
 bio: Senior Consultant - Hematology
 languages:
   - English

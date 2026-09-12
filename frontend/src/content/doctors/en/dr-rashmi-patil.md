@@ -5,7 +5,7 @@ specialty: Obstetrics & Gynecology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (OBG) | DNB | MRCOG (UK) | EFOG-EBCOG (Europe) | FACOG | FICOG | FKCOG | FMAS
 experienceYears: 15
-avatar: /images/doctors/dr-rashmi-patil.png
+avatar: /images/doctors/dr-rashmi-patil.webp
 bio: Senior Consultant Obstetrician, Gynaecologist, Laparoscopic Surgeon & Fertility Specialist, Apollo Hospitals Bannerghatta, Bangalore
 languages:
   - Kannada

@@ -5,7 +5,7 @@ specialty: Haematology & Bone Marrow Transplantation
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MD (Internal Medicine) | DM (Clinical Haematology) | MRCP (UK) | Fellowship in BMT & Leukemia (Vancouver)
 experienceYears: 20
-avatar: /images/doctors/dr-mahesh-rajashekaraiah.jpeg
+avatar: /images/doctors/dr-mahesh-rajashekaraiah.webp
 bio: Head & Chief Consultant Haematologist & Bone Marrow Transplant Physician
 languages:
   - English

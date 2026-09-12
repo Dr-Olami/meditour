@@ -59,7 +59,11 @@ const FAQAccordion = React.forwardRef<HTMLDivElement, FAQAccordionProps>(
             className="group"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-text-primary hover:bg-bg-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-border-focus">
-              {item.question}
+              {/* Reason: wrap question in an h3 so search engines and AI systems
+                  can identify FAQ questions as semantic headings, not just
+                  interactive labels. This improves FAQ rich-result
+                  eligibility and AI Overview extraction. */}
+              <h3 className="text-base font-semibold text-text-primary">{item.question}</h3>
               <Icon
                 name="chevron-down"
                 className="transition-transform group-open:rotate-180"

@@ -26,7 +26,7 @@ relatedHospitalSlugs:
 duration: '১-৬ ঘন্টা'
 hospitalStay: '২-১০ দিন'
 recoveryTime: '১-৬ সপ্তাহ'
-image: /images/treatments-cards/gastroenterology-surgery.jpg
+image: /images/treatments-cards/gastroenterology-surgery.webp
 faqs:
   - question: "ব্যাঙ্গালোরে GI সার্জারির খরচ কত?"
     answer: "বেঙ্গালুরুতে গ্যাস্ট্রোএন্টারোলজি এবং GI সার্জারির খরচ $২,৫০০ থেকে $১৮,০০০ পর্যন্ত, প্রক্রিয়া, জটিলতা এবং হাসপাতালে থাকার প্রয়োজনীয়তার উপর নির্ভর করে। পশ্চিমা দেশে যেখানে GI সার্জারির খরচ $১৫,০০০-$৫০,০০০ হতে পারে, সেখানে বেঙ্গালুরু আন্তর্জাতিকভাবে প্রশিক্ষিত সার্জিক্যাল গ্যাস্ট্রোএন্টারোলজিস্ট এবং উন্নত রোবোটিক সার্জিক্যাল সিস্টেমের সাথে ৬০-৮০% সাশ্রয় অফার করে।"

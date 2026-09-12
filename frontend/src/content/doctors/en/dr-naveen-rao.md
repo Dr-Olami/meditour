@@ -5,7 +5,7 @@ specialty: Plastic Surgery
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS | MCh | Fellow in Cosmetic Surgery
 experienceYears: 19
-avatar: /images/doctors/dr-naveen-rao.jpg
+avatar: /images/doctors/dr-naveen-rao.webp
 bio: Consultant — Cosmetic & Plastic Surgery, Apollo Hospitals Bannerghatta Road, Bangalore
 languages:
   - English

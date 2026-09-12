@@ -23,7 +23,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'
-image: /images/treatments-cards/ear-nose-throat.jpg
+image: /images/treatments-cards/ear-nose-throat.webp
 faqs:
   - question: "Is cochlear implant available for children?"
     answer: "Yes, cochlear implantation is available for children with severe-to-profound sensorineural hearing loss. The programme includes paediatric evaluation, surgery with intra-operative neural response telemetry, and post-activation audiology and speech therapy. Early implantation (typically between 1-3 years of age) provides the best outcomes for speech and language development."

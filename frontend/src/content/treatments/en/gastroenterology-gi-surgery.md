@@ -26,7 +26,7 @@ relatedHospitalSlugs:
 duration: '1-6 hours'
 hospitalStay: '2-10 days'
 recoveryTime: '1-6 weeks'
-image: /images/treatments-cards/gastroenterology-surgery.jpg
+image: /images/treatments-cards/gastroenterology-surgery.webp
 faqs:
   - question: "What is the cost of GI surgery in Bangalore?"
     answer: "Gastroenterology and GI surgery costs in Bangalore range from $2,500 to $18,000 depending on the procedure, complexity, and hospital stay required. Compared to Western countries where GI surgery can cost $15,000-$50,000, Bangalore offers 60-80% savings with access to internationally trained surgical gastroenterologists and advanced robotic surgical systems."

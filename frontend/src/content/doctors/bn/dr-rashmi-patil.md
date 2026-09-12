@@ -5,7 +5,7 @@ specialty: Obstetrics & Gynecology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (OBG) | DNB | MRCOG (UK) | EFOG-EBCOG (Europe) | FACOG | FICOG | FKCOG | FMAS
 experienceYears: 15
-avatar: /images/doctors/dr-rashmi-patil.png
+avatar: /images/doctors/dr-rashmi-patil.webp
 bio: সিনিয়র কনসালটেন্ট প্রসূতি বিশেষজ্ঞ, স্ত্রীরোগ বিশেষজ্ঞ, ল্যাপারোস্কোপিক সার্জন ও ফার্টিলিটি বিশেষজ্ঞ, অ্যাপোলো হাসপাতাল ব্যানারঘাট্টা, বেঙ্গালুরু
 languages:
   - Kannada

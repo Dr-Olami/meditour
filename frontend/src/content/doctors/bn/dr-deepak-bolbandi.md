@@ -5,7 +5,7 @@ specialty: Urology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (General Surgery) | DNB (Urology/Genito-Urinary Surgery) | MCh (Urology)
 experienceYears: 30
-avatar: /images/doctors/dr-deepak-bolbandi.png
+avatar: /images/doctors/dr-deepak-bolbandi.webp
 bio: Senior Consultant — Urologist & Kidney Transplant Surgeon, Apollo Hospitals, Bangalore
 languages:
   - English

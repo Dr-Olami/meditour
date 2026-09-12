@@ -5,7 +5,7 @@ specialty: Neurology
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MD (General Medicine) | DM (Neurology)
 experienceYears: 23
-avatar: /images/doctors/dr-nithin-kumar-n.jpg
+avatar: /images/doctors/dr-nithin-kumar-n.webp
 bio: Senior Consultant - Neurologist
 languages:
   - English

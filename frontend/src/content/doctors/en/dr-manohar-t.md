@@ -5,7 +5,7 @@ specialty: Urology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS | DNB (Surgery) | DNB (Urology) | Fellowship in Endourology & Laparoscopy | Robotic Surgery Fellow
 experienceYears: 24
-avatar: /images/doctors/dr-manohar-t.jpg
+avatar: /images/doctors/dr-manohar-t.webp
 bio: Senior Consultant — Urology, Uro-oncology & Transplant Surgery, Laser, Laparoscopic & Robotic Surgeon, Apollo Hospitals, Bangalore
 languages:
   - English

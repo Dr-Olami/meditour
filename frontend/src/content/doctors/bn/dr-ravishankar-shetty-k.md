@@ -5,7 +5,7 @@ specialty: Cardio Thoracic & Transplant Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MS (General Surgery) | MCh (Cardiothoracic Surgery) | MBA
 experienceYears: 21
-avatar: /images/doctors/dr-ravishankar-shetty-k.jpg
+avatar: /images/doctors/dr-ravishankar-shetty-k.webp
 bio: Lead Cardio Thoracic & Transplant Surgeon
 languages:
   - Kannada

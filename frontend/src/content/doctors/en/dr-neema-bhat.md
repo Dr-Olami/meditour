@@ -5,7 +5,7 @@ specialty: Haemato Oncology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MD (USA) | FAAP (USA) | Board Certified in Hematology/Pediatric Oncology (American Board)
 experienceYears: 10
-avatar: /images/doctors/dr-neema-bhat.png
+avatar: /images/doctors/dr-neema-bhat.webp
 bio: Consultant Hematologist & BMT Physician, Apollo Hospitals, Bangalore
 languages:
   - English

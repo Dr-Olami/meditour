@@ -5,7 +5,7 @@ specialty: Gynecological Oncology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS & MS (ObsGyn) | MRCOG (UK) | Fellowship in Gynae-Oncology (Singapore) | Fellowship in Gynae-Oncology & Robotic Surgery (Hong Kong) | Diploma in Gynaecological Operative Endoscopy (France)
 experienceYears: 20
-avatar: /images/doctors/dr-rani-akhil-bhat.png
+avatar: /images/doctors/dr-rani-akhil-bhat.webp
 bio: Lead Surgeon — Robotic & Laparoscopic Gynecological Oncology, Apollo Hospitals, Bangalore
 languages:
   - English

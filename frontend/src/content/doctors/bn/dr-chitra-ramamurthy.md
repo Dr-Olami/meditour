@@ -5,7 +5,7 @@ specialty: Obstetrics & Gynecology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MD (Obs & Gyn)
 experienceYears: 40
-avatar: /images/doctors/dr-chitra-ramamurthy.jpg
+avatar: /images/doctors/dr-chitra-ramamurthy.webp
 bio: সিনিয়র কনসালটেন্ট ও বিভাগীয় প্রধান — প্রসূতি ও স্ত্রীরোগ, অ্যাপোলো হাসপাতাল, বেঙ্গালুরু
 languages:
   - English

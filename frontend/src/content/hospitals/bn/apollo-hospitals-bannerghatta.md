@@ -7,9 +7,9 @@ description: ব্যানারঘাট্টা রোডে অবস্�
 accreditations:
   - JCI স্বীকৃত
   - NABH
-image: /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.png
+image: /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.webp
 gallery:
-  - /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.png
+  - /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.webp
 structuredAmenities:
   - category: international
     highlights:

@@ -28,7 +28,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '1-7 days'
 recoveryTime: 'Varies by condition'
-image: /images/treatments-cards/neurology.jpg
+image: /images/treatments-cards/neurology.webp
 faqs:
   - question: "What is the cost of neurology treatment in Bangalore?"
     answer: "Neurology treatment costs in Bangalore range from $1,500 to $12,000 depending on the condition, diagnostic requirements, and treatment plan. This includes consultations, EEG, imaging studies, and ongoing management. Compared to Western countries where costs can exceed $20,000-$60,000, Bangalore offers 60-80% savings with access to internationally trained neurologists and advanced diagnostic facilities."

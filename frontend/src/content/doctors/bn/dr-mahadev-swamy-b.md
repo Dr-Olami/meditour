@@ -5,7 +5,7 @@ specialty: Interventional Cardiology
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MD | DM (JIPMER) | FACC | FSCAI | FICC
 experienceYears: 13
-avatar: /images/doctors/dr-mahadev-swamy-b.jpg
+avatar: /images/doctors/dr-mahadev-swamy-b.webp
 bio: Senior Consultant - Interventional Cardiology
 languages:
   - English

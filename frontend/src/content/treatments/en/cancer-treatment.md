@@ -33,7 +33,7 @@ relatedHospitalSlugs:
 duration: 'Varies by stage'
 hospitalStay: '1-14 days'
 recoveryTime: '2-12 weeks'
-image: /images/treatments-cards/cancer-treatment.jpg
+image: /images/treatments-cards/cancer-treatment.webp
 faqs:
   - question: "Is immunotherapy and targeted therapy available for cancer treatment?"
     answer: "Yes, our partner hospitals offer the full range of immunotherapy and targeted therapy including checkpoint inhibitors (PD-1/PD-L1), tyrosine kinase inhibitors, monoclonal antibodies, and CAR-T cell therapy for eligible haematological cancers. Treatment decisions are made by the multidisciplinary tumour board based on molecular profiling and genetic testing results."

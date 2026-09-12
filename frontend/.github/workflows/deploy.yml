@@ -1,35 +1,34 @@
-name: Deploy to Vercel
+name: Deploy
 
 on:
   push:
-    branches: [main, master]
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Deploy to production server via SSH
+        uses: appleboy/ssh-action@v1
         with:
-          node-version: 18
-          cache: npm
-          cache-dependency-path: frontend/package-lock.json
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel@latest
-
-      - name: Pull Vercel environment
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+          host: ${{ secrets.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            set -e
+            echo "=== Deploying khanmeditour.com ==="
+            cd /home/Meditour/src/meditour/frontend
+            echo "1. Pulling latest code..."
+            git pull origin main
+            echo "2. Installing dependencies..."
+            npm install
+            echo "3. Building site..."
+            npm run build
+            echo "4. Deploying to public_html..."
+            rm -rf /home/Meditour/web/khanmeditour.com/public_html/*
+            cp -r .vercel/output/static/* /home/Meditour/web/khanmeditour.com/public_html/
+            chown -R Meditour:www-data /home/Meditour/web/khanmeditour.com/public_html/
+            echo "5. Verifying..."
+            PAGE_SIZE=$(curl -s https://khanmeditour.com | wc -c)
+            echo "   Home page size: $PAGE_SIZE bytes"
+            echo "=== Deploy complete ==="

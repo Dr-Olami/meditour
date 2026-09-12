@@ -5,7 +5,7 @@ specialty: Plastic Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | DLO (ENT) | DNB (General Surgery) | DNB (Plastic Surgery)
 experienceYears: 25
-avatar: /images/doctors/dr-gururaj-hosahallia.jpg
+avatar: /images/doctors/dr-gururaj-hosahallia.webp
 bio: কনসালটেন্ট — প্লাস্টিক সার্জারি, SPARSH হাসপাতাল, বেঙ্গালুরু
 languages:
   - English

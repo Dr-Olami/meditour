@@ -41,6 +41,10 @@ const HospitalCard = React.forwardRef<HTMLAnchorElement, HospitalCardProps>(
             <img
               src={hospital.image}
               alt={hospital.name}
+              loading="lazy"
+              decoding="async"
+              width={400}
+              height={160}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (

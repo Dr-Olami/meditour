@@ -5,7 +5,7 @@ specialty: Plastic Surgery
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS | MCh | Fellow in Cosmetic Surgery
 experienceYears: 19
-avatar: /images/doctors/dr-naveen-rao.jpg
+avatar: /images/doctors/dr-naveen-rao.webp
 bio: কনসালটেন্ট — কসমেটিক ও প্লাস্টিক সার্জারি, অ্যাপোলো হাসপাতাল ব্যানারঘাট্টা রোড, বেঙ্গালুরু
 languages:
   - English

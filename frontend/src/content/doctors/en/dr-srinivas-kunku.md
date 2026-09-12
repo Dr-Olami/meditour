@@ -5,7 +5,7 @@ specialty: ENT & Endoscopic Skull Base Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MS - ENT
 experienceYears: 15
-avatar: /images/doctors/dr-srinivas-kunku.jpg
+avatar: /images/doctors/dr-srinivas-kunku.webp
 bio: Senior Consultant - ENT
 languages:
   - English

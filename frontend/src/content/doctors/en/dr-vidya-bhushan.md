@@ -5,7 +5,7 @@ specialty: Head & Neck Oncology & Surgical Oncology
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MS (ENT, Head & Neck Surgery) | DNB | FHNS | UICC Fellow
 experienceYears: 9
-avatar: /images/doctors/dr-vidya-bhushan.jpg
+avatar: /images/doctors/dr-vidya-bhushan.webp
 bio: Senior Consultant - Head & Neck Oncology
 languages:
   - English

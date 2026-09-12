@@ -28,7 +28,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '2-7 days'
 recoveryTime: '2-6 weeks'
-image: /images/treatments-cards/cardiac-care.jpg
+image: /images/treatments-cards/cardiac-care.webp
 faqs:
   - question: "What is the success rate of cardiac surgery at your partner hospitals?"
     answer: "Our partner hospitals, including Narayana Institute of Cardiac Sciences, perform over 15,000 cardiac surgeries annually with success rates exceeding 98% for routine procedures like CABG and angioplasty. Outcomes are benchmarked against international standards and continuously audited for quality."

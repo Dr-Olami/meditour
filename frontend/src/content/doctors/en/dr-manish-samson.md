@@ -5,7 +5,7 @@ specialty: Orthopedics
 hospitalId: apollo-hospitals-bannerghatta
 qualification: D. Orth. | MS (Ortho) | MCh Orth (UK) | Fellow in Adult Joint Reconstruction (Sg)
 experienceYears: 26
-avatar: /images/doctors/dr-manish-samson.png
+avatar: /images/doctors/dr-manish-samson.webp
 bio: Senior Consultant — Orthopaedics & Joint Replacement Surgeon, Apollo Hospitals, Bangalore
 languages:
   - English

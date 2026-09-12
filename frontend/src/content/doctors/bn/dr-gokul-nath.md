@@ -5,7 +5,7 @@ specialty: Nephrology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MD (General Medicine) | DM (Nephrology) | DNB (Nephrology) | FISN | FRCP (London)
 experienceYears: 46
-avatar: /images/doctors/dr-gokul-nath.jpg
+avatar: /images/doctors/dr-gokul-nath.webp
 bio: Senior Consultant — Nephrology, Apollo Hospitals, Bangalore
 languages:
   - English

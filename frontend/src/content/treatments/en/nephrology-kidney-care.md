@@ -27,7 +27,7 @@ relatedHospitalSlugs:
 duration: 'Varies by condition'
 hospitalStay: '1-7 days (non-transplant) | 2-4 weeks (transplant)'
 recoveryTime: '2-12 weeks'
-image: /images/treatments/nephrology-kidney-care.jpg
+image: /images/treatments/nephrology-kidney-care.webp
 faqs:
   - question: "What is the cost of a kidney transplant in Bangalore?"
     answer: "Kidney transplant costs in Bangalore range from $15,000 to $25,000 depending on the complexity, donor type, and hospital. This includes pre-transplant evaluation, surgery, hospital stay, and initial post-transplant care. Compared to Western countries where kidney transplants cost $100,000-$300,000, Bangalore offers 60-80% savings with equivalent success rates exceeding 95% at one year for living-donor transplants."

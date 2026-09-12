@@ -22,7 +22,7 @@ relatedHospitalSlugs:
 duration: '15 min - 2 hours'
 hospitalStay: 'Day-care'
 recoveryTime: '1-4 weeks'
-image: /images/treatments-cards/ophthalmology.jpg
+image: /images/treatments-cards/ophthalmology.webp
 faqs:
   - question: "Is bladeless cataract surgery available?"
     answer: "Yes, femtosecond laser-assisted cataract surgery (FLACS) is available at our partner hospitals. This bladeless technique uses a laser to perform key steps of the procedure including corneal incisions, capsulotomy, and lens fragmentation, resulting in greater precision, reduced ultrasound energy, and faster visual recovery compared to conventional phacoemulsification."

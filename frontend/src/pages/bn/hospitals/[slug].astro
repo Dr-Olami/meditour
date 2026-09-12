@@ -147,7 +147,7 @@ const stats: StatItem[] = [
 const accreditationLogos: Record<string, string> = {
   'JCI Accredited': '/images/accreditations/JCI.webp',
   NABH: '/images/accreditations/NABH.webp',
-  NABL: '/images/accreditations/NABL.png',
+  NABL: '/images/accreditations/NABL.webp',
 };
 
 // Similar hospitals — peers with overlapping specialities for cross-linking.
@@ -187,9 +187,14 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
       />
     )}
     {/* Gradient scrim — darker at top (breadcrumb zone) and bottom (title
-        zone), lighter in the middle so the photo still reads. Flat overlays
-        leave breadcrumbs unreadable on bright images. */}
-    <div class="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/40 to-ink/70" aria-hidden="true" />
+        zone), with a diagonal rgba overlay so the hospital name and
+        accreditation badges stay readable on bright photos. Matches the
+        CountriesServeSection overlay pattern for consistency. */}
+    <div
+      class="absolute inset-0"
+      style="background:linear-gradient(180deg, rgba(14,36,56,0.88) 0%, rgba(14,36,56,0.62) 45%, rgba(14,36,56,0.85) 100%)"
+      aria-hidden="true"
+    />
     <div class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />
 
     <div class="container relative pb-16 pt-28 md:pb-20 md:pt-36">
@@ -208,7 +213,7 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
         <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-100 md:text-6xl" data-anim="headline-reveal">
           {hospital.name}
         </h1>
-        <p class="mt-4 flex items-center gap-2 text-lg text-cream-100/70">
+        <p class="mt-4 flex items-center gap-2 text-lg text-white">
           <Icon name="map-pin" size={18} />
           {hospital.city}, {hospital.country}
         </p>
@@ -654,7 +659,7 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
   )}
 
   {/* ── MID-PAGE CTA — dark band ────────────────────────────────────
-      IMAGE SLOT: same as en — /images/patterns/hospital-page-cta.jpg
+      IMAGE SLOT: same as en — /images/patterns/hospital-page-cta.webp
       (1920×800, <150KB) under a bg-ink/70 overlay. See the en template
       (src/pages/hospitals/[slug].astro) for the full generation prompt.
       Auto-detected at build time. */}
@@ -662,7 +667,11 @@ const relatedArticles = getRelatedArticles(hospital, allPosts, 3);
     {ctaImage && (
       <>
         <img src={ctaImage} alt="" class="pointer-events-none absolute inset-0 h-full w-full object-cover" aria-hidden="true" loading="lazy" />
-        <div class="pointer-events-none absolute inset-0 bg-ink/70" aria-hidden="true" />
+        <div
+          class="pointer-events-none absolute inset-0"
+          style="background:linear-gradient(105deg, rgba(14,36,56,0.92) 0%, rgba(14,36,56,0.82) 38%, rgba(20,51,82,0.78) 68%, rgba(20,51,82,0.72) 100%)"
+          aria-hidden="true"
+        />
       </>
     )}
     <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" aria-hidden="true" />

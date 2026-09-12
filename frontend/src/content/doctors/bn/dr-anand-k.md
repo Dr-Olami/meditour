@@ -5,7 +5,7 @@ specialty: Plastic Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MS | DNB | FRCSEd (UK) | FICS
 experienceYears: 30
-avatar: /images/doctors/dr-anand-k.jpeg
+avatar: /images/doctors/dr-anand-k.webp
 bio: চিফ কনসালটেন্ট — কসমেটিক, প্লাস্টিক ও রিকনস্ট্রাকটিভ সার্জারি, SPARSH হাসপাতাল, বেঙ্গালুরু
 languages:
   - English

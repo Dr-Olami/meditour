@@ -5,7 +5,7 @@ specialty: Orthopaedic Surgery & Joint Replacement
 hospitalId: sparsh-hospital-hennur
 qualification: MS (Orth) | MCh (Orth, Liverpool) | FRCS (England)
 experienceYears: 34
-avatar: /images/doctors/dr-sharan-shivaraj-patil.jpeg
+avatar: /images/doctors/dr-sharan-shivaraj-patil.webp
 bio: Chairman and Chief Orthopaedic Surgeon
 languages:
   - English

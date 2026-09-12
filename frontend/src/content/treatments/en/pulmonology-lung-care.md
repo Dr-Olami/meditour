@@ -21,7 +21,7 @@ relatedHospitalSlugs:
 duration: '1-6 hours'
 hospitalStay: '2-10 days'
 recoveryTime: '2-8 weeks'
-image: /images/treatments-cards/pulmonology-lung-care.jpg
+image: /images/treatments-cards/pulmonology-lung-care.webp
 faqs:
   - question: "Is lung surgery safe at your partner hospitals in India?"
     answer: "Yes. Our partner hospitals perform lung resections and VATS procedures in dedicated thoracic surgical units with intensive-care backup, advanced ventilation and experienced thoracic surgeons. Outcomes for lobectomy and segmentectomy are benchmarked against international standards, with low complication rates and structured post-operative pulmonary rehabilitation."

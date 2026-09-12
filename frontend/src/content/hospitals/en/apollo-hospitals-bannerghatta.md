@@ -7,9 +7,9 @@ description: Apollo Hospitals, Bannerghatta Road is a 350-bed JCI-accredited fla
 accreditations:
   - JCI Accredited
   - NABH
-image: /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.png
+image: /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.webp
 gallery:
-  - /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.png
+  - /images/hospitals/Apollo-Hospital-Bannerghatta-Road-Bangalore.webp
 structuredAmenities:
   - category: international
     highlights:

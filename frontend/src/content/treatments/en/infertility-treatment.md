@@ -22,7 +22,7 @@ relatedHospitalSlugs:
 duration: '2-6 weeks per cycle'
 hospitalStay: 'Day-care'
 recoveryTime: '1-2 weeks'
-image: /images/treatments-cards/ivf-fertility.jpg
+image: /images/treatments-cards/ivf-fertility.webp
 faqs:
   - question: "What is the success rate of IVF per cycle?"
     answer: "IVF success rates at our partner hospitals are 50-65% per cycle for women under 35, declining with age. Success depends on factors including female age, ovarian reserve, cause of infertility, and embryo quality. The programmes use time-lapse embryo monitoring and endometrial receptivity analysis (ERA) to optimise transfer timing and improve outcomes."

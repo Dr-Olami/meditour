@@ -52,6 +52,8 @@ const ServiceCardContent = ({
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         decoding="async"
+        width={600}
+        height={600}
       />
 
       {/* Gradient overlay */}

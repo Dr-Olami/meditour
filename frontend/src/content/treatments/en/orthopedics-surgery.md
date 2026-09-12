@@ -25,7 +25,7 @@ relatedHospitalSlugs:
 duration: '1-3 hours'
 hospitalStay: '2-5 days'
 recoveryTime: '2-12 weeks'
-image: /images/treatments-cards/orthopedics-surgery.jpg
+image: /images/treatments-cards/orthopedics-surgery.webp
 faqs:
   - question: "Is robotic-assisted joint replacement available in Bangalore?"
     answer: "Yes, robotic-assisted joint replacement is available at our partner hospitals using systems that provide 3D planning and haptic-guided precision for implant positioning. This technology enhances accuracy beyond what is achievable with conventional or computer-navigated techniques, leading to better alignment and potentially longer implant life."

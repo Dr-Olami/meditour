@@ -26,7 +26,7 @@ relatedHospitalSlugs:
 duration: '1-6 hours'
 hospitalStay: '0-3 days'
 recoveryTime: '1-4 weeks'
-image: /images/treatments-cards/cosmetic-surgery.jpg
+image: /images/treatments-cards/cosmetic-surgery.webp
 faqs:
   - question: "Are the cosmetic surgeons board-certified?"
     answer: "Yes, all cosmetic surgery procedures at our partner hospitals are performed by board-certified plastic surgeons with extensive training in aesthetic and reconstructive surgery. Many have international training and fellowships. The surgeons work in accredited operating theatres with strict safety protocols and comprehensive pre-operative evaluation."

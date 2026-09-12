@@ -5,7 +5,7 @@ specialty: Ophthalmology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (Ophthalmology) | Fellowship in Cornea & Refractive Surgery | PhD in Ocular Immunology
 experienceYears: 15
-avatar: /images/doctors/dr-sharon-d-souza.png
+avatar: /images/doctors/dr-sharon-d-souza.webp
 bio: Consultant Ophthalmologist — Cornea, Cataract & Refractive Surgery, Apollo Hospitals Bannerghatta Road, Bangalore
 languages:
   - Bengali

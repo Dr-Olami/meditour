@@ -5,7 +5,7 @@ specialty: Breast Oncology & Reconstructive Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MS (Gen Surg) | MCh (UK) | Fellowship (RGUHS) | FEBS (Europe)
 experienceYears: 10
-avatar: /images/doctors/dr-kanmani-govindrao-telkar.jpg
+avatar: /images/doctors/dr-kanmani-govindrao-telkar.webp
 bio: Consultant - Breast Oncology & Reconstructive Surgeon
 languages:
   - English

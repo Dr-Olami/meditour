@@ -7,9 +7,9 @@ description: SPARSH Hospital, Hennur Road is a 300-bed quaternary care facility 
 accreditations:
   - NABH
   - IFEM Gold Level Certified
-image: /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.png
+image: /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.webp
 gallery:
-  - /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.png
+  - /images/hospitals/SPARSH-Hospital-Hennur-Bangalore.webp
 structuredAmenities:
   - category: international
     highlights:

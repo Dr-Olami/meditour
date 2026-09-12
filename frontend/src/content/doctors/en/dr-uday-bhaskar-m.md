@@ -5,7 +5,7 @@ specialty: Urology & Robotic Surgery
 hospitalId: sparsh-hospital-hennur
 qualification: MS (Surgery) | FMAS | MCh (Urology) | Fellowship in Robotics
 experienceYears: 17
-avatar: /images/doctors/dr-uday-bhaskar-m.jpg
+avatar: /images/doctors/dr-uday-bhaskar-m.webp
 bio: Senior Consultant - Urology
 languages:
   - English

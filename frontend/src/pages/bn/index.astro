@@ -12,7 +12,7 @@ import {
   resolveHospital,
   entrySlug,
 } from '../../lib/content';
-import { medicalBusiness } from '../../lib/schema';
+import { medicalBusiness, faqPage } from '../../lib/schema';
 import { getDoctorInquiryLink } from '../../lib/whatsapp';
 import { ALL_COUNTRIES } from '../../data/countries';
 import type { Doctor } from '../../design-system/components/organisms/DoctorCard';
@@ -65,7 +65,9 @@ const featuredHospitals: Hospital[] = hospitalEntries.slice(0, 3).map((entry) =>
   accreditations: entry.data.accreditations,
 }));
 
-const testimonials = testimonialEntries.map((entry) => entry.data);
+// Reason: cap testimonials shown on the home page to keep the carousel
+// focused and avoid overwhelming visitors with too many cards.
+const testimonials = testimonialEntries.slice(0, 8).map((entry) => entry.data);
 
 // Reason: Group procedures by their parent treatment so the home page can
 // show a sample of procedures under each treatment card. We pick the first
@@ -95,13 +97,70 @@ const treatmentProcedures = homeTreatments.map((entry) => {
 
 const categories = Array.from(new Set(treatmentEntries.map((entry) => entry.data.category).filter(Boolean)));
 
-const jsonLd = medicalBusiness({
-  name: t.site.name,
-  url: siteUrl,
-  whatsapp: whatsappNumber,
-  email: contactEmail,
-  specialties: categories.length ? categories : undefined,
-});
+// Reason: define FAQ entries here (not in HomePage) so the same data can feed
+// both the visible FAQAccordion and the FAQPage JSON-LD structured data that
+// Google and AI systems use for rich results and answer extraction.
+const faqs = [
+  {
+    question: 'বিদেশ থেকে ভারতে চিকিৎসার পরিকল্পনা কীভাবে শুরু করব?',
+    answer: 'আমাদের পরামর্শ ফর্ম বা WhatsApp-এ আপনার মেডিকেল রিপোর্ট শেয়ার করুন। একজন কোঅর্ডিনেটর আপনার কেস রিভিউ করে ২৪ ঘন্টার মধ্যে সেরা হাসপাতাল ও ডাক্তার সুপারিশ করেন, এবং ভ্রমণের আগে বিশেষজ্ঞের সাথে ফ্রি ভিডিও কনসালটেশন হয়।',
+  },
+  {
+    question: 'আমার মেডিকেল ডেটা কি গোপনীয় থাকে?',
+    answer: 'হ্যাঁ। আমরা কঠোর ডেটা সুরক্ষা অনুসরণ করি এবং কেবল আপনার অনুমোদিত হাসপাতাল ও বিশেষজ্ঞদের সাথে রিপোর্ট শেয়ার করি। আপনার রেকর্ড কখনো তৃতীয় পক্ষের কাছে পাঠানো হয় না।',
+  },
+  {
+    question: 'ভারতে মেডিকেল ভিসা ও থাকার ব্যবস্থায় সাহায্য কি পাওয়া যায়?',
+    answer: 'হ্যাঁ। আমাদের প্যাকেজে হাসপাতাল থেকে ভিসা আমন্ত্রণ পত্র, এয়ারপোর্ট পিকআপ, হাসপাতালের নিকট হোটেল বা গেস্ট হাউস এবং আপনার ভাষায় স্থানীয় অনুবাদক অন্তর্ভুক্ত।',
+  },
+  {
+    question: 'আমার দেশের তুলনায় ভারতে চিকিৎসায় কত সাশ্রয় হয়?',
+    answer: 'ভারতে চিকিৎসা সাধারণত যুক্তরাষ্ট্র বা যুক্তরাজ্যের তুলনায় ৬০–৮০% সস্তা। উদাহরণস্বরূপ, হাঁটু প্রতিস্থাপন যুক্তরাষ্ট্রে $৩৫,০০০–৭০,০০০ হলে ভারতে $৫,০০০–৯,০০০, এবং হার্ট বাইপাস সার্জারি $৭০,০০০–১,৫০,০০০ এর বদলে $৬,০০০–১২,০০০। ফ্লাইট ও থাকার খরচ যোগ করলেও সাশ্রয় উল্লেখযোগ্য।',
+  },
+  {
+    question: 'ভারতের হাসপাতালগুলো কি আন্তর্জাতিকভাবে স্বীকৃত এবং নিরাপদ?',
+    answer: 'আমাদের পার্টনার হাসপাতালগুলো JCI (Joint Commission International) এবং NABH স্বীকৃত — আন্তর্জাতিক রোগী সুরক্ষা ও গুণমানের স্বর্ণ মান। ভারতে ৫০,০০০+ নিবন্ধিত হাসপাতালের মধ্যে ৪০টিরও কম JCI স্বীকৃত, এবং আমরা কেবল সেই হাসপাতালগুলোর সাথে কাজ করি যেগুলো স্বাধীনভাবে নিরাপত্তা, ইনফেকশন কন্ট্রোল ও ক্লিনিক্যাল ফলাফলের জন্য মূল্যায়িত।',
+  },
+  {
+    question: 'আমি কীভাবে জানব সার্জন যোগ্য এবং অভিজ্ঞ?',
+    answer: 'আমরা প্রতিটি রোগীর জন্য সার্জনের সম্পূর্ণ প্রোফাইল শেয়ার করি — যোগ্যতা, বছরের অভিজ্ঞতা, বার্ষিক প্রক্রিয়া সংখ্যা এবং সাফল্যের হার সহ। আমাদের বিশেষজ্ঞরা বোর্ড-সার্টিফায়েড এবং বেশিরভাগই যুক্তরাষ্ট্র বা যুক্তরাজ্যে ফেলোশিপপ্রাপ্ত। উড়ে যাওয়ার আগে আপনি ভিডিও কনসালটেশনের মাধ্যমে সার্জনের সাথে কথা বলতে পারেন।',
+  },
+  {
+    question: 'কস্ট এস্টিমেটে কী অন্তর্ভুক্ত — কোনো লুকানো খরচ আছে কি?',
+    answer: 'আমরা আইটেমাইজড কোটেশন দিই — সার্জারি, হাসপাতালে থাকা, সার্জন ফি, অ্যানেস্থেসিয়া, ইমপ্লান্ট, ওষুধ এবং ডায়াগনস্টিক টেস্ট সহ। আমরা স্পষ্টভাবে জানাই কী অন্তর্ভুক্ত এবং কী নয় — যেমন ফ্লাইট, ভিসা ফি, থাকার খরচ এবং পরবর্তী ফলোআপ। চূড়ান্ত খরচ সার্জন রোগী মূল্যায়নের পর নিশ্চিত হয়, তবে আমরা কোনো লুকানো মার্কআপ যোগ করি না।',
+  },
+  {
+    question: 'ভারতের মেডিকেল ভিসা কীভাবে পাব এবং কত সময় লাগে?',
+    answer: 'একবার হাসপাতাল নির্বাচিত হলে আমরা হাসপাতাল থেকে অফিসিয়াল ভিসা ইনভিটেশন লেটার (VIL) সংগ্রহ করি। বেশিরভাগ e-Medical Visa ২৪–৭২ ঘন্টায় অনুমোদিত হয়। আপনার পাসপোর্ট (৬ মাসের বৈধতা সহ), ছবি, মেডিকেল রিপোর্ট এবং আমন্ত্রণ পত্র প্রয়োজন। আমরা পুরো আবেদন প্রক্রিয়া সমন্বয় করি।',
+  },
+  {
+    question: 'চিকিৎসার জন্য পরিবারের সদস্য কি আমার সাথে ভ্রমণ করতে পারবে?',
+    answer: 'হ্যাঁ। সাথীরা Medical Attendant Visa (MX Visa)-এর জন্য আবেদন করতে পারে, যা রোগীর ভিসার সাথে যুক্ত। সাধারণত ১–২ জন সাথী অনুমোদিত হয়; জটিল প্রক্রিয়া যেমন ট্রান্সপ্লান্টের ক্ষেত্রে ৩–৪ জন পর্যন্ত অনুমোদিত হতে পারে। আমরা সাথীদের ভিসা, থাকার ব্যবস্থা এবং এয়ারপোর্ট ট্রান্সফার সমন্বয় করি।',
+  },
+  {
+    question: 'দেশে ফিরে যাওয়ার পর কোনো জটিলতা হলে কী হবে?',
+    answer: 'আমাদের পার্টনার হাসপাতালগুলো ডিসচার্জ-পরবর্তী টেলিকনসালটেশন সহ স্ট্রাকচার্ড ফলোআপ সাপোর্ট দেয়, যাতে আপনি দেশে ফিরে যাওয়ার পরও আপনার সার্জনের সাথে যোগাযোগ রাখতে পারেন। আমরা ছয় মাস পর্যন্ত আপনার ভাষায় রিপোর্ট পর্যালোচনা এবং কোঅর্ডিনেটর সাপোর্ট দিয়ে থাকি। জরুরি প্রয়োজনে আমরা স্থানীয় বিশেষজ্ঞের সাথেও সংযোগ করতে পারি।',
+  },
+  {
+    question: 'আমি যদি ইংরেজি ভালো বলতে না পারি তবে কী হবে?',
+    answer: 'না। আমাদের পার্টনার হাসপাতালগুলো আরবি, বাংলা, ফরাসি ও রাশিয়ান ভাষায় কোঅর্ডিনেটর রাখে। আমরা কনসালটেশন, কনসেন্ট ফর্ম, ডিসচার্জ সামারি এবং ওষুধের নির্দেশিকার অনুবাদ সহ অন-সাইট ইন্টারপ্রেটার ব্যবস্থা করি। আপনার ভাষায় লিখিত নির্দেশিকা দেওয়া হয় যাতে আপনি বাড়িতে নিরাপদে সুস্থ হতে পারেন।',
+  },
+  {
+    question: 'চিকিৎসার জন্য কীভাবে পেমেন্ট করব — ভারতের হাসপাতাল কি ইন্টারন্যাশনাল ইন্সুরেন্স গ্রহণ করে?',
+    answer: 'ভারতের প্রধান হাসপাতালগুলো সাধারণত সেলফ-পে ডিপোজিট সিস্টেমে পরিচালিত হয়। বড় বিলের জন্য SWIFT ওয়্যার ট্রান্সফার (২–৩ কার্যদিবসে ক্লিয়ার হয়) সুপারিশ করা হয়; Visa/Mastercard-ও গৃহীত হয়। সাধারণ ট্রাভেল ইন্সুরেন্স পরিকল্পিত চিকিৎসা কভার করে না — আপনার ইন্সুরারকে আগে থেকে যাচাই করতে বলুন। আমরা প্রোফর্মা ইনভয়েস এবং পেমেন্ট নির্দেশিকা সহায়তা করি।',
+  },
+];
+
+const jsonLd = [
+  medicalBusiness({
+    name: t.site.name,
+    url: siteUrl,
+    whatsapp: whatsappNumber,
+    email: contactEmail,
+    specialties: categories.length ? categories : undefined,
+  }),
+  faqPage({ entries: faqs }),
+];
 ---
 
 <Layout title={`${t.site.name} — ${t.site.tagline}`} description={t.site.description} locale="bn" jsonLd={jsonLd}>
@@ -114,5 +173,6 @@ const jsonLd = medicalBusiness({
     featuredHospitals={featuredHospitals}
     testimonials={testimonials}
     countries={ALL_COUNTRIES}
+    faqs={faqs}
   />
 </Layout>

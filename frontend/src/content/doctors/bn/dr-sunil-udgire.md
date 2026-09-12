@@ -5,7 +5,7 @@ specialty: Haematology, Paediatric Oncology & Bone Marrow Transplantation
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | DNB (Pediatrics) | FIAP | FNB (Hemato-Oncology)
 experienceYears: 15
-avatar: /images/doctors/dr-sunil-udgire.jpg
+avatar: /images/doctors/dr-sunil-udgire.webp
 bio: Senior Consultant - Haematology, Paediatric Oncology, BMT & Cellular Therapy
 languages:
   - English

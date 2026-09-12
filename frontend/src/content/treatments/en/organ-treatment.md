@@ -25,7 +25,7 @@ relatedHospitalSlugs:
 duration: '4-12 hours'
 hospitalStay: '2-4 weeks'
 recoveryTime: '3-6 months'
-image: /images/treatments/organ-treatment.jpg
+image: /images/treatments/organ-treatment.webp
 faqs:
   - question: "What is the waiting time for a liver transplant in Bangalore?"
     answer: "For living-donor liver transplants, the typical waiting time is 4-8 weeks from initial evaluation to surgery, depending on donor work-up completion and transplant committee approval. Deceased-donor transplants depend on organ availability through the national transplant registry. International patients are prioritised with dedicated transplant coordinators to expedite the process."

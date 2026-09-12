@@ -5,7 +5,7 @@ specialty: Surgical Oncology
 hospitalId: sparsh-hospital-hennur
 qualification: MBBS | MS (Gen Surg) | MCh (Surgical Oncology)
 experienceYears: 15
-avatar: /images/doctors/dr-g-girish.jpg
+avatar: /images/doctors/dr-g-girish.webp
 bio: Lead Consultant - Surgical Oncology
 languages:
   - English

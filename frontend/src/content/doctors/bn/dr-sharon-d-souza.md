@@ -5,7 +5,7 @@ specialty: Ophthalmology
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MS (Ophthalmology) | Fellowship in Cornea & Refractive Surgery | PhD in Ocular Immunology
 experienceYears: 15
-avatar: /images/doctors/dr-sharon-d-souza.png
+avatar: /images/doctors/dr-sharon-d-souza.webp
 bio: কনসালটেন্ট চক্ষু বিশেষজ্ঞ — কর্নিয়া, ক্যাটার্যাক্ট ও রিফ্র্যাকটিভ সার্জারি, অ্যাপোলো হাসপাতাল ব্যানারঘাট্টা রোড, বেঙ্গালুরু
 languages:
   - Bengali

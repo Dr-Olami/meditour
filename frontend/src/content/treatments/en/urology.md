@@ -25,7 +25,7 @@ relatedHospitalSlugs:
 duration: '1-4 hours'
 hospitalStay: '1-5 days'
 recoveryTime: '1-4 weeks'
-image: /images/treatments-cards/urology.jpg
+image: /images/treatments-cards/urology.webp
 faqs:
   - question: "Is robotic surgery available for prostate cancer?"
     answer: "Yes, robotic-assisted radical prostatectomy is available using the da Vinci surgical system. Benefits include precision nerve-sparing for continence and potency preservation, minimal blood loss, smaller incisions, faster continence recovery, and shorter hospital stay compared to traditional open surgery. Hospital stay is typically 2-3 days."

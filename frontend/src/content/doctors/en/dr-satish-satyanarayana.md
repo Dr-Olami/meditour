@@ -5,7 +5,7 @@ specialty: Neurosurgery
 hospitalId: apollo-hospitals-bannerghatta
 qualification: MBBS | MCh (Neurosurgery) | DNB (Neurosurgery) | Fellowship in Neurosurgery (LSUHSC)
 experienceYears: 35
-avatar: /images/doctors/dr-satish-satyanarayana.png
+avatar: /images/doctors/dr-satish-satyanarayana.webp
 bio: Senior Consultant & Clinical and Academic Advisor — Department of Neurosurgery, Apollo Hospitals, Bangalore
 languages:
   - English

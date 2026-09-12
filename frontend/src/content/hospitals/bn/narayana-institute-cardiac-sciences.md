@@ -7,9 +7,9 @@ description: বোম্মাসন্দ্রায় অবস্থিত
 accreditations:
   - JCI স্বীকৃত
   - NABH
-image: /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.png
+image: /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.webp
 gallery:
-  - /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.png
+  - /images/hospitals/Narayana-Institute-Cardiac-Sciences-Bommasandra.webp
 structuredAmenities:
   - category: international
     highlights:
