@@ -94,7 +94,21 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
             <select
               id="cost-treatment"
               value={selectedSlug}
-              onChange={(e) => setSelectedSlug(e.target.value)}
+              onChange={(e) => {
+                setSelectedSlug(e.target.value);
+                // Reason: push to dataLayer so GTM can fire the
+                // cost_calculator_complete conversion event when a user
+                // selects a treatment and views an estimate.
+                if (e.target.value && typeof window !== 'undefined') {
+                  const treatment = treatments.find((t) => t.slug === e.target.value);
+                  (window as any).dataLayer = (window as any).dataLayer || [];
+                  (window as any).dataLayer.push({
+                    event: 'cost_calculator_complete',
+                    treatment_name: treatment?.name || e.target.value,
+                    treatment_slug: e.target.value,
+                  });
+                }
+              }}
               className="mt-3 w-full rounded-card border border-cream-300 bg-white px-4 py-3 text-sm font-medium text-ink focus:border-violet-600 focus:outline-none focus:ring-1 focus:ring-violet-600"
             >
               <option value="">{labels.placeholder}</option>

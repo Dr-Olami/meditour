@@ -139,6 +139,15 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
       };
       const result = await submitLead(payload);
       if (result.ok) {
+        // Reason: push to dataLayer so GTM can fire the form_submit
+        // conversion event when a lead is successfully submitted.
+        if (typeof window !== 'undefined') {
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: 'form_submit',
+            form_source: source || 'general-contact',
+          });
+        }
         reset();
         setStatus({
           type: 'success',
