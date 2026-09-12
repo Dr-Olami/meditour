@@ -98,7 +98,7 @@ const jsonLd = [
     currentPath={Astro.url.pathname}
     phoneNumber={import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861'}
     callLabel={t.nav.call}
-    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER}`}
+    whatsappHref={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986'}`}
     whatsappLabel={t.nav.whatsapp}
     client:load
   />

@@ -18,7 +18,7 @@ export function buildWhatsAppLink(number: string, message?: string): string {
  * @returns The number or a fallback empty string.
  */
 export function getWhatsAppNumber(): string {
-  return import.meta.env.PUBLIC_WHATSAPP_NUMBER || '';
+  return import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
 }
 
 /**
