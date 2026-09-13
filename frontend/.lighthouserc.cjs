@@ -2,7 +2,8 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: './dist',
+      // Reason: Vercel adapter outputs to .vercel/output/static/, not dist/
+      staticDistDir: './.vercel/output/static',
       url: ['/', '/doctors'],
       numberOfRuns: 1,
     },
