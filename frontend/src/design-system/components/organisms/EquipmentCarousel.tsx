@@ -26,7 +26,12 @@ const EquipmentCarousel = React.forwardRef<HTMLDivElement, EquipmentCarouselProp
             {title}
           </h2>
         )}
-        <div className="scrollbar-none flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
+        <div
+          className="scrollbar-none flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4"
+          role="region"
+          aria-label={title || 'Equipment gallery'}
+          tabindex="0"
+        >
           {items.map((item, i) => (
             <div
               key={i}
