@@ -49,12 +49,17 @@ jobs:
         working-directory: frontend
         run: |
           # Reason: Vercel adapter outputs to .vercel/output/static/, not dist/
-          npx http-server .vercel/output/static -p 8080 --silent &
+          # Use node_modules/.bin directly so npx doesn't try to download.
+          node_modules/.bin/http-server .vercel/output/static -p 8080 --silent &
+          SERVER_PID=$!
           sleep 3
-          npx axe http://localhost:8080 http://localhost:8080/doctors \
+          node_modules/.bin/axe http://localhost:8080 http://localhost:8080/doctors \
             --exit \
             --disable color-contrast \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa
+          EXIT=$?
+          kill $SERVER_PID 2>/dev/null || true
+          exit $EXIT
 
       - name: Lighthouse CI
         working-directory: frontend
