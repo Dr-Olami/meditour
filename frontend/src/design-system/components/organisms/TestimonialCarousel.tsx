@@ -114,7 +114,7 @@ const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialCarousel
             role="region"
             aria-roledescription="carousel"
             aria-label={title || 'Testimonials'}
-            tabindex="0"
+            tabIndex={0}
           >
             {items.map((item, i) => (
               <div

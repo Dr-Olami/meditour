@@ -164,7 +164,7 @@ const StepCards = React.forwardRef<HTMLDivElement, StepCardsProps>(
           role="region"
           aria-roledescription="carousel"
           aria-label="Steps"
-          tabindex="0"
+          tabIndex={0}
         >
           {steps.map((step, index) => (
             <div

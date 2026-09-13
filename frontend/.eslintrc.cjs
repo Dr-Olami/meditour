@@ -55,6 +55,21 @@ module.exports = {
         ],
       },
     },
+    {
+      // Reason: carousel scroll containers use role="region" + tabIndex={0}
+      // so keyboard users can scroll them (WCAG 2.1 SC 2.1.1, axe
+      // scrollable-region-focusable). jsx-a11y/no-noninteractive-tabindex
+      // doesn't recognize role="region" as interactive, so disable it
+      // for the three carousel components.
+      files: [
+        'src/design-system/components/organisms/TestimonialCarousel.tsx',
+        'src/design-system/components/organisms/EquipmentCarousel.tsx',
+        'src/design-system/components/molecules/StepCards.tsx',
+      ],
+      rules: {
+        'jsx-a11y/no-noninteractive-tabindex': 'off',
+      },
+    },
   ],
   ignorePatterns: ['dist/', 'dist-clean/', '.astro/', 'node_modules/', '*.mjs'],
 };
