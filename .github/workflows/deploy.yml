@@ -1,38 +1,93 @@
 name: Deploy
 
 on:
-  push:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
     branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Reason: only deploy if CI succeeded; skip on cancelled/skipped runs
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Deploy to production server via SSH
+      - name: Download CI build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: site-build
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Create deploy bundle
+        run: |
+          # Reason: tar the build so we transfer a single file over SSH
+          # instead of thousands of small files (faster + atomic).
+          tar -czf site-build.tar.gz -C site-build .
+
+      - name: Upload bundle to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: site-build.tar.gz
+          target: /tmp/
+
+      - name: Extract and atomically swap on server
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
+          # Reason: extract to a staging dir, then atomically swap with a
+          # single `mv` so visitors never see a half-deployed site (no 522,
+          # no 404 window). The server never runs npm install or npm build.
           script: |
             set -e
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            echo "=== Deploying khanmeditour.com ==="
-            echo "Node: $(which node)"
-            echo "npm: $(which npm)"
-            cd /home/Meditour/src/meditour/frontend
-            echo "1. Pulling latest code..."
+
+            WEB_ROOT="/home/Meditour/web/khanmeditour.com"
+            STAGING="$WEB_ROOT/public_html_new"
+            OLD="$WEB_ROOT/public_html_old"
+            CURRENT="$WEB_ROOT/public_html"
+
+            echo "=== Deploying khanmeditour.com (zero-downtime) ==="
+
+            # 1. Pull latest code (for any server-side scripts/config)
+            cd /home/Meditour/src/meditour
             git pull origin main
-            echo "2. Installing dependencies..."
-            npm install
-            echo "3. Building site..."
-            npm run build
-            echo "4. Deploying to public_html..."
-            rm -rf /home/Meditour/web/khanmeditour.com/public_html/*
-            cp -r .vercel/output/static/* /home/Meditour/web/khanmeditour.com/public_html/
-            chown -R Meditour:www-data /home/Meditour/web/khanmeditour.com/public_html/
-            echo "5. Verifying..."
+            echo "  Code updated."
+
+            # 2. Clean any leftover staging/old dirs from a failed previous deploy
+            rm -rf "$STAGING" "$OLD"
+            mkdir -p "$STAGING"
+
+            # 3. Extract the uploaded tarball into staging
+            echo "  Extracting build to staging..."
+            tar -xzf /tmp/site-build.tar.gz -C "$STAGING"
+            rm -f /tmp/site-build.tar.gz
+
+            # 4. Atomically swap: current -> old, staging -> current
+            #    Reason: mv is instant on the same filesystem, so visitors
+            #    never see an empty or half-deployed directory.
+            mv "$CURRENT" "$OLD"
+            mv "$STAGING" "$CURRENT"
+
+            # 5. Fix ownership
+            chown -R Meditour:www-data "$CURRENT"
+
+            # 6. Clean up old build (after, not before)
+            rm -rf "$OLD"
+            echo "  Swap complete."
+
+            # 7. Verify the deploy
             PAGE_SIZE=$(curl -s https://khanmeditour.com | wc -c)
-            echo "   Home page size: $PAGE_SIZE bytes"
+            echo "  Home page size: $PAGE_SIZE bytes"
+            if [ "$PAGE_SIZE" -lt 10000 ]; then
+              echo "ERROR: Page too small — deploy may have failed."
+              exit 1
+            fi
             echo "=== Deploy complete ==="

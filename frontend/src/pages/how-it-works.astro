@@ -11,7 +11,7 @@ import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getInquiryLink } from '../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -26,51 +26,59 @@ const journeySteps = [
   {
     title: 'Initial enquiry',
     description:
-      'You contact us by form, WhatsApp, or phone and share your diagnosis, urgency, and goals. No commitment is required at this stage. Families often start with a simple question about whether India is the right option.',
+      'You contact us by form, WhatsApp, or phone and share your diagnosis, urgency, and goals. No commitment is required at this stage. Many families start with a simple question about whether India is the right option — and that is exactly where the conversation should begin. We understand that reaching out for treatment abroad can feel overwhelming, and our first job is to listen, not to sell.',
+    duration: 'Same day',
   },
   {
     title: 'Medical report review',
     description:
-      'We review reports, imaging summaries, and doctor notes to understand the clinical picture. If reports are incomplete, we tell you exactly what is missing so a hospital or specialist can respond usefully.',
+      'We review your reports, imaging summaries, and doctor notes to understand the clinical picture. If reports are incomplete, we tell you exactly what is missing so a hospital or specialist can respond usefully. At this stage we can also arrange a free second opinion from an Indian specialist before you commit to any hospital or travel plan.',
+    duration: '1–3 days',
   },
   {
     title: 'Hospital matching & quote',
     description:
-      'We shortlist accredited hospitals and doctors, then share indicative package costs in writing. Quotes typically cover hospital fees, room category, surgeon fees where applicable, and length of stay — not hidden add-ons.',
+      'We shortlist accredited hospitals and doctors based on your condition, budget, and preferences, then share indicative package costs in writing. Quotes typically cover hospital fees, room category, surgeon fees where applicable, and length of stay — not hidden add-ons. We encourage you to verify each hospital accreditation independently at jointcommissioninternational.org or nabh.co before deciding.',
+    duration: '2–5 days',
   },
   {
     title: 'Medical visa & invitation',
     description:
-      'Once you choose a pathway, we coordinate the hospital invitation letter and visa document checklist. Attendant visas for family members are arranged alongside the patient visa when required.',
+      'Once you choose a pathway, we coordinate the hospital invitation letter and visa document checklist. E-Medical Visas process in 3–5 business days for eligible countries; Bangladesh and Pakistan nationals apply through IVAC or the Indian High Commission. Attendant visas for family members are arranged alongside the patient visa when required.',
+    duration: '3–15 days',
   },
   {
     title: 'Travel & accommodation',
     description:
-      'We help plan flights guidance, airport pickup, hotels near the hospital, and interpreter support. Recovery-friendly stay options are arranged for the patient and attendants based on expected discharge timing.',
+      'We help plan flight guidance, airport pickup, hotels or serviced apartments near the hospital, and interpreter support. Recovery-friendly stay options are arranged for the patient and attendants based on expected discharge timing. We also advise on medical travel insurance that covers complications — standard travel insurance typically does not.',
+    duration: '1–2 weeks',
   },
   {
     title: 'Treatment in India',
     description:
-      'Our coordinators support admission, consent processes, billing clarity, and communication with the care team. You are not left alone at the hospital — our Bangalore team stays reachable throughout treatment.',
+      'Our coordinators support admission, consent processes, billing clarity, and communication with the care team. Being treated in a foreign hospital can feel isolating — you are not left alone. Our Bangalore team stays reachable throughout treatment and helps bridge any language or cultural gap between your family and the hospital staff.',
+    duration: '2–6 weeks (procedure-dependent)',
   },
   {
     title: 'Recovery & discharge',
     description:
-      'We coordinate discharge instructions, medicines, follow-up appointments, and safe travel home. Physio, dietary guidance, and wound-care instructions are clarified before you leave the hospital.',
+      'We coordinate discharge instructions, medicines, follow-up appointments, and safe travel home. Physio, dietary guidance, and wound-care instructions are clarified before you leave the hospital. We do not let you fly home until your surgeon clears you for travel — flying too soon after major surgery increases the risk of deep vein thrombosis and other complications.',
+    duration: '10–14 days post-discharge',
   },
   {
     title: 'Follow-up after return',
     description:
-      'Remote follow-up coordination with the Indian hospital and local doctor when needed. Report sharing, second-line opinions, and re-admission planning can continue after you return home.',
+      'Remote follow-up coordination continues with the Indian hospital and your local doctor when needed. Report sharing, second-line opinions, and re-admission planning can continue after you return home. The fear of being abandoned after discharge is common — you are not on your own once you leave India. We stay reachable for as long as your recovery requires.',
+    duration: 'Ongoing',
   },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'How medical treatment in India works — step by step',
+    name: 'How to Plan Medical Treatment in India — Step by Step',
     url: pageUrl,
     description:
-      'From first enquiry to follow-up after you return home — the full pathway Khan Meditour coordinates for international patients and families.',
+      'Complete 8-step guide to planning medical treatment in India from abroad. Timeline, hospital accreditation, medical visa, travel, treatment, recovery, and follow-up coordination for international patients.',
     inLanguage: 'en',
   }),
   breadcrumbs([
@@ -83,39 +91,61 @@ const faqs = [
   {
     question: 'How long does the full process take from enquiry to treatment?',
     answer:
-      'It depends on the treatment type and visa processing time for your country. Typically, from initial enquiry to arrival in India takes 2–4 weeks. Urgent cases can be fast-tracked — we have coordinated admissions within 48 hours for emergency situations.',
+      'It depends on the treatment type and visa processing time for your country. Typically, from initial enquiry to arrival in India takes 2–4 weeks. Once in India, most surgical procedures require 2–6 weeks including pre-surgical evaluation, the procedure itself, and post-discharge recovery. Urgent cases can be fast-tracked — we have coordinated admissions within 48 hours for emergency situations such as cardiac emergencies or advanced cancer.',
   },
   {
     question: 'Do I need to pay anything before getting a quote?',
     answer:
-      'No. The initial consultation, report review, and hospital matching with indicative cost quotes are completely free. You only pay the hospital directly once you choose a pathway and agree to treatment.',
+      'No. The initial consultation, report review, hospital matching, and indicative cost quotes are completely free. You only pay the hospital directly once you choose a pathway and agree to treatment. Khan Meditour does not add markup to hospital bills — the cost you see is the cost the hospital charges.',
   },
   {
     question: 'What if my medical reports are incomplete?',
     answer:
-      'We tell you exactly what is missing. Many families start with partial reports — a diagnosis letter or scan summary is often enough for an initial opinion. We guide you on what additional tests or documents a hospital will need to give a useful response.',
+      'We tell you exactly what is missing. Many families start with partial reports — a diagnosis letter or scan summary is often enough for an initial opinion. We guide you on what additional tests or documents a hospital will need to give a useful response. We can also arrange a free second opinion from an Indian specialist based on whatever reports you have.',
   },
   {
     question: 'Can a family member travel with me?',
     answer:
-      'Yes. Attendant visas are arranged alongside the patient visa when required. We help coordinate accommodation for family members near the hospital and our team stays reachable for attendants throughout the stay.',
+      'Yes. Most nationalities allow up to 2 attendants on a Medical Attendant Visa (MX-Visa). Bangladesh nationals can bring up to 3 attendants under a special bilateral provision. We help coordinate accommodation for family members near the hospital and our team stays reachable for attendants throughout the stay.',
+  },
+  {
+    question: 'How do I verify a hospital is safe and accredited?',
+    answer:
+      'We only shortlist hospitals with active JCI or NABH accreditation, but we encourage you to verify independently. JCI accreditation can be checked at jointcommissioninternational.org and NABH accreditation at nabh.co. Fewer than 40 hospitals in India hold JCI accreditation — the global gold standard for patient safety. We share accreditation details and surgeon credentials for every hospital we recommend so you can confirm before committing.',
+  },
+  {
+    question: 'Do I need medical travel insurance?',
+    answer:
+      'Yes, we strongly recommend specialist medical travel insurance that covers surgical complications, not standard travel insurance. Standard travel policies typically exclude medical treatment and complications abroad. Medical travel insurance covers unexpected complications, extended hospital stays, and emergency evacuation if needed. We can advise on suitable policies for your procedure and nationality.',
+  },
+  {
+    question: 'What if there are complications during treatment?',
+    answer:
+      'Complications are rare at accredited hospitals but can happen with any surgical procedure. If complications arise, the treating hospital and surgeon manage them directly — Khan Meditour does not make clinical decisions. Our role is to coordinate communication between you, the hospital, and your family back home, help you understand what is happening, and ensure billing remains transparent. We also help arrange extended stays or additional procedures if the surgeon recommends them.',
+  },
+  {
+    question: 'How long should I stay in India after surgery before flying home?',
+    answer:
+      'Most surgeons recommend waiting 10–14 days after major surgery before flying, due to the risk of deep vein thrombosis and other post-operative complications. The exact duration depends on the procedure — cardiac surgery may require longer, while minor procedures may allow earlier travel. We do not let you fly home until your surgeon clears you for travel. We coordinate recovery accommodation near the hospital during this period.',
   },
   {
     question: 'What happens after I return home?',
     answer:
-      'Remote follow-up coordination continues with the Indian hospital and your local doctor. We facilitate report sharing, second-line opinions, and re-admission planning if needed. You are not left on your own after discharge.',
+      'Remote follow-up coordination continues with the Indian hospital and your local doctor. We facilitate report sharing, second-line opinions, and re-admission planning if needed. Many Indian hospitals now offer teleconsultation so your local doctor can consult with your Indian specialist. You are not left on your own after discharge — we stay reachable for as long as your recovery requires.',
   },
   {
     question: 'Is Khan Meditour a hospital or a facilitator?',
     answer:
-      'We are a medical tourism facilitator. We do not employ the doctors or own the hospitals. Our role is to coordinate the entire pathway — from matching you with the right hospital and doctor, to visa, travel, admission support, and post-return follow-up.',
+      'We are a medical tourism facilitator. We do not employ the doctors or own the hospitals. Our role is to coordinate the entire pathway — from matching you with the right accredited hospital and doctor, to visa, travel, admission support, and post-return follow-up. All medical decisions, diagnosis, and treatment are provided by the selected hospital and treating doctors. This distinction matters: we advocate for you, but clinical care is always the hospital responsibility.',
   },
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`How It Works | ${t.site.name}`}
-  description="From first enquiry to follow-up after you return home — the full pathway Khan Meditour coordinates for international patients and families."
+  title={`How to Plan Medical Treatment in India | Step-by-Step Guide | ${t.site.name}`}
+  description="Complete 8-step guide to planning medical treatment in India from abroad. Hospital selection, medical visa, travel, treatment, recovery timeline, and follow-up coordination for international patients and families."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -163,11 +193,12 @@ const faqs = [
             class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
             data-anim="headline-reveal"
           >
-            How medical treatment in India works — step by step
+            How to plan medical treatment in India
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            From first enquiry to follow-up after you return home — here is the full pathway Khan
-            Meditour coordinates for international patients and families.
+            Planning treatment in another country can feel overwhelming — but it follows a clear,
+            predictable sequence. From first enquiry to follow-up after you return home, here is the
+            full pathway Khan Meditour coordinates so you are never navigating India alone.
           </p>
         </div>
       </div>
@@ -185,9 +216,13 @@ const faqs = [
           </p>
           <p class="text-ink/80 mt-3 text-base leading-relaxed">
             Medical treatment in India typically follows eight steps: enquiry, medical report
-            review, hospital matching and quote, medical visa, travel planning, treatment, recovery,
-            and follow-up. Khan Meditour coordinates each stage so families are not navigating India
-            alone.
+            review, hospital matching and quote, medical visa, travel planning, treatment,
+            recovery, and follow-up. From first enquiry to arrival in India usually takes
+            <strong>2–4 weeks</strong>; most surgical procedures require <strong>2–6 weeks</strong>
+            in India including recovery. The initial consultation, report review, and cost quotes
+            are <strong>completely free</strong> — you only pay the hospital directly once you
+            agree to treatment. Khan Meditour coordinates each stage so families are not navigating
+            India alone.
           </p>
         </div>
       </div>
@@ -207,7 +242,7 @@ const faqs = [
     </section>
 
     {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2
           class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
