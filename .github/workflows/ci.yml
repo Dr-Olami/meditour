@@ -48,7 +48,8 @@ jobs:
       - name: Accessibility audit (axe)
         working-directory: frontend
         run: |
-          npx http-server dist -p 8080 --silent &
+          # Reason: Vercel adapter outputs to .vercel/output/static/, not dist/
+          npx http-server .vercel/output/static -p 8080 --silent &
           sleep 3
           npx axe http://localhost:8080 http://localhost:8080/doctors \
             --exit \
