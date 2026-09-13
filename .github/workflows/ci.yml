@@ -48,8 +48,10 @@ jobs:
       - name: Accessibility audit (axe)
         working-directory: frontend
         run: |
+          # Reason: install Chrome + ChromeDriver versions that match,
+          # otherwise axe fails with "session not created" version mismatch.
+          npx browser-driver-manager install chrome
           # Reason: Vercel adapter outputs to .vercel/output/static/, not dist/
-          # Use node_modules/.bin directly so npx doesn't try to download.
           node_modules/.bin/http-server .vercel/output/static -p 8080 --silent &
           SERVER_PID=$!
           sleep 3
