@@ -11,7 +11,7 @@ import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getInquiryLink } from '../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -25,38 +25,44 @@ const visaSteps = [
   {
     title: 'Hospital invitation letter',
     description:
-      'Once you choose a treatment pathway, the hospital issues an official invitation letter. This letter confirms your treatment, dates, and patient details — it is the core document for your visa application.',
+      'Once you choose a treatment pathway, the hospital issues an official invitation letter. This letter confirms your treatment, dates, and patient details — it is the core document for your visa application. You will need to share your diagnosis, recent medical reports, and passport details so the hospital can prepare it.',
     duration: '1–2 days',
   },
   {
     title: 'Document checklist',
     description:
-      'We provide a country-specific checklist: passport copy (6+ months validity), passport-size photos, invitation letter, medical reports, proof of funds, and completed visa application form.',
+      'We provide a country-specific checklist: passport copy (6+ months validity), passport-size photos, invitation letter, medical reports, local doctor referral letter, proof of funds, and completed visa application form. For Bangladesh and Pakistan nationals, a referral from your local doctor is mandatory and the most common rejection reason if missing.',
     duration: 'Same day',
   },
   {
     title: 'Visa application submission',
     description:
-      'Depending on your country, you submit online (e-visa) or at the Indian embassy/visa centre. We guide you on the correct portal and help review your application before submission.',
+      'Depending on your country, you submit online (e-Medical Visa) or at the Indian embassy/visa centre. Citizens of 176 countries can apply online through indianvisaonline.gov.in. Bangladesh and Pakistan nationals must apply in person at IVAC or the Indian High Commission — the e-Visa portal is not available for these nationalities.',
     duration: '1 day',
   },
   {
     title: 'Visa processing',
     description:
-      'Processing time varies by country and visa type. E-visas typically take 3–5 business days; embassy visas can take 5–10 business days. We track status and follow up if needed.',
-    duration: '3–10 days',
+      'Processing time varies by country and visa type. E-Medical Visas typically take 3–5 business days. Regular embassy-based medical visas take 5–15 business days. Bangladesh IVAC processing is usually 2–3 working days after submission. We track status and follow up if needed.',
+    duration: '3–15 days',
   },
   {
     title: 'Attendant visa (if required)',
     description:
-      'Family members travelling with the patient apply for attendant visas alongside the patient visa. We coordinate the additional documents and submission for attendants.',
+      'Family members travelling with the patient apply for Medical Attendant Visa (MX-Visa) alongside the patient visa. Most nationalities allow up to 2 attendants. Bangladesh nationals can bring up to 3 attendants under a special bilateral provision. Pakistan nationals are limited to 1 attendant. Attendant visas are co-terminus with the patient visa.',
     duration: 'Parallel',
   },
   {
     title: 'Visa approval & travel prep',
     description:
-      'Once approved, we confirm your visa details and coordinate flight guidance, airport pickup, and hospital admission timing to align with your visa validity window.',
+      'Once approved, we confirm your visa details and coordinate flight guidance, airport pickup, and hospital admission timing to align with your visa validity window. E-Medical Visas are valid for 60 days from arrival with triple entry; regular medical visas can be valid up to 1 year with multiple entries.',
     duration: '1–2 days',
+  },
+  {
+    title: 'FRRO registration after arrival',
+    description:
+      'If your treatment requires a stay longer than 180 days, you must register with the Foreigners Regional Registration Office (FRRO) within 14 days of arrival. Pakistan nationals on medical visa must register within 7 days. We coordinate the registration with the hospital letter and your accommodation proof so you stay compliant throughout treatment.',
+    duration: 'Within 14 days of arrival',
   },
 ];
 
@@ -65,7 +71,8 @@ const requiredDocuments = [
   'Passport-size photographs (white background)',
   'Hospital invitation letter from the Indian hospital',
   'Recent medical reports and diagnosis summary',
-  'Completed medical visa application form',
+  'Referral letter from your local doctor (mandatory for Bangladesh and Pakistan nationals)',
+  'Completed medical visa application form with Medical Visa Reference Number',
   'Proof of funds or sponsorship letter',
   'Flight itinerary (return ticket preferred)',
   'Accommodation proof or hospital admission confirmation',
@@ -73,55 +80,76 @@ const requiredDocuments = [
 
 const faqs = [
   {
-    question: 'What is a medical visa (M-Visa) for India?',
+    question: 'What is the difference between e-Medical Visa and regular Medical Visa for India?',
     answer:
-      'The Indian medical visa (M-Visa) is a special visa category for foreign nationals seeking medical treatment in India. It is granted based on a hospital invitation letter and is typically valid for up to one year with multiple entries, depending on the treatment duration.',
+      'The e-Medical Visa is applied for entirely online through indianvisaonline.gov.in, processed in 3–5 business days, valid for 60 days from arrival with triple entry, and available to citizens of 176 countries. The regular (paper) Medical Visa is applied for in person at an Indian embassy or visa centre, takes 5–15 business days, can be valid up to 1 year with multiple entries, and is available to all nationalities. If your country is eligible for e-Medical Visa and your treatment is under 60 days, it is usually the faster route.',
+  },
+  {
+    question: 'Which countries are eligible for India e-Medical Visa?',
+    answer:
+      'Citizens of 176 countries are eligible for the e-Medical Visa, including the US, UK, Canada, Australia, UAE, Saudi Arabia, Nigeria, Kenya, Ethiopia, and most European and Asian nations. Notable exceptions are Bangladesh and Pakistan — nationals of these countries must apply for a regular Medical Visa through the Indian Visa Application Centre (IVAC) or Indian High Commission, not the e-Visa portal. We confirm your eligibility and the correct application route based on your passport.',
+  },
+  {
+    question: 'How much does an Indian medical visa cost?',
+    answer:
+      'The e-Medical Visa fee ranges from US$25 to US$100 depending on your nationality, plus a 2.5–3% bank processing surcharge. Regular Medical Visa fees range from US$50 to US$150. Bangladesh nationals pay no government visa fee under the India-Bangladesh bilateral agreement — only the IVAC service charge applies. The exact fee for your nationality is shown on the official government portal when you apply. Medical Attendant Visa fees follow the same schedule as the patient visa.',
   },
   {
     question: 'How long does medical visa processing take?',
     answer:
-      'E-medical visas are typically processed within 3–5 business days. Embassy-based medical visas can take 5–10 business days depending on your country. Urgent cases can sometimes be fast-tracked — we advise starting the process as early as possible.',
+      'E-Medical Visas are typically processed within 3–5 business days. Regular embassy-based medical visas take 5–15 business days depending on your country. Bangladesh IVAC processing is usually 2–3 working days after submission. We advise starting the process as early as possible — ideally 4–6 weeks before your planned travel date — to allow buffer time for document corrections or embassy follow-ups.',
   },
   {
-    question: 'Can family members get a visa too?',
+    question: 'Can family members accompany me? How many attendants are allowed?',
     answer:
-      'Yes. Up to two attendants (family members) can apply for an attendant visa (MX-Visa) alongside the patient. The attendant visa is tied to the patient visa and has the same validity period.',
+      'Yes. Family members apply for a Medical Attendant Visa (MX-Visa) alongside the patient visa. Most nationalities allow up to 2 attendants. Bangladesh nationals can bring up to 3 attendants under a special bilateral provision. Pakistan nationals are limited to 1 attendant. Attendants must be blood relatives or close family members, and their visa is co-terminus with the patient visa — same validity period.',
   },
   {
-    question: 'What if my visa is delayed?',
+    question: 'Do I need to register with FRRO after arriving in India?',
     answer:
-      'We track your application status and follow up with the relevant embassy or portal. If there are document issues, we help you correct and resubmit quickly. In rare cases of significant delay, we can coordinate with the hospital to adjust treatment dates.',
+      'If your treatment requires a continuous stay longer than 180 days, you must register with the Foreigners Regional Registration Office (FRRO) within 14 days of arrival. Pakistan nationals on medical visa must register within 7 days. Registration requires your passport, visa, a hospital letter, and proof of accommodation. Children below 12 years are exempt. We coordinate the FRRO registration so you stay compliant throughout your treatment.',
+  },
+  {
+    question: 'Can I extend my medical visa if treatment takes longer than expected?',
+    answer:
+      'Yes. Medical visas can be extended in India if the hospital confirms in writing that continued treatment is necessary. The FRRO can extend a Medical Visa for up to one additional year on production of a medical certificate from the treating hospital. Extensions are processed through the e-FRRO online portal or at the nearest FRRO office, typically taking a few days to two weeks. We coordinate the extension application with the hospital and FRRO.',
+  },
+  {
+    question: 'What if my visa is delayed or rejected?',
+    answer:
+      'We track your application status and follow up with the relevant embassy or portal. If there are document issues, we help you correct and resubmit quickly — common rejection reasons include missing local doctor referral, name mismatches between passport and documents, or an invitation letter not sent from the hospital official email. In rare cases of significant delay, we can coordinate with the hospital to adjust treatment dates. Visa approval is at the discretion of the Indian government, but a complete and accurate application significantly improves approval rates.',
   },
   {
     question: 'Do you guarantee visa approval?',
     answer:
-      'No. Visa approval is at the discretion of the Indian government. However, we ensure your application is complete, accurate, and supported by the correct hospital documentation — which significantly improves approval rates.',
+      'No. Visa approval is at the discretion of the Indian government and no agency can guarantee it. However, we ensure your application is complete, accurate, and supported by the correct hospital documentation — which significantly improves approval rates. We also review your application before submission to catch common errors that cause rejection.',
   },
   {
-    question: 'Can I extend my medical visa if treatment takes longer?',
+    question: 'What documents does the hospital need to issue the invitation letter?',
     answer:
-      'Yes, medical visas can be extended in India if the hospital confirms that continued treatment is necessary. We coordinate the extension application with the hospital and the FRRO (Foreigners Regional Registration Office).',
+      'To issue the invitation letter, the hospital typically requires your diagnosis summary, recent medical reports (lab results, scans, biopsy reports), passport copy, and the expected treatment plan. Some hospitals may request a referral from your local doctor. We help you gather and organise these documents so the hospital can issue the letter within 24–48 hours in most cases.',
   },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'Medical Visa Assistance for India',
+    name: 'Medical Visa Assistance for Travelling to India',
     url: pageUrl,
     description:
-      'Step-by-step medical visa guidance for international patients travelling to India for treatment. Document checklists, processing times, and attendant visa support.',
+      'Step-by-step medical visa guidance for international patients travelling to India for treatment. Document checklists, processing times, fee ranges, FRRO registration, and attendant visa support.',
     inLanguage: 'en',
   }),
   breadcrumbs([
     { name: t.nav.home, url: `${siteUrl}/` },
     { name: 'Medical Visa Assistance', url: `${pageUrl}/` },
   ]),
+  faqPage({ entries: faqs }),
 ];
 ---
 
 <Layout
-  title={`Medical Visa Assistance | ${t.site.name}`}
-  description="Step-by-step medical visa guidance for international patients travelling to India for treatment. Document checklists, processing times, and attendant visa support."
+  title={`Medical Visa to India | Step-by-Step Guidance | ${t.site.name}`}
+  description="Complete medical visa guide for travelling to India for treatment. E-Medical Visa and regular Medical Visa process, document checklist, fees, FRRO registration, and attendant visa support for international patients."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -169,11 +197,13 @@ const jsonLd = [
             class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
             data-anim="headline-reveal"
           >
-            Medical visa assistance for India
+            Medical visa to India, made clear
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            From hospital invitation letter to visa approval — we coordinate every document,
-            deadline, and embassy requirement so your family can focus on treatment, not paperwork.
+            When you are facing a serious diagnosis, the last thing you need is visa paperwork
+            standing between you and treatment. From hospital invitation letter to FRRO
+            registration, we handle every document, deadline, and embassy requirement — so you and
+            your family can focus on getting better, not navigating bureaucracy.
           </p>
         </div>
       </div>
@@ -190,11 +220,15 @@ const jsonLd = [
             Quick answer
           </p>
           <p class="text-ink/80 mt-3 text-base leading-relaxed">
-            India offers a dedicated medical visa (M-Visa) for patients seeking treatment at
-            recognised hospitals. The process requires a hospital invitation letter, passport,
-            medical reports, and a completed application. E-visas are available for many countries
-            and typically process in 3–5 business days. Khan Meditour coordinates the entire
-            paperwork pathway — including attendant visas for family members.
+            India offers two medical visa routes. The <strong>e-Medical Visa</strong> is applied
+            for online, processed in 3–5 business days, valid for 60 days with triple entry, and
+            available to citizens of 176 countries — fees range from US$25–$100 by nationality. The
+            <strong>regular Medical Visa</strong> is applied for at an Indian embassy or visa centre,
+            takes 5–15 business days, and can be valid up to 1 year with multiple entries.
+            Bangladesh and Pakistan nationals are not eligible for e-Visa and must apply through
+            IVAC or the Indian High Commission. Khan Meditour confirms your eligibility, prepares
+            your documents, and coordinates the full process — including attendant visas for family
+            members.
           </p>
         </div>
       </div>
