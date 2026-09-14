@@ -26,7 +26,7 @@ export interface LeadFormProps extends React.HTMLAttributes<HTMLFormElement> {
   doctorSlug?: string;
   hospitalSlug?: string;
   estimatedTotal?: number;
-  onSuccess?: () => void;
+  onSuccess?: (data: { whatsappHref: string; submittedName: string }) => void;
 }
 
 type ContactMethod = 'whatsapp' | 'email' | 'call';
@@ -206,10 +206,11 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
         setFileErrors([]);
         setStatus({
           type: 'success',
-          message:
-            "We'll review your case and connect you with a specialist within 24–48 hours. Please send your reports via WhatsApp or email if you haven't already.",
+          message: "We'll review your case and connect you with a specialist within 24–48 hours.",
         });
-        onSuccess?.();
+        // Reason: pass the WhatsApp href and submitted name to the parent
+        // so it can show the success overlay with the right links.
+        onSuccess?.({ whatsappHref: reportWhatsAppHref, submittedName: data.name });
       } else {
         setError('root', { message: result.message });
         setStatus({ type: 'error', message: result.message });
@@ -407,30 +408,28 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
               status.type === 'success' ? 'bg-success/10 text-success' : 'bg-error/10 text-error'
             )}
           >
-            <div className="mb-2 flex items-center justify-center gap-2">
-              {status.type === 'success' && (
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                  className="shrink-0"
-                >
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                  <path
-                    d="M8 12l2.5 2.5L16 9"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              )}
-              <p className="font-semibold">{status.message}</p>
-            </div>
-            {status.type === 'success' && (
+            {status.type === 'success' ? (
               <>
+                <div className="mb-2 flex items-center justify-center gap-2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    className="shrink-0"
+                  >
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M8 12l2.5 2.5L16 9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <p className="font-semibold">{status.message}</p>
+                </div>
                 <p className="text-ink/70 mt-3 text-sm font-medium">
                   Send your medical reports for a faster response:
                 </p>
@@ -474,6 +473,8 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
                   </a>
                 </p>
               </>
+            ) : (
+              <p>{status.message}</p>
             )}
           </div>
         )}
