@@ -12,7 +12,7 @@ import { getFooterLegalLinks } from '../../lib/footer';
 import { getTreatments } from '../../lib/content';
 import { getInquiryLink } from '../../lib/whatsapp';
 import { LEAD_SOURCE } from '../../lib/crm';
-import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../../lib/schema';
 
 const locale = 'bn';
 const t = getTranslations(locale);
@@ -42,6 +42,193 @@ const urgentSteps = [
   'রিপোর্ট সম্ভব হলে একই দিনে সংশ্লিষ্ট হাসপাতালের আন্তর্জাতিক ডেস্কে পাঠানো হয়।',
   'পর্যালোচনার পর আপনি হাসপাতাল ম্যাচ, সময়রেখা এবং নির্দেশক খরচের পরিসর পান।',
   'নিশ্চিত পথের জন্য ভিসা আমন্ত্রণ ও ভ্রমণ পরিকল্পনা ত্বরান্বিত করা হয়।',
+];
+
+// কোন কেস সত্যিকারের জরুরি — ক্লিনিক্যাল কারণ সহ।
+// উৎস: Shifam Health ও Afiya India-এর ২০২৫ ক্লিনিক্যাল নির্দেশিকা।
+const urgencyConditions = [
+  {
+    condition: 'তীব্র কার্ডিয়াক ঘটনা',
+    examples: 'হার্ট অ্যাটাক, বিশ্রামে অস্থির অ্যাঞ্জাইনা, গুরুতর ভালভ রোগ',
+    whyUrgent:
+      'প্রতি ঘন্টা বিলম্বে পেশি ক্ষয় ও মৃত্যুঝুঁকি বাড়ে। ঘন্টার মধ্যে রিভাসকুলারাইজেশনই মানদণ্ড — দিন নয়।',
+    fastTrack: true,
+  },
+  {
+    condition: 'স্ট্রোক যেখানে তাৎক্ষণিক হস্তক্ষেপ দরকার',
+    examples: 'ইসকেমিক স্ট্রোক থ্রম্বোলাইসিস উইন্ডোর মধ্যে, বড় রক্তক্ষরণ',
+    whyUrgent:
+      'সময় খুব গুরুত্বপূর্ণ। থ্রম্বোলাইসিস ও থ্রম্বেক্টোমির উইন্ডো লক্ষণ শুরু হওয়ার মিনিট ও ঘন্টায় মাপা হয়।',
+    fastTrack: true,
+  },
+  {
+    condition: 'দ্রুত অগ্রসরমান ক্যানসার',
+    examples: 'নতুন রোগনির্ণয় বায়োপসি অপেক্ষমাণ, স্টেজিং দরকার, চিকিৎসা বিলম্বে ফল খারাপ',
+    whyUrgent:
+      'টিউমারের ধরন দ্রুত বদলাতে পারে। আক্রমণাত্মক ক্যানসারে স্টেজিং বা চিকিৎসা শুরুতে বিলম্ব বেঁচে থাকার সম্ভাবনা কমায়।',
+    fastTrack: true,
+  },
+  {
+    condition: 'অঙ্গ বৈকল্য বা ট্রান্সপ্লান্ট মূল্যায়ন',
+    examples: 'যকৃত বা কিডনি বৈকল্য, স্থানীয় ট্রান্সপ্লান্ট সুবিধা সীমিত, নিশ্চিত ডোনার ম্যাচ',
+    whyUrgent:
+      'নিশ্চিত ডোনার ম্যাচের উইন্ডো ছোট। অবনতিশীল অঙ্গ বৈকল্যে রোগী ট্রান্সপ্লান্টের মতো অসুস্থ হয়ে যেতে পারে।',
+    fastTrack: true,
+  },
+  {
+    condition: 'নিউরোসার্জিক্যাল জরুরি',
+    examples:
+      'স্পাইনাল কর্ড কম্প্রেশন, বাড়তি ইন্ট্রাক্রানিয়াল চাপ, মস্তিষ্কের টিউমার যার মাস ইফেক্ট আছে',
+    whyUrgent:
+      'ঘন্টা থেকে দিনের মধ্যে স্নায়বিক ঘাটতি অপরিবর্তনীয় হয়ে যেতে পারে। দ্রুত ডিকম্প্রেশন বা রিসেকশন কার্যকারিতা ধরে রাখে।',
+    fastTrack: true,
+  },
+  {
+    condition: 'সেপসিস বা গুরুতর সংক্রমণ',
+    examples: 'সেভিয়ার সেপসিস, নেক্রোটাইজিং সংক্রমণ, অনিয়ন্ত্রিত ডায়াবেটিক সংক্রমণ',
+    whyUrgent:
+      'সেপসিসে মৃত্যু ঘন্টায় ঘন্টায় বাড়ে যদি সোর্স কন্ট্রোল ও অ্যান্টিবায়োটিক না মেলে। ভ্রমণ নিরাপদ নাও হতে পারে — আগে স্থানীয়ভাবে স্থিতিশীল করুন।',
+    fastTrack: false,
+  },
+];
+
+// জরুরি মেডিকেল ভিসা — সত্যিকারের চিত্র। উৎস: অফিসিয়াল ই-ভিসা পোর্টাল + Shifam/HeyDocta ২০২৫।
+// কোনো ফ্যাসিলিটেটর, হাসপাতাল বা দূতাবাস ভিসা অনুমোদনের সময় গ্যারান্টি দিতে পারে না।
+const visaOptions = [
+  {
+    type: 'ই-মেডিকেল ভিসা (e-Medical)',
+    standardTime: '৩–৫ কর্মদিবস',
+    urgentTime: '২৪–৭২ ঘন্টা (কেসনির্ভর, গ্যারান্টি নয়)',
+    validity: 'আগমনের তারিখ থেকে ৬০ দিন, তিনবার এন্ট্রি',
+    notes:
+      'indianvisaonline.gov.in-এ অনলাইন আবেদন। হাসপাতালের আমন্ত্রণ পত্র দরকার। আগমনের অন্তত ৪ দিন আগে আবেদন করুন।',
+  },
+  {
+    type: 'রেগুলার মেডিকেল ভিসা (দূতাবাস/কনস্যুলেট)',
+    standardTime: '৫–১০ কর্মদিবস',
+    urgentTime: 'শক্তিশালী মেডিকেল ডকুমেন্টেশনে ২–৩ দিন',
+    validity: '১ বছর পর্যন্ত, একাধিক এন্ট্রি',
+    notes: 'যাদের ই-ভিসা যোগ্য নয় বা দীর্ঘ চিকিৎসার জন্য। ভারতে FRRO-এর মাধ্যমে সম্প্রসারণ সম্ভব।',
+  },
+  {
+    type: 'মেডিকেল অ্যাটেনড্যান্ট ভিসা (MX-Visa)',
+    standardTime: 'রোগীর ভিসার সাথে প্রক্রিয়াজাত',
+    urgentTime: 'রোগীর ভিসার সময়রেখার সমান',
+    validity: 'রোগীর ভিসার সাথে মেলানো',
+    notes:
+      '২ জন পর্যন্ত অ্যাটেনড্যান্ট। আমরা অ্যাটেনড্যান্ট ডকুমেন্টেশন অগ্রাধিকার দিই যাতে পরিবারের সদস্য শুরু থেকেই সাথে থাকেন।',
+  },
+];
+
+// এয়ার অ্যাম্বুলেন্স ও মেডিকেল ইভাকুয়েশন — AeroCare, EMSOS, Healers Global, REVA, HappyFares ২০২৫।
+const airAmbulanceOptions = [
+  {
+    option: 'ডেডিকেটেড এয়ার অ্যাম্বুলেন্স (ICU সজ্জিত জেট)',
+    bestFor:
+      'গুরুতর অসুস্থ রোগী যাদের ভ্রমণে ICU-স্তরের সেবা দরকার — ভেন্টিলেটর, কার্ডিয়াক মনিটরিং, ECMO',
+    crew: 'ক্রিটিক্যাল-কেয়ার ডাক্তার + ফ্লাইট নার্স',
+    indicativeCost: 'ভারতের ভেতরে: ₹২.৫–১৮ লক্ষ। আন্তর্জাতিক: ₹১৫ লক্ষ–১.৫ কোটি+, দূরত্বভেদে',
+    mobilisation: 'অনুমোদনের পর সাধারণত ৪–৬ ঘন্টা',
+  },
+  {
+    option: 'শিডিউলড ফ্লাইটে কমার্শিয়াল স্ট্রেচার',
+    bestFor: 'স্থিতিশীল রোগী যারা বসতে পারেন না কিন্তু পুরো ICU সাপোর্ট দরকার না',
+    crew: 'মেডিকেল এসকর্ট (ডাক্তার বা নার্স)',
+    indicativeCost:
+      'ভারতের ভেতরে: ₹৩–৫ লক্ষ। আন্তর্জাতিক: ডেডিকেটেড জেটের চেয়ে কম, এয়ারলাইন ও রুটভেদে',
+    mobilisation: 'এয়ারলাইন শিডিউলের উপর নির্ভর — সাধারণত ২৪–৪৮ ঘন্টা',
+  },
+  {
+    option: 'রেগুলার ফ্লাইটে মেডিকেল এসকর্ট',
+    bestFor: 'স্থিতিশীল, চলমান রোগী যাদের মনিটরিং দরকার কিন্তু বসে থাকতে পারেন',
+    crew: 'ডাক্তার বা নার্স এসকর্ট',
+    indicativeCost:
+      'বিজনেস/ফার্স্ট-ক্লাস সিটের খরচ + মেডিকেল এসকর্ট ফি (আন্তর্জাতিকে সাধারণত $৫,০০০–$২৫,০০০)',
+    mobilisation: 'পরবর্তী কমার্শিয়াল ফ্লাইট',
+  },
+  {
+    option: 'গ্রাউন্ড অ্যাম্বুলেন্স (এয়ারপোর্ট থেকে হাসপাতাল)',
+    bestFor: 'যেকোনো এয়ার ট্রান্সফারের দুই প্রান্তে — অসুস্থ রোগীর জন্য কখনো বাদ দেওয়া যায় না',
+    crew: 'প্যারামেডিক ক্রু',
+    indicativeCost: 'শহর ও দূরত্বভেদে ₹৫,০০০–₹৫০,০০০',
+    mobilisation: 'ফ্লাইট নামার আগেই সাজানো',
+  },
+];
+
+// বিদেশি রোগীদের আইনি সুরক্ষা — যাচাইকৃত প্রাথমিক উৎস।
+const legalProtections = [
+  {
+    source: 'পারমানন্দ কাতারা বনাম ভারত সংঘ (১৯৮৯) ৪ SCC ২৮৬',
+    body: 'ভারতের সুপ্রিম কোর্ট',
+    what: 'প্রত্যেক ডাক্তার — সরকারি বা বেসরকারি — জীবন রক্ষার জন্য তাৎক্ষণিক চিকিৎসা দেওয়ার পেশাগত দায়বদ্ধতা রাখেন। কোনো প্রক্রিয়াগত আইন এই দায়িত্বে বাধা দিতে পারে না।',
+  },
+  {
+    source: 'ইন্ডিয়ান মেডিকেল কাউন্সিল রেগুলেশনস, ২০০২ §২.১',
+    body: 'মেডিকেল কাউন্সিল অফ ইন্ডিয়া',
+    what: 'জরুরি অবস্থায় ডাক্তারকে অবশ্যই রোগীর চিকিৎসা করতে হবে। ইচ্ছাকৃতভাবে চিকিৎসা প্রত্যাখ্যান পেশাগত অসদাচরণ — শাস্তি হিসেবে মেডিকেল রেজিস্টার থেকে সাসপেনশন বা বাদ হতে পারে।',
+  },
+  {
+    source: 'কনজ্যুমার প্রোটেকশন অ্যাক্ট, ২০১৯',
+    body: 'ভারত সরকার',
+    what: 'স্বাস্থ্যসেবা এর আওতায় আছে। সেবায় ঘাটতি বা চিকিৎসা অবহেলার জন্য বিদেশি রোগীদেরও ভারতীয় নাগরিকের মতো একই কনজ্যুমার অধিকার আছে।',
+  },
+];
+
+// "ভ্রমণের মতো অসুস্থ" — কে সিদ্ধান্ত নেয়, কী হয়।
+const travelFitnessOptions = [
+  {
+    scenario: 'রোগী কমার্শিয়াল ফ্লাইটে যাওয়ার মতো স্থিতিশীল',
+    action: 'শিডিউলড ফ্লাইটে মেডিকেল এসকর্ট। মনিটরড রোগীর জন্য সবচেয়ে কম খরচের নিরাপদ বিকল্প।',
+  },
+  {
+    scenario: 'রোগীর মনিটরিং দরকার কিন্তু ঘন্টার পর ঘন্টা বসে থাকতে পারবেন না',
+    action:
+      'শিডিউলড ফ্লাইটে মেডিকেল এসকর্ট সহ কমার্শিয়াল স্ট্রেচার। এয়ারলাইন সুযোগের উপর নির্ভরশীল।',
+  },
+  {
+    scenario: 'পুরো ফ্লাইটে ICU-স্তরের সেবা দরকার',
+    action:
+      'ক্রিটিক্যাল-কেয়ার ডাক্তার ও নার্স সহ ডেডিকেটেড এয়ার অ্যাম্বুলেন্স। সবচেয়ে ব্যয়বহুল, কিন্তু অস্থিতিশীল রোগীর জন্য একমাত্র নিরাপদ বিকল্প।',
+  },
+  {
+    scenario: 'রোগী এতই অস্থিতিশীল যে সরানো যাবে না',
+    action:
+      'হাসপাতাল আগে স্থানীয়ভাবে স্থিতিশীল চিকিৎসা বা ভারতীয় বিশেষজ্ঞের সাথে টেলিকনসালটেশন সুপারিশ করে। রোগী ফ্লাইটে ওঠার মতো হলে ভ্রমণ পুনর্বিবেচনা করা হয়। এই সিদ্ধান্ত চিকিৎসক হাসপাতাল নেয় — ফ্যাসিলিটেটর নয়।',
+  },
+];
+
+// জরুরি মেডিকেল ভ্রমণের বীমা — কী কভার করে, কী করে না।
+const insurancePoints = [
+  {
+    covers: false,
+    point:
+      'বেশিরভাগ দেশের হেলথ ইনস্যুরেন্স বিদেশে চিকিৎসা কভার করে না। কভারেজ ধরে নেওয়ার আগে আপনার পলিসি দেখুন।',
+  },
+  {
+    covers: false,
+    point:
+      'সাধারণ ট্রাভেল ইনস্যুরেন্স সাধারণত পূর্ব-বিদ্যমান রোগ ও পরিকল্পিত মেডিকেল প্রক্রিয়া বাদ দেয়।',
+  },
+  {
+    covers: false,
+    point:
+      'সাধারণ হেলথ বা ট্রাভেল ইনস্যুরেন্স সাধারণত বিদেশে চিকিৎসার পর দেশে ফেরার পর জটিলতা কভার করে না।',
+  },
+  {
+    covers: true,
+    point:
+      'বিশেষ মেডিকেল ট্রাভেল ইনস্যুরেন্স বিদেশে চিকিৎসার সময় ও পরে জটিলতা কভার করতে পারে। এমন পলিসি চান যা স্পষ্টভাবে মেডিকেল ট্যুরিজম জটিলতা ও মেডিকেল ইভাকুয়েশন কভার করে।',
+  },
+  {
+    covers: true,
+    point:
+      'ইমার্জেন্সি মেডিকেল ইভাকুয়েশন সুবিধা সহ ট্রাভেল ইনস্যুরেন্স এয়ার অ্যাম্বুলেন্স খরচ কভার করতে পারে। ভারত ভ্রমণের জন্য অন্তত $১,০০,০০০ মেডিকেল ও $৫,০০,০০০ ইভাকুয়েশন কভারেজ রাখা সুপারিশ করা হয়।',
+  },
+  {
+    covers: true,
+    point:
+      'আমরা ইনস্যুরেন্স ক্লেমের ডকুমেন্টেশন সমন্বয়ে সাহায্য করি — হাসপাতালের চিঠি, মেডিকেল রিপোর্ট, আইটেমাইজড বিল — কিন্তু আমরা বীমা বিক্রি করি না এবং ক্লেম অনুমোদন গ্যারান্টি দিতে পারি না।',
+  },
 ];
 
 const faqs = [
@@ -75,6 +262,31 @@ const faqs = [
     answer:
       'হ্যাঁ। অ্যাটেনড্যান্ট ভিসা রোগীর ভিসার পাশাপাশি সাজানো হয়, এমনকি ত্বরান্বিত সময়সীমায়ও। আমরা অ্যাটেনড্যান্ট ভিসা ডকুমেন্টেশন অগ্রাধিকার দিই যাতে একজন পরিবারের সদস্য শুরু থেকেই রোগীর সাথে ভ্রমণ করতে পারেন। সাধারণত MX-Visa-এ দুজন পর্যন্ত অ্যাটেনড্যান্ট অনুমোদিত হন।',
   },
+  {
+    question: 'ভারতে যাওয়ার আগে কোন জরুরি নম্বরগুলো সেভ করব?',
+    answer:
+      '১১২ সেভ করুন — ভারতের সব জরুরি নম্বর (বিদেশি সিম থেকেও চলে, লক করা ফোনেও, ইংরেজিতে)। ১০৮ হলো বেশিরভাগ রাজ্যে সরকারি ফ্রি অ্যাম্বুলেন্স। ১০০ পুলিশ। আপনার হাসপাতালের ইমার্জেন্সি বিভাগের নম্বর ও আমাদের ২৪/৭ কনসিয়ের্জ লাইন (+৮৮০১৬১১৮৯২৯৮৬) সেভ করুন। কেউ তাৎক্ষণিক জীবন-হুমকিতে থাকলে আগে ১১২ কল করুন, তারপর আমাদের জানান।',
+  },
+  {
+    question: 'ভারতে এয়ার অ্যাম্বুলেন্সের খরচ কত?',
+    answer:
+      'নির্দেশক খরচ (২০২৫): ভারতের ভেতরে ডেডিকেটেড এয়ার অ্যাম্বুলেন্স দূরত্ব ও বিমানের ধরন অনুযায়ী ₹২.৫ লক্ষ থেকে ₹১৮ লক্ষ। আন্তর্জাতিক মেডিকেল ইভাকুয়েশন ₹১৫ লক্ষ থেকে ১.৫ কোটি বা তার বেশি — গালফ বা পূর্ব আফ্রিকার আঞ্চলিক মিশন নিচের দিকে, ইউরোপ বা উত্তর আমেরিকার দীর্ঘ-পথ উপরের দিকে। মেডিকেল এসকর্ট সহ কমার্শিয়াল স্ট্রেচার সস্তা (ভারতের ভেতরে ₹৩–৫ লক্ষ)। স্থিতিশীল রোগীর জন্য রেগুলার ফ্লাইটে মেডিকেল এসকর্ট সবচেয়ে কম খরচের। খরচ নির্দিষ্ট নয় — রোগীর অবস্থা ও রুট জানা পর্যন্ত আমরা যাচাইকৃত প্রোভাইডার থেকে কোট সমন্বয় করি।',
+  },
+  {
+    question: 'ভারতে চিকিৎসার সময় জটিলতা হলে কী হয়?',
+    answer:
+      'JCI ও NABH-স্বীকৃত হাসপাতালে ২৪/৭ ICU টিম, ইমার্জেন্সি ব্লাড ব্যাংক ও কাঠামোগত জটিলতা সাড়া প্রোটোকল থাকে। জটিলতা হলে সার্জিক্যাল ও অ্যানেসথেসিয়া টিম আগে রোগীকে স্থিতিশীল করে, দরকার হলে সংশ্লিষ্ট বিশেষজ্ঞকে ডাকে। ভারতীয় আইন (পারমানন্দ কাতারা বনাম ভারত সংঘ, ১৯৮৯) অনুযায়ী প্রতিটি হাসপাতাল জাতীয়তা বা পরিশোধ ক্ষমতা নির্বিশেষে জরুরি চিকিৎসা দিতে বাধ্য। ইন্ডিয়ান মেডিকেল কাউন্সিল রেগুলেশনস, ২০০২ অনুযায়ী জরুরি সেবা প্রত্যাখ্যান পেশাগত অসদাচরণ। বিদেশি রোগীদের ভারতীয় নাগরিকের মতো কনজ্যুমার সুরক্ষা অধিকার আছে। আমাদের কোঅর্ডিনেটর পরিবারের সাথে যোগাযোগ, ভিসা সম্প্রসারণ ও ইনস্যুরেন্স ডকুমেন্টেশনে সাহায্য করেন — কিন্তু ক্লিনিক্যাল সিদ্ধান্ত চিকিৎসক হাসপাতাল নেয়, আমরা নয়।',
+  },
+  {
+    question: 'বিদেশি রোগী হিসেবে আমার আইনি অধিকার কী কী?',
+    answer:
+      'আপনার অধিকার আছে: স্বেচ্ছায় সম্মতি, দ্বিতীয় মতামত, মেডিকেল রেকর্ড দেখা, ভাষা দোভাষী, ও আনুষ্ঠানিক অভিযোগ প্রক্রিয়া। JCI ও NABH স্বীকৃতি হাসপাতালকে এই অধিকার মানতে বাধ্য করে। কনজ্যুমার প্রোটেকশন অ্যাক্ট, ২০১৯ অনুযায়ী স্বাস্থ্যসেবা আওতাভুক্ত — তাই সেবায় ঘাটতি বা অবহেলার জন্য আপনার আইনি পথ আছে, ভারতীয় নাগরিকের মতোই। ভারতের সুপ্রিম কোর্ট (পারমানন্দ কাতারা, ১৯৮৯) প্রতিষ্ঠা করেছে যে প্রতিটি ডাক্তারের জরুরি চিকিৎসা দেওয়ার দায়িত্ব আছে, এবং ইন্ডিয়ান মেডিকেল কাউন্সিল রেগুলেশনস, ২০০২ §২.১ জরুরি সেবা প্রত্যাখ্যানকে পেশাগত অসদাচরণ করে।',
+  },
+  {
+    question: 'ভারতে জরুরি মেডিকেল ভ্রমণের জন্য আমার বীমা কভার করবে?',
+    answer:
+      'বেশিরভাগ দেশের হেলথ ইনস্যুরেন্স বিদেশে চিকিৎসা কভার করে না। সাধারণ ট্রাভেল ইনস্যুরেন্স সাধারণত পূর্ব-বিদ্যমান রোগ ও পরিকল্পিত মেডিকেল প্রক্রিয়া বাদ দেয়, এবং দেশে ফেরার পর জটিলতা সাধারণত কভার করে না। আপনার দরকার বিশেষ মেডিকেল ট্রাভেল ইনস্যুরেন্স যা স্পষ্টভাবে মেডিকেল ট্যুরিজম জটিলতা ও মেডিকেল ইভাকুয়েশন কভার করে। ভারত ভ্রমণের জন্য অন্তত $১,০০,০০০ মেডিকেল ও $৫,০০,০০০ ইভাকুয়েশন কভারেজ সুপারিশ করা হয়। আমরা ক্লেম ডকুমেন্টেশন সমন্বয়ে সাহায্য করি — হাসপাতালের চিঠি, রিপোর্ট, আইটেমাইজড বিল — কিন্তু আমরা বীমা বিক্রি করি না এবং ক্লেম অনুমোদন গ্যারান্টি দিতে পারি না। ভ্রমণের আগে আপনার ইনস্যুরারকে জিজ্ঞেস করুন।',
+  },
 ];
 
 const jsonLd = [
@@ -90,6 +302,8 @@ const jsonLd = [
     { name: 'জরুরি ও তাত্ক্ষণিক কেস', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
@@ -143,7 +357,7 @@ const jsonLd = [
             জরুরি পথ
           </span>
           <h1
-            class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             সময়-সংবেদনশীল কেসের জন্য দ্রুত-ট্র্যাক সহায়তা
@@ -262,8 +476,394 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    {/* ── WHEN A CASE IS GENUINELY URGENT ──────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          কোন কেস সত্যিকারের জরুরি
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          "জরুরি" একটি ক্লিনিক্যাল বিচার, অনুভূতি নয়। নিচের টেবিলে ব্যাখ্যা করা হয়েছে কোন
+          অবস্থাগুলো সত্যিকারের দ্রুত-ট্র্যাক যোগ্য এবং কেন সময় গুরুত্বপূর্ণ। আপনার পরিস্থিতি
+          এগুলোর একটির সাথে মিললে অবিলম্বে আমাদের যোগাযোগ করুন — এবং যে রিপোর্ট আছে শেয়ার করুন।
+        </p>
+        {/* Mobile: stacked cards */}
+        <div class="space-y-4 md:hidden">
+          {
+            urgencyConditions.map((c) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <p class="text-sm font-semibold text-ink">{c.condition}</p>
+                  {c.fastTrack ? (
+                    <span class="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700">
+                      <Icon name="check" size={10} /> হ্যাঁ
+                    </span>
+                  ) : (
+                    <span class="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                      আগে স্থিতিশীল করুন
+                    </span>
+                  )}
+                </div>
+                <dl class="mt-3 space-y-2 text-sm">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      উদাহরণ
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{c.examples}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      কেন সময় গুরুত্বপূর্ণ
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{c.whyUrgent}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        {/* Desktop: table */}
+        <div class="hidden md:block">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">অবস্থা</th>
+                <th class="py-3 pr-4 font-semibold">উদাহরণ</th>
+                <th class="py-3 pr-4 font-semibold">কেন সময় গুরুত্বপূর্ণ</th>
+                <th class="py-3 font-semibold">দ্রুত-ট্র্যাক?</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                urgencyConditions.map((c) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">{c.condition}</td>
+                    <td class="text-ink/70 py-4 pr-4">{c.examples}</td>
+                    <td class="text-ink/70 py-4 pr-4">{c.whyUrgent}</td>
+                    <td class="py-4">
+                      {c.fastTrack ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700">
+                          <Icon name="check" size={10} /> হ্যাঁ
+                        </span>
+                      ) : (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                          আগে স্থিতিশীল করুন
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          এই টেবিল একটি সাধারণ গাইড, মেডিকেল পরামর্শ নয়। আপনার রিপোর্টের ভিত্তিতে চিকিৎসক হাসপাতালই
+          চূড়ান্ত সিদ্ধান্ত নেয় কেসটি দ্রুত-ট্র্যাক যোগ্য কিনা।
+        </p>
+      </div>
+    </section>
+
+    {/* ── EMERGENCY MEDICAL VISA REALITY ──────────────────────────── */}
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          জরুরি মেডিকেল ভিসা: সত্যিকারের চিত্র
+        </h2>
+        <p class="text-ink/60 mb-3 max-w-2xl text-sm" data-anim="fade-in-up">
+          ভারতে আলাদা "জরুরি মেডিকেল ভিসা" ক্যাটাগরি নেই। হাসপাতালের আমন্ত্রণ পত্র ও চিকিৎসকের জরুরি
+          চিঠিতে সময়-সংবেদনশীলতা স্পষ্টভাবে দলিল থাকলে স্ট্যান্ডার্ড মেডিকেল ভিসা অগ্রাধিকার পেতে
+          পারে। নিচের সময়গুলো নির্দেশক — কোনো ফ্যাসিলিটেটর, হাসপাতাল বা দূতাবাস ভিসা অনুমোদন
+          গ্যারান্টি দিতে পারে না।
+        </p>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          আমরা আমন্ত্রণ পত্র ত্বরান্বিত করি এবং দূতাবাস বা ই-ভিসা পোর্টালের সাথে সমন্বয় করি। ভিসা
+          অনুমোদনের সময় ভারত সরকার ও আপনার আবেদনের দেশের উপর নির্ভর করে।
+        </p>
+        {/* Mobile: stacked cards */}
+        <div class="space-y-4 md:hidden">
+          {
+            visaOptions.map((v) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+                <p class="text-sm font-semibold text-ink">{v.type}</p>
+                <dl class="mt-3 space-y-2 text-sm">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      স্ট্যান্ডার্ড সময়
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.standardTime}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      জরুরি (কেসনির্ভর)
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.urgentTime}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      বৈধতা
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.validity}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      দ্রষ্টব্য
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.notes}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        {/* Desktop: table */}
+        <div class="hidden md:block">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">ভিসার ধরন</th>
+                <th class="py-3 pr-4 font-semibold">স্ট্যান্ডার্ড সময়</th>
+                <th class="py-3 pr-4 font-semibold">জরুরি (কেসনির্ভর)</th>
+                <th class="py-3 pr-4 font-semibold">বৈধতা</th>
+                <th class="py-3 font-semibold">দ্রষ্টব্য</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                visaOptions.map((v) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">{v.type}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.standardTime}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.urgentTime}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.validity}</td>
+                    <td class="text-ink/70 py-4">{v.notes}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          উৎস: অফিসিয়াল ভারতীয় ই-ভিসা পোর্টাল (indianvisaonline.gov.in) ও ২০২৫ ফ্যাসিলিটেটর
+          নির্দেশিকা। আবেদন করুন
+          <a
+            href="https://indianvisaonline.gov.in/evisa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-violet-600 hover:text-violet-700">indianvisaonline.gov.in</a
+          >-এ। আবেদনের আগে আপনার দেশের যোগ্যতা দেখে নিন।
+        </p>
+      </div>
+    </section>
+
+    {/* ── AIR AMBULANCE & MEDICAL EVACUATION ─────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          অত্যন্ত অসুস্থ রোগী কীভাবে ভারতে আসে
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          জরুরি কেসে সবচেয়ে বেশি জিজ্ঞাসা হয় অত্যন্ত অসুস্থ রোগী আসলে কীভাবে ভারতে ভ্রমণ করে। সঠিক
+          বিকল্প নির্ভর করে রোগীর ক্লিনিক্যাল অবস্থার উপর — কোনটি নিরাপদ তা চিকিৎসক হাসপাতাল বলে।
+          নিচের খরচ নির্দেশক (২০২৫) এবং রুট, বিমান, ক্রু ও জরুরিতা অনুযায়ী বদলায়।
+        </p>
+        <div class="space-y-4">
+          {
+            airAmbulanceOptions.map((opt) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-6"
+                data-anim="fade-in-up"
+              >
+                <h3 class="font-display text-lg font-bold text-ink">{opt.option}</h3>
+                <dl class="mt-3 grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      কার জন্য সেরা
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.bestFor}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      ক্রু
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.crew}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      নির্দেশক খরচ
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.indicativeCost}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      মোবিলাইজেশন
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.mobilisation}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          রোগীর অবস্থা, অবস্থান ও গন্তব্য জানা পর্যন্ত আমরা যাচাইকৃত এয়ার অ্যাম্বুলেন্স প্রোভাইডার
+          থেকে কোট সমন্বয় করি। আমাদের নিজস্ব বিমান নেই — আমরা সমন্বয় করি। কোনটি ক্লিনিক্যালি
+          নিরাপদ তা চিকিৎসক হাসপাতাল সিদ্ধান্ত নেয়।
+        </p>
+      </div>
+    </section>
+
+    {/* ── IF COMPLICATIONS ARISE ──────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          ভারতে চিকিৎসার সময় জটিলতা হলে
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          এটি পরিবারের সবচেয়ে গভীর উদ্বেগ — প্রিয়জনকে বিদেশে পাঠানো। ভারতীয় আইন ও স্বীকৃত
+          হাসপাতালে স্পষ্ট সুরক্ষা আছে — এবং বিদেশি রোগী হিসেবে আপনার আইনি অধিকার আছে।
+        </p>
+        <div
+          class="mb-10 rounded-card border border-cream-300 bg-cream-100 p-6"
+          data-anim="fade-in-up"
+        >
+          <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+            স্বীকৃত হাসপাতালে কী থাকে
+          </p>
+          <ul class="text-ink/70 mt-3 space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>২৪/৭ ICU টিম, ইন্টেনসিভিস্ট মিনিটের মধ্যে পাওয়া যায়</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>ইমার্জেন্সি ব্লাড ব্যাংক, ক্রস-ম্যাচ রক্ত গোটা দিন পাওয়া যায়</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>কাঠামোগত জটিলতা সাড়া প্রোটোকল — আগে স্থিতিশীল করুন, তারপর বিশেষজ্ঞে পাঠান</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>সার্জারির পর তীব্র কিডনি বৈকল্যের জন্য ডায়ালাইসিস সক্ষতা</span>
+            </li>
+          </ul>
+        </div>
+        <h3 class="mb-4 font-display text-xl font-bold text-ink" data-anim="fade-in-up">
+          বিদেশি রোগী হিসেবে আপনার আইনি অধিকার
+        </h3>
+        <div class="space-y-4">
+          {
+            legalProtections.map((p) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-5"
+                data-anim="fade-in-up"
+              >
+                <p class="text-sm font-semibold text-ink">{p.source}</p>
+                <p class="text-ink/50 mt-0.5 text-xs">{p.body}</p>
+                <p class="text-ink/70 mt-2 text-sm leading-relaxed">{p.what}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          জটিলতার সময় আমাদের কোঅর্ডিনেটর পরিবারের সাথে যোগাযোগ, ভিসা সম্প্রসারণ ও ইনস্যুরেন্স
+          ডকুমেন্টেশনে সাহায্য করেন। ক্লিনিক্যাল সিদ্ধান্ত চিকিৎসক হাসপাতাল নেয় — আমরা নয়।
+        </p>
+      </div>
+    </section>
+
+    {/* ── TOO SICK TO TRAVEL? ─────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          ভ্রমণের মতো অসুস্থ?
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          রোগী ফ্লাইটে ওঠার মতো আছে কিনা তা চিকিৎসক হাসপাতাল সিদ্ধান্ত নেয় — ফ্যাসিলিটেটর নয়।
+          আকাশপথে ভ্রমণ অনুচিত হলে হাসপাতাল আগে টেলিকনসালটেশন বা স্থানীয়ভাবে স্থিতিশীল চিকিৎসা
+          সুপারিশ করতে পারে। যারা সহায়তায় ভ্রমণ করতে পারে, তাদের জন্য নিচে কীভাবে বিকল্প
+          ক্লিনিক্যাল প্রয়োজনের সাথে মেলে।
+        </p>
+        <div class="space-y-4">
+          {
+            travelFitnessOptions.map((opt) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-5"
+                data-anim="fade-in-up"
+              >
+                <p class="text-sm font-semibold text-ink">{opt.scenario}</p>
+                <p class="text-ink/70 mt-2 text-sm leading-relaxed">{opt.action}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* ── INSURANCE FOR EMERGENCY MEDICAL TRAVEL ─────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          জরুরি মেডিকেল ভ্রমণের বীমা
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          বেশিরভাগ পরিবার ধরে নেয় তাদের বিদ্যমান বীমা কভার করবে। সাধারণত করে না। ভ্রমণের আগে দেখুন
+          — এবং এমন পলিসি চান যা স্পষ্টভাবে মেডিকেল ট্যুরিজম জটিলতা ও মেডিকেল ইভাকুয়েশন কভার করে।
+        </p>
+        <div class="space-y-3">
+          {
+            insurancePoints.map((item) => (
+              <div
+                class={`rounded-card border p-5 ${item.covers ? 'border-green-200 bg-green-50' : 'border-rose-200 bg-rose-50'}`}
+                data-anim="fade-in-up"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ${item.covers ? 'bg-green-100' : 'bg-rose-100'}`}
+                    aria-hidden="true"
+                  >
+                    {item.covers ? (
+                      <Icon name="check" size={14} className="text-green-700" />
+                    ) : (
+                      <Icon name="close" size={14} className="text-rose-700" />
+                    )}
+                  </span>
+                  <p class="text-ink/80 text-sm leading-relaxed">{item.point}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          আমরা বীমা বিক্রি করি না। আমরা ক্লেম ডকুমেন্টেশন সমন্বয়ে সাহায্য করি — হাসপাতালের চিঠি,
+          মেডিকেল রিপোর্ট, আইটেমাইজড বিল — কিন্তু ক্লেম অনুমোদন গ্যারান্টি দিতে পারি না। ভ্রমণের আগে
+          আপনার ইনস্যুরারকে জিজ্ঞেস করুন।
+        </p>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2
           class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
@@ -400,7 +1000,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

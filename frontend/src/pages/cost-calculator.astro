@@ -13,7 +13,7 @@ import { getFooterLegalLinks } from '../lib/footer';
 import { getTreatments, entrySlug } from '../lib/content';
 import { getInquiryLink } from '../lib/whatsapp';
 import { TREATMENT_COST_DATA } from '../lib/treatment-cost-data';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -56,6 +56,22 @@ const calculatorLabels = {
     'Estimates are indicative package ranges. Final quotes follow medical review at a partner hospital. Flights are not included.',
   selectPrompt:
     'Select a treatment on the left to see your indicative cost range, US comparison, and package breakdown.',
+  procedureDuration: 'Procedure duration',
+  hospitalStay: 'Hospital stay',
+  recoveryTime: 'Recovery time',
+  tripCostTitle: 'Estimated total trip cost',
+  tripCostSubtitle:
+    'Add these to your treatment package for a realistic budget. Ranges are indicative — actual costs vary by origin city, season, hotel tier, and length of stay.',
+  tripCostFlights: 'Flights (return, economy)',
+  tripCostAccommodation: 'Accommodation (per night)',
+  tripCostTransfers: 'Airport transfers',
+  tripCostVisa: 'Visa fee',
+  tripCostMeals: 'Daily meals',
+  tripCostDisclaimer:
+    'Flights vary by origin (Bangladesh $200–$400, Gulf $300–$600, Africa $400–$800, UK/US $600–$1,200). Accommodation ranges from budget guesthouse to international brand. See our travel page for details.',
+  currencyNote:
+    'Estimates shown in USD. We can share quotes in BDT, AED, SAR, GBP, EUR, KES, NGN, or your preferred currency on request.',
+  currencyCta: 'Request quote in my currency',
 };
 
 const faqs = [
@@ -89,14 +105,34 @@ const faqs = [
     answer:
       'If complications arise during treatment that increase costs, the hospital will inform you before proceeding with any additional procedures. We help you understand the revised costs and communicate with the hospital billing team. There are no hidden add-ons — everything is discussed before it happens.',
   },
+  {
+    question: 'Can I see the cost in my local currency (BDT, AED, GBP, EUR)?',
+    answer:
+      'Estimates are shown in US dollars as a common reference currency. When we share your written quote, we can also provide figures in Bangladeshi Taka (BDT), UAE Dirham (AED), Saudi Riyal (SAR), British Pound (GBP), Euro (EUR), Kenyan Shilling (KES), Nigerian Naira (NGN), or your preferred currency based on the exchange rate at the time. Just let us know which currency you would like.',
+  },
+  {
+    question: 'Does the estimate include flights and accommodation?',
+    answer:
+      'No. The package range covers the treatment at the hospital only. International flights, accommodation outside the hospital, airport transfers, daily meals, visa fees, and companion travel costs are separate. See our travel and accommodation page for indicative costs of flights, hotel tiers, airport pickup, and daily logistics in Bangalore.',
+  },
+  {
+    question: 'How long will I need to stay in India for my treatment?',
+    answer:
+      'Stay length depends on the procedure and your recovery. As a guide: angioplasty typically needs 2–4 days in hospital plus 2–3 days recovery; CABG needs 5–7 days in hospital plus 7–10 days recovery; knee or hip replacement needs 4–6 days in hospital plus 10–14 days recovery; liver transplant needs 2–3 weeks in hospital plus 4–6 weeks recovery. Your treating surgeon confirms the exact stay after reviewing your case.',
+  },
+  {
+    question: 'How do India\u2019s costs compare to Thailand, Turkey, or Singapore?',
+    answer:
+      'India is typically 40–70% cheaper than Thailand, Turkey, and Singapore for the same procedures at JCI-accredited hospitals. For example, CABG in India costs $5,000–$10,000 versus $12,000–$20,000 in Thailand and $18,000–$35,000 in Singapore. The quality at accredited hospitals is comparable across all four destinations — the difference is the cost base, not the standard of care. See our Why India page for the full comparison.',
+  },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'Medical Treatment Cost Calculator',
+    name: 'Medical Treatment Cost Calculator — India Package Ranges vs USA',
     url: pageUrl,
     description:
-      'Estimate the cost of medical treatment in India. Select a treatment to see indicative package ranges for cardiac, oncology, orthopaedics, IVF, transplant and more.',
+      'Estimate the cost of medical treatment in India. Select a treatment to see indicative package ranges, US comparison, what is included, and total trip cost guidance for cardiac, oncology, orthopaedics, IVF, transplant and more.',
     inLanguage: 'en',
   }),
   breadcrumbs([
@@ -104,11 +140,13 @@ const jsonLd = [
     { name: 'Cost Calculator', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`Cost Calculator | ${t.site.name}`}
-  description="Estimate the cost of medical treatment in India. Select a treatment to see indicative package ranges for cardiac, oncology, orthopaedics, IVF, transplant and more."
+  title={`Treatment Cost Calculator — India vs USA | ${t.site.name}`}
+  description="Estimate the cost of medical treatment in India. Select a treatment to see indicative package ranges, US comparison, what is included vs excluded, and total trip cost guidance for cardiac, oncology, orthopaedics, IVF, transplant and more."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -153,14 +191,15 @@ const jsonLd = [
             Cost estimator
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             Medical treatment cost calculator
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
             Select a treatment to see indicative package cost ranges at our partner hospitals in
-            India. Get a personalised quote in writing within 24–48 hours.
+            India, compare with US prices, check what is included, and plan your total trip budget.
+            Get a personalised quote in writing within 24–48 hours.
           </p>
         </div>
       </div>
@@ -179,6 +218,109 @@ const jsonLd = [
             labels={calculatorLabels}
             client:load
           />
+        </div>
+      </div>
+    </section>
+
+    {/* ── WHAT'S INCLUDED VS EXCLUDED ──────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          What the package includes
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          Most partner hospital packages cover the items below. Your written quote will list exactly
+          what is included for your specific case. Items marked as not included are billed
+          separately — we help you plan for them.
+        </p>
+        <div class="grid gap-6 md:grid-cols-2">
+          {/* Included */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-4 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100"
+                aria-hidden="true"
+              >
+                <Icon name="check" size={16} className="text-green-700" />
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">Usually included</h3>
+            </div>
+            <ul class="text-ink/80 space-y-2.5 text-sm">
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Hospital room, operating theatre, and nursing care
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Surgeon and anaesthetist fees
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Pre-operative diagnostics (blood tests, imaging, ECG)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Medicines and consumables during the hospital stay
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Implants where required (e.g. joint replacement, stent)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                Basic admission support and hospital discharge summary
+              </li>
+            </ul>
+          </div>
+
+          {/* Not included */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-4 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">Not included</h3>
+            </div>
+            <ul class="text-ink/80 space-y-2.5 text-sm">
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                International flights to and from India
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                Accommodation outside the hospital (guesthouse, hotel, apartment)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                Airport pickup and local transfers
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                Visa fees and medical attendant visa costs
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                Post-discharge medicines to take home
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                Companion travel, meals, and accommodation
+              </li>
+            </ul>
+            <a
+              href="/travel-accommodation-assistance"
+              class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-violet-600"
+            >
+              See travel & accommodation costs
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -344,7 +486,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

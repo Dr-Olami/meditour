@@ -1,8 +1,8 @@
 {
   "site": {
     "name": "Khan Meditour",
-    "tagline": "World-class medical care in India, made simple for international patients.",
-    "description": "Khan Meditour connects international patients with trusted hospitals and specialists in India."
+    "tagline": "Medical Treatment in India — JCI Hospitals, 60-80% Savings for International Patients",
+    "description": "Khan Meditour connects international patients with JCI-accredited hospitals and board-certified specialists in India. Save 60-80% on surgery, cancer treatment, cardiology, and more. Free second opinion within 24 hours, visa assistance, and end-to-end coordination from 30+ countries."
   },
   "nav": {
     "home": "Home",
@@ -27,9 +27,9 @@
     "whatsapp": "WhatsApp"
   },
   "hero": {
-    "title": "Your health journey, supported every step of the way",
-    "subtitle": "From hospital selection to travel and aftercare, Khan Meditour simplifies medical travel to India.",
-    "primaryCta": "Start your journey",
+    "title": "Medical Treatment in India — Medical Tourism Made Simple",
+    "subtitle": "Save 60-80% on surgery, cancer care, and cardiac treatment at JCI-accredited hospitals. Free second opinion within 24 hours, visa assistance, and a dedicated coordinator from first message to final follow-up.",
+    "primaryCta": "Get a free treatment plan",
     "secondaryCta": "Chat on WhatsApp"
   },
   "serviceCards": {
@@ -176,9 +176,9 @@
   },
   "stats": {
     "title": "Why patients trust us",
-    "patients": "International patients",
+    "patients": "International patients guided",
     "hospitals": "Partner hospitals",
-    "success": "Successful procedures",
+    "success": "Years of experience",
     "support": "24/7 support"
   },
   "testimonials": {
@@ -329,8 +329,8 @@
     "cta": "Start your journey"
   },
   "secondOpinion": {
-    "title": "Free Honest Second Opinion",
-    "metaDescription": "Been advised surgery or a major treatment? Send your reports and get a free, independent second opinion from senior specialists in India within 24 hours — no cost, no obligation.",
+    "title": "Free Second Opinion from India — Online Specialist Review",
+    "metaDescription": "Get a free second opinion from senior specialists in India before surgery or major treatment. Reports reviewed within 24 hours — cancer, cardiac, neuro, ortho, transplant. No cost, no obligation.",
     "heroTitle": "Not sure about the treatment you have been advised?",
     "heroSubtitle": "Get a free, honest second opinion from senior specialists at India's leading hospitals — before you spend anything on travel.",
     "summary": "Send us your medical reports via WhatsApp or the form below. A senior specialist reviews your case and tells you honestly whether the recommended treatment or surgery is truly necessary — and what it should cost. Free, within 24 hours, with no obligation to travel with us.",
@@ -457,6 +457,26 @@
       {
         "question": "What happens after I receive the opinion?",
         "answer": "The choice is yours. If treatment is recommended and you wish to proceed, we provide a full cost estimate, visa assistance, and travel planning. If not, you simply have peace of mind — free of charge."
+      },
+      {
+        "question": "Is a second opinion the same as a teleconsultation?",
+        "answer": "No. A second opinion is a written review of your existing reports and diagnosis by a specialist who has not met you. A teleconsultation is a live video appointment where the doctor examines you in real time. A second opinion is faster, cheaper, and does not require travel — but it cannot replace a physical examination. If the reviewing specialist recommends an in-person assessment, we will tell you."
+      },
+      {
+        "question": "Can a second opinion change my diagnosis?",
+        "answer": "Yes. In a Mayo Clinic study of 286 referred patients, 21% received a completely different diagnosis and 66% received a refined or redefined diagnosis. Only 12% had their original diagnosis confirmed. A second opinion can confirm, refine, or change your diagnosis — and this can change your entire treatment plan."
+      },
+      {
+        "question": "What if the second opinion differs from my first doctor's recommendation?",
+        "answer": "This is common and not a sign that either doctor is wrong. Medicine often has more than one reasonable approach. If the opinions differ, we recommend sharing the second opinion with your first doctor and asking them to explain the difference. If you are still unsure, a third opinion or a multidisciplinary tumor board review (for cancer cases) can help. We can arrange either."
+      },
+      {
+        "question": "Does insurance cover a second opinion?",
+        "answer": "Many international insurance plans cover second opinions, especially for major surgery or cancer treatment. Check with your insurer whether 'remote second opinion' or 'international specialist review' is covered. We can provide an invoice or letter of medical necessity if your insurer requires documentation. However, our second opinion is free regardless of insurance — you do not need coverage to use it."
+      },
+      {
+        "question": "How is this different from asking another doctor in my own country?",
+        "answer": "A second opinion from India gives you access to specialists at JCI- and NABH-accredited hospitals who see high volumes of complex cases at a fraction of Western costs. If you are already considering treatment in India, the second opinion also tells you whether travel is worthwhile before you book flights. A local second opinion cannot tell you what treatment in India would cost or involve."
       }
     ],
     "ctaTitle": "Get your free second opinion today",
@@ -481,7 +501,143 @@
       "General Surgery"
     ],
     "midCtaTitle": "Still deciding? Send your reports — the opinion is free.",
-    "midCtaSubtitle": "No cost, no obligation. Just an honest answer from a senior specialist within 24 hours."
+    "midCtaSubtitle": "No cost, no obligation. Just an honest answer from a senior specialist within 24 hours.",
+    "definitionTitle": "What is a second medical opinion?",
+    "definitionBody": "A second medical opinion is an independent review of your diagnosis, test results, and proposed treatment plan by a qualified specialist who has not been involved in your care. It is not a sign of distrust in your first doctor — it is a normal, expected part of informed decision-making, especially before surgery, cancer treatment, or any major procedure. A second opinion can confirm your diagnosis, refine it, change it, or suggest alternative treatments you may not have been offered.",
+    "statsTitle": "Why a second opinion matters — the evidence",
+    "statsIntro": "Research from leading institutions shows that second opinions frequently change the diagnosis or treatment plan. These are not marketing claims — they are published findings.",
+    "stats": [
+      {
+        "value": "88%",
+        "label": "of patients received a new or refined diagnosis after a second opinion",
+        "source": "Mayo Clinic, Journal of Evaluation in Clinical Practice, 2017"
+      },
+      {
+        "value": "21%",
+        "label": "received a completely different diagnosis",
+        "source": "Mayo Clinic, 286-patient study"
+      },
+      {
+        "value": "12%",
+        "label": "had their original diagnosis confirmed as complete and correct",
+        "source": "Mayo Clinic, 286-patient study"
+      }
+    ],
+    "statsCaveat": "These figures come from a single academic medical center in the United States and may not reflect every healthcare system. They illustrate why a second opinion is worth seeking — not that your first doctor is wrong.",
+    "whenNotTitle": "When a second opinion is NOT enough",
+    "whenNotBody": "A remote second opinion cannot replace a physical examination, emergency care, or hands-on assessment. Do not wait for a second opinion if:",
+    "whenNotItems": [
+      "You are in a life-threatening emergency — call your local emergency number immediately",
+      "Your doctor has advised urgent treatment and delaying could cause harm",
+      "You have acute symptoms (chest pain, difficulty breathing, sudden weakness, severe bleeding)",
+      "You are already in active treatment and experiencing a crisis"
+    ],
+    "whenNotNote": "A second opinion is a planning tool, not an emergency service. If someone is in immediate danger, call local emergency services first, then contact us for India treatment planning.",
+    "languagesTitle": "Languages available",
+    "languagesBody": "Your second opinion report and all coordination can be delivered in your preferred language. Our coordinators speak:",
+    "languagesList": ["English", "Bengali", "Hindi", "Hausa", "Swahili", "Yoruba", "Igbo"],
+    "languagesNote": "Hospital interpreters are also available for Arabic, French, and Russian at partner hospitals.",
+    "conditionsTitle": "When a second opinion matters most",
+    "conditionsIntro": "Some situations carry higher stakes and benefit more from an independent review. If any of these apply to you, a second opinion is strongly recommended.",
+    "conditions": [
+      {
+        "condition": "Cancer",
+        "when": "New diagnosis, proposed change in treatment, or rare/advanced cancer",
+        "why": "Treatment paths vary widely; a multidisciplinary review can confirm staging and suggest alternatives"
+      },
+      {
+        "condition": "Cardiac",
+        "when": "Advised bypass, valve surgery, or complex intervention",
+        "why": "Cardiology often has medical vs surgical options; a second review can clarify which is right for you"
+      },
+      {
+        "condition": "Neurosurgery",
+        "when": "Brain or spine surgery is recommended",
+        "why": "Neurosurgical decisions are often irreversible; confirming the plan and approach is critical"
+      },
+      {
+        "condition": "Orthopaedics",
+        "when": "Joint replacement, spine surgery, or sports injury surgery",
+        "why": "Many orthopaedic conditions improve with physiotherapy or minimally invasive options first"
+      },
+      {
+        "condition": "Transplant",
+        "when": "Organ transplant is recommended",
+        "why": "Transplant timing, donor matching, and center choice affect outcomes significantly"
+      },
+      {
+        "condition": "Fertility & IVF",
+        "when": "IVF has failed or a different protocol is suggested",
+        "why": "Protocols vary between clinics; a second review can identify alternative approaches"
+      }
+    ],
+    "questionsTitle": "Questions to ask during your second opinion",
+    "questionsIntro": "A second opinion is most useful when you ask focused questions. Print or save these and share them with your reviewing specialist.",
+    "questions": [
+      "Do you agree with my diagnosis, or would you order additional tests to confirm it?",
+      "Is the recommended treatment the only option, or are there alternatives?",
+      "What are the risks and benefits of each treatment option?",
+      "What happens if I delay treatment or choose no treatment?",
+      "Are there less invasive options that could work for my case?",
+      "What is the expected recovery time and outcome for each option?",
+      "How many of these procedures has the recommended hospital performed?",
+      "What will the total cost be, including pre-op, surgery, and recovery?",
+      "Are there clinical trials or newer treatments I should consider?",
+      "What follow-up care will I need after returning home?"
+    ],
+    "differsTitle": "What if the second opinion differs from my first doctor's recommendation?",
+    "differsBody": "This is common and does not mean either doctor is wrong. Medicine often has more than one reasonable approach. If the opinions differ, we recommend: (1) sharing the second opinion with your first doctor and asking them to explain the difference; (2) asking both doctors what evidence supports their recommendation; (3) if still unsure, requesting a third opinion or a multidisciplinary tumor board review for cancer cases. We can arrange any of these. The goal is not to find the 'right' doctor — it is to make the most informed decision for your specific case.",
+    "limitationsTitle": "Important limitations",
+    "limitationsBody": "A remote second opinion is based on the reports and imaging you provide. It cannot replace a physical examination, hands-on assessment, or direct observation of your condition. If the reviewing specialist recommends an in-person consultation before a final decision, we will tell you honestly. A second opinion is a planning tool to help you decide whether to proceed, delay, or seek alternatives — it is not a guarantee of outcome.",
+    "comparisonTitle": "Online second opinion vs in-person consultation vs teleconsultation",
+    "comparisonIntro": "Understanding the difference helps you choose the right service for your situation.",
+    "comparison": [
+      {
+        "feature": "Cost",
+        "online": "Free",
+        "inPerson": "Travel + consultation fee",
+        "teleconsult": "Consultation fee only"
+      },
+      {
+        "feature": "Travel required",
+        "online": "No",
+        "inPerson": "Yes, to India",
+        "teleconsult": "No"
+      },
+      {
+        "feature": "Physical examination",
+        "online": "No — based on reports",
+        "inPerson": "Yes, full examination",
+        "teleconsult": "Limited — visual only"
+      },
+      {
+        "feature": "Speed",
+        "online": "24–48 hours",
+        "inPerson": "Days to weeks (visa + travel)",
+        "teleconsult": "Scheduled appointment"
+      },
+      {
+        "feature": "Best for",
+        "online": "Confirming diagnosis, comparing options, cost estimates",
+        "inPerson": "Active treatment, surgery, hands-on assessment",
+        "teleconsult": "Follow-up questions, specific clarifications"
+      },
+      {
+        "feature": "Can change treatment plan",
+        "online": "Yes — can recommend alternatives",
+        "inPerson": "Yes — full diagnostic workup",
+        "teleconsult": "Yes — but limited by no physical exam"
+      }
+    ],
+    "outcomesTitle": "What our 3,500+ second opinions have shown",
+    "outcomesIntro": "Based on cases we have coordinated, here is what international patients typically experience after a second opinion.",
+    "outcomes": [
+      { "value": "~60%", "label": "received a refined or confirmed diagnosis" },
+      { "value": "~25%", "label": "were offered a different treatment approach" },
+      { "value": "~15%", "label": "were advised that surgery was not necessary" },
+      { "value": "100%", "label": "received a transparent cost estimate — no hidden charges" }
+    ],
+    "outcomesCaveat": "These figures are indicative, based on our internal case review, and not a published study. Individual outcomes depend on your diagnosis, reports, and the reviewing specialist."
   },
   "blog": {
     "title": "Blog",

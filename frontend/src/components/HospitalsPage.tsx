@@ -22,7 +22,7 @@ export function HospitalsPage({
   return (
     <div className="container py-16 pt-32">
       <div className="mb-10 max-w-2xl">
-        <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">
+        <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl">
           {title}
         </h1>
         <p className="text-ink/60 mt-4 text-lg">{subtitle}</p>

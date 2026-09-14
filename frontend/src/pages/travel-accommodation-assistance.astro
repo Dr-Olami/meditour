@@ -11,7 +11,7 @@ import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getInquiryLink } from '../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -25,37 +25,37 @@ const travelSteps = [
   {
     title: 'Flight guidance & booking',
     description:
-      'We help identify the best flight routes, airlines, and fares to Bangalore (or your treatment city). We advise on arrival timing to align with hospital admission and visa validity windows.',
+      'We help identify the best flight routes, airlines, and fares to Kempegowda International Airport (BLR), Bangalore. The airport is 40–50 km from the city centre — allow 45–90 minutes for hospital transfer depending on traffic. We advise on arrival timing to align with hospital admission and visa validity windows, and recommend booking through your preferred travel agent or airline website once treatment dates are confirmed.',
     duration: '1–2 days',
   },
   {
     title: 'Airport pickup',
     description:
-      'A coordinator meets you at the airport arrivals hall with a name placard. Wheelchair assistance and ambulance transfer can be arranged for patients who cannot travel by car.',
+      'A coordinator meets you at the BLR arrivals hall with a name placard. Wheelchair assistance should be requested from your airline at the time of booking and again at check-in, so a wheelchair is waiting at the aircraft door. For patients who cannot travel by car, ambulance transfer from the airport is arranged at cost. Pickup is available 24 hours a day, 7 days a week, including early morning and late-night arrivals.',
     duration: 'Pre-arranged',
   },
   {
     title: 'Hospital-area accommodation',
     description:
-      'We shortlist hotels and serviced apartments within 10–15 minutes of your hospital, filtered by budget, family-friendliness, and recovery needs (kitchenette, elevator, quiet floor).',
+      'We shortlist hotels and serviced apartments within 10–15 minutes of your hospital, filtered by budget, family-friendliness, and recovery needs (kitchenette, elevator, quiet floor). Bangalore hospital clusters include Bannerghatta Road (Apollo, Fortis), Old Airport Road (Manipal), HSR Layout (Narayana), and North Bangalore (Sparsh Hennur). We share confirmed rates before you travel — not indicative estimates.',
     duration: '1–2 days',
   },
   {
     title: 'Interpreter & language support',
     description:
-      'Bengali, Arabic, French, Amharic, and other interpreters are arranged for consultations, consent forms, and day-to-day communication — so nothing is lost in translation.',
+      'Bengali, Arabic, French, Amharic, Hausa, and other interpreters are arranged for consultations, consent forms, and day-to-day communication — so nothing is lost in translation. Interpreters can accompany you to every appointment during your stay, or be available on call as needed. Hospital consent forms are in English; an interpreter ensures you understand what you are signing.',
     duration: 'On request',
   },
   {
     title: 'Daily logistics during stay',
     description:
-      'Our Bangalore team stays reachable on WhatsApp throughout your stay. We help with local transport, pharmacy runs, food preferences, SIM cards, and any unexpected needs.',
+      'Our Bangalore team stays reachable on WhatsApp throughout your stay. We help with local transport (Uber, Ola, auto-rickshaws), pharmacy runs, food preferences, SIM card activation, currency exchange, and any unexpected needs. We can guide you to authorised forex dealers in the city — their exchange rates are typically 1–2% of the interbank rate, compared to 4–8% below interbank at airport counters.',
     duration: 'Throughout stay',
   },
   {
     title: 'Discharge & departure',
     description:
-      'We coordinate discharge timing, medicine pickup, airport drop, and flight check-in guidance. For patients needing medical escort on the flight home, we arrange that too.',
+      'We coordinate discharge timing, medicine pickup, airport drop, and flight check-in guidance. For patients needing medical escort on the flight home — a doctor or nurse who accompanies you on a commercial flight and monitors your condition — we arrange that too. Air ambulance is available for critical cases. We do not let you fly until your surgeon clears you for travel, typically 10–14 days after major surgery.',
     duration: '1 day',
   },
 ];
@@ -63,27 +63,33 @@ const travelSteps = [
 const accommodationOptions = [
   {
     type: 'Budget guesthouses',
-    price: '₹800–₹1,500 / night',
+    price: '₹500–₹1,500 / night',
     detail:
-      'Clean, basic rooms near the hospital. Suitable for short stays or attendants on a tight budget.',
+      'Clean, basic rooms near the hospital. Suitable for short stays or attendants on a tight budget. OYO and local guesthouses near Bommasandra and HSR Layout start from around ₹500/night.',
   },
   {
     type: 'Mid-range hotels',
     price: '₹1,500–₹3,500 / night',
     detail:
-      'Comfortable rooms with breakfast, Wi-Fi, and AC. Most popular choice for patient families.',
+      'Comfortable rooms with breakfast, Wi-Fi, and AC. Treebo, FabHotels, and similar brands near hospital clusters. Most popular choice for patient families.',
   },
   {
     type: 'Serviced apartments',
-    price: '₹2,500–₹5,000 / night',
+    price: '₹2,000–₹5,000 / night',
     detail:
-      'Kitchenette, separate bedroom, and living area. Ideal for longer stays or families cooking their own meals.',
+      'Kitchenette, separate bedroom, and living area. Ideal for longer stays or families cooking their own meals. Keerthi, Housr, and similar providers near Manipal and Narayana.',
+  },
+  {
+    type: 'International brand hotels',
+    price: '₹4,000–₹8,000 / night',
+    detail:
+      'Holiday Inn Express, Ibis, and similar international brands near hospital clusters. Reliable quality, familiar standards for patients who prefer global hotel chains.',
   },
   {
     type: 'Recovery-friendly stays',
     price: 'On request',
     detail:
-      'Ground-floor or elevator access, quiet location, and proximity to physio/dialysis centres. Arranged based on clinical needs.',
+      'Ground-floor or elevator access, quiet location, and proximity to physio/dialysis centres. Arranged based on clinical needs and surgeon recommendations.',
   },
 ];
 
@@ -91,41 +97,61 @@ const faqs = [
   {
     question: 'Do you book flights for us?',
     answer:
-      'We do not book flights directly, but we guide you on the best routes, airlines, and timing to align with your hospital admission. We recommend booking through your preferred travel agent or airline website once the treatment dates are confirmed.',
+      'We do not book flights directly, but we guide you on the best routes, airlines, and timing to align with your hospital admission. We recommend booking through your preferred travel agent or airline website once the treatment dates are confirmed. Most international patients fly into Kempegowda International Airport (BLR), Bangalore, which is 40–50 km from the city centre and well-connected to major hubs in the Middle East, Africa, and South Asia.',
   },
   {
     question: 'Is airport pickup included?',
     answer:
-      'Yes. Airport pickup is coordinated by our team at no extra service charge. A coordinator meets you at the arrivals hall with a name placard. For patients who need ambulance transfer from the airport, that is arranged at cost.',
+      'Yes. Airport pickup is coordinated by our team at no extra service charge. A coordinator meets you at the BLR arrivals hall with a name placard. Pickup is available 24 hours a day, 7 days a week, including early morning and late-night arrivals. For patients who need ambulance transfer from the airport, that is arranged at cost. Wheelchair assistance should be requested from your airline at the time of booking and again at check-in.',
   },
   {
     question: 'How close is the accommodation to the hospital?',
     answer:
-      'All recommended accommodation is within 10–15 minutes of your hospital. We prioritise proximity so attendants can easily travel between the hospital and the hotel, and patients can return quickly after discharge.',
+      'All recommended accommodation is within 10–15 minutes of your hospital. We prioritise proximity so attendants can easily travel between the hospital and the hotel, and patients can return quickly after discharge. Bangalore hospital clusters include Bannerghatta Road (Apollo, Fortis), Old Airport Road (Manipal), HSR Layout (Narayana), and North Bangalore (Sparsh Hennur) — we match accommodation to your specific hospital.',
   },
   {
     question: 'Can you arrange interpreters for my language?',
     answer:
-      'Yes. We arrange interpreters for Bengali, Arabic, French, Amharic, Hausa, and other languages on request. Interpreters can accompany you to consultations, help with consent forms, and assist with day-to-day communication.',
+      'Yes. We arrange interpreters for Bengali, Arabic, French, Amharic, Hausa, and other languages on request. Interpreters can accompany you to consultations, help with consent forms, and assist with day-to-day communication. Hospital consent forms are in English — an interpreter ensures you understand what you are signing before treatment begins.',
   },
   {
     question: 'What if I have dietary restrictions?',
     answer:
-      'Bangalore has restaurants serving South Asian, Middle Eastern, African, and vegetarian cuisine. Serviced apartments with kitchenettes are available if you prefer to cook. We help you find food options that match your dietary or religious requirements.',
+      'Bangalore has restaurants serving South Asian, Middle Eastern, African, and vegetarian cuisine. Serviced apartments with kitchenettes are available if you prefer to cook. We help you find food options that match your dietary or religious requirements — halal, vegetarian, vegan, or specific regional cuisines. Most hospitals also offer customised patient meals on request.',
+  },
+  {
+    question: 'Do I need vaccinations before travelling to India?',
+    answer:
+      'Yes. All travellers to India should be up to date with routine immunisations. Hepatitis A vaccination is recommended for most travellers. If you are arriving from a country with risk of yellow fever transmission — including most of Africa and parts of South America — India requires a yellow fever vaccination certificate. Without it, you may be quarantined for up to 6 days. Travellers from polio-endemic countries may need proof of oral polio vaccination. Consult your doctor or a travel clinic at least 4 weeks before travel.',
+  },
+  {
+    question: 'How do I get a SIM card and stay connected in India?',
+    answer:
+      'Foreign tourists need a passport, valid Indian visa, one passport-size photograph, and a local address (your hotel booking confirmation) to buy a SIM card. Airtel is the only operator with kiosks inside Bangalore airport international arrivals — activation takes about 15 minutes at the airport kiosk. City stores may take up to 24 hours. Tourist SIMs cost ₹300–450 for 28 days of data and calls, and are valid for up to 90 days. We can guide you to the nearest Airtel kiosk or store, or help arrange an eSIM if your phone supports it.',
+  },
+  {
+    question: 'Should I buy medical travel insurance?',
+    answer:
+      'Yes, we strongly recommend specialist medical travel insurance — not standard travel insurance. Standard travel policies explicitly exclude planned medical treatment and complications arising from it. Specialist medical travel insurance covers complications, extended hospital stays, and emergency medical evacuation. Without it, emergency evacuation from India to the US or UK can cost $90,000–$160,000. Policies typically cost $150–400 for an India trip depending on procedure and duration. We can advise on suitable providers for your nationality and procedure.',
+  },
+  {
+    question: 'How do I pay for hospital treatment and daily expenses?',
+    answer:
+      'For large hospital payments, international wire transfer (SWIFT) is the preferred method — allow 2–5 working days for clearance and transfer funds at least 5–7 days before arrival. Most major Indian hospitals also accept Visa and Mastercard. For daily expenses, carry USD or EUR in cash — US dollars are the most widely accepted foreign currency. Exchange at authorised city forex dealers (Thomas Cook, BookMyForex, UAE Exchange) for rates within 1–2% of interbank; avoid airport counters where rates are 4–8% below interbank. ATM fees are low (₹20–50 per withdrawal) but limits are ₹10,000–20,000 per transaction.',
   },
   {
     question: 'Is there support after discharge from the hospital?',
     answer:
-      'Yes. Our team stays reachable on WhatsApp after discharge. We help with medicine pickup, follow-up appointment scheduling, physiotherapy coordination, and safe departure planning — including medical escort on the flight if needed.',
+      'Yes. Our team stays reachable on WhatsApp after discharge. We help with medicine pickup, follow-up appointment scheduling, physiotherapy coordination, and safe departure planning — including medical escort on the flight if needed. A medical escort is a doctor or nurse who accompanies you on a commercial flight and monitors your condition. We do not let you fly until your surgeon clears you for travel, typically 10–14 days after major surgery, due to the risk of deep vein thrombosis.',
   },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'Travel & Accommodation Assistance for Medical Treatment in India',
+    name: 'Travel & Accommodation Assistance for Medical Treatment in Bangalore, India',
     url: pageUrl,
     description:
-      'Flight guidance, airport pickup, hospital-area accommodation, interpreters, and daily logistics for international patients travelling to India for treatment.',
+      'Complete travel and accommodation guide for international patients travelling to Bangalore, India for treatment. Airport pickup, hospital-area stays, SIM cards, currency, vaccinations, insurance, interpreters, and daily logistics.',
     inLanguage: 'en',
   }),
   breadcrumbs([
@@ -133,11 +159,13 @@ const jsonLd = [
     { name: 'Travel & Accommodation', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`Travel & Accommodation Assistance | ${t.site.name}`}
-  description="Flight guidance, airport pickup, hospital-area accommodation, interpreters, and daily logistics for international patients travelling to India for treatment."
+  title={`Travel & Accommodation for Medical Treatment in Bangalore | ${t.site.name}`}
+  description="Complete travel and accommodation guide for international patients travelling to Bangalore, India for treatment. Airport pickup, hospital-area stays, SIM cards, currency exchange, vaccinations, insurance, interpreters, and daily logistics."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -182,14 +210,15 @@ const jsonLd = [
             Travel support
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
-            Travel & accommodation assistance
+            Travel & accommodation for treatment in Bangalore
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            From flight guidance to airport pickup, hospital-area stays, interpreters, and daily
-            logistics — our Bangalore team keeps your family supported at every step of the journey.
+            From Kempegowda International Airport (BLR) pickup to hospital-area stays, interpreters,
+            SIM cards, and daily logistics — our Bangalore team keeps your family supported at every
+            step so you can focus on treatment, not navigation.
           </p>
         </div>
       </div>
@@ -206,10 +235,13 @@ const jsonLd = [
             Quick answer
           </p>
           <p class="text-ink/80 mt-3 text-base leading-relaxed">
-            Khan Meditour coordinates the full travel pathway for international patients: flight
-            guidance, airport pickup, accommodation near your hospital, interpreter support, and
-            daily logistics. Our Bangalore team stays reachable on WhatsApp throughout your stay —
-            you are not navigating India alone.
+            Khan Meditour coordinates the full travel pathway for international patients flying into
+            <strong>Kempegowda International Airport (BLR)</strong>, Bangalore — 40–50 km from the
+            city centre, 45–90 minutes transfer. Accommodation near your hospital ranges from
+            <strong>₹500–₹8,000/night</strong> depending on budget and brand preference.
+            <strong>Airport pickup is included</strong> at no service charge; ambulance transfer, flights,
+            and accommodation are at cost. We also arrange SIM cards, currency exchange guidance, interpreters,
+            and medical escort for your return flight — so you are not navigating India alone.
           </p>
         </div>
       </div>
@@ -255,6 +287,82 @@ const jsonLd = [
           Prices are indicative and vary by season, location, and availability. We share confirmed
           rates before you travel.
         </p>
+      </div>
+    </section>
+
+    {/* ── PRACTICAL INFORMATION ─────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-8 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          Practical information for your stay
+        </h2>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">Currency & payments</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              Carry USD or EUR in cash — US dollars are the most widely accepted foreign currency.
+              Exchange at authorised city forex dealers (Thomas Cook, BookMyForex, UAE Exchange) for
+              rates within 1–2% of interbank. Avoid airport counters where rates are 4–8% below
+              interbank. ATM fees are low (₹20–50 per withdrawal) but limits are ₹10,000–20,000 per
+              transaction. For hospital payments, international wire transfer (SWIFT) is preferred —
+              allow 2–5 working days and transfer at least 5–7 days before arrival.
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">SIM card & connectivity</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              Foreign tourists need a passport, valid Indian visa, one passport-size photograph, and
+              a local address (hotel booking) to buy a SIM card. Airtel is the only operator with
+              kiosks inside BLR international arrivals — activation takes about 15 minutes. Tourist
+              SIMs cost ₹300–450 for 28 days of data and calls, valid for up to 90 days. eSIM is
+              available if your phone supports it. We can guide you to the nearest kiosk.
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">Vaccinations</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              All travellers should be up to date with routine immunisations. Hepatitis A is
+              recommended. If arriving from a yellow fever endemic country — including most of
+              Africa and parts of South America — a yellow fever vaccination certificate is
+              required; without it you may be quarantined for up to 6 days. Travellers from
+              polio-endemic countries may need proof of oral polio vaccination. Consult a travel
+              clinic at least 4 weeks before departure.
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">Medical travel insurance</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              Standard travel insurance does not cover planned medical treatment or complications.
+              Specialist medical travel insurance covers complications, extended stays, and
+              emergency evacuation — without it, evacuation from India to the US or UK can cost
+              $90,000–$160,000. Policies typically cost $150–400 for an India trip. We can advise on
+              suitable providers for your nationality and procedure.
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">Best time to travel</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              Bangalore is pleasant year-round compared to other Indian cities. The best time to
+              visit is October–February (15–28°C, dry, low humidity). Summer runs March–May (up to
+              33°C). Monsoon is June–September with heavy rain and possible flooding in low-lying
+              areas. Treatment can proceed year-round, but recovery-friendly weather makes
+              October–February the most comfortable period for extended stays.
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">Medical escort for return</h3>
+            <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+              For patients who are medically stable but need supervision on the flight home, a
+              medical escort — a doctor or nurse — accompanies you on a commercial flight and
+              monitors your condition. For critical cases, air ambulance is available. Stretcher
+              service on commercial airlines is available for bed-ridden patients. We coordinate all
+              arrangements with the airline and receiving hospital in your home country.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 

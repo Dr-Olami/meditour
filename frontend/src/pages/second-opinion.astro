@@ -24,9 +24,10 @@ import {
   resolveHospital,
   entrySlug,
 } from '../lib/content';
-import { medicalWebPage, faqPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, faqPage, breadcrumbs, physician } from '../lib/schema';
 import { getDoctorInquiryLink, getSecondOpinionLink } from '../lib/whatsapp';
 import { LEAD_SOURCE } from '../lib/crm';
+import SecondOpinionEducational from '../design-system/components/organisms/SecondOpinionEducational.astro';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 
 const locale = 'en';
@@ -64,6 +65,21 @@ const doctors: Doctor[] = doctorEntries.slice(0, 4).map((entry) => {
 
 const testimonials = testimonialEntries.map((entry) => entry.data);
 
+// Map chip cloud labels to treatment slugs for internal linking.
+const chipSlugMap: Record<string, string> = {
+  Cardiology: 'cardiology',
+  Oncology: 'cancer-treatment',
+  Orthopaedics: 'orthopedics-surgery',
+  Neurology: 'neurology',
+  Gastroenterology: 'gastroenterology-gi-surgery',
+  Urology: 'urology',
+  ENT: 'ear-nose-throat',
+  Ophthalmology: 'ophthalmology',
+  'IVF & Fertility': 'infertility-treatment',
+  'Cosmetic Surgery': 'cosmetic-surgery',
+  Transplant: 'organ-treatment',
+};
+
 const siteStats = so.heroStats;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).toString();
@@ -81,6 +97,20 @@ const jsonLd = [
     { name: t.nav.home, url: new URL('/', Astro.url.origin).toString() },
     { name: so.title, url: pageUrl },
   ]),
+  // Physician JSON-LD for E-E-A-T — each reviewing doctor is a credentialed specialist.
+  ...doctors.map((doctor) =>
+    physician({
+      name: doctor.name,
+      specialty: doctor.specialty,
+      url: new URL(doctor.href, Astro.url.origin).toString(),
+      hospitalName: doctor.hospitalName || 'Khan Meditour Partner Hospital',
+      hospitalUrl: doctor.hospitalHref
+        ? new URL(doctor.hospitalHref, Astro.url.origin).toString()
+        : undefined,
+      qualification: doctor.qualification,
+      yearsExperience: doctor.experienceYears,
+    })
+  ),
 ];
 ---
 
@@ -144,7 +174,7 @@ const jsonLd = [
             {so.badge}
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             {so.heroTitle}
@@ -178,6 +208,9 @@ const jsonLd = [
         class="mx-auto max-w-3xl"
       />
     </section>
+
+    {/* ── EDUCATIONAL CONTENT — definition, stats, conditions, etc. ── */}
+    <SecondOpinionEducational so={so} />
 
     {/* ── BODY — content + sticky booking sidebar ────────────────────── */}
     <section class="container py-16 md:py-20">
@@ -241,6 +274,34 @@ const jsonLd = [
                 ))
               }
             </div>
+          </div>
+
+          {/* Conditions chip cloud — links to treatment pages */}
+          <div class="mt-12" data-anim="scroll-reveal">
+            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+              {so.chipCloudLabel}
+            </h2>
+            <ul class="mt-6 flex flex-wrap gap-2">
+              {
+                so.chipCloudItems.map((chip: string) => {
+                  const slug = chipSlugMap[chip];
+                  return slug ? (
+                    <li>
+                      <a
+                        href={`/treatments/${slug}`}
+                        class="text-ink/70 inline-flex items-center rounded-full border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium transition-colors hover:border-violet-300 hover:text-violet-700"
+                      >
+                        {chip}
+                      </a>
+                    </li>
+                  ) : (
+                    <li class="text-ink/70 inline-flex items-center rounded-full border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium">
+                      {chip}
+                    </li>
+                  );
+                })
+              }
+            </ul>
           </div>
         </div>
 

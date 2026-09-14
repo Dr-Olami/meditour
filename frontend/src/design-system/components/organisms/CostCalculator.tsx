@@ -43,6 +43,19 @@ export interface CostCalculatorProps {
     getExactQuote: string;
     disclaimer: string;
     selectPrompt: string;
+    procedureDuration: string;
+    hospitalStay: string;
+    recoveryTime: string;
+    tripCostTitle: string;
+    tripCostSubtitle: string;
+    tripCostFlights: string;
+    tripCostAccommodation: string;
+    tripCostTransfers: string;
+    tripCostVisa: string;
+    tripCostMeals: string;
+    tripCostDisclaimer: string;
+    currencyNote: string;
+    currencyCta: string;
   };
 }
 
@@ -68,6 +81,15 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
       return buildWhatsAppLink(
         number,
         `Hi Khan Meditour, I checked the estimate for ${selected.name} (range ${selected.fromPrice}–${selected.toPrice}) and would like an exact quote for my case.`
+      );
+    }, [selected]);
+
+    const currencyHref = React.useMemo(() => {
+      const number = getWhatsAppNumber();
+      if (!number || !selected) return '';
+      return buildWhatsAppLink(
+        number,
+        `Hi Khan Meditour, I checked the estimate for ${selected.name} (range ${selected.fromPrice}–${selected.toPrice}) and would like a quote in my local currency.`
       );
     }, [selected]);
 
@@ -188,6 +210,24 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                       <dd className="text-sm font-medium text-ink">{selected.category}</dd>
                     </div>
                   )}
+                  {selected.duration && (
+                    <div className="flex items-center justify-between py-2.5">
+                      <dt className="text-ink/50 text-sm">{labels.procedureDuration}</dt>
+                      <dd className="text-sm font-medium text-ink">{selected.duration}</dd>
+                    </div>
+                  )}
+                  {selected.hospitalStay && (
+                    <div className="flex items-center justify-between py-2.5">
+                      <dt className="text-ink/50 text-sm">{labels.hospitalStay}</dt>
+                      <dd className="text-sm font-medium text-ink">{selected.hospitalStay}</dd>
+                    </div>
+                  )}
+                  {selected.recoveryTime && (
+                    <div className="flex items-center justify-between py-2.5">
+                      <dt className="text-ink/50 text-sm">{labels.recoveryTime}</dt>
+                      <dd className="text-sm font-medium text-ink">{selected.recoveryTime}</dd>
+                    </div>
+                  )}
                   <div className="flex items-center justify-between py-2.5">
                     <dt className="text-ink/50 text-sm">{labels.quoteWindow}</dt>
                     <dd className="text-sm font-medium text-ink">{labels.quoteWindowValue}</dd>
@@ -220,6 +260,52 @@ const CostCalculator = React.forwardRef<HTMLDivElement, CostCalculatorProps>(
                 >
                   {labels.getExactQuote}
                 </a>
+
+                {/* Total trip cost estimate */}
+                <div className="bg-cream-200/50 mt-6 rounded-card border border-cream-300 p-5">
+                  <p className="text-sm font-semibold text-ink">{labels.tripCostTitle}</p>
+                  <p className="text-ink/50 mt-1 text-xs leading-relaxed">
+                    {labels.tripCostSubtitle}
+                  </p>
+                  <dl className="mt-4 space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <dt className="text-ink/70 text-sm">{labels.tripCostFlights}</dt>
+                      <dd className="text-ink/80 text-sm font-medium">$200–$1,200</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="text-ink/70 text-sm">{labels.tripCostAccommodation}</dt>
+                      <dd className="text-ink/80 text-sm font-medium">$6–$96</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="text-ink/70 text-sm">{labels.tripCostTransfers}</dt>
+                      <dd className="text-ink/80 text-sm font-medium">$15–$40</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="text-ink/70 text-sm">{labels.tripCostVisa}</dt>
+                      <dd className="text-ink/80 text-sm font-medium">$25–$80</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="text-ink/70 text-sm">{labels.tripCostMeals}</dt>
+                      <dd className="text-ink/80 text-sm font-medium">$4–$10</dd>
+                    </div>
+                  </dl>
+                  <p className="text-ink/50 mt-4 text-xs leading-relaxed">
+                    {labels.tripCostDisclaimer}
+                  </p>
+                </div>
+
+                {/* Currency conversion note */}
+                <div className="mt-4 rounded-card border border-cream-300 bg-cream-100 p-4">
+                  <p className="text-ink/70 text-xs leading-relaxed">{labels.currencyNote}</p>
+                  <a
+                    href={currencyHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+                  >
+                    {labels.currencyCta}
+                  </a>
+                </div>
               </div>
             ) : (
               <div className="flex h-full min-h-[200px] items-center justify-center">

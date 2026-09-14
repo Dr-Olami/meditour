@@ -11,7 +11,7 @@ import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getHospitals, entrySlug } from '../lib/content';
 import { getInquiryLink } from '../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -26,6 +26,100 @@ const hospitalAccreditations = hospitals
     accreditations: h.data.accreditations!,
   }));
 
+// Verified JCI-accredited hospitals in Bengaluru (Bangalore).
+// Sources: JCI / India Healthcare Tourism official list (55 hospitals, 2024)
+// and The Hindu + IndiaMedToday (Ramaiah Memorial, June 2025).
+// Accreditation status changes — patients should re-verify via the JCI directory.
+const partnerSlugs = new Set(hospitalAccreditations.map((h) => h.slug));
+const bangaloreJciHospitals = [
+  {
+    name: 'Apollo Hospitals, Bannerghatta Road',
+    area: 'Bannerghatta Road',
+    beds: '250+',
+    specialties: 'Multi-specialty — Cardiac, Oncology, Neuro, Ortho, ICU',
+    otherAccreditations: 'NABH',
+    slug: 'apollo-hospitals-bannerghatta',
+  },
+  {
+    name: 'Fortis Hospital, Bannerghatta Road',
+    area: 'Bannerghatta Road',
+    beds: '284',
+    specialties: 'Multi-specialty — Cardiac, Neuro, Oncology, Ortho, Transplants',
+    otherAccreditations: 'NABH, NABL, MTQUA',
+    slug: 'fortis-hospital-bannerghatta',
+  },
+  {
+    name: 'Manipal Hospital, Old Airport Road',
+    area: 'Old Airport Road',
+    beds: '600+',
+    specialties: 'Multi-specialty quaternary care',
+    otherAccreditations: 'NABH, NABL, AAHRPP, ISO 9001:2015',
+    slug: 'manipal-hospital-old-airport-road',
+  },
+  {
+    name: 'Manipal Hospital, Whitefield',
+    area: 'Whitefield',
+    beds: '280+',
+    specialties: 'Multi-specialty — Cardiac, Oncology, Neuro, Ortho',
+    otherAccreditations: 'NABH',
+    slug: '',
+  },
+  {
+    name: 'Narayana Institute of Cardiac Sciences (Narayana Health City)',
+    area: 'Bommasandra',
+    beds: '600+',
+    specialties: 'Cardiac surgery, interventional cardiology, heart transplant + multi-specialty',
+    otherAccreditations: 'NABH',
+    slug: 'narayana-institute-cardiac-sciences',
+  },
+  {
+    name: 'Aster CMI Hospital',
+    area: 'Hebbal',
+    beds: '500+',
+    specialties: 'Multi-specialty — Cardiac, Neuro, Oncology, Transplants',
+    otherAccreditations: 'NABH',
+    slug: '',
+  },
+  {
+    name: 'Ramaiah Memorial Hospital',
+    area: 'New BEL Road, MSRIT Post',
+    beds: '500',
+    specialties: 'Quaternary care multi-super-specialty',
+    otherAccreditations: 'NABH, NABL',
+    slug: '',
+  },
+].map((h) => ({ ...h, isPartner: h.slug ? partnerSlugs.has(h.slug) : false }));
+
+// India-wide JCI hospital count by city (indicative, based on the 55-hospital
+// 2024 list plus Ramaiah 2025). Counts shift as hospitals gain or lapse —
+// re-verify via the JCI directory before relying on these for a decision.
+const jciByCity = [
+  { city: 'Bengaluru (Bangalore)', count: 7, note: 'Largest JCI cluster in south India' },
+  {
+    city: 'Delhi NCR (Delhi, Gurugram, Noida)',
+    count: 12,
+    note: 'Indraprastha Apollo, Medanta, Artemis, Max, Fortis, BLK-Max',
+  },
+  {
+    city: 'Mumbai & Navi Mumbai',
+    count: 7,
+    note: 'Kokilaben, Reliance Foundation, Asian Heart, Fortis Mulund, Wockhardt',
+  },
+  { city: 'Chennai', count: 3, note: 'Apollo Chennai, Apollo Proton Cancer Centre' },
+  { city: 'Hyderabad', count: 1, note: 'Apollo Hospitals Hyderabad' },
+  {
+    city: 'Kolkata',
+    count: 3,
+    note: 'Apollo Multispeciality, Fortis Anandapur, Dharamshila Narayana',
+  },
+  {
+    city: 'Kochi & Thiruvananthapuram',
+    count: 4,
+    note: 'Aster Medcity, VPS Lakeshore, Amrita, KIMSHEALTH',
+  },
+  { city: 'Pune & Nagpur', count: 3, note: 'Ruby Hall Clinic, Alexis Multispeciality' },
+];
+
 const whatsappInquiryHref = getInquiryLink();
 
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
@@ -38,14 +132,14 @@ const accreditations = [
     origin: 'USA',
     color: 'bg-blue-600',
     description:
-      'The global arm of the Joint Commission — the same body that accredits Johns Hopkins, Mayo Clinic, and Cleveland Clinic in the United States. JCI surveys hospitals against more than 1,400 measurable elements covering patient safety, infection control, surgical safety, medication management, and patient rights.',
+      'The global arm of the Joint Commission — the same body that accredits Johns Hopkins, Mayo Clinic, and Cleveland Clinic in the United States. JCI surveys hospitals against more than 1,400 measurable elements covering patient safety, infection control, surgical safety, medication management, and patient rights. The 8th edition standards (effective January 2025) add new chapters on healthcare technology (EHR, telehealth, cybersecurity), patient safety event reporting, and expanded requirements for transplant programs and vulnerable patient care.',
     whatItMeans: [
       'Hospital meets the same standards as top US hospitals',
-      'Rigorous on-site surveys every 3 years',
-      'Focus on patient safety and clinical process quality',
-      'Internationally recognised as the gold standard',
+      'Rigorous on-site surveys every 3 years by independent assessors',
+      'Focus on patient safety, clinical process quality, and infection control',
+      'Internationally recognised as the gold standard for hospital quality',
     ],
-    indiaCount: '40+ JCI-accredited hospitals in India',
+    indiaCount: '60+ JCI-accredited hospitals and healthcare organisations in India',
     verifyLabel: 'Verify on JCI official site',
     verifyUrl: 'https://www.jointcommission.org/en',
   },
@@ -55,14 +149,14 @@ const accreditations = [
     origin: 'India (ISQua recognised)',
     color: 'bg-violet-600',
     description:
-      'NABH is the Indian accreditation body for hospitals, recognised by the International Society for Quality in Health Care (ISQua). It sets standards for clinical care, patient safety, hospital infrastructure, and staff qualifications. NABH accreditation is a mark of a well-run hospital that meets documented quality benchmarks.',
+      'NABH is the Indian accreditation body for hospitals, recognised by the International Society for Quality in Health Care (ISQua). It sets standards for clinical care, patient safety, hospital infrastructure, and staff qualifications across 10 chapters including access to care, patient rights, infection control, and medication management. NABH accreditation is a mark of a well-run hospital that meets documented quality benchmarks.',
     whatItMeans: [
       'Documented standards for clinical and non-clinical processes',
       'Regular surveillance audits to maintain accreditation',
       'ISQua recognition means standards meet global benchmarks',
       'Required by many insurers for cashless treatment',
     ],
-    indiaCount: '500+ NABH-accredited hospitals in India',
+    indiaCount: '700+ NABH-accredited hospitals, 29,000+ facilities across all NABH programs',
     verifyLabel: 'Verify on NABH official site',
     verifyUrl: 'https://nabh.co/',
   },
@@ -83,6 +177,74 @@ const accreditations = [
     verifyLabel: 'Verify on NABL official site',
     verifyUrl: 'https://nabl-india.org/',
   },
+  {
+    abbr: 'MTQUA',
+    full: 'Medical Travel Quality Alliance Certification',
+    origin: 'USA (medical tourism specific)',
+    color: 'bg-rose-600',
+    description:
+      'MTQUA is the only international certification specifically for medical tourism quality. It evaluates hospitals on 10 non-clinical areas that directly affect medical tourists: inquiry process, intake procedure, care management after discharge, website and marketing transparency, communication procedures, privacy and security, multicultural sensitivity, international patient services department, care support services, and operations. Fortis Hospital Bannerghatta was the first Indian hospital to achieve MTQUA certification (2014).',
+    whatItMeans: [
+      'Only certification focused specifically on medical tourist care',
+      'Evaluates the full international patient journey, not just clinical care',
+      'Reviews multicultural sensitivity and international patient services',
+      'Checks post-discharge follow-up for patients returning home',
+    ],
+    indiaCount: 'Select Indian hospitals hold MTQUA certification',
+    verifyLabel: 'Learn more on MTQUA site',
+    verifyUrl: 'https://mtqua.org/',
+  },
+  {
+    abbr: 'AAHRPP',
+    full: 'Association for Accreditation of Human Research Protection Programs',
+    origin: 'USA',
+    color: 'bg-indigo-600',
+    description:
+      'AAHRPP accredits organisations that conduct human research, ensuring they meet rigorous standards for ethical research practices, participant protection, and informed consent. Hospitals with AAHRPP accreditation demonstrate institutional commitment to research ethics and patient protection in clinical trials — important if your treatment involves experimental therapies or clinical studies.',
+    whatItMeans: [
+      'Ethical oversight of human research and clinical trials',
+      'Informed consent and participant protection standards',
+      'Independent review of research protocols',
+      'Commitment to research ethics and patient safety',
+    ],
+    indiaCount: 'Select Indian hospitals and research institutions hold AAHRPP',
+    verifyLabel: 'Verify on AAHRPP official site',
+    verifyUrl: 'https://www.aahrpp.org/',
+  },
+  {
+    abbr: 'ISO 9001',
+    full: 'ISO 9001:2015 Quality Management System',
+    origin: 'International (ISO)',
+    color: 'bg-amber-600',
+    description:
+      'ISO 9001 is the world\u2019s most widely used quality management standard. It assesses an organisation\u2019s processes for leadership, document management, internal audits, performance measurement, and continuous improvement. ISO 9001 is not healthcare-specific — it is used by organisations across many industries. In hospitals, it provides a foundation for process consistency, but it does not replace clinical accreditation like JCI or NABH.',
+    whatItMeans: [
+      'Documented quality management system',
+      'Regular internal audits and corrective action processes',
+      'Process consistency across departments',
+      'Foundation for quality, but not a clinical accreditation',
+    ],
+    indiaCount: 'Widely held across Indian hospitals and organisations',
+    verifyLabel: 'Learn more about ISO 9001',
+    verifyUrl: 'https://www.iso.org/standard/62085.html',
+  },
+  {
+    abbr: 'IFEM',
+    full: 'International Federation for Emergency Medicine',
+    origin: 'International (IFEM)',
+    color: 'bg-teal-600',
+    description:
+      'IFEM Gold Level certification recognises excellence in emergency care. It evaluates emergency departments against international standards for trauma care, resuscitation, emergency protocols, and staff training. SPARSH Hospital Hennur was the first hospital in India to achieve IFEM Gold Level certification — a signal of strong emergency response capability, which matters for surgical patients who may need rapid emergency intervention.',
+    whatItMeans: [
+      'Emergency department meets international standards',
+      'Trained emergency staff and resuscitation protocols',
+      'Rapid response capability for surgical complications',
+      'Important for surgical patients who may need emergency care',
+    ],
+    indiaCount: 'First in India — SPARSH Hospital Hennur holds IFEM Gold Level',
+    verifyLabel: 'Learn more on IFEM site',
+    verifyUrl: 'https://www.ifem.cc/',
+  },
 ];
 
 const faqs = [
@@ -94,7 +256,7 @@ const faqs = [
   {
     question: 'Is JCI accreditation the same as what US hospitals have?',
     answer:
-      'JCI is the international arm of the Joint Commission, which accredits most major US hospitals. The standards are closely aligned, though JCI includes additional criteria for international patients such as language access, medical record translation, and cross-border care coordination. A JCI-accredited hospital in India meets the same core standards as a Joint Commission-accredited hospital in the US.',
+      'JCI is the international arm of the Joint Commission, which accredits most major US hospitals. The standards are closely aligned, though JCI includes additional criteria for international patients such as language access, medical record translation, and cross-border care coordination. A JCI-accredited hospital in India meets the same core standards as a Joint Commission-accredited hospital in the US. The 8th edition standards (effective January 2025) add new chapters on healthcare technology, patient safety event reporting, and expanded transplant requirements.',
   },
   {
     question: 'What does NABH accreditation mean for my treatment?',
@@ -109,21 +271,41 @@ const faqs = [
   {
     question: "Can I verify a hospital's accreditation myself?",
     answer:
-      'Yes. JCI maintains a public directory of accredited organisations on its website. NABH and NABL also have searchable directories. We share the accreditation details of every hospital we recommend, and you are welcome to verify them independently before committing to treatment.',
+      'Yes. JCI maintains a public directory of accredited organisations on its website. NABH and NABL also have searchable directories. We share the accreditation details of every hospital we recommend, and you are welcome to verify them independently before committing to treatment. See the step-by-step verification guide below.',
   },
   {
     question: 'What about doctor qualifications — are those accredited too?',
     answer:
       "Doctor qualifications are verified through medical council registration rather than accreditation. Indian doctors must be registered with the Medical Council of India or state medical councils. Many of our partner doctors also hold fellowships or certifications from US, UK, or German institutions. We share each doctor's qualifications and training history on their profile page.",
   },
+  {
+    question: 'What does MTQUA certification mean?',
+    answer:
+      'MTQUA (Medical Travel Quality Alliance) certification is the only international accreditation specifically for medical tourism quality. It evaluates hospitals on 10 non-clinical areas that directly affect medical tourists: the inquiry process, intake procedure, care management after discharge, website transparency, communication, privacy, multicultural sensitivity, international patient services, care support, and operations. Fortis Hospital Bannerghatta was the first Indian hospital to achieve MTQUA certification in 2014. It is a strong signal that a hospital is set up specifically to serve international patients well.',
+  },
+  {
+    question: 'What is AAHRPP accreditation and why does it matter?',
+    answer:
+      'AAHRPP (Association for Accreditation of Human Research Protection Programs) accredits organisations that conduct human research, ensuring they meet rigorous standards for ethical research practices, participant protection, and informed consent. Manipal Hospital Old Airport Road holds AAHRPP accreditation. This matters if your treatment involves clinical trials, experimental therapies, or research studies — it ensures your rights and safety are protected if you participate in research.',
+  },
+  {
+    question: 'What does ISO 9001 certification mean for a hospital?',
+    answer:
+      'ISO 9001:2015 is the world\u2019s most widely used quality management standard. It assesses an organisation\u2019s processes for leadership, document management, internal audits, and continuous improvement. ISO 9001 is not healthcare-specific — it is used across many industries. In a hospital, it provides a foundation for process consistency, but it does not replace clinical accreditation like JCI or NABH. Think of it as a quality management baseline, not a clinical quality certification.',
+  },
+  {
+    question: 'What does accreditation NOT guarantee?',
+    answer:
+      'Accreditation is a strong signal of quality, but it is not a guarantee. It does not guarantee perfect outcomes — complications can still occur at any accredited hospital. It does not cover complications insurance — your home health insurance and standard travel insurance typically will not pay for treatment abroad or for complications after you return home. It does not guarantee the skill of an individual doctor — you should still check your surgeon\u2019s qualifications, experience, and case volume. And it does not replace your own due diligence: ask about success rates, infection rates, and patient reviews for your specific procedure.',
+  },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'Accreditations & Certifications',
+    name: 'Hospital Accreditations in India — JCI, NABH, NABL, MTQUA Explained',
     url: pageUrl,
     description:
-      'Understand JCI, NABH, and NABL accreditations — what the badges mean for your care when choosing a hospital in India for medical treatment.',
+      'Understand JCI, NABH, NABL, MTQUA, AAHRPP, ISO 9001, and IFEM accreditations — what each badge means for your care, how to verify any hospital yourself, and what accreditation does and does not guarantee.',
     inLanguage: 'en',
   }),
   breadcrumbs([
@@ -131,11 +313,13 @@ const jsonLd = [
     { name: 'Accreditations', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`Accreditations & Certifications | ${t.site.name}`}
-  description="Understand JCI, NABH, and NABL accreditations — what the badges mean for your care when choosing a hospital in India for medical treatment."
+  title={`Hospital Accreditations in India — JCI, NABH, NABL, MTQUA | ${t.site.name}`}
+  description="Understand JCI, NABH, NABL, MTQUA, AAHRPP, ISO 9001, and IFEM accreditations — what each badge means for your care, how to verify any hospital yourself, and what accreditation does and does not guarantee."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -180,15 +364,15 @@ const jsonLd = [
             Quality standards
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
-            JCI, NABH, and NABL — what the badges mean for your care
+            JCI, NABH, NABL, MTQUA — what each badge means for your care
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
             When you travel for treatment, you need to know the hospital meets international quality
-            standards. Here is what each accreditation means — and why we only work with accredited
-            hospitals.
+            standards. Here is what each accreditation means, how to verify any hospital yourself,
+            and what accreditation does and does not guarantee — so you can choose with confidence.
           </p>
         </div>
       </div>
@@ -262,8 +446,301 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── OUR ACCREDITED HOSPITALS ─────────────────────────────────── */}
+    {/* ── WHAT ACCREDITATION DOES NOT COVER ────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          What accreditation does not guarantee
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          Accreditation is a strong signal of quality, but it is not a guarantee. Knowing what it
+          does not cover helps you ask the right questions before committing to treatment.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Perfect outcomes</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              Complications can still occur at any accredited hospital. Accreditation verifies that
+              safety protocols exist and are followed — it does not eliminate clinical risk.
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Complications insurance</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              Your home health insurance and standard travel insurance typically will not pay for
+              treatment abroad or for complications after you return home. Ask about medical travel
+              insurance that covers complications.
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">Individual doctor skill</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              Accreditation covers the hospital, not the individual surgeon. You should still check
+              your doctor\u2019s qualifications, experience, and case volume for your specific
+              procedure.
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">
+                A substitute for due diligence
+              </h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              Accreditation is a baseline check, not a complete answer. Ask about success rates,
+              infection rates, and patient reviews for your specific procedure before deciding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── HOW TO VERIFY ────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          How to verify a hospital\u2019s accreditation yourself
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          You can check any hospital\u2019s accreditation status in under 2 minutes using the
+          official directories. Always check the expiry date, not just whether a certificate exists
+          \u2014 accreditation can lapse if a hospital does not maintain standards.
+        </p>
+        <div class="space-y-6">
+          {/* JCI verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                JCI
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">Verify JCI accreditation</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li>
+                Go to <span class="font-semibold text-ink">jointcommissioninternational.org</span>
+              </li>
+              <li>Find the \u201CAccredited Organizations\u201D directory</li>
+              <li>Select <span class="font-semibold text-ink">India</span> as the country</li>
+              <li>Search by hospital name</li>
+              <li>Check the accreditation status, grant date, and expiry date</li>
+            </ol>
+            <a
+              href="https://www.jointcommission.org/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              Open JCI directory
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+
+          {/* NABH verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-violet-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                NABH
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">Verify NABH accreditation</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li>Go to <span class="font-semibold text-ink">nabh.co</span></li>
+              <li>Open the \u201CAccredited Hospitals\u201D directory</li>
+              <li>Search by hospital name or state</li>
+              <li>Check the accreditation certificate number and validity period</li>
+            </ol>
+            <a
+              href="https://nabh.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              Open NABH directory
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+
+          {/* NABL verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-green-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                NABL
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">Verify NABL accreditation</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li>Go to <span class="font-semibold text-ink">nabl-india.org</span></li>
+              <li>Open the accredited laboratories directory</li>
+              <li>Search by laboratory name or location</li>
+              <li>Check the scope of accreditation and validity period</li>
+            </ol>
+            <a
+              href="https://nabl-india.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              Open NABL directory
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── JCI HOSPITALS IN BANGALORE ───────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          JCI-accredited hospitals in Bangalore
+        </h2>
+        <p class="text-ink/60 mb-3 max-w-2xl text-sm" data-anim="fade-in-up">
+          Bengaluru has the largest cluster of JCI-accredited hospitals in south India — 7 as of
+          mid-2025. Four of these are our partner hospitals. The list below is verified against the
+          JCI / India Healthcare Tourism directory and news of Ramaiah Memorial's June 2025
+          accreditation, but accreditation status changes: always re-confirm via the JCI directory
+          before deciding.
+        </p>
+        <p class="text-ink/50 mb-10 max-w-2xl text-xs" data-anim="fade-in-up">
+          Note: Sakra World Hospital (AACI + NABH) and HCG Cancer Centre (NABH) are often listed
+          online as JCI-accredited, but their official accreditation pages do not show JCI. We have
+          excluded them from this list to keep it accurate.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">Hospital</th>
+                <th class="py-3 pr-4 font-semibold">Area</th>
+                <th class="py-3 pr-4 font-semibold">Beds</th>
+                <th class="py-3 pr-4 font-semibold">Key specialties</th>
+                <th class="py-3 pr-4 font-semibold">Other accreditations</th>
+                <th class="py-3 font-semibold">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                bangaloreJciHospitals.map((h) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">
+                      {h.isPartner ? (
+                        <a
+                          href={`/hospitals/${h.slug}`}
+                          class="text-violet-600 hover:text-violet-700"
+                        >
+                          {h.name}
+                        </a>
+                      ) : (
+                        h.name
+                      )}
+                    </td>
+                    <td class="text-ink/70 py-4 pr-4">{h.area}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.beds}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.specialties}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.otherAccreditations}</td>
+                    <td class="py-4">
+                      {h.isPartner ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-1 text-xs font-semibold text-violet-700">
+                          <Icon name="check" size={10} /> Our partner
+                        </span>
+                      ) : (
+                        <span class="text-ink/40 text-xs">Non-partner</span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="mb-4 font-display text-xl font-bold text-ink" data-anim="fade-in-up">
+            JCI-accredited hospitals across India
+          </h3>
+          <p class="text-ink/60 mb-6 max-w-2xl text-sm" data-anim="fade-in-up">
+            India has around 50+ JCI-accredited hospitals (53 reported in July 2025 after Ramaiah's
+            accreditation). The count shifts as hospitals gain, renew, or lose accreditation.
+            Bengaluru, Delhi NCR, and Mumbai are the three largest clusters.
+          </p>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              jciByCity.map((c) => (
+                <div
+                  class="rounded-card border border-cream-300 bg-cream-100 p-4"
+                  data-anim="fade-in-up"
+                >
+                  <p class="font-display text-2xl font-bold text-ink">{c.count}</p>
+                  <p class="mt-1 text-sm font-semibold text-ink">{c.city}</p>
+                  <p class="text-ink/60 mt-1 text-xs leading-relaxed">{c.note}</p>
+                </div>
+              ))
+            }
+          </div>
+          <p class="text-ink/50 mt-6 text-xs">
+            Counts are indicative based on the 2024 India Healthcare Tourism JCI list and July 2025
+            news. Verify the current status of any specific hospital via the
+            <a
+              href="https://www.jointcommission.org/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-violet-600 hover:text-violet-700">JCI directory</a
+            > before making a decision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── OUR ACCREDITED HOSPITALS ─────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2
           class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
@@ -389,7 +866,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

@@ -1,0 +1,269 @@
+---
+import { Icon } from '../atoms/Icon';
+
+interface Props {
+  so: any;
+}
+
+const { so } = Astro.props;
+---
+
+{/* ── DEFINITION ─────────────────────────────────────────────────── */}
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.definitionTitle}
+    </h2>
+    <p class="text-ink/70 mt-6 text-lg leading-relaxed" data-anim="fade-in-up">
+      {so.definitionBody}
+    </p>
+  </div>
+</section>
+
+{/* ── STATISTICS ──────────────────────────────────────────────────── */}
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.statsTitle}
+    </h2>
+    <p class="text-ink/60 mt-4 max-w-2xl text-sm" data-anim="fade-in-up">
+      {so.statsIntro}
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {
+        so.stats.map((stat: any) => (
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="font-display text-4xl font-bold text-violet-600">{stat.value}</p>
+            <p class="text-ink/70 mt-2 text-sm leading-relaxed">{stat.label}</p>
+            <p class="text-ink/40 mt-3 text-xs italic">{stat.source}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-ink/50 mt-6 text-xs" data-anim="fade-in-up">
+      {so.statsCaveat}
+    </p>
+  </div>
+</section>
+
+{/* ── WHEN NOT TO ────────────────────────────────────────────────── */}
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.whenNotTitle}
+    </h2>
+    <p class="text-ink/70 mt-6 text-base leading-relaxed" data-anim="fade-in-up">
+      {so.whenNotBody}
+    </p>
+    <ul class="mt-6 space-y-3">
+      {
+        so.whenNotItems.map((item: string) => (
+          <li class="text-ink/80 flex items-start gap-3 text-base">
+            <Icon name="alert" size={20} className="mt-0.5 text-red-500" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-6 rounded-card border border-red-200 bg-red-50 p-5">
+      <p class="text-ink/70 text-sm">
+        <Icon name="alert" size={16} className="mr-1 inline text-red-500" />
+        {so.whenNotNote}
+      </p>
+    </div>
+  </div>
+</section>
+
+{/* ── LANGUAGES ──────────────────────────────────────────────────── */}
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.languagesTitle}
+    </h2>
+    <p class="text-ink/70 mt-4 text-base" data-anim="fade-in-up">
+      {so.languagesBody}
+    </p>
+    <ul class="mt-6 flex flex-wrap gap-2">
+      {
+        so.languagesList.map((lang: string) => (
+          <li class="inline-flex items-center rounded-full border border-cream-300 bg-cream-100 px-4 py-2 text-sm font-medium text-ink">
+            {lang}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-ink/50 mt-4 text-xs" data-anim="fade-in-up">
+      {so.languagesNote}
+    </p>
+  </div>
+</section>
+
+{/* ── CONDITIONS ─────────────────────────────────────────────────── */}
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.conditionsTitle}
+    </h2>
+    <p class="text-ink/60 mt-4 max-w-2xl text-sm" data-anim="fade-in-up">
+      {so.conditionsIntro}
+    </p>
+    <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        so.conditions.map((cond: any) => (
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <h3 class="font-display text-lg font-bold text-ink">{cond.condition}</h3>
+            <p class="text-ink/60 mt-2 text-xs font-semibold uppercase tracking-widest">When</p>
+            <p class="text-ink/70 mt-1 text-sm">{cond.when}</p>
+            <p class="text-ink/60 mt-3 text-xs font-semibold uppercase tracking-widest">Why</p>
+            <p class="text-ink/70 mt-1 text-sm">{cond.why}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{/* ── QUESTIONS TO ASK ───────────────────────────────────────────── */}
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.questionsTitle}
+    </h2>
+    <p class="text-ink/60 mt-4 text-sm" data-anim="fade-in-up">
+      {so.questionsIntro}
+    </p>
+    <ol class="mt-8 space-y-3">
+      {
+        so.questions.map((q: string, i: number) => (
+          <li class="text-ink/80 flex items-start gap-3 text-base">
+            <span class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-violet-600 text-xs font-bold text-white">
+              {i + 1}
+            </span>
+            <span>{q}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+{/* ── WHAT IF DIFFERS ────────────────────────────────────────────── */}
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.differsTitle}
+    </h2>
+    <p class="text-ink/70 mt-6 text-base leading-relaxed" data-anim="fade-in-up">
+      {so.differsBody}
+    </p>
+  </div>
+</section>
+
+{/* ── COMPARISON TABLE ───────────────────────────────────────────── */}
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.comparisonTitle}
+    </h2>
+    <p class="text-ink/60 mt-4 max-w-2xl text-sm" data-anim="fade-in-up">
+      {so.comparisonIntro}
+    </p>
+    {/* Desktop table */}
+    <div class="mt-8 hidden overflow-hidden rounded-card border border-cream-300 md:block">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-cream-100">
+          <tr>
+            <th class="p-4 font-semibold text-ink">Feature</th>
+            <th class="p-4 font-semibold text-ink">Online second opinion</th>
+            <th class="p-4 font-semibold text-ink">In-person consultation</th>
+            <th class="p-4 font-semibold text-ink">Teleconsultation</th>
+          </tr>
+        </thead>
+        <tbody class="bg-cream-50">
+          {
+            so.comparison.map((row: any) => (
+              <tr class="border-t border-cream-300">
+                <td class="p-4 font-medium text-ink">{row.feature}</td>
+                <td class="text-ink/70 p-4">{row.online}</td>
+                <td class="text-ink/70 p-4">{row.inPerson}</td>
+                <td class="text-ink/70 p-4">{row.teleconsult}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    {/* Mobile cards */}
+    <div class="mt-8 space-y-4 md:hidden">
+      {
+        so.comparison.map((row: any) => (
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <p class="font-display text-base font-bold text-ink">{row.feature}</p>
+            <dl class="mt-3 space-y-2 text-sm">
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+                  Online opinion
+                </dt>
+                <dd class="text-ink/70">{row.online}</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+                  In-person
+                </dt>
+                <dd class="text-ink/70">{row.inPerson}</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+                  Teleconsult
+                </dt>
+                <dd class="text-ink/70">{row.teleconsult}</dd>
+              </div>
+            </dl>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{/* ── OUTCOMES ───────────────────────────────────────────────────── */}
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <h2 class="font-display text-3xl font-bold text-ink md:text-4xl" data-anim="fade-in-up">
+      {so.outcomesTitle}
+    </h2>
+    <p class="text-ink/60 mt-4 max-w-2xl text-sm" data-anim="fade-in-up">
+      {so.outcomesIntro}
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        so.outcomes.map((outcome: any) => (
+          <div
+            class="rounded-card border border-cream-300 bg-cream-100 p-6 text-center"
+            data-anim="fade-in-up"
+          >
+            <p class="font-display text-3xl font-bold text-violet-600">{outcome.value}</p>
+            <p class="text-ink/70 mt-2 text-xs leading-relaxed">{outcome.label}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-ink/50 mt-6 text-xs" data-anim="fade-in-up">
+      {so.outcomesCaveat}
+    </p>
+  </div>
+</section>
+
+{/* ── LIMITATIONS ────────────────────────────────────────────────── */}
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+      <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+        {so.limitationsTitle}
+      </p>
+      <p class="text-ink/70 mt-3 text-sm leading-relaxed">
+        {so.limitationsBody}
+      </p>
+    </div>
+  </div>
+</section>

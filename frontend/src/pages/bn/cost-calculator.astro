@@ -13,7 +13,7 @@ import { getFooterLegalLinks } from '../../lib/footer';
 import { getTreatments, entrySlug } from '../../lib/content';
 import { getInquiryLink } from '../../lib/whatsapp';
 import { TREATMENT_COST_DATA, BREAKDOWN_LABELS_BN } from '../../lib/treatment-cost-data';
-import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../../lib/schema';
 
 const locale = 'bn';
 const t = getTranslations(locale);
@@ -70,6 +70,22 @@ const calculatorLabels = {
     'অনুমানগুলো নির্দেশক প্যাকেজ পরিসর। চূড়ান্ত কোট পার্টনার হাসপাতালে মেডিকেল পর্যালোচনার পর দেওয়া হয়। ফ্লাইট অন্তর্ভুক্ত নয়।',
   selectPrompt:
     'নির্দেশক খরচের পরিসর, মার্কিন তুলনা এবং প্যাকেজ বিভাজন দেখতে বাম পাশে একটি চিকিৎসা নির্বাচন করুন।',
+  procedureDuration: 'প্রক্রিয়ার সময়কাল',
+  hospitalStay: 'হাসপাতালে থাকা',
+  recoveryTime: 'পুনরুদ্ধারের সময়',
+  tripCostTitle: 'আনুমানিক মোট ভ্রমণ খরচ',
+  tripCostSubtitle:
+    'বাস্তবসম্মত বাজেটের জন্য এগুলো আপনার চিকিৎসা প্যাকেজে যোগ করুন। পরিসর নির্দেশক — প্রকৃত খরচ উৎস শহর, ঋতু, হোটেল স্তর এবং থাকার সময়কাল অনুযায়ী পরিবর্তিত হয়।',
+  tripCostFlights: 'ফ্লাইট (রিটার্ন, ইকোনমি)',
+  tripCostAccommodation: 'থাকা (প্রতি রাত)',
+  tripCostTransfers: 'এয়ারপোর্ট ট্রান্সফার',
+  tripCostVisa: 'ভিসা ফি',
+  tripCostMeals: 'দৈনন্দিন খাবার',
+  tripCostDisclaimer:
+    'ফ্লাইট উৎস অনুযায়ী পরিবর্তিত (বাংলাদেশ $২০০–$৪০০, গালফ $৩০০–$৬০০, আফ্রিকা $৪০০–$৮০০, যুক্তরাজ্য/মার্কিন $৬০০–$১,২০০)। থাকার পরিসর বাজেট গেস্টহাউস থেকে আন্তর্জাতিক ব্র্যান্ড পর্যন্ত। বিস্তারিত জানতে আমাদের ভ্রমণ পৃষ্ঠা দেখুন।',
+  currencyNote:
+    'অনুমানগুলো মার্কিন ডলারে দেখানো হয়েছে। আমরা আপনার অনুরোধে BDT, AED, SAR, GBP, EUR, KES, NGN, বা আপনার পছন্দের মুদ্রায় কোট শেয়ার করতে পারি।',
+  currencyCta: 'আমার মুদ্রায় কোট চাই',
 };
 
 const faqs = [
@@ -103,14 +119,34 @@ const faqs = [
     answer:
       'চিকিৎসাকালীন জটিলতা দেখা দিলে যা খরচ বাড়ায়, হাসপাতাল যেকোনো অতিরিক্ত প্রক্রিয়া এগিয়ে যাওয়ার আগে আপনাকে জানাবে। আমরা সংশোধিত খরচ বুঝতে এবং হাসপাতাল বিলিং টিমের সাথে যোগাযোগে সাহায্য করি। কোনো লুকানো অ্যাড-অন নেই — সবকিছু ঘটার আগে আলোচনা করা হয়।',
   },
+  {
+    question: 'আমি কি আমার স্থানীয় মুদ্রায় (BDT, AED, GBP, EUR) খরচ দেখতে পারি?',
+    answer:
+      'অনুমানগুলো সাধারণ রেফারেন্স মুদ্রা হিসেবে মার্কিন ডলারে দেখানো হয়। আমরা আপনার লিখিত কোট শেয়ার করার সময়, বিনিময় হার অনুযায়ী বাংলাদেশি টাকা (BDT), আমিরাতি দিরহাম (AED), সৌদি রিয়াল (SAR), ব্রিটিশ পাউন্ড (GBP), ইউরো (EUR), কেনিয়ান শিলিং (KES), নাইজেরিয়ান নাইরা (NGN), বা আপনার পছন্দের মুদ্রায় পরিসংখ্যান সরবরাহ করতে পারি। শুধু আমাদের জানান কোন মুদ্রা আপনি চান।',
+  },
+  {
+    question: 'অনুমানে কি ফ্লাইট এবং থাকা অন্তর্ভুক্ত?',
+    answer:
+      'না। প্যাকেজ পরিসর শুধু হাসপাতালে চিকিৎসা কভার করে। আন্তর্জাতিক ফ্লাইট, হাসপাতালের বাইরে থাকা, এয়ারপোর্ট ট্রান্সফার, দৈনন্দিন খাবার, ভিসা ফি, এবং সঙ্গী ভ্রমণ খরচ আলাদা। ব্যাঙ্গালোরে ফ্লাইট, হোটেল স্তর, এয়ারপোর্ট পিকআপ এবং দৈনন্দিন লজিস্টিকসের নির্দেশক খরচের জন্য আমাদের ভ্রমণ ও থাকা পৃষ্ঠা দেখুন।',
+  },
+  {
+    question: 'আমার চিকিৎসার জন্য ভারতে কতদিন থাকতে হবে?',
+    answer:
+      'থাকার সময়কাল প্রক্রিয়া এবং আপনার পুনরুদ্ধারের উপর নির্ভর করে। নির্দেশক হিসেবে: অ্যাঞ্জিওপ্লাস্টিতে সাধারণত হাসপাতালে ২–৪ দিন এবং ২–৩ দিন পুনরুদ্ধার; CABG-তে হাসপাতালে ৫–৭ দিন এবং ৭–১০ দিন পুনরুদ্ধার; হাঁটু বা হিপ প্রতিস্থাপনে হাসপাতালে ৪–৬ দিন এবং ১০–১৪ দিন পুনরুদ্ধার; লিভার ট্রান্সপ্লান্টে হাসপাতালে ২–৩ সপ্তাহ এবং ৪–৬ সপ্তাহ পুনরুদ্ধার। আপনার সার্জন আপনার কেস পর্যালোচনার পর সঠিক সময় নিশ্চিত করবেন।',
+  },
+  {
+    question: 'ভারতের খরচ থাইল্যান্ড, তুরস্ক বা সিঙ্গাপুরের সাথে কীভাবে তুলনা করে?',
+    answer:
+      'JCI-স্বীকৃত হাসপাতালে একই প্রক্রিয়ার জন্য ভারত সাধারণত থাইল্যান্ড, তুরস্ক এবং সিঙ্গাপুরের তুলনায় ৪০–৭০% সস্তা। উদাহরণস্বরূপ, ভারতে CABG খরচ $৫,০০০–$১০,০০০ বনাম থাইল্যান্ডে $১২,০০০–$২০,০০০ এবং সিঙ্গাপুরে $১৮,০০০–$৩৫,০০০। স্বীকৃত হাসপাতালে মান চারটি গন্তব্যেই তুলনীয় — পার্থক্য হলো খরচের ভিত্তিতে, কেয়ারের মানে নয়। সম্পূর্ণ তুলনার জন্য আমাদের কেন ভারত পৃষ্ঠা দেখুন।',
+  },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'মেডিকেল চিকিৎসা খরচ ক্যালকুলেটর',
+    name: 'মেডিকেল চিকিৎসা খরচ ক্যালকুলেটর — ভারত প্যাকেজ পরিসর বনাম মার্কিন যুক্তরাষ্ট্র',
     url: pageUrl,
     description:
-      'ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।',
+      'ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর, মার্কিন তুলনা, কী অন্তর্ভুক্ত, এবং মোট ভ্রমণ খরচের নির্দেশনা দেখতে একটি চিকিৎসা নির্বাচন করুন।',
     inLanguage: 'bn',
   }),
   breadcrumbs([
@@ -118,11 +154,13 @@ const jsonLd = [
     { name: 'খরচ ক্যালকুলেটর', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`খরচ ক্যালকুলেটর | ${t.site.name}`}
-  description="ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।"
+  title={`চিকিৎসা খরচ ক্যালকুলেটর — ভারত বনাম মার্কিন যুক্তরাষ্ট্র | ${t.site.name}`}
+  description="ভারতে মেডিকেল চিকিৎসার খরচ অনুমান করুন। কার্ডিয়াক, অনকোলজি, অর্থোপেডিক্স, IVF, ট্রান্সপ্লান্ট এবং আরও জন্য নির্দেশক প্যাকেজ পরিসর, মার্কিন তুলনা, কী অন্তর্ভুক্ত বনাম বাদ, এবং মোট ভ্রমণ খরচের নির্দেশনা দেখতে একটি চিকিৎসা নির্বাচন করুন।"
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -167,14 +205,15 @@ const jsonLd = [
             খরচ অনুমানকারী
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             মেডিকেল চিকিৎসা খরচ ক্যালকুলেটর
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            আমাদের পার্টনার হাসপাতালে নির্দেশক প্যাকেজ খরচের পরিসর দেখতে একটি চিকিৎসা নির্বাচন করুন।
-            ২৪–৪৮ ঘন্টার মধ্যে লিখিত ব্যক্তিগত কোট পান।
+            আমাদের পার্টনার হাসপাতালে নির্দেশক প্যাকেজ খরচের পরিসর দেখতে, মার্কিন মূল্যের সাথে তুলনা
+            করতে, কী অন্তর্ভুক্ত তা যাচাই করতে, এবং আপনার মোট ভ্রমণ বাজেট পরিকল্পনা করতে একটি
+            চিকিৎসা নির্বাচন করুন। ২৪–৪৮ ঘন্টার মধ্যে লিখিত ব্যক্তিগত কোট পান।
           </p>
         </div>
       </div>
@@ -193,6 +232,109 @@ const jsonLd = [
             labels={calculatorLabels}
             client:load
           />
+        </div>
+      </div>
+    </section>
+
+    {/* ── WHAT'S INCLUDED VS EXCLUDED ──────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          প্যাকেজে কী অন্তর্ভুক্ত
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          বেশিরভাগ পার্টনার হাসপাতালের প্যাকেজ নিচের আইটেমগুলো কভার করে। আপনার লিখিত কোটে আপনার
+          নির্দিষ্ট কেসের জন্য ঠিক কী অন্তর্ভুক্ত তা তালিকাভুক্ত থাকবে। অন্তর্ভুক্ত নয় হিসেবে
+          চিহ্নিত আইটেমগুলো আলাদাভাবে বিল করা হয় — আমরা সেগুলোর পরিকল্পনায় সাহায্য করি।
+        </p>
+        <div class="grid gap-6 md:grid-cols-2">
+          {/* Included */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-4 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100"
+                aria-hidden="true"
+              >
+                <Icon name="check" size={16} className="text-green-700" />
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">সাধারণত অন্তর্ভুক্ত</h3>
+            </div>
+            <ul class="text-ink/80 space-y-2.5 text-sm">
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                হাসপাতাল রুম, অপারেটিং থিয়েটার, এবং নার্সিং কেয়ার
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                সার্জন ও অ্যানেসথেটিস্ট ফি
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                প্রি-অপারেটিভ ডায়াগনস্টিকস (রক্ত পরীক্ষা, ইমেজিং, ECG)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                হাসপাতালে থাকাকালীন ওষুধ ও কনসিউমেবল
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                প্রয়োজনে ইমপ্লান্ট (যেমন জয়েন্ট প্রতিস্থাপন, স্টেন্ট)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={14} className="mt-1 flex-shrink-0 text-green-600" />
+                সাধারণ ভর্তি সহায়তা এবং হাসপাতাল ডিসচার্জ সারসংক্ষেপ
+              </li>
+            </ul>
+          </div>
+
+          {/* Not included */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-4 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">অন্তর্ভুক্ত নয়</h3>
+            </div>
+            <ul class="text-ink/80 space-y-2.5 text-sm">
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                ভারতে আসার এবং ফেরার আন্তর্জাতিক ফ্লাইট
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                হাসপাতালের বাইরে থাকা (গেস্টহাউস, হোটেল, অ্যাপার্টমেন্ট)
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                এয়ারপোর্ট পিকআপ এবং স্থানীয় ট্রান্সফার
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                ভিসা ফি এবং মেডিকেল অ্যাটেনড্যান্ট ভিসা খরচ
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                দেশে নিয়ে যাওয়ার জন্য ডিসচার্জ-পরবর্তী ওষুধ
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="close" size={14} className="mt-1 flex-shrink-0 text-rose-600" />
+                সঙ্গীর ভ্রমণ, খাবার, এবং থাকার খরচ
+              </li>
+            </ul>
+            <a
+              href="/bn/travel-accommodation-assistance"
+              class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-violet-600"
+            >
+              ভ্রমণ ও থাকার খরচ দেখুন
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -358,7 +500,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

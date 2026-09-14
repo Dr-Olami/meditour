@@ -11,7 +11,7 @@ import { getNavLinks } from '../../lib/navigation';
 import { getFooterLegalLinks } from '../../lib/footer';
 import { getHospitals, entrySlug } from '../../lib/content';
 import { getInquiryLink } from '../../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../../lib/schema';
 
 const locale = 'bn';
 const t = getTranslations(locale);
@@ -26,6 +26,101 @@ const hospitalAccreditations = hospitals
     accreditations: h.data.accreditations!,
   }));
 
+// যাচাইকৃত JCI-স্বীকৃত হাসপাতাল — বেঙ্গালুরু (ব্যাঙ্গালোর)।
+// উৎস: JCI / India Healthcare Tourism-এর অফিসিয়াল তালিকা (৫৫টি হাসপাতাল, ২০২৪)
+// এবং The Hindu + IndiaMedToday (রমাইয়া মেমোরিয়াল, জুন ২০২৫)।
+// স্বীকৃতির অবস্থা বদলায় — সিদ্ধান্ত নেওয়ার আগে JCI ডিরেক্টরিতে আবার যাচাই করুন।
+const partnerSlugs = new Set(hospitalAccreditations.map((h) => h.slug));
+const bangaloreJciHospitals = [
+  {
+    name: 'Apollo Hospitals, Bannerghatta Road',
+    area: 'ব্যানারঘাট্টা রোড',
+    beds: '২৫০+',
+    specialties: 'মাল্টি-স্পেশালিটি — কার্ডিয়াক, অনকোলজি, নিউরো, অর্থো, আইসিইউ',
+    otherAccreditations: 'NABH',
+    slug: 'apollo-hospitals-bannerghatta',
+  },
+  {
+    name: 'Fortis Hospital, Bannerghatta Road',
+    area: 'ব্যানারঘাট্টা রোড',
+    beds: '২৮৪',
+    specialties: 'মাল্টি-স্পেশালিটি — কার্ডিয়াক, নিউরো, অনকোলজি, অর্থো, ট্রান্সপ্লান্ট',
+    otherAccreditations: 'NABH, NABL, MTQUA',
+    slug: 'fortis-hospital-bannerghatta',
+  },
+  {
+    name: 'Manipal Hospital, Old Airport Road',
+    area: 'ওল্ড এয়ারপোর্ট রোড',
+    beds: '৬০০+',
+    specialties: 'মাল্টি-স্পেশালিটি কোয়াটারনারি কেয়ার',
+    otherAccreditations: 'NABH, NABL, AAHRPP, ISO 9001:2015',
+    slug: 'manipal-hospital-old-airport-road',
+  },
+  {
+    name: 'Manipal Hospital, Whitefield',
+    area: 'হোয়াইটফিল্ড',
+    beds: '২৮০+',
+    specialties: 'মাল্টি-স্পেশালিটি — কার্ডিয়াক, অনকোলজি, নিউরো, অর্থো',
+    otherAccreditations: 'NABH',
+    slug: '',
+  },
+  {
+    name: 'Narayana Institute of Cardiac Sciences (Narayana Health City)',
+    area: 'বোম্মাসান্দ্রা',
+    beds: '৬০০+',
+    specialties:
+      'কার্ডিয়াক সার্জারি, ইন্টারভেনশনাল কার্ডিওলজি, হার্ট ট্রান্সপ্লান্ট + মাল্টি-স্পেশালিটি',
+    otherAccreditations: 'NABH',
+    slug: 'narayana-institute-cardiac-sciences',
+  },
+  {
+    name: 'Aster CMI Hospital',
+    area: 'হেব্বাল',
+    beds: '৫০০+',
+    specialties: 'মাল্টি-স্পেশালিটি — কার্ডিয়াক, নিউরো, অনকোলজি, ট্রান্সপ্লান্ট',
+    otherAccreditations: 'NABH',
+    slug: '',
+  },
+  {
+    name: 'Ramaiah Memorial Hospital',
+    area: 'নিউ বেল রোড, MSRIT পোস্ট',
+    beds: '৫০০',
+    specialties: 'কোয়াটারনারি কেয়ার মাল্টি-সুপার-স্পেশালিটি',
+    otherAccreditations: 'NABH, NABL',
+    slug: '',
+  },
+].map((h) => ({ ...h, isPartner: h.slug ? partnerSlugs.has(h.slug) : false }));
+
+// ভারতজুড়ে শহরভিত্তিক JCI হাসপাতাল সংখ্যা (নির্দেশক, ২০২৪-এর ৫৫-হাসপাতাল
+// তালিকা ও ২০২৫-এ রমাইয়া যোগ হওয়ার ভিত্তিতে)। স্বীকৃতি বদলায় — সিদ্ধান্তের
+// আগে JCI ডিরেক্টরিতে আবার যাচাই করুন।
+const jciByCity = [
+  { city: 'বেঙ্গালুরু (ব্যাঙ্গালোর)', count: '৭', note: 'দক্ষিণ ভারতের সবচেয়ে বড় JCI ক্লাস্টার' },
+  {
+    city: 'দিল্লি NCR (দিল্লি, গুরুগ্রাম, নয়ডা)',
+    count: '১২',
+    note: 'Indraprastha Apollo, Medanta, Artemis, Max, Fortis, BLK-Max',
+  },
+  {
+    city: 'মুম্বাই ও নবি মুম্বাই',
+    count: '৭',
+    note: 'Kokilaben, Reliance Foundation, Asian Heart, Fortis Mulund, Wockhardt',
+  },
+  { city: 'চেন্নাই', count: '৩', note: 'Apollo Chennai, Apollo Proton Cancer Centre' },
+  { city: 'হায়দরাবাদ', count: '১', note: 'Apollo Hospitals Hyderabad' },
+  {
+    city: 'কলকাতা',
+    count: '৩',
+    note: 'Apollo Multispeciality, Fortis Anandapur, Dharamshila Narayana',
+  },
+  {
+    city: 'কোচি ও তিরুবনন্তপুরম',
+    count: '৪',
+    note: 'Aster Medcity, VPS Lakeshore, Amrita, KIMSHEALTH',
+  },
+  { city: 'পুনে ও নাগপুর', count: '৩', note: 'Ruby Hall Clinic, Alexis Multispeciality' },
+];
+
 const whatsappInquiryHref = getInquiryLink();
 
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
@@ -35,35 +130,35 @@ const accreditations = [
   {
     abbr: 'JCI',
     full: 'Joint Commission International',
-    origin: 'মার্কিন যুক্তরাষ্ট্র',
+    origin: 'যুক্তরাষ্ট্র',
     color: 'bg-blue-600',
     description:
-      'Joint Commission-এর আন্তর্জাতিক শাখা — যে সংস্থা মার্কিন যুক্তরাষ্ট্রে Johns Hopkins, Mayo Clinic এবং Cleveland Clinic-কে স্বীকৃতি দেয়। JCI ১,৪০০+ পরিমাপযোগ্য উপাদানের বিরুদ্ধে হাসপাতাল জরিপ করে — রোগী সুরক্ষা, সংক্রমণ নিয়ন্ত্রণ, সার্জিক্যাল নিরাপত্তা, ওষুধ ব্যবস্থাপনা এবং রোগী অধিকার সহ।',
+      'Joint Commission-এর আন্তর্জাতিক শাখা — একই সংস্থা যুক্তরাষ্ট্রে Johns Hopkins, Mayo Clinic ও Cleveland Clinic-কে স্বীকৃতি দেয়। JCI ১,৪০০+ মাপকাঠির বিপরীতে হাসপাতাল যাচাই করে — রোগী সুরক্ষা, সংক্রমণ নিয়ন্ত্রণ, সার্জারির নিরাপত্তা, ওষুধ ব্যবস্থাপনা ও রোগীর অধিকার সব মিলিয়ে। ৮ম সংস্করণের মানদণ্ড (জানুয়ারি ২০২৫ থেকে কার্যকর) নতুন করে স্বাস্থ্যসেবা প্রযুক্তি (ইলেকট্রনিক রেকর্ড, টেলিহেলথ, সাইবার সিকিউরিটি), রোগী সুরক্ষা ঘটনা রিপোর্টিং এবং ট্রান্সপ্লান্ট প্রোগ্রামের ক্ষেত্রে বর্ধিত শর্ত যুক্ত করেছে।',
     whatItMeans: [
-      'হাসপাতাল শীর্ষ মার্কিন হাসপাতালের মতো একই মান পূরণ করে',
-      'প্রতি ৩ বছরে কঠোর অন-সাইট জরিপ',
-      'রোগী সুরক্ষা ও ক্লিনিক্যাল প্রক্রিয়ার মানে ফোকাস',
-      'আন্তর্জাতিকভাবে গোল্ড স্ট্যান্ডার্ড হিসেবে স্বীকৃত',
+      'হাসপাতাল যুক্তরাষ্ট্রের শীর্ষ হাসপাতালের সমান মান পূরণ করে',
+      'নিরপেক্ষ মূল্যায়নকারী প্রতি ৩ বছরে হাসপাতালে এসে কঠোর জরিপ করে',
+      'রোগী সুরক্ষা, চিকিৎসার মান ও সংক্রমণ নিয়ন্ত্রণে বিশেষ নজর',
+      'আন্তর্জাতিকে হাসপাতালের মানের সর্বোচ্চ মানদণ্ড হিসেবে স্বীকৃত',
     ],
-    indiaCount: 'ভারতে ৪০+ JCI-স্বীকৃত হাসপাতাল',
-    verifyLabel: 'JCI অফিসিয়াল সাইটে যাচাই করুন',
+    indiaCount: 'ভারতে ৬০+ JCI-স্বীকৃত হাসপাতাল ও স্বাস্থ্যসেবা সংস্থা',
+    verifyLabel: 'JCI-এর অফিসিয়াল সাইটে যাচাই করুন',
     verifyUrl: 'https://www.jointcommission.org/en',
   },
   {
     abbr: 'NABH',
     full: 'National Accreditation Board for Hospitals & Healthcare Providers',
-    origin: 'ভারত (ISQuA স্বীকৃত)',
+    origin: 'ভারত (ISQua স্বীকৃত)',
     color: 'bg-violet-600',
     description:
-      'NABH হাসপাতালের জন্য ভারতের স্বীকৃতি সংস্থা, International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত। এটি ক্লিনিক্যাল কেয়ার, রোগী সুরক্ষা, হাসপাতাল অবকাঠামো এবং কর্মী যোগ্যতার জন্য মান নির্ধারণ করে। NABH স্বীকৃতি একটি সুপরিচালিত হাসপাতালের চিহ্ন যা নথিভুক্ত মান বেঞ্চমার্ক পূরণ করে।',
+      'NABH হাসপাতালের জন্য ভারতের নিজস্ব স্বীকৃতি সংস্থা, International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত। এটি চিকিৎসা সেবা, রোগী সুরক্ষা, হাসপাতালের অবকাঠামো ও কর্মী যোগ্যতা — এই ১০টি ক্ষেত্রে মানদণ্ড নির্ধারণ করে: চিকিৎসা গ্রহণ, রোগীর অধিকার, সংক্রমণ নিয়ন্ত্রণ, ওষুধ ব্যবস্থাপনা ইত্যাদি। NABH স্বীকৃতি মানে হাসপাতালটি সুপরিচালিত এবং লিখিত মানদণ্ড পূরণ করে।',
     whatItMeans: [
-      'ক্লিনিক্যাল ও নন-ক্লিনিক্যাল প্রক্রিয়ার নথিভুক্ত মান',
-      'স্বীকৃতি বজায় রাখতে নিয়মিত নজরদারি অডিট',
-      'ISQua স্বীকৃতি মানে মান বিশ্বব্যাপী বেঞ্চমার্ক পূরণ করে',
-      'ক্যাশলেস চিকিৎসার জন্য অনেক বীমাকারীর প্রয়োজন',
+      'চিকিৎসা ও প্রশাসনিক কাজে লিখিত মানদণ্ড মেনে চলা হয়',
+      'স্বীকৃতি ধরে রাখতে নিয়মিত পর্যবেক্ষণ অডিট হয়',
+      'ISQua স্বীকৃতি মানে মানদণ্ড আন্তর্জাতিক স্তরের',
+      'ক্যাশলেস চিকিৎসার ক্ষেত্রে অনেক বীমা কোম্পানি NABH চায়',
     ],
-    indiaCount: 'ভারতে ৫০০+ NABH-স্বীকৃত হাসপাতাল',
-    verifyLabel: 'NABH অফিসিয়াল সাইটে যাচাই করুন',
+    indiaCount: '৭০০+ NABH-স্বীকৃত হাসপাতাল, সব মিলিয়ে ২৯,০০০+ স্বাস্থ্যসেবা কেন্দ্র',
+    verifyLabel: 'NABH-এর অফিসিয়াল সাইটে যাচাই করুন',
     verifyUrl: 'https://nabh.co/',
   },
   {
@@ -72,58 +167,146 @@ const accreditations = [
     origin: 'ভারত (ILAC MRA)',
     color: 'bg-green-600',
     description:
-      'NABL মেডিকেল ল্যাবরেটরির জন্য ISO 15189 মান পূরণকারী ডায়াগনস্টিক ল্যাবকে স্বীকৃতি দেয়। NABL-স্বীকৃত ল্যাব মানে আপনার রক্ত পরীক্ষা, বায়োপসি এবং ইমেজিং রিপোর্ট আন্তর্জাতিকভাবে গৃহীত নির্ভুলতা ও মান অনুযায়ী প্রক্রিয়াজাত — সঠিক রোগনির্ণয় ও চিকিৎসা পরিকল্পনার জন্য গুরুত্বপূর্ণ।',
+      'NABL ডায়াগনস্টিক ল্যাবকে স্বীকৃতি দেয় যদি তারা মেডিকেল ল্যাবের আন্তর্জাতিক মানদণ্ড ISO 15189 পূরণ করে। NABL-স্বীকৃত ল্যাব মানে আপনার রক্ত পরীক্ষা, বায়োপসি ও ইমেজিং রিপোর্ট আন্তর্জাতিক মানের নির্ভুলতায় তৈরি হচ্ছে — সঠিক রোগনির্ণয় ও চিকিৎসা পরিকল্পনার জন্য এটা জরুরি।',
     whatItMeans: [
-      'ল্যাব ISO 15189 আন্তর্জাতিক মান পূরণ করে',
-      'সরঞ্জাম নিয়মিত ক্যালিব্রেটেড ও পরীক্ষিত',
-      'রিপোর্ট বিশ্বব্যাপী হাসপাতালে গৃহীত',
-      'ডায়াগনস্টিক ত্রুটির ঝুঁকি কমায়',
+      'ল্যাব ISO 15189 আন্তর্জাতিক মানদণ্ড পূরণ করে',
+      'সরঞ্জাম নিয়মিত ক্যালিব্রেট ও পরীক্ষা করা হয়',
+      'রিপোর্ট বিশ্বের হাসপাতালে গ্রহণযোগ্য',
+      'রোগনির্ণয়ে ভুলের ঝুঁকি কমে',
     ],
     indiaCount: 'ভারতজুড়ে হাজার হাজার NABL-স্বীকৃত ল্যাব',
-    verifyLabel: 'NABL অফিসিয়াল সাইটে যাচাই করুন',
+    verifyLabel: 'NABL-এর অফিসিয়াল সাইটে যাচাই করুন',
     verifyUrl: 'https://nabl-india.org/',
+  },
+  {
+    abbr: 'MTQUA',
+    full: 'Medical Travel Quality Alliance Certification',
+    origin: 'যুক্তরাষ্ট্র (মেডিকেল ট্যুরিজমের জন্য)',
+    color: 'bg-rose-600',
+    description:
+      'MTQUA হলো একমাত্র আন্তর্জাতিক সার্টিফিকেশন যা বিশেষভাবে মেডিকেল ট্যুরিজমের জন্য। এটি হাসপাতালকে ১০টি ক্ষেত্রে যাচাই করে যা সরাসরি বিদেশি রোগীদের প্রভাবিত করে: যোগাযোগের শুরু, রোগী গ্রহণ, ছাড়পত্রের পর কেয়ার, ওয়েবসাইট ও মার্কেটিং স্বচ্ছতা, যোগাযোগ, প্রাইভেসি ও নিরাপত্তা, বিভিন্ন সংস্কৃতির প্রতি সংবেদনশীলতা, আন্তর্জাতিক রোগী সেবা বিভাগ, সেবা সহায়তা ও পরিচালনা। Fortis Hospital Bannerghatta ভারতের প্রথম MTQUA-স্বীকৃত হাসপাতাল (২০১৪)।',
+    whatItMeans: [
+      'বিদেশি রোগীদের সেবার জন্য একমাত্র বিশেষ সার্টিফিকেশন',
+      'শুধু চিকিৎসা নয়, ভ্রমণের শুরু থেকে দেশে ফেরা পর্যন্ত পুরো যাত্রা যাচাই করে',
+      'বিভিন্ন দেশের রোগীদের সাথে আচরণ ও সংবেদনশীলতা পর্যালোচনা করে',
+      'দেশে ফেরার পর ফলোআপ ঠিক আছে কিনা দেখে',
+    ],
+    indiaCount: 'নির্দিষ্ট কিছু ভারতীয় হাসপাতাল MTQUA সার্টিফিকেশন ধরে রেখেছে',
+    verifyLabel: 'MTQUA সাইটে বিস্তারিত জানুন',
+    verifyUrl: 'https://mtqua.org/',
+  },
+  {
+    abbr: 'AAHRPP',
+    full: 'Association for Accreditation of Human Research Protection Programs',
+    origin: 'যুক্তরাষ্ট্র',
+    color: 'bg-indigo-600',
+    description:
+      'AAHRPP সেসব সংস্থাকে স্বীকৃতি দেয় যারা মানুষের উপর গবেষণা পরিচালনা করে — নিশ্চিত করে যে তারা নৈতিক গবেষণা পদ্ধতি, অংশগ্রহণকারীর সুরক্ষা ও স্বেচ্ছায় সম্মতির ক্ষেত্রে কঠোর মানদণ্ড মেনে চলে। AAHRPP-স্বীকৃত হাসপাতাল গবেষণা নৈতিকতা ও রোগী সুরক্ষায় প্রাতিষ্ঠানিক দায়বদ্ধতা দেখায় — গুরুত্বপূর্ণ যদি আপনার চিকিৎসায় ক্লিনিক্যাল ট্রায়াল বা পরীক্ষামূলক থেরাপি জড়িত থাকে।',
+    whatItMeans: [
+      'মানুষের উপর গবেষণা ও ক্লিনিক্যাল ট্রায়ালে নৈতিক তত্ত্বাবধান',
+      'স্বেচ্ছায় সম্মতি ও অংশগ্রহণকারীর সুরক্ষা নিশ্চিত',
+      'গবেষণা প্রোটোকল নিরপেক্ষভাবে পর্যালোচনা হয়',
+      'গবেষণা নৈতিকতা ও রোগী সুরক্ষায় দায়বদ্ধতা',
+    ],
+    indiaCount: 'নির্দিষ্ট কিছু ভারতীয় হাসপাতাল ও গবেষণা প্রতিষ্ঠান AAHRPP ধরে রেখেছে',
+    verifyLabel: 'AAHRPP-এর অফিসিয়াল সাইটে যাচাই করুন',
+    verifyUrl: 'https://www.aahrpp.org/',
+  },
+  {
+    abbr: 'ISO 9001',
+    full: 'ISO 9001:2015 Quality Management System',
+    origin: 'আন্তর্জাতিক (ISO)',
+    color: 'bg-amber-600',
+    description:
+      'ISO 9001 বিশ্বে সবচেয়ে বেশি ব্যবহৃত মান ব্যবস্থাপনার মানদণ্ড। এটি একটি সংস্থার নেতৃত্ব, নথি ব্যবস্থাপনা, অভ্যন্তরীণ অডিট, পারফরম্যান্স পরিমাপ ও ক্রমাগত উন্নতির প্রক্রিয়া যাচাই করে। ISO 9001 শুধু স্বাস্থ্যসেবার জন্য নয় — অনেক শিল্পেই ব্যবহৃত হয়। হাসপাতালে এটি কাজের ধারাবাহিকতার ভিত্তি দেয়, কিন্তু JCI বা NABH-এর মতো চিকিৎসা-সংক্রান্ত স্বীকৃতির বিকল্প নয়।',
+    whatItMeans: [
+      'লিখিত মান ব্যবস্থাপনা ব্যবস্থা আছে',
+      'নিয়মিত অভ্যন্তরীণ অডিট ও ভুল সংশোধনের প্রক্রিয়া',
+      'বিভাগ জুড়ে কাজের ধারাবাহিকতা',
+      'মানের ভিত্তি দেয়, কিন্তু চিকিৎসা-সংক্রান্ত স্বীকৃতি নয়',
+    ],
+    indiaCount: 'ভারতীয় হাসপাতাল ও সংস্থায় ব্যাপকভাবে দেখা যায়',
+    verifyLabel: 'ISO 9001 সম্পর্কে বিস্তারিত জানুন',
+    verifyUrl: 'https://www.iso.org/standard/62085.html',
+  },
+  {
+    abbr: 'IFEM',
+    full: 'International Federation for Emergency Medicine',
+    origin: 'আন্তর্জাতিক (IFEM)',
+    color: 'bg-teal-600',
+    description:
+      'IFEM গোল্ড লেভেল সার্টিফিকেশন জরুরি সেবায় উৎকর্ষের স্বীকৃতি। এটি জরুরি বিভাগকে ট্রমা কেয়ার, রেসাসিটেশন, জরুরি প্রোটোকল ও কর্মী প্রশিক্ষণের আন্তর্জাতিক মানদণ্ডের বিপরীতে যাচাই করে। SPARSH Hospital Hennur ভারতের প্রথম হাসপাতাল যে IFEM গোল্ড লেভেল সার্টিফিকেশন পেয়েছে — শক্তিশালী জরুরি প্রতিক্রিয়া ক্ষমতার প্রমাণ, যা সার্জারির রোগীদের জন্য গুরুত্বপূর্ণ কারণ তাদের হঠাৎ জরুরি হস্তক্ষেপ লাগতে পারে।',
+    whatItMeans: [
+      'জরুরি বিভাগ আন্তর্জাতিক মানদণ্ড পূরণ করে',
+      'প্রশিক্ষিত জরুরি কর্মী ও রেসাসিটেশন প্রোটোকল আছে',
+      'সার্জারির জটিলতায় দ্রুত প্রতিক্রিয়া দেখানোর ক্ষমতা',
+      'যাদের জরুরি সেবা লাগতে পারে সেই সার্জারির রোগীদের জন্য গুরুত্বপূর্ণ',
+    ],
+    indiaCount: 'ভারতে প্রথম — SPARSH Hospital Hennur IFEM গোল্ড লেভেল ধরে রেখেছে',
+    verifyLabel: 'IFEM সাইটে বিস্তারিত জানুন',
+    verifyUrl: 'https://www.ifem.cc/',
   },
 ];
 
 const faqs = [
   {
-    question: 'মেডিকেল পর্যটকদের জন্য হাসপাতাল স্বীকৃতি কেন গুরুত্বপূর্ণ?',
+    question: 'বিদেশে চিকিৎসার জন্য হাসপাতালের স্বীকৃতি কেন গুরুত্বপূর্ণ?',
     answer:
-      'স্বীকৃতি একটি স্বাধীন যাচাই যে হাসপাতাল নথিভুক্ত মান ও নিরাপত্তা মান পূরণ করে। যারা ভ্রমণের আগে হাসপাতাল পরিদর্শন করতে পারেন না, তাদের জন্য JCI ও NABH-এর মতো স্বীকৃতি নিশ্চয়তা দেয় যে হাসপাতাল আপনার দেশের শীর্ষ হাসপাতালের মতো একই প্রোটোকল অনুসরণ করে — সার্জারি, সংক্রমণ নিয়ন্ত্রণ, ওষুধ নিরাপত্তা এবং রোগী অধিকারের জন্য।',
+      'স্বীকৃতি একটি নিরপেক্ষ প্রমাণ যে হাসপাতাল নির্দিষ্ট মান ও নিরাপত্তার মানদণ্ড পূরণ করে। যারা ভ্রমণের আগে হাসপাতাল দেখতে পারেন না, তাদের জন্য JCI ও NABH-এর মতো স্বীকৃতি নিশ্চয়তা দেয় যে হাসপাতালটি আপনার দেশের শীর্ষ হাসপাতালের মতো একই নিয়ম মেনে চলে — সার্জারি, সংক্রমণ নিয়ন্ত্রণ, ওষুধ নিরাপত্তা ও রোগীর অধিকার সব ক্ষেত্রে।',
   },
   {
-    question: 'JCI স্বীকৃতি কি মার্কিন হাসপাতালের মতো একই?',
+    question: 'JCI স্বীকৃতি কি যুক্তরাষ্ট্রের হাসপাতালের সমান?',
     answer:
-      'JCI Joint Commission-এর আন্তর্জাতিক শাখা, যা বেশিরভাগ বড় মার্কিন হাসপাতালকে স্বীকৃতি দেয়। মান ঘনিষ্ঠভাবে সারিবদ্ধ, যদিও JCI আন্তর্জাতিক রোগীদের জন্য অতিরিক্ত মানদণ্ড অন্তর্ভুক্ত করে যেমন ভাষা অ্যাক্সেস, মেডিকেল রেকর্ড অনুবাদ এবং ক্রস-বর্ডার কেয়ার সমন্বয়। ভারতে JCI-স্বীকৃত হাসপাতাল মার্কিন যুক্তরাষ্ট্রে Joint Commission-স্বীকৃত হাসপাতালের মতো একই কোর মান পূরণ করে।',
+      'JCI Joint Commission-এর আন্তর্জাতিক শাখা, যে সংস্থা যুক্তরাষ্ট্রের বেশিরভাগ বড় হাসপাতালকে স্বীকৃতি দেয়। মানদণ্ড প্রায় একই, যদিও JCI বিদেশি রোগীদের জন্য কিছু অতিরিক্ত শর্ত রাখে — যেমন ভাষাগত সুবিধা, মেডিকেল রেকর্ড অনুবাদ ও আন্তর্জাতিক কেয়ার সমন্বয়। ভারতে JCI-স্বীকৃত হাসপাতাল যুক্তরাষ্ট্রের Joint Commission-স্বীকৃত হাসপাতালের মূল মানদণ্ড পূরণ করে। ৮ম সংস্করণের মানদণ্ড (জানুয়ারি ২০২৫ থেকে) স্বাস্থ্যসেবা প্রযুক্তি, রোগী সুরক্ষা ঘটনা রিপোর্টিং ও ট্রান্সপ্লান্ট প্রোগ্রামের ক্ষেত্রে নতুন অধ্যায় যুক্ত করেছে।',
   },
   {
-    question: 'NABH স্বীকৃতি আমার চিকিৎসার জন্য কী অর্থ বহন করে?',
+    question: 'NABH স্বীকৃতি আমার চিকিৎসার ক্ষেত্রে কী দায়ের করে?',
     answer:
-      'NABH স্বীকৃতি মানে হাসপাতাল ক্লিনিক্যাল কেয়ার, রোগী সুরক্ষা, অবকাঠামো এবং কর্মী যোগ্যতার মানের বিরুদ্ধে স্বাধীনভাবে মূল্যায়িত হয়েছে। এটি International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত, তাই মান বিশ্বব্যাপী বেঞ্চমার্ক পূরণ করে। অনেক ভারতীয় বীমাকারী ক্যাশলেস চিকিৎসার জন্য NABH প্রয়োজন, যা আপনার বিলিং প্রক্রিয়া সহজ করতে পারে।',
+      'NABH স্বীকৃতি মানে হাসপাতালটি চিকিৎসা সেবা, রোগী সুরক্ষা, অবকাঠামো ও কর্মী যোগ্যতার মানদণ্ডের বিপরীতে নিরপেক্ষভাবে যাচাই হয়েছে। এটি International Society for Quality in Health Care (ISQua) দ্বারা স্বীকৃত, তাই মানদণ্ড আন্তর্জাতিক স্তরের। অনেক ভারতীয় বীমা কোম্পানি ক্যাশলেস চিকিৎসার জন্য NABH চায়, যা আপনার বিলিং প্রক্রিয়া সহজ করতে পারে।',
   },
   {
     question: 'ভারতের সব হাসপাতালে কি এই স্বীকৃতি আছে?',
     answer:
-      'না। ভারতের সংখ্যালঘু হাসপাতালই JCI বা NABH স্বীকৃত। আমরা শুধু স্বীকৃত হাসপাতালের সাথে কাজ করি কারণ স্বীকৃতি হলো মান ও নিরাপত্তার সবচেয়ে নির্ভরযোগ্য স্বাধীন সংকেত। আমরা আপনার সাথে হাসপাতালের বিকল্প শেয়ার করলে প্রতিটি হাসপাতালের স্বীকৃতি অবস্থা অন্তর্ভুক্ত করি যাতে আপনি সচেতন সিদ্ধান্ত নিতে পারেন।',
+      'না। ভারতে সংখ্যালঘু হাসপাতালই JCI বা NABH স্বীকৃত। আমরা শুধু স্বীকৃত হাসপাতালের সাথেই কাজ করি কারণ স্বীকৃতি হলো মান ও নিরাপত্তার সবচেয়ে নির্ভরযোগ্য নিরপেক্ষ প্রমাণ। আমরা হাসপাতালের বিকল্প শেয়ার করার সময় প্রতিটির স্বীকৃতি অবস্থা জানিয়ে দিই যাতে আপনি জেনেশুনে সিদ্ধান্ত নিতে পারেন।',
   },
   {
     question: 'আমি কি নিজে হাসপাতালের স্বীকৃতি যাচাই করতে পারি?',
     answer:
-      'হ্যাঁ। JCI তাদের ওয়েবসাইটে স্বীকৃত সংস্থার পাবলিক ডিরেক্টরি রাখে। NABH এবং NABL-এরও অনুসন্ধানযোগ্য ডিরেক্টরি আছে। আমরা প্রতিটি হাসপাতালের স্বীকৃতি বিবরণ শেয়ার করি এবং আপনি চিকিৎসার সিদ্ধান্ত নেওয়ার আগে স্বাধীনভাবে যাচাই করতে পারেন।',
+      'হ্যাঁ। JCI তাদের ওয়েবসাইটে স্বীকৃত সংস্থার পাবলিক ডিরেক্টরি রাখে। NABH ও NABL-এরও অনুসন্ধানযোগ্য ডিরেক্টরি আছে। আমরা প্রতিটি হাসপাতালের স্বীকৃতির বিবরণ শেয়ার করি এবং আপনি চিকিৎসার সিদ্ধান্ত নেওয়ার আগে নিজে যাচাই করতে পারেন। নিচে ধাপে ধাপে যাচাই গাইড দেখুন।',
   },
   {
-    question: 'ডাক্তারের যোগ্যতা সম্পর্কে কী — সেগুলোও কি স্বীকৃত?',
+    question: 'ডাক্তারের যোগ্যতা কি স্বীকৃতি দিয়ে যাচাই হয়?',
     answer:
-      'ডাক্তারের যোগ্যতা স্বীকৃতির পরিবর্তে মেডিকেল কাউন্সিল নিবন্ধনের মাধ্যমে যাচাই করা হয়। ভারতীয় ডাক্তারদের Medical Council of India বা রাজ্য মেডিকেল কাউন্সিলে নিবন্ধিত হতে হয়। আমাদের অনেক পার্টনার ডাক্তার মার্কিন যুক্তরাষ্ট্র, যুক্তরাজ্য বা জার্মান প্রতিষ্ঠান থেকে ফেলোশিপ বা সার্টিফিকেশন ধরে রাখেন। আমরা প্রতিটি ডাক্তারের যোগ্যতা ও প্রশিক্ষণ ইতিহাস তাদের প্রোফাইল পৃষ্ঠায় শেয়ার করি।',
+      'ডাক্তারের যোগ্যতা স্বীকৃতির মাধ্যমে নয়, মেডিকেল কাউন্সিল নিবন্ধনের মাধ্যমে যাচাই হয়। ভারতীয় ডাক্তারদের Medical Council of India বা রাজ্য মেডিকেল কাউন্সিলে নিবন্ধিত থাকতে হয়। আমাদের অনেক পার্টনার ডাক্তার যুক্তরাষ্ট্র, যুক্তরাজ্য বা জার্মানির প্রতিষ্ঠান থেকে ফেলোশিপ বা সার্টিফিকেশন ধরে রেখেছেন। আমরা প্রতিটি ডাক্তারের যোগ্যতা ও প্রশিক্ষণের ইতিহাস তাদের প্রোফাইল পেজে দেখাই।',
+  },
+  {
+    question: 'MTQUA সার্টিফিকেশন কী বোঝায়?',
+    answer:
+      'MTQUA (Medical Travel Quality Alliance) সার্টিফিকেশন হলো একমাত্র আন্তর্জাতিক স্বীকৃতি যা বিশেষভাবে মেডিকেল ট্যুরিজমের জন্য। এটি হাসপাতালকে ১০টি ক্ষেত্রে যাচাই করে যা সরাসরি বিদেশি রোগীদের প্রভাবিত করে: যোগাযোগের শুরু, রোগী গ্রহণ, ছাড়পত্রের পর কেয়ার, ওয়েবসাইট স্বচ্ছতা, যোগাযোগ, প্রাইভেসি, বিভিন্ন সংস্কৃতির প্রতি সংবেদনশীলতা, আন্তর্জাতিক রোগী সেবা, সেবা সহায়তা ও পরিচালনা। Fortis Hospital Bannerghatta ভারতের প্রথম MTQUA-স্বীকৃত হাসপাতাল (২০১৪)। এটি একটি শক্তিশালী ইঙ্গিত যে হাসপাতালটি বিদেশি রোগীদের ভালোভাবে সামলানোর জন্য তৈরি।',
+  },
+  {
+    question: 'AAHRPP স্বীকৃতি কী এবং কেন দরকার?',
+    answer:
+      'AAHRPP (Association for Accreditation of Human Research Protection Programs) সেসব সংস্থাকে স্বীকৃতি দেয় যারা মানুষের উপর গবেষণা করে — নিশ্চিত করে যে তারা নৈতিক গবেষণা পদ্ধতি, অংশগ্রহণকারীর সুরক্ষা ও স্বেচ্ছায় সম্মতির ক্ষেত্রে কঠোর মানদণ্ড মেনে চলে। Manipal Hospital Old Airport Road AAHRPP স্বীকৃতি ধরে রেখেছে। এটি গুরুত্বপূর্ণ যদি আপনার চিকিৎসায় ক্লিনিক্যাল ট্রায়াল, পরীক্ষামূলক থেরাপি বা গবেষণা জড়িত থাকে — এটি নিশ্চিত করে যে গবেষণায় অংশ নিলে আপনার অধিকার ও সুরক্ষা রক্ষিত থাকবে।',
+  },
+  {
+    question: 'হাসপাতালের জন্য ISO 9001 সার্টিফিকেশন কী বোঝায়?',
+    answer:
+      'ISO 9001:2015 বিশ্বে সবচেয়ে বেশি ব্যবহৃত মান ব্যবস্থাপনার মানদণ্ড। এটি একটি সংস্থার নেতৃত্ব, নথি ব্যবস্থাপনা, অভ্যন্তরীণ অডিট ও ক্রমাগত উন্নতির প্রক্রিয়া যাচাই করে। ISO 9001 শুধু স্বাস্থ্যসেবার জন্য নয় — অনেক শিল্পেই ব্যবহৃত হয়। হাসপাতালে এটি কাজের ধারাবাহিকতার ভিত্তি দেয়, কিন্তু JCI বা NABH-এর মতো চিকিৎসা-সংক্রান্ত স্বীকৃতির বিকল্প নয়। এটিকে মান ব্যবস্থাপনার ভিত্তি হিসেবে ভাবুন, চিকিৎসার মানের সার্টিফিকেশন নয়।',
+  },
+  {
+    question: 'স্বীকৃতি কী কী গ্যারান্টি দেয় না?',
+    answer:
+      'স্বীকৃতি মানের একটি শক্তিশালী প্রমাণ, কিন্তু গ্যারান্টি নয়। এটি নিখুঁত ফলাফল গ্যারান্টি দেয় না — যেকোনো স্বীকৃত হাসপাতালে জটিলতা হতে পারে। এটি জটিলতার বীমা কভার করে না — আপনার দেশের হেলথ ইনস্যুরেন্স ও সাধারণ ট্রাভেল ইনস্যুরেন্স সাধারণত বিদেশে চিকিৎসা বা দেশে ফেরার পর জটিলতার খরচ দেবে না। এটি ব্যক্তিগত ডাক্তারের দক্ষতা গ্যারান্টি দেয় না — আপনার সার্জনের যোগ্যতা, অভিজ্ঞতা ও কেস সংখ্যা এখনও যাচাই করা উচিত। এবং এটি নিজের সতর্কতার বিকল্প নয়: আপনার নির্দিষ্ট প্রক্রিয়ার জন্য সাফল্যের হার, সংক্রমণের হার ও রোগীদের মতামত জিজ্ঞেস করুন।',
   },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'স্বীকৃতি ও সার্টিফিকেশন',
+    name: 'ভারতে হাসপাতাল স্বীকৃতি — JCI, NABH, NABL, MTQUA ব্যাখ্যা',
     url: pageUrl,
     description:
-      'JCI, NABH এবং NABL স্বীকৃতি বুঝুন — ভারতে চিকিৎসার জন্য হাসপাতাল বেছে নেওয়ার সময় এই ব্যাজগুলো আপনার কেয়ারের জন্য কী অর্থ বহন করে।',
+      'JCI, NABH, NABL, MTQUA, AAHRPP, ISO 9001 ও IFEM স্বীকৃতি বিস্তারিত — প্রতিটি ব্যাজ আপনার চিকিৎসায় কী বোঝায়, কীভাবে যেকোনো হাসপাতাল নিজে যাচাই করবেন, এবং স্বীকৃতি কী গ্যারান্টি দেয় আর কী দেয় না।',
     inLanguage: 'bn',
   }),
   breadcrumbs([
@@ -131,11 +314,13 @@ const jsonLd = [
     { name: 'স্বীকৃতি', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`স্বীকৃতি ও সার্টিফিকেশন | ${t.site.name}`}
-  description="JCI, NABH এবং NABL স্বীকৃতি বুঝুন — ভারতে চিকিৎসার জন্য হাসপাতাল বেছে নেওয়ার সময় এই ব্যাজগুলো আপনার কেয়ারের জন্য কী অর্থ বহন করে।"
+  title={`ভারতে হাসপাতাল স্বীকৃতি — JCI, NABH, NABL, MTQUA | ${t.site.name}`}
+  description="JCI, NABH, NABL, MTQUA, AAHRPP, ISO 9001 ও IFEM স্বীকৃতি বিস্তারিত — প্রতিটি ব্যাজ আপনার চিকিৎসায় কী বোঝায়, কীভাবে যেকোনো হাসপাতাল নিজে যাচাই করবেন, এবং স্বীকৃতি কী গ্যারান্টি দেয় আর কী দেয় না।"
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -180,15 +365,15 @@ const jsonLd = [
             মানের মানদণ্ড
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
-            JCI, NABH এবং NABL — আপনার কেয়ারের জন্য ব্যাজগুলো কী অর্থ বহন করে
+            JCI, NABH, NABL, MTQUA — প্রতিটি ব্যাজ আপনার চিকিৎসায় কী বোঝায়
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            চিকিৎসার জন্য ভ্রমণ করলে আপনাকে জানতে হবে হাসপাতাল আন্তর্জাতিক মানের মান পূরণ করে কিনা।
-            এখানে প্রতিটি স্বীকৃতি কী অর্থ বহন করে — এবং কেন আমরা শুধু স্বীকৃত হাসপাতালের সাথে কাজ
-            করি।
+            চিকিৎসার জন্য বিদেশে এলে আপনাকে জানতে হবে হাসপাতালটি আন্তর্জাতিক মানের কিনা। এখানে
+            প্রতিটি স্বীকৃতি কী বোঝায়, কীভাবে যেকোনো হাসপাতাল নিজে যাচাই করবেন, এবং স্বীকৃতি কী
+            গ্যারান্টি দেয় আর কী দেয় না — সব এক জায়গায়, যাতে আপনি নিশ্চিন্তে বেছে নিতে পারেন।
           </p>
         </div>
       </div>
@@ -262,8 +447,297 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── OUR ACCREDITED HOSPITALS ─────────────────────────────────── */}
+    {/* ── WHAT ACCREDITATION DOES NOT COVER ────────────────────────── */}
     <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          স্বীকৃতি যা গ্যারান্টি দেয় না
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          স্বীকৃতি মানের একটি শক্তিশালী প্রমাণ, কিন্তু গ্যারান্টি নয়। এটি যা কভার করে না তা জানলে
+          চিকিৎসার সিদ্ধান্ত নেওয়ার আগে সঠিক প্রশ্নগুলো করতে পারবেন।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">নিখুঁত ফলাফল</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              যেকোনো স্বীকৃত হাসপাতালে জটিলতা হতে পারে। স্বীকৃতি শুধু নিশ্চিত করে যে সুরক্ষা নিয়ম
+              আছে এবং মানা হচ্ছে — কিন্তু চিকিৎসার ঝুঁকি পুরোপুরি দূর করে না।
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">জটিলতার বীমা</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              আপনার দেশের হেলথ ইনস্যুরেন্স ও সাধারণ ট্রাভেল ইনস্যুরেন্স সাধারণত বিদেশে চিকিৎসা বা
+              দেশে ফেরার পর জটিলতার খরচ দেবে না। জটিলতা কভার করে এমন মেডিকেল ট্রাভেল ইনস্যুরেন্স
+              সম্পর্কে জিজ্ঞেস করুন।
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">ব্যক্তিগত ডাক্তারের দক্ষতা</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              স্বীকৃতি হাসপাতালকে কভার করে, ব্যক্তিগত সার্জনকে নয়। আপনার ডাক্তারের যোগ্যতা,
+              অভিজ্ঞতা ও নির্দিষ্ট প্রক্রিয়ার কেস সংখ্যা এখনও যাচাই করা উচিত।
+            </p>
+          </div>
+
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-2">
+              <span
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100"
+                aria-hidden="true"
+              >
+                <Icon name="close" size={16} className="text-rose-700" />
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">নিজের সতর্কতার বিকল্প</h3>
+            </div>
+            <p class="text-ink/70 text-sm leading-relaxed">
+              স্বীকৃতি একটি প্রাথমিক যাচাই, পুরো উত্তর নয়। সিদ্ধান্ত নেওয়ার আগে আপনার নির্দিষ্ট
+              প্রক্রিয়ার জন্য সাফল্যের হার, সংক্রমণের হার ও রোগীদের মতামত জিজ্ঞেস করুন।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── HOW TO VERIFY ────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          কীভাবে হাসপাতালের স্বীকৃতি নিজে যাচাই করবেন
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          অফিসিয়াল ডিরেক্টরি দিয়ে ২ মিনিটের মধ্যে যেকোনো হাসপাতালের স্বীকৃতি যাচাই করতে পারবেন।
+          শুধু সার্টিফিকেট আছে কিনা দেখবেন না, মেয়াদ উত্তীর্ণের তারিখও দেখবেন — হাসপাতাল মান ধরে
+          রাখতে না পারলে স্বীকৃতি বাতিল হয়ে যেতে পারে।
+        </p>
+        <div class="space-y-6">
+          {/* JCI verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                JCI
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">JCI স্বীকৃতি যাচাই করুন</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li>
+                <span class="font-semibold text-ink">jointcommissioninternational.org</span>-এ যান
+              </li>
+              <li>"Accredited Organizations" ডিরেক্টরি খুঁজুন</li>
+              <li>দেশ হিসেবে <span class="font-semibold text-ink">India</span> নির্বাচন করুন</li>
+              <li>হাসপাতালের নাম দিয়ে সার্চ করুন</li>
+              <li>স্বীকৃতির অবস্থা, প্রদানের তারিখ ও মেয়াদ উত্তীর্ণের তারিখ দেখুন</li>
+            </ol>
+            <a
+              href="https://www.jointcommission.org/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              JCI ডিরেক্টরি খুলুন
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+
+          {/* NABH verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-violet-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                NABH
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">NABH স্বীকৃতি যাচাই করুন</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li><span class="font-semibold text-ink">nabh.co</span>-তে যান</li>
+              <li>"Accredited Hospitals" ডিরেক্টরি খুলুন</li>
+              <li>হাসপাতালের নাম বা রাজ্য দিয়ে সার্চ করুন</li>
+              <li>স্বীকৃতি সার্টিফিকেট নম্বর ও বৈধতার মেয়াদ দেখুন</li>
+            </ol>
+            <a
+              href="https://nabh.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              NABH ডিরেক্টরি খুলুন
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+
+          {/* NABL verification */}
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <div class="mb-3 flex items-center gap-3">
+              <span
+                class="inline-flex items-center justify-center rounded-2xl bg-green-600 px-4 py-2 font-display text-base font-bold text-white"
+              >
+                NABL
+              </span>
+              <h3 class="font-display text-lg font-bold text-ink">NABL স্বীকৃতি যাচাই করুন</h3>
+            </div>
+            <ol class="text-ink/80 ml-5 list-decimal space-y-2 text-sm">
+              <li><span class="font-semibold text-ink">nabl-india.org</span>-এ যান</li>
+              <li>স্বীকৃত ল্যাবরেটরি ডিরেক্টরি খুলুন</li>
+              <li>ল্যাবের নাম বা অবস্থান দিয়ে সার্চ করুন</li>
+              <li>স্বীকৃতির পরিসর ও বৈধতার মেয়াদ দেখুন</li>
+            </ol>
+            <a
+              href="https://nabl-india.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 hover:text-violet-700"
+            >
+              NABL ডিরেক্টরি খুলুন
+              <Icon name="arrow-right" size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── JCI HOSPITALS IN BANGALORE ───────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          ব্যাঙ্গালোরের JCI-স্বীকৃত হাসপাতাল
+        </h2>
+        <p class="text-ink/60 mb-3 max-w-2xl text-sm" data-anim="fade-in-up">
+          বেঙ্গালুরুতে দক্ষিণ ভারতের সবচেয়ে বেশি JCI-স্বীকৃত হাসপাতাল আছে — ২০২৫-এর মাঝামাঝি
+          পর্যন্ত ৭টি। এর মধ্যে ৪টি আমাদের পার্টনার হাসপাতাল। নিচের তালিকা JCI / India Healthcare
+          Tourism ডিরেক্টরি ও রমাইয়া মেমোরিয়ালের জুন ২০২৫ স্বীকৃতির খবর থেকে যাচাই করা, কিন্তু
+          স্বীকৃতির অবস্থা বদলায় — সিদ্ধান্তের আগে JCI ডিরেক্টরিতে আবার দেখে নেবেন।
+        </p>
+        <p class="text-ink/50 mb-10 max-w-2xl text-xs" data-anim="fade-in-up">
+          দ্রষ্টব্য: Sakra World Hospital (AACI + NABH) ও HCG Cancer Centre (NABH)-কে অনলাইনে অনেক
+          সময় JCI-স্বীকৃত বলে দেখানো হয়, কিন্তু তাদের অফিসিয়াল স্বীকৃতি পেজে JCI নেই। তাই সঠিক
+          রাখতে আমরা এই তালিকা থেকে তাদের বাদ দিয়েছি।
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">হাসপাতাল</th>
+                <th class="py-3 pr-4 font-semibold">এলাকা</th>
+                <th class="py-3 pr-4 font-semibold">বেড</th>
+                <th class="py-3 pr-4 font-semibold">মূল বিশেষত্ব</th>
+                <th class="py-3 pr-4 font-semibold">অন্যান্য স্বীকৃতি</th>
+                <th class="py-3 font-semibold">অবস্থা</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                bangaloreJciHospitals.map((h) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">
+                      {h.isPartner ? (
+                        <a
+                          href={`/bn/hospitals/${h.slug}`}
+                          class="text-violet-600 hover:text-violet-700"
+                        >
+                          {h.name}
+                        </a>
+                      ) : (
+                        h.name
+                      )}
+                    </td>
+                    <td class="text-ink/70 py-4 pr-4">{h.area}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.beds}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.specialties}</td>
+                    <td class="text-ink/70 py-4 pr-4">{h.otherAccreditations}</td>
+                    <td class="py-4">
+                      {h.isPartner ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2.5 py-1 text-xs font-semibold text-violet-700">
+                          <Icon name="check" size={10} /> আমাদের পার্টনার
+                        </span>
+                      ) : (
+                        <span class="text-ink/40 text-xs">পার্টনার নয়</span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="mb-4 font-display text-xl font-bold text-ink" data-anim="fade-in-up">
+            ভারতজুড়ে JCI-স্বীকৃত হাসপাতাল
+          </h3>
+          <p class="text-ink/60 mb-6 max-w-2xl text-sm" data-anim="fade-in-up">
+            ভারতে আনুমানিক ৫০+ JCI-স্বীকৃত হাসপাতাল আছে (রমাইয়ার স্বীকৃতির পর জুলাই ২০২৫-এ ৫৩টি বলা
+            হয়েছে)। হাসপাতাল স্বীকৃতি পায়, নবায়ন করে বা হারায় — তাই সংখ্যা বদলায়। বেঙ্গালুরু,
+            দিল্লি NCR ও মুম্বাই হলো তিনটি বড় ক্লাস্টার।
+          </p>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              jciByCity.map((c) => (
+                <div
+                  class="rounded-card border border-cream-300 bg-cream-100 p-4"
+                  data-anim="fade-in-up"
+                >
+                  <p class="font-display text-2xl font-bold text-ink">{c.count}</p>
+                  <p class="mt-1 text-sm font-semibold text-ink">{c.city}</p>
+                  <p class="text-ink/60 mt-1 text-xs leading-relaxed">{c.note}</p>
+                </div>
+              ))
+            }
+          </div>
+          <p class="text-ink/50 mt-6 text-xs">
+            সংখ্যাগুলো নির্দেশকমাত্র — ২০২৪-এর India Healthcare Tourism-এর JCI তালিকা ও জুলাই
+            ২০২৫-এর খবরের ভিত্তিতে। নির্দিষ্ট হাসপাতালের বর্তমান অবস্থা
+            <a
+              href="https://www.jointcommission.org/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-violet-600 hover:text-violet-700">JCI ডিরেক্টরিতে</a
+            > যাচাই করে তবেই সিদ্ধান্ত নেবেন।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── OUR ACCREDITED HOSPITALS ─────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2
           class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
@@ -272,8 +746,8 @@ const jsonLd = [
           আমাদের স্বীকৃত পার্টনার হাসপাতাল
         </h2>
         <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
-          আমরা যে প্রতিটি হাসপাতাল সুপারিশ করি সেগুলোর অন্তত একটি স্বীকৃতি রয়েছে। এখানে
-          ব্যাঙ্গালোরে আমাদের পার্টনার হাসপাতাল এবং তাদের স্বীকৃতি অবস্থা।
+          আমরা যে প্রতিটি হাসপাতাল সুপারিশ করি তার অন্তত একটি স্বীকৃতি আছে। নিচে ব্যাঙ্গালোরে আমাদের
+          পার্টনার হাসপাতাল ও তাদের স্বীকৃতির তালিকা দেওয়া হলো।
         </p>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {
@@ -314,7 +788,7 @@ const jsonLd = [
           আরও ঘুরে দেখুন
         </h2>
         <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
-          হাসপাতালের মান, চিকিৎসা খরচ এবং রোগীর যাত্রা সম্পর্কে আরও জানুন।
+          হাসপাতালের মান, চিকিৎসার খরচ ও রোগীর যাত্রা সম্পর্কে আরও জানুন।
         </p>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <a
@@ -353,7 +827,7 @@ const jsonLd = [
               <h3 class="font-display text-base font-bold text-ink">কেন ভারত</h3>
             </div>
             <p class="text-ink/70 mt-3 text-sm leading-relaxed">
-              বুঝুন কেন ভারত মেডিকেল ট্যুরিজমে বিশ্বনেতা — খরচ সাশ্রয়, স্বীকৃত হাসপাতাল এবং অভিজ্ঞ
+              জানুন কেন ভারত মেডিকেল ট্যুরিজমে বিশ্বনেতা — খরচ সাশ্রয়, স্বীকৃত হাসপাতাল ও অভিজ্ঞ
               বিশেষজ্ঞ।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
@@ -376,7 +850,7 @@ const jsonLd = [
               <h3 class="font-display text-base font-bold text-ink">খরচ ক্যালকুলেটর</h3>
             </div>
             <p class="text-ink/70 mt-3 text-sm leading-relaxed">
-              ভারতে স্বীকৃত হাসপাতালে আপনার চিকিৎসার নির্দেশক খরচের পরিসর পান।
+              ভারতে স্বীকৃত হাসপাতালে আপনার চিকিৎসার আনুমানিক খরচের ধারণা নিন।
             </p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600">
               খরচ অনুমান করুন
@@ -388,7 +862,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"
@@ -403,9 +877,9 @@ const jsonLd = [
     {/* ── CTA ──────────────────────────────────────────────────────── */}
     <TreatmentsCtaSection
       locale="bn"
-      eyebrow="আমরা সাহায্যে আছি"
+      eyebrow="আমরা সাহায্য করছি"
       headline="হাসপাতালের স্বীকৃতি যাচাই করতে চান?"
-      body="আমরা প্রতিটি হাসপাতালের স্বীকৃতি অবস্থা শেয়ার করি যা আমরা সুপারিশ করি। আপনার চিকিৎসার ধরন জানান — আমরা আপনার প্রয়োজনের সাথে মানানসই স্বীকৃত হাসপাতাল খুঁজে দেব।"
+      body="আমরা যে প্রতিটি হাসপাতাল সুপারিশ করি তার স্বীকৃতির বিবরণ আপনাকে জানাই। আপনার চিকিৎসার ধরন জানান — আপনার প্রয়োজনের সাথে মানানসই স্বীকৃত হাসপাতাল খুঁজে দেব।"
       primaryCta={{ label: 'বিনামূল্যে কোট নিন', href: whatsappInquiryHref }}
       secondaryCta={{ label: 'যোগাযোগ করুন', href: '/bn/contact' }}
       tertiaryCta={{ label: 'WhatsApp করুন', href: whatsappInquiryHref }}

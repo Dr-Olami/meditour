@@ -164,15 +164,37 @@ const faqs = [
     answer:
       'Major Indian hospitals typically operate on a self-pay deposit system. For large bills we recommend SWIFT wire transfer (clears in 2–3 business days); Visa and Mastercard are also accepted. Standard travel insurance does not cover planned treatment — check with your insurer beforehand. We assist with proforma invoices and payment guidance.',
   },
+  {
+    question: 'Is medical tourism in India safe for international patients?',
+    answer:
+      "Yes, when you choose JCI-accredited hospitals. JCI (Joint Commission International) is the same body that accredits hospitals in the USA and Europe. Fewer than 40 of India's 50,000+ registered hospitals hold JCI accreditation. Our partner hospitals also hold NABH (National Accreditation Board for Hospitals & Healthcare Providers) certification. These accreditations ensure international standards for patient safety, infection control, surgical protocols, and clinical outcomes. We only work with hospitals that have passed independent safety assessments.",
+  },
+  {
+    question: 'How much does medical treatment cost in India compared to the USA or UK?',
+    answer:
+      'Treatment in India is typically 60–80% cheaper than in the USA, UK, or Australia. For example, heart bypass surgery costs $4,500–12,000 in India versus $70,000–150,000 in the USA. Knee replacement costs $5,000–9,000 versus $35,000–70,000. Breast cancer treatment costs $5,000–20,000 for a complete course versus $50,000–200,000+ in the West. Even after adding flights and accommodation, the savings remain substantial. Use our cost calculator for a personalised estimate.',
+  },
+  {
+    question: 'Why choose India for medical treatment over other countries?',
+    answer:
+      'India offers three key advantages: (1) Cost — 60-80% lower than Western countries with no compromise on clinical quality at accredited hospitals. (2) Expertise — Indian surgeons are globally trained, many hold fellowships from the USA or UK, and high patient volumes mean more experience with complex cases. (3) English — India is the largest English-speaking medical workforce outside the USA, so communication is seamless. Additionally, India offers Ayurveda and traditional medicine options not available elsewhere. The main trade-off is travel distance from Western countries.',
+  },
+  {
+    question: 'What is medical tourism and how does a facilitator help?',
+    answer:
+      'Medical tourism is the practice of travelling to another country for medical treatment, typically to access lower costs, shorter wait times, or treatments not available at home. A medical tourism facilitator like Khan Meditour acts as your advocate and coordinator — we review your reports, match you with the right hospital and specialist, negotiate transparent pricing, arrange your visa and travel, and support you on the ground in India. We are not a hospital; we are your guide through the Indian healthcare system. Our service to you is free — hospitals pay us, not patients.',
+  },
 ];
 
 const jsonLd = [
   medicalBusiness({
     name: t.site.name,
     url: siteUrl,
+    description: t.site.description,
     whatsapp: whatsappNumber,
     email: contactEmail,
     specialties: categories.length ? categories : undefined,
+    areaServed: ALL_COUNTRIES.map((c) => c.name),
   }),
   faqPage({ entries: faqs }),
 ];

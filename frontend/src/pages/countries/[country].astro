@@ -8,6 +8,7 @@ import { StatCounter } from '../../design-system/components/organisms/StatCounte
 import { Icon } from '../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
 import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import LeadModalInterceptor from '../../design-system/components/organisms/LeadModalInterceptor.astro';
 import { TreatmentCostCard } from '../../design-system/components/molecules/TreatmentCostCard';
 import {
   getCountryMetadata,
@@ -316,7 +317,7 @@ const jsonLd = [
 
               {/* H1 only - clean and bold */}
               <h1
-                class="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
+                class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl"
                 data-anim="headline-reveal"
               >
                 Medical Treatment in India for {countryData.nationality} Patients
@@ -812,6 +813,12 @@ const jsonLd = [
       <span class="hidden md:inline">Get cost estimate</span>
     </a>
   </div>
+
+  <LeadModalInterceptor
+    modalTitle={t.leadModal.title}
+    modalSubtitle={t.leadModal.subtitle}
+    closeLabel={t.leadModal.close}
+  />
 
   <Footer
     brand={t.site.name}

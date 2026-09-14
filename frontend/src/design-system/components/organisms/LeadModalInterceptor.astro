@@ -1,0 +1,58 @@
+---
+/**
+ * LeadModalInterceptor — renders an invisible LeadModalTrigger and intercepts
+ * all clicks on `a[href="#contact"]` links across the page, opening the lead
+ * modal popup instead of scrolling to a bottom contact form.
+ *
+ * Usage: drop `<LeadModalInterceptor client:load t={t} />` near the end of any
+ * page that has `#contact` links. The component handles the rest.
+ *
+ * Reason: keeps brand and UX consistency — every "Free consultation" / "Contact
+ * Us" / "Get free quote" button across the site opens the same modal popup
+ * instead of scrolling to a bottom form section.
+ */
+import { LeadModalTrigger } from './LeadModalTrigger';
+import { LEAD_SOURCE } from '../../../lib/crm';
+
+interface Props {
+  modalTitle: string;
+  modalSubtitle?: string;
+  closeLabel?: string;
+  source?: LeadSource;
+}
+
+const { modalTitle, modalSubtitle, closeLabel, source = LEAD_SOURCE.WEBSITE } = Astro.props;
+---
+
+<div
+  style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"
+  aria-hidden="true"
+  data-hidden-lead-trigger-wrapper
+>
+  <LeadModalTrigger
+    client:load
+    label="hidden-trigger"
+    modalTitle={modalTitle}
+    modalSubtitle={modalSubtitle}
+    closeLabel={closeLabel}
+    source={source}
+    variant="dark"
+  />
+</div>
+
+<script>
+  // Intercept all #contact and /#contact link clicks and open the hidden lead
+  // modal trigger instead of navigating/scrolling to a contact form.
+  document.addEventListener('click', (e) => {
+    const link = (e.target as HTMLElement).closest('a[href="#contact"], a[href="/#contact"]');
+    if (!link) return;
+    e.preventDefault();
+    const wrapper = document.querySelector('[data-hidden-lead-trigger-wrapper]');
+    if (wrapper) {
+      const trigger = wrapper.querySelector('button');
+      if (trigger instanceof HTMLButtonElement) {
+        trigger.click();
+      }
+    }
+  });
+</script>

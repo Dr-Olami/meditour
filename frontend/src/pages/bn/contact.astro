@@ -4,6 +4,7 @@ import { Navbar } from '../../design-system/components/organisms/Navbar';
 import { Footer } from '../../design-system/components/organisms/Footer';
 import { LeadForm } from '../../design-system/components/organisms/LeadForm';
 import { WhatsAppCTA } from '../../design-system/components/organisms/WhatsAppCTA';
+import { FAQAccordion } from '../../design-system/components/organisms/FAQAccordion';
 import { Icon } from '../../design-system/components/atoms/Icon';
 import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
 import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
@@ -13,7 +14,7 @@ import { getFooterLegalLinks } from '../../lib/footer';
 import { getTreatments } from '../../lib/content';
 import { getInquiryLink } from '../../lib/whatsapp';
 import { LEAD_SOURCE } from '../../lib/crm';
-import { medicalWebPage, breadcrumbs } from '../../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage, localBusiness } from '../../lib/schema';
 
 const locale = 'bn';
 const t = getTranslations(locale);
@@ -32,24 +33,140 @@ const whatsappInquiryHref = getInquiryLink();
 const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
 const pageUrl = `${siteUrl}/bn/contact`;
 
+// খান মেডিট্যুর কোঅর্ডিনেটরদের ভাষা।
+const languagesSpoken = [
+  { name: 'English', native: 'English', note: 'প্রধান সমন্বয় ভাষা' },
+  { name: 'Bengali', native: 'বাংলা', note: 'বাংলাদেশি রোগীদের জন্য' },
+  { name: 'Hindi', native: 'हिन्दी', note: 'ভারতে অন-দ্য-গ্রাউন্ড' },
+  { name: 'Hausa', native: 'Harshen Hausa', note: 'নাইজেরিয়ান / পশ্চিম আফ্রিকান রোগীদের জন্য' },
+  { name: 'Swahili', native: 'Kiswahili', note: 'পূর্ব আফ্রিকান রোগীদের জন্য' },
+  { name: 'Yoruba', native: 'Yorùbá', note: 'নাইজেরিয়ান রোগীদের জন্য' },
+  { name: 'Igbo', native: 'Igbo', note: 'নাইজেরিয়ান রোগীদের জন্য' },
+];
+
+// যেসব দেশের রোগীদের খান মেডিট্যুর সেবা দিয়েছে।
+// `slug` /countries/[slug] গাইডে লিংক করে; null = এখনো গাইড নেই।
+const areasServed = [
+  { name: 'Bangladesh', slug: 'bangladesh' },
+  { name: 'Nigeria', slug: 'nigeria' },
+  { name: 'Kenya', slug: 'kenya' },
+  { name: 'Uganda', slug: 'uganda' },
+  { name: 'Tanzania', slug: 'tanzania' },
+  { name: 'Rwanda', slug: 'rwanda' },
+  { name: 'Ethiopia', slug: 'ethiopia' },
+  { name: 'Ghana', slug: 'ghana' },
+  { name: 'Cameroon', slug: 'cameroon' },
+  { name: 'Sudan', slug: 'sudan' },
+  { name: 'Zimbabwe', slug: 'zimbabwe' },
+  { name: 'Iraq', slug: 'iraq' },
+  { name: 'Yemen', slug: 'yemen' },
+  { name: 'Oman', slug: 'oman' },
+  { name: 'United Arab Emirates', slug: 'uae' },
+  { name: 'Saudi Arabia', slug: 'saudi-arabia' },
+  { name: 'Kuwait', slug: 'kuwait' },
+  { name: 'Qatar', slug: 'qatar' },
+  { name: 'Bahrain', slug: 'bahrain' },
+  { name: 'Jordan', slug: 'jordan' },
+  { name: 'Egypt', slug: 'egypt' },
+  { name: 'Iran', slug: 'iran' },
+  { name: 'Maldives', slug: 'maldives' },
+  { name: 'Sri Lanka', slug: 'sri-lanka' },
+  { name: 'Nepal', slug: 'nepal' },
+  { name: 'Afghanistan', slug: 'afghanistan' },
+  { name: 'USA', slug: 'usa' },
+  { name: 'UK', slug: 'uk' },
+  { name: 'Canada', slug: 'canada' },
+  { name: 'Australia', slug: 'australia' },
+  { name: 'Kazakhstan', slug: 'kazakhstan' },
+  { name: 'Sierra Leone', slug: null },
+  { name: 'Mauritius', slug: null },
+];
+
+const officeHours = 'শনি–শুক্রবার, সকাল ৯:০০ – সন্ধ্যা ৭:০০ IST';
+const conciergeHours = 'জরুরি ও ইমার্জেন্সি কেসের জন্য ২৪/৭';
+
+const faqs = [
+  {
+    question: 'অনুসন্ধানে আপনারা কত দ্রুত সাড়া দেন?',
+    answer:
+      'সাধারণ অনুসন্ধানে আমরা সাধারণত ২৪ ঘন্টার মধ্যে জবাব দেই — WhatsApp-এ প্রায়ই আরও দ্রুত। জরুরি ক্ষেত্রে (কার্ডিয়াক, ক্যানসার, ট্রান্সপ্লান্ট, নিউরোসার্জারি) আমাদের কনসিয়ের্জ লাইন ২৪/৭ তদারকি করা হয় এবং আমরা সাধারণত ঘন্টার মধ্যে গ্রহণ নিশ্চিত করি, দিন নয়।',
+  },
+  {
+    question: 'প্রথমে যোগাযোগ করলে কী পাঠাব?',
+    answer:
+      'যা কিছু আছে পাঠান: সাম্প্রতিক মেডিকেল রিপোর্ট, ইমেজিং সারাংশ (CT/MRI/echo), বর্তমান রোগনির্ণয় বা ডাক্তারের সুপারিশ, আপনার জাতীয়তা (ভিসা পথনির্দেশনার জন্য), এবং আপনার সেরা WhatsApp নম্বর। আংশিক ফাইলও আমাদের হাসপাতালের সাথে যোগাযোগ শুরু করতে সাহায্য করে যখন আপনি বাকিটা সংগ্রহ করেন।',
+  },
+  {
+    question: 'আপনাদের কোঅর্ডিনেটররা কোন ভাষায় কথা বলেন?',
+    answer:
+      'English, বাংলা, Hindi, Hausa, Swahili, Yoruba, এবং Igbo। আমরা আপনার সবচেয়ে স্বচ্ছন্দ্যের ভাষায় সমন্বয় করি — সাহায্য পেতে আপনাকে English-এ কষ্ট করতে হবে না। পার্টনার হাসপাতালে Arabic, French, এবং Russian-এর জন্য হাসপাতাল দোভাষীও পাওয়া যায়।',
+  },
+  {
+    question: 'আপনারা কোন দেশগুলোতে সেবা দেন?',
+    answer:
+      'আমরা Bangladesh, Nigeria, Kenya, Uganda, Tanzania, Rwanda, Ethiopia, Ghana, Sierra Leone, Iraq, Yemen, Oman, UAE, Saudi Arabia, Maldives, এবং Mauritius-এর রোগীদের সেবা দিয়েছি। আপনার দেশ তালিকায় না থাকলে আমাদের যোগাযোগ করুন — সাধারণত আমরা সাহায্য করতে পারি।',
+  },
+  {
+    question: 'আমার মেডিকেল তথ্য কীভাবে সামলানো হয়?',
+    answer:
+      'আপনার মেডিকেল রিপোর্ট ও ব্যক্তিগত তথ্য শুধু আপনার কেস পর্যালোচনা করা হাসপাতাল ও বিশেষজ্ঞদের সাথে শেয়ার করা হয় — কখনো বিক্রি করা হয় না, কখনো তৃতীয় পক্ষের সাথে শেয়ার করা হয় না, এবং আপনার সম্মতি ছাড়া মার্কেটিংয়ে ব্যবহার করা হয় না। আমরা ডকুমেন্ট ট্রান্সফারের জন্য নিরাপদ চ্যানেল ব্যবহার করি এবং আপনার কেস বন্ধ হলে অনুরোধে রিপোর্ট মুছে দেই।',
+  },
+  {
+    question: 'সমন্বয়ের জন্য কি চার্জ আছে?',
+    answer:
+      'না। আমাদের সমন্বয় সেবা রোগীদের জন্য বিনামূল্যে। আপনি চিকিৎসার জন্য সরাসরি হাসপাতালে পরিশোধ করেন। হাসপাতাল ম্যাচিং, রিপোর্ট পর্যালোচনা, ভিসা সমন্বয় বা ভ্রমণ পরিকল্পনার জন্য আমরা চার্জ করি না। আমাদের ভূমিকা হলো আপনার পরিবারের জন্য পথকে দ্রুত ও স্পষ্ট করা।',
+  },
+  {
+    question: 'আপনাদের অফিস কোথায়, সময় কী?',
+    answer:
+      'আমাদের টিম ভারতের কর্ণাটক, ব্যাঙ্গালোরে অবস্থিত। সাধারণ সমন্বয়ের জন্য অফিস সময় শনি থেকে শুক্রবার, সকাল ৯:০০ থেকে সন্ধ্যা ৭:০০ IST। জরুরি ও ইমার্জেন্সি কেসের জন্য আমাদের কনসিয়ের্জ লাইন WhatsApp-এ ২৪/৭ পাওয়া যায়।',
+  },
+  {
+    question: 'অভিযোগ করব কীভাবে?',
+    answer:
+      'আমরা অভিযোগ গুরুত্বের সাথে নিই। complaints@khanmeditour.com-এ বিষয় "Complaint" লিখে আপনার উদ্বেগের বিবরণ সহ ইমেইল করুন। একজন সিনিয়র কোঅর্ডিনেটর ২৪ ঘন্টার মধ্যে গ্রহণ নিশ্চিত করবেন ও তদন্ত করবেন। আমাদের কনসিয়ের্জ লাইনে WhatsApp-এও অভিযোগ করতে পারেন, "অভিযোগ" হিসেবে চিহ্নিত করে।',
+  },
+];
+
 const jsonLd = [
   medicalWebPage({
-    name: 'যোগাযোগ',
+    name: 'খান মেডিট্যুর — যোগাযোগ',
     url: pageUrl,
     description:
-      'খান মেডিট্যুরের সাথে যোগাযোগ করুন। WhatsApp বা ইমেইলে আপনার রিপোর্ট শেয়ার করুন, আমরা ২৪ ঘন্টার মধ্যে জবাব দেব।',
+      'ভারতে মেডিকেল ট্যুরিজমের জন্য বিনামূল্যে পরামর্শ। ব্যাঙ্গালোর-ভিত্তিক কোঅর্ডিনেটররা English, বাংলা, Hindi, Hausa, Swahili, Yoruba ও Igbo-তে কথা বলেন। ২৪ ঘন্টার মধ্যে জবাব।',
     inLanguage: 'bn',
   }),
   breadcrumbs([
     { name: t.nav.home, url: `${siteUrl}/bn/` },
     { name: 'যোগাযোগ', url: `${pageUrl}/` },
   ]),
+  localBusiness({
+    name: t.site.name,
+    url: `${siteUrl}/`,
+    description:
+      'ভারতের ব্যাঙ্গালোর-ভিত্তিক মেডিকেল ট্যুরিজম ফ্যাসিলিটেটর। JCI ও NABH-স্বীকৃত হাসপাতালে চিকিৎসার জন্য বিদেশি রোগীদের বিনামূল্যে সমন্বয়।',
+    telephone: `+${phoneNumber}`,
+    whatsapp: `+${whatsappNumber}`,
+    email: contactEmail,
+    address: {
+      streetAddress: 'Bangalore',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      addressCountry: 'IN',
+    },
+    areaServed: areasServed.map((c) => c.name),
+    availableLanguage: languagesSpoken.map((l) => l.name),
+    openingHours: officeHours,
+    specialties: ['Medical Tourism Coordination'],
+  }),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`যোগাযোগ | ${t.site.name}`}
-  description="খান মেডিট্যুরের সাথে যোগাযোগ করুন। WhatsApp বা ইমেইলে আপনার রিপোর্ট শেয়ার করুন, আমরা ২৪ ঘন্টার মধ্যে জবাব দেব।"
+  title={`যোগাযোগ — খান মেডিট্যুর | ভারতে মেডিকেল ট্যুরিজম বিনামূল্যে পরামর্শ`}
+  description="ভারতে মেডিকেল ট্যুরিজমের জন্য বিনামূল্যে পরামর্শ। ব্যাঙ্গালোর-ভিত্তিক কোঅর্ডিনেটররা English, বাংলা, Hindi, Hausa, Swahili, Yoruba ও Igbo-তে কথা বলেন। ২৪ ঘন্টার মধ্যে জবাব।"
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -94,22 +211,22 @@ const jsonLd = [
             {t.nav.contact}
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
-            যোগাযোগ করুন
+            খান মেডিট্যুর — ভারতে মেডিকেল ট্যুরিজম যোগাযোগ
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
-            বিনামূল্যে পরামর্শের জন্য খান মেডিট্যুরে <a
+            ভারতে চিকিৎসার জন্য বিদেশি রোগীদের বিনামূল্যে পরামর্শ। যোগাযোগ করুন <a
               href={`tel:+${phoneNumber}`}
-              class="font-semibold text-ink hover:text-violet-600">কল করুন +91 9606624861</a
+              class="font-semibold text-ink hover:text-violet-600">কল +91 9606624861</a
             > অথবা <a
               href={whatsappInquiryHref}
               target="_blank"
               rel="noopener noreferrer"
-              class="font-semibold text-ink hover:text-violet-600">WhatsApp করুন +8801611892986</a
-            >। অথবা নিচের ফর্ম পূরণ করুন — আপনার মেডিকেল রিপোর্ট শেয়ার করুন এবং আমাদের ব্যাঙ্গালোর
-            টিম থেকে ২৪–৪৮ ঘন্টার মধ্যে হাসপাতালের বিকল্প ও খরচের অনুমান পান।
+              class="font-semibold text-ink hover:text-violet-600">WhatsApp +8801611892986</a
+            >। আমাদের ব্যাঙ্গালোর-ভিত্তিক কোঅর্ডিনেটররা English, বাংলা, Hindi, Hausa, Swahili,
+            Yoruba, এবং Igbo-তে কথা বলেন — এবং ২৪ ঘন্টার মধ্যে জবাব দেন।
           </p>
         </div>
       </div>
@@ -190,11 +307,109 @@ const jsonLd = [
               WhatsApp সাধারণত আমাদের কেয়ার টিমের কাছ থেকে দ্রুত জবাব পাওয়ার সবচেয়ে দ্রুত উপায়।
             </p>
           </div>
+
+          {/* ভাষা */}
+          <div class="mt-6 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              আমাদের ভাষা
+            </p>
+            <h3 class="mt-2 font-display text-xl font-bold text-ink">আপনার ভাষায় সমন্বয় করুন</h3>
+            <p class="text-ink/60 mt-2 text-sm">
+              সাহায্য পেতে আপনাকে English-এ কষ্ট করতে হবে না। আমাদের কোঅর্ডিনেটররা যেসব ভাষায় কথা
+              বলেন:
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {
+                languagesSpoken.map((lang) => (
+                  <li class="inline-flex items-center gap-2 rounded-full border border-cream-300 bg-cream-50 px-3 py-1.5 text-sm">
+                    <span class="font-semibold text-ink">{lang.native}</span>
+                    <span class="text-ink/50 text-xs">— {lang.note}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="text-ink/50 mt-3 text-xs">
+              পার্টনার হাসপাতালে Arabic, French, এবং Russian-এর জন্য হাসপাতাল দোভাষীও পাওয়া যায়।
+            </p>
+          </div>
+
+          {/* অফিস ও সময় */}
+          <div class="mt-6 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              অফিস ও সময়
+            </p>
+            <h3 class="mt-2 font-display text-xl font-bold text-ink">ব্যাঙ্গালোর, কর্ণাটক, ভারত</h3>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div>
+                <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                  অফিস সময়
+                </dt>
+                <dd class="text-ink/70 mt-0.5">{officeHours}</dd>
+              </div>
+              <div>
+                <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                  কনসিয়ের্জ লাইন
+                </dt>
+                <dd class="text-ink/70 mt-0.5">{conciergeHours}</dd>
+              </div>
+              <div>
+                <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                  সময় অঞ্চল
+                </dt>
+                <dd class="text-ink/70 mt-0.5">India Standard Time (IST, UTC+5:30)</dd>
+              </div>
+            </dl>
+          </div>
+
+          {/* দেশ */}
+          <div class="mt-6 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              আমরা যেসব দেশে সেবা দেই
+            </p>
+            <h3 class="mt-2 font-display text-xl font-bold text-ink">
+              {areasServed.length}+ দেশের রোগী
+            </h3>
+            <p class="text-ink/60 mt-2 text-sm">
+              আমরা {areasServed.length} দেশের রোগীদের সেবা দিয়েছি। আপনার দেশে ক্লিক করলে খরচ, ভিসা তথ্য
+              ও ফ্লাইট সময় সহ আলাদা গাইড পাবেন:
+            </p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {
+                areasServed.map((country) => (
+                  <li>
+                    {country.slug ? (
+                      <a
+                        href={`/bn/countries/${country.slug}`}
+                        class="text-ink/70 inline-flex items-center rounded-full border border-cream-300 bg-cream-50 px-3 py-1 text-xs transition-colors hover:border-violet-300 hover:text-violet-700"
+                      >
+                        {country.name}
+                      </a>
+                    ) : (
+                      <span class="text-ink/70 inline-flex items-center rounded-full border border-cream-300 bg-cream-50 px-3 py-1 text-xs">
+                        {country.name}
+                      </span>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="text-ink/50 mt-3 text-xs">
+              আপনার দেশ তালিকায় নেই? <a
+                href={whatsappInquiryHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-violet-600 hover:text-violet-700">আমাদের যোগাযোগ করুন</a
+              > — সাধারণত আমরা সাহায্য করতে পারি। সম্পূর্ণ তালিকা দেখুন আমাদের <a
+                href="/bn/countries"
+                class="font-semibold text-violet-600 hover:text-violet-700">দেশ পৃষ্ঠায়</a
+              >।
+            </p>
+          </div>
         </div>
 
         {/* Right: lead form */}
         <div
-          class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8"
+          class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8 lg:sticky lg:top-8 lg:self-start"
           data-anim="fade-in-up"
         >
           <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
@@ -216,6 +431,103 @@ const jsonLd = [
               treatments={treatmentOptions}
               client:load
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── আমরা কারা ──────────────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          আমরা কারা
+        </h2>
+        <p class="text-ink/70 mb-8 max-w-2xl text-sm leading-relaxed" data-anim="fade-in-up">
+          খান মেডিট্যুর ভারতের ব্যাঙ্গালোর-ভিত্তিক একটি মেডিকেল ট্যুরিজম ফ্যাসিলিটেটর। আমরা বিদেশি
+          রোগীদের JCI ও NABH-স্বীকৃত পার্টনার হাসপাতালের সাথে যুক্ত করি — অনকোলজি, কার্ডিয়াক,
+          ট্রান্সপ্লান্ট, নিউরোসার্জারি, অর্থোপেডিক্স সহ সব ধরনের চিকিৎসার জন্য। আমরা হাসপাতাল নই
+          এবং ক্লিনিক্যাল সেবা দেই না — আমরা পথ সমন্বয় করি যাতে আপনি চিকিৎসায় মনোযোগ দিতে পারেন আর
+          আমরা হাসপাতাল ম্যাচিং, ভিসা, ভ্রমণ ও পুনরুদ্ধার লজিস্টিকস সামলাই।
+        </p>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5" data-anim="fade-in-up">
+            <p class="font-display text-2xl font-bold text-ink">বিনামূল্যে</p>
+            <p class="text-ink/60 mt-1 text-xs">
+              রোগীদের জন্য সমন্বয় — আপনি সরাসরি হাসপাতালে পরিশোধ করেন
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5" data-anim="fade-in-up">
+            <p class="font-display text-2xl font-bold text-ink">৭ ভাষা</p>
+            <p class="text-ink/60 mt-1 text-xs">
+              English, বাংলা, Hindi, Hausa, Swahili, Yoruba, Igbo
+            </p>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5" data-anim="fade-in-up">
+            <p class="font-display text-2xl font-bold text-ink">৩০+ দেশ</p>
+            <p class="text-ink/60 mt-1 text-xs">দক্ষিণ এশিয়া, আফ্রিকা ও গালফ জুড়ে রোগী সেবা</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── তথ্য গোপনীয়তা ও অভিযোগ ──────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          আপনার তথ্য ও অধিকার
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+              তথ্য গোপনীয়তা
+            </p>
+            <h3 class="mt-2 font-display text-lg font-bold text-ink">
+              আপনার মেডিকেল রিপোর্ট কীভাবে সামলানো হয়
+            </h3>
+            <ul class="text-ink/70 mt-3 space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+                <span
+                  >রিপোর্ট শুধু আপনার কেস পর্যালোচনা করা হাসপাতাল ও বিশেষজ্ঞদের সাথে শেয়ার করা হয়</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+                <span
+                  >কখনো বিক্রি করা হয় না, তৃতীয় পক্ষের সাথে শেয়ার করা হয় না, সম্মতি ছাড়া
+                  মার্কেটিংয়ে ব্যবহার করা হয় না</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+                <span>ডকুমেন্ট ট্রান্সফারের জন্য নিরাপদ চ্যানেল ব্যবহার করা হয়</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+                <span>কেস বন্ধ হলে অনুরোধে রিপোর্ট মুছে দেওয়া হয়</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-6" data-anim="fade-in-up">
+            <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">অভিযোগ</p>
+            <h3 class="mt-2 font-display text-lg font-bold text-ink">আমাদের সেবায় অসন্তুষ্ট?</h3>
+            <p class="text-ink/70 mt-3 text-sm">
+              <a
+                href="mailto:complaints@khanmeditour.com"
+                class="font-semibold text-violet-600 hover:text-violet-700"
+                >complaints@khanmeditour.com</a
+              >-এ বিষয় "Complaint" লিখে আপনার উদ্বেগের বিবরণ সহ ইমেইল করুন। একজন সিনিয়র
+              কোঅর্ডিনেটর ২৪ ঘন্টার মধ্যে গ্রহণ নিশ্চিত করবেন ও তদন্ত করবেন।
+            </p>
+            <p class="text-ink/70 mt-3 text-sm">
+              আমাদের কনসিয়ের্জ লাইনে WhatsApp-এও অভিযোগ করতে পারেন, "অভিযোগ" হিসেবে চিহ্নিত করে।
+            </p>
           </div>
         </div>
       </div>
@@ -356,6 +668,19 @@ const jsonLd = [
             >
           </a>
         </div>
+      </div>
+    </section>
+
+    {/* ── সাধারণ জিজ্ঞাসা ─────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-3xl">
+        <h2
+          class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          সাধারণ জিজ্ঞাসা
+        </h2>
+        <FAQAccordion items={faqs} client:visible />
       </div>
     </section>
 

@@ -57,7 +57,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
         )}
 
         <h1
-          className="font-display text-5xl font-bold leading-[1.05] tracking-display text-ink md:text-7xl lg:text-8xl"
+          className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
           data-anim="headline-reveal"
         >
           {headline}

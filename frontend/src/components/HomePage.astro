@@ -1,4 +1,4 @@
-﻿---
+---
 import { getTranslations, type Locale } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
@@ -24,6 +24,7 @@ import { Link } from '../design-system/components/atoms/Link';
 import { getInquiryLink } from '../lib/whatsapp';
 import { LEAD_SOURCE } from '../lib/crm';
 import { LeadModalTrigger } from '../design-system/components/organisms/LeadModalTrigger';
+import LeadModalInterceptor from '../design-system/components/organisms/LeadModalInterceptor.astro';
 import type { Doctor } from '../design-system/components/organisms/DoctorCard';
 import type { Hospital } from '../design-system/components/organisms/HospitalCard';
 import type { TestimonialItem } from '../design-system/components/molecules/TestimonialCard';
@@ -84,7 +85,7 @@ const faq = faqs;
 const stats = [
   { value: '3,500+', label: t.stats.patients },
   { value: '25+', label: t.stats.hospitals },
-  { value: '98%', label: t.stats.success },
+  { value: '7+', label: t.stats.success },
   { value: '24/7', label: t.stats.support },
 ];
 
@@ -110,14 +111,410 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmedito
   client:load
 />
 
-<!-- Hero -->
-<HeroSection
-  headline={t.hero.title}
-  subheadline={t.hero.subtitle}
-  eyebrow={t.site.name}
-  primaryCta={{ label: t.hero.primaryCta, href: '#contact' }}
-  data-anim="fade-in-up"
-/>
+<!-- Hero — split layout: text + lead form -->
+<section class="relative overflow-hidden bg-cream-100 px-6 pb-16 pt-28 md:pb-24 md:pt-36">
+  {/* Background gradient blob */}
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div
+      class="absolute left-1/4 top-1/3 h-[40vw] w-[40vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-violet-200/30 to-indigo-200/20 blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+    {/* Left column — text */}
+    <div data-anim="stagger-children">
+      <p
+        class="text-ink/40 mb-4 text-xs font-semibold uppercase tracking-[0.2em]"
+        data-anim="fade-in-up"
+      >
+        {t.site.name}
+      </p>
+      <h1
+        class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
+        data-anim="headline-reveal"
+      >
+        {t.hero.title}
+      </h1>
+      <p class="text-ink/60 mt-6 max-w-xl text-lg leading-relaxed" data-anim="fade-in-up">
+        {t.hero.subtitle}
+      </p>
+
+      {/* Dual CTAs */}
+      <div class="mt-8 flex flex-wrap items-center gap-4" data-anim="fade-in-up">
+        <LeadModalTrigger
+          client:load
+          label={t.hero.primaryCta}
+          modalTitle={t.leadModal.title}
+          modalSubtitle={t.leadModal.subtitle}
+          closeLabel={t.leadModal.close}
+          source={LEAD_SOURCE.WEBSITE}
+          variant="dark"
+          className="min-w-[14rem]"
+        />
+        <a
+          href={whatsappInquiryHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-ink/20 group relative inline-flex min-w-[14rem] items-center justify-center gap-2 overflow-hidden rounded-card border bg-cream-100 px-7 py-3.5 text-sm font-semibold text-ink transition-colors duration-300 hover:text-white"
+          data-anim="press-button"
+        >
+          {/* Fill-in from center bottom-up on hover */}
+          <span
+            class="absolute bottom-0 left-1/2 -z-0 h-0 w-full -translate-x-1/2 bg-ink transition-all duration-300 ease-out group-hover:h-full"
+          ></span>
+          <Icon name="whatsapp" size={18} className="relative z-10" />
+          <span class="relative z-10">{t.hero.secondaryCta}</span>
+        </a>
+      </div>
+
+      {/* Trust signals */}
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2" data-anim="fade-in-up">
+        <span class="text-ink/70 inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="check" size={16} className="text-violet-600" />
+          {
+            locale === 'bn'
+              ? 'যুক্তরাষ্ট্র/যুক্তরাজ্যের তুলনায় ৬০-৮০% সাশ্রয়'
+              : 'Save 60-80% vs USA/UK'
+          }
+        </span>
+        <span class="text-ink/70 inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="check" size={16} className="text-violet-600" />
+          {locale === 'bn' ? 'JCI ও NABH স্বীকৃত' : 'JCI & NABH Accredited'}
+        </span>
+        <span class="text-ink/70 inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="check" size={16} className="text-violet-600" />
+          {locale === 'bn' ? '২৪ ঘন্টায় প্রতিক্রিয়া' : '24-hour response'}
+        </span>
+      </div>
+
+      {/* Inline stats */}
+      <div class="mt-8 flex flex-wrap gap-8" data-anim="fade-in-up">
+        <div>
+          <p class="font-display text-2xl font-bold text-ink">3,500+</p>
+          <p class="text-ink/50 text-xs">
+            {locale === 'bn' ? 'আন্তর্জাতিক রোগী' : 'International patients guided'}
+          </p>
+        </div>
+        <div>
+          <p class="font-display text-2xl font-bold text-ink">
+            {locale === 'bn' ? '৭+ বছর' : '7+ Years'}
+          </p>
+          <p class="text-ink/50 text-xs">{locale === 'bn' ? '২০১৮ সাল থেকে' : 'Since 2018'}</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl font-bold text-ink">30+</p>
+          <p class="text-ink/50 text-xs">{locale === 'bn' ? 'দেশে সেবা' : 'Countries served'}</p>
+        </div>
+      </div>
+
+      {/* Country chips — top source countries */}
+      <div class="mt-8" data-anim="fade-in-up">
+        <p class="text-ink/40 mb-3 text-xs font-semibold uppercase tracking-[0.2em]">
+          {locale === 'bn' ? 'যেসব দেশ থেকে রোগী আসেন' : 'Trusted by patients from'}
+        </p>
+        <ul class="flex flex-wrap gap-2">
+          {
+            [
+              { en: 'Bangladesh', bn: 'বাংলাদেশ', slug: 'bangladesh' },
+              { en: 'Nigeria', bn: 'নাইজেরিয়া', slug: 'nigeria' },
+              { en: 'Nepal', bn: 'নেপাল', slug: 'nepal' },
+              { en: 'Kenya', bn: 'কেনিয়া', slug: 'kenya' },
+              { en: 'Sri Lanka', bn: 'শ্রীলঙ্কা', slug: 'sri-lanka' },
+              { en: 'Ghana', bn: 'ঘানা', slug: 'ghana' },
+            ].map((country) => (
+              <li>
+                <a
+                  href={`${prefix}/countries/${country.slug}`}
+                  class="text-ink/70 inline-flex items-center rounded-full border border-cream-300 bg-cream-100 px-3 py-1.5 text-xs font-medium transition-colors hover:border-violet-300 hover:text-violet-700"
+                >
+                  {locale === 'bn' ? country.bn : country.en}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    {/* Right column — lead form card */}
+    <div
+      class="rounded-card border border-cream-300 bg-cream-100 p-6 shadow-base md:p-8"
+      data-anim="fade-in-up"
+    >
+      <h3 class="font-display text-xl font-semibold text-ink">
+        {locale === 'bn' ? 'বিনামূল্যে পরামর্শ নিন' : 'Get a free consultation'}
+      </h3>
+      <p class="text-ink/60 mt-2 text-sm">
+        {
+          locale === 'bn'
+            ? '২৪ ঘন্টার মধ্যে উত্তর • কোনো বাধ্যবাধকতা নেই'
+            : '24-hour response • No commitment required'
+        }
+      </p>
+      <div class="mt-6">
+        <LeadForm
+          treatments={treatmentOptions}
+          source={LEAD_SOURCE.GENERAL_CONTACT}
+          client:visible
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Answer-first intro — definitional paragraph for AI extraction -->
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-3xl">
+    <p class="text-ink/70 text-lg leading-relaxed">
+      {
+        locale === 'bn' ? (
+          <strong class="text-ink">খান মেডিট্যুর</strong>
+        ) : (
+          <strong class="text-ink">Khan Meditour</strong>
+        )
+      }
+      {
+        locale === 'bn'
+          ? ' হলো ব্যাঙ্গালোর, ভারতে অবস্থিত একটি মেডিকেল ট্যুরিজম ফ্যাসিলিটেটর। আমরা আন্তর্জাতিক রোগীদের JCI- ও NABH-স্বীকৃত হাসপাতাল এবং বোর্ড-সার্টিফাইড বিশেষজ্ঞদের সাথে সংযুক্ত করি, যুক্তরাষ্ট্র, যুক্তরাজ্য বা অস্ট্রেলিয়ার তুলনায় ৬০-৮০% সাশ্রয় প্রদান করি। আপনার প্রথম WhatsApp বার্তা থেকে দেশে নিরাপদ প্রত্যাবর্তন পর্যন্ত, একজন নিবেদিত কোঅর্ডিনেটর হাসপাতাল নির্বাচন, বিনামূল্যে দ্বিতীয় মতামত, ভিসা, ভ্রমণ ও ফলো-আপ পরিচালনা করেন — আপনার জন্য সম্পূর্ণ বিনামূল্যে।'
+          : ' is a medical tourism facilitator based in Bangalore, India. We connect international patients with JCI- and NABH-accredited hospitals and board-certified specialists, offering savings of 60-80% compared to treatment in the USA, UK, or Australia. From your first WhatsApp message to your safe return home, a dedicated coordinator handles your hospital selection, free second opinion, visa, travel, and follow-up — at no cost to you.'
+      }
+    </p>
+  </div>
+</section>
+
+<!-- Why India summary — key points with link to full page -->
+<section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container">
+    <div class="mb-10 max-w-2xl" data-anim="fade-in-up">
+      <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+        {locale === 'bn' ? 'কেন ভারত?' : 'Why India for medical treatment?'}
+      </h2>
+      <p class="text-ink/60 mt-4 text-base">
+        {
+          locale === 'bn'
+            ? 'ভারত আন্তর্জাতিক রোগীদের জন্য বিশ্বের অন্যতম শীর্ষ চিকিৎসা গন্তব্য — এর কারণ আছে।'
+            : "India is one of the world's top medical tourism destinations. Here's why."
+        }
+      </p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4" data-anim="stagger-cards">
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <p class="font-display text-3xl font-bold text-violet-600">60-80%</p>
+        <p class="text-ink/70 mt-2 text-sm">
+          {
+            locale === 'bn'
+              ? 'যুক্তরাষ্ট্র/যুক্তরাজ্য/অস্ট্রেলিয়ার তুলনায় কম খরচ — একই স্বীকৃত হাসপাতাল ও প্রক্রিয়ার জন্য'
+              : 'Lower cost than USA/UK/Australia for the same accredited hospitals and procedures'
+          }
+        </p>
+      </div>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <p class="font-display text-3xl font-bold text-violet-600">JCI</p>
+        <p class="text-ink/70 mt-2 text-sm">
+          {
+            locale === 'bn'
+              ? 'Joint Commission International-স্বীকৃত হাসপাতাল — যুক্তরাষ্ট্রের হাসপাতাল স্বীকৃত করে একই সংস্থা'
+              : 'Hospitals accredited by Joint Commission International — the same body that accredits US hospitals'
+          }
+        </p>
+      </div>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <p class="font-display text-3xl font-bold text-violet-600">
+          {locale === 'bn' ? 'ইংরেজি' : 'English'}
+        </p>
+        <p class="text-ink/70 mt-2 text-sm">
+          {
+            locale === 'bn'
+              ? 'যুক্তরাষ্ট্রের বাইরে ভারতে সবচেয়ে বড় ইংরেজিভাষী মেডিকেল কর্মী বাহিনী — সহজ যোগাযোগ'
+              : 'India has the largest English-speaking medical workforce outside the USA — seamless communication'
+          }
+        </p>
+      </div>
+      <div class="rounded-card border border-cream-300 bg-cream-100 p-6">
+        <p class="font-display text-3xl font-bold text-violet-600">24-72h</p>
+        <p class="text-ink/70 mt-2 text-sm">
+          {
+            locale === 'bn'
+              ? 'e-Medical Visa অনুমোদনের সময় — বেশিরভাগ রোগী প্রথম যোগাযোগের এক সপ্তাহের মধ্যে ভারতে'
+              : 'e-Medical Visa approval time — most patients are in India within a week of first contact'
+          }
+        </p>
+      </div>
+    </div>
+    <div class="mt-8" data-anim="fade-in-up">
+      <Link
+        href={`${prefix}/why-india-for-medical-treatment`}
+        class="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:underline"
+      >
+        {locale === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read the full guide'}
+        <Icon name="arrow-right" size={14} />
+      </Link>
+    </div>
+  </div>
+</section>
+
+<!-- Cost comparison table — highly extractable by AI systems -->
+<section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+  <div class="container max-w-4xl">
+    <div class="mb-10" data-anim="fade-in-up">
+      <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+        {locale === 'bn' ? 'কতটা সাশ্রয় হবে?' : 'How much can you save?'}
+      </h2>
+      <p class="text-ink/60 mt-4 text-base">
+        {
+          locale === 'bn'
+            ? 'সাধারণ প্রক্রিয়াগুলোর ভারত বনাম পশ্চিমা দেশের খরচ তুলনা।'
+            : 'Compare typical procedure costs in India vs the USA and UK. Prices are approximate and vary by hospital, complexity, and length of stay.'
+        }
+      </p>
+    </div>
+    {/* Desktop table */}
+    <div
+      class="hidden overflow-hidden rounded-card border border-cream-300 md:block"
+      data-anim="fade-in-up"
+    >
+      <table class="w-full text-left text-sm">
+        <thead class="bg-cream-200">
+          <tr>
+            <th class="p-4 font-semibold text-ink"
+              >{locale === 'bn' ? 'প্রক্রিয়া' : 'Procedure'}</th
+            >
+            <th class="p-4 font-semibold text-ink">USA</th>
+            <th class="p-4 font-semibold text-ink"
+              >{locale === 'bn' ? 'যুক্তরাজ্য / অস্ট্রেলিয়া' : 'UK / Australia'}</th
+            >
+            <th class="p-4 font-semibold text-violet-600">{locale === 'bn' ? 'ভারত' : 'India'}</th>
+          </tr>
+        </thead>
+        <tbody class="bg-cream-50">
+          <tr class="border-t border-cream-300">
+            <td class="p-4 font-medium text-ink"
+              >{locale === 'bn' ? 'হার্ট বাইপাস (CABG)' : 'Heart Bypass (CABG)'}</td
+            >
+            <td class="text-ink/70 p-4">$70,000 – $150,000</td>
+            <td class="text-ink/70 p-4">£27,000 / A$38,000</td>
+            <td class="p-4 font-semibold text-violet-600">$4,500 – $12,000</td>
+          </tr>
+          <tr class="border-t border-cream-300">
+            <td class="p-4 font-medium text-ink"
+              >{locale === 'bn' ? 'হাঁটু প্রতিস্থাপন' : 'Knee Replacement'}</td
+            >
+            <td class="text-ink/70 p-4">$35,000 – $70,000</td>
+            <td class="text-ink/70 p-4">A$25,000</td>
+            <td class="p-4 font-semibold text-violet-600">$5,000 – $9,000</td>
+          </tr>
+          <tr class="border-t border-cream-300">
+            <td class="p-4 font-medium text-ink"
+              >{locale === 'bn' ? 'ব্রেস্ট ক্যানসার চিকিৎসা' : 'Breast Cancer Treatment'}</td
+            >
+            <td class="text-ink/70 p-4">$50,000 – $200,000+</td>
+            <td class="text-ink/70 p-4">—</td>
+            <td class="p-4 font-semibold text-violet-600">$5,000 – $20,000</td>
+          </tr>
+          <tr class="border-t border-cream-300">
+            <td class="p-4 font-medium text-ink"
+              >{locale === 'bn' ? 'হিপ প্রতিস্থাপন' : 'Hip Replacement'}</td
+            >
+            <td class="text-ink/70 p-4">$32,000 – $60,000</td>
+            <td class="text-ink/70 p-4">£15,000</td>
+            <td class="p-4 font-semibold text-violet-600">$4,500 – $8,000</td>
+          </tr>
+          <tr class="border-t border-cream-300">
+            <td class="p-4 font-medium text-ink"
+              >{locale === 'bn' ? 'ডেন্টাল ইমপ্লান্ট (প্রতিটি)' : 'Dental Implant (per unit)'}</td
+            >
+            <td class="text-ink/70 p-4">$3,000 – $5,000</td>
+            <td class="text-ink/70 p-4">£1,800</td>
+            <td class="p-4 font-semibold text-violet-600">$400 – $800</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {/* Mobile cards */}
+    <div class="space-y-4 md:hidden" data-anim="fade-in-up">
+      {
+        [
+          {
+            procEn: 'Heart Bypass (CABG)',
+            procBn: 'হার্ট বাইপাস (CABG)',
+            usa: '$70,000 – $150,000',
+            uk: '£27,000 / A$38,000',
+            india: '$4,500 – $12,000',
+          },
+          {
+            procEn: 'Knee Replacement',
+            procBn: 'হাঁটু প্রতিস্থাপন',
+            usa: '$35,000 – $70,000',
+            uk: 'A$25,000',
+            india: '$5,000 – $9,000',
+          },
+          {
+            procEn: 'Breast Cancer Treatment',
+            procBn: 'ব্রেস্ট ক্যানসার চিকিৎসা',
+            usa: '$50,000 – $200,000+',
+            uk: '—',
+            india: '$5,000 – $20,000',
+          },
+          {
+            procEn: 'Hip Replacement',
+            procBn: 'হিপ প্রতিস্থাপন',
+            usa: '$32,000 – $60,000',
+            uk: '£15,000',
+            india: '$4,500 – $8,000',
+          },
+          {
+            procEn: 'Dental Implant (per unit)',
+            procBn: 'ডেন্টাল ইমপ্লান্ট (প্রতিটি)',
+            usa: '$3,000 – $5,000',
+            uk: '£1,800',
+            india: '$400 – $800',
+          },
+        ].map((row) => (
+          <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+            <p class="font-display text-base font-bold text-ink">
+              {locale === 'bn' ? row.procBn : row.procEn}
+            </p>
+            <dl class="mt-3 space-y-2 text-sm">
+              <div>
+                <dt class="text-ink/40 text-xs font-semibold uppercase tracking-widest">USA</dt>
+                <dd class="text-ink/70">{row.usa}</dd>
+              </div>
+              <div>
+                <dt class="text-ink/40 text-xs font-semibold uppercase tracking-widest">
+                  {locale === 'bn' ? 'যুক্তরাজ্য / অস্ট্রেলিয়া' : 'UK / Australia'}
+                </dt>
+                <dd class="text-ink/70">{row.uk}</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+                  {locale === 'bn' ? 'ভারত' : 'India'}
+                </dt>
+                <dd class="font-semibold text-violet-600">{row.india}</dd>
+              </div>
+            </dl>
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-ink/50 mt-6 text-xs" data-anim="fade-in-up">
+      {
+        locale === 'bn'
+          ? 'দাম আনুমানিক, প্রকাশ্যভাবে উপলব্ধ তথ্য ও আমাদের পার্টনার হাসপাতালের কোটেশনের উপর ভিত্তি করে। প্রকৃত খরচ হাসপাতাল, সার্জন, জটিলতা ও থাকার সময়ের উপর নির্ভর করে পরিবর্তিত হয়। ব্যক্তিগত কোটেশনের জন্য বিনামূল্যে খরচের অনুমান অনুরোধ করুন।'
+          : 'Prices are approximate, based on publicly available data and our partner hospital quotes. Actual costs vary by hospital, surgeon, complexity, and length of stay. Request a free cost estimate for a personalised quote.'
+      }
+    </p>
+    <div class="mt-6" data-anim="fade-in-up">
+      <Link
+        href={`${prefix}/cost-calculator`}
+        class="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:underline"
+      >
+        {locale === 'bn' ? 'খরচ ক্যালকুলেটর ব্যবহার করুন' : 'Get a personalised cost estimate'}
+        <Icon name="arrow-right" size={14} />
+      </Link>
+    </div>
+  </div>
+</section>
 
 <!-- Service cards -->
 <ServiceCardsSection
@@ -441,6 +838,14 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmedito
     </div>
   </div>
 </section>
+
+{/* Lead modal interceptor — opens modal popup for all #contact links */}
+<LeadModalInterceptor
+  modalTitle={t.leadModal.title}
+  modalSubtitle={t.leadModal.subtitle}
+  closeLabel={t.leadModal.close}
+  source={LEAD_SOURCE.WEBSITE}
+/>
 
 <Footer
   brand={t.site.name}

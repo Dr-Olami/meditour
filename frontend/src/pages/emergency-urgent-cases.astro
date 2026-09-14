@@ -12,7 +12,7 @@ import { getFooterLegalLinks } from '../lib/footer';
 import { getTreatments } from '../lib/content';
 import { getInquiryLink } from '../lib/whatsapp';
 import { LEAD_SOURCE } from '../lib/crm';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -42,6 +42,199 @@ const urgentSteps = [
   'Reports are sent to relevant hospital international desks same day when possible.',
   'You receive hospital fit, timeline, and indicative cost range as soon as reviewed.',
   'Visa invitation and travel planning are accelerated for confirmed pathways.',
+];
+
+// Condition-by-urgency table — what genuinely qualifies as fast-track and why.
+// Based on clinical guidance summarised by Shifam Health and Afiya India (2025).
+const urgencyConditions = [
+  {
+    condition: 'Acute cardiac event',
+    examples: 'Heart attack, unstable angina at rest, critical valve disease',
+    whyUrgent:
+      'Every hour of delay increases muscle damage and mortality. Revascularisation within hours, not days, is the standard of care.',
+    fastTrack: true,
+  },
+  {
+    condition: 'Stroke requiring intervention',
+    examples: 'Ischaemic stroke within thrombolysis window, large haemorrhage',
+    whyUrgent:
+      'Time-critical. Thrombolysis and thrombectomy windows are measured in minutes and hours from symptom onset.',
+    fastTrack: true,
+  },
+  {
+    condition: 'Rapidly progressing cancer',
+    examples:
+      'New diagnosis with biopsy pending, staging needed, treatment delay worsening prognosis',
+    whyUrgent:
+      'Tumour biology can shift quickly. Delay in staging or starting therapy can reduce survival chances for aggressive cancers.',
+    fastTrack: true,
+  },
+  {
+    condition: 'Organ failure or transplant evaluation',
+    examples:
+      'Liver or kidney failure with limited local transplant options, confirmed donor match',
+    whyUrgent:
+      'A confirmed donor match has a narrow window. Decompensating organ failure can make the patient too sick to transplant.',
+    fastTrack: true,
+  },
+  {
+    condition: 'Neurosurgical emergency',
+    examples:
+      'Spinal cord compression, raised intracranial pressure, brain tumour with mass effect',
+    whyUrgent:
+      'Neurological deficit can become irreversible within hours to days. Early decompression or resection preserves function.',
+    fastTrack: true,
+  },
+  {
+    condition: 'Sepsis or critical infection',
+    examples: 'Severe sepsis, necrotising infection, uncontrolled diabetic infection',
+    whyUrgent:
+      'Sepsis mortality rises hourly without appropriate source control and antibiotics. Travel may not be safe — stabilise locally first.',
+    fastTrack: false,
+  },
+];
+
+// Emergency medical visa reality — official e-Visa portal + Shifam/HeyDocta 2025.
+// No facilitator, hospital, or embassy can guarantee visa approval timing.
+const visaOptions = [
+  {
+    type: 'e-Medical Visa (e-Medical)',
+    standardTime: '3–5 working days',
+    urgentTime: '24–72 hours (case-dependent, not guaranteed)',
+    validity: '60 days from arrival, triple entry',
+    notes:
+      'Online application via indianvisaonline.gov.in. Hospital invitation letter required. Apply minimum 4 days before arrival.',
+  },
+  {
+    type: 'Regular Medical Visa (embassy/consulate)',
+    standardTime: '5–10 working days',
+    urgentTime: '2–3 days with strong medical documentation',
+    validity: 'Up to 1 year, multiple entry',
+    notes:
+      'For nationalities not eligible for e-Visa, or for longer treatment courses. Extension possible via FRRO in India.',
+  },
+  {
+    type: 'Medical Attendant Visa (MX-Visa)',
+    standardTime: 'Processed alongside patient visa',
+    urgentTime: 'Same timeline as patient visa',
+    validity: 'Matches patient visa',
+    notes:
+      'Up to 2 attendants. We prioritise attendant documentation so a family member travels with the patient.',
+  },
+];
+
+// Air ambulance & medical evacuation options — verified against AeroCare,
+// EMSOS, Healers Global, REVA, and HappyFares 2025 cost data.
+const airAmbulanceOptions = [
+  {
+    option: 'Dedicated air ambulance (ICU-equipped jet)',
+    bestFor:
+      'Critically ill patients needing ICU-level care in transit — ventilator, cardiac monitoring, ECMO',
+    crew: 'Critical-care doctor + flight nurse',
+    indicativeCost:
+      'Domestic India: ₹2.5–18 lakh. International: ₹15 lakh–₹1.5 crore+ depending on distance',
+    mobilisation: 'Typically 4–6 hours once approved',
+  },
+  {
+    option: 'Commercial stretcher on scheduled flight',
+    bestFor: 'Stable patients who cannot sit but do not need full ICU support',
+    crew: 'Medical escort (doctor or nurse)',
+    indicativeCost:
+      'Domestic: ₹3–5 lakh. International: lower than dedicated jet, varies by airline and route',
+    mobilisation: 'Subject to airline schedule — usually 24–48 hours',
+  },
+  {
+    option: 'Medical escort on regular flight',
+    bestFor: 'Stable, ambulatory patients who need monitoring but can sit upright',
+    crew: 'Doctor or nurse escort',
+    indicativeCost:
+      'Cost of business/first-class seats + medical escort fee (typically $5,000–$25,000 international)',
+    mobilisation: 'Next available commercial flight',
+  },
+  {
+    option: 'Ground ambulance (airport to hospital)',
+    bestFor: 'Both ends of any air transfer — never optional for a sick patient',
+    crew: 'Paramedic crew',
+    indicativeCost: '₹5,000–₹50,000 depending on city and distance',
+    mobilisation: 'Pre-arranged before flight lands',
+  },
+];
+
+// Legal protections for foreign patients in India — verified primary sources.
+const legalProtections = [
+  {
+    source: 'Parmanand Katara v. Union of India (1989) 4 SCC 286',
+    body: 'Supreme Court of India',
+    what: 'Every doctor — government or private — has a professional obligation to provide immediate medical treatment to preserve life. No procedural law can interfere with this duty.',
+  },
+  {
+    source: 'Indian Medical Council Regulations, 2002 §2.1',
+    body: 'Medical Council of India',
+    what: 'In case of emergency, a physician must treat the patient. Arbitrary refusal of treatment is professional misconduct, punishable by suspension or removal from the medical register.',
+  },
+  {
+    source: 'Consumer Protection Act, 2019',
+    body: 'Government of India',
+    what: 'Healthcare services are covered. Foreign patients have the same consumer rights as Indian citizens for deficiency in service or medical negligence.',
+  },
+];
+
+// "Too sick to travel" decision framework — who decides, what happens.
+const travelFitnessOptions = [
+  {
+    scenario: 'Patient is stable enough to fly commercially',
+    action:
+      'Medical escort on a scheduled flight. Cheapest option that is still safe for a monitored patient.',
+  },
+  {
+    scenario: 'Patient needs monitoring but cannot sit for hours',
+    action:
+      'Commercial stretcher on a scheduled flight with medical escort. Subject to airline availability.',
+  },
+  {
+    scenario: 'Patient needs ICU-level care throughout the flight',
+    action:
+      'Dedicated air ambulance with critical-care doctor and nurse. Most expensive, but the only safe option for unstable patients.',
+  },
+  {
+    scenario: 'Patient is too unstable to move at all',
+    action:
+      'Hospital advises stabilising treatment locally first, or a teleconsultation with the Indian specialist. Travel is reconsidered once the patient is fit to fly. The treating hospital — not the facilitator — makes this call.',
+  },
+];
+
+// Insurance for emergency medical travel — what standard policies do and do not cover.
+const insurancePoints = [
+  {
+    covers: false,
+    point:
+      'Most home-country health insurance does not cover treatment abroad. Check your policy before assuming coverage.',
+  },
+  {
+    covers: false,
+    point:
+      'Standard travel insurance usually excludes treatment for pre-existing conditions and planned medical procedures.',
+  },
+  {
+    covers: false,
+    point:
+      'Neither standard health nor travel insurance typically covers complications after you return home from treatment abroad.',
+  },
+  {
+    covers: true,
+    point:
+      'Dedicated medical travel insurance can cover complications during and after treatment abroad. Ask for a policy that explicitly covers medical tourism complications and medical evacuation.',
+  },
+  {
+    covers: true,
+    point:
+      'Travel insurance with emergency medical evacuation benefit can cover air ambulance costs. Experts recommend at least $100,000 medical coverage and $500,000 evacuation coverage for India travel.',
+  },
+  {
+    covers: true,
+    point:
+      'We help coordinate insurance claim documentation — hospital letters, medical reports, and itemised bills — but we do not sell insurance and cannot guarantee claim approval.',
+  },
 ];
 
 const faqs = [
@@ -75,6 +268,31 @@ const faqs = [
     answer:
       'Yes. Attendant visas are arranged alongside the patient visa, even on expedited timelines. We prioritise attendant visa documentation so a family member can travel with the patient from the start. Up to two attendants are typically allowed on an MX-Visa.',
   },
+  {
+    question: 'What emergency numbers should I save before travelling to India?',
+    answer:
+      "Save 112 — India's all-emergencies number (works from foreign SIMs, even on locked phones, in English). 108 is the free government ambulance service in most states. 100 reaches police. Also save your hospital's emergency department number and our 24/7 concierge line (+8801611892986). If someone is in immediate life-threatening danger, call 112 first, then contact us.",
+  },
+  {
+    question: 'How much does an air ambulance to India cost?',
+    answer:
+      "Indicative costs (2025): a dedicated domestic air ambulance within India ranges from ₹2.5 lakh to ₹18 lakh depending on distance and aircraft type. International medical evacuation ranges from ₹15 lakh to ₹1.5 crore or more — a regional mission to the Gulf or East Africa sits at the lower end, long-haul to Europe or North America at the higher end. A commercial stretcher with medical escort is cheaper (domestic ₹3–5 lakh). A medical escort on a regular flight is the most affordable option for stable patients. Costs are not fixed — we coordinate quotes from vetted providers once we know the patient's condition and route.",
+  },
+  {
+    question: 'What happens if complications arise during treatment in India?',
+    answer:
+      'JCI- and NABH-accredited hospitals maintain 24/7 ICU teams, emergency blood banks, and structured complication response protocols. When a complication occurs, the surgical and anaesthesia team stabilises the patient first, then escalates to the relevant specialist if needed. Indian law (Parmanand Katara v. Union of India, 1989) requires every hospital to provide emergency treatment regardless of nationality or ability to pay. Refusing emergency care is professional misconduct under the Indian Medical Council Regulations, 2002. Foreign patients have the same consumer protection rights as Indian citizens. Our coordinator supports family communication, visa extensions, and insurance documentation — but clinical decisions are made by the treating hospital, not by us.',
+  },
+  {
+    question: 'What are my legal rights as a foreign patient in India?',
+    answer:
+      'You have the right to informed consent, a second opinion, access to your medical records, language interpretation, and a formal complaint process. JCI and NABH accreditation requires hospitals to uphold these rights. Under the Consumer Protection Act, 2019, healthcare services are covered — so you have legal recourse for deficiency in service or negligence, the same as an Indian citizen. The Supreme Court of India (Parmanand Katara, 1989) established that every doctor has a duty to provide emergency treatment, and the Indian Medical Council Regulations, 2002 §2.1 make refusal of emergency care professional misconduct.',
+  },
+  {
+    question: 'Does my insurance cover emergency medical travel to India?',
+    answer:
+      'Most home-country health insurance does not cover treatment abroad. Standard travel insurance usually excludes pre-existing conditions and planned medical procedures, and typically does not cover complications after you return home. You need dedicated medical travel insurance that explicitly covers medical tourism complications and medical evacuation. Experts recommend at least $100,000 in medical coverage and $500,000 in evacuation coverage for India. We help coordinate claim documentation — hospital letters, reports, itemised bills — but we do not sell insurance and cannot guarantee claim approval. Ask your insurer before travelling.',
+  },
 ];
 
 const jsonLd = [
@@ -90,6 +308,8 @@ const jsonLd = [
     { name: 'Emergency & Urgent Cases', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
@@ -143,7 +363,7 @@ const jsonLd = [
             Urgent pathway
           </span>
           <h1
-            class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             Fast-track support for time-sensitive cases
@@ -260,8 +480,401 @@ const jsonLd = [
       </div>
     </section>
 
-    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    {/* ── WHEN A CASE IS GENUINELY URGENT ──────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          When a case is genuinely urgent
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          "Urgent" is a clinical judgement, not a feeling. The table below explains which conditions
+          genuinely qualify for fast-track and why time matters. If your situation matches one of
+          these, contact us immediately — and share whatever reports you have.
+        </p>
+        {/* Mobile: stacked cards */}
+        <div class="space-y-4 md:hidden">
+          {
+            urgencyConditions.map((c) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <p class="text-sm font-semibold text-ink">{c.condition}</p>
+                  {c.fastTrack ? (
+                    <span class="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700">
+                      <Icon name="check" size={10} /> Yes
+                    </span>
+                  ) : (
+                    <span class="inline-flex flex-shrink-0 items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                      Stabilise first
+                    </span>
+                  )}
+                </div>
+                <dl class="mt-3 space-y-2 text-sm">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Examples
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{c.examples}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Why time matters
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{c.whyUrgent}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        {/* Desktop: table */}
+        <div class="hidden md:block">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">Condition</th>
+                <th class="py-3 pr-4 font-semibold">Examples</th>
+                <th class="py-3 pr-4 font-semibold">Why time matters</th>
+                <th class="py-3 font-semibold">Fast-track?</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                urgencyConditions.map((c) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">{c.condition}</td>
+                    <td class="text-ink/70 py-4 pr-4">{c.examples}</td>
+                    <td class="text-ink/70 py-4 pr-4">{c.whyUrgent}</td>
+                    <td class="py-4">
+                      {c.fastTrack ? (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700">
+                          <Icon name="check" size={10} /> Yes
+                        </span>
+                      ) : (
+                        <span class="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                          Stabilise first
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          This table is a general guide, not medical advice. The treating hospital makes the final
+          call on whether a case qualifies for fast-track based on your reports.
+        </p>
+      </div>
+    </section>
+
+    {/* ── EMERGENCY MEDICAL VISA REALITY ──────────────────────────── */}
     <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          Emergency medical visa: the honest reality
+        </h2>
+        <p class="text-ink/60 mb-3 max-w-2xl text-sm" data-anim="fade-in-up">
+          There is no separate "emergency medical visa" category in India. The standard Medical Visa
+          can be prioritised when a hospital invitation letter and treating doctor's urgency letter
+          clearly document the time-sensitivity. Timing below is indicative — no facilitator,
+          hospital, or embassy can guarantee visa approval.
+        </p>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          We expedite the invitation letter and coordinate with the embassy or e-visa portal. Visa
+          approval timing depends on the Indian government and your country of application.
+        </p>
+        {/* Mobile: stacked cards */}
+        <div class="space-y-4 md:hidden">
+          {
+            visaOptions.map((v) => (
+              <div class="rounded-card border border-cream-300 bg-cream-100 p-5">
+                <p class="text-sm font-semibold text-ink">{v.type}</p>
+                <dl class="mt-3 space-y-2 text-sm">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Standard time
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.standardTime}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Urgent (case-dependent)
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.urgentTime}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Validity
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.validity}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Notes
+                    </dt>
+                    <dd class="text-ink/70 mt-0.5">{v.notes}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        {/* Desktop: table */}
+        <div class="hidden md:block">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="text-ink/60 border-b border-cream-300 text-xs uppercase tracking-widest">
+                <th class="py-3 pr-4 font-semibold">Visa type</th>
+                <th class="py-3 pr-4 font-semibold">Standard time</th>
+                <th class="py-3 pr-4 font-semibold">Urgent (case-dependent)</th>
+                <th class="py-3 pr-4 font-semibold">Validity</th>
+                <th class="py-3 font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                visaOptions.map((v) => (
+                  <tr class="border-b border-cream-200 align-top">
+                    <td class="py-4 pr-4 font-semibold text-ink">{v.type}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.standardTime}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.urgentTime}</td>
+                    <td class="text-ink/70 py-4 pr-4">{v.validity}</td>
+                    <td class="text-ink/70 py-4">{v.notes}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          Source: official Indian e-Visa portal (indianvisaonline.gov.in) and 2025 facilitator
+          guidance. Apply via
+          <a
+            href="https://indianvisaonline.gov.in/evisa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-violet-600 hover:text-violet-700">indianvisaonline.gov.in</a
+          >. Check your country's eligibility before applying.
+        </p>
+      </div>
+    </section>
+
+    {/* ── AIR AMBULANCE & MEDICAL EVACUATION ─────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-5xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          How a very sick patient gets to India
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          For urgent cases, the most-asked question is how a very sick patient actually travels to
+          India. The right option depends on the patient's clinical condition — the treating
+          hospital advises which is safe. Costs below are indicative (2025) and vary by route,
+          aircraft, crew, and urgency.
+        </p>
+        <div class="space-y-4">
+          {
+            airAmbulanceOptions.map((opt) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-6"
+                data-anim="fade-in-up"
+              >
+                <h3 class="font-display text-lg font-bold text-ink">{opt.option}</h3>
+                <dl class="mt-3 grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Best for
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.bestFor}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Crew
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.crew}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Indicative cost
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.indicativeCost}</dd>
+                  </div>
+                  <div>
+                    <dt class="text-ink/50 text-xs font-semibold uppercase tracking-widest">
+                      Mobilisation
+                    </dt>
+                    <dd class="text-ink/70 mt-1 text-sm">{opt.mobilisation}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          We coordinate quotes from vetted air ambulance providers once we know the patient's
+          condition, location, and destination. We do not own aircraft — we coordinate. The treating
+          hospital decides which option is clinically safe.
+        </p>
+      </div>
+    </section>
+
+    {/* ── IF COMPLICATIONS ARISE ──────────────────────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          If complications arise during treatment in India
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          This is the deepest worry for families sending a loved one abroad. Indian law and
+          accredited hospitals have clear protections in place — and you have legal rights as a
+          foreign patient.
+        </p>
+        <div
+          class="mb-10 rounded-card border border-cream-300 bg-cream-100 p-6"
+          data-anim="fade-in-up"
+        >
+          <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+            What accredited hospitals maintain
+          </p>
+          <ul class="text-ink/70 mt-3 space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>24/7 ICU teams with intensivists available within minutes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>Emergency blood bank with cross-matched products available round the clock</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span
+                >Structured complication response protocols — stabilise first, escalate to
+                specialists</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" size={16} className="mt-0.5 text-violet-600" />
+              <span>Dialysis capability for acute kidney injury after surgery</span>
+            </li>
+          </ul>
+        </div>
+        <h3 class="mb-4 font-display text-xl font-bold text-ink" data-anim="fade-in-up">
+          Your legal rights as a foreign patient
+        </h3>
+        <div class="space-y-4">
+          {
+            legalProtections.map((p) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-5"
+                data-anim="fade-in-up"
+              >
+                <p class="text-sm font-semibold text-ink">{p.source}</p>
+                <p class="text-ink/50 mt-0.5 text-xs">{p.body}</p>
+                <p class="text-ink/70 mt-2 text-sm leading-relaxed">{p.what}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          Our coordinator supports family communication, visa extensions, and insurance
+          documentation during a complication. Clinical decisions are made by the treating hospital
+          — not by us.
+        </p>
+      </div>
+    </section>
+
+    {/* ── TOO SICK TO TRAVEL? ─────────────────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          Too sick to travel?
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          The treating hospital — not the facilitator — decides whether a patient is fit to fly. If
+          air travel is not advisable, the hospital may recommend teleconsultation first or
+          stabilising treatment locally. For patients who can travel with support, here is how the
+          options map to clinical need.
+        </p>
+        <div class="space-y-4">
+          {
+            travelFitnessOptions.map((opt) => (
+              <div
+                class="rounded-card border border-cream-300 bg-cream-100 p-5"
+                data-anim="fade-in-up"
+              >
+                <p class="text-sm font-semibold text-ink">{opt.scenario}</p>
+                <p class="text-ink/70 mt-2 text-sm leading-relaxed">{opt.action}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* ── INSURANCE FOR EMERGENCY MEDICAL TRAVEL ─────────────────── */}
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
+      <div class="container max-w-4xl">
+        <h2
+          class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
+          data-anim="fade-in-up"
+        >
+          Insurance for emergency medical travel
+        </h2>
+        <p class="text-ink/60 mb-10 max-w-2xl text-sm" data-anim="fade-in-up">
+          Most families assume their existing insurance will cover them. It usually does not. Check
+          before you travel — and ask for a policy that explicitly covers medical tourism
+          complications and medical evacuation.
+        </p>
+        <div class="space-y-3">
+          {
+            insurancePoints.map((item) => (
+              <div
+                class={`rounded-card border p-5 ${item.covers ? 'border-green-200 bg-green-50' : 'border-rose-200 bg-rose-50'}`}
+                data-anim="fade-in-up"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ${item.covers ? 'bg-green-100' : 'bg-rose-100'}`}
+                    aria-hidden="true"
+                  >
+                    {item.covers ? (
+                      <Icon name="check" size={14} className="text-green-700" />
+                    ) : (
+                      <Icon name="close" size={14} className="text-rose-700" />
+                    )}
+                  </span>
+                  <p class="text-ink/80 text-sm leading-relaxed">{item.point}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-ink/50 mt-6 text-xs">
+          We do not sell insurance. We help coordinate claim documentation — hospital letters,
+          medical reports, itemised bills — but we cannot guarantee claim approval. Ask your insurer
+          before travelling.
+        </p>
+      </div>
+    </section>
+
+    {/* ── INTERNAL LINKS: EXPLORE FURTHER ──────────────────────────── */}
+    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container">
         <h2
           class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl"
@@ -398,7 +1011,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

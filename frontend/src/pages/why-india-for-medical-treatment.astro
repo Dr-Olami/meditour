@@ -10,7 +10,7 @@ import { getTranslations } from '../lib/i18n';
 import { getNavLinks } from '../lib/navigation';
 import { getFooterLegalLinks } from '../lib/footer';
 import { getInquiryLink } from '../lib/whatsapp';
-import { medicalWebPage, breadcrumbs } from '../lib/schema';
+import { medicalWebPage, breadcrumbs, faqPage } from '../lib/schema';
 
 const locale = 'en';
 const t = getTranslations(locale);
@@ -24,37 +24,37 @@ const advantages = [
   {
     title: 'Significant cost savings',
     detail:
-      'Treatment in India typically costs 60–90% less than the US, UK, or Europe — and 40–70% less than Thailand or Turkey. The same procedure, accredited hospitals, at a fraction of the price.',
+      'Treatment in India typically costs 60–90% less than the US, UK, or Europe — and 40–70% less than Thailand, Turkey, or Singapore. The same procedure, accredited hospitals, at a fraction of the price.',
     icon: 'check',
   },
   {
     title: 'Internationally accredited hospitals',
     detail:
-      'India has 40+ JCI-accredited and 500+ NABH-accredited hospitals. Apollo, Fortis, Manipal, and Narayana meet global quality standards for cardiac, oncology, transplant, and orthopaedic care.',
+      'India has 60+ JCI-accredited hospitals (the same accreditation used by Johns Hopkins, Mayo Clinic, and Cleveland Clinic) and 700+ NABH-accredited facilities. Apollo, Fortis, Manipal, and Narayana meet global quality standards for cardiac, oncology, transplant, and orthopaedic care.',
     icon: 'check',
   },
   {
     title: 'Highly experienced specialists',
     detail:
-      'Indian surgeons often train or practise in the US, UK, or Germany. Many have performed thousands of procedures — volumes that build expertise rarely matched elsewhere.',
+      'Indian surgeons often train or practise in the US, UK, or Germany. Many have performed thousands of procedures — volumes that build expertise rarely matched elsewhere. JCI-accredited cardiac centres report 98–99% success rates for CABG, and liver transplant centres report 90–95% success rates.',
     icon: 'check',
   },
   {
     title: 'Shorter waiting times',
     detail:
-      'In the UK, Canada, and Australia, patients wait months for elective surgery. In India, treatment can often begin within days of enquiry — critical for cancer, cardiac, and transplant cases.',
+      'In the UK, Canada, and Australia, patients wait months for elective surgery — NHS liver transplant waits can exceed 18 months. In India, treatment can often begin within days of enquiry — critical for cancer, cardiac, and transplant cases.',
     icon: 'check',
   },
   {
     title: 'English-speaking care teams',
     detail:
-      'Doctors, nurses, and hospital staff speak English fluently. Interpreters are available for Bengali, Arabic, French, Amharic, and other languages when needed.',
+      'Doctors, nurses, and hospital staff speak English fluently. Interpreters are available for Bengali, Arabic, French, Amharic, Hausa, and other languages when needed — so nothing is lost in translation.',
     icon: 'check',
   },
   {
     title: 'Advanced technology & infrastructure',
     detail:
-      'Leading Indian hospitals use the same robotic surgery, CyberKnife, PET-MRI, and transplant technology found in Western hospitals — often newer equipment, installed more recently.',
+      'Leading Indian hospitals use the same da Vinci robotic surgery, CyberKnife, PET-MRI, and transplant technology found in Western hospitals — often newer equipment, installed more recently. The government’s "Heal in India" initiative continues to invest in medical infrastructure.',
     icon: 'check',
   },
 ];
@@ -62,42 +62,42 @@ const advantages = [
 const treatmentComparisons = [
   {
     procedure: 'Coronary artery bypass (CABG)',
-    usa: '$150,000+',
-    india: '$5,000–$8,000',
+    usa: '$70,000–$200,000',
+    india: '$5,000–$10,000',
     savings: '~90%',
   },
   {
     procedure: 'Knee replacement (single)',
-    usa: '$40,000–$60,000',
-    india: '$4,000–$7,000',
+    usa: '$30,000–$70,000',
+    india: '$5,000–$9,000',
     savings: '~85%',
   },
-  { procedure: 'Hip replacement', usa: '$35,000–$50,000', india: '$4,000–$6,500', savings: '~85%' },
+  { procedure: 'Hip replacement', usa: '$40,000–$65,000', india: '$5,000–$9,000', savings: '~85%' },
   {
     procedure: 'IVF cycle (with medication)',
-    usa: '$15,000–$25,000',
+    usa: '$12,000–$25,000',
     india: '$2,500–$4,500',
     savings: '~80%',
   },
   {
     procedure: 'Liver transplant',
-    usa: '$300,000–$575,000',
-    india: '$35,000–$50,000',
-    savings: '~85%',
+    usa: '$300,000–$850,000',
+    india: '$25,000–$45,000',
+    savings: '~90%',
   },
-  { procedure: 'Spinal fusion', usa: '$80,000–$150,000', india: '$6,000–$11,000', savings: '~90%' },
+  { procedure: 'Spinal fusion', usa: '$50,000–$100,000', india: '$4,000–$8,000', savings: '~90%' },
 ];
 
 const faqs = [
   {
     question: 'Is the quality of Indian hospitals really comparable to Western hospitals?',
     answer:
-      'Yes. India has over 40 JCI-accredited hospitals (the same accreditation used by Johns Hopkins, Mayo Clinic, and Cleveland Clinic) and over 500 NABH-accredited facilities. Leading hospitals like Apollo, Fortis, Manipal, and Narayana use identical technology and protocols to Western institutions. Many Indian specialists have trained or worked in the US and UK.',
+      'Yes. India has over 60 JCI-accredited hospitals (the same accreditation used by Johns Hopkins, Mayo Clinic, and Cleveland Clinic) and over 700 NABH-accredited facilities. Leading hospitals like Apollo, Fortis, Manipal, and Narayana use identical technology and protocols to Western institutions. Many Indian specialists have trained or worked in the US and UK. JCI-accredited cardiac centres report 98–99% success rates for CABG, and liver transplant centres report 90–95% success rates.',
   },
   {
     question: 'Why is treatment in India so much cheaper?',
     answer:
-      'Lower costs are driven by: lower doctor salaries (without compromising expertise), lower infrastructure and administrative costs, favourable currency exchange rates, and higher surgical volumes that reduce per-case overhead. The quality of care is not lower — the cost base is.',
+      'Lower costs are driven by: lower doctor salaries (without compromising expertise), lower infrastructure and administrative costs, favourable currency exchange rates, and higher surgical volumes that reduce per-case overhead. The quality of care is not lower — the cost base is. A senior cardiac surgeon in India earns $50,000–$150,000 per year versus $400,000–$700,000 in the US; that differential runs through every layer of hospital personnel.',
   },
   {
     question: 'Will language be a barrier?',
@@ -112,21 +112,41 @@ const faqs = [
   {
     question: 'What treatments is India most known for?',
     answer:
-      'India is a global leader in cardiac surgery (bypass, valve, angioplasty), orthopaedics (joint replacement), oncology, IVF and fertility, organ transplant (liver, kidney), ophthalmology, and neurosurgery. Bangalore in particular has concentrated expertise across all these specialties.',
+      'India is a global leader in cardiac surgery (bypass, valve, angioplasty), orthopaedics (joint replacement), oncology, IVF and fertility, organ transplant (liver, kidney), ophthalmology, and neurosurgery. Bangalore in particular has concentrated expertise across all these specialties, with Apollo, Fortis, Manipal, Narayana, and Sparsh all located in the city.',
   },
   {
     question: 'How do I know which hospital is right for me?',
     answer:
       'That is exactly what we do. Based on your diagnosis, budget, and preferences, we shortlist accredited hospitals and specialists, share indicative cost quotes in writing, and help you compare options. You choose the pathway — we coordinate the rest.',
   },
+  {
+    question: 'How many patients travel to India for treatment each year?',
+    answer:
+      'In 2025, 507,244 foreign nationals arrived in India specifically for medical treatment — about 5.5% of all foreign tourist arrivals. Between 2023 and 2025, over 1.81 million medical travellers visited India. The top source countries are Bangladesh (325,127 in 2025), Iraq (30,989), Uzbekistan (13,699), Somalia (11,506), Oman (9,738), Kenya (9,357), Nigeria (8,251), and Maldives (7,016). India’s medical tourism market was valued at $8.7 billion in 2025 and is projected to reach $13–16 billion by 2030.',
+  },
+  {
+    question: 'What is the e-Medical Visa and how long is it valid?',
+    answer:
+      'India’s e-Medical Visa is an online visa available to citizens of 176 countries. As of 2026, the validity has been extended from 60 days to one year, with multiple entries permitted (previously triple entry). Processing takes 3–5 business days. The e-Medical Attendant Visa allows a family member to accompany the patient. We provide invitation letters and document checklists to support your application. Pakistani passport holders and some nationals must apply through an Indian mission rather than online.',
+  },
+  {
+    question: 'How do India’s costs compare to Thailand, Turkey, or Singapore?',
+    answer:
+      'India is typically 40–70% cheaper than Thailand, Turkey, and Singapore for the same procedures. For example, CABG in India costs $5,000–$10,000 versus $12,000–$20,000 in Thailand and $18,000–$35,000 in Singapore. Liver transplant in India costs $25,000–$45,000 versus $80,000–$120,000 in Singapore. The quality at JCI-accredited hospitals is comparable across all four destinations — the difference is the cost base, not the standard of care.',
+  },
+  {
+    question: 'What success rates do Indian hospitals achieve for major procedures?',
+    answer:
+      'JCI-accredited cardiac centres in India report 98–99% success rates for coronary artery bypass grafting (CABG), comparable to leading US and European hospitals. Liver transplant centres report 90–95% success rates, with India performing over 2,500 liver transplants annually. These outcomes reflect high surgical volumes — Indian surgeons often perform more procedures in a month than some Western hospitals do in a year — and the use of identical technology and protocols to Western institutions.',
+  },
 ];
 
 const jsonLd = [
   medicalWebPage({
-    name: 'Why India for Medical Treatment',
+    name: 'Why India for Medical Treatment — Cost, Quality, and Access for International Patients',
     url: pageUrl,
     description:
-      'Why international patients choose India for medical treatment — cost savings, accredited hospitals, experienced specialists, shorter waiting times, and advanced technology.',
+      'Why international patients choose India for medical treatment — 60+ JCI-accredited hospitals, 60–90% cost savings, 98–99% cardiac success rates, 1-year e-Medical Visa, and treatment within days not months.',
     inLanguage: 'en',
   }),
   breadcrumbs([
@@ -134,11 +154,13 @@ const jsonLd = [
     { name: 'Why India', url: `${pageUrl}/` },
   ]),
 ];
+
+jsonLd.push(faqPage({ entries: faqs }));
 ---
 
 <Layout
-  title={`Why India for Medical Treatment | ${t.site.name}`}
-  description="Why international patients choose India for medical treatment — cost savings, accredited hospitals, experienced specialists, shorter waiting times, and advanced technology."
+  title={`Why India for Medical Treatment — Cost, Quality & Access | ${t.site.name}`}
+  description="Why 500,000+ international patients choose India for medical treatment each year — 60+ JCI-accredited hospitals, 60–90% cost savings vs the USA, 98–99% cardiac success rates, 1-year e-Medical Visa, and treatment within days not months."
   locale={locale}
   jsonLd={jsonLd}
 >
@@ -183,15 +205,15 @@ const jsonLd = [
             Why India
           </span>
           <h1
-            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl"
+            class="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
             data-anim="headline-reveal"
           >
             Why families choose India for medical treatment
           </h1>
           <p class="text-ink/70 mt-4 max-w-2xl text-lg leading-relaxed">
             World-class hospitals, globally trained specialists, and treatment costs that make
-            quality care accessible — here is why patients from 30+ countries travel to India every
-            year.
+            quality care accessible — here is why over 500,000 patients from 50+ countries travel to
+            India every year for treatment.
           </p>
         </div>
       </div>
@@ -208,10 +230,14 @@ const jsonLd = [
             Quick answer
           </p>
           <p class="text-ink/80 mt-3 text-base leading-relaxed">
-            India combines internationally accredited hospitals, surgeons with global training,
-            advanced technology, and costs 60–90% lower than Western countries. For many families,
-            India is the only place where life-saving treatment — cardiac surgery, cancer care,
-            transplant — is both high-quality and affordable. Waiting times are days, not months.
+            India combines 60+ JCI-accredited hospitals, surgeons with global training, advanced
+            technology, and costs 60–90% lower than Western countries — and 40–70% lower than
+            Thailand, Turkey, or Singapore. In 2025, <strong>507,244 international patients</strong>
+            arrived for treatment. The e-Medical Visa is now valid for <strong
+              >one year with multiple entries</strong
+            >, available to 176 countries. JCI-accredited cardiac centres report 98–99% success
+            rates for CABG. For many families, India is the only place where life-saving treatment
+            is both high-quality and affordable — with waiting times of days, not months.
           </p>
         </div>
       </div>
@@ -245,6 +271,38 @@ const jsonLd = [
               </div>
             ))
           }
+        </div>
+      </div>
+    </section>
+
+    {/* ── STATS BAND ───────────────────────────────────────────────── */}
+    <section class="bg-cream-200 py-12 md:py-16" data-anim="scroll-reveal">
+      <div class="container">
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">507K+</p>
+            <p class="text-ink/60 mt-1 text-xs">medical arrivals (2025)</p>
+          </div>
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">60+</p>
+            <p class="text-ink/60 mt-1 text-xs">JCI-accredited hospitals</p>
+          </div>
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">176</p>
+            <p class="text-ink/60 mt-1 text-xs">e-Medical Visa countries</p>
+          </div>
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">$8.7B</p>
+            <p class="text-ink/60 mt-1 text-xs">market size (2025)</p>
+          </div>
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">98–99%</p>
+            <p class="text-ink/60 mt-1 text-xs">CABG success (JCI)</p>
+          </div>
+          <div class="text-center" data-anim="fade-in-up">
+            <p class="font-display text-3xl font-bold text-violet-600 md:text-4xl">1 year</p>
+            <p class="text-ink/60 mt-1 text-xs">e-Medical Visa validity</p>
+          </div>
         </div>
       </div>
     </section>
@@ -479,7 +537,7 @@ const jsonLd = [
     </section>
 
     {/* ── FAQ ──────────────────────────────────────────────────────── */}
-    <section class="bg-cream-100 py-16 md:py-20" data-anim="scroll-reveal">
+    <section class="bg-cream-200 py-16 md:py-20" data-anim="scroll-reveal">
       <div class="container max-w-3xl">
         <h2
           class="mb-10 text-center font-display text-3xl font-bold text-ink md:text-4xl"

@@ -17,6 +17,7 @@ interface SiteIdentity {
   email?: string;
   specialties?: string[];
   sameAs?: string[];
+  areaServed?: string[];
 }
 
 /**
@@ -34,6 +35,7 @@ export function medicalBusiness(site: SiteIdentity): WithContext<Record<string, 
     ...(site.email ? { email: site.email } : {}),
     ...(site.specialties?.length ? { medicalSpecialty: site.specialties } : {}),
     ...(site.sameAs?.length ? { sameAs: site.sameAs } : {}),
+    ...(site.areaServed?.length ? { areaServed: site.areaServed } : {}),
   });
 }
 
@@ -340,5 +342,82 @@ export function medicalWebPage(data: MedicalWebPageInput): WithContext<Record<st
     ...(data.audience ? { audience: { '@type': 'MedicalAudience', name: data.audience } } : {}),
     ...(data.inLanguage ? { inLanguage: data.inLanguage } : {}),
     ...(data.specialty ? { medicalSpecialty: data.specialty } : {}),
+  });
+}
+
+interface LocalBusinessInput {
+  name: string;
+  url: string;
+  description?: string;
+  telephone?: string;
+  whatsapp?: string;
+  email?: string;
+  address?: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode?: string;
+    addressCountry: string;
+  };
+  geo?: { latitude: number; longitude: number };
+  areaServed?: string[];
+  availableLanguage?: string[];
+  openingHours?: string;
+  specialties?: string[];
+  sameAs?: string[];
+}
+
+/**
+ * Build a MedicalBusiness (LocalBusiness) JSON-LD object with full
+ * contact details, address, area served, and languages — for the
+ * contact page so Google can surface rich local/knowledge-panel results.
+ */
+export function localBusiness(data: LocalBusinessInput): WithContext<Record<string, unknown>> {
+  return thing('MedicalBusiness', {
+    name: data.name,
+    url: data.url,
+    '@id': data.url,
+    ...(data.description ? { description: data.description } : {}),
+    ...(data.telephone ? { telephone: data.telephone } : {}),
+    ...(data.whatsapp
+      ? {
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              contactType: 'customer service',
+              telephone: data.whatsapp,
+              availableLanguage: data.availableLanguage ?? ['en'],
+              areaServed: data.areaServed ?? [],
+            },
+          ],
+        }
+      : {}),
+    ...(data.email ? { email: data.email } : {}),
+    ...(data.address
+      ? {
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: data.address.streetAddress,
+            addressLocality: data.address.addressLocality,
+            addressRegion: data.address.addressRegion,
+            ...(data.address.postalCode ? { postalCode: data.address.postalCode } : {}),
+            addressCountry: data.address.addressCountry,
+          },
+        }
+      : {}),
+    ...(data.geo
+      ? {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: data.geo.latitude,
+            longitude: data.geo.longitude,
+          },
+        }
+      : {}),
+    ...(data.areaServed?.length ? { areaServed: data.areaServed } : {}),
+    ...(data.availableLanguage?.length ? { availableLanguage: data.availableLanguage } : {}),
+    ...(data.openingHours ? { openingHours: data.openingHours } : {}),
+    ...(data.specialties?.length ? { medicalSpecialty: data.specialties } : {}),
+    ...(data.sameAs?.length ? { sameAs: data.sameAs } : {}),
   });
 }

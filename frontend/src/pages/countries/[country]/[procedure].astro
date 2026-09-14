@@ -10,6 +10,7 @@ import Breadcrumb from '../../../design-system/components/molecules/Breadcrumb.a
 import { QuickFacts } from '../../../design-system/components/molecules/QuickFacts';
 import type { QuickFactItem } from '../../../design-system/components/molecules/QuickFacts';
 import TreatmentsCtaSection from '../../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import LeadModalInterceptor from '../../../design-system/components/organisms/LeadModalInterceptor.astro';
 import { getTranslations } from '../../../lib/i18n';
 import { getNavLinks } from '../../../lib/navigation';
 import { getFooterLegalLinks } from '../../../lib/footer';
@@ -389,7 +390,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
 
           {/* H1 */}
           <h1
-            class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl lg:text-5xl"
+            class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
           >
             {headline}
           </h1>
@@ -474,7 +475,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       priceRangeUsd && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.costInCurrency)}
             </h2>
             <div class="rounded-card border border-cream-300 bg-white p-6 shadow-sm">
@@ -501,7 +502,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── COST COMPARISON ────────────────────────────────────────────────── */}
     <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-4xl">
-        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.costComparisonTitle)}
         </h2>
         <p class="text-ink/60 mb-6 text-sm">{pc.costComparisonNote}</p>
@@ -543,7 +544,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       procedure.eligibility && procedure.eligibility.length > 0 && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.whoIsThisFor)}
             </h2>
             <ul class="space-y-3">
@@ -562,7 +563,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── PROCEDURE OVERVIEW (summary + link to canonical page) ─────────── */}
     <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.procedureOverview)}
         </h2>
         <p class="text-ink/70 text-base leading-relaxed">{procedure.description}</p>
@@ -579,7 +580,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── WHAT HAPPENS DURING ───────────────────────────────────────────── */}
     <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.whatHappensDuring)}
         </h2>
         <div class="text-ink/70 space-y-4 text-base leading-relaxed">
@@ -617,7 +618,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       procedure.recoveryTimeline && procedure.recoveryTimeline.length > 0 && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.recoveryAndFitToFly)}
             </h2>
             <div class="overflow-x-auto rounded-card border border-cream-300 bg-white shadow-sm">
@@ -655,7 +656,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       procedure.risks && procedure.risks.length > 0 && (
         <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {pc.risksTitle}
             </h2>
             <ul class="space-y-3">
@@ -677,7 +678,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── WHY CHOOSE INDIA (data-driven, country-specific) ──────────────── */}
     <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.whyChooseIndia)}
         </h2>
         <p class="text-ink/70 text-base leading-relaxed">
@@ -709,7 +710,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── VISA PROCESS ───────────────────────────────────────────────────── */}
     <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.visaProcessTitle)}
         </h2>
         <p class="text-ink/60 mb-8 text-sm">{pc.visaProcessNote}</p>
@@ -739,7 +740,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── TRAVEL & LOGISTICS ─────────────────────────────────────────────── */}
     <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
           {ph(pc.travelLogistics)}
         </h2>
         <div class="grid gap-4 sm:grid-cols-2">
@@ -790,7 +791,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       (countryData.culturalConsiderations.length > 0 || countryData.languages.length > 0) && (
         <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.culturalConsiderations)}
             </h2>
             <div class="flex flex-wrap gap-3">
@@ -817,7 +818,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       relatedHospitals.length > 0 && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.recommendedHospitals)}
             </h2>
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -869,7 +870,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       doctorCards.length > 0 && (
         <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {ph(pc.recommendedDoctors)}
             </h2>
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -890,7 +891,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       (procedure.costInclusions || procedure.costExclusions) && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {pc.whatsIncluded}
             </h2>
             <div class="grid gap-6 md:grid-cols-2">
@@ -935,7 +936,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── HOW TO READ YOUR PACKAGE QUOTE ──────────────────────────────── */}
     <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
           {t.treatments.detail.packageQuoteTitle}
         </h2>
         <p class="text-ink/60 mb-6 max-w-2xl">{t.treatments.detail.packageQuoteIntro}</p>
@@ -1013,7 +1014,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
     {/* ── DECISION FRAMEWORK ───────────────────────────────────────────── */}
     <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
       <div class="container max-w-3xl">
-        <h2 class="mb-4 font-display text-2xl font-bold text-ink md:text-3xl">
+        <h2 class="mb-4 font-display text-3xl font-bold text-ink md:text-4xl">
           {t.treatments.detail.decisionFrameworkTitle}
         </h2>
         <p class="text-ink/60 mb-6 max-w-2xl">{t.treatments.detail.decisionFrameworkIntro}</p>
@@ -1061,7 +1062,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       faqs.length > 0 && (
         <section class="bg-cream-200 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-3xl">
-            <h2 class="mb-8 text-center font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-8 text-center font-display text-3xl font-bold text-ink md:text-4xl">
               {pc.faqTitle}
             </h2>
             <FAQAccordion items={faqs} client:visible />
@@ -1075,7 +1076,7 @@ const doctorCards: Doctor[] = related.map((d) => ({
       relatedProcCountryLinks.length > 0 && (
         <section class="bg-cream-100 py-12 md:py-16" data-anim="fade-in-up">
           <div class="container max-w-4xl">
-            <h2 class="mb-6 font-display text-2xl font-bold text-ink md:text-3xl">
+            <h2 class="mb-6 font-display text-3xl font-bold text-ink md:text-4xl">
               {pc.relatedProcedures.replace('{nationality}', countryData.nationality)}
             </h2>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -1161,6 +1162,12 @@ const doctorCards: Doctor[] = related.map((d) => ({
       <span class="hidden md:inline">{pc.getFreeQuote}</span>
     </a>
   </div>
+
+  <LeadModalInterceptor
+    modalTitle={t.leadModal.title}
+    modalSubtitle={t.leadModal.subtitle}
+    closeLabel={t.leadModal.close}
+  />
 
   <Footer
     brand={t.site.name}
