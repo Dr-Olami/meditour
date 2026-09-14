@@ -2,7 +2,16 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '../../../lib/utils';
-import { leadSchema, type LeadPayload, type LeadSource, submitLead } from '../../../lib/crm';
+import {
+  leadSchema,
+  type LeadPayload,
+  type LeadSource,
+  submitLead,
+  uploadMedicalReport,
+  attachMedicalReports,
+  validateMedicalFile,
+} from '../../../lib/crm';
+import { ALLOWED_FILE_EXTENSIONS, MAX_FILE_SIZE } from '../../../lib/supabase';
 import { Button } from '../atoms/Button';
 import { Spinner } from '../atoms/Spinner';
 import { FormInput, FormTextarea, FormSelect, FormCheckbox } from '../molecules/FormField';
@@ -63,7 +72,7 @@ function buildDefaultMessage(
 }
 
 /**
- * Lead capture form connected to the CRM.
+ * Lead capture form connected to the CRM (Supabase).
  */
 const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
   (
@@ -116,6 +125,34 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
       message: string;
     } | null>(null);
 
+    // Reason: manage file uploads in local state — react-hook-form doesn't
+    // handle File objects well with its default register.
+    const [files, setFiles] = React.useState<File[]>([]);
+    const [fileErrors, setFileErrors] = React.useState<string[]>([]);
+    const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const selected = Array.from(e.target.files ?? []);
+      const validated: File[] = [];
+      const errors: string[] = [];
+
+      for (const file of selected) {
+        const err = validateMedicalFile(file);
+        if (err) {
+          errors.push(`${file.name}: ${err}`);
+        } else {
+          validated.push(file);
+        }
+      }
+
+      setFiles((prev) => [...prev, ...validated]);
+      setFileErrors(errors);
+    };
+
+    const removeFile = (index: number) => {
+      setFiles((prev) => prev.filter((_, i) => i !== index));
+    };
+
     const reportWhatsAppHref = React.useMemo(() => {
       const greeting = `Hi Khan Meditour, my name is ${submittedName || 'a prospective patient'}`;
       const treatmentPart = submittedTreatment
@@ -129,16 +166,32 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
 
     const onSubmit = async (data: FormValues) => {
       setStatus(null);
-      const leadData = { ...data };
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { noReports, ...rest } = leadData;
+      const { noReports: _noReports, ...rest } = data;
       const payload: LeadPayload = {
         ...rest,
         hasReports: !data.noReports,
-        reportsSharedVia: data.noReports ? 'not_yet' : undefined,
+        reportsSharedVia: data.noReports ? 'not_yet' : files.length > 0 ? 'whatsapp' : undefined,
       };
+
+      // Reason: submit the lead first to get the lead ID, then upload files
+      // and attach them to the lead record.
       const result = await submitLead(payload);
-      if (result.ok) {
+      if (result.ok && result.leadId) {
+        // Upload medical reports if any files were attached
+        if (files.length > 0) {
+          const uploadedPaths: string[] = [];
+          for (const file of files) {
+            const uploadResult = await uploadMedicalReport(file, String(result.leadId));
+            if (uploadResult.path) {
+              uploadedPaths.push(uploadResult.path);
+            }
+          }
+          if (uploadedPaths.length > 0) {
+            await attachMedicalReports(result.leadId, uploadedPaths);
+          }
+        }
+
         // Reason: push to dataLayer so GTM can fire the form_submit
         // conversion event when a lead is successfully submitted.
         if (typeof window !== 'undefined') {
@@ -149,6 +202,8 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
           });
         }
         reset();
+        setFiles([]);
+        setFileErrors([]);
         setStatus({
           type: 'success',
           message:
@@ -255,6 +310,86 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
               placeholder: 'Tell us more...',
             }}
           />
+        )}
+        {/* Medical report file upload — shown when the patient has reports */}
+        {!noReports && (
+          <div className="space-y-2">
+            <label htmlFor="medical-reports" className="block text-sm font-semibold text-ink">
+              Medical reports (optional)
+            </label>
+            <p className="text-sm text-text-muted">
+              Upload your medical records for review. Supported formats: {ALLOWED_FILE_EXTENSIONS}.
+              Max {MAX_FILE_SIZE / (1024 * 1024)}MB per file.
+            </p>
+            <input
+              ref={fileInputRef}
+              id="medical-reports"
+              name="medical-reports"
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              multiple
+              onChange={handleFileChange}
+              className="block w-full text-sm text-ink file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100"
+            />
+            {fileErrors.length > 0 && (
+              <ul className="text-sm text-accent-600" role="alert">
+                {fileErrors.map((err, i) => (
+                  <li key={i}>{err}</li>
+                ))}
+              </ul>
+            )}
+            {files.length > 0 && (
+              <ul className="space-y-1.5">
+                {files.map((file, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center justify-between rounded-card border border-cream-300 bg-cream-100 px-3 py-2 text-sm"
+                  >
+                    <span className="flex items-center gap-2">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        className="text-ink/40 shrink-0"
+                      >
+                        <path
+                          d="M4 1.5h5L13 5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 .5-.5z"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                        />
+                        <path d="M9 1.5V5.5h4" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
+                      <span className="truncate">{file.name}</span>
+                      <span className="text-ink/40">({(file.size / 1024).toFixed(0)} KB)</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => removeFile(i)}
+                      className="text-ink/40 hover:text-accent-600"
+                      aria-label={`Remove ${file.name}`}
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 4l8 8M12 4l-8 8"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         )}
         <input type="hidden" {...register('source')} />
         <input type="hidden" {...register('doctorSlug')} />

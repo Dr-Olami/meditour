@@ -1,5 +1,30 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { leadSchema, LEAD_SOURCE, submitLead } from './crm';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { leadSchema, LEAD_SOURCE, submitLead, validateMedicalFile } from './crm';
+
+// Reason: mock Supabase so submitLead doesn't hit the real API.
+vi.mock('./supabase', () => {
+  const mockInsert = vi.fn(() => ({
+    select: vi.fn(() => ({
+      single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
+    })),
+  }));
+  const mockUpdate = vi.fn(() => ({
+    eq: vi.fn(() => Promise.resolve({ error: null })),
+  }));
+  return {
+    supabase: {
+      from: vi.fn(() => ({
+        insert: mockInsert,
+        update: mockUpdate,
+      })),
+      storage: { from: vi.fn(() => ({ upload: vi.fn(() => Promise.resolve({ error: null })) })) },
+    },
+    MEDICAL_REPORTS_BUCKET: 'medical-reports',
+    MAX_FILE_SIZE: 10 * 1024 * 1024,
+    ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png'],
+    ALLOWED_FILE_EXTENSIONS: 'PDF, JPG, PNG',
+  };
+});
 
 describe('LEAD_SOURCE', () => {
   it('contains all expected source constants', () => {
@@ -53,35 +78,48 @@ describe('leadSchema', () => {
 
 describe('submitLead', () => {
   beforeEach(() => {
-    vi.stubGlobal('fetch', vi.fn());
+    vi.clearAllMocks();
   });
 
-  afterEach(() => {
-    vi.unstubAllGlobals();
-    vi.unstubAllEnvs();
-  });
-
-  it('returns ok=false when CRM URL is not configured', async () => {
-    vi.stubEnv('PUBLIC_CRM_SUBMIT_URL', '');
-    const result = await submitLead({ name: 'Jane', phone: '+123' });
-    expect(result.ok).toBe(false);
-    expect(result.message).toContain('not configured');
-  });
-
-  it('returns ok=true when fetch succeeds', async () => {
-    vi.stubEnv('PUBLIC_CRM_SUBMIT_URL', 'https://example.com/crm');
-    (globalThis.fetch as ReturnType<typeof vi.fn>).mockResolvedValue({
-      ok: true,
-      json: async () => ({ message: 'Submitted' }),
-    } as Response);
+  it('returns ok=true with leadId when Supabase insert succeeds', async () => {
     const result = await submitLead({ name: 'Jane', phone: '+123' });
     expect(result.ok).toBe(true);
+    expect(result.leadId).toBe(1);
   });
 
-  it('returns ok=false when fetch fails', async () => {
-    vi.stubEnv('PUBLIC_CRM_SUBMIT_URL', 'https://example.com/crm');
-    (globalThis.fetch as ReturnType<typeof vi.fn>).mockRejectedValue(new Error('network'));
+  it('returns ok=false when Supabase insert fails', async () => {
+    const { supabase } = await import('./supabase');
+    (supabase.from as ReturnType<typeof vi.fn>).mockReturnValueOnce({
+      insert: vi.fn(() => ({
+        select: vi.fn(() => ({
+          single: vi.fn(() => Promise.resolve({ data: null, error: { message: 'Insert failed' } })),
+        })),
+      })),
+    });
     const result = await submitLead({ name: 'Jane', phone: '+123' });
     expect(result.ok).toBe(false);
+    expect(result.message).toContain('Insert failed');
+  });
+});
+
+describe('validateMedicalFile', () => {
+  it('accepts a valid PDF under the size limit', () => {
+    const file = new File(['content'], 'report.pdf', { type: 'application/pdf' });
+    expect(validateMedicalFile(file)).toBeNull();
+  });
+
+  it('rejects an unsupported file type', () => {
+    const file = new File(['content'], 'report.txt', { type: 'text/plain' });
+    const error = validateMedicalFile(file);
+    expect(error).not.toBeNull();
+    expect(error).toContain('Unsupported file type');
+  });
+
+  it('rejects a file that exceeds the size limit', () => {
+    const largeContent = new Uint8Array(11 * 1024 * 1024);
+    const file = new File([largeContent], 'big.pdf', { type: 'application/pdf' });
+    const error = validateMedicalFile(file);
+    expect(error).not.toBeNull();
+    expect(error).toContain('too large');
   });
 });

@@ -9,19 +9,35 @@ const TREATMENT_OPTIONS = [
   { value: 'Knee Replacement', label: 'Knee Replacement' },
 ];
 
+// Reason: mock the Supabase module so tests don't hit the real API.
+// The mock returns a successful insert with a fake lead ID.
+vi.mock('../../../../src/lib/supabase', () => ({
+  supabase: {
+    from: vi.fn(() => ({
+      insert: vi.fn(() => ({
+        select: vi.fn(() => ({
+          single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
+        })),
+      })),
+      update: vi.fn(() => ({
+        eq: vi.fn(() => Promise.resolve({ error: null })),
+      })),
+    })),
+    storage: {
+      from: vi.fn(() => ({
+        upload: vi.fn(() => Promise.resolve({ error: null })),
+      })),
+    },
+  },
+  MEDICAL_REPORTS_BUCKET: 'medical-reports',
+  MAX_FILE_SIZE: 10 * 1024 * 1024,
+  ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png'],
+  ALLOWED_FILE_EXTENSIONS: 'PDF, JPG, PNG',
+}));
+
 describe('LeadForm', () => {
   beforeEach(() => {
     vi.stubEnv('PUBLIC_WHATSAPP_NUMBER', '8801611892986');
-    vi.stubEnv('PUBLIC_CRM_SUBMIT_URL', 'https://example.com/crm');
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(() =>
-        Promise.resolve({
-          ok: true,
-          json: async () => ({ message: 'Submitted' }),
-        } as Response)
-      )
-    );
   });
 
   afterEach(() => {
@@ -71,20 +87,25 @@ describe('LeadForm', () => {
     await user.type(screen.getByLabelText(/phone/i), '+1234567890');
     await user.click(screen.getByRole('button', { name: /send inquiry/i }));
 
-    await waitFor(() => {
-      expect(globalThis.fetch).toHaveBeenCalledTimes(1);
-    });
-    const [[, init]] = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls;
-    const body = JSON.parse((init as RequestInit).body as string);
-    expect(body.name).toBe('Jane Doe');
-    expect(body.phone).toBe('+1234567890');
-    expect(body.source).toBe(LEAD_SOURCE.COST_ESTIMATOR);
-    expect(body.hasReports).toBe(true);
-
+    // Reason: verify the success message and report-sharing links appear
     await waitFor(() => {
       expect(screen.getByText(/review your case/i)).toBeInTheDocument();
     });
     expect(screen.getByRole('link', { name: /whatsapp/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /email/i })).toBeInTheDocument();
+  });
+
+  it('shows the medical reports upload field when reports are available', () => {
+    render(<LeadForm treatments={TREATMENT_OPTIONS} source={LEAD_SOURCE.GENERAL_CONTACT} />);
+    expect(screen.getByLabelText(/medical reports/i)).toBeInTheDocument();
+  });
+
+  it('hides the medical reports upload field when no-reports is checked', async () => {
+    render(<LeadForm treatments={TREATMENT_OPTIONS} source={LEAD_SOURCE.GENERAL_CONTACT} />);
+    const checkbox = screen.getByLabelText(/don't have my reports yet/i);
+    await userEvent.click(checkbox);
+    await waitFor(() => {
+      expect(screen.queryByLabelText(/medical reports/i)).not.toBeInTheDocument();
+    });
   });
 });

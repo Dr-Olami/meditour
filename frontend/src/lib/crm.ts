@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { supabase, MEDICAL_REPORTS_BUCKET, MAX_FILE_SIZE, ALLOWED_FILE_TYPES } from './supabase';
 
 export const LEAD_SOURCE = {
   COST_ESTIMATOR: 'cost-estimator',
@@ -40,30 +41,91 @@ export const leadSchema = z.object({
 export type LeadPayload = z.infer<typeof leadSchema>;
 
 /**
- * Reason: output is 'static' — no server endpoint. POST goes directly to the
- * external CRM URL exposed as a public env var. CRM_API_KEY is NOT included
- * here (it would be visible in the client bundle). The external CRM must
- * accept unauthenticated POST from trusted origins or use a public-safe token.
+ * Validate a file against the allowed types and size limit.
+ */
+export function validateMedicalFile(file: File): string | null {
+  if (!ALLOWED_FILE_TYPES.includes(file.type)) {
+    return 'Unsupported file type. Please upload PDF, JPG, or PNG.';
+  }
+  if (file.size > MAX_FILE_SIZE) {
+    return `File too large. Maximum size is ${MAX_FILE_SIZE / (1024 * 1024)}MB.`;
+  }
+  return null;
+}
+
+/**
+ * Upload a medical report file to Supabase Storage.
+ * Returns the storage path on success, or null on failure.
+ */
+export async function uploadMedicalReport(
+  file: File,
+  leadId: string
+): Promise<{ path: string; error: string | null }> {
+  const ext = file.name.split('.').pop() || 'bin';
+  const fileName = `${leadId}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+
+  const { error } = await supabase.storage.from(MEDICAL_REPORTS_BUCKET).upload(fileName, file, {
+    contentType: file.type,
+    cacheControl: '3600',
+  });
+
+  if (error) {
+    return { path: '', error: error.message };
+  }
+  return { path: fileName, error: null };
+}
+
+/**
+ * Submit a lead to the Supabase leads table.
+ * Returns the lead ID on success so files can be linked to it.
  */
 export async function submitLead(
   payload: z.input<typeof leadSchema>
-): Promise<{ ok: boolean; message: string }> {
-  const crmUrl = import.meta.env.PUBLIC_CRM_SUBMIT_URL;
-
-  if (!crmUrl) {
-    return { ok: false, message: 'Contact form not configured. Please reach us via WhatsApp.' };
-  }
-
+): Promise<{ ok: boolean; message: string; leadId?: number }> {
   try {
-    const response = await fetch(crmUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+    // Reason: convert camelCase to snake_case for the database columns.
+    const dbPayload = {
+      name: payload.name,
+      email: payload.email || null,
+      phone: payload.phone,
+      country: payload.country || null,
+      treatment: payload.treatment || null,
+      message: payload.message || null,
+      source: payload.source || LEAD_SOURCE.WEBSITE,
+      doctor_slug: payload.doctorSlug || null,
+      hospital_slug: payload.hospitalSlug || null,
+      estimated_total: payload.estimatedTotal ?? null,
+      has_reports: payload.hasReports ?? true,
+      reports_shared_via: payload.reportsSharedVia || null,
+      preferred_contact_method: payload.preferredContactMethod || null,
+    };
 
-    const data = await response.json().catch(() => ({ message: 'Unexpected error' }));
-    return { ok: response.ok, message: data.message || 'Unknown response' };
+    const { data, error } = await supabase.from('leads').insert(dbPayload).select('id').single();
+
+    if (error) {
+      return { ok: false, message: error.message };
+    }
+
+    return { ok: true, message: 'Lead submitted successfully', leadId: data.id };
   } catch {
     return { ok: false, message: 'Network error — please try WhatsApp instead.' };
   }
+}
+
+/**
+ * Update a lead with the paths of uploaded medical reports.
+ */
+export async function attachMedicalReports(
+  leadId: number,
+  filePaths: string[]
+): Promise<{ ok: boolean; message: string }> {
+  const { error } = await supabase
+    .from('leads')
+    .update({ medical_reports: filePaths })
+    .eq('id', leadId);
+
+  if (error) {
+    return { ok: false, message: error.message };
+  }
+  return { ok: true, message: 'Reports attached' };
 }

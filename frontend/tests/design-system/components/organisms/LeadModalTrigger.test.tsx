@@ -2,12 +2,35 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { LeadModalTrigger } from '../../../../src/design-system/components/organisms/LeadModalTrigger';
 
-// Reason: LeadForm calls submitLead which hits the network. Mock the module
+// Reason: LeadForm calls submitLead which hits Supabase. Mock the module
 // so the form renders without making real requests.
 vi.mock('../../../../src/lib/crm', () => ({
   LEAD_SOURCE: { WEBSITE: 'website', DOCTOR_PAGE: 'doctor-page' },
   leadSchema: { parse: () => {} },
-  submitLead: vi.fn().mockResolvedValue({ ok: true }),
+  submitLead: vi.fn().mockResolvedValue({ ok: true, message: 'Submitted', leadId: 1 }),
+  uploadMedicalReport: vi.fn().mockResolvedValue({ path: 'test/path', error: null }),
+  attachMedicalReports: vi.fn().mockResolvedValue({ ok: true, message: 'Attached' }),
+  validateMedicalFile: vi.fn().mockReturnValue(null),
+}));
+
+vi.mock('../../../../src/lib/supabase', () => ({
+  supabase: {
+    from: vi.fn(() => ({
+      insert: vi.fn(() => ({
+        select: vi.fn(() => ({
+          single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
+        })),
+      })),
+      update: vi.fn(() => ({
+        eq: vi.fn(() => Promise.resolve({ error: null })),
+      })),
+    })),
+    storage: { from: vi.fn(() => ({ upload: vi.fn(() => Promise.resolve({ error: null })) })) },
+  },
+  MEDICAL_REPORTS_BUCKET: 'medical-reports',
+  MAX_FILE_SIZE: 10 * 1024 * 1024,
+  ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png'],
+  ALLOWED_FILE_EXTENSIONS: 'PDF, JPG, PNG',
 }));
 
 // Reason: react-hook-form uses zodResolver at module load. Provide a minimal
