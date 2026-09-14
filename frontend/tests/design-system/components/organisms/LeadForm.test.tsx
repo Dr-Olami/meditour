@@ -10,19 +10,14 @@ const TREATMENT_OPTIONS = [
 ];
 
 // Reason: mock the Supabase module so tests don't hit the real API.
-// The mock returns a successful insert with a fake lead ID.
+// Uses rpc() since we switched to SECURITY DEFINER functions to bypass RLS.
 vi.mock('../../../../src/lib/supabase', () => ({
   supabase: {
-    from: vi.fn(() => ({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({
-          single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
-        })),
-      })),
-      update: vi.fn(() => ({
-        eq: vi.fn(() => Promise.resolve({ error: null })),
-      })),
-    })),
+    rpc: vi.fn((name: string) => {
+      if (name === 'insert_lead') return Promise.resolve({ data: 1, error: null });
+      if (name === 'attach_reports') return Promise.resolve({ error: null });
+      return Promise.resolve({ data: null, error: null });
+    }),
     storage: {
       from: vi.fn(() => ({
         upload: vi.fn(() => Promise.resolve({ error: null })),

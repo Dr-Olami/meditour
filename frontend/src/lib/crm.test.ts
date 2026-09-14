@@ -3,22 +3,17 @@ import { leadSchema, LEAD_SOURCE, submitLead, validateMedicalFile } from './crm'
 
 // Reason: mock Supabase so submitLead doesn't hit the real API.
 vi.mock('./supabase', () => {
-  const mockInsert = vi.fn(() => ({
-    select: vi.fn(() => ({
-      single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
-    })),
-  }));
-  const mockUpdate = vi.fn(() => ({
-    eq: vi.fn(() => Promise.resolve({ error: null })),
-  }));
+  const mockRpc = vi.fn((name: string) => {
+    if (name === 'insert_lead') {
+      return Promise.resolve({ data: 1, error: null });
+    }
+    if (name === 'attach_reports') {
+      return Promise.resolve({ error: null });
+    }
+    return Promise.resolve({ data: null, error: null });
+  });
   return {
-    supabase: {
-      from: vi.fn(() => ({
-        insert: mockInsert,
-        update: mockUpdate,
-      })),
-      storage: { from: vi.fn(() => ({ upload: vi.fn(() => Promise.resolve({ error: null })) })) },
-    },
+    supabase: { rpc: mockRpc },
     MEDICAL_REPORTS_BUCKET: 'medical-reports',
     MAX_FILE_SIZE: 10 * 1024 * 1024,
     ALLOWED_FILE_TYPES: ['application/pdf', 'image/jpeg', 'image/png'],
@@ -87,14 +82,11 @@ describe('submitLead', () => {
     expect(result.leadId).toBe(1);
   });
 
-  it('returns ok=false when Supabase insert fails', async () => {
+  it('returns ok=false when Supabase RPC fails', async () => {
     const { supabase } = await import('./supabase');
-    (supabase.from as ReturnType<typeof vi.fn>).mockReturnValueOnce({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({
-          single: vi.fn(() => Promise.resolve({ data: null, error: { message: 'Insert failed' } })),
-        })),
-      })),
+    (supabase.rpc as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
+      data: null,
+      error: { message: 'Insert failed' },
     });
     const result = await submitLead({ name: 'Jane', phone: '+123' });
     expect(result.ok).toBe(false);

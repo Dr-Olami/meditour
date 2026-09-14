@@ -76,53 +76,58 @@ export async function uploadMedicalReport(
 }
 
 /**
- * Submit a lead to the Supabase leads table.
- * Returns the lead ID on success so files can be linked to it.
+ * Submit a lead to the Supabase leads table via RPC function.
+ * Reason: uses SECURITY DEFINER function to bypass RLS, since the
+ * .insert().select() chain requires both INSERT and SELECT policies.
+ * Returns the lead ID on success.
  */
 export async function submitLead(
   payload: z.input<typeof leadSchema>
 ): Promise<{ ok: boolean; message: string; leadId?: number }> {
   try {
-    // Reason: convert camelCase to snake_case for the database columns.
-    const dbPayload = {
+    // Reason: build the payload matching the insert_lead(jsonb) function
+    const rpcPayload = {
       name: payload.name,
-      email: payload.email || null,
+      email: payload.email || '',
       phone: payload.phone,
-      country: payload.country || null,
-      treatment: payload.treatment || null,
-      message: payload.message || null,
+      country: payload.country || '',
+      treatment: payload.treatment || '',
+      message: payload.message || '',
       source: payload.source || LEAD_SOURCE.WEBSITE,
-      doctor_slug: payload.doctorSlug || null,
-      hospital_slug: payload.hospitalSlug || null,
-      estimated_total: payload.estimatedTotal ?? null,
+      doctor_slug: payload.doctorSlug || '',
+      hospital_slug: payload.hospitalSlug || '',
+      estimated_total:
+        payload.estimatedTotal !== undefined && payload.estimatedTotal !== null
+          ? String(payload.estimatedTotal)
+          : '',
       has_reports: payload.hasReports ?? true,
-      reports_shared_via: payload.reportsSharedVia || null,
-      preferred_contact_method: payload.preferredContactMethod || null,
+      reports_shared_via: payload.reportsSharedVia || '',
+      preferred_contact_method: payload.preferredContactMethod || '',
     };
 
-    const { data, error } = await supabase.from('leads').insert(dbPayload).select('id').single();
+    const { data, error } = await supabase.rpc('insert_lead', { payload: rpcPayload });
 
     if (error) {
       return { ok: false, message: error.message };
     }
 
-    return { ok: true, message: 'Lead submitted successfully', leadId: data.id };
+    return { ok: true, message: 'Lead submitted successfully', leadId: data as number };
   } catch {
     return { ok: false, message: 'Network error — please try WhatsApp instead.' };
   }
 }
 
 /**
- * Update a lead with the paths of uploaded medical reports.
+ * Update a lead with the paths of uploaded medical reports via RPC.
  */
 export async function attachMedicalReports(
   leadId: number,
   filePaths: string[]
 ): Promise<{ ok: boolean; message: string }> {
-  const { error } = await supabase
-    .from('leads')
-    .update({ medical_reports: filePaths })
-    .eq('id', leadId);
+  const { error } = await supabase.rpc('attach_reports', {
+    lead_id: leadId,
+    file_paths: filePaths,
+  });
 
   if (error) {
     return { ok: false, message: error.message };

@@ -15,16 +15,11 @@ vi.mock('../../../../src/lib/crm', () => ({
 
 vi.mock('../../../../src/lib/supabase', () => ({
   supabase: {
-    from: vi.fn(() => ({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({
-          single: vi.fn(() => Promise.resolve({ data: { id: 1 }, error: null })),
-        })),
-      })),
-      update: vi.fn(() => ({
-        eq: vi.fn(() => Promise.resolve({ error: null })),
-      })),
-    })),
+    rpc: vi.fn((name: string) => {
+      if (name === 'insert_lead') return Promise.resolve({ data: 1, error: null });
+      if (name === 'attach_reports') return Promise.resolve({ error: null });
+      return Promise.resolve({ data: null, error: null });
+    }),
     storage: { from: vi.fn(() => ({ upload: vi.fn(() => Promise.resolve({ error: null })) })) },
   },
   MEDICAL_REPORTS_BUCKET: 'medical-reports',
