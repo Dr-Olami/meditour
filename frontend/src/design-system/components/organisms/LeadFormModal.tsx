@@ -161,7 +161,11 @@ function LeadFormModal({
             hospitalSlug={hospitalSlug}
             estimatedTotal={estimatedTotal}
             treatments={treatments}
-            onSuccess={onClose}
+            onSuccess={() => {
+              // Reason: delay closing the modal so the visitor sees the
+              // success confirmation message before the modal disappears.
+              setTimeout(() => onClose(), 6000);
+            }}
           />
         </div>
       </div>

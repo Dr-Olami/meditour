@@ -403,33 +403,77 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
           <div
             role="alert"
             className={cn(
-              'rounded-card p-4 text-center text-sm',
+              'rounded-card p-5 text-center text-sm',
               status.type === 'success' ? 'bg-success/10 text-success' : 'bg-error/10 text-error'
             )}
           >
-            <p>{status.message}</p>
+            <div className="mb-2 flex items-center justify-center gap-2">
+              {status.type === 'success' && (
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="shrink-0"
+                >
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M8 12l2.5 2.5L16 9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+              <p className="font-semibold">{status.message}</p>
+            </div>
             {status.type === 'success' && (
-              <p className="mt-2 flex flex-wrap items-center justify-center gap-2">
-                <a
-                  href={reportWhatsAppHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-semibold underline underline-offset-2"
-                >
-                  Send reports on WhatsApp
-                </a>
-                <span className="text-ink/40" aria-hidden="true">
-                  /
-                </span>
-                <a
-                  href={`mailto:${contactEmail}?subject=Medical%20reports%20for%20${encodeURIComponent(
-                    submittedName || 'inquiry'
-                  )}`}
-                  className="inline-flex items-center gap-1 font-semibold underline underline-offset-2"
-                >
-                  Email reports
-                </a>
-              </p>
+              <>
+                <p className="text-ink/70 mt-3 text-sm font-medium">
+                  Send your medical reports for a faster response:
+                </p>
+                <p className="mt-2 flex flex-wrap items-center justify-center gap-2">
+                  <a
+                    href={reportWhatsAppHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 rounded-card bg-success px-4 py-2 font-semibold text-white transition-opacity hover:opacity-90"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M13.6 2.32A7.85 7.85 0 0 0 8.02 0C3.67 0 .13 3.54.13 7.89c0 1.4.37 2.76 1.06 3.96L.07 16l4.28-1.12a7.86 7.86 0 0 0 3.77.96h.003c4.35 0 7.89-3.54 7.89-7.89 0-2.11-.82-4.09-2.31-5.58zM8.02 14.5a6.5 6.5 0 0 1-3.31-.9l-.24-.14-2.74.72.73-2.67-.16-.25a6.48 6.48 0 0 1-.99-3.46c0-3.6 2.93-6.53 6.54-6.53 1.75 0 3.39.68 4.63 1.92a6.5 6.5 0 0 1 1.91 4.62c0 3.6-2.93 6.53-6.53 6.53z" />
+                    </svg>
+                    Send on WhatsApp
+                  </a>
+                  <a
+                    href={`mailto:${contactEmail}?subject=Medical%20reports%20for%20${encodeURIComponent(
+                      submittedName || 'inquiry'
+                    )}`}
+                    className="inline-flex items-center gap-1 rounded-card border border-cream-300 bg-cream-100 px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <rect
+                        x="2"
+                        y="3"
+                        width="12"
+                        height="10"
+                        rx="1"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      />
+                      <path d="M2 4l6 5 6-5" stroke="currentColor" strokeWidth="1.5" />
+                    </svg>
+                    Email reports
+                  </a>
+                </p>
+              </>
             )}
           </div>
         )}
