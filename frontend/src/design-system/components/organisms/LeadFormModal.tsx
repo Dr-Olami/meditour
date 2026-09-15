@@ -63,14 +63,15 @@ function LeadFormModal({
     submittedName: string;
   } | null>(null);
 
-  // Reason: lock body scroll while the modal is open so the background
-  // doesn't scroll behind the overlay on mobile.
+  // Reason: lock body scroll while the modal or success overlay is open.
+  // On cleanup, explicitly clear overflow to '' because the success overlay
+  // also manages scroll lock — restoring a captured value could keep the
+  // page locked if it was already 'hidden' when this effect ran.
   React.useEffect(() => {
     if (!open && !showSuccess) return;
-    const { overflow } = document.body.style;
     document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = overflow;
+      document.body.style.overflow = '';
     };
   }, [open, showSuccess]);
 

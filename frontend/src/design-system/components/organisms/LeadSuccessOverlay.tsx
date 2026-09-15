@@ -31,14 +31,17 @@ function LeadSuccessOverlay({
 }: LeadSuccessOverlayProps) {
   const overlayRef = React.useRef<HTMLDivElement | null>(null);
 
-  // Reason: lock body scroll and focus the overlay for accessibility.
+  // Reason: lock body scroll while the overlay is open. On cleanup,
+  // explicitly clear overflow to '' instead of restoring a captured value,
+  // because the form modal may have already set it to 'hidden' before
+  // this overlay opened — restoring the captured value would keep the
+  // page locked.
   React.useEffect(() => {
     if (!open) return;
-    const { overflow } = document.body.style;
     document.body.style.overflow = 'hidden';
     overlayRef.current?.focus();
     return () => {
-      document.body.style.overflow = overflow;
+      document.body.style.overflow = '';
     };
   }, [open]);
 
