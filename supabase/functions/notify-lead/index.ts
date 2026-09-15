@@ -1,3 +1,9 @@
+// @ts-nocheck
+// Reason: this file runs on Supabase's Deno Edge Runtime, not Node.js.
+// The Deno namespace and https://esm.sh/* imports are Deno-specific and
+// don't resolve in the local TypeScript environment. ts-nocheck prevents
+// false-positive lint errors without affecting runtime behavior.
+
 // Supabase Edge Function: notify-lead
 // Triggered by a Database Webhook when a new row is inserted into the `leads` table.
 // Sends an email notification to contact@khanmeditour.com via Resend.
