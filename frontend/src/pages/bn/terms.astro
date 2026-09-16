@@ -1,0 +1,377 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import LeadModalInterceptor from '../../design-system/components/organisms/LeadModalInterceptor.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { breadcrumbs, legalPage } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmeditour.com';
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/terms`;
+const lastUpdated = '2026-09-16';
+const effectiveDate = '2026-09-16';
+
+const navLinks = getNavLinks(locale, Astro.url.pathname);
+const legalLinks = getFooterLegalLinks(locale);
+
+const schema = [
+  legalPage({
+    name: t.legal.termsTitle,
+    url: pageUrl,
+    description: t.legal.termsDescription,
+    dateModified: lastUpdated,
+    publisher: { name: t.site.name, url: siteUrl },
+  }),
+  breadcrumbs([
+    { name: 'হোম', url: `${siteUrl}/bn` },
+    { name: t.legal.termsTitle, url: pageUrl },
+  ]),
+];
+
+const sections = [
+  { id: 'acceptance', title: '১. শর্ত গ্রহণ' },
+  { id: 'services', title: '২. খান মেডিট্যুর যেসব সেবা প্রদান করে' },
+  { id: 'not-medical-provider', title: '৩. খান মেডিট্যুর চিকিৎসা প্রদানকারী নয়' },
+  { id: 'booking', title: '৪. বুকিং ও অ্যাপয়েন্টমেন্ট' },
+  { id: 'payments', title: '৫. পেমেন্ট ও মূল্য' },
+  { id: 'cancellations', title: '৬. বাতিল ও ফেরত' },
+  { id: 'patient-responsibilities', title: '৭. রোগীর দায়িত্ব' },
+  { id: 'travel-visa', title: '৮. ভ্রমণ, ভিসা ও থাকা' },
+  { id: 'intellectual-property', title: '৯. মেধা সম্পদ' },
+  { id: 'limitations', title: '১০. দায়বদ্ধতার সীমা' },
+  { id: 'governing-law', title: '১১. প্রযোজ্য আইন' },
+  { id: 'changes', title: '১২. শর্তাবলীতে পরিবর্তন' },
+  { id: 'complaints', title: '১৩. অভিযোগ' },
+  { id: 'contact', title: '১৪. যোগাযোগ' },
+];
+---
+
+<Layout
+  title={`${t.legal.termsTitle} | ${t.site.name}`}
+  description={t.legal.termsDescription}
+  locale={locale}
+  jsonLd={schema}
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    phoneNumber={phoneNumber}
+    callLabel={t.nav.call}
+    whatsappHref={whatsappInquiryHref}
+    whatsappLabel={t.nav.whatsapp}
+  />
+
+  <article class="bg-cream-50 pb-16 pt-32">
+    <div class="container max-w-4xl">
+      <Breadcrumb
+        items={[{ label: 'হোম', href: '/bn' }, { label: t.legal.termsTitle }]}
+        locale={locale}
+      />
+
+      <header class="mt-8 border-b border-cream-300 pb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+          {t.legal.effectiveDate}: {effectiveDate}
+        </p>
+        <h1
+          class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
+        >
+          {t.legal.termsTitle}
+        </h1>
+        <p class="text-ink/60 mt-4 text-lg leading-relaxed">
+          {t.legal.termsDescription}
+        </p>
+        <p class="text-ink/40 mt-3 text-sm">
+          {t.legal.lastUpdated}: {lastUpdated}
+        </p>
+      </header>
+
+      <nav
+        class="mt-8 rounded-card border border-cream-300 bg-cream-100 p-6"
+        aria-label={t.legal.tableOfContents}
+      >
+        <p class="text-ink/40 mb-3 text-xs font-semibold uppercase tracking-widest">
+          {t.legal.tableOfContents}
+        </p>
+        <ol class="grid gap-1 sm:grid-cols-2">
+          {
+            sections.map((s) => (
+              <li>
+                <a href={`#${s.id}`} class="text-sm text-violet-600 hover:underline">
+                  {s.title}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <div class="text-ink/70 mt-10 space-y-10 leading-relaxed">
+        <section id="acceptance">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১. শর্ত গ্রহণ</h2>
+          <p class="mt-4">
+            খান মেডিট্যুর ওয়েবসাইট (khanmeditour.com) এবং আমাদের সমন্বয় সেবা ব্যবহার করে আপনি এই
+            শর্তাবলী ("শর্ত") মেনে নিচ্ছেন। আপনি যদি এই শর্তে সম্মত না হন, তবে দয়া করে আমাদের
+            ওয়েবসাইট বা সেবা ব্যবহার করবেন না। এই শর্তাবলী আপনার ("রোগী") এবং খান মেডিট্যুরের
+            ("আমরা") মধ্যে একটি সেবা চুক্তি গঠন করে।
+          </p>
+        </section>
+
+        <section id="services">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ২. খান মেডিট্যুর যেসব সেবা প্রদান করে
+          </h2>
+          <p class="mt-4">
+            খান মেডিট্যুর একটি মেডিকেল ট্যুরিজম সহায়ক ও সমন্বয় সেবা। আমরা আন্তর্জাতিক রোগীদের
+            ভারতের স্বীকৃত হাসপাতাল, বিশেষজ্ঞ চিকিৎসক এবং চিকিৎসা কেন্দ্রের সাথে সংযুক্ত করি। আমাদের
+            সেবার মধ্যে রয়েছে:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>আপনার রোগের ভিত্তিতে হাসপাতাল ও চিকিৎসক নির্বাচন</li>
+            <li>খরচের অনুমান ও চিকিৎসা পরিকল্পনা সমন্বয়</li>
+            <li>মেডিকেল ভিসা সহায়তা ও ডকুমেন্টেশন সহায়তা</li>
+            <li>ভ্রমণ, থাকা ও এয়ারপোর্ট পিকআপ ব্যবস্থা</li>
+            <li>দোভাষী সেবা ও ভারতে অন-গ্রাউন্ড সমন্বয়</li>
+            <li>চিকিৎসা-পরবর্তী ফলোআপ সমন্বয়</li>
+          </ul>
+          <p class="mt-4">
+            আমরা একটি সহায়ক ও সমন্বয়কারী হিসেবে কাজ করি। আমরা সরাসরি চিকিৎসা পরামর্শ, রোগ নির্ণয়
+            বা চিকিৎসা প্রদান করি না।
+          </p>
+        </section>
+
+        <section id="not-medical-provider">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৩. খান মেডিট্যুর চিকিৎসা প্রদানকারী নয়
+          </h2>
+          <p class="mt-4">
+            খান মেডিট্যুর <strong>কোনো হাসপাতাল, ক্লিনিক বা মেডিকেল প্র্যাকটিস নয়</strong>। আমরা
+            চিকিৎসক নিয়োগ করি না এবং সরাসরি চিকিৎসা প্রদান করি না। সমস্ত চিকিৎসা স্বাধীন হাসপাতাল ও
+            চিকিৎসকদের দ্বারা প্রদান করা হয়, যারা আলাদাভাবে লাইসেন্সপ্রাপ্ত ও নিয়ন্ত্রিত। খান
+            মেডিট্যুর নিম্নলিখিত কাজ করে না:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>চিকিৎসা পরামর্শ, রোগ নির্ণয় বা চিকিৎসা প্রদান</li>
+            <li>কোনো চিকিৎসা ফলাফল বা সাফল্যের হারের গ্যারান্টি দেওয়া</li>
+            <li>আপনার সাথে চিকিৎসক-রোগী সম্পর্ক স্থাপন করা</li>
+            <li>চিকিৎসক বা হাসপাতালের ক্লিনিক্যাল সিদ্ধান্তের দায় গ্রহণ করা</li>
+          </ul>
+          <p class="mt-4">
+            চিকিৎসা গ্রহণের আগে চিকিৎসক ও হাসপাতালের সাথে চিকিৎসা ঝুঁকি, বিকল্প এবং প্রত্যাশিত ফলাফল
+            নিয়ে আলোচনা করুন।
+          </p>
+        </section>
+
+        <section id="booking">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৪. বুকিং ও অ্যাপয়েন্টমেন্ট
+          </h2>
+          <p class="mt-4">
+            আপনি আমাদের ওয়েবসাইট, WhatsApp বা লিড ফর্মের মাধ্যমে কনসালটেশন রিকোয়েস্ট জমা দিলে
+            আমাদের কোঅর্ডিনেটররা আপনার মেডিকেল রিপোর্ট পর্যালোচনা করে উপযুক্ত হাসপাতাল ও চিকিৎসকের
+            সাথে সংযুক্ত করেন। খান মেডিট্যুরের মাধ্যমে চিকিৎসা বুকিংয়ের ধাপগুলো হলো:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>আপনার মেডিকেল রিপোর্ট ও প্রাসঙ্গিক ইতিহাস শেয়ার করা</li>
+            <li>প্রাথমিক খরচের অনুমান গ্রহণ (চূড়ান্ত খরচ হাসপাতাল দ্বারা নিশ্চিত হয়)</li>
+            <li>চিকিৎসা হাসপাতালের সাথে অ্যাপয়েন্টমেন্ট তারিখ সমন্বয়</li>
+            <li>চিকিৎসা পরিকল্পনা ও ভ্রমণ সূচি গ্রহণ</li>
+          </ul>
+          <p class="mt-4">
+            চিকিৎসার আগে প্রদত্ত খরচের অনুমান আনুমানিক এবং সেই সময়ের তথ্যের উপর ভিত্তি করে।
+            চূড়ান্ত খরচ হাসপাতাল, সার্জন, কেসের জটিলতা, ইমপ্লান্ট, ডায়াগনস্টিক টেস্ট, হাসপাতালে
+            অবস্থানের সময়কাল এবং যেকোনো জটিলতার উপর নির্ভর করে ভিন্ন হতে পারে।
+          </p>
+        </section>
+
+        <section id="payments">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৫. পেমেন্ট ও মূল্য</h2>
+          <p class="mt-4">
+            সমস্ত চিকিৎসা ফি সরাসরি হাসপাতাল বা চিকিৎসা কেন্দ্রকে পরিশোধ করা হয়, খান মেডিট্যুরকে
+            নয়, যদি লিখিতভাবে অন্যরকম না বলা হয়। খান মেডিট্যুরের সমন্বয় সেবা বর্তমানে রোগীদের
+            জন্য বিনামূল্যে প্রদান করা হয়। ভবিষ্যতে কোনো সেবা ফি চালু হলে তা বুকিংয়ের আগে
+            লিখিতভাবে জানানো হবে।
+          </p>
+          <p class="mt-4">
+            আমাদের ওয়েবসাইটে বা খরচের অনুমানে দেখানো মূল্য শুধুমাত্র তথ্যের জন্য এবং এটি কোনো
+            বাধ্যতামূলক কোটেশন নয়। আপনার মেডিকেল রিপোর্ট পর্যালোচনার পর চিকিৎসা হাসপাতাল চূড়ান্ত,
+            বাধ্যতামূলক খরচের অনুমান প্রদান করবে।
+          </p>
+        </section>
+
+        <section id="cancellations">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৬. বাতিল ও ফেরত</h2>
+          <p class="mt-4">
+            বাতিল ও ফেরতের নীতি চিকিৎসা হাসপাতালের নিজস্ব নীতি দ্বারা নিয়ন্ত্রিত, খান মেডিট্যুরের
+            দ্বারা নয়। আমরা বুকিং নিশ্চিত করার আগে হাসপাতালের বাতিল ও ফেরতের শর্ত আপনাকে জানাব।
+            সাধারণত:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              চিকিৎসার তারিখের অনেক আগে বাতিল করলে হাসপাতালের নীতি অনুযায়ী আংশিক বা সম্পূর্ণ ফেরত
+              পাওয়া যেতে পারে
+            </li>
+            <li>নির্ধারিত চিকিৎসার তারিখের কাছাকাছি বা পরে বাতিল করলে চার্জ প্রযোজ্য হতে পারে</li>
+            <li>
+              নন-রিফান্ডেবল আইটেমের মধ্যে ডায়াগনস্টিক টেস্ট, প্রি-সার্জারি কনসালটেশন এবং
+              ভিসা-সংক্রান্ত ফি অন্তর্ভুক্ত থাকতে পারে
+            </li>
+          </ul>
+          <p class="mt-4">
+            হাসপাতালের ফেরতের জন্য খান মেডিট্যুর দায়ী নয়। তবে আমরা আপনাকে হাসপাতালের সাথে বাতিল বা
+            ফেরতের অনুরোধ জানাতে সহায়তা করব।
+          </p>
+        </section>
+
+        <section id="patient-responsibilities">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৭. রোগীর দায়িত্ব</h2>
+          <p class="mt-4">আমাদের সেবা ব্যবহারকারী রোগী হিসেবে আপনার দায়িত্বগুলো হলো:</p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>সঠিক ও সম্পূর্ণ মেডিকেল তথ্য ও রিপোর্ট প্রদান করা</li>
+            <li>বিদ্যমান রোগ, অ্যালার্জি ও ঔষধ সম্পর্কে জানানো</li>
+            <li>চিকিৎসা হাসপাতালের প্রি- ও পোস্ট-ট্রিটমেন্ট নির্দেশ অনুসরণ করা</li>
+            <li>বৈধ ভ্রমণ ডকুমেন্ট, পাসপোর্ট ও মেডিকেল ভিসা বজায় রাখা</li>
+            <li>চিকিৎসা ও ভ্রমণ খরচের জন্য পর্যাপ্ত অর্থ সংস্থান করা</li>
+            <li>আপনার যাত্রার জন্য উপযুক্ত ট্রাভেল ও মেডিকেল ইন্স্যুরেন্স গ্রহণ করা</li>
+          </ul>
+          <p class="mt-4">
+            সঠিক মেডিকেল তথ্য না দিলে ভুল চিকিৎসা পরিকল্পনা, অতিরিক্ত খরচ বা হাসপাতাল দ্বারা চিকিৎসা
+            প্রত্যাখ্যান হতে পারে।
+          </p>
+        </section>
+
+        <section id="travel-visa">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৮. ভ্রমণ, ভিসা ও থাকা
+          </h2>
+          <p class="mt-4">
+            খান মেডিট্যুর চিকিৎসা হাসপাতালের আমন্ত্রণ পত্র ও ডকুমেন্টেশন প্রদান করে মেডিকেল ভিসা
+            আবেদনে সহায়তা করে। তবে ভিসা অনুমোদন আপনার দেশের ভারতীয় দূতাবাস বা কনস্যুলেটের একক
+            বিবেচনাধীন। খান মেডিট্যুর ভিসা অনুমোদনের গ্যারান্টি দেয় না।
+          </p>
+          <p class="mt-4">
+            ভ্রমণ ও থাকার ব্যবস্থা থার্ড-পার্টি প্রদানকারীদের (এয়ারলাইন, হোটেল, ট্রান্সপোর্ট
+            কোম্পানি) মাধ্যমে করা হয়। এই থার্ড-পার্টিদের বিলম্ব, বাতিল বা সেবা ব্যর্থতার জন্য খান
+            মেডিট্যুর দায়ী নয়।
+          </p>
+        </section>
+
+        <section id="intellectual-property">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৯. মেধা সম্পদ</h2>
+          <p class="mt-4">
+            এই ওয়েবসাইটের সমস্ত কনটেন্ট — টেক্সট, গ্রাফিক্স, লোগো, ছবি, হাসপাতাল তথ্য, চিকিৎসা
+            বিবরণ ও ডিজাইন — খান মেডিট্যুর বা এর কনটেন্ট পার্টনারদের সম্পদ এবং মেধা সম্পদ আইন দ্বারা
+            সুরক্ষিত। পূর্ব লিখিত অনুমতি ছাড়া আপনি এই ওয়েবসাইটের কোনো কনটেন্ট পুনরুৎপাদন, বিতরণ বা
+            প্রকাশ করতে পারবেন না।
+          </p>
+        </section>
+
+        <section id="limitations">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১০. দায়বদ্ধতার সীমা</h2>
+          <p class="mt-4">
+            আইন দ্বারা অনুমোদিত সর্বোচ্চ পরিসরে, খান মেডিট্যুর নিম্নলিখিত ক্ষেত্রে দায়ী হবে না:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>চিকিৎসা থেকে উদ্ভূত কোনো চিকিৎসা ফলাফল, জটিলতা বা প্রতিকূল ঘটনা</li>
+            <li>চিকিৎসা হাসপাতাল, চিকিৎসক বা মেডিকেল স্টাফের সিদ্ধান্ত</li>
+            <li>
+              থার্ড-পার্টি সেবা প্রদানকারীদের (এয়ারলাইন, হোটেল, ভিসা কর্তৃপক্ষ) বিলম্ব বা ব্যর্থতা
+            </li>
+            <li>আমাদের সেবা ব্যবহার থেকে উদ্ভূত কোনো পরোক্ষ, আকস্মিক বা পরিণতিমূলক ক্ষতি</li>
+          </ul>
+          <p class="mt-4">
+            আমাদের সমন্বয় সেবা থেকে উদ্ভূত যেকোনো দাবির ক্ষেত্রে আমাদের সর্বমোট দায়বদ্ধতা আপনার
+            দ্বারা খান মেডিট্যুরকে প্রদত্ত কোনো সেবা ফির বেশি হবে না, যদি প্রযোজ্য হয়।
+          </p>
+        </section>
+
+        <section id="governing-law">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১১. প্রযোজ্য আইন</h2>
+          <p class="mt-4">
+            এই শর্তাবলী ভারতের আইন দ্বারা নিয়ন্ত্রিত। এই শর্ত বা আমাদের সেবা থেকে উদ্ভূত যেকোনো
+            বিরোধ বেঙ্গালুরু, কর্ণাটক, ভারতের আদালতের এক্সক্লুসিভ এখতিয়ারের অধীন হবে।
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ১২. শর্তাবলীতে পরিবর্তন
+          </h2>
+          <p class="mt-4">
+            আমরা সময়ে সময়ে এই শর্তাবলী আপডেট করতে পারি। এই পেজের শীর্ষে "সর্বশেষ আপডেট" তারিখটি
+            সর্বশেষ সংশোধনকে নির্দেশ করে। পরিবর্তনের পর আমাদের সেবা ব্যবহার চালিয়ে যাওয়া আপডেট করা
+            শর্তাবলী গ্রহণ বোঝায়। আমরা আপনাকে পর্যায়ক্রমে এই পেজ পর্যালোচনা করতে উৎসাহিত করি।
+          </p>
+        </section>
+
+        <section id="complaints">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১৩. অভিযোগ</h2>
+          <p class="mt-4">আমাদের সেবায় সন্তুষ্ট নন?</p>
+          <p class="mt-4">
+            <a href="mailto:complaints@khanmeditour.com" class="text-violet-600 hover:underline"
+              >complaints@khanmeditour.com</a
+            > ঠিকানায় ইমেইল করুন, সাবজেক্ট "Complaint" এবং আপনার সমস্যার বিবরণ সহ। আমরা সমস্ত অভিযোগ
+            গুরুত্বের সাথে গ্রহণ করি এবং ৫ কর্মদিবসের মধ্যে সাড়া দেব।
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১৪. যোগাযোগ</h2>
+          <p class="mt-4">এই শর্তাবলী সম্পর্কে কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন:</p>
+          <div class="mt-4 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="font-semibold text-ink">{t.site.name}</p>
+            <p class="mt-2 text-sm">
+              ইমেইল: <a href={`mailto:${contactEmail}`} class="text-violet-600 hover:underline"
+                >{contactEmail}</a>
+            </p>
+            <p class="text-sm">
+              WhatsApp: <a href={whatsappInquiryHref} class="text-violet-600 hover:underline"
+                >+{whatsappNumber}</a>
+            </p>
+            <p class="text-sm">
+              ফোন: <a href={`tel:+${phoneNumber}`} class="text-violet-600 hover:underline"
+                >+{phoneNumber}</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <TreatmentsCtaSection
+    locale={locale}
+    primaryCta={{ label: t.nav.cta, href: '#contact' }}
+    secondaryCta={{ label: t.nav.whatsapp, href: whatsappInquiryHref }}
+  />
+
+  <LeadModalInterceptor
+    modalTitle={t.leadModal.title}
+    modalSubtitle={t.leadModal.subtitle}
+    closeLabel={t.leadModal.close}
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={legalLinks}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

@@ -722,5 +722,16 @@
     "timeInIndia": "Time in India",
     "savingsLabel": "Savings",
     "flightTimeLabel": "Flight time"
+  },
+  "legal": {
+    "termsTitle": "Terms & Conditions",
+    "termsDescription": "Terms and conditions for using Khan Meditour's medical tourism coordination services, including booking, payments, cancellations, and limitations of liability.",
+    "privacyTitle": "Privacy Policy",
+    "privacyDescription": "How Khan Meditour collects, uses, stores, and protects personal and health information of international medical tourism patients, including GDPR and HIPAA compliance.",
+    "lastUpdated": "Last updated",
+    "effectiveDate": "Effective date",
+    "tableOfContents": "Table of contents",
+    "contactUs": "Contact us about this policy",
+    "backToHome": "Back to home"
   }
 }

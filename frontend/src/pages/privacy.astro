@@ -1,0 +1,510 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../design-system/components/organisms/Navbar';
+import { Footer } from '../design-system/components/organisms/Footer';
+import Breadcrumb from '../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../design-system/components/organisms/TreatmentsCtaSection.astro';
+import LeadModalInterceptor from '../design-system/components/organisms/LeadModalInterceptor.astro';
+import { getTranslations } from '../lib/i18n';
+import { getNavLinks } from '../lib/navigation';
+import { getFooterLegalLinks } from '../lib/footer';
+import { getInquiryLink } from '../lib/whatsapp';
+import { breadcrumbs, legalPage } from '../lib/schema';
+
+const locale = 'en';
+const t = getTranslations(locale);
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmeditour.com';
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/privacy`;
+const lastUpdated = '2026-09-16';
+const effectiveDate = '2026-09-16';
+
+const navLinks = getNavLinks(locale, Astro.url.pathname);
+const legalLinks = getFooterLegalLinks(locale);
+
+const schema = [
+  legalPage({
+    name: t.legal.privacyTitle,
+    url: pageUrl,
+    description: t.legal.privacyDescription,
+    dateModified: lastUpdated,
+    publisher: { name: t.site.name, url: siteUrl },
+  }),
+  breadcrumbs([
+    { name: 'Home', url: siteUrl },
+    { name: t.legal.privacyTitle, url: pageUrl },
+  ]),
+];
+
+const sections = [
+  { id: 'overview', title: '1. Overview' },
+  { id: 'data-we-collect', title: '2. Information We Collect' },
+  { id: 'how-we-use', title: '3. How We Use Your Information' },
+  { id: 'legal-basis', title: '4. Legal Basis for Processing (GDPR)' },
+  { id: 'hipaa', title: '5. HIPAA Considerations' },
+  { id: 'data-sharing', title: '6. Sharing Your Information' },
+  { id: 'international-transfers', title: '7. International Data Transfers' },
+  { id: 'data-retention', title: '8. Data Retention' },
+  { id: 'security', title: '9. Data Security' },
+  { id: 'cookies', title: '10. Cookies and Analytics' },
+  { id: 'your-rights', title: '11. Your Privacy Rights' },
+  { id: 'children', title: "12. Children's Privacy" },
+  { id: 'changes', title: '13. Changes to This Policy' },
+  { id: 'complaints', title: '14. Complaints' },
+  { id: 'contact', title: '15. Contact Us' },
+];
+---
+
+<Layout
+  title={`${t.legal.privacyTitle} | ${t.site.name}`}
+  description={t.legal.privacyDescription}
+  locale={locale}
+  jsonLd={schema}
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    phoneNumber={phoneNumber}
+    callLabel={t.nav.call}
+    whatsappHref={whatsappInquiryHref}
+    whatsappLabel={t.nav.whatsapp}
+  />
+
+  <article class="bg-cream-50 pb-16 pt-32">
+    <div class="container max-w-4xl">
+      <Breadcrumb
+        items={[{ label: 'Home', href: '/' }, { label: t.legal.privacyTitle }]}
+        locale={locale}
+      />
+
+      <header class="mt-8 border-b border-cream-300 pb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+          {t.legal.effectiveDate}: {effectiveDate}
+        </p>
+        <h1
+          class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
+        >
+          {t.legal.privacyTitle}
+        </h1>
+        <p class="text-ink/60 mt-4 text-lg leading-relaxed">
+          {t.legal.privacyDescription}
+        </p>
+        <p class="text-ink/40 mt-3 text-sm">
+          {t.legal.lastUpdated}: {lastUpdated}
+        </p>
+      </header>
+
+      <nav
+        class="mt-8 rounded-card border border-cream-300 bg-cream-100 p-6"
+        aria-label={t.legal.tableOfContents}
+      >
+        <p class="text-ink/40 mb-3 text-xs font-semibold uppercase tracking-widest">
+          {t.legal.tableOfContents}
+        </p>
+        <ol class="grid gap-1 sm:grid-cols-2">
+          {
+            sections.map((s) => (
+              <li>
+                <a href={`#${s.id}`} class="text-sm text-violet-600 hover:underline">
+                  {s.title}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <div class="text-ink/70 mt-10 space-y-10 leading-relaxed">
+        <section id="overview">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">1. Overview</h2>
+          <p class="mt-4">
+            Khan Meditour ("we," "us," "our") respects your privacy and is committed to protecting
+            the personal and health information you share with us. This Privacy Policy explains how
+            we collect, use, store, and protect your data when you use our medical tourism
+            coordination services.
+          </p>
+          <p class="mt-4">
+            Because we serve patients from the European Union, the United Kingdom, the United
+            States, and other regions, this policy is designed to comply with:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>The General Data Protection Regulation (GDPR) — EU Regulation 2016/679</li>
+            <li>
+              The Health Insurance Portability and Accountability Act (HIPAA) — US Public Law
+              104-191
+            </li>
+            <li>The Digital Personal Data Protection Act, 2023 (DPDP Act) — India</li>
+            <li>Any other applicable data protection laws in your country of residence</li>
+          </ul>
+        </section>
+
+        <section id="data-we-collect">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            2. Information We Collect
+          </h2>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">Personal information</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>Name, age, gender, nationality</li>
+            <li>Email address, phone number, WhatsApp number</li>
+            <li>Country of residence and travel destination</li>
+            <li>Passport details (for visa assistance)</li>
+          </ul>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">Health information</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>Medical reports and diagnostic test results you share</li>
+            <li>Treatment history and current medications</li>
+            <li>Doctor or hospital preferences</li>
+            <li>Cost estimates and treatment plans requested</li>
+          </ul>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">Technical information</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>IP address, browser type, and device information</li>
+            <li>Pages visited and time spent on our website</li>
+            <li>Referral source (how you found our website)</li>
+          </ul>
+        </section>
+
+        <section id="how-we-use">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            3. How We Use Your Information
+          </h2>
+          <p class="mt-4">
+            We use your personal and health information for the following purposes:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>To coordinate your medical treatment with hospitals and doctors in India</li>
+            <li>To prepare cost estimates and treatment plans</li>
+            <li>To assist with medical visa applications and travel arrangements</li>
+            <li>To communicate with you about your treatment and coordination</li>
+            <li>To improve our services and website content</li>
+            <li>To comply with legal and regulatory obligations</li>
+          </ul>
+          <p class="mt-4">
+            We do <strong>not</strong> use your health information for marketing, advertising, or selling
+            to third parties.
+          </p>
+        </section>
+
+        <section id="legal-basis">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            4. Legal Basis for Processing (GDPR)
+          </h2>
+          <p class="mt-4">
+            Under the GDPR, we process your personal data on the following legal bases:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>Consent</strong> — You voluntarily submit your information through our forms, WhatsApp,
+              or email to request our services
+            </li>
+            <li>
+              <strong>Contract</strong> — Processing is necessary to provide the coordination services
+              you have requested
+            </li>
+            <li>
+              <strong>Legal obligation</strong> — We may need to retain records to comply with applicable
+              laws
+            </li>
+            <li>
+              <strong>Legitimate interest</strong> — We may process limited data to improve our services
+              and prevent fraud
+            </li>
+          </ul>
+          <p class="mt-4">
+            Health data is classified as "special category data" under Article 9 of the GDPR. We
+            process it only with your explicit consent, which you provide by sharing your medical
+            reports with us for treatment coordination.
+          </p>
+        </section>
+
+        <section id="hipaa">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            5. HIPAA Considerations
+          </h2>
+          <p class="mt-4">
+            For patients from the United States, we are mindful of HIPAA's requirements regarding
+            Protected Health Information (PHI). While Khan Meditour is not a "covered entity" under
+            HIPAA (we are not a healthcare provider), we voluntarily follow HIPAA-aligned practices:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              We use encrypted channels (WhatsApp, secure email) for transmitting health information
+            </li>
+            <li>
+              We share your health information only with the hospitals and doctors you have
+              authorized
+            </li>
+            <li>We do not disclose your health information for marketing or commercial purposes</li>
+            <li>
+              We retain health records only for as long as necessary for treatment coordination
+            </li>
+          </ul>
+          <p class="mt-4">
+            If you are a US patient and wish to understand how your treating hospital in India
+            handles PHI, please ask the hospital directly about their data protection practices.
+          </p>
+        </section>
+
+        <section id="data-sharing">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            6. Sharing Your Information
+          </h2>
+          <p class="mt-4">
+            We share your information only with the parties necessary to provide our coordination
+            services:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>Hospitals and doctors</strong> — Your medical reports and treatment preferences
+              are shared with the hospitals and doctors you have selected or agreed to consult
+            </li>
+            <li>
+              <strong>Visa authorities</strong> — Your passport and treatment details are shared with
+              the Indian embassy or consulate for medical visa processing
+            </li>
+            <li>
+              <strong>Travel and accommodation providers</strong> — Your name and contact details may
+              be shared with airlines, hotels, and transport providers you have authorized
+            </li>
+            <li>
+              <strong>Service providers</strong> — We use third-party tools (email, analytics, CRM) that
+              may process your data on our behalf under data processing agreements
+            </li>
+          </ul>
+          <p class="mt-4">
+            We do <strong>not</strong> sell your personal or health information to any third party.
+          </p>
+        </section>
+
+        <section id="international-transfers">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            7. International Data Transfers
+          </h2>
+          <p class="mt-4">
+            Because Khan Meditour coordinates treatment in India for international patients, your
+            data may be transferred from your country of residence to India and to other countries
+            where our service providers operate. We take the following measures to protect your data
+            during international transfers:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              We share health information only with hospitals and doctors in India that you have
+              authorized
+            </li>
+            <li>We use service providers that comply with applicable data protection standards</li>
+            <li>
+              For EU/UK patients, we rely on your explicit consent for international transfers of
+              your health data
+            </li>
+            <li>
+              We minimize the data shared to what is strictly necessary for treatment coordination
+            </li>
+          </ul>
+        </section>
+
+        <section id="data-retention">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">8. Data Retention</h2>
+          <p class="mt-4">
+            We retain your personal and health information for as long as necessary to provide our
+            services and to comply with legal obligations:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>Active coordination</strong> — During your treatment journey and follow-up period
+              (typically up to 12 months after treatment)
+            </li>
+            <li>
+              <strong>Medical records</strong> — Retained for the period required by the treating hospital's
+              policy
+            </li>
+            <li>
+              <strong>Lead inquiries</strong> — If you do not proceed with treatment, we retain your inquiry
+              data for up to 24 months for follow-up, after which it is deleted
+            </li>
+            <li>
+              <strong>Legal compliance</strong> — Some records may be retained longer if required by applicable
+              law
+            </li>
+          </ul>
+          <p class="mt-4">
+            You may request deletion of your data at any time (see Section 11), subject to legal
+            retention requirements.
+          </p>
+        </section>
+
+        <section id="security">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">9. Data Security</h2>
+          <p class="mt-4">
+            We take reasonable technical and organizational measures to protect your data:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>Encrypted transmission (HTTPS/TLS) for all website communications</li>
+            <li>Secure storage of medical reports and patient data</li>
+            <li>Access limited to authorized coordinators and staff</li>
+            <li>Regular review of our security practices</li>
+          </ul>
+          <p class="mt-4">
+            Despite these measures, no system can guarantee complete security. If we become aware of
+            a data breach affecting your personal information, we will notify you in accordance with
+            applicable laws.
+          </p>
+        </section>
+
+        <section id="cookies">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            10. Cookies and Analytics
+          </h2>
+          <p class="mt-4">
+            Our website uses cookies and similar technologies for the following purposes:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>Essential cookies</strong> — Required for the website to function (e.g., language
+              preference)
+            </li>
+            <li>
+              <strong>Analytics cookies</strong> — Google Analytics and Google Tag Manager to understand
+              website usage and improve content
+            </li>
+            <li>
+              <strong>Marketing cookies</strong> — Google Ads and Meta Ads to measure the effectiveness
+              of our advertising
+            </li>
+          </ul>
+          <p class="mt-4">
+            You can manage or disable cookies through your browser settings. Disabling some cookies
+            may affect website functionality.
+          </p>
+        </section>
+
+        <section id="your-rights">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            11. Your Privacy Rights
+          </h2>
+          <p class="mt-4">
+            Depending on your country of residence, you may have the following rights regarding your
+            personal data:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li><strong>Access</strong> — Request a copy of the personal data we hold about you</li>
+            <li>
+              <strong>Rectification</strong> — Request correction of inaccurate or incomplete data
+            </li>
+            <li>
+              <strong>Erasure</strong> — Request deletion of your personal data ("right to be forgotten")
+            </li>
+            <li><strong>Restriction</strong> — Request that we limit processing of your data</li>
+            <li>
+              <strong>Portability</strong> — Receive your data in a structured, machine-readable format
+            </li>
+            <li>
+              <strong>Objection</strong> — Object to processing of your data for specific purposes
+            </li>
+            <li>
+              <strong>Withdraw consent</strong> — Withdraw your consent at any time (this does not affect
+              processing already done)
+            </li>
+          </ul>
+          <p class="mt-4">
+            To exercise any of these rights, please contact us using the details in Section 14. We
+            will respond within 30 days, as required by the GDPR.
+          </p>
+        </section>
+
+        <section id="children">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            12. Children's Privacy
+          </h2>
+          <p class="mt-4">
+            Our services are intended for adults seeking medical treatment. If a minor requires
+            treatment, a parent or legal guardian must provide consent and submit information on the
+            child's behalf. We do not knowingly collect personal information directly from children
+            under 16 without parental consent.
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            13. Changes to This Policy
+          </h2>
+          <p class="mt-4">
+            We may update this Privacy Policy from time to time. The "Last updated" date at the top
+            of this page reflects the most recent revision. We encourage you to review this page
+            periodically. Significant changes will be communicated through our website or by email
+            if you are an active patient.
+          </p>
+        </section>
+
+        <section id="complaints">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">14. Complaints</h2>
+          <p class="mt-4">Not happy with our service?</p>
+          <p class="mt-4">
+            Email <a
+              href="mailto:complaints@khanmeditour.com"
+              class="text-violet-600 hover:underline">complaints@khanmeditour.com</a
+            > with the subject "Complaint" and a description of your concern. We take all complaints seriously
+            and will respond within 5 business days.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">15. Contact Us</h2>
+          <p class="mt-4">
+            If you have any questions about this Privacy Policy or wish to exercise your privacy
+            rights, please contact us:
+          </p>
+          <div class="mt-4 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="font-semibold text-ink">{t.site.name}</p>
+            <p class="mt-2 text-sm">
+              Email: <a href={`mailto:${contactEmail}`} class="text-violet-600 hover:underline"
+                >{contactEmail}</a>
+            </p>
+            <p class="text-sm">
+              WhatsApp: <a href={whatsappInquiryHref} class="text-violet-600 hover:underline"
+                >+{whatsappNumber}</a>
+            </p>
+            <p class="text-sm">
+              Phone: <a href={`tel:+${phoneNumber}`} class="text-violet-600 hover:underline"
+                >+{phoneNumber}</a>
+            </p>
+          </div>
+          <p class="text-ink/50 mt-4 text-sm">
+            For GDPR-related complaints, you may also contact your local data protection authority.
+            For India, the Data Protection Board of India handles complaints under the DPDP Act,
+            2023.
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <TreatmentsCtaSection
+    locale={locale}
+    primaryCta={{ label: t.nav.cta, href: '#contact' }}
+    secondaryCta={{ label: t.nav.whatsapp, href: whatsappInquiryHref }}
+  />
+
+  <LeadModalInterceptor
+    modalTitle={t.leadModal.title}
+    modalSubtitle={t.leadModal.subtitle}
+    closeLabel={t.leadModal.close}
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={legalLinks}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>

@@ -421,3 +421,30 @@ export function localBusiness(data: LocalBusinessInput): WithContext<Record<stri
     ...(data.sameAs?.length ? { sameAs: data.sameAs } : {}),
   });
 }
+
+interface LegalPageInput {
+  name: string;
+  url: string;
+  description: string;
+  dateModified: string;
+  publisher: { name: string; url: string };
+}
+
+/**
+ * Build a WebPage JSON-LD object for legal pages (Terms, Privacy Policy).
+ * Reason: legal pages benefit from structured data so search engines can
+ * identify them as official policy documents and show dateModified in SERPs.
+ */
+export function legalPage(data: LegalPageInput): WithContext<Record<string, unknown>> {
+  return thing('WebPage', {
+    name: data.name,
+    url: data.url,
+    description: data.description,
+    dateModified: data.dateModified,
+    publisher: {
+      '@type': 'Organization',
+      name: data.publisher.name,
+      url: data.publisher.url,
+    },
+  });
+}

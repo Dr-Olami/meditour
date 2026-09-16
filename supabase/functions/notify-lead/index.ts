@@ -67,8 +67,11 @@ async function createSignedUrl(filePath: string): Promise<string | null> {
     );
 
     const data = await response.json();
+    // Reason: Supabase Storage API returns signedURL as a full URL
+    // (e.g. "https://...supabase.co/storage/v1/object/sign/medical-reports/32/...?token=...")
+    // so we use it directly rather than reconstructing it.
     if (data.signedURL) {
-      return `${SUPABASE_URL}/storage/v1/object/sign/${STORAGE_BUCKET}/${filePath}?token=${data.signedURL.split("token=")[1] || ""}`;
+      return data.signedURL;
     }
     return null;
   } catch (err) {

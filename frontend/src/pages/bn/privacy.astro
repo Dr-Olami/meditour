@@ -1,0 +1,489 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../design-system/components/organisms/Navbar';
+import { Footer } from '../../design-system/components/organisms/Footer';
+import Breadcrumb from '../../design-system/components/molecules/Breadcrumb.astro';
+import TreatmentsCtaSection from '../../design-system/components/organisms/TreatmentsCtaSection.astro';
+import LeadModalInterceptor from '../../design-system/components/organisms/LeadModalInterceptor.astro';
+import { getTranslations } from '../../lib/i18n';
+import { getNavLinks } from '../../lib/navigation';
+import { getFooterLegalLinks } from '../../lib/footer';
+import { getInquiryLink } from '../../lib/whatsapp';
+import { breadcrumbs, legalPage } from '../../lib/schema';
+
+const locale = 'bn';
+const t = getTranslations(locale);
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '8801611892986';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || '919606624861';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@khanmeditour.com';
+const whatsappInquiryHref = getInquiryLink();
+
+const siteUrl = (Astro.site ? Astro.site.toString() : Astro.url.origin).replace(/\/$/, '');
+const pageUrl = `${siteUrl}/bn/privacy`;
+const lastUpdated = '2026-09-16';
+const effectiveDate = '2026-09-16';
+
+const navLinks = getNavLinks(locale, Astro.url.pathname);
+const legalLinks = getFooterLegalLinks(locale);
+
+const schema = [
+  legalPage({
+    name: t.legal.privacyTitle,
+    url: pageUrl,
+    description: t.legal.privacyDescription,
+    dateModified: lastUpdated,
+    publisher: { name: t.site.name, url: siteUrl },
+  }),
+  breadcrumbs([
+    { name: 'হোম', url: `${siteUrl}/bn` },
+    { name: t.legal.privacyTitle, url: pageUrl },
+  ]),
+];
+
+const sections = [
+  { id: 'overview', title: '১. সংক্ষিপ্ত বিবরণ' },
+  { id: 'data-we-collect', title: '২. আমরা যে তথ্য সংগ্রহ করি' },
+  { id: 'how-we-use', title: '৩. আমরা আপনার তথ্য কীভাবে ব্যবহার করি' },
+  { id: 'legal-basis', title: '৪. প্রক্রিয়াকরণের আইনি ভিত্তি (GDPR)' },
+  { id: 'hipaa', title: '৫. HIPAA বিবেচনা' },
+  { id: 'data-sharing', title: '৬. আপনার তথ্য শেয়ারিং' },
+  { id: 'international-transfers', title: '৭. আন্তর্জাতিক ডেটা ট্রান্সফার' },
+  { id: 'data-retention', title: '৮. ডেটা সংরক্ষণ' },
+  { id: 'security', title: '৯. ডেটা নিরাপত্তা' },
+  { id: 'cookies', title: '১০. কুকিজ ও অ্যানালিটিক্স' },
+  { id: 'your-rights', title: '১১. আপনার গোপনীয়তা অধিকার' },
+  { id: 'children', title: '১২. শিশুদের গোপনীয়তা' },
+  { id: 'changes', title: '১৩. এই নীতিতে পরিবর্তন' },
+  { id: 'complaints', title: '১৪. অভিযোগ' },
+  { id: 'contact', title: '১৫. যোগাযোগ' },
+];
+---
+
+<Layout
+  title={`${t.legal.privacyTitle} | ${t.site.name}`}
+  description={t.legal.privacyDescription}
+  locale={locale}
+  jsonLd={schema}
+>
+  <Navbar
+    brand={t.site.name}
+    links={navLinks}
+    cta={{ label: t.nav.cta, href: '#contact' }}
+    locale={locale}
+    currentPath={Astro.url.pathname}
+    phoneNumber={phoneNumber}
+    callLabel={t.nav.call}
+    whatsappHref={whatsappInquiryHref}
+    whatsappLabel={t.nav.whatsapp}
+  />
+
+  <article class="bg-cream-50 pb-16 pt-32">
+    <div class="container max-w-4xl">
+      <Breadcrumb
+        items={[{ label: 'হোম', href: '/bn' }, { label: t.legal.privacyTitle }]}
+        locale={locale}
+      />
+
+      <header class="mt-8 border-b border-cream-300 pb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-violet-600">
+          {t.legal.effectiveDate}: {effectiveDate}
+        </p>
+        <h1
+          class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl"
+        >
+          {t.legal.privacyTitle}
+        </h1>
+        <p class="text-ink/60 mt-4 text-lg leading-relaxed">
+          {t.legal.privacyDescription}
+        </p>
+        <p class="text-ink/40 mt-3 text-sm">
+          {t.legal.lastUpdated}: {lastUpdated}
+        </p>
+      </header>
+
+      <nav
+        class="mt-8 rounded-card border border-cream-300 bg-cream-100 p-6"
+        aria-label={t.legal.tableOfContents}
+      >
+        <p class="text-ink/40 mb-3 text-xs font-semibold uppercase tracking-widest">
+          {t.legal.tableOfContents}
+        </p>
+        <ol class="grid gap-1 sm:grid-cols-2">
+          {
+            sections.map((s) => (
+              <li>
+                <a href={`#${s.id}`} class="text-sm text-violet-600 hover:underline">
+                  {s.title}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <div class="text-ink/70 mt-10 space-y-10 leading-relaxed">
+        <section id="overview">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১. সংক্ষিপ্ত বিবরণ</h2>
+          <p class="mt-4">
+            খান মেডিট্যুর ("আমরা") আপনার গোপনীয়তাকে সম্মান করে এবং আপনার শেয়ার করা ব্যক্তিগত ও
+            স্বাস্থ্য তথ্য সুরক্ষিত করতে প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতি ব্যাখ্যা করে আমরা আমাদের
+            মেডিকেল ট্যুরিজম সমন্বয় সেবা ব্যবহারের সময় আপনার ডেটা কীভাবে সংগ্রহ, ব্যবহার, সংরক্ষণ
+            ও সুরক্ষিত করি।
+          </p>
+          <p class="mt-4">
+            আমরা ইউরোপীয় ইউনিয়ন, যুক্তরাজ্য, যুক্তরাষ্ট্র এবং অন্যান্য অঞ্চলের রোগীদের সেবা দেই,
+            তাই এই নীতি নিম্নলিখিত আইনের সাথে সঙ্গতিপূর্ণ:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>General Data Protection Regulation (GDPR) — EU Regulation 2016/679</li>
+            <li>
+              Health Insurance Portability and Accountability Act (HIPAA) — US Public Law 104-191
+            </li>
+            <li>ডিজিটাল ব্যক্তিগত ডেটা সুরক্ষা আইন, ২০২৩ (DPDP Act) — ভারত</li>
+            <li>আপনার বাসস্থানের দেশের অন্যান্য প্রযোজ্য ডেটা সুরক্ষা আইন</li>
+          </ul>
+        </section>
+
+        <section id="data-we-collect">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ২. আমরা যে তথ্য সংগ্রহ করি
+          </h2>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">ব্যক্তিগত তথ্য</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>নাম, বয়স, লিঙ্গ, জাতীয়তা</li>
+            <li>ইমেইল ঠিকানা, ফোন নম্বর, WhatsApp নম্বর</li>
+            <li>বাসস্থানের দেশ ও ভ্রমণ গন্তব্য</li>
+            <li>পাসপোর্টের বিবরণ (ভিসা সহায়তার জন্য)</li>
+          </ul>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">স্বাস্থ্য তথ্য</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>আপনার শেয়ার করা মেডিকেল রিপোর্ট ও ডায়াগনস্টিক টেস্ট ফলাফল</li>
+            <li>চিকিৎসা ইতিহাস ও বর্তমান ঔষধ</li>
+            <li>চিকিৎসক বা হাসপাতাল পছন্দ</li>
+            <li>খরচের অনুমান ও চিকিৎসা পরিকল্পনা অনুরোধ</li>
+          </ul>
+          <h3 class="mt-4 font-display text-xl font-semibold text-ink">প্রযুক্তিগত তথ্য</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-6">
+            <li>IP ঠিকানা, ব্রাউজার টাইপ ও ডিভাইস তথ্য</li>
+            <li>পরিদর্শিত পেজ ও ওয়েবসাইটে অবস্থানের সময়</li>
+            <li>রেফারেল সোর্স (আপনি কীভাবে আমাদের ওয়েবসাইট খুঁজে পেয়েছেন)</li>
+          </ul>
+        </section>
+
+        <section id="how-we-use">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৩. আমরা আপনার তথ্য কীভাবে ব্যবহার করি
+          </h2>
+          <p class="mt-4">
+            আমরা আপনার ব্যক্তিগত ও স্বাস্থ্য তথ্য নিম্নলিখিত উদ্দেশ্যে ব্যবহার করি:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>ভারতের হাসপাতাল ও চিকিৎসকদের সাথে আপনার চিকিৎসা সমন্বয় করতে</li>
+            <li>খরচের অনুমান ও চিকিৎসা পরিকল্পনা প্রস্তুত করতে</li>
+            <li>মেডিকেল ভিসা আবেদন ও ভ্রমণ ব্যবস্থায় সহায়তা করতে</li>
+            <li>আপনার চিকিৎসা ও সমন্বয় সম্পর্কে যোগাযোগ করতে</li>
+            <li>আমাদের সেবা ও ওয়েবসাইট কনটেন্ট উন্নত করতে</li>
+            <li>আইনি ও নিয়ন্ত্রক বাধ্যবাধকতা মেনে চলতে</li>
+          </ul>
+          <p class="mt-4">
+            আমরা আপনার স্বাস্থ্য তথ্য <strong
+              >মার্কেটিং, বিজ্ঞাপন বা থার্ড-পার্টিতে বিক্রির জন্য ব্যবহার করি না</strong
+            >।
+          </p>
+        </section>
+
+        <section id="legal-basis">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৪. প্রক্রিয়াকরণের আইনি ভিত্তি (GDPR)
+          </h2>
+          <p class="mt-4">
+            GDPR অনুযায়ী, আমরা নিম্নলিখিত আইনি ভিত্তিতে আপনার ব্যক্তিগত ডেটা প্রক্রিয়া করি:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>সম্মতি</strong> — আপনি আমাদের সেবা অনুরোধ করতে স্বেচ্ছায় ফর্ম, WhatsApp বা ইমেইলের
+              মাধ্যমে তথ্য জমা দেন
+            </li>
+            <li>
+              <strong>চুক্তি</strong> — আপনার অনুরোধ করা সমন্বয় সেবা প্রদানের জন্য প্রক্রিয়াকরণ প্রয়োজন
+            </li>
+            <li>
+              <strong>আইনি বাধ্যবাধকতা</strong> — প্রযোজ্য আইন মেনে চলতে আমাদের রেকর্ড সংরক্ষণ প্রয়োজন
+              হতে পারে
+            </li>
+            <li>
+              <strong>বৈধ স্বার্থ</strong> — আমরা সীমিত ডেটা প্রক্রিয়া করতে পারি সেবা উন্নত করতে ও প্রতারণা
+              রোধে
+            </li>
+          </ul>
+          <p class="mt-4">
+            স্বাস্থ্য ডেটা GDPR-এর অনুচ্ছেদ ৯ অনুযায়ী "বিশেষ বিভাগের ডেটা"। আমরা এটি শুধুমাত্র
+            আপনার স্পষ্ট সম্মতিতে প্রক্রিয়া করি, যা আপনি চিকিৎসা সমন্বয়ের জন্য মেডিকেল রিপোর্ট
+            শেয়ার করে প্রদান করেন।
+          </p>
+        </section>
+
+        <section id="hipaa">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৫. HIPAA বিবেচনা</h2>
+          <p class="mt-4">
+            যুক্তরাষ্ট্রের রোগীদের জন্য, আমরা Protected Health Information (PHI) সম্পর্কে HIPAA-এর
+            প্রয়োজনীয়তা সম্পর্কে সচেতন। যদিও খান মেডিট্যুর HIPAA-এর অধীনে "কভারড এনটিটি" নয় (আমরা
+            হেলথকেয়ার প্রদানকারী নই), আমরা স্বেচ্ছায় HIPAA-সঙ্গত অনুশীলন অনুসরণ করি:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              স্বাস্থ্য তথ্য ট্রান্সমিট করতে এনক্রিপ্টেড চ্যানেল (WhatsApp, সুরক্ষিত ইমেইল) ব্যবহার
+              করি
+            </li>
+            <li>আপনার অনুমোদিত হাসপাতাল ও চিকিৎসকদের সাথেই কেবল স্বাস্থ্য তথ্য শেয়ার করি</li>
+            <li>মার্কেটিং বা বাণিজ্যিক উদ্দেশ্যে স্বাস্থ্য তথ্য প্রকাশ করি না</li>
+            <li>চিকিৎসা সমন্বয়ের জন্য যতটুকু প্রয়োজন ততটুকু সময় স্বাস্থ্য রেকর্ড সংরক্ষণ করি</li>
+          </ul>
+        </section>
+
+        <section id="data-sharing">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৬. আপনার তথ্য শেয়ারিং
+          </h2>
+          <p class="mt-4">
+            আমরা আপনার তথ্য শুধুমাত্র সমন্বয় সেবা প্রদানের জন্য প্রয়োজনীয় পক্ষের সাথে শেয়ার করি:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>হাসপাতাল ও চিকিৎসক</strong> — আপনার মেডিকেল রিপোর্ট ও চিকিৎসা পছন্দ আপনার নির্বাচিত
+              হাসপাতাল ও চিকিৎসকের সাথে শেয়ার করা হয়
+            </li>
+            <li>
+              <strong>ভিসা কর্তৃপক্ষ</strong> — মেডিকেল ভিসা প্রক্রিয়াকরণের জন্য আপনার পাসপোর্ট ও চিকিৎসা
+              বিবরণ ভারতীয় দূতাবাসের সাথে শেয়ার করা হয়
+            </li>
+            <li>
+              <strong>ভ্রমণ ও থাকা প্রদানকারী</strong> — আপনার অনুমোদিত এয়ারলাইন, হোটেল ও ট্রান্সপোর্ট
+              প্রদানকারীর সাথে নাম ও যোগাযোগের বিবরণ শেয়ার করা হতে পারে
+            </li>
+            <li>
+              <strong>সেবা প্রদানকারী</strong> — আমরা থার্ড-পার্টি টুল (ইমেইল, অ্যানালিটিক্স, CRM) ব্যবহার
+              করি যা ডেটা প্রক্রিয়াকরণ চুক্তির অধীনে আপনার ডেটা প্রক্রিয়া করতে পারে
+            </li>
+          </ul>
+          <p class="mt-4">
+            আমরা আপনার ব্যক্তিগত বা স্বাস্থ্য তথ্য <strong>কোনো থার্ড-পার্টিতে বিক্রি করি না</strong
+            >।
+          </p>
+        </section>
+
+        <section id="international-transfers">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ৭. আন্তর্জাতিক ডেটা ট্রান্সফার
+          </h2>
+          <p class="mt-4">
+            খান মেডিট্যুর আন্তর্জাতিক রোগীদের জন্য ভারতে চিকিৎসা সমন্বয় করে, তাই আপনার ডেটা আপনার
+            বাসস্থানের দেশ থেকে ভারতে এবং আমাদের সেবা প্রদানকারীদের অপারেটিং দেশে ট্রান্সফার হতে
+            পারে। আন্তর্জাতিক ট্রান্সফারের সময় আপনার ডেটা সুরক্ষিত রাখতে আমরা নিম্নলিখিত ব্যবস্থা
+            নিই:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              আপনার অনুমোদিত ভারতের হাসপাতাল ও চিকিৎসকদের সাথেই কেবল স্বাস্থ্য তথ্য শেয়ার করি
+            </li>
+            <li>প্রযোজ্য ডেটা সুরক্ষা মান মেনে চলা সেবা প্রদানকারী ব্যবহার করি</li>
+            <li>
+              EU/UK রোগীদের জন্য, স্বাস্থ্য ডেটার আন্তর্জাতিক ট্রান্সফারের জন্য আপনার স্পষ্ট সম্মতির
+              উপর নির্ভর করি
+            </li>
+            <li>চিকিৎসা সমন্বয়ের জন্য কঠোরভাবে প্রয়োজনীয় ডেটাই শেয়ার করি</li>
+          </ul>
+        </section>
+
+        <section id="data-retention">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৮. ডেটা সংরক্ষণ</h2>
+          <p class="mt-4">
+            আমরা আপনার ব্যক্তিগত ও স্বাস্থ্য তথ্য সেবা প্রদান ও আইনি বাধ্যবাধকতা মেনে চলতে যতটুকু
+            প্রয়োজন ততটুকু সময় সংরক্ষণ করি:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>সক্রিয় সমন্বয়</strong> — আপনার চিকিৎসা যাত্রা ও ফলোআপ সময়কালে (সাধারণত চিকিৎসার
+              পর ১২ মাস পর্যন্ত)
+            </li>
+            <li><strong>মেডিকেল রেকর্ড</strong> — চিকিৎসা হাসপাতালের নীতি অনুযায়ী সংরক্ষিত</li>
+            <li>
+              <strong>লিড ইনকোয়ারি</strong> — চিকিৎসা না হলে আমরা ফলোআপের জন্য ২৪ মাস পর্যন্ত ইনকোয়ারি
+              ডেটা সংরক্ষণ করি, এরপর মুছে ফেলা হয়
+            </li>
+            <li>
+              <strong>আইনি সম্মতি</strong> — কিছু রেকর্ড প্রযোজ্য আইন দ্বারা দাবি হলে দীর্ঘ সময় সংরক্ষিত
+              থাকতে পারে
+            </li>
+          </ul>
+          <p class="mt-4">
+            আপনি যেকোনো সময় আপনার ডেটা মুছে ফেলার অনুরোধ করতে পারেন (অনুচ্ছেদ ১১ দেখুন), আইনি
+            সংরক্ষণ প্রয়োজন সাপেক্ষে।
+          </p>
+        </section>
+
+        <section id="security">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">৯. ডেটা নিরাপত্তা</h2>
+          <p class="mt-4">
+            আমরা আপনার ডেটা সুরক্ষিত রাখতে যুক্তিসঙ্গত প্রযুক্তিগত ও সাংগঠনিক ব্যবস্থা নিই:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>সমস্ত ওয়েবসাইট যোগাযোগের জন্য এনক্রিপ্টেড ট্রান্সমিশন (HTTPS/TLS)</li>
+            <li>মেডিকেল রিপোর্ট ও রোগী ডেটার নিরাপদ সংরক্ষণ</li>
+            <li>অনুমোদিত কোঅর্ডিনেটর ও স্টাফদের জন্য সীমিত অ্যাক্সেস</li>
+            <li>আমাদের নিরাপত্তা অনুশীলনের নিয়মিত পর্যালোচনা</li>
+          </ul>
+          <p class="mt-4">
+            এই ব্যবস্থা সত্ত্বেও কোনো সিস্টেম সম্পূর্ণ নিরাপত্তা গ্যারান্টি দিতে পারে না। আপনার
+            ব্যক্তিগত তথ্যকে প্রভাবিত করে এমন ডেটা ব্রিচ সম্পর্কে আমরা জানতে পারলে প্রযোজ্য আইন
+            অনুযায়ী আপনাকে জানাব।
+          </p>
+        </section>
+
+        <section id="cookies">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ১০. কুকিজ ও অ্যানালিটিক্স
+          </h2>
+          <p class="mt-4">
+            আমাদের ওয়েবসাইট নিম্নলিখিত উদ্দেশ্যে কুকিজ ও অনুরূপ প্রযুক্তি ব্যবহার করে:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <strong>অত্যাবশ্যকীয় কুকিজ</strong> — ওয়েবসাইট কাজ করার জন্য প্রয়োজন (যেমন, ভাষা পছন্দ)
+            </li>
+            <li>
+              <strong>অ্যানালিটিক্স কুকিজ</strong> — Google Analytics ও Google Tag Manager ওয়েবসাইট ব্যবহার
+              বোঝতে ও কনটেন্ট উন্নত করতে
+            </li>
+            <li>
+              <strong>মার্কেটিং কুকিজ</strong> — Google Ads ও Meta Ads বিজ্ঞাপনের কার্যকারিতা মাপতে
+            </li>
+          </ul>
+          <p class="mt-4">
+            আপনি ব্রাউজার সেটিংসের মাধ্যমে কুকিজ পরিচালনা বা নিষ্ক্রিয় করতে পারেন। কিছু কুকিজ
+            নিষ্ক্রিয় করলে ওয়েবসাইট কার্যকারিতা প্রভাবিত হতে পারে।
+          </p>
+        </section>
+
+        <section id="your-rights">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ১১. আপনার গোপনীয়তা অধিকার
+          </h2>
+          <p class="mt-4">
+            আপনার বাসস্থানের দেশ অনুযায়ী আপনার ব্যক্তিগত ডেটা সম্পর্কে নিম্নলিখিত অধিকার থাকতে
+            পারে:
+          </p>
+          <ul class="mt-4 list-disc space-y-2 pl-6">
+            <li><strong>অ্যাক্সেস</strong> — আমাদের কাছে আপনার ব্যক্তিগত ডেটার কপি অনুরোধ করুন</li>
+            <li><strong>সংশোধন</strong> — ভুল বা অসম্পূর্ণ ডেটা সংশোধনের অনুরোধ করুন</li>
+            <li>
+              <strong>মুছে ফেলা</strong> — আপনার ব্যক্তিগত ডেটা মুছে ফেলার অনুরোধ করুন ("ভুলে যাওয়ার
+              অধিকার")
+            </li>
+            <li><strong>সীমাবদ্ধতা</strong> — আপনার ডেটা প্রক্রিয়াকরণ সীমিত করার অনুরোধ করুন</li>
+            <li>
+              <strong>পোর্টেবিলিটি</strong> — আপনার ডেটা কাঠামোগত, মেশিন-রিডেবল ফরম্যাটে গ্রহণ করুন
+            </li>
+            <li>
+              <strong>আপত্তি</strong> — নির্দিষ্ট উদ্দেশ্যে আপনার ডেটা প্রক্রিয়াকরণে আপত্তি জানান
+            </li>
+            <li>
+              <strong>সম্মতি প্রত্যাহার</strong> — যেকোনো সময় সম্মতি প্রত্যাহার করুন (এটি ইতিমধ্যে সম্পন্ন
+              প্রক্রিয়াকরণকে প্রভাবিত করে না)
+            </li>
+          </ul>
+          <p class="mt-4">
+            এই অধিকারগুলোর যেকোনো একটি ব্যবহার করতে অনুচ্ছেদ ১৪-এর যোগাযোগের বিবরণ ব্যবহার করুন।
+            আমরা GDPR অনুযায়ী ৩০ দিনের মধ্যে সাড়া দেব।
+          </p>
+        </section>
+
+        <section id="children">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ১২. শিশুদের গোপনীয়তা
+          </h2>
+          <p class="mt-4">
+            আমাদের সেবা চিকিৎসা গ্রহণকারী প্রাপ্তবয়স্কদের জন্য। কোনো শিশুর চিকিৎসা প্রয়োজন হলে
+            অভিভাবক বা আইনি অভিভাবককে সম্মতি প্রদান করতে হবে এবং শিশুর পক্ষে তথ্য জমা দিতে হবে। আমরা
+            অভিভাবকের সম্মতি ছাড়া ১৬ বছরের কম বয়সী শিশুদের কাছ থেকে সরাসরি ব্যক্তিগত তথ্য সংগ্রহ
+            করি না।
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">
+            ১৩. এই নীতিতে পরিবর্তন
+          </h2>
+          <p class="mt-4">
+            আমরা সময়ে সময়ে এই গোপনীয়তা নীতি আপডেট করতে পারি। এই পেজের শীর্ষে "সর্বশেষ আপডেট"
+            তারিখটি সর্বশেষ সংশোধনকে নির্দেশ করে। আমরা আপনাকে পর্যায়ক্রমে এই পেজ পর্যালোচনা করতে
+            উৎসাহিত করি। গুরুত্বপূর্ণ পরিবর্তন আমাদের ওয়েবসাইটে বা আপনি সক্রিয় রোগী হলে ইমেইলে
+            জানানো হবে।
+          </p>
+        </section>
+
+        <section id="complaints">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১৪. অভিযোগ</h2>
+          <p class="mt-4">আমাদের সেবায় সন্তুষ্ট নন?</p>
+          <p class="mt-4">
+            <a href="mailto:complaints@khanmeditour.com" class="text-violet-600 hover:underline"
+              >complaints@khanmeditour.com</a
+            > ঠিকানায় ইমেইল করুন, সাবজেক্ট "Complaint" এবং আপনার সমস্যার বিবরণ সহ। আমরা সমস্ত অভিযোগ
+            গুরুত্বের সাথে গ্রহণ করি এবং ৫ কর্মদিবসের মধ্যে সাড়া দেব।
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">১৫. যোগাযোগ</h2>
+          <p class="mt-4">
+            এই গোপনীয়তা নীতি সম্পর্কে কোনো প্রশ্ন থাকলে বা আপনার গোপনীয়তা অধিকার ব্যবহার করতে
+            আমাদের সাথে যোগাযোগ করুন:
+          </p>
+          <div class="mt-4 rounded-card border border-cream-300 bg-cream-100 p-6">
+            <p class="font-semibold text-ink">{t.site.name}</p>
+            <p class="mt-2 text-sm">
+              ইমেইল: <a href={`mailto:${contactEmail}`} class="text-violet-600 hover:underline"
+                >{contactEmail}</a>
+            </p>
+            <p class="text-sm">
+              WhatsApp: <a href={whatsappInquiryHref} class="text-violet-600 hover:underline"
+                >+{whatsappNumber}</a>
+            </p>
+            <p class="text-sm">
+              ফোন: <a href={`tel:+${phoneNumber}`} class="text-violet-600 hover:underline"
+                >+{phoneNumber}</a>
+            </p>
+          </div>
+          <p class="text-ink/50 mt-4 text-sm">
+            GDPR-সংক্রান্ত অভিযোগের জন্য আপনি আপনার স্থানীয় ডেটা সুরক্ষা কর্তৃপক্ষের সাথেও যোগাযোগ
+            করতে পারেন। ভারতের জন্য, Data Protection Board of India DPDP Act, 2023 অনুযায়ী অভিযোগ
+            পরিচালনা করে।
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <TreatmentsCtaSection
+    locale={locale}
+    primaryCta={{ label: t.nav.cta, href: '#contact' }}
+    secondaryCta={{ label: t.nav.whatsapp, href: whatsappInquiryHref }}
+  />
+
+  <LeadModalInterceptor
+    modalTitle={t.leadModal.title}
+    modalSubtitle={t.leadModal.subtitle}
+    closeLabel={t.leadModal.close}
+  />
+
+  <Footer
+    brand={t.site.name}
+    legalLinks={legalLinks}
+    conciergeLabel={t.footer.concierge}
+    conciergePrefix={t.footer.conciergePrefix}
+    conciergeSuffix={t.footer.conciergeSuffix}
+    copyright={`© ${new Date().getFullYear()} ${t.site.name}. ${t.footer.rights}`}
+    address={t.footer.address}
+  />
+</Layout>
