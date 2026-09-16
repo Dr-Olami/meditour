@@ -36,6 +36,14 @@ interface LeadRecord {
   preferred_contact_method: string | null;
   medical_reports: string[] | null;
   created_at: string;
+  user_agent: string | null;
+  browser_language: string | null;
+  screen_resolution: string | null;
+  timezone: string | null;
+  referrer: string | null;
+  ip_address: string | null;
+  ip_country: string | null;
+  ip_city: string | null;
 }
 
 /**
@@ -54,7 +62,7 @@ async function createSignedUrl(filePath: string): Promise<string | null> {
           Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ expiresIn: 604800 }), // 7 days
+        body: JSON.stringify({ expiresIn: 1209600 }), // 14 days
       }
     );
 
@@ -174,9 +182,24 @@ Deno.serve(async (req: Request) => {
           <p style="margin: 0; font-size: 13px; color: #6b7280;">
             Submitted: ${new Date(lead.created_at).toLocaleString("en-US", { timeZone: "UTC" })} UTC<br/>
             Lead ID: ${lead.id}<br/>
-            Download links expire in 7 days.
+            Download links expire in 14 days.
           </p>
         </div>
+
+        <!-- Client device and location info -->
+        ${(lead.ip_address || lead.user_agent || lead.ip_country || lead.screen_resolution) ? `
+        <div style="margin-top: 20px; padding: 16px; background: #fffbeb; border-radius: 8px; border: 1px solid #fef3c7;">
+          <p style="margin: 0 0 8px; font-weight: 600; color: #92400e; font-size: 14px;">Client Info:</p>
+          <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: #78350f;">
+            ${lead.ip_address ? `<tr><td style="padding: 4px 0; font-weight: 600; width: 120px;">IP Address:</td><td style="padding: 4px 0;">${lead.ip_address}</td></tr>` : ""}
+            ${lead.ip_country ? `<tr><td style="padding: 4px 0; font-weight: 600;">Location:</td><td style="padding: 4px 0;">${[lead.ip_city, lead.ip_country].filter(Boolean).join(", ")}</td></tr>` : ""}
+            ${lead.user_agent ? `<tr><td style="padding: 4px 0; font-weight: 600;">Device/Browser:</td><td style="padding: 4px 0;">${lead.user_agent}</td></tr>` : ""}
+            ${lead.screen_resolution ? `<tr><td style="padding: 4px 0; font-weight: 600;">Screen:</td><td style="padding: 4px 0;">${lead.screen_resolution}</td></tr>` : ""}
+            ${lead.browser_language ? `<tr><td style="padding: 4px 0; font-weight: 600;">Language:</td><td style="padding: 4px 0;">${lead.browser_language}</td></tr>` : ""}
+            ${lead.timezone ? `<tr><td style="padding: 4px 0; font-weight: 600;">Timezone:</td><td style="padding: 4px 0;">${lead.timezone}</td></tr>` : ""}
+            ${lead.referrer ? `<tr><td style="padding: 4px 0; font-weight: 600;">Referrer:</td><td style="padding: 4px 0;">${lead.referrer}</td></tr>` : ""}
+          </table>
+        </div>` : ""}
 
         <div style="margin-top: 20px; display: flex; gap: 12px;">
           <a href="https://wa.me/${lead.phone.replace(/[^0-9]/g, "")}" style="display: inline-block; padding: 10px 20px; background: #22c55e; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px;">Contact on WhatsApp</a>

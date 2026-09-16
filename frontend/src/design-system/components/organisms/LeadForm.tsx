@@ -10,6 +10,7 @@ import {
   uploadMedicalReport,
   attachMedicalReports,
   validateMedicalFile,
+  captureClientInfo,
 } from '../../../lib/crm';
 import { ALLOWED_FILE_EXTENSIONS, MAX_FILE_SIZE } from '../../../lib/supabase';
 import { Button } from '../atoms/Button';
@@ -168,10 +169,14 @@ const LeadForm = React.forwardRef<HTMLFormElement, LeadFormProps>(
       setStatus(null);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { noReports: _noReports, ...rest } = data;
+      // Reason: capture device and location info before submitting
+      // so the business owner knows where the lead came from.
+      const clientInfo = await captureClientInfo();
       const payload: LeadPayload = {
         ...rest,
         hasReports: !data.noReports,
         reportsSharedVia: data.noReports ? 'not_yet' : files.length > 0 ? 'whatsapp' : undefined,
+        clientInfo,
       };
 
       // Reason: submit the lead first to get the lead ID, then upload files
